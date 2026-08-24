@@ -1,7 +1,7 @@
 {
   "browser": "chromium",
   "browserVersion": "151.0.7922.34",
-  "capturedAt": "2026-08-24T04:30:47.703Z",
+  "capturedAt": "2026-08-24T12:06:25.918Z",
   "commands": [
     "npm.cmd run test:e2e -- tests/p2-t3-evidence.spec.ts"
   ],
@@ -11,7 +11,7 @@
       "entryActive": true,
       "path": "/",
       "surface": "daylight-prepaint",
-      "actualElapsedMs": 2,
+      "actualElapsedMs": 5,
       "requestedDelayMs": 0
     },
     {
@@ -19,7 +19,7 @@
       "entryActive": true,
       "path": "/",
       "surface": "daylight-prepaint",
-      "actualElapsedMs": 125,
+      "actualElapsedMs": 149,
       "requestedDelayMs": 100
     },
     {
@@ -27,7 +27,7 @@
       "entryActive": true,
       "path": "/",
       "surface": "daylight-prepaint",
-      "actualElapsedMs": 262,
+      "actualElapsedMs": 297,
       "requestedDelayMs": 250
     },
     {
@@ -35,7 +35,7 @@
       "entryActive": true,
       "path": "/",
       "surface": "daylight-prepaint",
-      "actualElapsedMs": 433,
+      "actualElapsedMs": 449,
       "requestedDelayMs": 430
     },
     {
@@ -43,7 +43,7 @@
       "entryActive": true,
       "path": "/",
       "surface": "daylight-prepaint",
-      "actualElapsedMs": 632,
+      "actualElapsedMs": 635,
       "requestedDelayMs": 620
     },
     {
@@ -59,7 +59,7 @@
       "entryActive": false,
       "path": "/app/overview",
       "surface": "document",
-      "actualElapsedMs": 1015,
+      "actualElapsedMs": 1003,
       "requestedDelayMs": 1000
     }
   ],
@@ -70,27 +70,27 @@
   },
   "motionTiming": {
     "frames": 50,
-    "maxMs": 16.700000000000045,
-    "p95Ms": 16.700000000000045
+    "maxMs": 16.800000000000068,
+    "p95Ms": 16.799999999999955
   },
   "reducedEntrySamples": [
     {
-      "captureCompletedAtMs": 67,
+      "captureCompletedAtMs": 86,
       "captureStartedAtMs": 0,
       "pathAtCaptureEnd": "/app/overview",
       "pathAtCaptureStart": "/",
       "requestedDelayMs": 0
     },
     {
-      "captureCompletedAtMs": 106,
-      "captureStartedAtMs": 67,
+      "captureCompletedAtMs": 137,
+      "captureStartedAtMs": 86,
       "pathAtCaptureEnd": "/app/overview",
       "pathAtCaptureStart": "/app/overview",
       "requestedDelayMs": 40
     },
     {
-      "captureCompletedAtMs": 155,
-      "captureStartedAtMs": 106,
+      "captureCompletedAtMs": 191,
+      "captureStartedAtMs": 137,
       "pathAtCaptureEnd": "/app/overview",
       "pathAtCaptureStart": "/app/overview",
       "requestedDelayMs": 90

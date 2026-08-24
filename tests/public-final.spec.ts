@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto'
 import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Browser, type Page } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const viewports = [
   { name: '1440', width: 1440, height: 900 },
@@ -124,7 +125,7 @@ async function setPublicTheme(page: Page, theme: 'day' | 'night') {
 }
 
 async function capture(page: Page, filename: string, fullPage = false, animations: 'allow' | 'disabled' = 'disabled') {
-  await page.screenshot({
+  await screenshotToPath(page, {
     animations,
     fullPage,
     path: resolve(evidenceDirectory, filename),

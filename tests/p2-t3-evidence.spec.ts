@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto'
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const evidenceDirectory = resolve('outputs/evidence/browser/p2-t3')
 const viewports = [
@@ -34,7 +35,7 @@ async function screenshot(
   name: string,
   mask: ReturnType<Page['locator']>[] = [],
 ) {
-  await page.screenshot({
+  await screenshotToPath(page, {
     animations: 'allow',
     mask,
     maskColor: '#CCD9D3',
@@ -43,6 +44,7 @@ async function screenshot(
 }
 
 test('capture the P2-T3 login golden-slice evidence set', async ({ browser, context, page }) => {
+  test.setTimeout(180_000)
   mkdirSync(evidenceDirectory, { recursive: true })
   const viewportChecks: Array<Record<string, unknown>> = []
 

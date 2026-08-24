@@ -2,21 +2,21 @@
 
 - Repository root: `C:\Users\Administrator\Documents\Codex\2026-08-08\bug\lifeops-web`
 - Values file: `C:\Users\Administrator\Documents\Codex\2026-08-08\bug\lifeops-web\deploy\gitops\environments\production\values.yaml`
-- Source revision: `unavailable`
+- Source revision: `c3bf5b558a24297a63e3823bdadf75314acae6d7`
 - Credentials recorded: `false`
 
 | Check | Result | Detail |
 |---|---|---|
 | git-cli | pass | git is available |
-| git-root | fail | repository root is missing or does not match the requested path |
-| git-revision | not-applicable | not evaluated because git-root failed |
-| git-branch | not-applicable | not evaluated because git-root failed |
-| git-origin | not-applicable | not evaluated because git-root failed |
-| git-default-branch | not-applicable | not evaluated because git-root failed |
-| git-clean | not-applicable | not evaluated because git-root failed |
+| git-root | pass | repository root is verified |
+| git-revision | pass | HEAD must resolve to an immutable revision |
+| git-branch | pass | a named release branch is required |
+| git-origin | pass | origin must exist and must not embed credentials |
+| git-default-branch | pass | origin default branch is known |
+| git-clean | pass | release requires a clean working tree; unrelated or untracked changes are not auto-discarded |
 | github-cli | pass | GitHub CLI is available |
-| github-auth | not-applicable | not evaluated without GitHub CLI and a verified repository |
-| github-dispatch-capability | not-applicable | not evaluated without GitHub CLI and a verified repository |
+| github-auth | pass | GitHub authentication must be valid |
+| github-dispatch-capability | pass | the pinned release workflow must be readable before dispatch |
 | docker-cli | pass | Docker CLI is available |
 | docker-engine | pass | Docker Engine must be reachable |
 | docker-buildx | pass | Docker Buildx must be available |

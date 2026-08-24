@@ -4,7 +4,7 @@ authority_revision: ADR-029
 status: implementation-active
 active_plan: P6
 active_task: P6-T6
-active_step: 3
+active_step: 7
 requirements_verified: 30/44
 execution_guard: complete-fresh-task-drill-passed
 last_reviewed: 2026-08-24
@@ -46,7 +46,7 @@ On 2026-08-23 the user explicitly approved ADR-028 after supplying a local motio
 
 On 2026-08-23 the user then explicitly approved ADR-029 after rejecting the combined ADR-028 production candidate and iterating an isolated video-calibrated sample. ADR-029 supersedes only the public orbit/login visual clauses: exact `1132×750` four-ring geometry, `(792,371)` center, `.85` scale, `353/501/649/797` diameters, one uncompensated 1px masked gradient, `CCW30/CW40/CW50/CCW60`, the approved 0.72-second `0.3R / A-180°` layered arrival, `05 / 此刻正在发生`, header motion control, theme-scoped login surfaces and a hard complete-viewport-inset rule. It explicitly removes the rejected offset ellipses, 47/59/68/79/87 MotionPath, right-edge cropping, white night login panel and lower-right pause pill while preserving five destinations, authentication, focus/Escape/Back, explicit day, private daylight, data and delivery boundaries. No new parent, surface, dependency, remote asset, metric, fake data, full Step 7 run, task close or later P6 work is introduced by formalization.
 
-The execution-completeness and image-delivery-boundary specifications passed explicit written review on 2026-08-11. The user approved the resulting TDD control plan on 2026-08-11. Execution-guard Tasks 1 through 10 are checkpointed. P1-T1 through P1-T13, P2-T1 through P2-T6, P3-T1 through P3-T14, P4-T1 through P4-T8, P5-T1 through P5-T8 and P6-T1 through P6-T5 are also checkpointed. P6-T6 Steps 1–2 are complete; Step 3 is the sole next product boundary.
+The execution-completeness and image-delivery-boundary specifications passed explicit written review on 2026-08-11. The user approved the resulting TDD control plan on 2026-08-11. Execution-guard Tasks 1 through 10 are checkpointed. P1-T1 through P1-T13, P2-T1 through P2-T6, P3-T1 through P3-T14, P4-T1 through P4-T8, P5-T1 through P5-T8 and P6-T1 through P6-T5 are also checkpointed. P6-T6 Steps 1–6 are complete; Step 7 is the sole next product boundary.
 
 ## Current execution truth
 
@@ -785,11 +785,9 @@ The non-Git checkpoint is `outputs/evidence/source-checkpoints/2026-08-23-p6-t4-
 
 ## Next atomic action
 
-P6-T5 remains intentionally in progress before the full matrix, task-close and P6-T6. ADR-029 is formalized in the accepted decision, final redesign specification, current P6-T5 interface, requirements and reciprocal source/atom contracts. The current non-Git checkpoint is `outputs/evidence/source-checkpoints/2026-08-23-adr-029-reference-ring-login-formalization-uncommitted-local-checkpoint.json`, root `BD3B5BAA51E1AE53B7008192CEA1DBD12FA68638C02C5D1CB6CD18A96858A89E`, with 589 sorted inputs and 442 unaffected evidence rows. It supplies no product evidence for the seven ADR-029 focused atoms.
+P6-T5 is formally closed. P6-T6 Steps 1–6 are complete and P6-T6 Step 7 is the sole current boundary. The repository, preflight, disposable MySQL rehearsal, production configuration, version selection and focused release contracts are verified; GitHub Actions still lacks the two repository-scoped UHub secret names. The first verification command after explicit secret-transfer authorization is `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release-production.ps1 -Version 1.0.0 -Workflow .github/workflows/release.yml -Wait`.
 
-P6-T6 Step 3 is blocked at the real release-preflight boundary. Supply a real clean Git repository/origin, valid GitHub workflow-dispatch authentication, a running Docker Engine, approved UHub environment credentials and final user-owned production hostname inputs, then rerun the exact preflight. The first verification command is `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release-preflight.ps1 -RepositoryRoot (Get-Location).Path -WebRepository uhub.service.ucloud.cn/chenucloud/lifeops-web -ApiRepository uhub.service.ucloud.cn/chenucloud/lifeops-api -ValuesFile deploy/gitops/environments/production/values.yaml`.
-
-After the execution guard is green, run the focused product baseline and write failing behavioral tests before product source. Do not rerun the detector, use clipping as evidence, run the full matrix, close P6-T5 or enter P6-T6 before fresh browser measurement and user visual approval.
+Do not rerun the detector, read kubeconfig, run kubectl, install Helm, synchronize Argo or claim registry delivery before the pinned workflow and exact digest evidence succeed.
 
 ## 2026-08-23 rejected concentric candidate safe pause
 
@@ -811,7 +809,7 @@ The formalization checkpoint is `outputs/evidence/source-checkpoints/2026-08-23-
 
 ### Next atomic action
 
-P6-T6 Step 3 remains the sole active external release-preflight boundary; the historical P6-T5 direction described here is closed and retained only as evidence.
+That historical external release-preflight boundary is closed; the historical P6-T5 direction described here is retained only as evidence.
 
 ## 2026-08-23 P6-T5 authored-orbit focused candidate and visual-review pause
 
@@ -1048,3 +1046,19 @@ SSH host connectivity and trust are available, but no GitHub SSH public key is c
 ## Exact next atomic action
 
 Obtain explicit user approval to create the repository-scoped writable deploy key described above. If approved, generate it only under `.git`, add only its public key to `Chen0125-a/lifeops-web`, verify SSH identity, push the local `main` history rooted at `543c6f106919595194730c43ac20be7e947dda27`, remove temporary bootstrap refs after verifying the remote commit, then run the exact release preflight as the first product verification command. P6-T6 Step 4 remains blocked until preflight exits 0.
+
+## 2026-08-24 P6-T6 Steps 3–6 complete and release-dispatch authorization boundary
+
+The repository-scoped writable deploy key was created only under `.git`, attached only to `Chen0125-a/lifeops-web`, and used to push and verify `main`. Local and remote temporary bootstrap refs were removed after verification. Local and remote `main` matched at `c3bf5b558a24297a63e3823bdadf75314acae6d7` before the current evidence-convergence changes.
+
+The exact real release preflight now exits 0 with 20 pass / 0 fail / 0 warning / 1 not-applicable. The disposable `mysql:8.4.10` rehearsal applies all 16 migrations, verifies dump/restore sentinel and checksums, and cleans only its owned resources. Production configuration uses the verified GitHub repository, `main`, fixed UHub Web/API paths and `lifeops.chenspace.com`; pre-release digest fields remain empty by design. No valid local or remote release tag exists, so the selected release is `1.0.0`. Release-production and release-manifest focused behavioral contracts pass.
+
+A full 335-test browser rerun exposed four transient Windows file-open collisions and three platform-sensitive WebKit samples. Screenshot capture now writes from memory with a bounded retry only for Windows file-lock errors; no product motion/performance threshold changed. The affected Chromium captures pass. Each WebKit failure then passed alone in a stable foreground environment at the original gate. The exact release-critical commands pass 17/17 in serialized headed WebKit and 17/17 in serialized headed Firefox; the two projects were never run concurrently.
+
+GitHub reports no repository Actions secret names. Local Docker authentication for UHub exists, but transferring that credential to GitHub Actions is an external secret write and has not been inferred from prior repository/deploy-key approval. No image, digest, SBOM, provenance or release success is claimed. Completion remains 30/44 and P6-T6 remains in progress.
+
+The deterministic pre-dispatch checkpoint is `outputs/evidence/source-checkpoints/2026-08-24-p6-t6-pre-dispatch-uncommitted-local-checkpoint.json`, root `B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09`, with 599 sorted inputs and 462 existing evidence rows. Execution-contract 95/95, handoff and startup all pass with the unchanged 30/10/4 parent rollup.
+
+## Exact next atomic action
+
+Remain at P6 / P6-T6 / Step 7. After the pre-dispatch checkpoint and current `main` are pushed, obtain explicit authorization to copy the already stored local UHub Docker username/password into repository-scoped GitHub Actions secrets `UHUB_USERNAME` and `UHUB_PASSWORD` without printing or recording their values. Then dispatch exactly one pinned `1.0.0` release and wait for its real result.

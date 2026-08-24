@@ -393,7 +393,7 @@ Inspect rather than merely generate public day/night, five details, login open/s
 
 - [x] **Step 2: Implement the read-only release preflight.** Verify Git root/branch/origin/default branch, authenticated GitHub write/dispatch capability, Docker/Buildx, UHub login/repository read without echoing credentials, Helm availability, production values schema and absence of deployable placeholders. Do not inspect kubeconfig or any cluster.
 
-- [ ] **Step 3: Run release preflight against the real release environment and stop on failed prerequisites.**
+- [x] **Step 3: Run release preflight against the real release environment and stop on failed prerequisites.**
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release-preflight.ps1 -RepositoryRoot (Get-Location).Path -WebRepository uhub.service.ucloud.cn/chenucloud/lifeops-web -ApiRepository uhub.service.ucloud.cn/chenucloud/lifeops-api -ValuesFile deploy/gitops/environments/production/values.yaml
@@ -401,15 +401,15 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release-prefligh
 
 Repository names must be confirmed by the real UHub result. Credentials are supplied only through approved environment/secret mechanisms and never copied to evidence.
 
-- [ ] **Step 4: Run the disposable MySQL migration, backup and restore rehearsal.** It proves forward migrations, checksum identity, dump readability and restoration safety without accessing a user or cluster database.
+- [x] **Step 4: Run the disposable MySQL migration, backup and restore rehearsal.** It proves forward migrations, checksum identity, dump readability and restoration safety without accessing a user or cluster database.
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/pre-release-data-rehearsal.ps1 -MySqlImage mysql:8.4.10
 ```
 
-- [ ] **Step 5: Materialize the production release configuration.** Derive repository URL/revision from verified Git state, set the confirmed UHub repositories and retain explicit user-owned fields for namespace/hostname/StorageClass/platform endpoints in examples. The production digest values are populated only by the verified release. No Secret value may be embedded.
+- [x] **Step 5: Materialize the production release configuration.** Derive repository URL/revision from verified Git state, set the confirmed UHub repositories and retain explicit user-owned fields for namespace/hostname/StorageClass/platform endpoints in examples. The production digest values are populated only by the verified release. No Secret value may be embedded.
 
-- [ ] **Step 6: Determine SemVer from real repository tags.** Use `1.0.0` only when no valid release exists; otherwise apply the documented patch/minor/major decision and record it before dispatch.
+- [x] **Step 6: Determine SemVer from real repository tags.** Use `1.0.0` only when no valid release exists; otherwise apply the documented patch/minor/major decision and record it before dispatch.
 
 - [ ] **Step 7: Dispatch and wait for the pinned GitHub Actions release.** Require successful tests/builds, pushed Web/API artifacts, UHub-resolved `sha256:` digests, exact-digest image smoke, SBOM/provenance status and a digest-only production-values update.
 

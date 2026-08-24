@@ -89,7 +89,7 @@
       "kind": "list-item",
       "ordinal": 2,
       "textSummary": "日期：2026-08-09；生活专区增量于 2026-08-10 批准；受控 UI 重设计于 2026-08-14 最终批准；参考锁定圆环、主题化登录层与完整入窗比例于 2026-08-23 批准",
-      "textSha256": "02922E399594275E2276BA35E33973CA58E2B882A61B205CEF1E2776E9573B6C",
+     "textSha256": "02922E399594275E2276BA35E33973CA58E2B882A61B205CEF1E2776E9573B6C",
       "classification": "mapped",
       "atomIds": [
         "PUB-01.PUBLIC_HOME.FUNC.03",
@@ -235,7 +235,7 @@
       "kind": "list-item",
       "ordinal": 2,
       "textSummary": "本规格、生活专区增量规格、执行完整性规格、镜像交付边界规格与 ADR-016、ADR-017、ADR-019、ADR-020、ADR-021、ADR-022、ADR-028、ADR-029；公开首页的参考锁定圆环、对象入轨、中心文案、登录比例、完整入窗和主题化登录表面以 ADR-029 为最新专门决定。",
-      "textSha256": "7FBFFE4A1CADC8CD2D7E7815E8B6F0E80D6777F252F6E5FF59A6C04554892ED6",
+     "textSha256": "7FBFFE4A1CADC8CD2D7E7815E8B6F0E80D6777F252F6E5FF59A6C04554892ED6",
       "classification": "mapped",
       "atomIds": [
         "DATA-01.DATA_MODEL.SEC.01",
@@ -355,7 +355,7 @@
       "kind": "list-item",
       "ordinal": 1,
       "textSummary": "公开首页常用且无有效用户 override 时的默认视觉为接近纯黑的 `#020306` 星空；星点疏密、大小与层次不规则。用户仍可显式切换清晰日景，私人区始终保持 daylight。",
-      "textSha256": "A6CDAFE0E807569F52B23C0A3C2D6BA190F560F8CFE92CF02A20FD15563DC5C1",
+     "textSha256": "A6CDAFE0E807569F52B23C0A3C2D6BA190F560F8CFE92CF02A20FD15563DC5C1",
       "classification": "mapped",
       "atomIds": [
         "PUB-01.PUBLIC_HOME.FUNC.02",
@@ -377,7 +377,7 @@
       "kind": "list-item",
       "ordinal": 2,
       "textSummary": "公开入口使用参考锁定的四条同心圆环：`1132×750` 归一化舞台、圆心 `(792,371)`、scale `.85`、base diameter `353/501/649/797`、同一条未补偿 `1px` masked gradient 和透明渐变断点。四轨承载五对象，允许两个对象共享一轨但最终角度必须分离，不恢复三轨或新增第五轨。默认态、登录态和全部断点的最外轨必须完整位于窗口安全边距内，禁止受控裁切或隐藏越界。",
-      "textSha256": "DCC08EB5FDB6EE94161C9FDCDFF03F652E6DFC8D7D09DE088C8C69245666C038",
+     "textSha256": "DCC08EB5FDB6EE94161C9FDCDFF03F652E6DFC8D7D09DE088C8C69245666C038",
       "classification": "mapped",
       "atomIds": [
         "PUB-01.PUBLIC_HOME.FUNC.03",
@@ -1160,7 +1160,7 @@
       "kind": "list-item",
       "ordinal": 5,
       "textSummary": "四轨圆环在桌面默认态占据右侧主视觉，`1440×900` 以 `677.45px` 外径为基准；最外轨、对象、标签和交互锚点四周均保留至少 `16px` 视口安全边距，不能靠 `overflow:hidden/clip` 掩盖任何越界。",
-      "textSha256": "DF6E5EC7B20D899EA3024DD7A0082E84158CBBA6DDFF75E68B74C3E84E8D00CB",
+     "textSha256": "DF6E5EC7B20D899EA3024DD7A0082E84158CBBA6DDFF75E68B74C3E84E8D00CB",
       "classification": "mapped",
       "atomIds": [
         "PUB-01.PUBLIC_HOME.FUNC.03",
@@ -1182,7 +1182,7 @@
       "kind": "list-item",
       "ordinal": 6,
       "textSummary": "左侧真实标题固定为“把日子，慢慢看清。”，以中文逐字、一次性的克制暖紫/星光光标显现；辅助文案与入口随后轻微 stagger。不得循环清空重打，也不得因登录打开、关闭或重开而重播。",
-      "textSha256": "4CEAEF8D77EC0268FED700774D0175D6D03561EC90AAE8537CCF9E8720CE4363",
+     "textSha256": "4CEAEF8D77EC0268FED700774D0175D6D03561EC90AAE8537CCF9E8720CE4363",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -1360,7 +1360,7 @@
       "kind": "paragraph",
       "ordinal": 2,
       "textSummary": "五个对象统一重绘为同一套 authored SVG 线性语言：一致的 stroke、圆角、光感与视觉尺寸，减少大色块、厚圆章和装饰容器。对象根中心必须精确在所属 path 上；小锚点、短连接或切线关系只用于表达“挂”在轨道上，图标本身始终 upright、可辨且标签全断点常驻不碰撞。",
-      "textSha256": "E16F6840E6E3E256C9D417E249710DCF9455D82970242C4FAD65A78B230233BF",
+     "textSha256": "E16F6840E6E3E256C9D417E249710DCF9455D82970242C4FAD65A78B230233BF",
       "classification": "mapped",
       "atomIds": [
         "PUB-01.PUBLIC_HOME.LAYOUT.01",
@@ -1402,7 +1402,7 @@
       "kind": "list-item",
       "ordinal": 1,
       "textSummary": "轨道固定为参考锁定的四条同心圆环。统一 `1132×750` 场景坐标，圆心 `(792,371)`；base diameter 为 `353/501/649/797`，统一 scale `.85` 后精确屏幕直径为 `300.05/425.85/551.65/677.45px`。不得改用 `.866` 拟合、偏心椭圆、等间距重算或第五条轨道。",
-      "textSha256": "AF6DAEA4F41019348994E2286DB2DFD9350430C34A936C8572A275C84B783F9C",
+     "textSha256": "AF6DAEA4F41019348994E2286DB2DFD9350430C34A936C8572A275C84B783F9C",
       "classification": "mapped",
       "atomIds": [
         "DATA-01.DATA_MODEL.TXN.01",
@@ -1423,7 +1423,7 @@
       "kind": "list-item",
       "ordinal": 2,
       "textSummary": "四轨共享同一条未补偿 `1px` masked gradient：`rgba(217,161,255,0) 0% → rgba(217,161,255,1) 43% → rgba(217,161,255,0) 100%`。透明段就是轨道断点，不增加连续底线、补偿线宽、drop-shadow 或每圈独立 opacity。",
-      "textSha256": "5BBE171CBDAFCBE1A2DBA713C7E2527459CE1B04EC17CDC9354B4BBA499460D5",
+     "textSha256": "5BBE171CBDAFCBE1A2DBA713C7E2527459CE1B04EC17CDC9354B4BBA499460D5",
       "classification": "mapped",
       "atomIds": [
         "DATA-01.DATA_MODEL.DATA.01",
@@ -1444,7 +1444,7 @@
       "kind": "list-item",
       "ordinal": 3,
       "textSummary": "四轨持续自转，方向/周期依次为 `CCW 30s`、`CW 40s`、`CW 50s`、`CCW 60s`。五对象映射到四轨并保持最终角度 `314/236/161/96/88deg`；共享轨道的两个对象保持分离角度。",
-      "textSha256": "FA9E7999AEEB27C645C2B9D0445899D2D034C4AD5CAB22EE55EE27D44EAAC353",
+     "textSha256": "FA9E7999AEEB27C645C2B9D0445899D2D034C4AD5CAB22EE55EE27D44EAAC353",
       "classification": "mapped",
       "atomIds": [
         "DATA-01.DATA_MODEL.TXN.01",
@@ -1465,7 +1465,7 @@
       "kind": "list-item",
       "ordinal": 4,
       "textSummary": "每个对象的局部进度 `u=clamp((time-delay)/0.72s,0,1)`，缓动 `E=cubic-bezier(.22,1,.36,1)(u)`；半径为 `finalRadius×(.3+.7E)`，相对所属旋转轨道的角度为 `finalAngle-180°(1-E)`，局部 scale 为 `.3+.7E`、rotation 为 `-180°(1-E)`、blur 为 `10px(1-E)`，opacity 在 18% 时到 1。延迟固定为 `.60/.80/1.00/1.20/1.40s`；独立 counter 层抵消定位角度扫掠，避…",
-      "textSha256": "0CD28BB862A82D6DCD1ABBD06852CA25A503D81B2CD59F74721C32A1FEFD1BBA",
+     "textSha256": "0CD28BB862A82D6DCD1ABBD06852CA25A503D81B2CD59F74721C32A1FEFD1BBA",
       "classification": "mapped",
       "atomIds": [
         "DATA-01.DATA_MODEL.STATE.01",
@@ -1486,7 +1486,7 @@
       "kind": "list-item",
       "ordinal": 5,
       "textSummary": "整组使用独立的 1.2 秒 `.85→1` scale-in；该组入场、四轨持续旋转、对象入轨和图标自身动画不得混成一个 transform owner。中心计数 `00→05`，下方文案固定为“此刻正在发生”。fallback 与 enhanced DOM 使用同一语义、轨道定义、初始/最终几何和 reduced-motion 稳定帧。",
-      "textSha256": "5E1EE2411C75F454222C403F4B502AE7960F962B93C39F348F964CCA8DC1BEDF",
+     "textSha256": "5E1EE2411C75F454222C403F4B502AE7960F962B93C39F348F964CCA8DC1BEDF",
       "classification": "mapped",
       "atomIds": [
         "MOTION-01.PUBLIC_HOME.MOTION.04",
@@ -1507,7 +1507,7 @@
       "kind": "list-item",
       "ordinal": 6,
       "textSummary": "登录时圆环持续运行但速度降至三分之一；关闭从当前相位恢复，不重播整组入场、对象入轨或计数。",
-      "textSha256": "AE6BAD8373E96F46CB2FA06CAF31127192AF83D32AF28009AA08118CA9187EFF",
+     "textSha256": "AE6BAD8373E96F46CB2FA06CAF31127192AF83D32AF28009AA08118CA9187EFF",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -1569,7 +1569,7 @@
       "kind": "list-item",
       "ordinal": 9,
       "textSummary": "移动端等比缩放并重排轨道与对象；最外轨在窗口四边保持安全边距，不出现裁切、横向溢出、标签遮挡或触控目标过小。",
-      "textSha256": "3F4134E0FDB9A2694633939763861306890EFFF75E9E331F130042ADE4F8689F",
+     "textSha256": "3F4134E0FDB9A2694633939763861306890EFFF75E9E331F130042ADE4F8689F",
       "classification": "mapped",
       "atomIds": [
         "PUB-01.PUBLIC_HOME.FUNC.03",
@@ -1764,7 +1764,7 @@
       "kind": "list-item",
       "ordinal": 1,
       "textSummary": "桌面端登录面板从右侧进入，宽度约 460px，完整表单在一个视口内，不需要滚动寻找退出或提交。",
-      "textSha256": "9C723799BE9E92B4F7CF5073C380D92E639F322D3067328EE6860DBC7A12E507",
+     "textSha256": "9C723799BE9E92B4F7CF5073C380D92E639F322D3067328EE6860DBC7A12E507",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -1786,7 +1786,7 @@
       "kind": "list-item",
       "ordinal": 2,
       "textSummary": "首页右侧圆环作为一个场景整体左移、缩小和降亮。`1440×900` 登录态目标为约 `520px` 外径、`460px` 面板、两者可见边界间约 `32px`、垂直中心偏差不超过 `16px`；`900–1179px` 使用约 `360–430px` 外径和 `400–440px` 面板。圆环速度减至原来的约三分之一但继续运动，最外轨始终完整入窗。",
-      "textSha256": "2F338FBCE41FA71F037F0F755FEDD9BDD3D60D04113DC500916822406A6C4F52",
+     "textSha256": "2F338FBCE41FA71F037F0F755FEDD9BDD3D60D04113DC500916822406A6C4F52",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -1830,7 +1830,7 @@
       "kind": "list-item",
       "ordinal": 4,
       "textSummary": "星空 night 下登录面板使用深靛黑半透明身份边界、冷紫细边、遮挡型 blur、有偏移的黑紫软阴影、暖白正文和浅紫高对比主按钮，不得呈现白色面板；显式 day 保留协调的浅色表面。成功登录后圆环继续向左退出，登录面板扩展并转换成私人 daylight 总览；真实鉴权成功才触发该过程。",
-      "textSha256": "4C01BE5031207979BEC7EB1AE9810E40EC362834FA278F516F88EAF351BB799D",
+     "textSha256": "4C01BE5031207979BEC7EB1AE9810E40EC362834FA278F516F88EAF351BB799D",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -1893,7 +1893,7 @@
       "kind": "list-item",
       "ordinal": 7,
       "textSummary": "`<=899px` 使用稳定星盘背景上的全屏登录任务层，表单最大宽度 `420px`，night 保持深色；圆环只作为低对比背景且最外轨完整入窗，返回操作固定可见，打开任务层不得重启星盘。",
-      "textSha256": "BB08EA15170A78AF97E13091444CD994D8077C6DBFC0E026E7D602663B65EB56",
+     "textSha256": "BB08EA15170A78AF97E13091444CD994D8077C6DBFC0E026E7D602663B65EB56",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -1917,7 +1917,7 @@
       "kind": "list-item",
       "ordinal": 8,
       "textSummary": "登录打开、关闭、反向关闭或重开不得重启左侧标题、五对象 playhead 或用户主题；LoginWindow 的字段、验证、请求、成功鉴权、`Esc`、focus trap、返回、460px 桌面与移动全屏合同保持不变。",
-      "textSha256": "6050765D071255CDCBEF55E42A41CBEAA041071FB9B775A4932E160140718F64",
+     "textSha256": "6050765D071255CDCBEF55E42A41CBEAA041071FB9B775A4932E160140718F64",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -4456,7 +4456,7 @@
       "kind": "list-item",
       "ordinal": 5,
       "textSummary": "快速连续操作从当前动画进度衔接，不重播、不排队。",
-      "textSha256": "60062FE451A19CCF135CD84F9BEFBFC64608134C7660B6142E8181FF51DE48F6",
+     "textSha256": "60062FE451A19CCF135CD84F9BEFBFC64608134C7660B6142E8181FF51DE48F6",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -4478,7 +4478,7 @@
       "kind": "list-item",
       "ordinal": 6,
       "textSummary": "节奏 token：反馈 120ms、局部状态 180ms、私人任务区 240ms、任务层进入/退出 320/220ms、登录打开/关闭 480/360ms、孔径 680ms、昼夜变化 900ms。退出快于进入，不使用反射性 bounce、elastic 或弹簧回弹。",
-      "textSha256": "AB2037E468AB815DD4C631A44C6E9963E166798EC9974E173EAB91C5FC4312F4",
+     "textSha256": "AB2037E468AB815DD4C631A44C6E9963E166798EC9974E173EAB91C5FC4312F4",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -4540,7 +4540,7 @@
       "kind": "list-item",
       "ordinal": 9,
       "textSummary": "左侧标题入场同样由公共 GSAP owner 独占，只动画 `transform`、`opacity` 与极小有界 blur。完整标题及其 accessible name 从首帧可读；逐字视觉 span 对读屏隐藏。无 JS/增强失败时直接显示完整标题；reduced-motion 直接稳定显示完整标题且不运行循环光标。",
-      "textSha256": "1094036BB8A0C2309BB3740581B4242845E8A8256C33AAF64F7E87F3CE999D1B",
+     "textSha256": "1094036BB8A0C2309BB3740581B4242845E8A8256C33AAF64F7E87F3CE999D1B",
       "classification": "mapped",
       "atomIds": [
         "MOTION-01.PUBLIC_HOME.MOTION.04",
@@ -4581,7 +4581,7 @@
       "kind": "list-item",
       "ordinal": 11,
       "textSummary": "四条 masked-gradient 圆环各自持续旋转；定位层、路径 counter、upright counter 和图标 material 分层拥有 transform，任何单节点不得由 CSS 与 GSAP 同时写 transform。登录整组位移/缩放不能重置各圈或对象 playhead。",
-      "textSha256": "63038A0374C4E5A3EC35C68A4D3663096EBCF72E0E54B0D5CCFB54F5CC12D9D6",
+     "textSha256": "63038A0374C4E5A3EC35C68A4D3663096EBCF72E0E54B0D5CCFB54F5CC12D9D6",
       "classification": "mapped",
       "atomIds": [
         "MOTION-01.PUBLIC_DOING.MOTION.03",
@@ -4618,7 +4618,7 @@
       "kind": "list-item",
       "ordinal": 1,
       "textSummary": "正式验收视口固定为 `1440×900`、`1024×768`、`768×1024` 和 `390×844`，另以 320 CSS px 做回流压力测试。宽屏同时展示主工作区和上下文；紧凑桌面把私人头部分成身份/工具行与完整导航行；平板按主任务重排；手机一次呈现一个任务层。页面本身不得横向溢出，只有带可见提示和键盘操作的内部导航带/时间轴可以横向滚动。",
-      "textSha256": "B4696DD0A12AE2AB55451E9DF09053ED68D50321011FA7C5FFAB60D2A1AD11A5",
+     "textSha256": "B4696DD0A12AE2AB55451E9DF09053ED68D50321011FA7C5FFAB60D2A1AD11A5",
       "classification": "mapped",
       "atomIds": [
         "SPACE-01.PUBLIC_HOME.RESP.05",
@@ -4771,7 +4771,7 @@
       "kind": "list-item",
       "ordinal": 9,
       "textSummary": "最低符合 WCAG 2.2 AA，正文对比度不低于 4.5:1、关键非文字边界不低于 3:1，并采用更严格的 44×44 主要触控目标、200% 文本缩放、320 CSS px 回流和不依赖颜色的状态表达。",
-      "textSha256": "BB189772EA21AD9CE8AA6E798F2620A7EA5496C8CEB2D8307FCB54ABBF12C82F",
+     "textSha256": "BB189772EA21AD9CE8AA6E798F2620A7EA5496C8CEB2D8307FCB54ABBF12C82F",
       "classification": "mapped",
       "atomIds": [
         "SPACE-01.PUBLIC_HOME.RESP.05",
@@ -8402,7 +8402,7 @@
       "kind": "list-item",
       "ordinal": 1,
       "textSummary": "公开首页、登录、公开详情与返回属于“保留并演进”：保留四轨、五生活对象、近黑星空、点击进入和返回恢复；按 ADR-029 使用参考锁定的四条 masked-gradient 同心圆环、持续自转、分层螺旋入轨、`05 / 此刻正在发生` 中心、完整入窗比例和主题化登录身份边界，同时替换旧偏心 authored ellipse、右缘裁切、厚圆章、悬停才显示标签、中央黑球/时间脉冲、白色夜间登录框、右下暂停胶囊、白闪和对象脱轨实现。",
-      "textSha256": "A0B4B99B8FDBE6D501C4BF216BA80FF5AEEE1F8B02A3722D12F24E3D91A1C47B",
+     "textSha256": "A0B4B99B8FDBE6D501C4BF216BA80FF5AEEE1F8B02A3722D12F24E3D91A1C47B",
       "classification": "mapped",
       "atomIds": [
         "MOTION-01.PUBLIC_HOME.MOTION.04",
@@ -8528,7 +8528,7 @@
       "kind": "list-item",
       "ordinal": 3,
       "textSummary": "公开默认/常用夜景：`#020306`、ink `#F5F2EA`、muted `#B3BCC8`、track `#526678`，以低对比但可辨的四级轨道透明度、各异断续节奏和克制暖紫星光为主；用户可切换的兼容日景保留 `#F3F8F5`、warm `#FFD9A8`、sky `#BADFFF`、leaf `#D8F0E2`、ink `#15212A`、track `#7B9186`，但不与夜景平分视觉主次。五对象色依次为 `#C78A17`、`#2F68C7`、`#2A7A56`、`#C2564F`、`#6857A8`。",
-      "textSha256": "30B4B6A3E620EF5763706CA27F5765FE19E006AF377FE56D6F9646319C0C3A81",
+     "textSha256": "30B4B6A3E620EF5763706CA27F5765FE19E006AF377FE56D6F9646319C0C3A81",
       "classification": "mapped",
       "atomIds": [
         "PUB-01.PUBLIC_HOME.FUNC.02",
@@ -22351,7 +22351,7 @@
       "kind": "list-item",
       "ordinal": 2,
       "textSummary": "Public night is `#020306`; public geometry is the ADR-029 reference-locked four-ring system on a `1132×750` stage with center `(792,371)`, scale `.85`, base diameters `353/501/649/797` and one uncompensated 1px masked gradient, never three tidy SVG paths or the rejected offset-e…",
-      "textSha256": "6D8F4B67CE05A7F86CF2B5535095383D944B1EB7A70640F70D03EFBBB714E290",
+     "textSha256": "6D8F4B67CE05A7F86CF2B5535095383D944B1EB7A70640F70D03EFBBB714E290",
       "classification": "mapped",
       "atomIds": [
         "PUB-01.PUBLIC_HOME.FUNC.03",
@@ -22393,7 +22393,7 @@
       "kind": "list-item",
       "ordinal": 4,
       "textSummary": "The public center is `05 / 此刻正在发生`, never the `PRIVATE SYSTEM` black sphere, a dashboard pulse or a second information widget. Object labels remain visible at every breakpoint.",
-      "textSha256": "DE0D4BA16519E1697C81AA15F952D9A0A80AD090B7FAB4A60C7D5A1258174480",
+     "textSha256": "DE0D4BA16519E1697C81AA15F952D9A0A80AD090B7FAB4A60C7D5A1258174480",
       "classification": "mapped",
       "atomIds": [
         "DATA-01.DATA_MODEL.TXN.01",
@@ -22413,7 +22413,7 @@
       "kind": "list-item",
       "ordinal": 5,
       "textSummary": "The outer ring must remain wholly inside the viewport safe inset in default, login, day/night, reduced-motion and every required breakpoint; clipping or hiding overflow is not acceptance evidence.",
-      "textSha256": "E7203F734344EDF5DB283BFF550C21AB146455D6199DD8769E6B24ADD971FDF8",
+     "textSha256": "E7203F734344EDF5DB283BFF550C21AB146455D6199DD8769E6B24ADD971FDF8",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.A11Y.03",
@@ -22435,7 +22435,7 @@
       "kind": "list-item",
       "ordinal": 6,
       "textSummary": "The four tracks rotate `CCW30/CW40/CW50/CCW60`. Five objects use the approved 0.72-second staggered `0.3R / A-180°` spiral contract with independent path/upright/material counters, then join the live rings without a frame jump. Pause/resume lives in the header; focus pauses the …",
-      "textSha256": "6650D986D0EFBDFD9942540CAF075D3CA5F38EE4C0CA15E5FDADC0FE84E38666",
+     "textSha256": "6650D986D0EFBDFD9942540CAF075D3CA5F38EE4C0CA15E5FDADC0FE84E38666",
       "classification": "mapped",
       "atomIds": [
         "DATA-01.DATA_MODEL.DATA.02",
@@ -22456,7 +22456,7 @@
       "kind": "list-item",
       "ordinal": 7,
       "textSummary": "Night login uses a deep indigo translucent identity surface, not a white panel. At 1440px the target relationship is approximately `520px` outer ring, `32px` visible gap and `460px` login panel; compact and full-screen task-layer variants must preserve the same hierarchy and com…",
-      "textSha256": "66BE369DCA1DF70F4ADC8D0D0167AB18458F494C5151D54678F07D311684304E",
+     "textSha256": "66BE369DCA1DF70F4ADC8D0D0167AB18458F494C5151D54678F07D311684304E",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.A11Y.02",
@@ -22578,7 +22578,7 @@
       "kind": "list-item",
       "ordinal": 13,
       "textSummary": "`1440×900`, `1024×768`, `768×1024` and `390×844` are mandatory evidence viewports; 200% text zoom and 320 CSS px reflow are supplemental gates. Tablet and mobile reorder by task priority instead of shrinking desktop cards.",
-      "textSha256": "EEFF6777B07B81BED5F59F5D200F4970F6F17AAE5F2E015DFF087FD7CFF3B4BD",
+     "textSha256": "EEFF6777B07B81BED5F59F5D200F4970F6F17AAE5F2E015DFF087FD7CFF3B4BD",
       "classification": "mapped",
       "atomIds": [
         "DATA-01.DATA_MODEL.SEC.01",
@@ -59724,7 +59724,7 @@
       "kind": "list-item",
       "ordinal": 35,
       "textSummary": "ADR-029 correction keeps the public home default/common state at night without changing explicit day override or private daylight; uses the reference-locked `1132×750` four-ring stage at center `(792,371)`, scale `.85`, base diameters `353/501/649/797`, exact `CCW30/CW40/CW50/CC…",
-      "textSha256": "3C48FEAE2DD52BCA0AEEFE4C29AE49ECF36566EBE2F37C71A8AA0F89E6FEDD94",
+     "textSha256": "3C48FEAE2DD52BCA0AEEFE4C29AE49ECF36566EBE2F37C71A8AA0F89E6FEDD94",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -59907,7 +59907,7 @@
       "kind": "paragraph",
       "ordinal": 3,
       "textSummary": "Before this full matrix, the approved ADR-029 visual-correction atom must complete its own RED/GREEN and focused gate: default night/manual day/private daylight; exact reference-locked four-ring geometry and full-viewport safe inset; five-to-four mapping; approved spiral-arrival…",
-      "textSha256": "04A7165744AA6F89D8C5BECEF9B948C3E0C73BC1A51FFE20E286A81FAE3F9808",
+     "textSha256": "04A7165744AA6F89D8C5BECEF9B948C3E0C73BC1A51FFE20E286A81FAE3F9808",
       "classification": "mapped",
       "atomIds": [
         "AUTH-01.LOGIN_OVERLAY.FUNC.02",
@@ -59965,7 +59965,7 @@
       "kind": "paragraph",
       "ordinal": 5,
       "textSummary": "**ADR-029 focused atom status (2026-08-24, production and visual acceptance complete):** the user approved the final composition and requested removal of only the visible center light orb. The regenerated production result keeps the plain `05 / 此刻正在发生` semantic center, normalize…",
-      "textSha256": "F503DC6E6EBBF2C7146335506424891F57884B2F0D082AC2356D737DE9A25902",
+     "textSha256": "F503DC6E6EBBF2C7146335506424891F57884B2F0D082AC2356D737DE9A25902",
       "classification": "mapped",
       "atomIds": [
         "PUB-01.PUBLIC_HOME.FUNC.02",
@@ -61881,5 +61881,16 @@
       "reason": null,
       "supersededBy": null
     }
-  ]
+  ],
+  "review": {
+    "status": "primary-executor-reviewed",
+    "reviewedOn": "2026-08-21",
+    "ruleCounts": {
+      "structural-heading": 243,
+      "document-provenance-metadata": 7,
+      "normative-default": 2483,
+      "structural-table-header": 7,
+      "structural-plan-label": 121
+    }
+  }
 }

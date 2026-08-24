@@ -20,8 +20,40 @@ media:
     root: /var/lib/lifeops/media
     persistence:
       enabled: true
+      storageClass: ""
       accessModes:
         - ReadWriteMany
+
+mysql:
+  persistence:
+    storageClass: ""
+
+platform:
+  kubernetes:
+    enabled: false
+    baseUrl: https://kubernetes.default.svc
+    deepLinkUrl: ""
+  integrations:
+    prometheus:
+      enabled: false
+      baseUrl: ""
+      deepLinkUrl: ""
+    alertmanager:
+      enabled: false
+      baseUrl: ""
+      deepLinkUrl: ""
+    elasticsearch:
+      enabled: false
+      baseUrl: ""
+      deepLinkUrl: ""
+    github:
+      enabled: false
+      baseUrl: ""
+      deepLinkUrl: ""
+    argoCd:
+      enabled: false
+      baseUrl: ""
+      deepLinkUrl: ""
 
 httpRoute:
   enabled: true

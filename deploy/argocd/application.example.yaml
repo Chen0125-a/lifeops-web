@@ -9,14 +9,14 @@ spec:
     server: https://kubernetes.default.svc
     namespace: lifeops
   sources:
-    - repoURL: https://github.com/REPLACE_ME/lifeops.git
+    - repoURL: https://github.com/Chen0125-a/lifeops-web.git
       targetRevision: main
       path: deploy/helm/lifeops-web
       helm:
         releaseName: lifeops
         valueFiles:
           - $values/deploy/gitops/environments/production/values.yaml
-    - repoURL: https://github.com/REPLACE_ME/lifeops.git
+    - repoURL: https://github.com/Chen0125-a/lifeops-web.git
       targetRevision: main
       ref: values
   syncPolicy:

@@ -4397,7 +4397,7 @@
         "implementation_complete",
         "focused_green"
       ],
-      "currentStep": 3,
+      "currentStep": 7,
       "declaredPaths": [
         ".gitignore",
         "deploy/argocd/application.example.yaml",
@@ -4419,7 +4419,12 @@
         "scripts/release-production.test.ps1",
         "scripts/verify-execution-contract.test.mjs",
         "scripts/verify-release-manifest.ps1",
-        "scripts/verify-release-manifest.test.ps1"
+        "scripts/verify-release-manifest.test.ps1",
+        "tests/adr029-login-orbit.spec.ts",
+        "tests/helpers/screenshotToPath.ts",
+        "tests/p2-t3-evidence.spec.ts",
+        "tests/public-final.spec.ts",
+        "tests/visual-capture.spec.ts"
       ],
       "changedPaths": [
         "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
@@ -4436,7 +4441,13 @@
         "scripts/release-production.test.ps1",
         "scripts/verify-execution-contract.test.mjs",
         "scripts/verify-release-manifest.ps1",
-        "scripts/verify-release-manifest.test.ps1"
+        "scripts/verify-release-manifest.test.ps1",
+        "outputs/final/data-rehearsal-summary.md",
+        "tests/adr029-login-orbit.spec.ts",
+        "tests/helpers/screenshotToPath.ts",
+        "tests/p2-t3-evidence.spec.ts",
+        "tests/public-final.spec.ts",
+        "tests/visual-capture.spec.ts"
       ],
       "extraPathReasons": {
         "scripts/verify-execution-contract.test.mjs": "The real-manifest invariant is synchronized to the fresh P6-T5 full-quality evidence count and atom-derived 30/10/4 rollup; no validator behavior is weakened."
@@ -4533,8 +4544,8 @@
       "evidenceIds": [],
       "externalBlockers": [
         {
-          "code": "GIT_ROOT_MISSING",
-          "fact": "git rev-parse --show-toplevel exits 1 because the fixed workspace is not a repository; git init remains unauthorized."
+          "code": "GITHUB_ACTIONS_UHUB_SECRETS_MISSING",
+          "fact": "The private repository and verified main branch exist, release preflight passes 20/0/0/1, and local UHub Docker authentication is usable; GitHub Actions currently has no UHUB_USERNAME or UHUB_PASSWORD secret names, so the pinned release cannot authenticate to UHub until the user explicitly authorizes copying the local credential into repository secrets."
         }
       ]
     }

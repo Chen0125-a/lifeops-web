@@ -144,10 +144,13 @@ test('the center keeps its semantic count without rendering a light orb', async 
   await expect(center).toContainText('05')
   await expect(center).toContainText('此刻正在发生')
 
-  const visual = await aperture.evaluate((element) => {
+  await expect.poll(async () => aperture.evaluateAll((elements) => {
+    const element = elements.find((candidate) => candidate.isConnected)
+    if (!element) return null
     const style = getComputedStyle(element)
     const before = getComputedStyle(element, '::before')
     const after = getComputedStyle(element, '::after')
+    if (!style.backgroundImage) return null
     return {
       backgroundImage: style.backgroundImage,
       borderTopWidth: style.borderTopWidth,
@@ -155,9 +158,7 @@ test('the center keeps its semantic count without rendering a light orb', async 
       beforeContent: before.content,
       afterContent: after.content,
     }
-  })
-
-  expect(visual).toEqual({
+  }), { timeout: 5_000 }).toEqual({
     backgroundImage: 'none',
     borderTopWidth: '0px',
     boxShadow: 'none',

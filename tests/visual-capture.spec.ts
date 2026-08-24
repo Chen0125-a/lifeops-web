@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 import { contentVisualRoutes, installPrivateCoreFixture, privateCoreRoutes } from './private-core-fixtures'
 
 const outputDir = resolve('outputs')
@@ -38,7 +39,7 @@ async function renderFilmstrip(page: Page, title: string, frames: FilmstripFrame
     `<figure><figcaption>${item.label}</figcaption><img alt="${item.label}" src="data:image/png;base64,${item.image.toString('base64')}"></figure>`
   )).join('')}</section></main></body></html>`)
   await page.evaluate(() => scrollTo(0, 0))
-  await page.screenshot({ path: resolve(directory, filename), fullPage: true })
+  await screenshotToPath(page, { path: resolve(directory, filename), fullPage: true })
 }
 
 async function renderContactSheet(page: Page, title: string, frames: FilmstripFrame[], filename: string) {
@@ -56,7 +57,7 @@ async function renderContactSheet(page: Page, title: string, frames: FilmstripFr
     `<figure><figcaption>${item.label}</figcaption><img alt="${item.label}" src="data:image/png;base64,${item.image.toString('base64')}"></figure>`
   )).join('')}</section></main></body></html>`)
   await page.evaluate(() => scrollTo(0, 0))
-  await page.screenshot({ path: resolve(finalOutputDir, filename), fullPage: true, animations: 'disabled' })
+  await screenshotToPath(page, { path: resolve(finalOutputDir, filename), fullPage: true, animations: 'disabled' })
 }
 
 async function visualFrame(page: Page, label: string): Promise<FilmstripFrame> {
@@ -123,37 +124,37 @@ test('captures the public themes and the daylight workbench', async ({ page }) =
   })
   await page.goto('/')
   await expect(page.getByRole('heading', { name: /把日子/ })).toBeVisible()
-  await page.screenshot({ path: resolve(outputDir, 'lifeops-public-day.png'), fullPage: false })
+  await screenshotToPath(page, { path: resolve(outputDir, 'lifeops-public-day.png'), fullPage: false })
   await page.getByRole('button', { name: '登录 LifeOps' }).click()
   await expect(page.getByLabel('账号')).toBeFocused()
   await page.waitForTimeout(320)
-  await page.screenshot({ path: resolve(outputDir, 'lifeops-public-login.png'), fullPage: false })
+  await screenshotToPath(page, { path: resolve(outputDir, 'lifeops-public-login.png'), fullPage: false })
   await page.getByRole('button', { name: '关闭登录窗口' }).click()
   await expect(page.locator('[data-public-scene="rest"]')).toBeVisible()
-  await page.screenshot({ path: resolve(outputDir, 'lifeops-public-flow.png'), fullPage: false })
+  await screenshotToPath(page, { path: resolve(outputDir, 'lifeops-public-flow.png'), fullPage: false })
 
   await page.evaluate(() => localStorage.setItem('lifeops:theme-override', JSON.stringify({ theme: 'night', expiresAt: Date.now() + 86_400_000 })))
   await page.goto('/')
   await expect(page.locator('[data-public-theme="night"]')).toBeVisible()
-  await page.screenshot({ path: resolve(outputDir, 'lifeops-public-night.png'), fullPage: false })
+  await screenshotToPath(page, { path: resolve(outputDir, 'lifeops-public-night.png'), fullPage: false })
 
   await page.evaluate(() => sessionStorage.setItem('lifeops:session:v1', JSON.stringify({ mode: 'local-preview', account: 'delivery@lifeops.local' })))
   await page.goto('/app')
   await expect(page.locator('[data-private-shell]')).toBeVisible()
   await page.waitForTimeout(260)
-  await page.screenshot({ path: resolve(outputDir, 'lifeops-private-today.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(outputDir, 'lifeops-private-today.png'), fullPage: true })
   await page.goto('/app/knowledge')
   await expect(page.locator('[data-workspace-route="/app/knowledge"]')).toBeVisible()
   await page.waitForTimeout(260)
-  await page.screenshot({ path: resolve(outputDir, 'lifeops-private-knowledge.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(outputDir, 'lifeops-private-knowledge.png'), fullPage: true })
 
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto('/')
-  await page.screenshot({ path: resolve(outputDir, 'lifeops-public-mobile.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(outputDir, 'lifeops-public-mobile.png'), fullPage: true })
   await page.goto('/app')
   await expect(page.locator('[data-private-shell]')).toBeVisible()
   await page.waitForTimeout(260)
-  await page.screenshot({ path: resolve(outputDir, 'lifeops-private-mobile.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(outputDir, 'lifeops-private-mobile.png'), fullPage: true })
 })
 
 test('captures every original private-core page at desktop, mobile and overview tablets', async ({ page }) => {
@@ -170,7 +171,7 @@ test('captures every original private-core page at desktop, mobile and overview 
       await page.goto(route.path)
       await expect(page.getByRole('heading', { name: route.heading, level: 1, exact: true })).toBeVisible()
       await page.waitForTimeout(300)
-      await page.screenshot({
+      await screenshotToPath(page, {
         path: resolve(privateCoreOutputDir, `p3-t7-${route.slug}-${target.suffix}.png`),
         fullPage: false,
       })
@@ -181,13 +182,13 @@ test('captures every original private-core page at desktop, mobile and overview 
   await page.goto('/app/overview')
   await expect(page.getByRole('heading', { name: '总览', level: 1 })).toBeVisible()
   await page.waitForTimeout(300)
-  await page.screenshot({ path: resolve(privateCoreOutputDir, 'p3-t7-overview-tablet-1024.png'), fullPage: false })
+  await screenshotToPath(page, { path: resolve(privateCoreOutputDir, 'p3-t7-overview-tablet-1024.png'), fullPage: false })
 
   await page.setViewportSize({ width: 768, height: 1024 })
   await page.goto('/app/overview')
   await expect(page.getByRole('heading', { name: '总览', level: 1 })).toBeVisible()
   await page.waitForTimeout(300)
-  await page.screenshot({ path: resolve(privateCoreOutputDir, 'p3-t7-overview-tablet-768.png'), fullPage: false })
+  await screenshotToPath(page, { path: resolve(privateCoreOutputDir, 'p3-t7-overview-tablet-768.png'), fullPage: false })
 })
 
 test('captures normal and reduced route plus inspector filmstrips from first browser paint', async ({ page }) => {
@@ -257,7 +258,7 @@ test('captures P4 knowledge, Obsidian, publishing and public surfaces plus inter
         ? currentPanel.getByRole('heading', { name: route.heading, level: 1, exact: true })
         : page.getByRole('heading', { name: route.heading, level: 1, exact: true }).last()
       await expect(heading).toBeVisible()
-      await page.screenshot({ path: resolve(contentOutputDir, `p4-t6-${route.slug}-${viewport.suffix}.png`), fullPage: true })
+      await screenshotToPath(page, { path: resolve(contentOutputDir, `p4-t6-${route.slug}-${viewport.suffix}.png`), fullPage: true })
     }
   }
 
@@ -327,14 +328,14 @@ test('captures P5 platform, global tools, settings categories and normal/reduced
     await page.setViewportSize({ width: viewport.width, height: viewport.height })
     await page.goto('/app/platform?tab=overview')
     await expect(page.getByRole('region', { name: '平台连接状态' })).toBeVisible()
-    await page.screenshot({ path: resolve(platformGlobalOutputDir, `platform-overview-${viewport.suffix}.png`), fullPage: true })
+    await screenshotToPath(page, { path: resolve(platformGlobalOutputDir, `platform-overview-${viewport.suffix}.png`), fullPage: true })
   }
 
   await page.setViewportSize({ width: 640, height: 900 })
   await page.goto('/app/platform?tab=overview')
   await page.evaluate(() => { document.documentElement.style.zoom = '200%' })
   await expect(page.getByRole('region', { name: '平台连接状态' })).toBeVisible()
-  await page.screenshot({ path: resolve(platformGlobalOutputDir, 'platform-overview-zoom-200.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(platformGlobalOutputDir, 'platform-overview-zoom-200.png'), fullPage: true })
   await page.evaluate(() => { document.documentElement.style.zoom = '' })
 
   const platformTabs = [
@@ -352,7 +353,7 @@ test('captures P5 platform, global tools, settings categories and normal/reduced
       await page.goto(`/app/platform?tab=${tab}`)
       await expect(page.getByRole('tab', { name: label, exact: true })).toHaveAttribute('aria-selected', 'true')
       await expect(page.getByRole('region', { name: region })).toBeVisible()
-      await page.screenshot({ path: resolve(platformGlobalOutputDir, `platform-${tab}-${viewport.suffix}.png`), fullPage: true })
+      await screenshotToPath(page, { path: resolve(platformGlobalOutputDir, `platform-${tab}-${viewport.suffix}.png`), fullPage: true })
     }
   }
 
@@ -368,11 +369,11 @@ test('captures P5 platform, global tools, settings categories and normal/reduced
     await page.getByRole('button', { name: '打开全局搜索' }).click()
     await page.getByRole('searchbox', { name: '搜索 LifeOps' }).fill('平台')
     await expect(page.getByRole('option', { name: '任务 平台验收' })).toBeVisible()
-    await page.screenshot({ path: resolve(platformGlobalOutputDir, `global-search-${viewport.suffix}.png`), fullPage: true })
+    await screenshotToPath(page, { path: resolve(platformGlobalOutputDir, `global-search-${viewport.suffix}.png`), fullPage: true })
     await page.keyboard.press('Escape')
     await page.getByRole('button', { name: '快速记录' }).click()
     await expect(page.getByRole('dialog', { name: '快速记录' })).toBeVisible()
-    await page.screenshot({ path: resolve(platformGlobalOutputDir, `quick-create-${viewport.suffix}.png`), fullPage: true })
+    await screenshotToPath(page, { path: resolve(platformGlobalOutputDir, `quick-create-${viewport.suffix}.png`), fullPage: true })
     await page.keyboard.press('Escape')
   }
 
@@ -386,7 +387,7 @@ test('captures P5 platform, global tools, settings categories and normal/reduced
       await page.goto('/app/settings')
       await settingsCategory(page, category).click()
       await expect(settingsCategory(page, category)).toHaveAttribute('aria-current', 'page')
-      await page.screenshot({ path: resolve(platformGlobalOutputDir, `settings-${String(index + 1).padStart(2, '0')}-${viewport.suffix}.png`), fullPage: true })
+      await screenshotToPath(page, { path: resolve(platformGlobalOutputDir, `settings-${String(index + 1).padStart(2, '0')}-${viewport.suffix}.png`), fullPage: true })
     }
   }
 
