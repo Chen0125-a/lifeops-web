@@ -1,0 +1,339 @@
+/* finesse · register=product/operator · canvas=daylight-ledger · density=7 · motion=feedback-only */
+:root {
+  --commerce-amber: #a26619;
+  --commerce-amber-soft: color-mix(in srgb, #d99b3d 13%, transparent);
+  --commerce-cyan: #287586;
+  --commerce-cyan-soft: color-mix(in srgb, #287586 10%, transparent);
+  --commerce-rose: #9f4a51;
+}
+
+.life-commerce-workspace {
+  position: relative;
+  min-width: 0;
+  min-height: calc(100vh - 154px);
+  padding: clamp(30px, 4vw, 60px) clamp(22px, 5vw, 76px) 88px;
+  color: var(--private-ink);
+  background:
+    radial-gradient(circle at 7% 0%, color-mix(in srgb, var(--life-sun) 10%, transparent), transparent 29rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--private-canvas) 95%, #fff) 0%, var(--private-canvas) 100%);
+}
+
+.life-commerce-workspace button,
+.life-commerce-workspace input,
+.life-commerce-workspace select,
+.life-commerce-workspace textarea { font: inherit; }
+.life-commerce-workspace button { min-height: 42px; padding: 0 13px; border: 1px solid var(--private-line); border-radius: var(--radius-control); color: var(--private-secondary); background: color-mix(in srgb, var(--private-surface) 84%, transparent); font-size: 12px; font-weight: 650; }
+.life-commerce-workspace button:hover { border-color: var(--private-action); color: var(--private-action); }
+.life-commerce-workspace button:disabled { cursor: not-allowed; opacity: .48; }
+.life-commerce-workspace button:focus-visible,
+.life-commerce-workspace input:focus-visible,
+.life-commerce-workspace select:focus-visible,
+.life-commerce-workspace textarea:focus-visible { outline: 2px solid var(--private-action); outline-offset: 2px; }
+
+.life-commerce-heading { display: flex; align-items: end; justify-content: space-between; gap: clamp(28px, 5vw, 76px); padding-bottom: clamp(28px, 4vw, 48px); border-bottom: 1px solid var(--private-line-strong); }
+.life-commerce-heading > div:first-child { max-width: 780px; }
+.life-commerce-heading > div:first-child > span,
+.life-commerce-workspace section > header > div > span { color: var(--commerce-cyan); font-size: 10px; font-weight: 740; letter-spacing: .14em; text-transform: uppercase; }
+.life-commerce-heading h1 { margin: 8px 0 0; font-size: clamp(52px, 7vw, 92px); font-weight: 530; letter-spacing: -.075em; line-height: .91; text-wrap: balance; }
+.life-commerce-heading h1:focus-visible { outline: none; }
+.life-commerce-heading p { max-width: 64ch; margin: 18px 0 0; color: var(--private-secondary); font-size: 14px; line-height: 1.72; }
+.life-commerce-heading > button { border-color: var(--private-action); color: #fff; background: var(--private-action); }
+.life-commerce-heading__stamp { display: grid; min-width: 150px; justify-items: end; padding: 0 0 4px 28px; border-left: 1px solid var(--private-line-strong); }
+.life-commerce-heading__stamp span { color: var(--private-secondary); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.life-commerce-heading__stamp strong { margin-top: 3px; font-size: 64px; font-weight: 450; letter-spacing: -.08em; line-height: 1; }
+.life-commerce-filter { margin: 20px 0 0; padding: 10px 0; border-bottom: 1px dashed var(--private-line); color: var(--commerce-cyan); font-size: 12px; font-weight: 670; }
+
+.life-commerce-workspace section > header { display: flex; min-height: 72px; align-items: end; justify-content: space-between; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--private-line); }
+.life-commerce-workspace section > header h2 { margin: 5px 0 0; font-size: 24px; font-weight: 570; letter-spacing: -.04em; }
+.life-commerce-workspace section > header p { max-width: 34rem; margin: 0; color: var(--private-secondary); font-size: 11px; text-align: right; }
+
+.life-commerce-urgent { margin-top: 28px; border-top: 2px solid var(--commerce-amber); }
+.life-commerce-urgent > ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+.life-commerce-urgent > ol > li { display: grid; min-height: 112px; align-content: center; gap: 7px; padding: 18px 22px; border-right: 1px solid var(--private-line); border-bottom: 1px solid var(--private-line); background: linear-gradient(135deg, var(--commerce-amber-soft), transparent 70%); }
+.life-commerce-urgent > ol > li:last-child { border-right: 0; }
+.life-commerce-urgent li strong { font-size: 21px; font-weight: 610; }
+.life-commerce-urgent li span { color: var(--commerce-amber); font-size: 12px; font-weight: 660; }
+.life-commerce-urgent li small { color: var(--private-secondary); }
+
+.life-commerce-ledger,
+.life-commerce-suggestions,
+.life-commerce-history,
+.life-budget-summary,
+.life-analytics-chart,
+.life-export-section,
+.life-import-section { padding-top: 30px; border-bottom: 1px solid var(--private-line-strong); }
+.life-commerce-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.life-commerce-groups > section { min-width: 0; padding: 22px 24px 28px 0; border-right: 1px solid var(--private-line); }
+.life-commerce-groups > section:nth-child(even) { padding-right: 0; padding-left: 24px; border-right: 0; }
+.life-commerce-groups h3 { margin: 0 0 14px; color: var(--private-secondary); font-size: 12px; font-weight: 690; }
+.life-commerce-groups ol,
+.life-commerce-suggestions > ol,
+.life-budget-summary > ol,
+.life-export-manifest > ol { margin: 0; padding: 0; list-style: none; }
+.life-commerce-groups li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 18px; min-height: 82px; border-top: 1px solid var(--private-line); }
+.life-commerce-groups li > div { display: grid; min-width: 0; gap: 6px; }
+.life-commerce-groups li strong { overflow-wrap: anywhere; font-size: 14px; }
+.life-commerce-groups li span { color: var(--private-secondary); font-size: 10px; }
+.life-commerce-groups li.is-complete { opacity: .54; }
+.life-commerce-groups li button { color: var(--private-action); }
+
+.life-commerce-suggestions > ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.life-commerce-suggestions > ol > li { display: grid; grid-template-columns: minmax(140px, .65fr) minmax(0, 1.35fr); gap: 24px; min-height: 128px; align-items: center; padding: 20px 24px 20px 0; border-right: 1px solid var(--private-line); border-bottom: 1px solid var(--private-line); }
+.life-commerce-suggestions > ol > li:nth-child(even) { padding-right: 0; padding-left: 24px; border-right: 0; }
+.life-commerce-suggestions > ol > li > div { display: grid; gap: 7px; }
+.life-commerce-suggestions strong { font-size: 23px; font-weight: 560; }
+.life-commerce-suggestions > ol > li > div span { color: var(--commerce-cyan); font-size: 12px; font-weight: 670; }
+.life-commerce-suggestions ul { margin: 0; padding: 0; list-style: none; }
+.life-commerce-suggestions ul li { padding: 7px 0; border-bottom: 1px dashed var(--private-line); color: var(--private-secondary); font-size: 11px; }
+
+.life-commerce-history { padding-bottom: 28px; }
+.life-commerce-history > p { margin: 0; padding: 36px 0; color: var(--private-secondary); }
+.life-commerce-history > article { display: flex; min-height: 96px; align-items: center; justify-content: space-between; gap: 22px; }
+.life-commerce-history > article > div { display: grid; gap: 6px; }
+.life-commerce-history > article strong { font-size: 18px; }
+.life-commerce-history > article span,
+.life-commerce-history > article small { color: var(--private-secondary); }
+.life-commerce-history > article p { color: var(--life-green); font-size: 12px; }
+
+.life-commerce-notice { position: sticky; z-index: 20; bottom: 18px; width: fit-content; max-width: 100%; margin: 18px 0 0 auto; padding: 12px 15px; border: 1px solid var(--life-green); color: var(--life-green); background: color-mix(in srgb, var(--private-canvas) 95%, transparent); box-shadow: 0 16px 46px color-mix(in srgb, var(--private-ink) 13%, transparent); font-size: 12px; }
+.life-commerce-write-error,
+.life-data-error { position: fixed; z-index: 110; top: 18px; left: 50%; display: flex; align-items: center; gap: 14px; width: max-content; max-width: min(780px, calc(100vw - 32px)); margin: 0; padding: 12px 14px; border: 1px solid var(--life-red); color: var(--life-red); background: var(--private-canvas); box-shadow: 0 12px 40px color-mix(in srgb, var(--private-ink) 12%, transparent); transform: translateX(-50%); }
+.life-commerce-write-error span,
+.life-data-error p { margin: 0; color: var(--private-secondary); font-size: 12px; }
+.life-commerce-load-error,
+.life-commerce-empty { display: grid; min-height: 220px; align-content: center; justify-items: start; }
+.life-commerce-load-error strong,
+.life-commerce-empty strong { font-size: 26px; font-weight: 560; }
+.life-commerce-load-error p,
+.life-commerce-empty p { color: var(--private-secondary); line-height: 1.6; }
+.life-commerce-workspace.is-loading { display: grid; min-height: 540px; place-content: center; justify-items: center; }
+.life-commerce-loader { width: 48px; height: 48px; border: 2px solid var(--private-line); border-top-color: var(--commerce-cyan); border-radius: 50%; animation: commerce-spin .8s linear infinite; }
+@keyframes commerce-spin { to { transform: rotate(1turn); } }
+
+.life-commerce-layer { position: fixed; z-index: 92; inset: 0; }
+.life-commerce-layer > button:first-child { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 0; background: color-mix(in srgb, var(--private-ink) 19%, transparent); }
+.life-commerce-layer > section { position: absolute; inset: 0 0 0 auto; width: min(680px, 92vw); overflow-y: auto; border-left: 1px solid var(--private-line-strong); color: var(--private-ink); background: var(--private-canvas); box-shadow: -26px 0 88px color-mix(in srgb, var(--private-ink) 17%, transparent); }
+.life-commerce-layer > section > header { position: sticky; z-index: 2; top: 0; display: flex; min-height: 110px; align-items: start; justify-content: space-between; gap: 22px; padding: 26px clamp(22px, 4vw, 42px); border-bottom: 1px solid var(--private-line-strong); background: color-mix(in srgb, var(--private-canvas) 96%, transparent); backdrop-filter: blur(12px); }
+.life-commerce-layer header span { color: var(--commerce-cyan); font-size: 10px; font-weight: 740; letter-spacing: .13em; text-transform: uppercase; }
+.life-commerce-layer header h2 { margin: 7px 0 0; font-size: clamp(31px, 4vw, 48px); font-weight: 540; letter-spacing: -.055em; }
+.purchase-confirm__body { display: grid; gap: 20px; padding: 28px clamp(22px, 4vw, 42px) 84px; }
+.purchase-confirm__body > p { margin: 0; color: var(--private-secondary); line-height: 1.7; }
+.purchase-confirm__body label { display: grid; gap: 7px; color: var(--private-secondary); font-size: 12px; }
+.purchase-confirm__body input,
+.purchase-confirm__body select,
+.purchase-confirm__body textarea { min-height: 44px; padding: 9px 11px; border: 1px solid var(--private-line); border-radius: var(--radius-control); color: var(--private-ink); background: var(--private-surface); resize: vertical; }
+.purchase-confirm__body dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; border-block: 1px solid var(--private-line); }
+.purchase-confirm__body dl > div { padding: 14px; border-right: 1px solid var(--private-line); }
+.purchase-confirm__body dl > div:last-child { border-right: 0; }
+.purchase-confirm__body dt { color: var(--private-secondary); font-size: 10px; }
+.purchase-confirm__body dd { margin: 6px 0 0; font-size: 14px; font-weight: 640; }
+.purchase-confirm__body .life-commerce-check { display: flex; align-items: center; gap: 9px; }
+.purchase-confirm__body .life-commerce-check input { min-height: 0; }
+.life-commerce-layer > section > footer { position: sticky; bottom: 0; display: flex; justify-content: end; gap: 8px; padding: 14px clamp(22px, 4vw, 42px); border-top: 1px solid var(--private-line-strong); background: color-mix(in srgb, var(--private-canvas) 96%, transparent); }
+.life-commerce-layer > section > footer button:last-child { border-color: var(--private-action); color: #fff; background: var(--private-action); }
+
+.life-analytics-range { display: flex; align-items: end; gap: 12px; padding: 22px 0; border-bottom: 1px solid var(--private-line); }
+.life-analytics-range label { display: grid; gap: 6px; color: var(--private-secondary); font-size: 10px; }
+.life-analytics-range input { min-height: 42px; padding: 6px 9px; border: 1px solid var(--private-line); border-radius: var(--radius-control); color: var(--private-ink); background: var(--private-surface); }
+.life-analytics-range > button { border-color: var(--private-action); color: var(--private-action); }
+.life-analytics-range > span { padding-bottom: 12px; color: var(--private-quiet); }
+.life-analytics-totals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--private-line-strong); }
+.life-analytics-totals article { min-height: 150px; padding: 28px 28px 28px 0; border-right: 1px solid var(--private-line); }
+.life-analytics-totals article + article { padding-left: 28px; }
+.life-analytics-totals article:last-child { border-right: 0; }
+.life-analytics-totals span { color: var(--commerce-cyan); font-size: 10px; font-weight: 720; letter-spacing: .12em; text-transform: uppercase; }
+.life-analytics-totals strong { display: block; margin-top: 22px; font-size: clamp(21px, 2.6vw, 34px); font-weight: 530; letter-spacing: -.04em; }
+.life-analytics-totals p { color: var(--private-secondary); font-size: 11px; }
+.life-budget-summary > ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.life-budget-summary > ol > li { min-height: 154px; padding: 23px 26px 23px 0; border-right: 1px solid var(--private-line); border-bottom: 1px solid var(--private-line); }
+.life-budget-summary > ol > li:nth-child(even) { padding-right: 0; padding-left: 26px; border-right: 0; }
+.life-budget-summary li > div:first-child { display: flex; justify-content: space-between; gap: 18px; }
+.life-budget-summary li > div:first-child span { color: var(--private-secondary); font-size: 11px; }
+.life-budget-meter { height: 5px; margin-top: 24px; overflow: hidden; background: var(--private-line); }
+.life-budget-meter span { display: block; height: 100%; background: var(--commerce-cyan); }
+.life-budget-summary li[data-status='warning'] .life-budget-meter span,
+.life-budget-summary li[data-status='critical'] .life-budget-meter span { background: var(--commerce-amber); }
+.life-budget-summary li[data-status='exceeded'] .life-budget-meter span { background: var(--commerce-rose); }
+.life-budget-summary li p { color: var(--private-secondary); font-size: 12px; }
+.life-analytics-chart svg { width: 100%; height: 260px; margin-top: 22px; padding: 14px 0; border-bottom: 1px solid var(--private-line); overflow: visible; }
+.life-chart-axis { stroke: var(--private-line-strong); stroke-width: 1; }
+.life-chart-cash { fill: var(--commerce-cyan); }
+.life-chart-cost { fill: var(--commerce-amber); }
+.life-analytics-chart text { fill: var(--private-secondary); font-size: 10px; }
+.life-chart-legend { display: flex; flex-wrap: wrap; gap: 20px; padding: 14px 0; color: var(--private-secondary); font-size: 10px; }
+.life-chart-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.life-chart-legend i { display: inline-block; width: 13px; height: 6px; background: var(--private-line); }
+.life-chart-legend .is-cash { background: var(--commerce-cyan); }
+.life-chart-legend .is-cost { background: var(--commerce-amber); }
+.life-analytics-table-wrap { overflow-x: auto; }
+.life-analytics-table-wrap table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 12px; }
+.life-analytics-table-wrap th,
+.life-analytics-table-wrap td { padding: 15px 12px; border-top: 1px solid var(--private-line); text-align: left; }
+.life-analytics-table-wrap thead th { color: var(--private-secondary); font-size: 10px; font-weight: 650; }
+.life-analytics-table-wrap tbody th { font-variant-numeric: tabular-nums; }
+.life-analytics-table-wrap a { display: inline-block; min-height: 36px; padding-top: 9px; border-bottom: 1px solid currentColor; color: var(--private-action); }
+
+.life-data-tabs { border-bottom: 1px solid var(--private-line-strong); }
+.life-data-tabs > div { display: flex; gap: 0; }
+.life-data-tabs button { min-width: 108px; border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; }
+.life-data-tabs button[aria-selected='true'] { border-bottom-color: var(--commerce-cyan); color: var(--commerce-cyan); }
+.life-export-section > header > button { border-color: var(--private-action); color: #fff; background: var(--private-action); }
+.life-export-manifest > ol > li { padding: 24px 0; border-bottom: 1px solid var(--private-line); }
+.life-export-manifest li > header { display: flex; justify-content: space-between; gap: 20px; }
+.life-export-manifest li > header > div { display: grid; gap: 5px; }
+.life-export-manifest li > header span,
+.life-export-manifest time { color: var(--private-secondary); font-size: 10px; }
+.life-export-manifest dl,
+.life-import-preview dl { display: grid; grid-template-columns: .45fr 1.7fr 1fr; margin: 18px 0 0; border-block: 1px solid var(--private-line); }
+.life-export-manifest dl > div,
+.life-import-preview dl > div { min-width: 0; padding: 13px 14px; border-right: 1px solid var(--private-line); }
+.life-export-manifest dl > div:last-child,
+.life-import-preview dl > div:last-child { border-right: 0; }
+.life-export-manifest dt,
+.life-import-preview dt { color: var(--private-secondary); font-size: 10px; }
+.life-export-manifest dd,
+.life-import-preview dd { margin: 6px 0 0; overflow-wrap: anywhere; font-size: 11px; font-weight: 620; }
+.life-export-manifest li > p { color: var(--private-secondary); font-size: 10px; overflow-wrap: anywhere; }
+.life-import-form { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(240px, .5fr); gap: 18px 24px; padding: 28px 0; border-bottom: 1px solid var(--private-line-strong); }
+.life-import-form > label { display: grid; gap: 7px; color: var(--private-secondary); font-size: 11px; }
+.life-import-form > label:first-child { grid-row: span 3; }
+.life-import-form textarea,
+.life-import-form input { width: 100%; min-height: 44px; padding: 10px 11px; border: 1px solid var(--private-line); border-radius: var(--radius-control); color: var(--private-ink); background: var(--private-surface); resize: vertical; }
+.life-import-form textarea { min-height: 204px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; }
+.life-import-form fieldset { display: grid; gap: 8px; margin: 0; padding: 13px; border: 1px solid var(--private-line); }
+.life-import-form fieldset label { display: flex; align-items: center; gap: 8px; font-size: 11px; }
+.life-import-form > button { align-self: end; border-color: var(--private-action); color: #fff; background: var(--private-action); }
+.life-import-preview { padding: 0 0 30px; border-bottom: 1px solid var(--private-line-strong); }
+.life-import-preview > header > strong { color: var(--commerce-amber); font-size: 11px; text-transform: uppercase; }
+.life-import-errors,
+.life-import-conflicts { padding-top: 20px; }
+.life-import-errors h3,
+.life-import-conflicts h3 { margin: 0 0 12px; font-size: 15px; }
+.life-import-errors ol { margin: 0; padding: 0; list-style: none; }
+.life-import-errors li { padding: 12px 0; border-bottom: 1px solid var(--life-red); color: var(--life-red); font-size: 12px; }
+.life-import-conflicts fieldset { display: flex; flex-wrap: wrap; gap: 12px 24px; margin: 0; padding: 18px 0; border: 0; border-bottom: 1px solid var(--private-line); }
+.life-import-conflicts legend { width: 100%; padding-bottom: 12px; font-size: 13px; font-weight: 650; }
+.life-import-conflicts label { display: flex; align-items: center; gap: 7px; color: var(--private-secondary); font-size: 11px; }
+.life-import-preview > footer { display: flex; justify-content: end; padding-top: 20px; }
+.life-import-preview > footer button { border-color: var(--private-action); color: #fff; background: var(--private-action); }
+.life-data-workspace.is-embedded { min-height: 0; }
+.life-data-workspace.is-embedded .trash-workspace { margin-top: 30px; }
+
+.life-obsidian-section { padding-top: 30px; border-bottom: 1px solid var(--private-line-strong); }
+.life-obsidian-panel > header { align-items: end; }
+.life-obsidian-panel > header > p { max-width: 42rem; }
+.life-obsidian-types { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin: 0; padding: 18px 0 24px; border: 0; border-bottom: 1px solid var(--private-line); }
+.life-obsidian-types legend { padding: 0 0 12px; color: var(--private-secondary); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.life-obsidian-types label { display: flex; min-height: 44px; align-items: center; gap: 9px; padding: 0 14px; border-right: 1px solid var(--private-line); color: var(--private-secondary); font-size: 12px; }
+.life-obsidian-types label:nth-of-type(3n) { border-right: 0; }
+.life-obsidian-types input { width: 16px; height: 16px; accent-color: var(--commerce-cyan); }
+.life-obsidian-actions { display: flex; align-items: start; gap: 10px; padding: 20px 0; border-bottom: 1px solid var(--private-line-strong); }
+.life-obsidian-actions > button:last-of-type { border-color: var(--private-action); color: #fff; background: var(--private-action); }
+.life-obsidian-fallback { display: grid; min-width: min(560px, 100%); gap: 10px; }
+.life-obsidian-fallback p { margin: 0; color: var(--private-secondary); font-size: 12px; }
+.life-obsidian-fallback label { display: grid; gap: 7px; color: var(--private-secondary); font-size: 11px; }
+.life-obsidian-fallback input { max-width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--private-line); background: var(--private-surface); }
+.life-obsidian-status,
+.life-obsidian-panel > [role='alert'],
+.life-obsidian-panel > [role='status'] { width: fit-content; max-width: 100%; margin: 18px 0 0; padding: 9px 11px; border-left: 3px solid var(--commerce-cyan); color: var(--private-secondary); background: var(--commerce-cyan-soft); font-size: 11px; overflow-wrap: anywhere; }
+.life-obsidian-panel > [role='alert'] { border-left-color: var(--commerce-rose); color: var(--commerce-rose); background: color-mix(in srgb, var(--commerce-rose) 8%, transparent); }
+.life-obsidian-preview { margin-top: 26px; border-top: 2px solid var(--commerce-cyan); }
+.life-obsidian-preview > header { min-height: 64px; }
+.life-obsidian-preview > header span { color: var(--commerce-amber); font-size: 11px; }
+.life-obsidian-preview > p { margin: 0; padding: 14px 0; border-bottom: 1px dashed var(--private-line); color: var(--private-secondary); font-size: 11px; }
+.life-obsidian-preview > ol { margin: 0; padding: 0; list-style: none; }
+.life-obsidian-preview > ol > li { padding: 22px 0 26px; border-bottom: 1px solid var(--private-line-strong); }
+.life-obsidian-preview > ol > li > header { display: flex; justify-content: space-between; gap: 18px; }
+.life-obsidian-preview > ol > li > header strong { font-size: 15px; }
+.life-obsidian-preview > ol > li > header span { color: var(--commerce-cyan); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 10px; }
+.life-obsidian-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 16px; border-block: 1px solid var(--private-line); }
+.life-obsidian-comparison > section { min-width: 0; padding: 16px 18px 18px 0; border-right: 1px solid var(--private-line); }
+.life-obsidian-comparison > section + section { padding-right: 0; padding-left: 18px; border-right: 0; }
+.life-obsidian-comparison h3 { margin: 0 0 10px; color: var(--private-secondary); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.life-obsidian-comparison pre { max-height: 240px; margin: 0; overflow: auto; color: var(--private-secondary); font: 11px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.life-obsidian-preview fieldset { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 16px 0 0; padding: 14px 0 0; border: 0; }
+.life-obsidian-preview fieldset legend { width: 100%; padding: 0 0 8px; font-size: 11px; font-weight: 680; }
+.life-obsidian-preview fieldset label { display: flex; align-items: center; gap: 7px; color: var(--private-secondary); font-size: 11px; }
+.life-obsidian-preview fieldset label:has(textarea) { display: grid; width: 100%; }
+.life-obsidian-preview textarea { box-sizing: border-box; width: 100%; min-height: 150px; padding: 10px; border: 1px solid var(--private-line); border-radius: var(--radius-control); color: var(--private-ink); background: var(--private-surface); font: 11px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.life-obsidian-preview > button { float: right; margin: 20px 0 30px; border-color: var(--private-action); color: #fff; background: var(--private-action); }
+.life-obsidian-preview::after { display: block; clear: both; content: ''; }
+
+@media (max-width: 980px) {
+  .life-commerce-groups,
+  .life-commerce-suggestions > ol,
+  .life-budget-summary > ol { grid-template-columns: 1fr; }
+  .life-commerce-groups > section,
+  .life-commerce-groups > section:nth-child(even),
+  .life-commerce-suggestions > ol > li,
+  .life-commerce-suggestions > ol > li:nth-child(even),
+  .life-budget-summary > ol > li,
+  .life-budget-summary > ol > li:nth-child(even) { padding-inline: 0; border-right: 0; }
+  .life-commerce-urgent > ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .life-commerce-workspace { min-height: calc(100vh - 129px); padding: 30px 24px 80px; }
+  .life-commerce-heading { align-items: start; flex-direction: column; }
+  .life-commerce-heading__stamp { min-width: 0; justify-items: start; padding: 18px 0 0; border-top: 1px solid var(--private-line); border-left: 0; }
+  .life-commerce-heading__stamp strong { font-size: 46px; }
+  .life-commerce-workspace section > header { align-items: start; flex-direction: column; }
+  .life-commerce-workspace section > header p { text-align: left; }
+  .life-commerce-urgent > ol,
+  .life-analytics-totals { grid-template-columns: 1fr; }
+  .life-commerce-urgent > ol > li,
+  .life-analytics-totals article,
+  .life-analytics-totals article + article { padding-inline: 0; border-right: 0; }
+  .life-commerce-groups li { grid-template-columns: 1fr; padding: 14px 0; }
+  .life-commerce-suggestions > ol > li { grid-template-columns: 1fr; gap: 12px; }
+  .life-commerce-history > article { align-items: start; flex-direction: column; padding: 18px 0; }
+  .life-analytics-range { align-items: stretch; flex-direction: column; }
+  .life-analytics-range > span { display: none; }
+  .life-analytics-chart svg { min-width: 0; }
+  .life-import-form { grid-template-columns: 1fr; }
+  .life-import-form > label:first-child { grid-row: auto; }
+  .life-obsidian-types { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .life-obsidian-types label:nth-of-type(3n) { border-right: 1px solid var(--private-line); }
+  .life-obsidian-types label:nth-of-type(2n) { border-right: 0; }
+  .life-obsidian-comparison { grid-template-columns: 1fr; }
+  .life-obsidian-comparison > section,
+  .life-obsidian-comparison > section + section { padding-inline: 0; border-right: 0; border-bottom: 1px solid var(--private-line); }
+  .life-obsidian-comparison > section:last-child { border-bottom: 0; }
+  .life-export-manifest dl,
+  .life-import-preview dl { grid-template-columns: 1fr; }
+  .life-export-manifest dl > div,
+  .life-import-preview dl > div { border-right: 0; border-bottom: 1px solid var(--private-line); }
+  .life-data-tabs { overflow-x: auto; }
+}
+
+@media (max-width: 620px) {
+  .life-commerce-workspace { min-height: calc(100vh - 114px); padding: 24px 16px 90px; }
+  .life-commerce-heading h1 { font-size: 48px; }
+  .life-commerce-heading > button { width: 100%; }
+  .life-commerce-layer > section { inset: 114px 0 0; width: 100%; border-left: 0; }
+  .life-commerce-layer > section > header { min-height: 90px; padding: 18px 16px; }
+  .life-commerce-layer > section > footer { padding-inline: 16px; }
+  .purchase-confirm__body { padding-inline: 16px; }
+  .purchase-confirm__body dl { grid-template-columns: 1fr; }
+  .purchase-confirm__body dl > div { border-right: 0; border-bottom: 1px solid var(--private-line); }
+  .life-commerce-write-error,
+  .life-data-error { align-items: stretch; flex-direction: column; }
+  .life-data-tabs > div { width: 100%; }
+  .life-data-tabs button { flex: 1 1 25%; min-width: 0; padding-inline: 5px; }
+  .life-obsidian-types { grid-template-columns: 1fr; }
+  .life-obsidian-types label,
+  .life-obsidian-types label:nth-of-type(2n),
+  .life-obsidian-types label:nth-of-type(3n) { padding-inline: 0; border-right: 0; border-bottom: 1px dashed var(--private-line); }
+  .life-obsidian-actions { align-items: stretch; flex-direction: column; }
+  .life-obsidian-actions > button { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .life-commerce-loader { animation: none; border-color: var(--commerce-cyan); }
+}
+
+@media (forced-colors: active) {
+  .life-budget-meter span,
+  .life-chart-cash,
+  .life-chart-cost { forced-color-adjust: auto; }
+}

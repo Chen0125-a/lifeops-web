@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "task": "P6-T3",
+  "capturedAt": "2026-08-22T22:03:15Z",
+  "tooling": {
+    "helm": "v4.2.4+g3900f43",
+    "executionEnvironment": "local Windows workspace"
+  },
+  "behavioralRed": [
+    {
+      "scope": "structured-logging-and-metrics",
+      "exitCode": 1,
+      "result": "The healthy Vitest runner failed only on the explicit structured-logger skeleton, absent build/service labels and probe requests incorrectly entering SLO metrics."
+    },
+    {
+      "scope": "rendered-observability-assets",
+      "exitCode": 1,
+      "result": "After excluding the sandbox-only Helm execution denial, the healthy render failed only on missing ServiceMonitor, API metrics port, five alert rules, dashboard queries and the standalone validator skeleton."
+    }
+  ],
+  "gates": [
+    {
+      "command": "npm.cmd run test:server -- server/src/observability/structuredLogger.test.ts server/src/observability/metrics.test.ts",
+      "exitCode": 0,
+      "summary": "2 files and 5 tests pass for bounded metrics labels, probe exclusion, stable request IDs and recursive credential/control-character sanitization."
+    },
+    {
+      "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-observability.test.ps1",
+      "exitCode": 0,
+      "summary": "Conditional monitoring resources, internal scrape path, five alerts, dashboard metrics and standalone validation pass."
+    },
+    {
+      "command": "npm.cmd run typecheck:server",
+      "exitCode": 0,
+      "summary": "Server TypeScript check passes without diagnostics."
+    },
+    {
+      "command": "npm.cmd run test:server",
+      "exitCode": 0,
+      "summary": "Complete server regression passes 59 files and 359 ordinary tests; 50 separately owned exact-MySQL cases are skipped."
+    },
+    {
+      "command": "helm template lifeops deploy/helm/lifeops-web -f deploy/gitops/environments/production/values.yaml | powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-observability.ps1 -FromStdin",
+      "exitCode": 0,
+      "summary": "The production render passes the independent observability validator."
+    }
+  ],
+  "contracts": {
+    "metrics": "bounded method, normalized route, status class and service labels; health/readiness excluded from request SLOs",
+    "logging": "one sanitized structured event per request with no body, authorization, cookie, literal URL, query or secret value",
+    "monitoring": "optional ServiceMonitor, exact five alerts and sidecar-loadable dashboard constrained by release and namespace",
+    "publicMetricsExposure": false,
+    "destructiveAutomation": false
+  },
+  "clusterBoundary": {
+    "clusterAccess": false,
+    "kubeconfigRead": false,
+    "helmInstallOrUpgrade": false,
+    "argoSync": false,
+    "clusterSmoke": false
+  },
+  "releaseBoundary": {
+    "uhubVerified": false,
+    "sbomVerified": false,
+    "provenanceVerified": false,
+    "exactReleaseImageSmokeVerified": false,
+    "note": "P6-T3 proves local application and rendered monitoring contracts only; it does not claim registry or immutable release completion."
+  }
+}

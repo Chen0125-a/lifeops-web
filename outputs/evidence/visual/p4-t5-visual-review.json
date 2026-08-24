@@ -1,0 +1,26 @@
+{
+  "task": "P4-T5",
+  "reviewedAt": "2026-08-22T00:29:00.000Z",
+  "reviewer": "primary-agent-direct-image-inspection",
+  "result": "passed-after-responsive-correction",
+  "screenshots": [
+    "outputs/evidence/screenshots/p4-t5-1440x900.png",
+    "outputs/evidence/screenshots/p4-t5-1024x768.png",
+    "outputs/evidence/screenshots/p4-t5-768x1024.png",
+    "outputs/evidence/screenshots/p4-t5-390x844.png",
+    "outputs/evidence/screenshots/p4-t5-320x844.png",
+    "outputs/evidence/screenshots/p4-t5-zoom-200.png"
+  ],
+  "axes": {
+    "hierarchy": "pass: publishing heading, source/editor/preview hierarchy and privacy gate remain unambiguous",
+    "density": "pass: desktop retains the approved 3/5/4 workbench; 768, 390, 320 and effective 320 CSS px use one mobile level",
+    "alignment": "pass: source header actions, status tabs, fields, preview controls and mobile progression align without collisions",
+    "overflow": "pass: all six captures are free of horizontal clipping; long source and draft labels truncate within their rows",
+    "interactionClarity": "pass: selected status, primary next action, disabled publication actions and stable navigation remain visually distinct"
+  },
+  "correction": {
+    "found": "The first visual pass compressed the source heading at 1024/768 and exposed privacy/history below the mobile source level.",
+    "changed": "The 1024 source header now stacks its action, 768 joins the mobile hierarchy, and review/history remain hidden until the preview level.",
+    "verified": "All six screenshots were regenerated, opened and re-inspected after the correction."
+  }
+}

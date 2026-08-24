@@ -1,0 +1,17 @@
+@import '@fontsource-variable/noto-sans-sc/wght.css';
+@import './private-shell.css';
+@import './overview.css';
+@import './goals.css';
+@import './schedule.css';
+@import './habits.css';
+@import './records.css';
+@import './reviews.css';
+@import './knowledge.css';
+@import './publishing.css';
+@import './platform.css';
+@import './settings.css';
+@import './life-shell.css';
+@import './life-catalog.css';
+@import './life-recipes.css';
+@import './life-plans.css';
+@import './life-commerce.css';

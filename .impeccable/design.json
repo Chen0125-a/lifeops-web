@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-09T16:02:43.7592468+08:00",
+  "title": "Design System: LifeOps",
+  "extensions": {
+    "colorMeta": {
+      "action-blue": { "role": "primary", "displayName": "行动蓝", "canonical": "#2867e8", "tonalRamp": ["#071b43", "#0f347c", "#1b50b1", "#2867e8", "#5d8df0", "#91b1f6", "#c6d7fb", "#eef4ff"] },
+      "ink": { "role": "neutral", "displayName": "墨色", "canonical": "#142033", "tonalRamp": ["#0b111b", "#142033", "#344054", "#667085", "#929baa", "#cbd4df", "#e8edf2", "#f7f9fb"] },
+      "public-night": { "role": "secondary", "displayName": "公开夜幕", "canonical": "#07101f", "tonalRamp": ["#030711", "#07101f", "#0b1d35", "#173260", "#365680", "#718aac", "#b9c6d9", "#edf2f8"] },
+      "warm-light": { "role": "tertiary", "displayName": "暖光", "canonical": "#f5eadf", "tonalRamp": ["#3a2a1d", "#6f513a", "#a97e5b", "#d5ab88", "#ead0b8", "#f5eadf", "#fbf5ef", "#fffaf6"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "公开展示", "purpose": "公开首屏和收束句，最高 6rem。" },
+      "headline": { "displayName": "工作台标题", "purpose": "私人页面与主要章节。" },
+      "body": { "displayName": "正文", "purpose": "解释、记录和来源关系。" },
+      "label": { "displayName": "操作标签", "purpose": "导航、按钮、字段和时间刻度。" }
+    },
+    "shadows": [
+      { "name": "object-float", "value": "0 12px 34px rgba(24,52,92,.12)", "purpose": "公开语义对象。" },
+      { "name": "identity-window", "value": "0 32px 90px rgba(5,17,37,.24)", "purpose": "登录身份边界。" },
+      { "name": "workspace-overlay", "value": "0 34px 100px rgba(25,43,71,.24)", "purpose": "命令搜索与快速记录。" }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(.2,.8,.2,1)", "purpose": "状态、路由和边界过渡。" },
+      { "name": "route", "value": "220ms", "purpose": "私人路由内容进入。" },
+      { "name": "entry-boundary", "value": "760ms", "purpose": "公开主题到日光工作台的一次性切换。" }
+    ],
+    "breakpoints": [
+      { "name": "compact-desktop", "value": "1180px" },
+      { "name": "single-column", "value": "860px" },
+      { "name": "phone", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "私人工作台的主要提交。",
+      "html": "<button class=\"ds-btn-primary\">保存计划 <span>→</span></button>",
+      "css": ".ds-btn-primary{display:flex;justify-content:space-between;align-items:center;width:100%;height:50px;padding:0 16px;border:0;border-radius:12px;color:#fff;background:#2867e8;font:600 .78rem 'Noto Sans SC Variable',sans-serif}.ds-btn-primary:hover{background:#1f59cf}.ds-btn-primary:focus-visible{outline:2px solid #2867e8;outline-offset:3px}.ds-btn-primary:disabled{opacity:.42;cursor:not-allowed}"
+    },
+    {
+      "name": "Line Input",
+      "kind": "input",
+      "refersTo": "input-line",
+      "description": "计划、知识和登录字段的低容器输入。",
+      "html": "<label class=\"ds-field\">计划标题<input placeholder=\"写下下一步\"></label>",
+      "css": ".ds-field{display:grid;gap:7px;color:#68758a;font:400 .67rem 'Noto Sans SC Variable',sans-serif}.ds-field input{padding:11px 0;border:0;border-bottom:1px solid #cbd4df;color:#142033;background:transparent;font-size:1rem}.ds-field input:focus-visible{outline:0;border-color:#2867e8}"
+    },
+    {
+      "name": "Workspace Navigation",
+      "kind": "nav",
+      "description": "稳定顶部导航和活动底线。",
+      "html": "<nav class=\"ds-nav\"><a class=\"is-current\">今天</a><a>计划</a><a>记录</a><a>回顾</a></nav>",
+      "css": ".ds-nav{display:flex;height:54px;border-bottom:1px solid #dfe5ec;font:400 .76rem 'Noto Sans SC Variable',sans-serif}.ds-nav a{position:relative;display:grid;place-items:center;min-width:62px;color:#667085}.ds-nav a:hover{color:#142033}.ds-nav .is-current{color:#142033;font-weight:600}.ds-nav .is-current:after{content:'';position:absolute;left:12px;right:12px;bottom:-1px;height:2px;background:#2867e8}"
+    },
+    {
+      "name": "Day Plan",
+      "kind": "custom",
+      "description": "时间线上可完成并可继续留下记录的计划条目。",
+      "html": "<article class=\"ds-day-plan\"><time>10:30</time><div><strong>完成首页复核</strong><small>等待发生</small></div><button>完成</button></article>",
+      "css": ".ds-day-plan{display:grid;grid-template-columns:62px 1fr auto;align-items:center;gap:14px;min-height:56px;padding:9px 12px;border:1px solid #dbe3ed;border-radius:12px;background:#fff;box-shadow:0 8px 18px rgba(26,48,79,.05);font-family:'Noto Sans SC Variable',sans-serif}.ds-day-plan time,.ds-day-plan small{color:#68758a;font-size:.65rem}.ds-day-plan div{display:grid;gap:3px}.ds-day-plan button{height:36px;border:0;border-radius:9px;color:#2867e8;background:#eef4ff}.ds-day-plan button:focus-visible{outline:2px solid #2867e8;outline-offset:3px}"
+    },
+    {
+      "name": "Semantic Object",
+      "kind": "custom",
+      "description": "公开入口中沿真实可见轨迹移动的语义对象。",
+      "html": "<a class=\"ds-object\"><span><svg viewBox=\"0 0 24 24\"><path d=\"M5 8l7-4 7 4-7 4zM5 8v8l7 4 7-4V8\"/></svg></span><strong>项目</strong></a>",
+      "css": ".ds-object{display:flex;align-items:center;gap:10px;color:#142033;font:600 .75rem 'Noto Sans SC Variable',sans-serif}.ds-object span{display:grid;place-items:center;width:58px;height:58px;border:1px solid #dfe5ec;border-radius:50%;color:#225fb9;background:#edf4ff;box-shadow:0 12px 34px rgba(24,52,92,.12)}.ds-object svg{width:25px;fill:none;stroke:currentColor;stroke-width:1.5}.ds-object:hover span{transform:scale(1.08)}.ds-object:focus-visible{outline:2px solid #2867e8;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "日光制图台",
+    "overview": "LifeOps 把生活管理呈现为一张持续使用的工作纸，而不是一组后台卡片。公开页负责表达和探索，身份确认后的私人空间只保留明亮、平静和可长期使用的证据工作台。",
+    "keyCharacteristics": ["公开表达与私人工作台有明确视觉边界", "私人首屏是纵向时间线和窄上下文栏", "一条细分隔线优先于容器", "主蓝色只标记当前、可执行和焦点状态"],
+    "rules": [
+      { "name": "Blue Evidence Rule", "body": "行动蓝只标记现在是什么或下一步能做什么。", "section": "colors" },
+      { "name": "Theme Boundary Rule", "body": "星空黑不得穿过登录边界。", "section": "colors" },
+      { "name": "Heading Speaks Rule", "body": "标题上方不添加英文眉题、装饰编号或伪技术标签。", "section": "typography" },
+      { "name": "Flat-by-Default Rule", "body": "常驻内容只用纸面与线条；阴影表示临时层级或可移动对象。", "section": "elevation" }
+    ],
+    "dos": ["让每个功能使用最适合它的数据形态", "用短过渡解释路由和浮层变化", "尊重减弱动态偏好", "让公开副本显式选择并可撤回"],
+    "donts": ["不要把私人区改回星球或左侧功能栏", "不要在标题上方添加英文眉题", "不要伪造个人数据或指标", "不要让滚轮接管路由", "不要堆玻璃卡片或同尺寸功能卡"]
+  }
+}

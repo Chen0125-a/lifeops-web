@@ -1,0 +1,46 @@
+{
+  "taskId": "P6-T1",
+  "recordedAt": "2026-08-23T05:09:30+08:00",
+  "server": {
+    "product": "MySQL Community Server",
+    "version": "8.4.10",
+    "binary": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\lifeops-mysql-8.4.10\\extracted\\mysql-8.4.10-winx64\\bin\\mysqld.exe",
+    "port": 34042,
+    "database": "lifeops_p6_t1_gate",
+    "dataDirectory": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\lifeops-mysql-p6-t1-20260823-0505"
+  },
+  "finalGate": {
+    "command": "LIFEOPS_MYSQL_INTEGRATION=true MYSQL_HOST=127.0.0.1 MYSQL_PORT=34042 MYSQL_DATABASE=lifeops_p6_t1_gate MYSQL_USER=root npm.cmd run test:mysql",
+    "exitCode": 0,
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "durationSeconds": 15.7,
+    "coverage": [
+      "official MySQL 8.4.10 identity",
+      "all sixteen ordered migrations and checksum enforcement",
+      "owner-scoped record and media metadata persistence",
+      "transaction, idempotency, rollback and reconnect behavior"
+    ]
+  },
+  "discardedDiagnostics": [
+    {
+      "classification": "all-skipped",
+      "acceptedAsPassingGate": false,
+      "detail": "The first environment-free npm.cmd run test:mysql invocation skipped 50/50 and was rejected as evidence."
+    },
+    {
+      "classification": "environment-setup-only",
+      "acceptedAsPassingGate": false,
+      "detail": "An initial readiness loop used a compact Windows mysqladmin host argument that parsed 127.0.0.1 as 127. The task process exited, the port was verified empty, and the same isolated data directory was restarted with long arguments before the passing gate."
+    }
+  ],
+  "shutdown": {
+    "command": "mysqladmin --protocol=tcp --host=127.0.0.1 --port=34042 --user=root shutdown",
+    "exitCode": 0,
+    "postShutdownPingExitCode": 1,
+    "listenerPresentAfterShutdown": false,
+    "taskProcessPresentAfterShutdown": false
+  },
+  "scope": "Task-owned isolated MySQL only; no system MySQL, Kubernetes, Helm install, Argo sync, kubeconfig or cluster state was modified."
+}

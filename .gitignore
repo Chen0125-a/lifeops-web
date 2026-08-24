@@ -1,0 +1,15 @@
+node_modules/
+server/node_modules/
+dist/
+server/dist/
+coverage/
+playwright-report/
+playwright-report-remote/
+test-results/
+.npm-cache/
+.env
+.env.*
+!.env.example
+work/
+.finesse/
+debug.log

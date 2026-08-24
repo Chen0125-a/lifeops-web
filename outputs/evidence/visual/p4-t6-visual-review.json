@@ -1,0 +1,91 @@
+{
+  "task": "P4-T6",
+  "reviewedAt": "2026-08-22",
+  "method": "Every final PNG was opened and inspected directly after the final capture run.",
+  "allFilesShareAxisVerdicts": true,
+  "axes": {
+    "hierarchy": "pass",
+    "composition": "pass",
+    "typography": "pass",
+    "color": "pass",
+    "craft": "pass"
+  },
+  "resolvedRejections": [
+    "Reduced-motion contact sheets no longer inherit a horizontally scrolled capture viewport.",
+    "Public learning uses a single-column layout at 200% zoom.",
+    "The mobile public return control is a compact circular action and no longer obscures article text."
+  ],
+  "groups": [
+    {
+      "surface": "knowledge",
+      "result": "pass",
+      "notes": "Desktop preserves the 2.5/3.5/6 information hierarchy; tablet and phone use the approved reader-first task layer; zoom and both filmstrips remain readable and stable.",
+      "files": [
+        "outputs/evidence/browser/p4-t6/p4-t6-knowledge-1440x900.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-knowledge-1024x768.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-knowledge-768x1024.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-knowledge-390x844.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-knowledge-320x900.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-knowledge-zoom-200.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-knowledge-normal-filmstrip.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-knowledge-reduced-filmstrip.png"
+      ]
+    },
+    {
+      "surface": "settings-obsidian",
+      "result": "pass",
+      "notes": "The settings route remains a continuous daylight workspace; category navigation, fallback actions, focus treatment and sync preview reflow without horizontal clipping.",
+      "files": [
+        "outputs/evidence/browser/p4-t6/p4-t6-settings-1440x900.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-settings-1024x768.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-settings-768x1024.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-settings-390x844.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-settings-320x900.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-settings-zoom-200.png"
+      ]
+    },
+    {
+      "surface": "publishing",
+      "result": "pass",
+      "notes": "Desktop keeps the 3/5/4 workflow density; phone and zoom use interruptible source/editor/preview task layers; normal and reduced-motion transitions preserve state and Back behavior.",
+      "files": [
+        "outputs/evidence/browser/p4-t6/p4-t6-publish-1440x900.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-publish-1024x768.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-publish-768x1024.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-publish-390x844.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-publish-320x900.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-publish-zoom-200.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-publishing-normal-filmstrip.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-publishing-reduced-filmstrip.png"
+      ]
+    },
+    {
+      "surface": "public-learning",
+      "result": "pass",
+      "notes": "Public category hierarchy remains editorial at desktop and becomes a readable single column below 700px; 320 CSS px and 200% zoom retain complete copy with a non-obscuring compact return control.",
+      "files": [
+        "outputs/evidence/browser/p4-t6/p4-t6-public-learning-1440x900.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-learning-1024x768.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-learning-768x1024.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-learning-390x844.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-learning-320x900.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-learning-zoom-200.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-normal-filmstrip.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-reduced-filmstrip.png"
+      ]
+    },
+    {
+      "surface": "public-article",
+      "result": "pass",
+      "notes": "The public revision card renders only allowlisted fields; all six viewports preserve title, summary, body, tags and revision metadata without overflow or truncation.",
+      "files": [
+        "outputs/evidence/browser/p4-t6/p4-t6-public-article-1440x900.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-article-1024x768.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-article-768x1024.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-article-390x844.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-article-320x900.png",
+        "outputs/evidence/browser/p4-t6/p4-t6-public-article-zoom-200.png"
+      ]
+    }
+  ]
+}

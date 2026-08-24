@@ -1,0 +1,359 @@
+.private-workspace,
+body:has(.private-workspace) {
+  min-width: 0;
+}
+
+.private-workspace {
+  --private-surface: #fbfdfc;
+  --private-canvas: #f3f8f5;
+  --private-wash: #eaf1ed;
+  --private-line: #ccd9d3;
+  --private-line-strong: #7b9186;
+  --private-quiet: #63716c;
+  --private-secondary: #52625d;
+  --private-ink: #17211e;
+  --private-action: #245fc7;
+  min-height: 100vh;
+  overflow-x: clip;
+  color: var(--private-ink);
+  background:
+    radial-gradient(circle at 83% 0%, rgba(255, 225, 174, .22), transparent 27rem),
+    linear-gradient(90deg, transparent 0, transparent calc(100% - 1px), rgba(123, 145, 134, .07) calc(100% - 1px)) 0 0 / 96px 100%,
+    var(--private-canvas);
+}
+
+.private-workspace :focus-visible {
+  outline-color: var(--private-action);
+}
+
+.private-workspace .workspace-header {
+  position: sticky;
+  z-index: 60;
+  top: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(20px, 2.4vw, 42px);
+  height: 76px;
+  padding: 0 clamp(20px, 3.6vw, 58px);
+  border-bottom: 1px solid color-mix(in srgb, var(--private-line) 84%, transparent);
+  background: color-mix(in srgb, var(--private-surface) 91%, transparent);
+  backdrop-filter: blur(20px) saturate(1.1);
+}
+
+.private-workspace .workspace-wordmark {
+  align-self: center;
+  color: var(--private-ink);
+  font-size: 20px;
+  font-weight: 690;
+  letter-spacing: -.045em;
+}
+
+.private-workspace .workspace-header nav {
+  display: flex;
+  align-self: stretch;
+  min-width: 0;
+  gap: 2px;
+}
+
+.private-workspace .workspace-header nav a {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 52px;
+  padding: 0 8px;
+  color: var(--private-quiet);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.private-workspace .workspace-header nav a::after {
+  position: absolute;
+  right: 10px;
+  bottom: -1px;
+  left: 10px;
+  height: 2px;
+  background: var(--private-action);
+  content: '';
+  opacity: 0;
+  transform: scaleX(.35);
+  transition: opacity 120ms linear, transform 180ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.private-workspace .workspace-header nav a:hover,
+.private-workspace .workspace-header nav a[aria-current='page'] {
+  color: var(--private-ink);
+}
+
+.private-workspace .workspace-header nav a[aria-current='page'] {
+  font-weight: 650;
+}
+
+.private-workspace .workspace-header nav a[aria-current='page']::after {
+  view-transition-name: none;
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.private-workspace .workspace-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.private-workspace .workspace-actions > button {
+  display: inline-flex;
+  min-width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--private-line);
+  border-radius: 12px;
+  color: var(--private-secondary);
+  background: color-mix(in srgb, var(--private-surface) 78%, transparent);
+  font-size: 14px;
+}
+
+.private-workspace .workspace-actions > button:hover {
+  border-color: var(--private-line-strong);
+  color: var(--private-ink);
+}
+
+.private-workspace .workspace-actions svg {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.7;
+}
+
+.private-workspace .workspace-actions kbd {
+  padding: 2px 5px;
+  border: 1px solid var(--private-line);
+  border-radius: 5px;
+  color: var(--private-quiet);
+  background: var(--private-canvas);
+  font-size: 11px;
+}
+
+.private-workspace .workspace-capture-button {
+  border-color: var(--private-action) !important;
+  color: #fff !important;
+  background: var(--private-action) !important;
+  font-weight: 640;
+}
+
+.private-workspace .workspace-avatar {
+  width: 44px;
+  padding: 0;
+  border-radius: 50%;
+  color: var(--private-ink);
+  background: #f8dfab;
+  font-weight: 700;
+}
+
+.private-workspace .workspace-route {
+  position: relative;
+  width: min(100%, 1540px);
+  max-width: none;
+  margin: 0 auto;
+  padding: clamp(34px, 4vw, 64px) clamp(20px, 4vw, 68px) clamp(72px, 8vw, 120px);
+  animation: none;
+}
+
+.route-stage,
+.route-stage__panel {
+  min-width: 0;
+}
+
+.route-stage {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.route-stage__panel > :first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 1200px) {
+  .private-surface[data-private-panel-route='/app/publish'] .private-surface__intro > div {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .private-surface[data-private-panel-route='/app/publish'] .private-surface__intro > p {
+    width: min(30rem, 36vw);
+    flex: none;
+  }
+}
+
+.private-workspace .workspace-data-state {
+  z-index: 70;
+  right: 22px;
+  bottom: 22px;
+  min-height: 44px;
+  padding: 12px 16px;
+  border: 1px solid var(--private-line);
+  border-radius: 12px;
+  color: var(--private-secondary);
+  background: var(--private-surface);
+  box-shadow: 0 18px 50px rgba(23, 33, 30, .12);
+  font-size: 14px;
+}
+
+.private-workspace .overlay-backdrop {
+  background: rgba(23, 33, 30, .18);
+  backdrop-filter: blur(3px);
+}
+
+.account-menu {
+  position: fixed;
+  z-index: 110;
+  inset: 0;
+}
+
+.account-menu > section {
+  position: absolute;
+  top: 68px;
+  right: clamp(14px, 3.6vw, 58px);
+  display: grid;
+  width: min(300px, calc(100vw - 28px));
+  overflow: hidden;
+  border: 1px solid var(--private-line);
+  border-radius: 16px;
+  background: var(--private-surface);
+  box-shadow: 0 24px 70px rgba(23, 33, 30, .18);
+}
+
+.account-menu header {
+  display: grid;
+  gap: 4px;
+  padding: 20px;
+  border-bottom: 1px solid var(--private-line);
+}
+
+.account-menu header span {
+  color: var(--private-quiet);
+  font-size: 13px;
+}
+
+.account-menu a,
+.account-menu section > button {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  padding: 0 20px;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--private-line) 65%, transparent);
+  color: var(--private-secondary);
+  background: transparent;
+  font-size: 14px;
+  text-align: left;
+}
+
+.account-menu a:hover,
+.account-menu section > button:hover {
+  color: var(--private-ink);
+  background: var(--private-wash);
+}
+
+.private-route-placeholder {
+  min-height: min(68vh, 680px);
+  padding-top: clamp(48px, 9vw, 128px);
+  border-top: 1px solid var(--private-line);
+}
+
+.private-route-kicker {
+  margin: 0 0 16px;
+  color: var(--private-quiet);
+  font-size: 13px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.private-route-placeholder h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(48px, 8vw, 104px);
+  font-weight: 580;
+  letter-spacing: -.065em;
+  line-height: .98;
+}
+
+.private-route-placeholder > p:not(.private-route-kicker) {
+  max-width: 580px;
+  margin: 28px 0;
+  color: var(--private-secondary);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.private-route-placeholder > a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  border-bottom: 1px solid var(--private-action);
+  color: var(--private-action);
+  font-size: 14px;
+  font-weight: 620;
+}
+
+@media (max-width: 1180px) {
+  .private-workspace .workspace-header {
+    grid-template-columns: auto 1fr;
+    height: auto;
+    min-height: 118px;
+    padding-top: 12px;
+  }
+
+  .private-workspace .workspace-header nav {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    height: 52px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+  }
+
+  .private-workspace .workspace-header nav::-webkit-scrollbar { display: none; }
+  .private-workspace .workspace-actions { justify-self: end; }
+}
+
+@media (max-width: 860px) {
+  .private-workspace .workspace-capture-button {
+    width: 44px;
+    padding: 0 !important;
+  }
+
+  .private-workspace .workspace-capture-button span { display: none; }
+}
+
+@media (max-width: 620px) {
+  .private-workspace .workspace-header {
+    gap: 8px 18px;
+    min-height: 112px;
+    padding: 10px 14px 0;
+  }
+
+  .private-workspace .workspace-actions > button:first-child span,
+  .private-workspace .workspace-actions kbd,
+  .private-workspace .workspace-capture-button span {
+    display: none;
+  }
+
+  .private-workspace .workspace-actions > button { padding: 0; }
+  .private-workspace .workspace-avatar { display: inline-flex; }
+  .private-workspace .workspace-header nav { margin-inline: -14px; padding-inline: 8px; }
+  .private-workspace .workspace-header nav a { min-width: max-content; padding-inline: 12px; }
+  .private-workspace .workspace-route { padding: 28px 16px 72px; }
+  .account-menu > section { top: 58px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .private-workspace .workspace-header nav a::after { transition: none; }
+}

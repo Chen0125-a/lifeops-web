@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "task": "P6-T5",
+  "recordedAt": "2026-08-23T06:07:18.0728044Z",
+  "detectorRuns": 1,
+  "command": "node C:\\Users\\Administrator\\.agents\\skills\\impeccable\\scripts\\detect.mjs --json src/theme/theme.ts src/pages/PublicHomePage.tsx src/components/public/orbitGeometry.ts src/components/public/PublicOrbit.tsx src/components/public/PublicOrbitFallback.tsx src/components/public/OrbitGlyph.tsx src/styles/public.css src/styles/motion.css",
+  "reportedExitCode": 1,
+  "transport": {
+    "complete": false,
+    "reason": "The command completed, but the exec transport truncated the 1,026-line / approximately 13,423-token JSON output. The detector was not rerun because the approved contract permits exactly one mechanical detector run.",
+    "rawOutputArtifact": null
+  },
+  "reviewMethod": [
+    "Inspected the detector registry, regex matchers and CSS glow/halo scanner implementation.",
+    "Searched every detector target for primary static-rule signatures without invoking the detector again.",
+    "Mapped the visible findings to the approved ADR-028 visual and motion contract."
+  ],
+  "visibleFindingClasses": [
+    "design-system-color",
+    "design-system-font-size",
+    "codex-grid-background",
+    "dark-glow",
+    "radial-halo"
+  ],
+  "applicableFindings": [],
+  "contractualExceptions": [
+    {
+      "rule": "dark-glow",
+      "targets": [
+        "src/styles/public.css:280",
+        "src/styles/public.css:347",
+        "src/styles/public.css:349",
+        "src/styles/public.css:375",
+        "src/styles/motion.css:264"
+      ],
+      "reason": "The restrained warm-purple title cursor and the quiet daylight aperture are explicit approved requirements. They are bounded, semantic scene details rather than generic neon decoration."
+    },
+    {
+      "rule": "radial-halo",
+      "targets": [
+        "src/styles/public.css:60",
+        "src/styles/public.css:69",
+        "src/styles/motion.css:39",
+        "src/styles/motion.css:226"
+      ],
+      "reason": "The detector's raw-file dark-background heuristic crosses theme boundaries. The public day-sky halos are hidden in night mode, while the motion gradients belong to the daylight login/private transition."
+    },
+    {
+      "rule": "codex-grid-background",
+      "targets": [
+        "src/styles/public.css:84",
+        "src/styles/public.css:95",
+        "src/styles/public.css:106",
+        "src/styles/public.css:697"
+      ],
+      "reason": "This advisory matched the approved starfield texture and an existing public-detail hairline field; neither is a generic dashboard grid added by this change."
+    },
+    {
+      "rule": "design-system-*",
+      "targets": [
+        "src/styles/public.css",
+        "src/styles/motion.css"
+      ],
+      "reason": "These are advisory-only reports. The public theme already uses scoped semantic variables, while authored star points and fixed accessibility sizes legitimately retain literal values."
+    }
+  ],
+  "negativeChecks": [
+    "no side-tab or rounded border accent",
+    "no overused font declaration or remote font",
+    "no gradient text",
+    "no bounce or elastic easing",
+    "no layout-property transition",
+    "no broken image",
+    "no marquee",
+    "no marketing buzzword or aphoristic copy change"
+  ],
+  "suppressionAdded": false,
+  "detectorConfigurationChanged": false,
+  "uiChangeRequired": false,
+  "conclusion": "No applicable product defect remained after rule-source triage; therefore no post-detector UI mutation or visual recapture was required. The truncated transport is preserved as an evidence limitation rather than represented as complete raw output."
+}

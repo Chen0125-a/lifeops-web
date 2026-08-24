@@ -1,0 +1,57 @@
+{
+  "name": "lifeops-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:server": "vitest run --config server/vitest.config.ts",
+    "test:mysql": "vitest run --config server/vitest.config.ts server/src/mysql.integration.test.ts",
+    "typecheck:server": "tsc -p server/tsconfig.json --noEmit --pretty false",
+    "build:server": "tsc -p server/tsconfig.json",
+    "start:server": "node server/dist/main.js",
+    "test:e2e": "playwright test",
+    "test:e2e:remote": "npm run build:server && playwright test --config playwright.remote.config.ts",
+    "test:lighthouse": "node scripts/run-lighthouse.mjs",
+    "typecheck": "tsc -b --pretty false",
+    "verify:execution": "node scripts/verify-execution-contract.mjs",
+    "test:execution": "node --test scripts/verify-execution-contract.test.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/noto-sans-sc": "5.3.0",
+    "@gsap/react": "2.1.2",
+    "@tanstack/react-query": "5.101.4",
+    "fflate": "0.8.3",
+    "gsap": "3.15.0",
+    "motion": "12.43.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-markdown": "10.1.0",
+    "react-router-dom": "7.18.2",
+    "rehype-sanitize": "6.0.0",
+    "remark-gfm": "4.0.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@playwright/test": "1.62.1",
+    "@testing-library/jest-dom": "7.0.0",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "14.6.3",
+    "@types/node": "26.2.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@vitejs/plugin-react": "6.0.5",
+    "jsdom": "30.0.1",
+    "lighthouse": "13.4.1",
+    "typescript": "7.0.2",
+    "vite": "8.2.1",
+    "vitest": "4.1.10"
+  }
+}

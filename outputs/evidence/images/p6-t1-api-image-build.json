@@ -1,0 +1,26 @@
+{
+  "taskId": "P6-T1",
+  "recordedAt": "2026-08-23T05:15:30+08:00",
+  "runtime": {
+    "dockerDesktop": "4.87.0",
+    "dockerServer": "29.7.2",
+    "buildx": "0.36.1-desktop.1"
+  },
+  "build": {
+    "command": "docker build --file server/Dockerfile --tag lifeops-api:plan6-media .",
+    "exitCode": 0,
+    "reference": "lifeops-api:plan6-media",
+    "localDigest": "sha256:2de0391556b5a2f3d47590087c5335444d1e39d5fcafb38e46be923a05f2dec3",
+    "platform": "linux/amd64",
+    "sizeBytes": 62983605
+  },
+  "inspection": {
+    "command": "docker run --rm --entrypoint node lifeops-api:plan6-media -e <local-contract-check>",
+    "exitCode": 0,
+    "runtimeUser": "lifeops",
+    "runtimeUid": 10001,
+    "migrationEntryPresent": true,
+    "s3ClientVersion": "3.1097.0"
+  },
+  "boundary": "This is fresh local build/image evidence only. It is not a UHub digest, registry inspection, formal release image, SBOM, provenance or exact-digest release smoke."
+}

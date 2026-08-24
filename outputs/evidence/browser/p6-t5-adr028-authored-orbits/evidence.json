@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "task": "P6-T5",
+  "authority": "ADR-028",
+  "state": "visual-direction-rejected-orbit-only-prototype-required",
+  "commands": [
+    {
+      "command": "npm.cmd test -- src/theme/theme.test.ts src/components/public/orbitGeometry.test.ts src/components/public/PublicOrbit.test.tsx src/pages/PublicHomePage.test.tsx",
+      "exitCode": 0,
+      "result": "4 files, 39 tests passed"
+    },
+    {
+      "command": "npm.cmd run typecheck",
+      "exitCode": 0,
+      "result": "TypeScript project build passed"
+    },
+    {
+      "command": "npx.cmd playwright test tests/public-login.spec.ts tests/orbit-geometry.spec.ts tests/motion-continuity.spec.ts tests/public-home.spec.ts --project=chromium --workers=1",
+      "exitCode": 0,
+      "result": "21 tests passed"
+    },
+    {
+      "command": "npx.cmd playwright test tests/public-login.spec.ts tests/motion-continuity.spec.ts tests/public-home.spec.ts --project=firefox-critical --workers=1",
+      "exitCode": 0,
+      "result": "17 tests passed"
+    },
+    {
+      "command": "npx.cmd playwright test tests/public-login.spec.ts tests/motion-continuity.spec.ts tests/public-home.spec.ts --project=webkit-critical --workers=1",
+      "exitCode": 1,
+      "result": "15 tests passed; two unchanged Windows headed rAF timing probes failed: private-route 1.2-second sample returned 7 frames versus 10, and day/night p95 was 467ms versus 34ms"
+    },
+    {
+      "command": "node work/p6-t5-authored-orbit-visual-capture.mjs",
+      "exitCode": 0,
+      "result": "12 artifacts generated and opened; five objects displaced 443-525px and closed the 99.9% cycle within 0.49-1.41px"
+    },
+    {
+      "command": "node C:\\Users\\Administrator\\.agents\\skills\\impeccable\\scripts\\detect.mjs --json src/theme/theme.ts src/pages/PublicHomePage.tsx src/components/public/orbitGeometry.ts src/components/public/PublicOrbit.tsx src/components/public/PublicOrbitFallback.tsx src/components/public/OrbitGlyph.tsx src/styles/public.css src/styles/motion.css",
+      "exitCode": 1,
+      "result": "Exactly one detector run. The exec transport truncated its 1,026-line JSON output; source-rule triage found no applicable product defect, no suppression and no detector configuration change. See impeccable-detector-review.json."
+    },
+    {
+      "command": "npm.cmd run test:e2e",
+      "exitCode": 1,
+      "result": "317 tests total: 289 passed and 28 failed. The run is retained as incomplete regression evidence and does not close P6-T5."
+    }
+  ],
+  "orbitMotion": [
+    { "slug": "now", "maximumDisplacement": 460.5113320399906, "cycleClosure": 1.4147867411524238 },
+    { "slug": "doing", "maximumDisplacement": 487.9968890518404, "cycleClosure": 0.4948896265099023 },
+    { "slug": "learning", "maximumDisplacement": 524.6633589990133, "cycleClosure": 0.6102454528125422 },
+    { "slug": "moments", "maximumDisplacement": 454.5764680481956, "cycleClosure": 0.6812401116817169 },
+    { "slug": "archive", "maximumDisplacement": 443.45548930549757, "cycleClosure": 0.7411196706518793 }
+  ],
+  "artifacts": [
+    "night-home-1440x900.png",
+    "night-home-1024x768.png",
+    "night-home-768x1024.png",
+    "night-home-390x844.png",
+    "night-home-320x720.png",
+    "night-login-1440x900.png",
+    "day-home-1440x900.png",
+    "night-reduced-motion-1440x900.png",
+    "night-zoom-200pct-320-dpr2.png",
+    "night-keyboard-focus-1440x900.png",
+    "title-filmstrip.png",
+    "orbit-cycle-filmstrip.png"
+  ],
+  "openedReview": {
+    "reviewer": "primary-agent",
+    "opened": true,
+    "conclusion": "technical-pass",
+    "checks": {
+      "authoredNonTargetGeometry": "pass",
+      "nightHierarchyAndTrackVisibility": "pass",
+      "semanticGlyphsAndTrackAttachment": "pass",
+      "labelCollisionAndOverflow": "pass",
+      "loginPanelAndBackgroundContinuity": "pass",
+      "dayCompatibility": "pass",
+      "reducedMotion": "pass",
+      "titleInitialMidComplete": "pass",
+      "keyboardFocus": "pass",
+      "fullCycleMotionAndClosure": "pass"
+    },
+    "latestUserDecision": {
+      "recordedAt": "2026-08-23T05:57:37.1733976Z",
+      "openedArtifacts": 12,
+      "priorApprovalWithdrawn": true,
+      "userApproved": false,
+      "conclusion": "The user explicitly rejected the prior 12-candidate approval and requires an isolated orbit-only motion prototype before any production visual direction is selected. The white login panel, lower-right pause control and login-entry orbit fly-out are unapproved."
+    },
+    "pending": "Root task builds an isolated orbit-only prototype; user then selects or rejects the formal production direction"
+  },
+  "notRun": [
+    "successful complete P6-T5 browser matrix",
+    "P6-T5 task-close",
+    "P6-T6"
+  ],
+  "clusterActions": []
+}

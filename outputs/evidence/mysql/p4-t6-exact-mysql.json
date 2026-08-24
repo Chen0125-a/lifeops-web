@@ -1,0 +1,27 @@
+{
+  "task": "P4-T6",
+  "implementation": "MySQL Community Server - GPL",
+  "version": "8.4.10",
+  "host": "127.0.0.1",
+  "port": 34037,
+  "database": "lifeops_p4_t6",
+  "migrationCount": 14,
+  "command": "$env:LIFEOPS_MYSQL_INTEGRATION='true'; $env:MYSQL_HOST='127.0.0.1'; $env:MYSQL_PORT='34037'; $env:MYSQL_DATABASE='lifeops_p4_t6'; $env:MYSQL_USER='root'; npm.cmd run test:mysql",
+  "result": {
+    "filesPassed": 1,
+    "testsPassed": 48,
+    "testsSkipped": 0,
+    "exitCode": 0
+  },
+  "lifecycle": {
+    "taskPid": 17448,
+    "shutdownExitCode": 0,
+    "postShutdownPingExitCode": 1,
+    "processAliveAfterShutdown": false,
+    "listenerPresentAfterShutdown": false
+  },
+  "notes": [
+    "The first test command against the fresh server was rejected before any test ran because the empty task database had not yet been created; it is environment setup evidence, not a behavioral RED.",
+    "No installed MySQL service or unrelated MySQL process was changed."
+  ]
+}

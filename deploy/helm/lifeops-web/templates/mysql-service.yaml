@@ -1,0 +1,18 @@
+{{- if .Values.mysql.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-mysql
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+    app.kubernetes.io/component: mysql
+spec:
+  clusterIP: None
+  ports:
+    - name: mysql
+      port: 3306
+      targetPort: mysql
+      protocol: TCP
+  selector:
+    {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "mysql") | nindent 4 }}
+{{- end }}

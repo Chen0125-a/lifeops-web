@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "primary-executor-reviewed",
+  "reviewedOn": "2026-08-21",
+  "defaultDecision": {
+    "id": "normative-default",
+    "classification": "mapped",
+    "atomIdTemplate": "ATOM-{id}"
+  },
+  "rules": [
+    {
+      "id": "structural-heading",
+      "match": { "kind": "heading" },
+      "classification": "context-only",
+      "reason": "Markdown heading used only to locate child clauses; enforceable behavior is mapped from its child rows."
+    },
+    {
+      "id": "structural-plan-label",
+      "match": { "textEquals": ["---", "**Files:**", "**Interfaces:**"] },
+      "classification": "context-only",
+      "reason": "Plan structure label only; enforceable file and interface entries are mapped from the following list items."
+    },
+    {
+      "id": "structural-table-header",
+      "match": {
+        "ids": [
+          "SC-FINAL_REDESIGN-0057",
+          "SC-FINAL_REDESIGN-0266",
+          "SC-LIFE_DOMAIN-0030",
+          "SC-LIFE_DOMAIN-0135",
+          "SC-EXECUTION_COMPLETENESS-0056",
+          "SC-MASTER_PLAN-0035",
+          "SC-MASTER_PLAN-0075"
+        ]
+      },
+      "classification": "context-only",
+      "reason": "Table column header only; each enforceable data row is reviewed and mapped independently."
+    },
+    {
+      "id": "document-provenance-metadata",
+      "match": {
+        "ids": [
+          "SC-FINAL_REDESIGN-0002",
+          "SC-FINAL_REDESIGN-0003",
+          "SC-FINAL_REDESIGN-0004",
+          "SC-FINAL_REDESIGN-0005",
+          "SC-LIFE_DOMAIN-0002",
+          "SC-EXECUTION_COMPLETENESS-0002",
+          "SC-IMAGE_DELIVERY_BOUNDARY-0002"
+        ]
+      },
+      "classification": "context-only",
+      "reason": "Document provenance and review-status metadata; enforceable product and control behavior is mapped from subsequent clauses."
+    }
+  ]
+}

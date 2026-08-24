@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifeOps · 参考轨道复刻样片</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family:
+          Inter, Urbanist, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        background: #04030a;
+        color: #ffffff;
+        --orbit-scale: 0.85;
+        --stage-fit: 1;
+        --track-width: 1px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      body {
+        background:
+          radial-gradient(ellipse 80% 72% at 14% -8%, rgba(181, 103, 255, 0.68) 0%, rgba(112, 57, 210, 0.38) 38%, transparent 70%),
+          radial-gradient(ellipse 56% 64% at 55% 36%, rgba(91, 60, 196, 0.26), transparent 68%),
+          radial-gradient(ellipse 62% 58% at 78% 78%, rgba(25, 66, 150, 0.3), transparent 64%),
+          linear-gradient(145deg, #100925 0%, #0a091c 48%, #03091a 100%);
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(2, 3, 9, 0.1), transparent 42%),
+          radial-gradient(circle at 61% 45%, rgba(196, 145, 255, 0.14), transparent 34%);
+        content: "";
+        pointer-events: none;
+      }
+
+      #stars {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.48;
+      }
+
+      .reference-stage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        width: 1132px;
+        height: 750px;
+        overflow: visible;
+        transform: translate(-50%, -50%) scale(var(--stage-fit));
+        transform-origin: center;
+      }
+
+      .orbit-window {
+        position: absolute;
+        inset: 0;
+        width: 1132px;
+        height: 750px;
+      }
+
+      .orbit-scaler {
+        position: absolute;
+        top: 371px;
+        left: 792px;
+        width: 720px;
+        height: 720px;
+        transform: translate(-50%, -50%) scale(var(--orbit-scale));
+        transform-origin: center;
+      }
+
+      .orbit-visual {
+        position: relative;
+        width: 720px;
+        height: 720px;
+        animation: orbit-scale-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+        transform-origin: center;
+      }
+
+      .orbit-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: calc(var(--diameter) * 1px);
+        height: calc(var(--diameter) * 1px);
+        border-radius: 50%;
+        backface-visibility: hidden;
+        transform-origin: center;
+        will-change: transform;
+      }
+
+      .orbit-ring::before {
+        position: absolute;
+        inset: 0;
+        padding: var(--track-width);
+        border-radius: inherit;
+        background: linear-gradient(180deg, rgba(217, 161, 255, 0) 0%, rgba(217, 161, 255, 1) 43%, rgba(217, 161, 255, 0) 100%);
+        content: "";
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+
+      .orbit-ring[data-direction="cw"] {
+        animation: spin-cw calc(var(--spin-duration) * 1s) linear infinite;
+      }
+
+      .orbit-ring[data-direction="ccw"] {
+        animation: spin-ccw calc(var(--spin-duration) * 1s) linear infinite;
+      }
+
+      .orbit-ring[data-diameter="353"] {
+        --diameter: 353;
+        --spin-duration: 30;
+        margin: -176.5px 0 0 -176.5px;
+      }
+
+      .orbit-ring[data-diameter="501"] {
+        --diameter: 501;
+        --spin-duration: 40;
+        margin: -250.5px 0 0 -250.5px;
+      }
+
+      .orbit-ring[data-diameter="649"] {
+        --diameter: 649;
+        --spin-duration: 50;
+        margin: -324.5px 0 0 -324.5px;
+      }
+
+      .orbit-ring[data-diameter="797"] {
+        --diameter: 797;
+        --spin-duration: 60;
+        margin: -398.5px 0 0 -398.5px;
+      }
+
+      .orbit-object {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        transform: rotate(var(--object-angle)) translateX(calc(var(--diameter) * 0.5px));
+        transform-origin: 0 0;
+        animation: object-track-arrive 0.72s cubic-bezier(0.22, 1, 0.36, 1) var(--fly-delay) both;
+        will-change: transform;
+      }
+
+      .object-upright {
+        position: absolute;
+        top: calc(var(--object-size) * -0.5);
+        left: calc(var(--object-size) * -0.5);
+        width: var(--object-size);
+        height: var(--object-size);
+        transform-origin: center;
+      }
+
+      [data-direction="cw"] .object-upright {
+        animation: counter-ccw calc(var(--spin-duration) * 1s) linear infinite;
+      }
+
+      [data-direction="ccw"] .object-upright {
+        animation: counter-cw calc(var(--spin-duration) * 1s) linear infinite;
+      }
+
+      .path-counter {
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        animation: object-path-counter 0.72s cubic-bezier(0.22, 1, 0.36, 1) var(--fly-delay) both;
+        will-change: transform;
+      }
+
+      .object-fly {
+        position: relative;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        place-items: center;
+        overflow: visible;
+        border: 0;
+        border-radius: var(--object-radius, 50%);
+        background: transparent;
+        color: var(--object-color);
+        box-shadow: none;
+        animation: object-fly-in 0.72s cubic-bezier(0.22, 1, 0.36, 1) var(--fly-delay) both;
+        will-change: opacity, transform, filter;
+      }
+
+      .object-fly svg {
+        width: 76%;
+        height: 76%;
+        overflow: visible;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.6;
+      }
+
+      .orbit-object[data-material="sundial"] .object-fly {
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 34% 28%, rgba(255, 239, 190, 0.96) 0 8%, rgba(240, 190, 105, 0.92) 34%, rgba(116, 63, 33, 0.94) 70%, rgba(12, 8, 20, 0.98) 72%);
+        box-shadow: 0 11px 28px rgba(236, 181, 92, 0.2);
+      }
+
+      .orbit-object[data-material="flag"] .object-fly {
+        border-radius: 13px 19px 15px 17px;
+        background: linear-gradient(145deg, rgba(17, 32, 67, 0.96), rgba(6, 10, 27, 0.98));
+        box-shadow:
+          0 12px 28px rgba(37, 102, 187, 0.18),
+          inset 0 1px rgba(255, 255, 255, 0.08);
+      }
+
+      .orbit-object[data-material="paper-book"] .object-fly {
+        border-radius: 16px;
+        background: radial-gradient(circle at 50% 54%, rgba(104, 225, 177, 0.1), transparent 62%);
+        box-shadow: 0 14px 32px rgba(44, 132, 101, 0.14);
+      }
+
+      .orbit-object[data-material="paper-book"] .object-fly svg {
+        width: 88%;
+        height: 72%;
+      }
+
+      .orbit-object[data-material="viewfinder"] .object-fly {
+        border-radius: 24px;
+        background: radial-gradient(circle, rgba(255, 122, 149, 0.16), transparent 60%);
+        box-shadow: 0 13px 30px rgba(164, 49, 85, 0.12);
+      }
+
+      .orbit-object[data-material="viewfinder"] .object-fly svg {
+        width: 84%;
+        height: 84%;
+      }
+
+      .orbit-object[data-material="archive-rings"] .object-fly {
+        border-radius: 22px;
+        background:
+          radial-gradient(circle at 42% 38%, rgba(135, 92, 199, 0.34), transparent 46%),
+          linear-gradient(145deg, rgba(31, 20, 53, 0.98), rgba(8, 7, 20, 0.99));
+        box-shadow:
+          0 16px 38px rgba(83, 48, 133, 0.22),
+          inset 0 1px rgba(255, 255, 255, 0.07);
+      }
+
+      .orbit-object[data-object="moment"] {
+        --object-angle: 314deg;
+        --counter-angle: -314deg;
+        --fly-delay: 0.6s;
+        --object-color: #f0bd72;
+        --object-radius: 18px;
+        --object-size: 44px;
+      }
+
+      .orbit-object[data-object="doing"] {
+        --object-angle: 236deg;
+        --counter-angle: -236deg;
+        --fly-delay: 0.8s;
+        --object-color: #7db8ff;
+        --object-radius: 19px;
+        --object-size: 44px;
+      }
+
+      .orbit-object[data-object="learning"] {
+        --object-angle: 161deg;
+        --counter-angle: -161deg;
+        --fly-delay: 1s;
+        --object-color: #7ee0b5;
+        --object-size: 60px;
+      }
+
+      .orbit-object[data-object="life-slice"] {
+        --object-angle: 96deg;
+        --counter-angle: -96deg;
+        --fly-delay: 1.2s;
+        --object-color: #ff899d;
+        --object-size: 68px;
+      }
+
+      .orbit-object[data-object="archive"] {
+        --object-angle: 88deg;
+        --counter-angle: -88deg;
+        --fly-delay: 1.4s;
+        --object-color: #c39aff;
+        --object-radius: 24px;
+        --object-size: 68px;
+      }
+
+      .orbit-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: grid;
+        min-width: 132px;
+        justify-items: center;
+        transform: translate(-50%, -50%);
+        animation: center-arrive 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+      }
+
+      .orbit-count {
+        font-family: Urbanist, Inter, sans-serif;
+        font-size: 54px;
+        font-weight: 500;
+        letter-spacing: -0.035em;
+        line-height: 0.92;
+        text-shadow: 0 0 28px rgba(201, 169, 255, 0.2);
+      }
+
+      .orbit-count-label {
+        margin-top: 8px;
+        color: rgba(243, 235, 255, 0.58);
+        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @keyframes orbit-scale-in {
+        from {
+          opacity: 0;
+          transform: scale(0.85);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes object-track-arrive {
+        from {
+          transform: rotate(calc(var(--object-angle) - 180deg)) translateX(calc(var(--diameter) * 0.15px));
+        }
+
+        to {
+          transform: rotate(var(--object-angle)) translateX(calc(var(--diameter) * 0.5px));
+        }
+      }
+
+      @keyframes object-path-counter {
+        from {
+          transform: rotate(180deg);
+        }
+
+        to {
+          transform: rotate(0);
+        }
+      }
+
+      @keyframes object-fly-in {
+        from {
+          opacity: 0;
+          transform: scale(0.3) rotate(-180deg);
+          filter: blur(10px);
+        }
+
+        18% {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1) rotate(0);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes center-arrive {
+        from {
+          opacity: 0;
+          transform: translate(-50%, -44%);
+        }
+
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      @keyframes spin-cw {
+        from {
+          transform: rotate(0);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin-ccw {
+        from {
+          transform: rotate(0);
+        }
+
+        to {
+          transform: rotate(-360deg);
+        }
+      }
+
+      @keyframes counter-cw {
+        from {
+          transform: rotate(var(--counter-angle));
+        }
+
+        to {
+          transform: rotate(calc(var(--counter-angle) + 360deg));
+        }
+      }
+
+      @keyframes counter-ccw {
+        from {
+          transform: rotate(var(--counter-angle));
+        }
+
+        to {
+          transform: rotate(calc(var(--counter-angle) - 360deg));
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.001ms !important;
+          animation-delay: 0s !important;
+          animation-iteration-count: 1 !important;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <main class="reference-stage" data-reference-width="1132" data-reference-height="750" aria-label="LifeOps 圆环轨道复刻样片">
+      <section class="orbit-window" data-launch-duration="0.72" data-launch-radius-from="0.3" data-launch-angle-from="-180" aria-label="四层同心生活轨道">
+          <div class="orbit-scaler" data-center-x="792" data-center-y="371" data-orbit-scale="0.85">
+            <div class="orbit-visual">
+              <div class="orbit-ring" data-diameter="353" data-direction="ccw" data-duration="30">
+                <div class="orbit-object" data-object="moment" data-delay="0.60" data-size="44" data-angle="314" data-material="sundial">
+                  <div class="object-upright">
+                    <div class="path-counter">
+                      <div class="object-fly" title="此刻">
+                        <svg viewBox="0 0 48 48" data-shape="sundial" aria-hidden="true">
+                          <circle cx="24" cy="24" r="15" fill="rgba(75, 39, 24, 0.28)" stroke="rgba(255, 235, 185, 0.42)" />
+                          <path d="M10 31h28" stroke="#ffe4aa" stroke-width="1.7" />
+                          <path d="M15 31a9 9 0 0 1 18 0" stroke="#fff0c8" stroke-width="1.7" />
+                          <path d="M24 13v17l8 4" stroke="#fff6dd" stroke-width="2" />
+                          <circle cx="24" cy="30" r="2" fill="#fff7e8" stroke="none" />
+                        </svg>
+                        <span class="sr-only">此刻</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="orbit-ring" data-diameter="501" data-direction="cw" data-duration="40">
+                <div class="orbit-object" data-object="doing" data-delay="0.80" data-size="44" data-angle="236" data-material="flag">
+                  <div class="object-upright">
+                    <div class="path-counter">
+                      <div class="object-fly" title="正在做">
+                        <svg viewBox="0 0 48 48" data-shape="flag" aria-hidden="true">
+                          <path d="M15 39V10" stroke="#d6ebff" stroke-width="2.1" />
+                          <path d="M17 12c7-4 12 4 19 0v14c-7 4-12-4-19 0z" fill="#63b6ff" stroke="#a9d7ff" stroke-width="1.3" />
+                          <path d="M18 14c5-2 9 3 16 1" stroke="rgba(255,255,255,.52)" stroke-width="1.2" />
+                        </svg>
+                        <span class="sr-only">正在做</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="orbit-object" data-object="learning" data-delay="1.00" data-size="60" data-angle="161" data-material="paper-book">
+                  <div class="object-upright">
+                    <div class="path-counter">
+                      <div class="object-fly" title="最近在学">
+                        <svg viewBox="0 0 56 42" data-shape="paper-book" aria-hidden="true">
+                          <path d="M4 8c10-4 18-1 24 6v24c-6-7-14-10-24-6z" fill="#dff8ed" stroke="#69cda6" stroke-width="1.3" />
+                          <path d="M52 8c-10-4-18-1-24 6v24c6-7 14-10 24-6z" fill="#bdebd7" stroke="#69cda6" stroke-width="1.3" />
+                          <path d="M28 14v24" stroke="#f6fffb" stroke-width="1.4" />
+                          <path d="M9 14c6-1 11 1 15 4M9 20c6-1 11 1 15 4M47 14c-6-1-11 1-15 4" stroke="rgba(43,117,89,.48)" stroke-width="1.2" />
+                        </svg>
+                        <span class="sr-only">最近在学</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="orbit-ring" data-diameter="649" data-direction="cw" data-duration="50">
+                <div class="orbit-object" data-object="life-slice" data-delay="1.20" data-size="68" data-angle="96" data-material="viewfinder">
+                  <div class="object-upright">
+                    <div class="path-counter">
+                      <div class="object-fly" title="生活切片">
+                        <svg viewBox="0 0 48 48" data-shape="viewfinder" aria-hidden="true">
+                          <path d="M7 18V8h10M41 18V8H31M7 30v10h10M41 30v10H31" stroke="#ff9aae" stroke-width="2.2" />
+                          <circle cx="24" cy="24" r="8" fill="rgba(255,120,148,.2)" stroke="#ffd0d9" stroke-width="1.5" />
+                          <circle cx="24" cy="24" r="3" fill="#ffb1c0" stroke="none" />
+                        </svg>
+                        <span class="sr-only">生活切片</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="orbit-ring" data-diameter="797" data-direction="ccw" data-duration="60">
+                <div class="orbit-object" data-object="archive" data-delay="1.40" data-size="68" data-angle="88" data-material="archive-rings">
+                  <div class="object-upright">
+                    <div class="path-counter">
+                      <div class="object-fly" title="时间档案">
+                        <svg viewBox="0 0 48 48" data-shape="archive-rings" aria-hidden="true">
+                          <circle cx="24" cy="24" r="15" stroke="rgba(217,190,255,.4)" stroke-width="1.2" />
+                          <circle cx="24" cy="24" r="10" stroke="rgba(195,154,255,.62)" stroke-width="1.5" />
+                          <circle cx="24" cy="24" r="5" fill="rgba(181,129,255,.18)" stroke="#d7b7ff" stroke-width="1.6" />
+                          <path d="M24 9c5 3 8 8 8 15s-3 12-8 15M9 24c4-3 9-5 15-5s11 2 15 5" stroke="#b991ef" stroke-width="1.3" />
+                        </svg>
+                        <span class="sr-only">时间档案</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="orbit-center" data-count-target="5" data-count-delay="1200" data-count-duration="2000">
+                <strong class="orbit-count">05</strong>
+                <span class="orbit-count-label">此刻正在发生</span>
+              </div>
+            </div>
+          </div>
+      </section>
+    </main>
+
+    <script>
+      const canvas = document.querySelector("#stars");
+      const context = canvas.getContext("2d");
+      const stage = document.querySelector(".reference-stage");
+      const count = document.querySelector(".orbit-count");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let stars = [];
+
+      const random = (() => {
+        let seed = 240823;
+        return () => {
+          seed = (seed * 1664525 + 1013904223) % 4294967296;
+          return seed / 4294967296;
+        };
+      })();
+
+      function drawStars() {
+        context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        for (const star of stars) {
+          context.beginPath();
+          context.fillStyle = star.warm
+            ? `rgba(255, 225, 175, ${star.alpha})`
+            : `rgba(221, 221, 255, ${star.alpha})`;
+          context.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+          context.fill();
+        }
+      }
+
+      function resizeStars() {
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(window.innerWidth * ratio);
+        canvas.height = Math.round(window.innerHeight * ratio);
+        canvas.style.width = `${window.innerWidth}px`;
+        canvas.style.height = `${window.innerHeight}px`;
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+        const total = Math.round((window.innerWidth * window.innerHeight) / 15000);
+        stars = Array.from({ length: total }, (_, index) => ({
+          x: random() * window.innerWidth,
+          y: random() * window.innerHeight,
+          radius: index % 31 === 0 ? 1.08 : 0.34 + random() * 0.56,
+          alpha: 0.12 + random() * 0.42,
+          warm: index % 13 === 0,
+        }));
+        drawStars();
+      }
+
+      function fitReferenceStage() {
+        const fit = Math.min(window.innerWidth / 1132, window.innerHeight / 750);
+        stage.style.setProperty("--stage-fit", String(fit));
+      }
+
+      function resizeScene() {
+        fitReferenceStage();
+        resizeStars();
+      }
+
+      function playCount() {
+        if (reducedMotion) return;
+        const center = document.querySelector(".orbit-center");
+        const target = Number(center.dataset.countTarget);
+        const delay = Number(center.dataset.countDelay);
+        const duration = Number(center.dataset.countDuration);
+        count.textContent = "00";
+
+        window.setTimeout(() => {
+          const startedAt = window.performance.now();
+
+          function frame(now) {
+            const progress = Math.min((now - startedAt) / duration, 1);
+            const eased = 1 - (1 - progress) ** 3;
+            const value = Math.round(target * eased);
+            count.textContent = String(value).padStart(2, "0");
+            if (progress < 1) window.requestAnimationFrame(frame);
+          }
+
+          window.requestAnimationFrame(frame);
+        }, delay);
+      }
+
+      resizeScene();
+      playCount();
+      window.addEventListener("resize", resizeScene, { passive: true });
+    </script>
+  </body>
+</html>

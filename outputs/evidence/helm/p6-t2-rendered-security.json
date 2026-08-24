@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "task": "P6-T2",
+  "capturedAt": "2026-08-22T21:45:11Z",
+  "tooling": {
+    "helm": "v4.2.4+g3900f43",
+    "executionEnvironment": "local Windows workspace"
+  },
+  "behavioralRed": [
+    {
+      "scope": "rbac-and-projected-token",
+      "exitCode": 1,
+      "result": "Six assertions failed only because the dedicated ServiceAccount, exact read-only ClusterRole/binding, projected token and configured token/CA paths were absent."
+    },
+    {
+      "scope": "pod-security",
+      "exitCode": 1,
+      "result": "After correcting a resources-order test defect, the chart failed only on Web/Job termination grace and MySQL non-root/read-only/drop-ALL behavior."
+    },
+    {
+      "scope": "secret-and-schema-boundaries",
+      "exitCode": 1,
+      "result": "Production inline Secret data and simultaneous Ingress/HTTPRoute rendered instead of being rejected."
+    },
+    {
+      "scope": "network-isolation",
+      "exitCode": 1,
+      "result": "Default/component policies, DNS/MySQL/integration allowlists and the reviewed 0.0.0.0/0 override boundary were absent."
+    },
+    {
+      "scope": "namespace-and-external-database-review",
+      "exitCode": 1,
+      "result": "Independent review proved namespace-wide default denial and missing external-MySQL CIDR/port egress before both were corrected."
+    }
+  ],
+  "gates": [
+    {
+      "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-rendered-helm.test.ps1",
+      "exitCode": 0,
+      "summary": "Rendered RBAC, pod security, Secret refs/schema, network isolation, rollout/PDB, namespace safety and external-MySQL contracts pass."
+    },
+    {
+      "command": "helm lint deploy/helm/lifeops-web",
+      "exitCode": 0,
+      "summary": "1 chart linted, 0 charts failed; only the informational icon recommendation remains."
+    },
+    {
+      "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-media-topology.test.ps1",
+      "exitCode": 0,
+      "summary": "The prior P6-T1 filesystem/S3 and migration topology contract remains green."
+    },
+    {
+      "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-rendered-helm.ps1 -ValuesFile deploy/helm/lifeops-web/values.yaml",
+      "exitCode": 0,
+      "summary": "Default render passes; release digests are not checked in non-production mode."
+    },
+    {
+      "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-rendered-helm.ps1 -ValuesFile deploy/gitops/environments/production/values.yaml -Production",
+      "exitCode": 0,
+      "summary": "Production security structure passes with in-memory render-contract digest fixtures; output explicitly reports release-digests=render-contract-fixture-release-pending."
+    }
+  ],
+  "securityBoundary": {
+    "kubernetesIntegration": "disabled renders no ServiceAccount/RBAC/token; enabled renders a 600-second projected token and exact get/list-only resources",
+    "secrets": "production inline Secret values are rejected and credentials use secretKeyRef",
+    "network": "LifeOps-labeled default isolation plus named Gateway, Prometheus, DNS, MySQL and configured CIDR/port peers",
+    "clusterAccess": false,
+    "kubeconfigRead": false,
+    "helmInstallOrUpgrade": false,
+    "argoSync": false
+  },
+  "releaseBoundary": {
+    "productionValuesContainReleaseDigests": false,
+    "uhubVerified": false,
+    "sbomVerified": false,
+    "provenanceVerified": false,
+    "exactReleaseImageSmokeVerified": false,
+    "note": "The two deterministic in-memory render fixtures prove only digest-shaped Helm rendering. They are never written to production values and are not image or registry evidence."
+  }
+}

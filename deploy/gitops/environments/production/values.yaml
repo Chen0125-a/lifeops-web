@@ -1,0 +1,55 @@
+production: true
+
+web:
+  image:
+    repository: uhub.service.ucloud.cn/chenucloud/lifeops-web
+    tag: "1.0.0"
+    digest: ""
+
+api:
+  image:
+    repository: uhub.service.ucloud.cn/chenucloud/lifeops-api
+    tag: "1.0.0"
+    digest: ""
+  config:
+    allowedOrigins: "https://lifeops.chenspace.com"
+
+media:
+  backend: filesystem
+  filesystem:
+    root: /var/lib/lifeops/media
+    persistence:
+      enabled: true
+      accessModes:
+        - ReadWriteMany
+
+httpRoute:
+  enabled: true
+  parentRefs:
+    - name: envoy-gateway
+      namespace: envoy-gateway-system
+  hostnames:
+    - lifeops.chenspace.com
+
+monitoring:
+  enabled: true
+  serviceMonitor:
+    interval: 30s
+  grafana:
+    sidecarLabel: grafana_dashboard
+    sidecarLabelValue: "1"
+
+networkPolicy:
+  enabled: true
+  allowInternetEgress: false
+  gateway:
+    namespace: envoy-gateway-system
+  prometheus:
+    namespace: monitoring
+    podLabels:
+      app.kubernetes.io/name: prometheus
+  dns:
+    namespace: kube-system
+    podLabels:
+      k8s-app: kube-dns
+  integrationEgress: []

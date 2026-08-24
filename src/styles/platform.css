@@ -1,0 +1,187 @@
+.platform-page {
+  --platform-blue: #245fc7;
+  --platform-rust: #b44b2a;
+  --platform-moss: #38715b;
+  min-width: 0;
+}
+
+.platform-hero,
+.platform-detail > header,
+.platform-overview > section > header,
+.platform-trend > header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.platform-hero { margin-bottom: 34px; }
+.platform-hero p,
+.platform-overview header p,
+.platform-detail header p {
+  margin: 0 0 7px;
+  color: var(--private-quiet);
+  font-size: 11px;
+  font-weight: 720;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.platform-hero h1 { margin: 0; font: 560 clamp(42px, 5.6vw, 78px)/.96 var(--font-display, Georgia, serif); letter-spacing: -.055em; }
+.platform-hero span { display: block; margin-top: 16px; color: var(--private-secondary); }
+.platform-hero button,
+.platform-local-error button,
+.platform-log-filters button {
+  min-height: 44px;
+  padding: 0 17px;
+  border: 1px solid var(--private-line-strong);
+  border-radius: 999px;
+  color: var(--private-ink);
+  background: transparent;
+  font-weight: 650;
+}
+
+.platform-tabs { display: flex; gap: 2px; overflow-x: auto; border-block: 1px solid var(--private-line); scrollbar-width: none; }
+.platform-tabs::-webkit-scrollbar { display: none; }
+.platform-tabs button { position: relative; min-width: max-content; min-height: 52px; padding: 0 18px; border: 0; color: var(--private-quiet); background: transparent; }
+.platform-tabs button[aria-selected='true'] { color: var(--private-ink); font-weight: 700; }
+.platform-tabs button[aria-selected='true']::after { position: absolute; right: 18px; bottom: -1px; left: 18px; height: 2px; background: var(--platform-blue); content: ''; }
+
+.platform-connections { padding: 24px 0 28px; border-bottom: 1px solid var(--private-line); }
+.platform-connections ul { display: grid; grid-template-columns: repeat(8, minmax(105px, 1fr)); gap: 0; padding: 0; margin: 0; list-style: none; }
+.platform-connections li { display: grid; grid-template-columns: 9px 1fr; gap: 3px 9px; min-width: 0; padding: 7px 14px; border-left: 1px solid var(--private-line); }
+.platform-connections li:first-child { border-left: 0; padding-left: 0; }
+.platform-connections i { width: 8px; height: 8px; margin-top: 5px; border-radius: 50%; background: var(--private-line-strong); }
+.platform-connections [data-state='connected'] i { background: var(--platform-moss); box-shadow: 0 0 0 4px color-mix(in srgb, var(--platform-moss) 15%, transparent); }
+.platform-connections [data-state='degraded'] i { background: var(--platform-rust); }
+.platform-connections [data-state='disabled'] i,
+.platform-connections [data-state='unknown'] i { background: transparent; outline: 1px solid var(--private-line-strong); }
+.platform-connections span { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-size: 12px; white-space: nowrap; }
+.platform-connections strong { grid-column: 2; font-size: 12px; }
+.platform-connections small { grid-column: 2; color: var(--private-quiet); font-size: 10px; }
+
+.platform-overview { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(250px, .72fr); grid-template-areas: 'topology alerts' 'trend deploy' 'logs gitops'; column-gap: clamp(28px, 4vw, 64px); }
+.platform-overview > section { min-width: 0; padding: 34px 0; border-bottom: 1px solid var(--private-line); }
+.platform-overview h2,
+.platform-detail h2 { margin: 0; font: 560 clamp(25px, 2.6vw, 38px)/1.08 var(--font-display, Georgia, serif); letter-spacing: -.035em; }
+.platform-topology { grid-area: topology; }
+.platform-alerts { grid-area: alerts; }
+.platform-monitoring { grid-area: trend; }
+.platform-deployment { grid-area: deploy; }
+.platform-logs { grid-area: logs; }
+.platform-gitops { grid-area: gitops; }
+
+.platform-topology__canvas { position: relative; min-height: 310px; margin-top: 24px; overflow: hidden; border-radius: 38% 62% 45% 55% / 54% 38% 62% 46%; background: radial-gradient(circle at 34% 48%, #fff9e9 0 14%, #e5f1ea 15% 36%, transparent 37%), linear-gradient(125deg, #edf5f1, #e8eef7); }
+.platform-topology__core { position: absolute; top: 38%; left: 27%; display: grid; width: 170px; min-height: 92px; place-content: center; padding: 18px; border: 1px solid rgba(56,113,91,.34); border-radius: 48%; background: rgba(251,253,252,.82); text-align: center; }
+.platform-topology__core span { color: var(--private-quiet); font-size: 11px; letter-spacing: .11em; text-transform: uppercase; }
+.platform-topology__rail { position: absolute; top: 12%; right: 7%; display: grid; gap: 8px; }
+.platform-topology__rail > span,
+.platform-topology__workloads > span { display: grid; grid-template-columns: 8px 1fr; gap: 1px 8px; min-width: 125px; padding: 8px 12px; border-left: 1px solid var(--platform-moss); background: rgba(251,253,252,.72); font-size: 12px; }
+.platform-topology__rail i { width: 7px; height: 7px; margin-top: 4px; border-radius: 50%; background: var(--platform-moss); }
+.platform-topology__rail small,
+.platform-topology__workloads small { grid-column: 2; color: var(--private-quiet); }
+.platform-topology__workloads { position: absolute; bottom: 13%; left: 9%; display: flex; flex-wrap: wrap; gap: 8px; }
+.platform-topology__canvas > p { position: absolute; right: 8%; bottom: 7%; margin: 0; color: var(--private-secondary); font-size: 12px; }
+
+.platform-alerts ol,
+.platform-logs ol,
+.platform-event-stream { padding: 0; margin: 22px 0; list-style: none; }
+.platform-alerts li,
+.platform-logs li,
+.platform-event-stream li { display: grid; gap: 4px; padding: 13px 0; border-bottom: 1px solid color-mix(in srgb, var(--private-line) 70%, transparent); }
+.platform-alerts li span,
+.platform-logs li span,
+.platform-event-stream li span { color: var(--private-secondary); font-size: 13px; line-height: 1.5; }
+.platform-alerts li small { color: var(--platform-rust); text-transform: uppercase; }
+.platform-page a { display: inline-flex; min-height: 38px; align-items: center; color: var(--platform-blue); font-size: 13px; font-weight: 650; }
+.platform-deployment dl,
+.platform-delivery-ledger { margin: 22px 0; }
+.platform-deployment dl > div,
+.platform-delivery-ledger > div { display: grid; grid-template-columns: minmax(90px, .4fr) 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--private-line); }
+.platform-deployment dt,
+.platform-delivery-ledger dt { color: var(--private-quiet); }
+.platform-deployment dd,
+.platform-delivery-ledger dd { min-width: 0; margin: 0; overflow-wrap: anywhere; }
+.platform-delivery-ledger dd small { display: block; margin-top: 5px; color: var(--private-quiet); font: 10px/1.4 ui-monospace, monospace; }
+
+.platform-trend { margin: 0; }
+.platform-trend > header { align-items: start; }
+.platform-trend h3 { margin: 0; font: 560 24px/1.1 var(--font-display, Georgia, serif); }
+.platform-trend header p { max-width: 540px; margin: 7px 0 0; color: var(--private-secondary); }
+.platform-trend header > span { color: var(--private-quiet); font-size: 12px; }
+.platform-trend svg { width: 100%; min-height: 220px; margin-top: 18px; overflow: visible; }
+.platform-trend__grid { fill: none; stroke: var(--private-line); stroke-width: .6; }
+.platform-trend__line { fill: none; stroke: var(--series-color); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.2; vector-effect: non-scaling-stroke; }
+.platform-trend__line.is-dashed { stroke-dasharray: 8 5; }
+.platform-trend__line.is-dotted { stroke-dasharray: 2 5; }
+.platform-trend__legend { display: flex; flex-wrap: wrap; gap: 18px; padding: 0; margin: 5px 0 18px; list-style: none; }
+.platform-trend__legend li { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.platform-trend__legend li > span:first-child { width: 22px; border-top: 2px solid var(--platform-blue); }
+.platform-trend__legend [data-series-pattern='dashed'] > span:first-child { border-top-style: dashed; border-color: var(--platform-rust); }
+.platform-trend__legend [data-series-pattern='dotted'] > span:first-child { border-top-style: dotted; border-color: var(--platform-moss); }
+.platform-trend__table-wrap { max-height: 190px; overflow: auto; border-top: 1px solid var(--private-line); }
+.platform-trend table,
+.platform-technology table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.platform-trend th,
+.platform-trend td,
+.platform-technology th,
+.platform-technology td { padding: 10px 12px; border-bottom: 1px solid var(--private-line); text-align: left; }
+
+.platform-detail { min-height: 560px; padding: 38px 0; }
+.platform-detail > header { margin-bottom: 32px; }
+.platform-detail > header label { display: grid; gap: 6px; color: var(--private-quiet); font-size: 11px; }
+.platform-detail select,
+.platform-log-filters input { min-height: 44px; padding: 0 12px; border: 1px solid var(--private-line); border-radius: 10px; color: var(--private-ink); background: var(--private-surface); }
+.platform-log-filters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) auto; gap: 12px; align-items: end; margin-bottom: 32px; }
+.platform-log-filters label { display: grid; gap: 6px; color: var(--private-quiet); font-size: 11px; }
+.platform-alert-columns { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 72px); }
+.platform-alert-columns > div { min-height: 320px; border-top: 1px solid var(--private-line-strong); }
+.platform-alert-columns p { display: grid; gap: 4px; padding: 14px 0; border-bottom: 1px solid var(--private-line); }
+.platform-alert-columns p span { color: var(--private-secondary); }
+.platform-technology header { margin-bottom: 28px; }
+.platform-technology tbody tr:hover { background: color-mix(in srgb, var(--private-wash) 65%, transparent); }
+.platform-empty,
+.platform-loading,
+.platform-local-error { margin: 30px 0; padding: 24px 0; color: var(--private-secondary); border-block: 1px solid var(--private-line); }
+.platform-local-error { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+
+@media (max-width: 1120px) {
+  .platform-connections ul { grid-template-columns: repeat(4, 1fr); row-gap: 18px; }
+  .platform-connections li:nth-child(5) { border-left: 0; padding-left: 0; }
+  .platform-overview { grid-template-columns: minmax(0, 1.25fr) minmax(230px, .75fr); column-gap: 30px; }
+  .platform-log-filters { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .platform-hero { align-items: start; }
+  .platform-hero h1 { font-size: clamp(39px, 13vw, 62px); }
+  .platform-hero span { max-width: 260px; }
+  .platform-overview { display: flex; flex-direction: column; }
+  .platform-alerts { order: 1; }
+  .platform-deployment { order: 2; }
+  .platform-topology { order: 3; }
+  .platform-monitoring { order: 4; }
+  .platform-logs { order: 5; }
+  .platform-gitops { order: 6; }
+  .platform-connections ul { grid-template-columns: repeat(2, 1fr); }
+  .platform-connections li:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .platform-connections li:nth-child(5) { padding-left: 0; }
+  .platform-topology__canvas { min-height: 360px; }
+  .platform-topology__core { top: 32%; left: 10%; }
+  .platform-topology__workloads { right: 8%; bottom: 13%; left: auto; display: grid; }
+  .platform-topology__canvas > p { right: auto; bottom: 5%; left: 10%; }
+  .platform-alert-columns,
+  .platform-log-filters { grid-template-columns: 1fr; }
+  .platform-trend svg { min-height: 170px; }
+}
+
+@media (max-width: 420px) {
+  .platform-hero { display: grid; }
+  .platform-hero button { justify-self: start; }
+  .platform-tabs { margin-inline: -16px; padding-inline: 8px; }
+  .platform-tabs button { padding-inline: 13px; }
+  .platform-topology__canvas { margin-inline: -6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .platform-page * { scroll-behavior: auto !important; }
+}

@@ -1,0 +1,180 @@
+{{- if .Values.networkPolicy.enabled }}
+{{- range $entry := .Values.networkPolicy.integrationEgress }}
+{{- if and (eq $entry.cidr "0.0.0.0/0") (not $.Values.networkPolicy.allowInternetEgress) }}
+{{- fail "networkPolicy.integrationEgress rejects 0.0.0.0/0 unless allowInternetEgress=true has been explicitly reviewed" }}
+{{- end }}
+{{- end }}
+{{- if and (not .Values.mysql.enabled) (not .Values.networkPolicy.externalDatabase.cidr) }}
+{{- fail "networkPolicy.externalDatabase.cidr is required when mysql.enabled=false and network isolation is enabled" }}
+{{- end }}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-default-deny
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "lifeops-web.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  policyTypes:
+    - Ingress
+    - Egress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-web
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "web") | nindent 6 }}
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: {{ .Values.networkPolicy.gateway.namespace }}
+      ports:
+        - protocol: TCP
+          port: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-api
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "api") | nindent 6 }}
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: {{ .Values.networkPolicy.gateway.namespace }}
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: {{ .Values.networkPolicy.prometheus.namespace }}
+          podSelector:
+            matchLabels:
+              {{- toYaml .Values.networkPolicy.prometheus.podLabels | nindent 14 }}
+      ports:
+        - protocol: TCP
+          port: 8080
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: {{ .Values.networkPolicy.dns.namespace }}
+          podSelector:
+            matchLabels:
+              {{- toYaml .Values.networkPolicy.dns.podLabels | nindent 14 }}
+      ports:
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53
+    {{- if .Values.mysql.enabled }}
+    - to:
+        - podSelector:
+            matchLabels:
+              {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "mysql") | nindent 14 }}
+      ports:
+        - protocol: TCP
+          port: 3306
+    {{- else }}
+    - to:
+        - ipBlock:
+            cidr: {{ .Values.networkPolicy.externalDatabase.cidr }}
+      ports:
+        - protocol: TCP
+          port: {{ .Values.networkPolicy.externalDatabase.port }}
+    {{- end }}
+    {{- range .Values.networkPolicy.integrationEgress }}
+    - to:
+        - ipBlock:
+            cidr: {{ required "networkPolicy integration cidr is required" .cidr }}
+      ports:
+        - protocol: TCP
+          port: {{ required "networkPolicy integration port is required" .port }}
+    {{- end }}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-migration
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "migration") | nindent 6 }}
+  policyTypes:
+    - Egress
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: {{ .Values.networkPolicy.dns.namespace }}
+          podSelector:
+            matchLabels:
+              {{- toYaml .Values.networkPolicy.dns.podLabels | nindent 14 }}
+      ports:
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53
+    {{- if .Values.mysql.enabled }}
+    - to:
+        - podSelector:
+            matchLabels:
+              {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "mysql") | nindent 14 }}
+      ports:
+        - protocol: TCP
+          port: 3306
+    {{- else }}
+    - to:
+        - ipBlock:
+            cidr: {{ .Values.networkPolicy.externalDatabase.cidr }}
+      ports:
+        - protocol: TCP
+          port: {{ .Values.networkPolicy.externalDatabase.port }}
+    {{- end }}
+{{- if .Values.mysql.enabled }}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-mysql
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "mysql") | nindent 6 }}
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "api") | nindent 14 }}
+        - podSelector:
+            matchLabels:
+              {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "migration") | nindent 14 }}
+      ports:
+        - protocol: TCP
+          port: 3306
+{{- end }}
+{{- end }}

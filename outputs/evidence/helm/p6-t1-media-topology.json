@@ -1,0 +1,27 @@
+{
+  "taskId": "P6-T1",
+  "recordedAt": "2026-08-23T05:04:00+08:00",
+  "helmVersion": "4.2.4",
+  "contractTest": {
+    "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-media-topology.test.ps1",
+    "exitCode": 0,
+    "result": "media-topology-contract: ok",
+    "coverage": [
+      "Argo PreSync migration Job with finite deadline/backoff and API digest parity",
+      "filesystem ReadWriteMany PVC and API mount",
+      "S3 mode without filesystem PVC or mount",
+      "S3 credentials from Secret key references with no rendered secret values",
+      "multi-replica ReadWriteOnce rejection"
+    ]
+  },
+  "lint": {
+    "command": "helm lint deploy/helm/lifeops-web",
+    "exitCode": 0,
+    "chartsFailed": 0
+  },
+  "productionTopology": {
+    "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-media-topology.ps1 -ValuesFile deploy/gitops/environments/production/values.yaml",
+    "exitCode": 0
+  },
+  "scope": "Local Chart render/lint only; no Helm install, Kubernetes access, kubeconfig read, Argo sync or cluster smoke was performed."
+}

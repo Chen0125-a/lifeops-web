@@ -1,0 +1,240 @@
+:root {
+  --plan-blue: #356f79;
+  --plan-blue-soft: color-mix(in srgb, var(--plan-blue) 10%, transparent);
+  --plan-gold: #a97528;
+  --plan-gold-soft: color-mix(in srgb, var(--plan-gold) 10%, transparent);
+}
+
+.life-plans-workspace,
+.fitness-workspace {
+  position: relative;
+  min-height: calc(100vh - 154px);
+  padding: clamp(30px, 4vw, 60px) clamp(22px, 5vw, 76px) 80px;
+  color: var(--private-ink);
+  background:
+    radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--life-sun) 10%, transparent), transparent 31rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--private-canvas) 94%, #fff) 0%, var(--private-canvas) 100%);
+}
+.life-plans-workspace__heading,
+.fitness-workspace__heading { display: flex; align-items: end; justify-content: space-between; gap: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--private-line-strong); }
+.life-plans-workspace__heading > div:first-child,
+.fitness-workspace__heading > div:first-child { max-width: 760px; }
+.life-plans-workspace__heading span,
+.fitness-workspace__heading span,
+.fitness-workspace__composition header span,
+.fitness-workspace__today header span { color: var(--private-action); font-size: 11px; font-weight: 720; letter-spacing: .13em; text-transform: uppercase; }
+.life-plans-workspace__heading h1,
+.fitness-workspace__heading h1 { margin: 8px 0 0; font-size: clamp(48px, 6vw, 86px); font-weight: 520; letter-spacing: -.075em; line-height: .93; }
+.life-plans-workspace__heading p,
+.fitness-workspace__heading p { max-width: 66ch; margin: 16px 0 0; color: var(--private-secondary); line-height: 1.65; }
+.life-plans-workspace__heading > div:last-child { display: flex; flex-wrap: wrap; justify-content: end; gap: 8px; }
+.fitness-workspace__heading > div:last-child { display: grid; min-width: 140px; justify-items: end; }
+.fitness-workspace__heading > div:last-child strong { font-size: 58px; font-weight: 480; letter-spacing: -.07em; }
+
+.life-plans-workspace__facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 24px; border-block: 1px solid var(--private-line); }
+.life-plans-workspace__facts > div { display: grid; gap: 8px; padding: 15px 18px; border-right: 1px solid var(--private-line); }
+.life-plans-workspace__facts > div:first-child { padding-left: 0; }
+.life-plans-workspace__facts > div:last-child { border-right: 0; }
+.life-plans-workspace__facts span { color: var(--private-secondary); font-size: 11px; }
+.life-plans-workspace__facts strong { font-size: 16px; font-weight: 600; }
+
+.life-plan-day-nav { display: flex; gap: 6px; margin-top: 24px; overflow-x: auto; scrollbar-width: thin; }
+.life-plan-day-nav button { flex: 1 0 116px; min-height: 42px; padding: 8px 10px; background: transparent; }
+.life-plan-day-nav button[aria-pressed='true'] { border-color: var(--plan-blue); color: var(--plan-blue); background: var(--plan-blue-soft); }
+.life-week-canvas { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); margin-top: 12px; border-block: 1px solid var(--private-line-strong); overflow-x: auto; }
+.life-week-canvas > article { min-width: 0; min-height: 410px; padding: 16px 10px; border-right: 1px solid var(--private-line); }
+.life-week-canvas > article:last-child { border-right: 0; }
+.life-week-canvas > article.is-selected { grid-column: span 3; padding: 16px 18px; background: linear-gradient(180deg, var(--plan-blue-soft), transparent 72%); }
+.life-week-canvas > article > header { display: grid; gap: 4px; padding-bottom: 13px; border-bottom: 1px solid var(--private-line); }
+.life-week-canvas > article > header span { color: var(--private-action); font-size: 11px; font-weight: 700; }
+.life-week-canvas > article > header strong { font-size: 20px; font-weight: 560; }
+.life-week-canvas > article > header small { color: var(--private-secondary); }
+.life-week-day-summary { display: grid; gap: 9px; margin-top: 16px; }
+.life-week-day-summary span { padding-bottom: 9px; border-bottom: 1px dashed var(--private-line); color: var(--private-secondary); font-size: 11px; line-height: 1.45; }
+.life-week-day-detail { display: grid; gap: 0; }
+.life-week-day-detail > section { min-height: 94px; padding: 17px 0; border-bottom: 1px solid var(--private-line); }
+.life-week-day-detail h2 { margin: 0 0 10px; color: var(--private-secondary); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.life-plan-chip { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding: 11px 12px; border-left: 3px solid var(--plan-blue); background: color-mix(in srgb, var(--private-surface) 72%, transparent); }
+.life-plan-chip + .life-plan-chip { margin-top: 6px; }
+.life-plan-chip > span { color: var(--plan-blue); font-size: 10px; font-weight: 720; text-transform: uppercase; }
+.life-plan-chip > strong { grid-column: 1; font-size: 14px; font-weight: 610; }
+.life-plan-chip > small { grid-column: 1; color: var(--private-secondary); }
+.life-plan-chip > div { grid-column: 2; grid-row: 1 / span 3; display: flex; align-items: center; gap: 4px; }
+.life-plan-chip > div button { min-height: 30px; padding: 4px 8px; font-size: 10px; }
+.life-plan-chip--supplement { border-left-color: var(--plan-gold); }
+.life-plan-chip--medicine { border-left-color: var(--life-red); }
+.life-plan-chip--fitness { border-left-color: var(--life-green); }
+.life-week-unplaced > div[draggable='true'] > button { width: 100%; min-height: 46px; display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 6px; border-style: dashed; background: transparent; }
+.life-week-unplaced > div[draggable='true'] > button span { color: var(--private-secondary); font-size: 11px; }
+.life-week-summary { display: grid; grid-template-columns: auto auto minmax(0, 1fr); align-items: baseline; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--private-line-strong); }
+.life-week-summary > span { color: var(--private-action); font-size: 11px; font-weight: 720; text-transform: uppercase; }
+.life-week-summary > strong { font-size: 18px; }
+.life-week-summary p { margin: 0; color: var(--private-secondary); font-size: 12px; text-align: right; }
+.life-plans-workspace__medicine-boundary { margin: 18px 0 0; color: var(--private-secondary); font-size: 12px; }
+
+.life-plan-task-layer { position: fixed; z-index: 86; inset: 0; }
+.life-plan-task-layer--deep { z-index: 92; }
+.life-plan-task-layer > button:first-child { position: absolute; inset: 0; width: 100%; border: 0; border-radius: 0; background: color-mix(in srgb, var(--private-ink) 18%, transparent); }
+.life-plan-task-layer > section { position: absolute; inset: 0 0 0 auto; width: min(720px, 92vw); overflow-y: auto; border-left: 1px solid var(--private-line-strong); color: var(--private-ink); background: var(--private-canvas); box-shadow: -24px 0 80px color-mix(in srgb, var(--private-ink) 16%, transparent); }
+.life-plan-task-layer > section > header { position: sticky; z-index: 2; top: 0; display: flex; align-items: start; justify-content: space-between; gap: 24px; padding: 26px clamp(22px, 4vw, 42px); border-bottom: 1px solid var(--private-line-strong); background: color-mix(in srgb, var(--private-canvas) 96%, transparent); backdrop-filter: blur(12px); }
+.life-plan-task-layer header span { color: var(--private-action); font-size: 10px; font-weight: 720; letter-spacing: .12em; text-transform: uppercase; }
+.life-plan-task-layer header h2 { margin: 7px 0 0; font-size: clamp(30px, 4vw, 48px); font-weight: 540; letter-spacing: -.055em; }
+.life-plan-task-layer > section > footer { position: sticky; bottom: 0; display: flex; justify-content: end; gap: 8px; padding: 14px clamp(22px, 4vw, 42px); border-top: 1px solid var(--private-line-strong); background: color-mix(in srgb, var(--private-canvas) 96%, transparent); }
+.life-plan-item-editor__body,
+.template-library__body,
+.template-sync__body,
+.plan-conflict-preview__body,
+.life-plan-copy__body,
+.fitness-builder__body { display: grid; gap: 20px; padding: 28px clamp(22px, 4vw, 42px) 80px; }
+.life-plan-item-editor__body label,
+.template-sync__body label,
+.life-plan-copy__body label,
+.fitness-builder__body label { display: grid; gap: 7px; color: var(--private-secondary); font-size: 12px; }
+.life-plan-item-editor__body input,
+.life-plan-item-editor__body select,
+.template-sync__body input,
+.template-sync__body select,
+.life-plan-copy__body input,
+.fitness-builder__body input { min-height: 42px; padding: 8px 10px; border: 1px solid var(--private-line); border-radius: var(--radius-control); color: var(--private-ink); background: var(--private-surface); }
+.life-plan-item-editor__relative { padding: 14px; border-left: 3px solid var(--plan-gold); background: var(--plan-gold-soft); font-weight: 600; }
+.template-library__body > p,
+.template-sync__body > p,
+.plan-conflict-preview__body > p,
+.life-plan-copy__body > p { margin: 0; color: var(--private-secondary); line-height: 1.6; }
+.template-library__body ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--private-line); }
+.template-library__body li { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--private-line); }
+.template-library__body li > div { display: grid; gap: 5px; }
+.template-library__body li > div:last-child { display: flex; grid-auto-flow: column; gap: 7px; }
+.template-library__body li span { color: var(--private-secondary); font-size: 11px; }
+.template-sync__controls { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.template-sync__body fieldset,
+.plan-conflict-preview__body fieldset { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 18px; border: 1px solid var(--private-line); }
+.template-sync__body fieldset label,
+.plan-conflict-preview__body fieldset label { display: flex; align-items: center; gap: 8px; }
+.template-sync__preview { padding: 18px; border-left: 3px solid var(--life-green); background: color-mix(in srgb, var(--life-green) 8%, transparent); }
+.template-sync__preview p { margin: 8px 0 0; color: var(--private-secondary); }
+.plan-conflict-preview__comparison { display: grid; grid-template-columns: 1fr 1fr; border-block: 1px solid var(--private-line); }
+.plan-conflict-preview__comparison article { padding: 18px; border-right: 1px solid var(--private-line); }
+.plan-conflict-preview__comparison article:last-child { border-right: 0; }
+.plan-conflict-preview__comparison span { color: var(--private-action); font-size: 10px; text-transform: uppercase; }
+.plan-conflict-preview__comparison strong { display: block; margin-top: 7px; font-size: 18px; }
+.plan-conflict-preview__comparison p { margin: 8px 0 0; color: var(--private-secondary); }
+.plan-conflict-preview__body dl,
+.fitness-builder__body dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; border-block: 1px solid var(--private-line); }
+.plan-conflict-preview__body dl > div,
+.fitness-builder__body dl > div { padding: 14px; border-right: 1px solid var(--private-line); }
+.plan-conflict-preview__body dt,
+.fitness-builder__body dt { color: var(--private-secondary); font-size: 11px; }
+.plan-conflict-preview__body dd,
+.fitness-builder__body dd { margin: 7px 0 0; font-weight: 600; }
+
+.life-plan-write-error { position: fixed; z-index: 110; top: 18px; left: 50%; display: flex; align-items: center; gap: 14px; max-width: min(680px, calc(100vw - 32px)); padding: 12px 14px; border: 1px solid var(--life-red); background: var(--private-canvas); box-shadow: 0 16px 50px color-mix(in srgb, var(--private-ink) 18%, transparent); transform: translateX(-50%); }
+.life-plan-write-error span { color: var(--private-secondary); font-size: 12px; }
+.life-plans-load-error,
+.life-plans-empty { display: grid; min-height: 460px; place-content: center; justify-items: start; }
+.life-plans-load-error strong { font-size: 30px; }
+.life-plans-load-error p,
+.life-plans-empty p { color: var(--private-secondary); }
+.life-plans-workspace.is-loading,
+.fitness-workspace.is-loading { display: grid; min-height: 520px; place-content: center; text-align: center; }
+.life-plan-skeleton { width: 54px; height: 54px; margin: auto; border: 2px solid var(--private-line); border-top-color: var(--plan-blue); border-radius: 50%; animation: plan-spin 900ms linear infinite; }
+@keyframes plan-spin { to { transform: rotate(360deg); } }
+
+.fitness-workspace__composition,
+.fitness-workspace__today { padding: 34px 0; border-bottom: 1px solid var(--private-line-strong); }
+.fitness-workspace__composition > header,
+.fitness-workspace__today > header { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.fitness-workspace__composition h2,
+.fitness-workspace__today h2 { margin: 6px 0 0; font-size: 28px; font-weight: 560; letter-spacing: -.04em; }
+.fitness-activity-ledger { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 22px; border-top: 1px solid var(--private-line); }
+.fitness-activity-ledger article { min-height: 180px; padding: 20px; border-right: 1px solid var(--private-line); border-bottom: 1px solid var(--private-line); }
+.fitness-activity-ledger article:nth-child(even) { border-right: 0; }
+.fitness-activity-ledger label { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--private-action); font-size: 11px; }
+.fitness-activity-ledger h3 { margin: 26px 0 0; font-size: 24px; font-weight: 570; }
+.fitness-activity-ledger p,
+.fitness-activity-ledger small { color: var(--private-secondary); }
+.fitness-workspace__today ol { margin: 20px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--private-line); }
+.fitness-workspace__today li { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--private-line); }
+.fitness-workspace__today li > div { display: grid; grid-template-columns: 80px minmax(0, 1fr) auto; align-items: baseline; gap: 18px; }
+.fitness-workspace__today time { color: var(--private-action); font-weight: 650; }
+.fitness-workspace__today li span { color: var(--private-secondary); font-size: 12px; }
+.fitness-completion-status { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--life-green); }
+.fitness-completion-status > div { display: grid; grid-template-columns: auto auto auto; align-items: baseline; gap: 14px; }
+.fitness-completion-status span { color: var(--life-green); font-size: 11px; font-weight: 720; }
+.fitness-completion-status p { margin: 0; color: var(--private-secondary); }
+.fitness-workspace__notice { padding: 12px 0; border-bottom: 1px solid var(--life-green); color: var(--life-green); }
+.fitness-builder__body ol { margin: 0; padding: 0; list-style: none; }
+.fitness-builder__body li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--private-line); }
+.fitness-builder__body li span,
+.fitness-builder__body small { color: var(--private-secondary); }
+
+@media (max-width: 1100px) {
+  .life-week-canvas { grid-template-columns: repeat(9, minmax(92px, 1fr)); }
+  .life-plans-workspace__facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .life-plans-workspace__facts > div:nth-child(2) { border-right: 0; }
+}
+
+@media (max-width: 820px) {
+  .life-plans-workspace,
+  .fitness-workspace { min-height: calc(100vh - 129px); padding: 30px 24px 72px; }
+  .life-plans-workspace__heading,
+  .fitness-workspace__heading { align-items: start; flex-direction: column; }
+  .life-plans-workspace__heading > div:last-child { justify-content: start; }
+  .life-week-canvas { display: block; overflow: visible; }
+  .life-week-canvas > article { display: none; min-height: 0; border-right: 0; }
+  .life-week-canvas > article.is-selected { display: block; }
+  .life-week-summary { grid-template-columns: 1fr auto; }
+  .life-week-summary p { grid-column: 1 / -1; text-align: left; }
+  .fitness-activity-ledger { grid-template-columns: 1fr; }
+  .fitness-activity-ledger article { border-right: 0; }
+  .fitness-workspace__today li > div { grid-template-columns: 70px minmax(0, 1fr); }
+  .fitness-workspace__today li span { grid-column: 2; }
+}
+
+@media (max-width: 620px) {
+  .life-plans-workspace,
+  .fitness-workspace { min-height: calc(100vh - 114px); padding: 24px 16px 90px; }
+  .life-plans-workspace__heading h1,
+  .fitness-workspace__heading h1 { font-size: 48px; }
+  .life-plans-workspace__heading > div:last-child { display: grid; width: 100%; grid-template-columns: 1fr 1fr; }
+  .life-plans-workspace__heading > div:last-child button:last-child { grid-column: 1 / -1; }
+  .life-plans-workspace__facts { grid-template-columns: 1fr; }
+  .life-plans-workspace__facts > div { padding-inline: 0; border-right: 0; border-bottom: 1px solid var(--private-line); }
+  .life-plan-day-nav { margin-inline: -16px; padding-inline: 16px; }
+  .life-plan-day-nav button { flex-basis: 104px; }
+  .life-plan-chip { grid-template-columns: 1fr; }
+  .life-plan-chip > div { grid-column: 1; grid-row: auto; }
+  .life-plan-task-layer > section { inset: 114px 0 0; width: 100%; border-left: 0; }
+  .life-plan-task-layer > section > header { padding: 18px 16px; }
+  .life-plan-task-layer > section > footer { padding-inline: 16px; }
+  .life-plan-item-editor__body,
+  .template-library__body,
+  .template-sync__body,
+  .plan-conflict-preview__body,
+  .life-plan-copy__body,
+  .fitness-builder__body { padding-inline: 16px; }
+  .template-library__body li { align-items: stretch; flex-direction: column; }
+  .template-library__body li > div:last-child { grid-auto-flow: row; }
+  .template-sync__controls,
+  .plan-conflict-preview__comparison,
+  .plan-conflict-preview__body fieldset { grid-template-columns: 1fr; }
+  .plan-conflict-preview__comparison article { border-right: 0; border-bottom: 1px solid var(--private-line); }
+  .plan-conflict-preview__body dl,
+  .fitness-builder__body dl { grid-template-columns: 1fr; }
+  .fitness-workspace__composition > header,
+  .fitness-workspace__today > header,
+  .fitness-workspace__today li,
+  .fitness-completion-status { align-items: stretch; flex-direction: column; }
+  .fitness-workspace__today li > div { grid-template-columns: 58px minmax(0, 1fr); }
+  .fitness-completion-status > div { grid-template-columns: 1fr; gap: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .life-plan-skeleton { animation: none; border-color: var(--plan-blue); }
+  .life-plan-task-layer > section { scroll-behavior: auto; }
+}
+
+@media (forced-colors: active) {
+  .life-plan-chip,
+  .fitness-completion-status { border-color: CanvasText; }
+}

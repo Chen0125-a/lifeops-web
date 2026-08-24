@@ -1,0 +1,53 @@
+:root {
+  font-family: 'Noto Sans SC Variable', 'Microsoft YaHei UI', sans-serif;
+  color: #142033;
+  background: #f7f9fb;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --color-ink: #142033;
+  --color-muted: #667085;
+  --color-faint: #929baa;
+  --color-line: #dfe5ec;
+  --color-line-strong: #cbd4df;
+  --color-paper: #fff;
+  --color-wash: #f4f7fa;
+  --color-accent: #2867e8;
+  --color-accent-soft: #eaf1ff;
+  --color-warm: #f5eadf;
+  --color-danger: #b42318;
+  --color-success: #147d55;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --radius-control: 12px;
+  --radius-panel: 16px;
+  --radius-round: 999px;
+  --elevation-soft: 0 12px 34px rgb(30 47 74 / 15%);
+  --elevation-float: 0 28px 90px rgb(25 43 71 / 22%);
+  --motion-fast: 180ms;
+  --motion-control: 320ms;
+  --motion-scene: 680ms;
+  --ease-standard: cubic-bezier(.2, .8, .2, 1);
+
+  /* Existing product aliases stay stable while components migrate by task. */
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --faint: var(--color-faint);
+  --line: var(--color-line);
+  --line-strong: var(--color-line-strong);
+  --paper: var(--color-paper);
+  --wash: var(--color-wash);
+  --blue: var(--color-accent);
+  --blue-soft: var(--color-accent-soft);
+  --warm: var(--color-warm);
+  --danger: var(--color-danger);
+  --success: var(--color-success);
+  --ease: var(--ease-standard);
+}

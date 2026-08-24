@@ -1,0 +1,62 @@
+{
+  "task": "P4-T7",
+  "completedAt": "2026-08-22T02:36:30Z",
+  "gates": [
+    {
+      "command": "npm.cmd test -- src/integrations/obsidian/lifeProjection.test.ts src/integrations/obsidian/lifeImportPlan.test.ts src/features/life/data/LifeObsidianPanel.test.tsx",
+      "result": "3 files loaded and produced 10 required behavioral failures before implementation; final focused task suite passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd test -- src/integrations/obsidian src/features/settings/ObsidianSettings.test.tsx src/features/life/data/LifeObsidianPanel.test.tsx src/features/life/data/LifeDataPage.test.tsx src/features/life/LifeTodayPage.test.tsx",
+      "result": "10 files / 43 tests passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd test",
+      "result": "77 files / 352 tests passed in the final exclusive run",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:server",
+      "result": "39 files passed, 1 exact-only file skipped / 239 tests passed, 48 exact-only tests skipped",
+      "exitCode": 0
+    },
+    {
+      "command": "$env:LIFEOPS_MYSQL_INTEGRATION='true'; $env:MYSQL_HOST='127.0.0.1'; $env:MYSQL_PORT='34039'; $env:MYSQL_DATABASE='lifeops_p4_t7'; $env:MYSQL_USER='root'; npm.cmd run test:mysql",
+      "result": "official MySQL Community Server 8.4.10 passed 48/48 with zero skip and fourteen migrations, then shut down normally",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run typecheck; npm.cmd run typecheck:server; npm.cmd run build; npm.cmd run build:server",
+      "result": "both typechecks and both production builds passed; Web retained only the existing large-chunk advisory",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e -- tests/knowledge-obsidian.spec.ts tests/life-obsidian.spec.ts tests/publishing-public.spec.ts tests/responsive-accessibility.spec.ts",
+      "result": "19 tests passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e -- tests/life-today-calendar.spec.ts tests/life-catalog-recipes.spec.ts tests/life-planning-completion.spec.ts tests/life-shopping-budget.spec.ts tests/life-data-recovery.spec.ts",
+      "result": "20 affected P3 Life tests passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e",
+      "result": "75 ordinary Chromium tests passed in one exclusive run",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e:remote",
+      "result": "4 tests passed against real Fastify Memory-store sessions",
+      "exitCode": 0
+    }
+  ],
+  "diagnostics": [
+    "The only full-Web failure occurred while the full server suite ran concurrently: one existing five-second PrivateFlowPages test timed out. It passed alone in 2.98 seconds and the final exclusive Web suite passed 352/352.",
+    "The first visual pass rejected a retained full-page scroll origin and mobile tab clipping; a later browser assertion rejected the still-hidden active Life route. Scroll reset, four equal data tabs and resize-aware active-route centering were implemented before final capture and review.",
+    "A double-frame Back-focus attempt stole ordinary import-form input focus. The final implementation keeps normal section changes single-frame and scopes delayed restoration to popstate; focused unit and browser Back tests pass.",
+    "The first fresh MySQL setup on 34038 used an incompatible name-resolution option and was rejected before database creation or test execution. Its exact task process was removed and verified absent; the new 34039 instance passed and shut down normally."
+  ]
+}

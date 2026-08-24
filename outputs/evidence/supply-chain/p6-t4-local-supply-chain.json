@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "task": "P6-T4",
+  "capturedAt": "2026-08-22T22:46:00Z",
+  "executionEnvironment": "local Windows workspace with Docker Desktop Linux engine",
+  "behavioralRed": [
+    {
+      "scope": "workflow-and-release-contract",
+      "exitCode": 1,
+      "result": "The healthy validator rejected mutable action references, incomplete CI gates, absent OCI metadata, missing SBOM/provenance and exact-image smoke, unsafe secret interpolation and a non-deterministic GitOps update surface."
+    },
+    {
+      "scope": "image-smoke-contract",
+      "exitCode": 1,
+      "result": "The disposable-image contract initially lacked owned cleanup, exact digest enforcement, application-user MySQL readiness, trigger-migration configuration and credential-safe diagnostic markers."
+    },
+    {
+      "scope": "fresh-mysql-image-smoke",
+      "exitCode": 1,
+      "result": "The real MySQL 8.4.10 smoke first identified MIGRATION_APPLY_FAILED:007:ER_BINLOG_CREATE_ROUTINE_NEED_SUPER; a second real run exposed Windows Docker quote forwarding in the Web deep-link marker. Both causes received focused REDs before correction."
+    }
+  ],
+  "resolvedActions": [
+    {
+      "repository": "actions/checkout",
+      "tag": "v7.0.1",
+      "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+    },
+    {
+      "repository": "actions/setup-node",
+      "tag": "v7.0.0",
+      "sha": "820762786026740c76f36085b0efc47a31fe5020"
+    },
+    {
+      "repository": "azure/setup-helm",
+      "tag": "v5.0.1",
+      "sha": "9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310"
+    },
+    {
+      "repository": "docker/setup-buildx-action",
+      "tag": "v4.3.0",
+      "sha": "37fe631027851001ddb9b187196cc803df7f5f0e"
+    }
+  ],
+  "localImages": [
+    {
+      "name": "lifeops-web:plan6",
+      "localImageId": "sha256:a215970069cb4ee66186f077ea5f086ed71138c0f9ff262a07d8040a93d950f4",
+      "runtimeUser": "nginx",
+      "ociRevision": "unknown-local",
+      "ociSource": "local-workspace",
+      "registryDigest": null
+    },
+    {
+      "name": "lifeops-api:plan6",
+      "localImageId": "sha256:9f9336a28cb19a9b31b6d91c279ea19384ee9a0959248aa1b30f5ef77fc5b0ae",
+      "runtimeUser": "lifeops",
+      "ociRevision": "unknown-local",
+      "ociSource": "local-workspace",
+      "registryDigest": null
+    }
+  ],
+  "gates": [
+    {
+      "command": "npm.cmd ci --ignore-scripts && npm.cmd --prefix server ci --ignore-scripts",
+      "exitCode": 0,
+      "summary": "Root installed 234 packages and server installed 98 packages from lockfiles."
+    },
+    {
+      "command": "npm.cmd audit --omit=dev --audit-level=high && npm.cmd --prefix server audit --omit=dev --audit-level=high",
+      "exitCode": 0,
+      "summary": "Both production dependency audits report zero vulnerabilities."
+    },
+    {
+      "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-workflows.test.ps1 && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-workflows.ps1 && node --test scripts/update-gitops-values.test.mjs",
+      "exitCode": 0,
+      "summary": "Workflow contract and standalone validator pass; all eight deterministic updater tests pass."
+    },
+    {
+      "command": "docker build --file Dockerfile --tag lifeops-web:plan6 . && docker build --file server/Dockerfile --tag lifeops-api:plan6 .",
+      "exitCode": 0,
+      "summary": "Both exact-base local images build successfully with non-root runtime identities and OCI label contracts."
+    },
+    {
+      "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/smoke-images.ps1 -WebImage lifeops-web:plan6 -ApiImage lifeops-api:plan6",
+      "exitCode": 0,
+      "summary": "Fresh MySQL 8.4.10, 16 migrations, API health/readiness/login/goal CRUD, Web health/deep-link fallback, read-only roots, non-root users, clean SIGTERM and owned cleanup pass."
+    },
+    {
+      "command": "npm.cmd test && npm.cmd run test:server && npm.cmd run typecheck && npm.cmd run typecheck:server && npm.cmd run build && npm.cmd run build:server",
+      "exitCode": 0,
+      "summary": "Frontend passes 84 files/386 tests; server passes 59 files/361 ordinary tests with 50 exact-MySQL cases separately owned; both typechecks and production builds pass."
+    },
+    {
+      "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-rendered-helm.test.ps1 && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-rendered-helm.ps1 -ValuesFile deploy/gitops/environments/production/values.yaml -Production",
+      "exitCode": 0,
+      "summary": "Application Helm contract and production render pass; release digests remain explicitly release-pending fixtures."
+    }
+  ],
+  "releaseBoundary": {
+    "gitRepositoryVerified": false,
+    "githubReleaseRunVerified": false,
+    "uhubRepositoriesVerified": false,
+    "immutableRegistryDigestsVerified": false,
+    "digestBoundSbomVerified": false,
+    "digestBoundProvenanceVerified": false,
+    "exactReleaseImageSmokeVerified": false,
+    "note": "P6-T4 verifies local images and the formal GitHub Actions to UHub contract only. Local image IDs and local BuildKit attestations are not UHub digests or formal release evidence."
+  },
+  "clusterBoundary": {
+    "clusterAccess": false,
+    "kubeconfigRead": false,
+    "helmInstallOrUpgrade": false,
+    "argoSync": false,
+    "clusterSmoke": false
+  }
+}

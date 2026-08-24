@@ -1,0 +1,18 @@
+{{- range $component := list "web" "api" }}
+{{- $config := index $.Values $component }}
+{{- if $config.podDisruptionBudget.enabled }}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "lifeops-web.fullname" $ }}-{{ $component }}
+  labels:
+    {{- include "lifeops-web.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: {{ $component }}
+spec:
+  minAvailable: {{ $config.podDisruptionBudget.minAvailable }}
+  selector:
+    matchLabels:
+      {{- include "lifeops-web.selectorLabels" (dict "root" $ "component" $component) | nindent 6 }}
+{{- end }}
+{{- end }}

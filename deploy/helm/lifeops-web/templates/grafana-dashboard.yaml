@@ -1,0 +1,29 @@
+{{- if .Values.monitoring.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-grafana-dashboard
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+    {{ .Values.monitoring.grafana.sidecarLabel }}: {{ .Values.monitoring.grafana.sidecarLabelValue | quote }}
+data:
+  lifeops-overview.json: |-
+    {
+      "title": "LifeOps overview",
+      "uid": "lifeops-overview",
+      "schemaVersion": 39,
+      "refresh": "30s",
+      "templating": {"list": []},
+      "panels": [
+        {"id": 1, "title": "Availability", "type": "stat", "targets": [{"expr": "min(up{namespace=\"{{ .Release.Namespace }}\",release=\"{{ .Release.Name }}\"})"}]},
+        {"id": 2, "title": "Request rate", "type": "timeseries", "targets": [{"expr": "sum(rate(lifeops_http_requests_total{namespace=\"{{ .Release.Namespace }}\",release=\"{{ .Release.Name }}\"}[5m]))"}]},
+        {"id": 3, "title": "5xx rate", "type": "timeseries", "targets": [{"expr": "sum(rate(lifeops_http_requests_total{namespace=\"{{ .Release.Namespace }}\",release=\"{{ .Release.Name }}\",status_class=\"5xx\"}[5m]))"}]},
+        {"id": 4, "title": "p50 / p95 duration", "type": "timeseries", "targets": [{"expr": "histogram_quantile(0.50, sum by (le) (rate(lifeops_http_request_duration_seconds_bucket{namespace=\"{{ .Release.Namespace }}\",release=\"{{ .Release.Name }}\"}[5m])))"}, {"expr": "histogram_quantile(0.95, sum by (le) (rate(lifeops_http_request_duration_seconds_bucket{namespace=\"{{ .Release.Namespace }}\",release=\"{{ .Release.Name }}\"}[5m])))"}]},
+        {"id": 5, "title": "Active requests", "type": "timeseries", "targets": [{"expr": "sum(lifeops_http_active_requests{namespace=\"{{ .Release.Namespace }}\",release=\"{{ .Release.Name }}\"})"}]},
+        {"id": 6, "title": "Pod CPU", "type": "timeseries", "targets": [{"expr": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"{{ .Release.Namespace }}\",pod=~\"{{ include "lifeops-web.fullname" . }}-.*\"}[5m]))"}]},
+        {"id": 7, "title": "Pod memory", "type": "timeseries", "targets": [{"expr": "sum by (pod) (container_memory_working_set_bytes{namespace=\"{{ .Release.Namespace }}\",pod=~\"{{ include "lifeops-web.fullname" . }}-.*\"})"}]},
+        {"id": 8, "title": "Pod restarts", "type": "timeseries", "targets": [{"expr": "sum by (pod) (kube_pod_container_status_restarts_total{namespace=\"{{ .Release.Namespace }}\",pod=~\"{{ include "lifeops-web.fullname" . }}-.*\"})"}]},
+        {"id": 9, "title": "Deployment revision", "type": "stat", "targets": [{"expr": "max(kube_deployment_status_observed_generation{namespace=\"{{ .Release.Namespace }}\",deployment=~\"{{ include "lifeops-web.fullname" . }}-.*\"})"}]}
+      ]
+    }
+{{- end }}

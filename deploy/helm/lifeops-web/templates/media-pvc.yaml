@@ -1,0 +1,32 @@
+{{- $backend := required "media.backend is required" .Values.media.backend -}}
+{{- if and (ne $backend "filesystem") (ne $backend "s3") -}}
+{{- fail "media.backend must be filesystem or s3" -}}
+{{- end -}}
+{{- if eq $backend "filesystem" -}}
+{{- $replicas := int .Values.api.replicaCount -}}
+{{- if .Values.api.autoscaling.enabled -}}
+{{- $replicas = int .Values.api.autoscaling.maxReplicas -}}
+{{- end -}}
+{{- $persistence := .Values.media.filesystem.persistence -}}
+{{- if and (gt $replicas 1) (or (not $persistence.enabled) (not (has "ReadWriteMany" $persistence.accessModes))) -}}
+{{- fail "media filesystem storage requires persistence with ReadWriteMany when API replicas can exceed one" -}}
+{{- end -}}
+{{- if and $persistence.enabled (not $persistence.existingClaim) }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "lifeops-web.mediaClaimName" . }}
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+    app.kubernetes.io/component: media
+spec:
+  accessModes:
+    {{- toYaml $persistence.accessModes | nindent 4 }}
+  {{- with $persistence.storageClass }}
+  storageClassName: {{ . | quote }}
+  {{- end }}
+  resources:
+    requests:
+      storage: {{ $persistence.size }}
+{{- end }}
+{{- end }}

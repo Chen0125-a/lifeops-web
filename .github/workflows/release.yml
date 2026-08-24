@@ -1,0 +1,164 @@
+name: Release to UHub and update GitOps
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Immutable release version, for example 1.0.1
+        required: true
+        type: string
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lifeops-production-release
+  cancel-in-progress: false
+
+env:
+  REGISTRY: uhub.service.ucloud.cn
+  WEB_REPOSITORY: uhub.service.ucloud.cn/chenucloud/lifeops-web
+  API_REPOSITORY: uhub.service.ucloud.cn/chenucloud/lifeops-api
+  GITOPS_VALUES: deploy/gitops/environments/production/values.yaml
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    services:
+      mysql:
+        image: mysql:8.4.10
+        env:
+          MYSQL_ROOT_PASSWORD: root-integration-password
+          MYSQL_DATABASE: lifeops
+          MYSQL_USER: lifeops
+          MYSQL_PASSWORD: lifeops-integration-password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -proot-integration-password"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=30
+          --log-bin-trust-function-creators=1
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.17.0
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            server/package-lock.json
+      - name: Validate release
+        run: |
+          npm ci --no-audit --no-fund
+          npm ci --prefix server --no-audit --no-fund
+          npm test
+          npm run test:server
+          npm run typecheck
+          npm run typecheck:server
+          npm run build
+          npm run build:server
+      - name: Real MySQL 8.4 store integration
+        env:
+          LIFEOPS_MYSQL_INTEGRATION: "true"
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_PORT: "3306"
+          MYSQL_DATABASE: lifeops
+          MYSQL_USER: lifeops
+          MYSQL_PASSWORD: lifeops-integration-password
+        run: npm run test:mysql
+      - name: Complete Playwright and accessibility acceptance
+        run: |
+          npx playwright install --with-deps chromium
+          npm run test:e2e
+          npm run test:e2e:remote
+      - uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1
+        with:
+          version: v3.19.0
+      - name: Validate deployable manifests
+        shell: pwsh
+        run: |
+          helm lint deploy/helm/lifeops-web
+          helm template lifeops deploy/helm/lifeops-web -f deploy/gitops/environments/production/values.yaml | ./scripts/validate-observability.ps1 -FromStdin
+          ./scripts/validate-workflows.ps1
+      - uses: docker/setup-buildx-action@37fe631027851001ddb9b187196cc803df7f5f0e # v4.3.0
+      - name: Sign in to UHub
+        env:
+          UHUB_USERNAME: ${{ secrets.UHUB_USERNAME }}
+          UHUB_PASSWORD: ${{ secrets.UHUB_PASSWORD }}
+        run: printf '%s' "$UHUB_PASSWORD" | docker login "$REGISTRY" --username "$UHUB_USERNAME" --password-stdin
+      - name: Resolve immutable version
+        id: version
+        shell: bash
+        env:
+          REQUESTED_VERSION: ${{ inputs.version }}
+        run: |
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          else
+            VERSION="$REQUESTED_VERSION"
+          fi
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.][0-9A-Za-z.-]+)?$ ]]; then
+            echo "Invalid version: $VERSION" >&2
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Build and push web image
+        run: |
+          docker buildx build --platform linux/amd64 --file Dockerfile \
+            --build-arg OCI_REVISION="$GITHUB_SHA" \
+            --build-arg OCI_SOURCE="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" \
+            --provenance=mode=max --sbom=true \
+            --tag "$WEB_REPOSITORY:${{ steps.version.outputs.version }}" \
+            --tag "$WEB_REPOSITORY:sha-${GITHUB_SHA::12}" --push .
+      - name: Build and push API image
+        run: |
+          docker buildx build --platform linux/amd64 --file server/Dockerfile \
+            --build-arg OCI_REVISION="$GITHUB_SHA" \
+            --build-arg OCI_SOURCE="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" \
+            --provenance=mode=max --sbom=true \
+            --tag "$API_REPOSITORY:${{ steps.version.outputs.version }}" \
+            --tag "$API_REPOSITORY:sha-${GITHUB_SHA::12}" --push .
+      - name: Resolve registry digests
+        id: digests
+        shell: bash
+        run: |
+          WEB_IMAGE="$WEB_REPOSITORY:${{ steps.version.outputs.version }}"
+          API_IMAGE="$API_REPOSITORY:${{ steps.version.outputs.version }}"
+          WEB_DIGEST=$(docker buildx imagetools inspect "$WEB_IMAGE" --format '{{json .Manifest.Digest}}' | tr -d '"')
+          API_DIGEST=$(docker buildx imagetools inspect "$API_IMAGE" --format '{{json .Manifest.Digest}}' | tr -d '"')
+          echo "web=$WEB_DIGEST" >> "$GITHUB_OUTPUT"
+          echo "api=$API_DIGEST" >> "$GITHUB_OUTPUT"
+      - name: Smoke exact registry digests
+        shell: pwsh
+        env:
+          WEB_DIGEST: ${{ steps.digests.outputs.web }}
+          API_DIGEST: ${{ steps.digests.outputs.api }}
+        run: |
+          ./scripts/smoke-images.ps1 -WebImage "$env:WEB_REPOSITORY@$env:WEB_DIGEST" -ApiImage "$env:API_REPOSITORY@$env:API_DIGEST" -RequireDigest
+      - name: Update GitOps digests
+        env:
+          WEB_DIGEST: ${{ steps.digests.outputs.web }}
+          API_DIGEST: ${{ steps.digests.outputs.api }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        shell: bash
+        run: |
+          git fetch origin "$DEFAULT_BRANCH"
+          git checkout -B "$DEFAULT_BRANCH" "origin/$DEFAULT_BRANCH"
+          node scripts/update-gitops-values.mjs "$GITOPS_VALUES" "$WEB_DIGEST" "$API_DIGEST"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$GITOPS_VALUES"
+          if git diff --cached --quiet; then
+            echo "GitOps digests already current"
+            exit 0
+          fi
+          git commit -m "chore(gitops): deploy LifeOps ${{ steps.version.outputs.version }}"
+          git push origin "HEAD:$DEFAULT_BRANCH"

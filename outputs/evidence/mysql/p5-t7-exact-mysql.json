@@ -1,0 +1,40 @@
+{
+  "taskId": "P5-T7",
+  "recordedAt": "2026-08-23T04:09:00+08:00",
+  "server": {
+    "product": "MySQL Community Server",
+    "version": "8.4.10",
+    "binary": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\lifeops-mysql-8.4.10\\extracted\\mysql-8.4.10-winx64\\bin\\mysqld.exe",
+    "port": 34041,
+    "database": "lifeops_p5_t7_gate",
+    "dataDirectory": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\lifeops-mysql-p5-t6-20260823-0306"
+  },
+  "finalGate": {
+    "command": "LIFEOPS_MYSQL_INTEGRATION=true MYSQL_PORT=34041 MYSQL_DATABASE=lifeops_p5_t7_gate MYSQL_USER=root npm.cmd run test:mysql",
+    "exitCode": 0,
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "durationSeconds": 15.4
+  },
+  "discardedDiagnostics": [
+    {
+      "classification": "environment-setup-only",
+      "acceptedAsBehavioralRed": false,
+      "detail": "The previously recorded Program Files binary path no longer existed; no process or database was started before the verified temporary 8.4.10 binary was selected."
+    },
+    {
+      "classification": "test-invocation-only",
+      "acceptedAsPassingGate": false,
+      "detail": "A first invocation used an unsupported URL variable and skipped 50/50 tests. It was rejected and replaced by the exact LIFEOPS_MYSQL_INTEGRATION gate with 50/50 executed."
+    }
+  ],
+  "shutdown": {
+    "command": "mysqladmin shutdown",
+    "exitCode": 0,
+    "postShutdownPingExitCode": 1,
+    "listenerPresentAfterShutdown": false,
+    "processPresentAfterShutdown": false
+  },
+  "scope": "Task-owned isolated MySQL only; no system service, Docker, Kubernetes, Helm, Argo or cluster state was modified."
+}

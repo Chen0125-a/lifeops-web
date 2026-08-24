@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "captures": 7,
+  "outputDirectory": "C:\\Users\\Administrator\\Documents\\Codex\\2026-08-08\\bug\\lifeops-web\\outputs\\evidence\\browser\\p6-t5-adr029-motion-density-approved",
+  "rotationSamples": [
+    "matrix(0.888457, -0.45896, 0.45896, 0.888457, 0, 0)",
+    "matrix(0.842603, -0.538536, 0.538536, 0.842603, 0, 0)",
+    "matrix(0.788913, -0.614506, 0.614506, 0.788913, 0, 0)",
+    "matrix(0.728347, -0.685208, 0.685208, 0.728347, 0, 0)"
+  ]
+}

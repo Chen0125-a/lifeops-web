@@ -1,0 +1,58 @@
+CREATE TABLE public_drafts (
+  id VARCHAR(80) PRIMARY KEY,
+  user_id VARCHAR(64) NOT NULL,
+  category ENUM('now','doing','learning','moments','archive') NOT NULL,
+  source_type ENUM('plan','record','review','knowledge') NULL,
+  source_id VARCHAR(80) NULL,
+  source_version BIGINT UNSIGNED NULL,
+  title VARCHAR(240) NOT NULL,
+  excerpt TEXT NOT NULL,
+  body MEDIUMTEXT NOT NULL,
+  cover_url VARCHAR(2000) NULL,
+  tags JSON NOT NULL,
+  slug VARCHAR(120) NOT NULL,
+  scheduled_at DATETIME(3) NULL,
+  featured BOOLEAN NOT NULL DEFAULT FALSE,
+  seo_title VARCHAR(240) NOT NULL,
+  seo_description VARCHAR(500) NOT NULL,
+  status ENUM('draft','scheduled','published','revoked') NOT NULL DEFAULT 'draft',
+  version BIGINT UNSIGNED NOT NULL DEFAULT 1,
+  created_at DATETIME(3) NOT NULL,
+  updated_at DATETIME(3) NOT NULL,
+  CONSTRAINT fk_public_drafts_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  CONSTRAINT chk_public_drafts_source CHECK (
+    (source_type IS NULL AND source_id IS NULL AND source_version IS NULL)
+    OR (source_type IS NOT NULL AND source_id IS NOT NULL AND source_version >= 1)
+  ),
+  CONSTRAINT chk_public_drafts_version CHECK (version >= 1),
+  UNIQUE KEY uq_public_drafts_slug (slug),
+  KEY idx_public_drafts_user (user_id),
+  KEY idx_public_drafts_due (status, scheduled_at),
+  KEY idx_public_drafts_user_updated (user_id, updated_at, id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE public_revisions (
+  id VARCHAR(80) PRIMARY KEY,
+  draft_id VARCHAR(80) NOT NULL,
+  source_version BIGINT UNSIGNED NOT NULL,
+  revision BIGINT UNSIGNED NOT NULL,
+  category ENUM('now','doing','learning','moments','archive') NOT NULL,
+  slug VARCHAR(120) NOT NULL,
+  title VARCHAR(240) NOT NULL,
+  excerpt TEXT NOT NULL,
+  body MEDIUMTEXT NOT NULL,
+  cover_url VARCHAR(2000) NULL,
+  tags JSON NOT NULL,
+  featured BOOLEAN NOT NULL DEFAULT FALSE,
+  seo_title VARCHAR(240) NOT NULL,
+  seo_description VARCHAR(500) NOT NULL,
+  published_at DATETIME(3) NOT NULL,
+  updated_at DATETIME(3) NOT NULL,
+  CONSTRAINT fk_public_revisions_draft FOREIGN KEY (draft_id) REFERENCES public_drafts(id) ON DELETE RESTRICT,
+  CONSTRAINT chk_public_revisions_source_version CHECK (source_version >= 1),
+  CONSTRAINT chk_public_revisions_revision CHECK (revision >= 1),
+  UNIQUE KEY uq_public_revisions_number (draft_id, revision),
+  UNIQUE KEY uq_public_revisions_source_version (draft_id, source_version),
+  KEY idx_public_revisions_slug (slug, revision),
+  KEY idx_public_revisions_published (published_at, id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

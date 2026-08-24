@@ -1,0 +1,106 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-migrate
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+    app.kubernetes.io/component: migration
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/sync-wave: "-10"
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation,HookSucceeded
+spec:
+  activeDeadlineSeconds: 600
+  backoffLimit: 1
+  template:
+    metadata:
+      annotations:
+        checksum/non-secret-config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+      labels:
+        {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "migration") | nindent 8 }}
+    spec:
+      restartPolicy: Never
+      automountServiceAccountToken: false
+      enableServiceLinks: false
+      terminationGracePeriodSeconds: 30
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: migrate
+          image: {{ include "lifeops-web.apiImage" . | quote }}
+          imagePullPolicy: {{ .Values.api.image.pullPolicy }}
+          command: ["node", "dist/migrate-main.js"]
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          envFrom:
+            - configMapRef:
+                name: {{ include "lifeops-web.fullname" . }}-config
+          env:
+            - name: LIFEOPS_STORE
+              value: mysql
+            - name: MYSQL_HOST
+              value: {{ include "lifeops-web.mysqlHost" . | quote }}
+            - name: MYSQL_PORT
+              value: {{ ternary "3306" (printf "%v" .Values.externalDatabase.port) .Values.mysql.enabled | quote }}
+            - name: MYSQL_DATABASE
+              value: {{ ternary .Values.mysql.database .Values.externalDatabase.database .Values.mysql.enabled | quote }}
+            - name: MYSQL_USER
+              value: {{ ternary .Values.mysql.user .Values.externalDatabase.user .Values.mysql.enabled | quote }}
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "lifeops-web.mysqlSecret" . | quote }}
+                  key: {{ include "lifeops-web.mysqlPasswordKey" . | quote }}
+            - name: MYSQL_CONNECTION_LIMIT
+              value: {{ .Values.api.config.mysqlConnectionLimit | quote }}
+            - name: LIFEOPS_ADMIN_ACCOUNT
+              value: {{ .Values.api.config.adminAccount | quote }}
+            - name: LIFEOPS_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "lifeops-web.apiSecret" . | quote }}
+                  key: {{ .Values.api.secretKeys.adminPassword | quote }}
+            - name: LIFEOPS_MEDIA_BACKEND
+              value: {{ .Values.media.backend | quote }}
+            {{- if eq .Values.media.backend "filesystem" }}
+            - name: LIFEOPS_MEDIA_ROOT
+              value: {{ .Values.media.filesystem.root | quote }}
+            {{- else if eq .Values.media.backend "s3" }}
+            - name: LIFEOPS_S3_ENDPOINT
+              value: {{ required "media.s3.endpoint is required for S3 media storage" .Values.media.s3.endpoint | quote }}
+            - name: LIFEOPS_S3_REGION
+              value: {{ required "media.s3.region is required for S3 media storage" .Values.media.s3.region | quote }}
+            - name: LIFEOPS_S3_BUCKET
+              value: {{ required "media.s3.bucket is required for S3 media storage" .Values.media.s3.bucket | quote }}
+            - name: LIFEOPS_S3_FORCE_PATH_STYLE
+              value: {{ .Values.media.s3.forcePathStyle | quote }}
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "lifeops-web.mediaSecret" . | quote }}
+                  key: {{ .Values.media.s3.accessKeyIdKey | quote }}
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "lifeops-web.mediaSecret" . | quote }}
+                  key: {{ .Values.media.s3.secretAccessKeyKey | quote }}
+            {{- end }}
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi

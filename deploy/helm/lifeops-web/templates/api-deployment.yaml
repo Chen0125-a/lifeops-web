@@ -1,0 +1,233 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-api
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+    app.kubernetes.io/component: api
+spec:
+  {{- if not .Values.api.autoscaling.enabled }}
+  replicas: {{ .Values.api.replicaCount }}
+  {{- end }}
+  revisionHistoryLimit: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "api") | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/non-secret-config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+      labels:
+        {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "api") | nindent 8 }}
+    spec:
+      automountServiceAccountToken: false
+      {{- if .Values.platform.kubernetes.enabled }}
+      serviceAccountName: {{ include "lifeops-web.fullname" . }}-platform
+      {{- end }}
+      enableServiceLinks: false
+      terminationGracePeriodSeconds: 30
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: api
+          image: {{ include "lifeops-web.apiImage" . | quote }}
+          imagePullPolicy: {{ .Values.api.image.pullPolicy }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: {{ include "lifeops-web.fullname" . }}-config
+          env:
+            - name: LIFEOPS_STORE
+              value: mysql
+            - name: MYSQL_HOST
+              value: {{ include "lifeops-web.mysqlHost" . | quote }}
+            - name: MYSQL_PORT
+              value: {{ ternary "3306" (printf "%v" .Values.externalDatabase.port) .Values.mysql.enabled | quote }}
+            - name: MYSQL_DATABASE
+              value: {{ ternary .Values.mysql.database .Values.externalDatabase.database .Values.mysql.enabled | quote }}
+            - name: MYSQL_USER
+              value: {{ ternary .Values.mysql.user .Values.externalDatabase.user .Values.mysql.enabled | quote }}
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "lifeops-web.mysqlSecret" . | quote }}
+                  key: {{ include "lifeops-web.mysqlPasswordKey" . | quote }}
+            - name: MYSQL_CONNECTION_LIMIT
+              value: {{ .Values.api.config.mysqlConnectionLimit | quote }}
+            - name: LIFEOPS_ADMIN_ACCOUNT
+              value: {{ .Values.api.config.adminAccount | quote }}
+            - name: LIFEOPS_ADMIN_DISPLAY_NAME
+              value: {{ .Values.api.config.adminDisplayName | quote }}
+            - name: LIFEOPS_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "lifeops-web.apiSecret" . | quote }}
+                  key: {{ .Values.api.secretKeys.adminPassword | quote }}
+            {{- $prefixes := dict "prometheus" "LIFEOPS_PROMETHEUS" "alertmanager" "LIFEOPS_ALERTMANAGER" "elasticsearch" "LIFEOPS_ELASTICSEARCH" "github" "LIFEOPS_GITHUB" "argoCd" "LIFEOPS_ARGOCD" }}
+            {{- range $name, $integration := .Values.platform.integrations }}
+            {{- $prefix := index $prefixes $name }}
+            {{- if and $integration.existingSecret $integration.bearerTokenKey }}
+            - name: {{ $prefix }}_BEARER_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $integration.existingSecret | quote }}
+                  key: {{ $integration.bearerTokenKey | quote }}
+            {{- end }}
+            {{- if and $integration.existingSecret $integration.usernameKey $integration.passwordKey }}
+            - name: {{ $prefix }}_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $integration.existingSecret | quote }}
+                  key: {{ $integration.usernameKey | quote }}
+            - name: {{ $prefix }}_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $integration.existingSecret | quote }}
+                  key: {{ $integration.passwordKey | quote }}
+            {{- end }}
+            {{- end }}
+            - name: LIFEOPS_ALLOWED_ORIGINS
+              value: {{ .Values.api.config.allowedOrigins | quote }}
+            - name: LIFEOPS_SECURE_COOKIES
+              value: {{ .Values.api.config.secureCookies | quote }}
+            - name: LIFEOPS_SESSION_TTL_SECONDS
+              value: {{ .Values.api.config.sessionTtlSeconds | quote }}
+            - name: LIFEOPS_LOGGER
+              value: "true"
+            - name: LIFEOPS_TRUST_PROXY
+              value: {{ .Values.api.config.trustedProxyCidrs | quote }}
+            - name: LIFEOPS_MEDIA_BACKEND
+              value: {{ required "media.backend is required" .Values.media.backend | quote }}
+            {{- if eq .Values.media.backend "filesystem" }}
+            - name: LIFEOPS_MEDIA_ROOT
+              value: {{ required "media.filesystem.root is required for filesystem media storage" .Values.media.filesystem.root | quote }}
+            {{- else if eq .Values.media.backend "s3" }}
+            - name: LIFEOPS_S3_ENDPOINT
+              value: {{ required "media.s3.endpoint is required for S3 media storage" .Values.media.s3.endpoint | quote }}
+            - name: LIFEOPS_S3_REGION
+              value: {{ required "media.s3.region is required for S3 media storage" .Values.media.s3.region | quote }}
+            - name: LIFEOPS_S3_BUCKET
+              value: {{ required "media.s3.bucket is required for S3 media storage" .Values.media.s3.bucket | quote }}
+            - name: LIFEOPS_S3_FORCE_PATH_STYLE
+              value: {{ .Values.media.s3.forcePathStyle | quote }}
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "lifeops-web.mediaSecret" . | quote }}
+                  key: {{ required "media.s3.accessKeyIdKey is required" .Values.media.s3.accessKeyIdKey | quote }}
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "lifeops-web.mediaSecret" . | quote }}
+                  key: {{ required "media.s3.secretAccessKeyKey is required" .Values.media.s3.secretAccessKeyKey | quote }}
+            {{- else }}
+            {{- fail "media.backend must be filesystem or s3" }}
+            {{- end }}
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 6
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+          resources:
+            {{- toYaml .Values.api.resources | nindent 12 }}
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            {{- if .Values.platform.kubernetes.enabled }}
+            - name: platform-token
+              mountPath: /var/run/secrets/lifeops
+              readOnly: true
+            {{- end }}
+            {{- if eq .Values.media.backend "filesystem" }}
+            - name: media
+              mountPath: {{ .Values.media.filesystem.root | quote }}
+            {{- end }}
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 32Mi
+        {{- if .Values.platform.kubernetes.enabled }}
+        - name: platform-token
+          projected:
+            defaultMode: 0440
+            sources:
+              - serviceAccountToken:
+                  path: token
+                  expirationSeconds: {{ .Values.platform.kubernetes.tokenExpirationSeconds }}
+              - configMap:
+                  name: kube-root-ca.crt
+                  items:
+                    - key: ca.crt
+                      path: ca.crt
+        {{- end }}
+        {{- if eq .Values.media.backend "filesystem" }}
+        - name: media
+          {{- if .Values.media.filesystem.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "lifeops-web.mediaClaimName" . | quote }}
+          {{- else }}
+          emptyDir:
+            sizeLimit: {{ .Values.media.filesystem.persistence.size }}
+          {{- end }}
+        {{- end }}
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "api") | nindent 14 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- else }}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchLabels:
+                    {{- include "lifeops-web.selectorLabels" (dict "root" . "component" "api") | nindent 20 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

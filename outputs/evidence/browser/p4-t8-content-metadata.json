@@ -1,0 +1,388 @@
+{
+  "task": "P4-T8",
+  "capturedAt": "2026-08-22T10:57:00+08:00",
+  "privacy": {
+    "actualPrivateNoteBodiesIncluded": false,
+    "credentialsIncluded": false,
+    "evidenceUsesSyntheticFixturesOnly": true
+  },
+  "environment": {
+    "os": "Microsoft Windows NT 10.0.22631",
+    "architecture": "x64",
+    "node": "v24.15.0",
+    "playwright": "1.62.1",
+    "chromium": "151.0.7922.34",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.34 Safari/537.36",
+    "deviceScaleFactor": 1,
+    "fontFamily": "\"Noto Sans SC Variable\", \"Microsoft YaHei UI\", sans-serif",
+    "fontStatus": "loaded in shared browser baseline; P4 captures use the same bundled font layer",
+    "viewports": [
+      "1440x900",
+      "1024x768",
+      "768x1024",
+      "390x844",
+      "320x900",
+      "640x900 at 200% CSS zoom"
+    ],
+    "colorSchemes": [
+      "private daylight",
+      "public day",
+      "public night compatibility"
+    ],
+    "reducedMotion": [
+      "no-preference",
+      "reduce"
+    ]
+  },
+  "dependencyLock": {
+    "path": "package-lock.json",
+    "sha256": "27397928C37E339A7F8AD360608877DC2AC4D254268B2C5E933FCCC7FD718100"
+  },
+  "zipFixture": {
+    "path": "outputs/evidence/fixtures/p4-t8-life-obsidian-fixture.zip",
+    "bytes": 310,
+    "sha256": "F22BC4DF6E5801616ACB48007394F3922B5E23BED31C8B9ED3676B309B6B617B",
+    "entries": [
+      "LifeOps/Life/Recipes/recipe-1.md"
+    ],
+    "deterministicRerunMatched": true,
+    "privateBodiesIncluded": false
+  },
+  "browserGate": {
+    "command": "npm.cmd run test:e2e -- tests/knowledge-obsidian.spec.ts tests/publishing-public.spec.ts tests/life-obsidian.spec.ts --trace on",
+    "passed": 11,
+    "failed": 0
+  },
+  "automatedGates": [
+    {
+      "command": "npm.cmd test",
+      "result": "77 files / 352 tests passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:server",
+      "result": "39 files / 239 tests passed; 48 exact-only tests skipped and covered separately",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run typecheck",
+      "result": "passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run typecheck:server",
+      "result": "passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run build",
+      "result": "passed with the existing large-chunk advisory only",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run build:server",
+      "result": "passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e",
+      "result": "75/75 passed in one exclusive ordinary Chromium run",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e:remote",
+      "result": "4/4 passed against real Fastify Memory-store sessions",
+      "exitCode": 0
+    },
+    {
+      "command": "P4-T7 exact MySQL 8.4.10 task gate",
+      "result": "48/48 zero skip; normal shutdown and failed post-shutdown ping verified",
+      "exitCode": 0
+    }
+  ],
+  "behavior": {
+    "knowledgeConflictRequiresExplicitChoice": true,
+    "knowledgeBackupPrecedesWrite": true,
+    "lifeRecipeVersionIntentRequired": true,
+    "lifeBackupPrecedesTemporaryWrite": true,
+    "zipFallbackPreviewOnly": true,
+    "publicationDraftIds": [
+      "draft-1",
+      "draft-2"
+    ],
+    "publicationRevisionIds": [
+      "revision-draft-1-1",
+      "revision-draft-1-2",
+      "revision-draft-2-1"
+    ],
+    "revokedPath": "/p/knowledge-knowledge-source",
+    "revokedPathOutcome": "404-backed unavailable public snapshot surface",
+    "rssIncludes": [
+      "controlled-schedule"
+    ],
+    "rssExcludes": [
+      "revoked revision",
+      "synthetic private sentinel"
+    ]
+  },
+  "artifacts": {
+    "p4T6ScreenshotsAndFilmstrips": [
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-knowledge-1024x768.png",
+        "bytes": 232329,
+        "sha256": "EAB603E45AE5AC90384E63F2330AC3D704E5775065EDDBFE6B6D1B5B73F6501C"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-knowledge-1440x900.png",
+        "bytes": 297525,
+        "sha256": "34A38315842F11596A9A4CB5C4CFE88B64F1A6AF877A980C705089CE9FD07BA8"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-knowledge-320x900.png",
+        "bytes": 124205,
+        "sha256": "CD4331DFC7FD2F46F86C5AA01F82B2464163C6BFDB72BFB7A54771B2AF1FB514"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-knowledge-390x844.png",
+        "bytes": 117701,
+        "sha256": "C5AB8028A877016C4E05E9705B45154D1D1D03BEFFBE49446EAC72DEE8C43B98"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-knowledge-768x1024.png",
+        "bytes": 171119,
+        "sha256": "816AE49DF83E14CD3211A1E248ABB665744A1285F0022DC85A3DC32CBEDA8EE1"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-knowledge-normal-filmstrip.png",
+        "bytes": 231304,
+        "sha256": "7BCF606ACE189B49978E78ABE9C41E082CDDBCDB2DAE15A1B79F311980F37AF9"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-knowledge-reduced-filmstrip.png",
+        "bytes": 231498,
+        "sha256": "32F721635450E3AB4B8089B0D1D701579990E3F52B1988BC90D9F079825FF8DF"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-knowledge-zoom-200.png",
+        "bytes": 313093,
+        "sha256": "09F896BDC770F35F0CAB92777FC1D1827D6A6334F2295651C5AE28797340236E"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-article-1024x768.png",
+        "bytes": 62216,
+        "sha256": "5A8C62EE3AFEC5F44C86B90735B48E419E2821B45FA056D3485DCCA3B70378F2"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-article-1440x900.png",
+        "bytes": 69918,
+        "sha256": "1B8597149379415F08924B96FC08626A08335B9987D7A9F962DDFF977435FF4D"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-article-320x900.png",
+        "bytes": 48103,
+        "sha256": "69B9A3464F17D5D74380B3078BD003B855BB98A10A174800DF5E381550A9A4F8"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-article-390x844.png",
+        "bytes": 48627,
+        "sha256": "A98B056EA6E18A8CE3A04B7DAF9A0BF825DD05CDDA83EB4F1BC7B42C114A7278"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-article-768x1024.png",
+        "bytes": 53683,
+        "sha256": "F0426EB63BE89C6D42D577C0A98952517E32CCD92AC46DAD8F231A866F819112"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-article-zoom-200.png",
+        "bytes": 105724,
+        "sha256": "012DFCD1B496EF255BF7FD36B364F7CF7FF9DCF5674949C1F0504506FA5C3605"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-learning-1024x768.png",
+        "bytes": 427149,
+        "sha256": "C63E093EC21021B7ABBDB4C4739D1A622D1E4CB73C30DCBC859708D3E049B63C"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-learning-1440x900.png",
+        "bytes": 576396,
+        "sha256": "10D75E71DC10DAFD275DFF9205DC477C0992373226A720852798D07142373D11"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-learning-320x900.png",
+        "bytes": 194574,
+        "sha256": "1995634C7D3AFF95C0175DC28F80A4A5BCF88E5E288A13264C5155D72BB49BCE"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-learning-390x844.png",
+        "bytes": 229716,
+        "sha256": "D5C8D40F3F93017ABCBC97454029141E0BBE4F882269B5BF9037F5D84708E42A"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-learning-768x1024.png",
+        "bytes": 368392,
+        "sha256": "F5AB18663F5576B52E5971AF38F1B68708A05DE5E2B49727DECDA6093215D95B"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-learning-zoom-200.png",
+        "bytes": 586672,
+        "sha256": "4F1939F270AB69881811312A0E7702FE2D1AA29A17B38A4A378A6AC336C3F955"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-normal-filmstrip.png",
+        "bytes": 449920,
+        "sha256": "3C29390EF3E4713814C0932C4D1EE997BE831B2EAD7419518CCAC6C234D5F6DE"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-public-reduced-filmstrip.png",
+        "bytes": 466300,
+        "sha256": "755CA55D7C3636CE40ED49A711824ACF406451200207FEF344ACEF8D7930BEBF"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-publish-1024x768.png",
+        "bytes": 289773,
+        "sha256": "541DB196A872663B26D66E47E844483396A8AE30D40B8743164814F5CDAB724F"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-publish-1440x900.png",
+        "bytes": 342529,
+        "sha256": "A8391E22C913D9B2658E72739F1E4FDCF434DBC4D8A7F141A6AC1A8FBBC1903A"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-publish-320x900.png",
+        "bytes": 84214,
+        "sha256": "576465F254B84EB9A2E2F3AE23F7A93C2E0C237E913581A7FDD28305B1D91421"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-publish-390x844.png",
+        "bytes": 93506,
+        "sha256": "22190D5705A126485C670066270B9FC1D3A17DD2910FE9734320CB78443A2EE5"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-publish-768x1024.png",
+        "bytes": 113375,
+        "sha256": "1AC57471A90C6E074AF1B45AE9351F4E6D6946DD1F2946E14BEDD6D18DC84E78"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-publish-zoom-200.png",
+        "bytes": 249081,
+        "sha256": "4F46B41C95BD09BC5F0F799F7D0006B0D03C7EA94606E26456ABC7E381857880"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-publishing-normal-filmstrip.png",
+        "bytes": 248842,
+        "sha256": "8ECDB7BE9BC5D95D97406A26C856DFBF0EBBA785B61C4B809ABE98CA797357D4"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-publishing-reduced-filmstrip.png",
+        "bytes": 249180,
+        "sha256": "227637F155AA064E35EA2DD068E66303F1F0AB2867431EBABFC4629AA4D1DE09"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-settings-1024x768.png",
+        "bytes": 203949,
+        "sha256": "4BED8BCCF881A831C3751722D71CCFF827CA309EDD1CE325414C5C35C4D117A7"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-settings-1440x900.png",
+        "bytes": 216597,
+        "sha256": "1F56A575912951340F617EA7733C1D88283BF0A877C31712749715DEC740D59D"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-settings-320x900.png",
+        "bytes": 115397,
+        "sha256": "1A20176285C186FF5B489E500584C077BFA49F3DF1302BF463D0623B25AC319F"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-settings-390x844.png",
+        "bytes": 126034,
+        "sha256": "3C8C78EEF9FB41BACFCC9E65BB2ADE733562E829235C2082586AAF6022C9BF86"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-settings-768x1024.png",
+        "bytes": 182402,
+        "sha256": "12B061693660619B63F00918FF788FA3256EA2196A2DDCC6491A42FF64006428"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t6/p4-t6-settings-zoom-200.png",
+        "bytes": 324239,
+        "sha256": "17D40E9B918A3AEEF3183811E3E8D3661D1E191D03C295048ADE3B19761DC916"
+      }
+    ],
+    "p4T7Screenshots": [
+      {
+        "path": "outputs/evidence/browser/p4-t7/life-obsidian-conflict-1024x768.png",
+        "bytes": 336363,
+        "sha256": "7DE3D552158DD88668865AB45051C98D84A83AB4EEFF8033E2C80C7CC5A661C8"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t7/life-obsidian-conflict-1440x900.png",
+        "bytes": 391507,
+        "sha256": "DB9579FC2F0D0496EF6B01EDBBF7D18A5DD791B0A262667623FD21AC3CCF07C9"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t7/life-obsidian-conflict-200pct.png",
+        "bytes": 644130,
+        "sha256": "88817A10EC72260203973F21788B3016B4200E5AA04214ADC96340A6EB0E90A3"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t7/life-obsidian-conflict-320x900.png",
+        "bytes": 224901,
+        "sha256": "AC69FA53809B53A74C7F94ADCD3DF4CD5EF023C37B031BFAA7E89DF5EF2C4890"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t7/life-obsidian-conflict-390x844-reduced-motion.png",
+        "bytes": 275561,
+        "sha256": "5C9F79A1DBC370DE093C4B3772813E92C69FCD1C34FAED6F678DA3A8182D0928"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t7/life-obsidian-conflict-390x844.png",
+        "bytes": 275561,
+        "sha256": "5C9F79A1DBC370DE093C4B3772813E92C69FCD1C34FAED6F678DA3A8182D0928"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t7/life-obsidian-conflict-768x1024.png",
+        "bytes": 306802,
+        "sha256": "7D9AEFAE39D66149EA97B6E04638F21DF9A8FD8A08A296BBD1921F44198F01E7"
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t7/life-obsidian-offline-1440x900.png",
+        "bytes": 279391,
+        "sha256": "B901C4C84AAF87A4B8875BAA22510B373D3E378ADAC2AB939256C09D2A60B8DD"
+      }
+    ],
+    "traces": [
+      {
+        "path": "outputs/evidence/browser/p4-t8/knowledge-obsidian-conflict-backup-trace.zip",
+        "bytes": 939131,
+        "sha256": "F4BA6CFB5D3E380C28CBA221728CF6FFFA274F79E61E8A7FF91D23B47EA4403D",
+        "traceEntryCount": 30,
+        "hasTraceEvents": true,
+        "hasNetworkEvents": true
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t8/life-obsidian-responsive-trace.zip",
+        "bytes": 2199400,
+        "sha256": "D7D8007226B56B854AE57ABA1A6F0554B12396EF8759FB0AFEA702C4FD2FCD2B",
+        "traceEntryCount": 93,
+        "hasTraceEvents": true,
+        "hasNetworkEvents": true
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t8/life-obsidian-roundtrip-trace.zip",
+        "bytes": 1080631,
+        "sha256": "C87753633955B513B0FD0BFBC3E87E6F7CA2833B75C242370AEACE0B819B72AD",
+        "traceEntryCount": 39,
+        "hasTraceEvents": true,
+        "hasNetworkEvents": true
+      },
+      {
+        "path": "outputs/evidence/browser/p4-t8/publishing-rss-revoke-trace.zip",
+        "bytes": 6516324,
+        "sha256": "6FB87DE363D6AD9D4AE5A85B5601828C07244433F759A9F61E344635B40F860F",
+        "traceEntryCount": 232,
+        "hasTraceEvents": true,
+        "hasNetworkEvents": true
+      }
+    ]
+  }
+}

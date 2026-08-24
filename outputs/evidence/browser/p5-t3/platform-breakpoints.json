@@ -1,0 +1,135 @@
+{
+  "capturedAt": "2026-08-22T16:15:06.668Z",
+  "breakpoints": [
+    {
+      "name": "1440x900",
+      "geometry": {
+        "active": {
+          "left": 674.2916870117188,
+          "right": 726.2916870117188,
+          "text": "平台"
+        },
+        "activeVisible": true,
+        "document": {
+          "clientWidth": 1425,
+          "scrollWidth": 1425
+        },
+        "primaryNav": {
+          "clientWidth": 892,
+          "scrollLeft": 0,
+          "scrollWidth": 892
+        },
+        "viewport": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "name": "1024x900",
+      "geometry": {
+        "active": {
+          "left": 556.8541870117188,
+          "right": 608.8541870117188,
+          "text": "平台"
+        },
+        "activeVisible": true,
+        "document": {
+          "clientWidth": 1009,
+          "scrollWidth": 1009
+        },
+        "primaryNav": {
+          "clientWidth": 935,
+          "scrollLeft": 0,
+          "scrollWidth": 935
+        },
+        "viewport": [
+          1024,
+          900
+        ]
+      }
+    },
+    {
+      "name": "768x1024",
+      "geometry": {
+        "active": {
+          "left": 547.6458740234375,
+          "right": 599.6458740234375,
+          "text": "平台"
+        },
+        "activeVisible": true,
+        "document": {
+          "clientWidth": 753,
+          "scrollWidth": 753
+        },
+        "primaryNav": {
+          "clientWidth": 697,
+          "scrollLeft": 0,
+          "scrollWidth": 697
+        },
+        "viewport": [
+          768,
+          1024
+        ]
+      }
+    }
+  ],
+  "phone": [
+    {
+      "active": {
+        "left": 314.66668701171875,
+        "right": 366.6666870117187,
+        "text": "平台",
+        "width": 52
+      },
+      "href": "http://127.0.0.1:5174/app/platform",
+      "nav": {
+        "clientWidth": 375,
+        "left": 0,
+        "right": 374.6666870117187,
+        "scrollLeft": 221.3333282470703,
+        "scrollWidth": 596,
+        "width": 374.6666870117187
+      },
+      "page": {
+        "clientWidth": 375,
+        "scrollWidth": 375
+      },
+      "viewport": [
+        390,
+        844
+      ],
+      "visible": true
+    },
+    {
+      "active": {
+        "left": 244.6666717529297,
+        "right": 296.6666717529297,
+        "text": "平台",
+        "width": 52
+      },
+      "href": "http://127.0.0.1:5174/app/platform",
+      "nav": {
+        "clientWidth": 305,
+        "left": 0,
+        "right": 304.66668701171875,
+        "scrollLeft": 291.3333435058594,
+        "scrollWidth": 596,
+        "width": 304.66668701171875
+      },
+      "page": {
+        "clientWidth": 305,
+        "scrollWidth": 305
+      },
+      "viewport": [
+        320,
+        844
+      ],
+      "visible": true
+    }
+  ],
+  "checks": {
+    "monitoring": "allowlisted preset selector and honest no-verifiable-series empty state",
+    "technologies": "implementation, delivery and learning-track facts kept separate"
+  }
+}

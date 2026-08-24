@@ -1,0 +1,253 @@
+nameOverride: ""
+fullnameOverride: ""
+imagePullSecrets: []
+production: false
+
+# Keep false when the Secret is supplied out-of-band. For GitOps, prefer
+# externalSecret.enabled with an External Secrets Operator SecretStore.
+secrets:
+  create: false
+  name: lifeops-secrets
+  data:
+    adminPassword: ""
+    mysqlPassword: ""
+    mysqlRootPassword: ""
+
+externalSecret:
+  enabled: false
+  refreshInterval: 1h
+  secretStoreRef:
+    name: lifeops-secret-store
+    kind: ClusterSecretStore
+  remoteRefs:
+    adminPassword: lifeops/admin-password
+    mysqlPassword: lifeops/mysql-password
+    mysqlRootPassword: lifeops/mysql-root-password
+    s3AccessKeyId: lifeops/s3-access-key-id
+    s3SecretAccessKey: lifeops/s3-secret-access-key
+
+web:
+  replicaCount: 2
+  image:
+    repository: uhub.service.ucloud.cn/chenucloud/lifeops-web
+    tag: "1.0.0"
+    digest: ""
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 128Mi
+  autoscaling:
+    enabled: false
+    minReplicas: 2
+    maxReplicas: 6
+    targetCPUUtilizationPercentage: 70
+  podDisruptionBudget:
+    enabled: true
+    minAvailable: 1
+
+api:
+  replicaCount: 2
+  image:
+    repository: uhub.service.ucloud.cn/chenucloud/lifeops-api
+    tag: "1.0.0"
+    digest: ""
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+  existingSecret: lifeops-secrets
+  secretKeys:
+    adminPassword: admin-password
+    mysqlPassword: mysql-password
+  config:
+    adminAccount: admin
+    adminDisplayName: LifeOps Owner
+    allowedOrigins: "https://lifeops.example.com"
+    secureCookies: true
+    sessionTtlSeconds: 28800
+    mysqlConnectionLimit: 10
+    trustedProxyCidrs: ""
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+  autoscaling:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 6
+    targetCPUUtilizationPercentage: 70
+  podDisruptionBudget:
+    enabled: true
+    minAvailable: 1
+
+media:
+  backend: filesystem
+  filesystem:
+    root: /var/lib/lifeops/media
+    persistence:
+      enabled: true
+      existingClaim: ""
+      storageClass: ""
+      accessModes:
+        - ReadWriteMany
+      size: 10Gi
+  s3:
+    endpoint: ""
+    region: ""
+    bucket: ""
+    forcePathStyle: true
+    # Credentials are never values. Reference a separately managed Secret, or
+    # enable externalSecret and configure its remote refs above.
+    existingSecret: lifeops-secrets
+    accessKeyIdKey: s3-access-key-id
+    secretAccessKeyKey: s3-secret-access-key
+
+mysql:
+  enabled: true
+  image:
+    repository: mysql
+    tag: "8.4.10"
+    pullPolicy: IfNotPresent
+  database: lifeops
+  user: lifeops
+  auth:
+    existingSecret: lifeops-secrets
+    passwordKey: mysql-password
+    rootPasswordKey: mysql-root-password
+  persistence:
+    enabled: true
+    storageClass: ""
+    accessModes:
+      - ReadWriteOnce
+    size: 10Gi
+  resources:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      cpu: "1"
+      memory: 1Gi
+
+externalDatabase:
+  host: ""
+  port: 3306
+  database: lifeops
+  user: lifeops
+  existingSecret: lifeops-secrets
+  passwordKey: mysql-password
+
+platform:
+  kubernetes:
+    enabled: false
+    baseUrl: https://kubernetes.default.svc
+    deepLinkUrl: ""
+    timeoutMs: 3000
+    maxResponseBytes: 262144
+    tokenExpirationSeconds: 600
+  integrations:
+    prometheus:
+      enabled: false
+      baseUrl: ""
+      deepLinkUrl: ""
+      timeoutMs: 3000
+      maxResponseBytes: 262144
+      existingSecret: ""
+      bearerTokenKey: ""
+      usernameKey: ""
+      passwordKey: ""
+    alertmanager:
+      enabled: false
+      baseUrl: ""
+      deepLinkUrl: ""
+      timeoutMs: 3000
+      maxResponseBytes: 262144
+      existingSecret: ""
+      bearerTokenKey: ""
+      usernameKey: ""
+      passwordKey: ""
+    elasticsearch:
+      enabled: false
+      baseUrl: ""
+      deepLinkUrl: ""
+      timeoutMs: 3000
+      maxResponseBytes: 262144
+      existingSecret: ""
+      bearerTokenKey: ""
+      usernameKey: ""
+      passwordKey: ""
+    github:
+      enabled: false
+      baseUrl: ""
+      deepLinkUrl: ""
+      timeoutMs: 3000
+      maxResponseBytes: 262144
+      existingSecret: ""
+      bearerTokenKey: ""
+      usernameKey: ""
+      passwordKey: ""
+    argoCd:
+      enabled: false
+      baseUrl: ""
+      deepLinkUrl: ""
+      timeoutMs: 3000
+      maxResponseBytes: 262144
+      existingSecret: ""
+      bearerTokenKey: ""
+      usernameKey: ""
+      passwordKey: ""
+
+monitoring:
+  enabled: false
+  serviceMonitor:
+    interval: 30s
+  grafana:
+    sidecarLabel: grafana_dashboard
+    sidecarLabelValue: "1"
+
+networkPolicy:
+  enabled: false
+  allowInternetEgress: false
+  gateway:
+    namespace: envoy-gateway-system
+  prometheus:
+    namespace: monitoring
+    podLabels:
+      app.kubernetes.io/name: prometheus
+  dns:
+    namespace: kube-system
+    podLabels:
+      k8s-app: kube-dns
+  externalDatabase:
+    cidr: ""
+    port: 3306
+  integrationEgress: []
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: lifeops.example.com
+  tls: []
+
+httpRoute:
+  enabled: false
+  parentRefs:
+    - name: envoy-gateway
+      namespace: envoy-gateway-system
+  hostnames:
+    - lifeops.example.com
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

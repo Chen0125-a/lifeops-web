@@ -1,0 +1,366 @@
+.life-shell {
+  --life-green: #2f7259;
+  --life-green-soft: #dcece3;
+  --life-sun: #d69732;
+  --life-red: #a94747;
+  min-width: 0;
+}
+
+.life-command-strip {
+  position: sticky;
+  z-index: 42;
+  top: 76px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  min-height: 76px;
+  margin: calc(clamp(34px, 4vw, 64px) * -1) 0 clamp(34px, 4vw, 56px);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--private-line-strong);
+  background: color-mix(in srgb, var(--private-canvas) 92%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+.life-command-strip > div { display: flex; min-width: 0; align-items: center; gap: clamp(18px, 3vw, 46px); }
+.life-command-strip > div > p,
+.life-today__heading > div > p,
+.life-timeline header span,
+.life-nutrition > header span,
+.life-inventory-notices header span,
+.life-budget > header span,
+.life-section-placeholder > p,
+.life-calendar-panel > header p,
+.life-calendar-summary > header p {
+  margin: 0;
+  color: var(--private-quiet);
+  font-size: 11px;
+  font-weight: 680;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.life-subnav { display: flex; min-width: 0; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+.life-subnav::-webkit-scrollbar { display: none; }
+.life-subnav a {
+  position: relative;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0 13px;
+  color: var(--private-quiet);
+  font-size: 14px;
+  white-space: nowrap;
+}
+.life-subnav a::after { position: absolute; right: 13px; bottom: 4px; left: 13px; height: 2px; background: var(--life-green); content: ''; opacity: 0; transform: scaleX(.3); transition: opacity 140ms linear, transform 180ms var(--ease); }
+.life-subnav a:hover,
+.life-subnav a[aria-current='page'] { color: var(--private-ink); }
+.life-subnav a[aria-current='page'] { font-weight: 670; }
+.life-subnav a[aria-current='page']::after { opacity: 1; transform: scaleX(1); }
+
+.life-calendar-trigger {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-content: center;
+  border: 1px solid color-mix(in srgb, var(--life-green) 55%, var(--private-line));
+  border-radius: 50%;
+  color: var(--private-ink);
+  background: color-mix(in srgb, var(--private-surface) 82%, transparent);
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(31, 77, 59, .1);
+}
+.life-calendar-trigger span:first-child { font-size: 17px; font-weight: 720; line-height: 1; }
+.life-calendar-trigger span:last-child { margin-top: 4px; color: var(--private-quiet); font-size: 10px; }
+.life-calendar-trigger:hover { border-color: var(--life-green); background: var(--life-green-soft); }
+
+/* The sticky command strip is offset from the transformed route panel; reserve its
+   visual footprint so the first page heading can never slide underneath it. */
+.life-route-stage { padding-top: 120px; }
+
+.life-today { min-width: 0; }
+.life-today__heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 4px 0 clamp(34px, 5vw, 68px);
+}
+.life-today__heading h1,
+.life-section-placeholder h1 {
+  margin: 8px 0 0;
+  font-size: clamp(54px, 7.2vw, 104px);
+  font-weight: 570;
+  letter-spacing: -.07em;
+  line-height: .9;
+}
+.life-today__heading > p { max-width: 24rem; margin: 0; padding-left: 20px; border-left: 2px solid var(--life-green); color: var(--private-secondary); font-size: 13px; line-height: 1.65; }
+.life-today__heading > p.is-incomplete { border-color: var(--life-sun); }
+.life-today__heading h1:focus-visible,
+.life-section-placeholder h1:focus-visible,
+.life-calendar-panel h1:focus-visible { outline: none; }
+
+.life-today__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--private-line-strong);
+  border-bottom: 1px solid var(--private-line-strong);
+}
+
+.life-next-action {
+  grid-column: 8 / -1;
+  display: grid;
+  min-height: 132px;
+  align-content: center;
+  gap: 7px;
+  padding: 24px clamp(22px, 3vw, 42px);
+  border-bottom: 1px solid var(--private-line-strong);
+  background: linear-gradient(130deg, rgba(248, 222, 164, .5), rgba(249, 241, 220, .08) 70%);
+}
+.life-next-action > span { color: #8a5b14; font-size: 12px; font-weight: 720; letter-spacing: .08em; }
+.life-next-action strong { font-size: clamp(19px, 2vw, 27px); font-weight: 610; letter-spacing: -.03em; }
+.life-next-action small { color: var(--private-quiet); font-size: 12px; }
+.life-next-action a { width: fit-content; min-height: 36px; padding-top: 8px; border-bottom: 1px solid currentColor; color: var(--private-action); font-size: 13px; font-weight: 650; }
+
+.life-timeline {
+  grid-column: 1 / 8;
+  grid-row: 1 / 4;
+  min-height: 720px;
+  padding: 28px clamp(26px, 3.5vw, 54px) 48px 0;
+  border-right: 1px solid var(--private-line-strong);
+}
+.life-timeline > header,
+.life-inventory-notices > header { display: flex; min-height: 56px; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--private-line); }
+.life-timeline header h2,
+.life-nutrition > header h2,
+.life-inventory-notices header h2,
+.life-budget > header h2 { margin: 5px 0 0; font-size: 19px; font-weight: 650; letter-spacing: -.025em; }
+.life-timeline header > a,
+.life-inventory-notices header > a { display: inline-flex; min-height: 44px; align-items: center; color: var(--private-action); font-size: 13px; }
+.life-timeline ol { margin: 0; padding: 8px 0 0; list-style: none; }
+.life-timeline li { display: grid; grid-template-columns: 58px 18px minmax(0, 1fr) auto; min-height: 112px; align-items: center; gap: 14px; border-bottom: 1px solid var(--private-line); }
+.life-timeline li time { color: var(--private-secondary); font-size: 13px; font-variant-numeric: tabular-nums; }
+.life-timeline__rail { position: relative; align-self: stretch; }
+.life-timeline__rail::before { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--private-line-strong); content: ''; }
+.life-timeline__rail::after { position: absolute; top: 50%; left: 50%; width: 11px; height: 11px; border: 2px solid var(--private-canvas); border-radius: 50%; background: var(--private-line-strong); box-shadow: 0 0 0 1px var(--private-line-strong); content: ''; transform: translate(-50%, -50%); }
+.life-timeline li[data-status='completed'] .life-timeline__rail::after { background: var(--life-green); box-shadow: 0 0 0 1px var(--life-green); }
+.life-timeline li[data-status='in_progress'] .life-timeline__rail::after { border-radius: 2px; background: var(--life-sun); box-shadow: 0 0 0 1px var(--life-sun); transform: translate(-50%, -50%) rotate(45deg); }
+.life-timeline li[data-status='skipped'] .life-timeline__rail::after { background: transparent; box-shadow: 0 0 0 1px var(--private-line-strong); }
+.life-timeline li > div { display: grid; gap: 5px; }
+.life-timeline li > div small { color: var(--private-quiet); font-size: 11px; letter-spacing: .06em; }
+.life-timeline li > div strong { font-size: 16px; font-weight: 620; }
+.life-timeline li > [data-testid='life-item-status'] { min-width: 62px; color: var(--private-quiet); font-size: 12px; text-align: right; }
+
+.life-nutrition {
+  grid-column: 8 / -1;
+  min-width: 0;
+  padding: 28px 0 32px clamp(22px, 3vw, 42px);
+  border-bottom: 1px solid var(--private-line-strong);
+}
+.life-nutrition > header,
+.life-budget > header { min-height: 56px; border-bottom: 1px solid var(--private-line); }
+.life-nutrition > section { padding-top: 15px; }
+.life-fact-columns,
+.life-nutrition dl > div { display: grid; grid-template-columns: minmax(90px, 1fr) minmax(90px, .85fr) minmax(90px, .85fr); gap: 10px; }
+.life-fact-columns { padding: 0 0 8px; color: var(--private-quiet); font-size: 10px; letter-spacing: .08em; }
+.life-nutrition dl { margin: 0; }
+.life-nutrition dl > div { min-height: 42px; align-items: center; border-bottom: 1px solid color-mix(in srgb, var(--private-line) 70%, transparent); }
+.life-nutrition dt { color: var(--private-secondary); font-size: 12px; }
+.life-nutrition dd { margin: 0; font-size: 12px; font-variant-numeric: tabular-nums; }
+.life-nutrition dd:last-child { color: var(--life-green); font-weight: 650; }
+
+.life-budget {
+  grid-column: 8 / -1;
+  padding: 26px 0 28px clamp(22px, 3vw, 42px);
+}
+.life-budget > div { display: grid; min-height: 46px; align-content: center; gap: 3px; border-bottom: 1px solid color-mix(in srgb, var(--private-line) 72%, transparent); }
+.life-budget > div > span { font-size: 13px; font-weight: 590; }
+.life-budget > div > small { color: var(--private-quiet); font-size: 11px; }
+.life-budget a { width: fit-content; color: var(--private-action); font-size: 12px; }
+
+.life-inventory-notices {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(220px, 3fr) minmax(0, 9fr);
+  gap: clamp(22px, 3vw, 46px);
+  min-height: 210px;
+  padding: 32px 0;
+  border-top: 1px solid var(--private-line-strong);
+}
+.life-inventory-notices > header { align-self: start; }
+.life-inventory-notices > ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+.life-inventory-notices li { display: grid; min-height: 124px; align-content: center; gap: 8px; padding: 20px clamp(18px, 2vw, 28px); border-left: 1px solid var(--private-line); }
+.life-inventory-notices li p { margin: 0; color: var(--private-secondary); font-size: 14px; }
+.life-inventory-notices li span { color: #8a5b14; font-size: 12px; }
+.life-inventory-notices li a { width: fit-content; color: var(--private-action); font-size: 12px; font-weight: 650; }
+.life-inventory-notices.has-actions { background: linear-gradient(90deg, transparent, rgba(246, 225, 183, .18), transparent); }
+
+.life-empty { display: grid; min-height: 260px; align-content: center; justify-items: start; }
+.life-empty.is-compact { min-height: 130px; }
+.life-empty p { max-width: 35rem; margin: 0 0 18px; color: var(--private-secondary); font-size: 14px; line-height: 1.7; }
+.life-empty a { min-height: 40px; border-bottom: 1px solid currentColor; color: var(--private-action); font-size: 13px; font-weight: 650; }
+.life-today-state { min-height: 60vh; padding-top: 18vh; }
+.life-today-state h1 { margin: 0; font-size: clamp(48px, 7vw, 90px); letter-spacing: -.06em; }
+.life-today-state p { color: var(--private-secondary); }
+.life-today-state button { min-height: 44px; padding: 0 16px; border: 1px solid var(--private-action); border-radius: 11px; color: #fff; background: var(--private-action); }
+
+.life-section-placeholder { min-height: 60vh; padding-top: 12vh; }
+.life-section-placeholder > span { display: block; max-width: 34rem; margin-top: 32px; color: var(--private-secondary); line-height: 1.7; }
+
+.life-calendar-overlay { position: fixed; z-index: 55; inset: 76px 0 0; isolation: isolate; display: grid; place-items: start center; padding: 24px clamp(18px, 4vw, 60px); overflow: auto; overscroll-behavior: contain; }
+.life-calendar-backdrop { position: fixed; z-index: 0; inset: 76px 0 0; width: 100%; height: auto; border: 0; background: rgba(22, 36, 31, .28); backdrop-filter: blur(8px); }
+.life-calendar-persistent-close { position: fixed; z-index: 6; top: 151px; right: clamp(58px, 7.6vw, 110px); display: inline-flex; min-height: 44px; align-items: center; gap: 10px; padding: 0 15px; border: 1px solid var(--private-line); border-radius: 999px; color: var(--private-secondary); background: rgba(255,255,255,.9); box-shadow: 0 8px 28px rgba(24, 47, 38, .08); }
+.life-calendar-panel { position: relative; z-index: 1; width: min(100%, 1380px); min-height: min(780px, calc(100vh - 124px)); padding: clamp(26px, 3.5vw, 54px); border: 1px solid var(--private-line-strong); border-radius: 28px; background: linear-gradient(145deg, #fbfdfc, #edf4f0); box-shadow: 0 34px 100px rgba(24, 47, 38, .24); }
+.life-calendar-panel > header { display: flex; align-items: start; justify-content: space-between; gap: 20px; padding-right: 150px; padding-bottom: 26px; border-bottom: 1px solid var(--private-line-strong); }
+.life-calendar-panel > header h1 { margin: 6px 0 0; font-size: clamp(42px, 5.6vw, 76px); font-weight: 580; letter-spacing: -.065em; line-height: .95; }
+.life-calendar-data-state { display: flex; min-height: 52px; align-items: center; justify-content: space-between; gap: 18px; margin: 0; padding: 10px 14px; border-bottom: 1px solid var(--private-line); color: var(--private-secondary); font-size: 12px; }
+.life-calendar-data-state p { margin: 0; }
+.life-calendar-data-state.is-error { border-left: 2px solid var(--life-red); color: #843b3b; background: rgba(250, 230, 228, .45); }
+.life-calendar-data-state button { min-height: 36px; padding: 0 12px; border: 1px solid currentColor; border-radius: 9px; color: inherit; background: transparent; }
+.life-calendar-layout { display: grid; grid-template-columns: minmax(0, 8fr) minmax(310px, 4fr); min-height: 580px; }
+.life-calendar-month { min-width: 0; padding: 30px clamp(24px, 3vw, 48px) 8px 0; border-right: 1px solid var(--private-line-strong); }
+.life-calendar-month > header { display: flex; min-height: 42px; align-items: center; justify-content: space-between; }
+.life-calendar-month > header h2 { margin: 0; font-size: 22px; font-weight: 650; letter-spacing: -.03em; }
+.life-calendar-month > header span { color: var(--private-quiet); font-size: 11px; }
+.life-calendar-weekdays,
+.life-calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.life-calendar-weekdays { padding-top: 22px; color: var(--private-quiet); font-size: 11px; text-align: center; }
+.life-calendar-grid { margin-top: 8px; border-top: 1px solid var(--private-line); border-left: 1px solid var(--private-line); }
+.life-calendar-grid__row { display: contents; }
+.life-calendar-grid button { position: relative; display: grid; min-width: 0; min-height: 74px; align-content: space-between; justify-items: start; padding: 10px; border: 0; border-right: 1px solid var(--private-line); border-bottom: 1px solid var(--private-line); border-radius: 0; color: var(--private-ink); background: rgba(255,255,255,.22); text-align: left; }
+.life-calendar-grid button[data-current-month='false'] { opacity: .36; }
+.life-calendar-grid button[aria-selected='true'] { z-index: 1; outline: 2px solid var(--private-action); outline-offset: -2px; background: rgba(226, 237, 255, .72); }
+.life-calendar-grid time { display: grid; width: 26px; height: 26px; place-items: center; border-radius: 50%; font-size: 12px; font-weight: 680; }
+.life-calendar-grid button span { max-width: 100%; overflow: hidden; color: var(--private-quiet); font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.life-calendar-grid [data-state='planned'] time { box-shadow: inset 0 0 0 2px var(--life-green); }
+.life-calendar-grid [data-state='complete'] time { color: #fff; background: var(--life-green); }
+.life-calendar-grid [data-state='past-incomplete'] time { border-radius: 3px; color: #fff; background: var(--life-sun); transform: rotate(45deg); }
+.life-calendar-grid [data-state='past-incomplete'] time::first-letter { transform: rotate(-45deg); }
+.life-calendar-grid [data-state='conflicted'] time { border-radius: 3px; color: #fff; background: var(--life-red); }
+.life-calendar-legend { display: flex; flex-wrap: wrap; gap: 14px 22px; margin: 20px 0 0; padding: 0; color: var(--private-secondary); font-size: 11px; list-style: none; }
+.life-calendar-legend li::before { display: inline-block; width: 9px; height: 9px; margin-right: 7px; border: 1px solid var(--life-green); border-radius: 50%; content: ''; }
+.life-calendar-legend [data-state='complete']::before { background: var(--life-green); }
+.life-calendar-legend [data-state='past-incomplete']::before { border: 0; border-radius: 1px; background: var(--life-sun); transform: rotate(45deg); }
+.life-calendar-legend [data-state='conflicted']::before { border: 0; border-radius: 1px; background: var(--life-red); }
+
+.life-calendar-summary { min-width: 0; padding: 34px 0 16px clamp(24px, 3vw, 48px); }
+.life-calendar-summary > header { padding-bottom: 18px; border-bottom: 1px solid var(--private-line); }
+.life-calendar-summary > header h2 { margin: 5px 0 0; font-size: 27px; font-weight: 620; letter-spacing: -.04em; }
+.life-calendar-summary__count { display: flex; align-items: baseline; gap: 8px; min-height: 78px; border-bottom: 1px solid var(--private-line); }
+.life-calendar-summary__count strong { font-size: 38px; font-weight: 570; }
+.life-calendar-summary__count span { color: var(--private-quiet); font-size: 12px; }
+.life-calendar-summary ol { max-height: 180px; margin: 0; padding: 0; overflow: auto; list-style: none; }
+.life-calendar-summary ol li { display: grid; grid-template-columns: 58px 1fr; gap: 12px; min-height: 62px; align-items: center; border-bottom: 1px solid var(--private-line); }
+.life-calendar-summary ol time,
+.life-calendar-summary ol span { color: var(--private-quiet); font-size: 11px; }
+.life-calendar-summary ol div { display: grid; gap: 3px; }
+.life-calendar-summary ol strong { font-size: 13px; }
+.life-calendar-summary__empty { margin: 0; padding: 24px 0; border-bottom: 1px solid var(--private-line); color: var(--private-secondary); font-size: 13px; }
+.life-calendar-summary dl { margin: 12px 0; }
+.life-calendar-summary dl > div { display: flex; min-height: 36px; align-items: center; justify-content: space-between; gap: 14px; }
+.life-calendar-summary dt { color: var(--private-quiet); font-size: 11px; }
+.life-calendar-summary dd { margin: 0; font-size: 12px; font-weight: 630; }
+.life-calendar-conflict { padding: 12px; border-left: 2px solid var(--life-sun); color: #75500f; background: rgba(248, 225, 176, .3); font-size: 11px; line-height: 1.6; }
+.life-calendar-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; padding-top: 16px; }
+.life-calendar-actions button { min-height: 44px; padding: 0 8px; border: 1px solid var(--private-line); border-radius: 10px; color: var(--private-secondary); background: rgba(255,255,255,.62); font-size: 11px; }
+.life-calendar-actions button:first-child { border-color: var(--private-action); color: #fff; background: var(--private-action); }
+
+.life-copy-dialog { position: absolute; z-index: 3; right: clamp(24px, 3.5vw, 54px); bottom: clamp(24px, 3.5vw, 54px); display: grid; width: min(420px, calc(100% - 48px)); gap: 18px; padding: 28px; border: 1px solid var(--private-line-strong); border-radius: 18px; background: var(--private-surface); box-shadow: 0 24px 80px rgba(24, 47, 38, .28); }
+.life-copy-dialog h2 { margin: 0; font-size: 21px; }
+.life-copy-dialog p { margin: 0; color: var(--private-secondary); font-size: 13px; line-height: 1.65; }
+.life-copy-dialog label { display: grid; gap: 7px; color: var(--private-secondary); font-size: 12px; }
+.life-copy-dialog input { min-height: 44px; padding: 0 12px; border: 1px solid var(--private-line); border-radius: 10px; background: #fff; }
+.life-copy-dialog > div { display: flex; justify-content: end; gap: 8px; }
+.life-copy-dialog button { min-height: 44px; padding: 0 14px; border: 1px solid var(--private-line); border-radius: 10px; background: #fff; }
+.life-copy-dialog button:last-child { border-color: var(--private-action); color: #fff; background: var(--private-action); }
+
+.overview-life-summary { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(180px, .8fr) minmax(220px, 1.4fr) auto auto; min-height: 76px; align-items: center; gap: 20px; padding: 10px 22px; border-bottom: 1px solid var(--private-line-strong); background: linear-gradient(90deg, rgba(220, 236, 227, .58), transparent 82%); }
+.overview-life-summary > div { display: grid; gap: 2px; }
+.overview-life-summary span,
+.overview-life-summary small { color: var(--private-quiet); font-size: 11px; }
+.overview-life-summary strong { font-size: 15px; }
+.overview-life-summary p { margin: 0; color: var(--private-secondary); font-size: 13px; }
+.overview-life-summary a { display: inline-flex; min-height: 44px; align-items: center; color: var(--private-action); font-size: 13px; font-weight: 650; }
+
+@media (max-width: 1180px) {
+  .life-command-strip { top: 118px; }
+  .life-calendar-overlay { inset-block-start: 118px; }
+  .life-calendar-backdrop { inset-block-start: 118px; }
+  .life-calendar-persistent-close { top: 179px; right: 8vw; }
+  .life-calendar-layout { grid-template-columns: minmax(0, 3fr) minmax(290px, 2fr); }
+  .life-calendar-grid button { min-height: 66px; }
+}
+
+@media (max-width: 860px) {
+  .life-command-strip > div > p { display: none; }
+  .life-today__grid { display: block; }
+  .life-next-action,
+  .life-timeline,
+  .life-nutrition,
+  .life-inventory-notices,
+  .life-budget { padding-inline: 0; border-right: 0; }
+  .life-next-action { margin-inline: -20px; padding-inline: 20px; }
+  .life-timeline { min-height: auto; border-bottom: 1px solid var(--private-line-strong); }
+  .life-nutrition { min-height: auto; }
+  .life-inventory-notices { display: block; }
+  .life-inventory-notices > ul { margin-top: 12px; }
+  .life-inventory-notices li:first-child { border-left: 0; }
+  .life-budget { border-top: 1px solid var(--private-line-strong); }
+  .life-calendar-overlay { place-items: stretch; padding: 0; }
+  .life-calendar-panel { width: 100%; height: max-content; min-height: 100%; padding: 28px 20px 64px; border-width: 1px 0 0; border-radius: 0; }
+  .life-calendar-layout { display: block; }
+  .life-calendar-month { padding-right: 0; border-right: 0; border-bottom: 1px solid var(--private-line-strong); }
+  .life-calendar-summary { padding: 34px 0 0; }
+  .life-calendar-grid button { min-height: 70px; }
+  .life-copy-dialog { position: fixed; right: 16px; bottom: 16px; left: 16px; width: auto; }
+}
+
+@media (max-width: 620px) {
+  .life-command-strip { top: 112px; min-height: 68px; margin-top: -28px; margin-bottom: 30px; }
+  .life-command-strip > div { min-width: 0; }
+  .life-subnav { margin-right: -8px; }
+  .life-subnav a { padding-inline: 11px; }
+  .life-subnav a::after { right: 11px; left: 11px; }
+  .life-calendar-trigger { width: 50px; height: 50px; }
+  .life-today__heading { align-items: start; flex-direction: column; padding-bottom: 34px; }
+  .life-today__heading h1 { font-size: 54px; }
+  .life-today__heading > p { max-width: none; }
+  .life-next-action { margin-inline: -16px; padding-inline: 16px; }
+  .life-timeline li { grid-template-columns: 50px 14px minmax(0, 1fr); min-height: 102px; gap: 9px; }
+  .life-timeline li > [data-testid='life-item-status'] { grid-column: 3; text-align: left; }
+  .life-fact-columns,
+  .life-nutrition dl > div { grid-template-columns: minmax(78px, 1fr) minmax(76px, .85fr) minmax(76px, .85fr); }
+  .life-inventory-notices > ul { grid-template-columns: 1fr; }
+  .life-inventory-notices li { border-left: 0; border-top: 1px solid var(--private-line); }
+  .life-calendar-overlay { inset-block-start: 112px; }
+  .life-calendar-backdrop { inset-block-start: 112px; }
+  .life-calendar-persistent-close { top: 142px; right: 20px; }
+  .life-calendar-panel > header h1 { font-size: 43px; }
+  .life-calendar-panel > header { padding-right: 58px; }
+  .life-calendar-persistent-close span:last-child { display: none; }
+  .life-calendar-month > header span { display: none; }
+  .life-calendar-grid button { min-height: 54px; padding: 6px; }
+  .life-calendar-grid button span { display: none; }
+  .life-calendar-actions { grid-template-columns: 1fr; }
+  .overview-life-summary { grid-template-columns: 1fr auto; gap: 8px 16px; padding-inline: 14px; }
+  .overview-life-summary p { grid-column: 1 / -1; }
+}
+
+@media (max-width: 360px) {
+  .life-calendar-trigger { width: 46px; height: 46px; }
+  .life-subnav a { min-width: 52px; justify-content: center; padding-inline: 8px; }
+  .life-fact-columns,
+  .life-nutrition dl > div { grid-template-columns: 72px 1fr 1fr; gap: 6px; }
+  .life-calendar-grid time { width: 24px; height: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .life-subnav a::after { transition: none; }
+}
+
+@media (forced-colors: active) {
+  .life-calendar-grid button[aria-selected='true'],
+  .life-calendar-grid time,
+  .life-timeline__rail::after { forced-color-adjust: none; }
+}

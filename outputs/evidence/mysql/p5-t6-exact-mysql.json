@@ -1,0 +1,51 @@
+{
+  "taskId": "P5-T6",
+  "recordedAt": "2026-08-23T03:26:00+08:00",
+  "server": {
+    "product": "MySQL Community Server",
+    "version": "8.4.10",
+    "binary": "C:\\Program Files\\MySQL\\MySQL Server 8.4\\bin\\mysqld.exe",
+    "port": 34041,
+    "database": "lifeops_p5_t6_trash_red",
+    "dataDirectory": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\lifeops-mysql-p5-t6-20260823-0306"
+  },
+  "finalGate": {
+    "command": "npm.cmd run test:mysql",
+    "exitCode": 0,
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "durationSeconds": 9.99,
+    "coverage": [
+      "additive migration 016 settings and immutable restore-point schema",
+      "owner-scoped preferences, password/session and safe audit persistence",
+      "deterministic export and no-write import preview",
+      "full-account restore snapshot persisted and checksum-verified before apply",
+      "same-owner and cross-owner relation-preserving import",
+      "deleted record, review and knowledge facts remain restorable with trash tombstones",
+      "all-or-nothing apply and audit rollback on failure"
+    ]
+  },
+  "expectedRed": {
+    "command": "npm.cmd run test:mysql",
+    "exitCode": 1,
+    "passed": 49,
+    "failed": 1,
+    "skipped": 0,
+    "classification": "behavioral",
+    "failure": "The added deleted-record portability journey received only the tombstone and proved the deleted record body was not yet exportable/restorable."
+  },
+  "setupDiagnostic": {
+    "classification": "environment-setup-only",
+    "acceptedAsBehavioralRed": false,
+    "detail": "An earlier instance started with --skip-name-resolve and rejected root@localhost before any database or test was created. The exact task PIDs 12156 and 13932 were identified and stopped before the final instance was started without that option."
+  },
+  "shutdown": {
+    "command": "mysqladmin shutdown",
+    "exitCode": 0,
+    "postShutdownPingExitCode": 1,
+    "verifiedAbsentPids": [16188, 14192],
+    "listenerPresentAfterShutdown": false
+  },
+  "scope": "Task-owned isolated MySQL only; no system MySQL, unrelated process, Docker, Kubernetes, Helm, Argo or cluster state was modified."
+}

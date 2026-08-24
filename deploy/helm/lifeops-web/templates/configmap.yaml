@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-config
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+    app.kubernetes.io/component: api
+data:
+  LIFEOPS_STORE: "mysql"
+  MYSQL_HOST: {{ include "lifeops-web.mysqlHost" . | quote }}
+  MYSQL_PORT: {{ ternary "3306" (printf "%v" .Values.externalDatabase.port) .Values.mysql.enabled | quote }}
+  MYSQL_DATABASE: {{ ternary .Values.mysql.database .Values.externalDatabase.database .Values.mysql.enabled | quote }}
+  MYSQL_USER: {{ ternary .Values.mysql.user .Values.externalDatabase.user .Values.mysql.enabled | quote }}
+  MYSQL_CONNECTION_LIMIT: {{ .Values.api.config.mysqlConnectionLimit | quote }}
+  LIFEOPS_ADMIN_ACCOUNT: {{ .Values.api.config.adminAccount | quote }}
+  LIFEOPS_ADMIN_DISPLAY_NAME: {{ .Values.api.config.adminDisplayName | quote }}
+  LIFEOPS_ALLOWED_ORIGINS: {{ .Values.api.config.allowedOrigins | quote }}
+  LIFEOPS_SECURE_COOKIES: {{ .Values.api.config.secureCookies | quote }}
+  LIFEOPS_SESSION_TTL_SECONDS: {{ .Values.api.config.sessionTtlSeconds | quote }}
+  LIFEOPS_LOGGER: "true"
+  LIFEOPS_TRUST_PROXY: {{ .Values.api.config.trustedProxyCidrs | quote }}
+  LIFEOPS_MEDIA_BACKEND: {{ .Values.media.backend | quote }}
+  {{- if eq .Values.media.backend "filesystem" }}
+  LIFEOPS_MEDIA_ROOT: {{ .Values.media.filesystem.root | quote }}
+  {{- else }}
+  LIFEOPS_S3_ENDPOINT: {{ .Values.media.s3.endpoint | quote }}
+  LIFEOPS_S3_REGION: {{ .Values.media.s3.region | quote }}
+  LIFEOPS_S3_BUCKET: {{ .Values.media.s3.bucket | quote }}
+  LIFEOPS_S3_FORCE_PATH_STYLE: {{ .Values.media.s3.forcePathStyle | quote }}
+  {{- end }}
+  LIFEOPS_KUBERNETES_ENABLED: {{ .Values.platform.kubernetes.enabled | quote }}
+  LIFEOPS_KUBERNETES_BASE_URL: {{ .Values.platform.kubernetes.baseUrl | quote }}
+  LIFEOPS_KUBERNETES_DEEP_LINK_URL: {{ .Values.platform.kubernetes.deepLinkUrl | quote }}
+  LIFEOPS_KUBERNETES_TIMEOUT_MS: {{ .Values.platform.kubernetes.timeoutMs | quote }}
+  LIFEOPS_KUBERNETES_MAX_RESPONSE_BYTES: {{ .Values.platform.kubernetes.maxResponseBytes | quote }}
+  {{- if .Values.platform.kubernetes.enabled }}
+  LIFEOPS_KUBERNETES_BEARER_TOKEN_FILE: "/var/run/secrets/lifeops/token"
+  LIFEOPS_KUBERNETES_CA_FILE: "/var/run/secrets/lifeops/ca.crt"
+  {{- end }}
+  {{- $prefixes := dict "prometheus" "LIFEOPS_PROMETHEUS" "alertmanager" "LIFEOPS_ALERTMANAGER" "elasticsearch" "LIFEOPS_ELASTICSEARCH" "github" "LIFEOPS_GITHUB" "argoCd" "LIFEOPS_ARGOCD" }}
+  {{- range $name, $integration := .Values.platform.integrations }}
+  {{ index $prefixes $name }}_ENABLED: {{ $integration.enabled | quote }}
+  {{ index $prefixes $name }}_BASE_URL: {{ $integration.baseUrl | quote }}
+  {{ index $prefixes $name }}_DEEP_LINK_URL: {{ $integration.deepLinkUrl | quote }}
+  {{ index $prefixes $name }}_TIMEOUT_MS: {{ $integration.timeoutMs | quote }}
+  {{ index $prefixes $name }}_MAX_RESPONSE_BYTES: {{ $integration.maxResponseBytes | quote }}
+  {{- end }}

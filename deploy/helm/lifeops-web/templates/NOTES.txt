@@ -1,0 +1,18 @@
+LifeOps {{ .Chart.AppVersion }} has been rendered for namespace {{ .Release.Namespace }}.
+
+Web service: {{ include "lifeops-web.fullname" . }}-web
+API service: {{ include "lifeops-web.fullname" . }}-api
+{{- if .Values.mysql.enabled }}
+MySQL: {{ include "lifeops-web.fullname" . }}-mysql (persistent StatefulSet)
+{{- else }}
+MySQL: external database at {{ .Values.externalDatabase.host }}
+{{- end }}
+
+The bootstrap login account is {{ .Values.api.config.adminAccount }}.
+Its password is read from Secret {{ .Values.api.existingSecret }}/{{ .Values.api.secretKeys.adminPassword }}.
+
+Check readiness:
+  kubectl -n {{ .Release.Namespace }} get pods,svc,pvc
+{{- if .Values.httpRoute.enabled }}
+  kubectl -n {{ .Release.Namespace }} get httproute {{ include "lifeops-web.fullname" . }}
+{{- end }}

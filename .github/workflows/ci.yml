@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    services:
+      mysql:
+        image: mysql:8.4.10
+        env:
+          MYSQL_ROOT_PASSWORD: root-integration-password
+          MYSQL_DATABASE: lifeops
+          MYSQL_USER: lifeops
+          MYSQL_PASSWORD: lifeops-integration-password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -proot-integration-password"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=30
+          --log-bin-trust-function-creators=1
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.17.0
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            server/package-lock.json
+      - name: Install web dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Install API dependencies
+        run: npm ci --prefix server --no-audit --no-fund
+      - name: Unit, type and production checks
+        run: |
+          npm test
+          npm run test:server
+          npm run typecheck
+          npm run typecheck:server
+          npm run build
+          npm run build:server
+      - name: Real MySQL 8.4 store integration
+        env:
+          LIFEOPS_MYSQL_INTEGRATION: "true"
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_PORT: "3306"
+          MYSQL_DATABASE: lifeops
+          MYSQL_USER: lifeops
+          MYSQL_PASSWORD: lifeops-integration-password
+        run: npm run test:mysql
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Complete Playwright and accessibility acceptance
+        run: |
+          npm run test:e2e
+          npm run test:e2e:remote
+      - uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1
+        with:
+          version: v3.19.0
+      - name: Validate Helm chart
+        run: |
+          helm lint deploy/helm/lifeops-web
+          helm template lifeops deploy/helm/lifeops-web --set httpRoute.enabled=true > /tmp/lifeops-rendered.yaml
+      - name: Validate workflow and image-smoke contracts
+        shell: pwsh
+        run: |
+          ./scripts/validate-workflows.ps1
+          ./scripts/smoke-images.test.ps1
+      - name: Build images without pushing
+        run: |
+          docker build --build-arg OCI_REVISION="$GITHUB_SHA" --build-arg OCI_SOURCE="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" --tag lifeops-web:ci .
+          docker build --build-arg OCI_REVISION="$GITHUB_SHA" --build-arg OCI_SOURCE="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" --file server/Dockerfile --tag lifeops-api:ci .

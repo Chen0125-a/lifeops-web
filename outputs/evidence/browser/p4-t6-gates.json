@@ -1,0 +1,50 @@
+{
+  "task": "P4-T6",
+  "completedAt": "2026-08-22T01:36:31Z",
+  "gates": [
+    {
+      "command": "npm.cmd test",
+      "result": "74 files / 341 tests passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:server",
+      "result": "39 files passed, 1 exact-only file skipped / 239 tests passed, 48 exact-only tests skipped",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run typecheck; npm.cmd run typecheck:server",
+      "result": "both passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run build; npm.cmd run build:server",
+      "result": "both passed; Web retained only the existing large-chunk advisory",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e -- tests/knowledge-obsidian.spec.ts tests/publishing-public.spec.ts tests/responsive-accessibility.spec.ts",
+      "result": "13 tests passed",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e:remote",
+      "result": "4 tests passed against real Fastify Memory-store sessions",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e",
+      "result": "69 tests passed in one exclusive run after the CSS performance manifest was synchronized",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e -- tests/visual-capture.spec.ts --grep captures P4",
+      "result": "1 capture journey passed and produced 36 final PNGs",
+      "exitCode": 0
+    }
+  ],
+  "diagnostics": [
+    "A parallel Web/Server full run caused only the existing five-second PrivateFlowPages test to time out; the test passed alone in 3.004 seconds and the exclusive full Web suite passed 341/341.",
+    "The first full ordinary Chromium run passed 68/69 and exposed only the stale static CSS layer allowlist. After adding the already approved publishing and settings layers, the focused manifest test and a complete fresh 69/69 run passed."
+  ]
+}

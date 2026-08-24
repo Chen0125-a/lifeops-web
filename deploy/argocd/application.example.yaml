@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: lifeops
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: lifeops
+  sources:
+    - repoURL: https://github.com/REPLACE_ME/lifeops.git
+      targetRevision: main
+      path: deploy/helm/lifeops-web
+      helm:
+        releaseName: lifeops
+        valueFiles:
+          - $values/deploy/gitops/environments/production/values.yaml
+    - repoURL: https://github.com/REPLACE_ME/lifeops.git
+      targetRevision: main
+      ref: values
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true

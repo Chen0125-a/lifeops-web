@@ -1,0 +1,17 @@
+{{- if .Values.platform.kubernetes.enabled }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "lifeops-web.fullname" . }}-platform-readonly
+  labels:
+    {{- include "lifeops-web.labels" . | nindent 4 }}
+    app.kubernetes.io/component: platform-reader
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ include "lifeops-web.fullname" . }}-platform-readonly
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "lifeops-web.fullname" . }}-platform
+    namespace: {{ .Release.Namespace }}
+{{- end }}

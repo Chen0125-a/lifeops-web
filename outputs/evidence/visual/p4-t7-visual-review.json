@@ -1,0 +1,43 @@
+{
+  "task": "P4-T7",
+  "reviewedAt": "2026-08-22",
+  "method": "Every final PNG was opened and inspected directly after the final capture run; active-route visibility is also asserted from real browser geometry.",
+  "allFilesShareAxisVerdicts": true,
+  "axes": {
+    "hierarchy": "pass",
+    "composition": "pass",
+    "typography": "pass",
+    "color": "pass",
+    "craft": "pass"
+  },
+  "resolvedRejections": [
+    "Full-page captures now begin at the page origin and no longer place the sticky Life command strip over the page title.",
+    "All four data tabs remain visible at phone widths and 200% zoom, including the active Obsidian tab.",
+    "The active Life route is centered inside its horizontal navigation after viewport or zoom geometry changes; 390 px, 320 px and 200% browser assertions verify it remains visible.",
+    "History Back restores focus to the data-management heading after browser focus restoration settles."
+  ],
+  "groups": [
+    {
+      "surface": "life-obsidian-conflict",
+      "result": "pass",
+      "notes": "Desktop and tablet retain a readable side-by-side comparison rhythm; phone and 200% zoom collapse to a continuous single column with clear conflict choices, recipe-version gating, bounded actions and no page-level horizontal overflow. Reduced motion preserves identical state and hierarchy.",
+      "files": [
+        "outputs/evidence/browser/p4-t7/life-obsidian-conflict-1440x900.png",
+        "outputs/evidence/browser/p4-t7/life-obsidian-conflict-1024x768.png",
+        "outputs/evidence/browser/p4-t7/life-obsidian-conflict-768x1024.png",
+        "outputs/evidence/browser/p4-t7/life-obsidian-conflict-390x844.png",
+        "outputs/evidence/browser/p4-t7/life-obsidian-conflict-320x900.png",
+        "outputs/evidence/browser/p4-t7/life-obsidian-conflict-200pct.png",
+        "outputs/evidence/browser/p4-t7/life-obsidian-conflict-390x844-reduced-motion.png"
+      ]
+    },
+    {
+      "surface": "life-obsidian-offline",
+      "result": "pass",
+      "notes": "The disconnected state stays bounded to the integration panel, uses an explicit degraded label and diagnostic, and leaves the surrounding MySQL-backed data workspace available without invented connection status.",
+      "files": [
+        "outputs/evidence/browser/p4-t7/life-obsidian-offline-1440x900.png"
+      ]
+    }
+  ]
+}

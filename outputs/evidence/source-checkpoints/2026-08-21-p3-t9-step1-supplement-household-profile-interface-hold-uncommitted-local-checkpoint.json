@@ -1,0 +1,1495 @@
+{
+  "kind": "uncommitted-local-checkpoint",
+  "rootSha256": "BDE684B7CF1F59EE04805D11A6E20D9CF37C34EF0D8B896256272FD08D1A3F52",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "1C813062E7B3DCB2D358784EB443CE8CC8BA118D76ACDAC28E42D668ACF05C94"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "9397D0CFEBEF0DFB6C3992E7DBEC77103E0F5BE412C92D0FA43E4556CB0C1EF8"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "sha256": "D161A60AFED6AC9F3E3ADE8682E4DDC60CAD92A234854844CA34496168A83F92"
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "67CA991A48C015B0418C7779A5783B279A1FF2E94F19C717E74FDC74ED195578"
+    },
+    {
+      "path": "deploy/argocd/application.example.yaml",
+      "sha256": "1D50F730BD289C8BB4C2F0778928F0A008C52B8D7D031C4A6A39CAA7DDD9986A"
+    },
+    {
+      "path": "deploy/gitops/environments/production/values.yaml",
+      "sha256": "C544EE0CBE2F3D8F4F9C104999057676BE3DEFA02B4D1B79DBFA2BEEC0D2A580"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/Chart.yaml",
+      "sha256": "17D408ED49C52924672EE88FF9C445926AE6A39B441ED051E1FE28B5A677EC24"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/NOTES.txt",
+      "sha256": "B64A16B6629F2DC813B3C64766F692ADC40EAAEB7042B81D56FED7F9444F7C9A"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/_helpers.tpl",
+      "sha256": "FC890660605C57255DA9494400219C29CFB02D892048E254C57522B23F2C2BB1"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/api-deployment.yaml",
+      "sha256": "6C2F15DE4CB8D7C5C7F97E6FCBA8FC525281B4B3C125ACE266BFB74379A9B859"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/api-service.yaml",
+      "sha256": "B35961AD998D8E756F562806232B4EB2A3FFC9529BD5E0CC3024248BC32F44CC"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/deployment.yaml",
+      "sha256": "CB95C72F107A2077C5626EDE09972FBC8CE8E185B398534BB8493814735E3F84"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/external-secret.yaml",
+      "sha256": "47C2870E1B48BE9BF83C50463A203BDA799809DA3611C61380771B41DBE67482"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/hpa.yaml",
+      "sha256": "29F45BDFA01E4BC9CB4AC26979DA7FD1A118FC0691FD7D597C556C277DD8B23C"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/httproute.yaml",
+      "sha256": "BFA17ED9CC00BB697A18FF4D71BC741DE00CDDE7ACF59C7E1EDEB6AFDFACA198"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/ingress.yaml",
+      "sha256": "A32E04E86E8AC6E7F9A8B55CED74EC0F905BC62B918F21E778FE915A4754C7B3"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/mysql-service.yaml",
+      "sha256": "530D1CA74C8E5A48C8D2CBF2AB52856870E4A8297D921124AFA88DD9BC573384"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/mysql-statefulset.yaml",
+      "sha256": "2884CB8A4AF6370057AF0C9FC9DBDE8C1104ED1FC4D73284FB44E9B81C47EAE9"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/pdb.yaml",
+      "sha256": "4572FE1A866BFB9BFB8FF235976E98384CF7549E1E74C09BCCB980ECAAA687CA"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/secret.yaml",
+      "sha256": "5EEC45FB8897AAF9AAFEB52810613A511BD28199C61C3BED6E02AF3C09E9ED07"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/templates/service.yaml",
+      "sha256": "28CF93F34C887F83F9D9BD3D28E40C0A772F4B96BDA3118750AD0865D3030039"
+    },
+    {
+      "path": "deploy/helm/lifeops-web/values.yaml",
+      "sha256": "1C967BC3270DAB10BA551BA3643F17C32ACA2DC985BEC8C0B295AE4E9993F98D"
+    },
+    {
+      "path": "docker-entrypoint.sh",
+      "sha256": "A9473AF0A2312AD99911D6B3B5863E9BD72BC525980D38A3F6CE177EFD0C6857"
+    },
+    {
+      "path": "docs/traceability/acceptance-matrix.json",
+      "sha256": "02B83948B25CE26C660957B42C4E150ACE76C477592DB6735A353419C79A6ADD"
+    },
+    {
+      "path": "docs/traceability/requirements.md",
+      "sha256": "0F99EF7C16B50C86533B337DA473BE47EDC98EFE31740B60EE62703B3E6D7CD0"
+    },
+    {
+      "path": "docs/traceability/source-clause-review-rules.json",
+      "sha256": "D958A66DF9CE13EF57A75AFC5045A0BE2C033C91DC1A4F26C4EE87A7C1245A48"
+    },
+    {
+      "path": "docs/traceability/source-clauses.json",
+      "sha256": "97F72C7A6F438C42D5B8ADBE483FECA37BEAFA43DF1DCD638DE6E816794C2E0E"
+    },
+    {
+      "path": "index.html",
+      "sha256": "2F719155D77A93B5169495A0E2A5FAD108D00FFEB301F6BA4F3E7725DD533AF4"
+    },
+    {
+      "path": "nginx.conf",
+      "sha256": "6BCFA832AD67CECF07DFBBF0EB8C3803A95A301F724479C25A9F516CE39DBFFB"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "2B72557C8CCA8B7D4076995245C87570E20FA0FD87997437DA5D5B84D0BB6A31"
+    },
+    {
+      "path": "package.json",
+      "sha256": "F95371356DB92353A7A209C0D5DA648F480E96E68CBE6147FC98FE7A94D55634"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "C3DEA42F0F8939CD0C69CDEE0F156B8CAA6B58456597746908E4990DCC4FBB11"
+    },
+    {
+      "path": "playwright.life.config.ts",
+      "sha256": "8C5A99C35D66D5FC0F9FF01BADB23AC801FC5199E9B34EFF2BAB51DCF24083FB"
+    },
+    {
+      "path": "playwright.remote.config.ts",
+      "sha256": "C2E5B0EF76BD3C9DFF926B75CFF8EC40F83B6C3D60E61ABEB669F754B04EC4E2"
+    },
+    {
+      "path": "scripts/build-life-atoms.mjs",
+      "sha256": "AA12EE40CA7B02C96199B829A27523038F7C75D468E22C305E0DBBB737D76543"
+    },
+    {
+      "path": "scripts/build-original-atoms.mjs",
+      "sha256": "31D28DF17417FDA9DC9833416B638C3C0EB5E7BAC1D07B761D3E103BD7CEBAFA"
+    },
+    {
+      "path": "scripts/build-source-clauses.mjs",
+      "sha256": "AED83E167B50CDE926DFF157BEF3772A6A2ED46C2B338B4F45CFB4055EBEFFBB"
+    },
+    {
+      "path": "scripts/execution-contract/acceptance.mjs",
+      "sha256": "2C5227D6B1E0D5008224AC9863B818A0FD632B2BC2F307D2CA263AA8C114D1FA"
+    },
+    {
+      "path": "scripts/execution-contract/authority.mjs",
+      "sha256": "AF865058165794B7667510238C6D7CD4BEED8EC671407E55D725C9B8FDE61AAC"
+    },
+    {
+      "path": "scripts/execution-contract/close-modes.mjs",
+      "sha256": "BDF91EA2C9720AA5E20F8673F1982D4B97B15810B85C6929885CC966897A55DF"
+    },
+    {
+      "path": "scripts/execution-contract/constants.mjs",
+      "sha256": "EBDB7299A4148C9466F47845250D66C622790F61ADE8859BC233232D434321D1"
+    },
+    {
+      "path": "scripts/execution-contract/evidence.mjs",
+      "sha256": "6CC4DEE83F62403E5AA513A2F3F48685B7983068D8032F0F9BEC3B858065E898"
+    },
+    {
+      "path": "scripts/execution-contract/life-atoms.mjs",
+      "sha256": "FB5CA7CD3F121EA12A593038C1611C4F1A2DE45DD3E59FB0358D3E0480C6E5A2"
+    },
+    {
+      "path": "scripts/execution-contract/load-json.mjs",
+      "sha256": "1685C2225E7483E876B1E820A81E26F52AC3AE3DEED8D4C0977663FF89C7CF0D"
+    },
+    {
+      "path": "scripts/execution-contract/markdown-clauses.mjs",
+      "sha256": "B718D2E250A01CB1B2F10405C2927465FEF407FFB627F2C62D6DC80C1A3A1B7C"
+    },
+    {
+      "path": "scripts/execution-contract/original-atoms.mjs",
+      "sha256": "CA898EF2C496BD47208142088A286BAA675EE3FDAD8C09984E890CF652754EE8"
+    },
+    {
+      "path": "scripts/execution-contract/project-state.mjs",
+      "sha256": "90183B4CDB32A5BD8094496FC2276C8BCDD855C3DE7A3F69385520C468C54C44"
+    },
+    {
+      "path": "scripts/execution-contract/source-checkpoint.mjs",
+      "sha256": "84013C7DF8AD52AB9A8CF2B3E83452530D3C1FFEACC80C5761505F2AEC95AD75"
+    },
+    {
+      "path": "scripts/execution-contract/source-clauses.mjs",
+      "sha256": "E6B5D6FB40095FDBC0A70CC688961218AA2F9CB8CD4E36CBD5748189CE9556E0"
+    },
+    {
+      "path": "scripts/execution-contract/startup.mjs",
+      "sha256": "5157DAB88806406D683BE91B818E7E001AD72DBCD4B2C94DE5B9AFB195F0AF2A"
+    },
+    {
+      "path": "scripts/update-gitops-values.mjs",
+      "sha256": "F762E221A202E18EB7F903B559031184AE45AE6385893D9B50A7FDD17EA0D666"
+    },
+    {
+      "path": "scripts/verify-execution-contract.mjs",
+      "sha256": "B879ED1A662E27995DE8B75243244EDEA796993B944BB56476C73BFD0BF56B4A"
+    },
+    {
+      "path": "scripts/verify-execution-contract.test.mjs",
+      "sha256": "ABCFB1A14EBA0AB4C400D80AD53B03E12C573C33754BEAFDBBDCB8A2B94FFC07"
+    },
+    {
+      "path": "server/Dockerfile",
+      "sha256": "E45B8E0ED930F407EC532BFB84BF1915F0E4B05BDF3D1AE5E4C436129F3A7576"
+    },
+    {
+      "path": "server/migrations/001_initial.sql",
+      "sha256": "7A85EB0BE2C2155725E4B302500058DB67BDDF740D9F99F984425DC736DED786"
+    },
+    {
+      "path": "server/migrations/002_domain_foundation.sql",
+      "sha256": "134CCDFD38C16BB2344F9325FF9577310B62CFD8897AB998E9F6F589734622B2"
+    },
+    {
+      "path": "server/migrations/003_habit_goal_project_links.sql",
+      "sha256": "07D8357B8346577E91450CB095B636CF0E487450C73BE9A3D9EC4B9D492C6091"
+    },
+    {
+      "path": "server/migrations/004_records_media.sql",
+      "sha256": "8BACC03022DD511284E5AFE82CA0559BF58FF5D1C00C72AADBE4FD6B9768F943"
+    },
+    {
+      "path": "server/migrations/005_reviews.sql",
+      "sha256": "AC007BD7B8DFC9D6E8EA69B274AE6FB67ABB34A26659435FB434ECC2ADF479D8"
+    },
+    {
+      "path": "server/migrations/006_life_catalog.sql",
+      "sha256": "3C35C5D6C726E36D7CD932F156D229E32212121740C9D19A38DA1009BB247932"
+    },
+    {
+      "path": "server/migrations/007_life_inventory.sql",
+      "sha256": "158280FF8C46FEBC279181642E86814C1101A6613AFEA6C0209F36106ACFBB68"
+    },
+    {
+      "path": "server/migrations/008_life_recipes.sql",
+      "sha256": "EDB5C6C6A3808890260422DA5E770B39D782316FF6473AA6A8C7288B04020B92"
+    },
+    {
+      "path": "server/migrations/009_life_planning.sql",
+      "sha256": "C9899691777F373C5C652FB87BB22BF4F0A9CA61685A7AAE3783AE42BEED71F7"
+    },
+    {
+      "path": "server/migrations/010_life_commerce.sql",
+      "sha256": "6C2B0472124ADC71081C80FD497821A5852896B59EBC85B55A3DAE32133B162A"
+    },
+    {
+      "path": "server/migrations/011_goal_hierarchy_recovery.sql",
+      "sha256": "E382A28A1E47CB48080C3BF9C968672BD94C95BAB69936FDC903FB6636E4132C"
+    },
+    {
+      "path": "server/migrations/012_record_cover_identity.sql",
+      "sha256": "251A975D5BD2A78900D13405462B536101251AE28F37501D369F46EB4E7BC98B"
+    },
+    {
+      "path": "server/package-lock.json",
+      "sha256": "924B1E54D86AE09BA081B55832ACA0EE698F021B55B9F621C72685795FDF8797"
+    },
+    {
+      "path": "server/package.json",
+      "sha256": "90B39890516C7F8624C0EA3EAADA87822143CD24A16A25FECC40B374B315E5A0"
+    },
+    {
+      "path": "server/src/app.test.ts",
+      "sha256": "C7CDB5BC826B4F0547645247870C7BD4E03FC3125DB5BC9044E5476D724A19EB"
+    },
+    {
+      "path": "server/src/app.ts",
+      "sha256": "DD0594B28A0F47F27FA95E614E69025965DC0EDF974694FAA83D40585DB26CBC"
+    },
+    {
+      "path": "server/src/bootstrap.test.ts",
+      "sha256": "8D346EC2B04828201797F45A28118087BE2C2C4BD7E4526850EE0F0052921251"
+    },
+    {
+      "path": "server/src/bootstrap.ts",
+      "sha256": "FA8955501A6BD4DDC4B97C1846BF7E45D5E365F8A1DED0E1C6E6CE57C73131B9"
+    },
+    {
+      "path": "server/src/config.ts",
+      "sha256": "6551886172B32D1C4C177F0F2109E0F70DE2370304C16BE1211929C7D4A67D48"
+    },
+    {
+      "path": "server/src/db/lifeCommerceMigration.contract.test.ts",
+      "sha256": "14F4A21165A8619695160A202414F661C85A7D8120927A359DF37597AC54B907"
+    },
+    {
+      "path": "server/src/db/lifePlanningMigration.contract.test.ts",
+      "sha256": "796F91241810893424A130E2C11947355DA9D802E41EC995B9BF712A83AA6CAE"
+    },
+    {
+      "path": "server/src/db/migrate.test.ts",
+      "sha256": "3A21B2541938421AE6642728DAEB0DF1347C02D03F29B2ED01962DC922192C4A"
+    },
+    {
+      "path": "server/src/db/migrate.ts",
+      "sha256": "390057697261C3EA34A117413376FB31CA5582FDD42357D3271D9509A5A37952"
+    },
+    {
+      "path": "server/src/deployment.test.ts",
+      "sha256": "B5C042446BFFD2AB07F5D367CD85A808DC254A0F60889FAF17A8C69A46083C0C"
+    },
+    {
+      "path": "server/src/domain/goals.ts",
+      "sha256": "B6A2B175AD94DC8A6C267E54E934D259EDABFA4F32BBC954E491F1B8A2871B77"
+    },
+    {
+      "path": "server/src/domain/habits.test.ts",
+      "sha256": "6B0979CF98BEC759CF88F40222EDA8E7AE3B17508235E4655A668E6B969E2192"
+    },
+    {
+      "path": "server/src/domain/habits.ts",
+      "sha256": "4F2E70F3FE4B385F4545193D80A495D210F12E4BD25E0510EBFA1F58DC8FF00D"
+    },
+    {
+      "path": "server/src/domain/life/catalog.test.ts",
+      "sha256": "BA29F0526109E8C68830E3AF6CC2B003634A396585BB637FE0999D521F75B3FE"
+    },
+    {
+      "path": "server/src/domain/life/catalog.ts",
+      "sha256": "69EF9ECD9C128AE4125F21E4F92537E9A70BE95BC9C887243D46761E6AF73EF3"
+    },
+    {
+      "path": "server/src/domain/life/commerce.test.ts",
+      "sha256": "700D7FBC4F59BAD7AA361BABECEEBE95D884994AE5B837EAC2E0852601DFB26B"
+    },
+    {
+      "path": "server/src/domain/life/commerce.ts",
+      "sha256": "972C229F4DDD958A8F6109561F2F07F1975BCA34BC836465D534F2413B84B7D3"
+    },
+    {
+      "path": "server/src/domain/life/inventory.test.ts",
+      "sha256": "74DF1475A0FD619459788DA7E91EC73F885CE52AB702BC91E12AD6412F871A50"
+    },
+    {
+      "path": "server/src/domain/life/inventory.ts",
+      "sha256": "E9564CBFEAF74719EDCA6DD476A471D1F4CEB6C24E4EA0BBA059D62E807CE8AD"
+    },
+    {
+      "path": "server/src/domain/life/planning.test.ts",
+      "sha256": "C069E0F6B7CA3045B42113C9F2654E63CB3EBD4F6E346BFCF79BF84F721C91A5"
+    },
+    {
+      "path": "server/src/domain/life/planning.ts",
+      "sha256": "7DAB28BC8D4B2CAC2CFE46DABD5B8406BDBD6EB82FDD0C1C5439709A11109614"
+    },
+    {
+      "path": "server/src/domain/life/recipes.test.ts",
+      "sha256": "379C10A89CE1874272071C7F523E186B7338FCB26FCB625757967C669A0802EA"
+    },
+    {
+      "path": "server/src/domain/life/recipes.ts",
+      "sha256": "FA43795A1F2426F018ACFA21CAF4128453FD298BB2B06FA28AF3CA73216D9C3A"
+    },
+    {
+      "path": "server/src/domain/records.test.ts",
+      "sha256": "B06C6D8975357D4E951AFAD04D81E9448CC795C9DA3D6573ACE7B9585F6FA8C6"
+    },
+    {
+      "path": "server/src/domain/records.ts",
+      "sha256": "FA8E00E6F4E3B5710F6E08EE38871C4F6F3DA9721B46926E0B1DA2A741FA8199"
+    },
+    {
+      "path": "server/src/domain/reviews.test.ts",
+      "sha256": "68C9E7B664F4C02BF02A0EAD647A7A6EA809836AC82B461C228EBD43D5F84957"
+    },
+    {
+      "path": "server/src/domain/reviews.ts",
+      "sha256": "DA15895B3B5C6A34D8AF8782AC7A1F5D500E64E3B3B013066B1C8D9A7A7946EE"
+    },
+    {
+      "path": "server/src/domain/tasks.test.ts",
+      "sha256": "5D91195EA78FA91FF64266890D78CD6FE8E63DBCFEFDEC895B9795604D289A21"
+    },
+    {
+      "path": "server/src/domain/tasks.ts",
+      "sha256": "C20A77C05A462A5E9C4F6654EAF0BD841F3620CE31E9C81E9FC06B3B81C6342D"
+    },
+    {
+      "path": "server/src/domain/types.ts",
+      "sha256": "49FD58F32B51EBA9D9D1570A9C6A552F4A728A566A71ED1DE8562AF85985A241"
+    },
+    {
+      "path": "server/src/main.ts",
+      "sha256": "FD6A38F6137FB6636D64149B48A77C5677A2257CBE050DCB040F627D8D77F4C1"
+    },
+    {
+      "path": "server/src/media/fileSystemStorage.test.ts",
+      "sha256": "12AD7F42D825FF0D3DCB996F28EAB9206B402A37244C30BE39567CCB70BFB460"
+    },
+    {
+      "path": "server/src/media/fileSystemStorage.ts",
+      "sha256": "B5DB0F3463EF8818F5B8407EE81377ADD496F0F5202DB79BECEE9430662D3D23"
+    },
+    {
+      "path": "server/src/media/storagePort.ts",
+      "sha256": "792ABF60D8A719DFCD91D1BDCE517EB5C3BA308F7F2A207EC8BCB5081438414B"
+    },
+    {
+      "path": "server/src/mysql.integration.test.ts",
+      "sha256": "A995036AD5260BF8E1B8A66E2D28A86AA26EE7124AD1843BB2DF580B6C0A42D7"
+    },
+    {
+      "path": "server/src/routes/goals.test.ts",
+      "sha256": "5F7397068D0F320EA3D88574A80FA844E2BC784E95961C86B073273C63FEA198"
+    },
+    {
+      "path": "server/src/routes/goals.ts",
+      "sha256": "47D2A0F225D7B99307AD280855AAB6A5027E6891F2580C09BB76F0B6F73AFFB2"
+    },
+    {
+      "path": "server/src/routes/habits.test.ts",
+      "sha256": "8A99C2008CC472DC3C4965035B92C0900F2F64CA5C92DA29157DD97DCB0FCFE6"
+    },
+    {
+      "path": "server/src/routes/habits.ts",
+      "sha256": "CA79CEEA2B7BD0D6CF9EED04B5075E329C77115354343379834A3A851F556691"
+    },
+    {
+      "path": "server/src/routes/lifeCatalog.test.ts",
+      "sha256": "3C9156B5DA13804B3B2F90373CE467F23C5A6DD103B64500AF02EA9AEE9A7BB5"
+    },
+    {
+      "path": "server/src/routes/lifeCatalog.ts",
+      "sha256": "B19AABE47D5A554769B1CFBFCDB1B04212317344BCC055A8E95C5E8F7C2D37CD"
+    },
+    {
+      "path": "server/src/routes/lifeCommerce.test.ts",
+      "sha256": "E4C73D57141957EF5DE30642E3E672BE806C25E1349079FD6DE057E8905548FB"
+    },
+    {
+      "path": "server/src/routes/lifeCommerce.ts",
+      "sha256": "530970BB6A539172AEF8B2241B7770384CE3A2A49619422D57572A651E5F5F4B"
+    },
+    {
+      "path": "server/src/routes/lifeInventory.test.ts",
+      "sha256": "B4E020CF46E7F26B0114FDA58B32561E585BABBA881D883EBD520F75EC3CA7B8"
+    },
+    {
+      "path": "server/src/routes/lifeInventory.ts",
+      "sha256": "EB0C269DEE724AAFFAF40F36AC9084D39E6666199A507595FCA1B49E15C532A6"
+    },
+    {
+      "path": "server/src/routes/lifePlanning.test.ts",
+      "sha256": "FDB9CAFC64ACA756CAB73BFEC4A7519A4B9581F4C14F35B1E43F7C3DAB15568E"
+    },
+    {
+      "path": "server/src/routes/lifePlanning.ts",
+      "sha256": "CEFE29F785D3FA72E28D58DE1AC069F9C3B7FDF67B9B39B295F00CC84D827B62"
+    },
+    {
+      "path": "server/src/routes/lifePortability.test.ts",
+      "sha256": "B9A37D2D51E8954453AD086A9C87ADFB4DEF3235BEC316609BE64F4644DECBAE"
+    },
+    {
+      "path": "server/src/routes/lifePortability.ts",
+      "sha256": "48B173D6ACF0AEC4B09FD9E1EA444D90A14CA94C1E5F0B31D82BA787D4753799"
+    },
+    {
+      "path": "server/src/routes/lifeRecipes.test.ts",
+      "sha256": "AA4AD09268811ACB340F1672EEBBAAEE9912E7B33FE6097246B740F240AEBD60"
+    },
+    {
+      "path": "server/src/routes/lifeRecipes.ts",
+      "sha256": "D2912099C536EEB29318FB24747E63721F7505746FF070E02229164EF9B9F79A"
+    },
+    {
+      "path": "server/src/routes/media.ts",
+      "sha256": "1AA9C1490B611CE5D446E297D71FC66163D82D909C12EABF14E0371A47A86C00"
+    },
+    {
+      "path": "server/src/routes/publicContent.test.ts",
+      "sha256": "BF7F3B22741C70A4A9742662532816654B28F27F3D88DD371579B1ED4099B3F9"
+    },
+    {
+      "path": "server/src/routes/publicContent.ts",
+      "sha256": "62CFDF199D0AFE85343E361A6EDE1CE852EEF82CAA9DB9AC7FE615C356F4A47A"
+    },
+    {
+      "path": "server/src/routes/records.test.ts",
+      "sha256": "2099EB7FF56D7DC1722F5F3A5836DC430E5B8B4ADA08487B9FBB0C89DA0BD923"
+    },
+    {
+      "path": "server/src/routes/records.ts",
+      "sha256": "42AD96B485E4569F6C4490666377D561CCA01DC0272A50ED87FFE28798253B56"
+    },
+    {
+      "path": "server/src/routes/reviews.test.ts",
+      "sha256": "2D07F7E1D6F47AAD5F77D027AC7635085A13E3B96423F2AB37DD7744F2B67AC4"
+    },
+    {
+      "path": "server/src/routes/reviews.ts",
+      "sha256": "DDC8D3D2370E35EC7DAA9F295C7DE69E68AF6945689D5F0D7155EA76E8AFEAFE"
+    },
+    {
+      "path": "server/src/routes/tasks.test.ts",
+      "sha256": "E69123EF5ADECDB6A5F2B45F4F7E0199E79D29B86DDC31230F5D32256D27BA91"
+    },
+    {
+      "path": "server/src/routes/tasks.ts",
+      "sha256": "9F5CA5F7F40D51D0EFDCC08727836BEE5EEAA055BA429240273B0FBD150C3D82"
+    },
+    {
+      "path": "server/src/runtime.ts",
+      "sha256": "7BB393CC4C0F4BC02E5C8EB57D09B489B61E2A42912B5D8FCDD32154A78C3FD5"
+    },
+    {
+      "path": "server/src/security/password.test.ts",
+      "sha256": "F12A4B7488A528BBC782AB3E63E696FEB2F5A495D4BC0B6672185DF8805D55A8"
+    },
+    {
+      "path": "server/src/security/password.ts",
+      "sha256": "D8CAD6085A9A7A5BA01658B65200FF4F26CA431D8FD47EC0510254E7CB7E395C"
+    },
+    {
+      "path": "server/src/security/session.ts",
+      "sha256": "52A1ED54F0314C710A641EC126AC62717294CE7A08A92BD932E706FC7CE0A7BF"
+    },
+    {
+      "path": "server/src/store/lifeCatalogStore.ts",
+      "sha256": "14F625E2D55273EDDBDA4EA07827BEB74F09D224955F068BCB776D5EDF171EB3"
+    },
+    {
+      "path": "server/src/store/lifeCommerceStore.ts",
+      "sha256": "4BA2AC90061076E65B87DCBA007AB24B94BAED6DA9A74AAFDF17DDD6CC53C0DA"
+    },
+    {
+      "path": "server/src/store/lifeInventoryStore.ts",
+      "sha256": "237A686FF55AF5A034083CE9197EEBD8718D04EA8476F10D94F353A155C60743"
+    },
+    {
+      "path": "server/src/store/lifePlanningStore.ts",
+      "sha256": "0CFB1DCB5EFFF4CEAE2662627407D58CFDDCCBCBA50AE07B3115C8B86E82E30D"
+    },
+    {
+      "path": "server/src/store/lifeRecipeStore.ts",
+      "sha256": "8F31B4507DD6037927B1B3F1E7F390C96337456FBB81BAF610F53DE7419E6D3D"
+    },
+    {
+      "path": "server/src/store/lifeStore.ts",
+      "sha256": "75ED2FF052D953C515E46271B30D3271598A4CABEFDCE402CA95E3FD6C744BDE"
+    },
+    {
+      "path": "server/src/store/memory/goalsMemoryStore.test.ts",
+      "sha256": "A608CD31AA82C6A751F2A4D8643F9126612F1D44BD4B12C7CEFDA13110661D81"
+    },
+    {
+      "path": "server/src/store/memory/goalsMemoryStore.ts",
+      "sha256": "59FD003097EA2DC6C0C54A0C98B3E5BFAA608912021D6928A79D7A9705B4FB95"
+    },
+    {
+      "path": "server/src/store/memory/habitsMemoryStore.ts",
+      "sha256": "4D3F116A4CB2A84E782B4A58EA62641FC645CC98EC1CEBBF5BF475C9E1FDDC2A"
+    },
+    {
+      "path": "server/src/store/memory/memoryLifeCatalogStore.ts",
+      "sha256": "D70A7DFC7C0703B5C5A358D2EB337EC945CD62F617117210AE6083973772D728"
+    },
+    {
+      "path": "server/src/store/memory/memoryLifeCommerceStore.ts",
+      "sha256": "01560D9B94C97CBDEFC860D7EC74857C0E683B3C156E848D8593E315F3E56C4A"
+    },
+    {
+      "path": "server/src/store/memory/memoryLifeInventoryStore.test.ts",
+      "sha256": "A11E59325C6D27FDE996F8832964E3FB16DE7A1C0915AF4BA46942F50E0ABEFD"
+    },
+    {
+      "path": "server/src/store/memory/memoryLifeInventoryStore.ts",
+      "sha256": "67654EA44B2AFAE141ED89FACAEF4ABEF1C63364FD3B49C8D2DA298ED20480F9"
+    },
+    {
+      "path": "server/src/store/memory/memoryLifePlanningStore.ts",
+      "sha256": "09BC61A272D9297E7774FB6D3DCCB7EDF89D5C95824012ADA2436167CE007068"
+    },
+    {
+      "path": "server/src/store/memory/memoryLifeRecipeStore.ts",
+      "sha256": "A6DF88A909684535A5DBE965CEAD853CFB853DA2BABA5D18397C5C00F002E87D"
+    },
+    {
+      "path": "server/src/store/memory/memoryLifeStore.atomic.test.ts",
+      "sha256": "810AB162736842C6C74F28FC1CD8D51DC648E42BF66EAFD70440C532323B5D84"
+    },
+    {
+      "path": "server/src/store/memory/memoryOwnerTransactionCoordinator.test.ts",
+      "sha256": "CCFE0EAEB6C7784C8838B22DA70FCB6D9B9E4DC717AE0E6ED5C116B37CB595E7"
+    },
+    {
+      "path": "server/src/store/memory/memoryOwnerTransactionCoordinator.ts",
+      "sha256": "49DEF1FE59691398183BB215CF2BAE54B9C4D6EE4B021DB65092F7A8E60AD768"
+    },
+    {
+      "path": "server/src/store/memory/tasksMemoryStore.ts",
+      "sha256": "08C4309710B0D94A66DFF2817363FD9B3EBBB9C6B2275BF495A49252E3178640"
+    },
+    {
+      "path": "server/src/store/memoryLifeStore.ts",
+      "sha256": "B4797DDDF80BF224C8C82192E8BB05C79C38C75DA54E02E82ED5AD0966BE1133"
+    },
+    {
+      "path": "server/src/store/mysql/goalsMySqlStore.ts",
+      "sha256": "856E5F75920B0003D281C75F25B8DBB0343B49F4141DB0B56DC2AD3A4ABDEEF8"
+    },
+    {
+      "path": "server/src/store/mysql/habitsMySqlStore.ts",
+      "sha256": "FC6799ABACA3FFD96FE79D96563EECB023C38B7210D50E76DBA9AC57A22874E2"
+    },
+    {
+      "path": "server/src/store/mysql/mysqlLifeCatalogStore.ts",
+      "sha256": "19FB0E6296B8E7885FBAD8E2456978D1D7C9BD8CCABDBB687E5D9F731F79F8AD"
+    },
+    {
+      "path": "server/src/store/mysql/mysqlLifeCommerceStore.ts",
+      "sha256": "6E5C0AE811ACA584B98AAD517FBC32AA0A8BD023EC3612D8D2FFADE21C2E4385"
+    },
+    {
+      "path": "server/src/store/mysql/mysqlLifeInventoryStore.ts",
+      "sha256": "4F1496D49E208BBEB15DAC905D1BC8CA13B44119B2412A443FC4CAAC2728E7E0"
+    },
+    {
+      "path": "server/src/store/mysql/mysqlLifePlanningStore.ts",
+      "sha256": "A0D4446F7DA043D4B8B961616475693DF05D05625DC0020FFE77312A34610946"
+    },
+    {
+      "path": "server/src/store/mysql/mysqlLifeRecipeStore.ts",
+      "sha256": "9D5DF7DA3A6D174E2F2D2BCDF73DAFEBB568E6779FCDD8F5DBCFBE403C795623"
+    },
+    {
+      "path": "server/src/store/mysql/recordsMySqlStore.ts",
+      "sha256": "094E16BB1946651B1D40FFA68623DDAD374A7256F0FE4FCD485D64B8CBF2C144"
+    },
+    {
+      "path": "server/src/store/mysql/reviewsMySqlStore.ts",
+      "sha256": "DFAC78A28BF477870AE956FA331611482914D7F51A0F4E3F1B0B78F94FBF579C"
+    },
+    {
+      "path": "server/src/store/mysql/tasksMySqlStore.ts",
+      "sha256": "886D675A23F3673559AA081A5B29DF605F56CAFE8B8E6958E7D16ED7E8EAE1AC"
+    },
+    {
+      "path": "server/src/store/mysqlLifeStore.test.ts",
+      "sha256": "E62B6620B98BD449D61AFEA6AC54CC3C52BEAAA436203E152FA5056D368A7922"
+    },
+    {
+      "path": "server/src/store/mysqlLifeStore.ts",
+      "sha256": "488AD6E81DAE8C5C54E0FACD14C70700C2D80A61DB9017B3F3A1300F2C345477"
+    },
+    {
+      "path": "server/src/store/planningProjection.ts",
+      "sha256": "732E32D5FD79ABF63FEA51B47A66237D07599B2F6789B6073A24F3F78A0C67F8"
+    },
+    {
+      "path": "server/tsconfig.json",
+      "sha256": "749D0C2C2F22332506FA658883D2A51DE557B7174D487524162E7776FE9B92A9"
+    },
+    {
+      "path": "server/vitest.config.ts",
+      "sha256": "78C89C3AB08EB8E871C75A860CD4B7BAAD0A1DBE2403CF81C0E27F2EBFC9A93C"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "4412ABFE8330ECEDED67950F158A9223EE1BE5FFEA482682E2754FCB92DE4F26"
+    },
+    {
+      "path": "src/api/goalsApi.test.ts",
+      "sha256": "0C49BA18C0EE9C2795724853118345CDCF21E15C740D8A155E68478CE15FEBC3"
+    },
+    {
+      "path": "src/api/goalsApi.ts",
+      "sha256": "236A2C2DE43CA13567B3B6847F0BC10996BF91C732512324B64E81F2AD80B812"
+    },
+    {
+      "path": "src/api/habitsApi.test.ts",
+      "sha256": "5C9716DE13A64CCD30808A040D369DF97F63BC996A81793EC46D93821603BBE3"
+    },
+    {
+      "path": "src/api/habitsApi.ts",
+      "sha256": "F69238AA569F1AF375CD222CCE3E4E7FD382D59E6BCC414E63732B8DF6D727BE"
+    },
+    {
+      "path": "src/api/httpClient.test.ts",
+      "sha256": "A0F312DE350A9178D979149010422369C5ACC998685D94F7BDD5F1E537A16FD1"
+    },
+    {
+      "path": "src/api/httpClient.ts",
+      "sha256": "053D7DFB3AD27536E1FD831917C3BD367ADA0B61F5F843FED4A970AD6DB66CE6"
+    },
+    {
+      "path": "src/api/lifeApi.test.ts",
+      "sha256": "B4C98D5E399B64FDD5EF44C838F2353E474AF1575D84CD0D0813F003C1B7E4B3"
+    },
+    {
+      "path": "src/api/lifeApi.ts",
+      "sha256": "CBE17B4956CF768F18ABEE3CA0B52EDFFD945D1350A87D551A30DEE2F9A32981"
+    },
+    {
+      "path": "src/api/lifeCatalogApi.test.ts",
+      "sha256": "23E6387F3D7D3700B90DE79F985DC8331C01EC96BEA89C2AA7D90676637BD6CF"
+    },
+    {
+      "path": "src/api/lifeCatalogApi.ts",
+      "sha256": "29C5A755591E415B0A2240CDCCEDD4AB406B8FB347A16FB767E6A20D74D84B29"
+    },
+    {
+      "path": "src/api/lifeCommerceApi.test.ts",
+      "sha256": "9ECB06305496E3BA52600A5CF6E88EBD2842EAA4CC0A298D29277C9153BED6D7"
+    },
+    {
+      "path": "src/api/lifeCommerceApi.ts",
+      "sha256": "D2DFE1410D1000DD816A4EF263595080E682586C54399B1688F198BE979ACB31"
+    },
+    {
+      "path": "src/api/lifeInventoryApi.test.ts",
+      "sha256": "C9A691C23C438006F8737DC90415EB801AF4228C45C18A581DFC9AB6828C82B1"
+    },
+    {
+      "path": "src/api/lifeInventoryApi.ts",
+      "sha256": "696B016523C23E9E4492B9A18D9C5EA5C75E4029E4B24CF76B143C3D6F588B7E"
+    },
+    {
+      "path": "src/api/lifePlanningApi.test.ts",
+      "sha256": "2164A39AA709C8BF3167DF0F9D6E6F79A636F9E39A8A53AB151DEC3FFED41DD7"
+    },
+    {
+      "path": "src/api/lifePlanningApi.ts",
+      "sha256": "1E03145403F580C349C0166091D9D206F20DFFC1964333091AE3FC8EE88880D3"
+    },
+    {
+      "path": "src/api/lifeRecipesApi.test.ts",
+      "sha256": "D5D368F463142259AA5F7C6685EEDED0A924AEBC7026998ACC57521649CB1A5A"
+    },
+    {
+      "path": "src/api/lifeRecipesApi.ts",
+      "sha256": "7DBBD7E038FD3DAF01DA1FBE1AEABFA05C678F5C2B6B7E7985C1A5F12EBD612F"
+    },
+    {
+      "path": "src/api/mediaApi.test.ts",
+      "sha256": "0F14CC4E7A7451618AB7AC050EF01EE78B243C645FCB3420958EEC937F14D521"
+    },
+    {
+      "path": "src/api/mediaApi.ts",
+      "sha256": "C81B4FEBCDE9EC8A658509CB8CDAA0988C4F4BAA3CB0E3EA633D8FA57C32D6BB"
+    },
+    {
+      "path": "src/api/publicContentApi.ts",
+      "sha256": "638B12C6C276184E2D67ECDD81231DDFCE224F8CBC85EF9D33288265333F5A8B"
+    },
+    {
+      "path": "src/api/queryClient.ts",
+      "sha256": "E919E223D0B63299DF31F0D8990B8F06EC8E826B5BAB59C28495078EB4CD9D28"
+    },
+    {
+      "path": "src/api/queryKeys.ts",
+      "sha256": "250E2929A03E03F97E84ED1F8C6ACC566FF91F1BA951673531F52B2FDDF5685B"
+    },
+    {
+      "path": "src/api/recordsApi.test.ts",
+      "sha256": "48597623A4F009939D5D14103D91844F1AE6760A03945CE2C1A7200865B0175E"
+    },
+    {
+      "path": "src/api/recordsApi.ts",
+      "sha256": "337DDC3F7301C956BC5FCA931E067CC0A5947622C0DD32EF3F35ED08C5C1408B"
+    },
+    {
+      "path": "src/api/reviewsApi.test.ts",
+      "sha256": "58104F9CE66B54D2AE6E17E4088A65AEC8D7712E395192A38BD932E241811231"
+    },
+    {
+      "path": "src/api/reviewsApi.ts",
+      "sha256": "2A8A46A523FDB849E76C55E85708AADF7BED88AF3B6FFCB64FBE1AC3C417A2F8"
+    },
+    {
+      "path": "src/api/tasksApi.ts",
+      "sha256": "306BD008F7712FCBA706EB9493D2C111AB20E5F64FADD924ABABDD876F2C7CAA"
+    },
+    {
+      "path": "src/components/TechMark.tsx",
+      "sha256": "8F310FF70FB2E13DAC2347DA5A0A6D5B2A0CB007CD4035101C692D9D4958DAA6"
+    },
+    {
+      "path": "src/components/auth/EntryTransition.test.tsx",
+      "sha256": "B85D157304A21F4C1D02EDB654998A3EA8AA4EE6071B1F1931B203E3DA6E1D69"
+    },
+    {
+      "path": "src/components/auth/EntryTransition.tsx",
+      "sha256": "4771B42BAA910ECFF81B5F1660DE168ECB492B67BB03092F719E49CC6CB5B6DC"
+    },
+    {
+      "path": "src/components/auth/LoginWindow.test.tsx",
+      "sha256": "7D0B510A7818162D3D6C747B1B9B9B9C6AD3BCD54C63A3E714C39909C0017FC9"
+    },
+    {
+      "path": "src/components/auth/LoginWindow.tsx",
+      "sha256": "3E9BE217183F4155815C755B85E85E8A0F01C8BB29F67452D633A475E861E7A2"
+    },
+    {
+      "path": "src/components/private/CommandCenter.tsx",
+      "sha256": "59DD22E90EF45DD4D94E4934A502A3947A9620058CF99CAD9F9D45E6F5FA4D4C"
+    },
+    {
+      "path": "src/components/private/PrivateAppLayout.test.tsx",
+      "sha256": "3A958C10F4FB7D7D3786F0F60B4B88315301C8EEDABB862F78B1E6EE48EB540F"
+    },
+    {
+      "path": "src/components/private/PrivateAppLayout.tsx",
+      "sha256": "72F059E340961F5C0C9642F3C6AADD32789EC4DCB5192879718AED85E6D18057"
+    },
+    {
+      "path": "src/components/private/PrivateSurface.tsx",
+      "sha256": "543BBA86EB0834E83D98654B8339CECC71D910B7708B8AA3A92DF180E6A8451E"
+    },
+    {
+      "path": "src/components/private/QuickCapture.tsx",
+      "sha256": "A2BAFF8E4E431D09DFBBDABB319C37C4DCA3844969636DC92D850DE68EB60F81"
+    },
+    {
+      "path": "src/components/private/WorkspaceHeader.tsx",
+      "sha256": "7F0008A90BBD798AB2A3BC4F34D6B26C60C08611E7FECDF17347EB8E3E9F10A6"
+    },
+    {
+      "path": "src/components/private/workspaceSearch.test.ts",
+      "sha256": "CA7B8D4FDAF60CCD3983CA27C9219B84610801B6B981CB4F615D0B25FEFD9313"
+    },
+    {
+      "path": "src/components/private/workspaceSearch.ts",
+      "sha256": "33686067CDA5DCE62F4A1F630E9BF7268DE7DA0D952D8E84139A79F442A1F867"
+    },
+    {
+      "path": "src/components/public/DaylightAperture.test.tsx",
+      "sha256": "92DD28983BDAA25A05530A23D84139D096EDF0455DDC6C6C2A8A1AAB0A86C16D"
+    },
+    {
+      "path": "src/components/public/DaylightAperture.tsx",
+      "sha256": "850443A5CB0BA74C9EBFC306480B769F561F16F11FABDB5C55EB52AE727BD274"
+    },
+    {
+      "path": "src/components/public/OrbitGlyph.tsx",
+      "sha256": "25B0839BA44E828B520D8FC8E0201CC7B8E2B191B6F3A8E53DABF9D3E8A4E0A2"
+    },
+    {
+      "path": "src/components/public/PublicDetailShell.test.tsx",
+      "sha256": "45234325A9CF7C1C536B95C29C369710306DC1483A62D761A390B6B03BD88DE7"
+    },
+    {
+      "path": "src/components/public/PublicDetailShell.tsx",
+      "sha256": "23E7035338F02315B81A08BC602767C7062A52947ED4215DC48B1F91AE40A53C"
+    },
+    {
+      "path": "src/components/public/PublicOrbit.test.tsx",
+      "sha256": "5958F5FDC749134599E4314DEFB413EE721DFE2B37FC746167C1FEEA05CDF5B8"
+    },
+    {
+      "path": "src/components/public/PublicOrbit.tsx",
+      "sha256": "E360729704128E8C74C3315E8992EA533681A73CC5012DA4DD0AF8929436D7E9"
+    },
+    {
+      "path": "src/components/public/orbitGeometry.test.ts",
+      "sha256": "84C39D8C6789949588F63C8F396DC953E13E6A76F0986C447DEDDB15A9C16DF6"
+    },
+    {
+      "path": "src/components/public/orbitGeometry.ts",
+      "sha256": "E863215D492D71D118C72D703750BBE9CF2927DE473C461DE5A897A430AB9C11"
+    },
+    {
+      "path": "src/components/system/AppMotionProvider.test.tsx",
+      "sha256": "CEB126F8A42D20A80F6B5C0CA7F482E541467F1C875150BFEFE32B67360E623D"
+    },
+    {
+      "path": "src/components/system/AppMotionProvider.tsx",
+      "sha256": "67BCA8383DC2AB5EE0ECC3975A8BA123F440AF69FF05E0DE5017F813788C6BEA"
+    },
+    {
+      "path": "src/components/system/AsyncStateBoundary.test.tsx",
+      "sha256": "ACD7F33B8334D68B1408242F6A431815DE1C5868D2989278607242736A61A4EE"
+    },
+    {
+      "path": "src/components/system/AsyncStateBoundary.tsx",
+      "sha256": "D4D56CB507D066D98A0E8E42B2B327A9B70ADEECBBA7B86D78148228D1ED0834"
+    },
+    {
+      "path": "src/components/system/MarkdownView.test.tsx",
+      "sha256": "F1F1BEE561FA0D9833C4588859842A871345C16E2EDD64A8DBC79E9173097D5C"
+    },
+    {
+      "path": "src/components/system/MarkdownView.tsx",
+      "sha256": "A3659128DCCA1D67D07CA6BDDD280F50D32C32A434442B64CFA063B4F6904642"
+    },
+    {
+      "path": "src/components/system/RouteStage.test.tsx",
+      "sha256": "BA7EE5C9100E0671C8FCADBB37405AF1B9D68D33EA48E032906C71CD82DC409C"
+    },
+    {
+      "path": "src/components/system/RouteStage.tsx",
+      "sha256": "6DAB9169E1B553481C4D112EC8AD343DFEE4EF1737FCA196FF3DE89F29405EC2"
+    },
+    {
+      "path": "src/content/publicDestinations.test.ts",
+      "sha256": "575F66096827D95A72A9020C4C921CBC29F5F4273416CCD6272FF2671A942A33"
+    },
+    {
+      "path": "src/content/publicDestinations.ts",
+      "sha256": "80E167AA4DA9AE6E5F4608F0B2E6FA4422FE7015B56B3F40869C02B6A6BEF370"
+    },
+    {
+      "path": "src/content/technologyWorlds.test.ts",
+      "sha256": "36DBD33D7F381D2842B0F45BFB29371C1876B0F5D1957A12D28B8129A62A8D1B"
+    },
+    {
+      "path": "src/content/technologyWorlds.ts",
+      "sha256": "493539AC4C3B6FE3C1897FB816C90E9A353E9215D5D3BF660B53E94E3B1D229C"
+    },
+    {
+      "path": "src/domain/goals.ts",
+      "sha256": "69C18EC3BBDDF07F67D9D3CA91763BE3B49D06DA32BC874CFC96E96E3F5F4F25"
+    },
+    {
+      "path": "src/domain/habits.ts",
+      "sha256": "33C215C5E8A4E3455EB20D9312F17DC35F352FF4E02EBBD788DBAA627404EEEC"
+    },
+    {
+      "path": "src/domain/lifeCatalog.ts",
+      "sha256": "9311F70CF080CB22D8AA91C6BB0A4FCB61B43735D16CA2812FFB095BD383AEF0"
+    },
+    {
+      "path": "src/domain/lifeCommerce.ts",
+      "sha256": "F59864EF72E7BB94A646DCB09D4E64D6AAF8DFF11E60D2049D6337CF744D5301"
+    },
+    {
+      "path": "src/domain/lifeInventory.ts",
+      "sha256": "DD5690409FA0C4820E78354DED000D31C483B6B4E154C3EF58FD5B716D939AF2"
+    },
+    {
+      "path": "src/domain/lifePlanning.ts",
+      "sha256": "BA8B42B860B33891AD0075648D95148C919BE4B3BAF2DD929FBF940C3FCB80BD"
+    },
+    {
+      "path": "src/domain/lifeRecipes.ts",
+      "sha256": "8D4EF7EF7189AAD283BF7EA1065F07E6C5A105BFEE46703C45D66D959919844A"
+    },
+    {
+      "path": "src/domain/lifeRepository.test.ts",
+      "sha256": "AEF1F150F42C28CAE2EE8A7A64FA9858DC35AD112CFAA3269F6BA4EC8AA46615"
+    },
+    {
+      "path": "src/domain/lifeRepository.ts",
+      "sha256": "245114D921DE48C243670D697BDFC357783642406CFD3D2A3229437E46714D21"
+    },
+    {
+      "path": "src/domain/records.ts",
+      "sha256": "188A16403A67615142A76772DE380B8C9222408DA946937087FE39CCE8F643B6"
+    },
+    {
+      "path": "src/domain/remoteLifeRepository.ts",
+      "sha256": "308C97F757DABDC24AE154703740DB286EB9F3ABE14DD33AD8B28434D5EC1A8E"
+    },
+    {
+      "path": "src/domain/reviews.ts",
+      "sha256": "7A221DD2C070F9BAC3EDDB60202DF4FBF47C0CDAB0133370A32F2DA918043CD7"
+    },
+    {
+      "path": "src/domain/tasks.test.ts",
+      "sha256": "8384CBCB99C38DEA1F9B8EC461ECD168F7CB350A1DA0701DA0A91AD19F496D76"
+    },
+    {
+      "path": "src/domain/tasks.ts",
+      "sha256": "63A67BC2CBC258C8544F025C853FE27CC06C50B6381AA92CCC5E8CA13E919CF9"
+    },
+    {
+      "path": "src/domain/types.ts",
+      "sha256": "D61B350F7F5F4EB6DEA27F430D2B9CFF950D8477A3E6850F8DB1651893FA7DD1"
+    },
+    {
+      "path": "src/features/goals/GoalEditor.tsx",
+      "sha256": "0EFE51C715676DDEBCD2494A5D0D3F3A63043F35ED1FF24ED45A75DD4A23C0A4"
+    },
+    {
+      "path": "src/features/goals/GoalInspector.tsx",
+      "sha256": "1F5D07696EB308DF86769057AA308D18B28A8B645E6731CD0BC7D1AD822618D3"
+    },
+    {
+      "path": "src/features/goals/GoalsPage.test.tsx",
+      "sha256": "ED3C6354BEFF0E4C9C12E72C9825931848708EFD6D64337ABE93AE50E1958D34"
+    },
+    {
+      "path": "src/features/goals/GoalsPage.tsx",
+      "sha256": "83CDE762BAE1196DC8E018F633F5F87A17A7B74CF313D9558EDC9606C250EBC2"
+    },
+    {
+      "path": "src/features/goals/OutcomeMap.test.tsx",
+      "sha256": "159F6CF9DBC9A52C3F3505042E741143BA9349FA3329307D775D0D1D0B9F0DC6"
+    },
+    {
+      "path": "src/features/goals/OutcomeMap.tsx",
+      "sha256": "B68E850D22E515AE5BCD0813A07BC468CB3BCF20462CF8B4A231593DEFA46925"
+    },
+    {
+      "path": "src/features/goals/useGoals.test.tsx",
+      "sha256": "E3BA5E9FD7A35B6DAC6657506F7A2B5839E0CDFC11B5F8144377A3BC1DCEFCF8"
+    },
+    {
+      "path": "src/features/goals/useGoals.ts",
+      "sha256": "3FA9B9596369CFFEF96315E1C18D80EB1D2560281A2BA3865246FB9333108638"
+    },
+    {
+      "path": "src/features/habits/HabitEditor.tsx",
+      "sha256": "012AD3016540F2A57BA0AB99CC0C3FFBB1B0A2CC900CAA364565B063007E809A"
+    },
+    {
+      "path": "src/features/habits/HabitInspector.tsx",
+      "sha256": "4EA40C83DFBD5F4DDACD20AC0FC9CE70FAA0F2FCD2443804DAF16FFFDB23D02C"
+    },
+    {
+      "path": "src/features/habits/HabitMatrix.test.tsx",
+      "sha256": "D3211424EF2CCBCDC4DE1359279E53B403547A80CEA5A2FD066E3247F79D082E"
+    },
+    {
+      "path": "src/features/habits/HabitMatrix.tsx",
+      "sha256": "22A9F8A76E566A16BB229201983712D2C4F2DF3DD2791AC384498CB40E08441D"
+    },
+    {
+      "path": "src/features/habits/HabitsPage.test.tsx",
+      "sha256": "1934646C1B571AB90024682D308BF7FEF7864AF6B51FB37AFF7A58D02EF77AEE"
+    },
+    {
+      "path": "src/features/habits/HabitsPage.tsx",
+      "sha256": "7DE90B2BFCE3396C9D03E2FE35C85A0D464D9C6204133FAAD74791D31629DCDD"
+    },
+    {
+      "path": "src/features/habits/habits.fixtures.tsx",
+      "sha256": "4525CCFD8F2DD7A804AB6A197E2D5AB554EAD6AFE3DE6F0CEF19396A248D9A5C"
+    },
+    {
+      "path": "src/features/habits/useHabits.ts",
+      "sha256": "AF18B28F917AE41CA9316A8B9C630E83C00097088F32941B2DD892C3FECBBAC7"
+    },
+    {
+      "path": "src/features/life/LifeCalendar.test.tsx",
+      "sha256": "3B49720B5C3507B983E512A199617378BFCA6D9C7BBABA4E2C62B9C39FE9DFBC"
+    },
+    {
+      "path": "src/features/life/LifeCalendarOverlay.tsx",
+      "sha256": "0F86B9A39BD50A732A44C1E5B4BEC38DFE3DA777D613BAF63813B77488C730FF"
+    },
+    {
+      "path": "src/features/life/LifeCalendarPage.tsx",
+      "sha256": "AC56BD53F223FD0DAB4E8D181FB6C39AAE8DC449684F61F86B8D1C10D258A780"
+    },
+    {
+      "path": "src/features/life/LifeLayout.tsx",
+      "sha256": "0347176C86485396ED24FF6DDF87571CA955781CF17A4241E2DE44886DC66BD5"
+    },
+    {
+      "path": "src/features/life/LifeSubnav.tsx",
+      "sha256": "D2788C6705E90D6B18BA30D05E1AB9C47594DF50F20C764817111997B11D3DED"
+    },
+    {
+      "path": "src/features/life/LifeTodayPage.test.tsx",
+      "sha256": "09B73D88B91B5B955A1ED506BCD4B6951F40526221378368AAB51D4C4BC16C61"
+    },
+    {
+      "path": "src/features/life/LifeTodayPage.tsx",
+      "sha256": "E9F32D3D61F82B288E0614D5F4F95D72AA674278FBD1E29194FD4C204E553776"
+    },
+    {
+      "path": "src/features/life/useLifeDay.ts",
+      "sha256": "2187EE40FE8B7C8A82C137634B2A5C56A77299B87383CBE938AB413657E56BC8"
+    },
+    {
+      "path": "src/features/overview/OverviewPage.test.tsx",
+      "sha256": "4BB24D4435DE9291A3A952777C746D7D845767C8AE8F242D8AA046552D3817F6"
+    },
+    {
+      "path": "src/features/overview/OverviewPage.tsx",
+      "sha256": "4CF87879F645436098BFF72CB013C2A3BCB75A315E5E1C586177D4F967D33200"
+    },
+    {
+      "path": "src/features/overview/overviewModel.test.ts",
+      "sha256": "8A81AFFF6FC21002EA20C81F1DC0D2A649147F4E585EF7961F345E6AD88D3CFA"
+    },
+    {
+      "path": "src/features/overview/overviewModel.ts",
+      "sha256": "142E39DF3DC904B115CC8998A8513211807D7D4F4836D929C55D071512D76F2F"
+    },
+    {
+      "path": "src/features/records/MediaUploader.tsx",
+      "sha256": "9210A11E511320E35A28782C82B66749FA4FCE85A60BFC934EAA9AC5AA77F0BB"
+    },
+    {
+      "path": "src/features/records/RecordEditor.tsx",
+      "sha256": "AD497984EFFD9FC8B8AF0C48BCC52150AD35087F05AF001420DFBD5EC800183F"
+    },
+    {
+      "path": "src/features/records/RecordStream.tsx",
+      "sha256": "A382FD7CAEA4C7D38211468F248EBE6E74457740C0020D00D9D303C841004A1B"
+    },
+    {
+      "path": "src/features/records/RecordsPage.test.tsx",
+      "sha256": "3ABE14531A04B58F0E45070543945F6CF5A4D0F55F7BFA22AB4F93E0897F3CCB"
+    },
+    {
+      "path": "src/features/records/RecordsPage.tsx",
+      "sha256": "68F91E647058494855CD74F5836D5C49499C780DEBDC65ECB733BADF7813C374"
+    },
+    {
+      "path": "src/features/records/useAutosave.test.tsx",
+      "sha256": "06743E23AF3570BE810C9E09C388365F849F5B1F0E521D1847315C135DD6F510"
+    },
+    {
+      "path": "src/features/records/useAutosave.ts",
+      "sha256": "45688C31A6867CD1A0AD3DCC97C754546C81E866FBAE4509D396B988A1C43C08"
+    },
+    {
+      "path": "src/features/records/useRecords.ts",
+      "sha256": "5723F1313B39B184E4D9A47659FD97A97B905F80C395ECE7052ADA5689850238"
+    },
+    {
+      "path": "src/features/reviews/EvidenceRail.tsx",
+      "sha256": "C8974D76FF1141E96810D2807D95B0B28C50540E7090C4DCCF825F38D6741D80"
+    },
+    {
+      "path": "src/features/reviews/ReviewActions.tsx",
+      "sha256": "A8F57E84C67955A8E3481FCC00B794B2D8A410B6DB1F04F2CACAF5BB5D953FA1"
+    },
+    {
+      "path": "src/features/reviews/ReviewEditor.tsx",
+      "sha256": "6B8A7EFA47364D7036AA6B1D815D30B94EF26623DF153BF8E33D5D18412F24EF"
+    },
+    {
+      "path": "src/features/reviews/ReviewsPage.test.tsx",
+      "sha256": "E52027F0641BF9464DBBCD2B9478F66CFA988BF4AD89C1280B63463DEE2E97C5"
+    },
+    {
+      "path": "src/features/reviews/ReviewsPage.tsx",
+      "sha256": "900360695FADEBA3DB7C1FA920A9D7A3B3BB3EE4EA75E99FB33CA86F1239A6E0"
+    },
+    {
+      "path": "src/features/reviews/useReviews.ts",
+      "sha256": "148DEB282A38D180E34B6A34532ED784F7D305E3F73258FB3E9157973307BAEB"
+    },
+    {
+      "path": "src/features/schedule/SchedulePage.test.tsx",
+      "sha256": "315A0093B9BC07135F07BAFA503E8AE070FFBFCECD8E3BB861BC9C953C73F779"
+    },
+    {
+      "path": "src/features/schedule/SchedulePage.tsx",
+      "sha256": "9161C88FAC70D3DCC81710310E46DD67131B51E665EDCBA7F0BF5E87E6F8C000"
+    },
+    {
+      "path": "src/features/schedule/TaskEditor.tsx",
+      "sha256": "D0BF428A98A13083CFFBA7ECC960C7AD4C88836A9EDDD35C56919A18B2A0E730"
+    },
+    {
+      "path": "src/features/schedule/TaskPool.tsx",
+      "sha256": "9E59C33B5FE38FA92A075C9D9495F00BA257B5DEA89A14BA789CE97F1FE90DD2"
+    },
+    {
+      "path": "src/features/schedule/WeekCalendar.test.tsx",
+      "sha256": "9B59C97220705B271ECECFF4ACECE9C3B1F52F956BF6750D7DDB0F704FA80CB7"
+    },
+    {
+      "path": "src/features/schedule/WeekCalendar.tsx",
+      "sha256": "85B495D6B282BAB51C78EF7673570A2B034A8154329DA5858928F210836855DD"
+    },
+    {
+      "path": "src/features/schedule/dragSchedule.test.ts",
+      "sha256": "7488EEF922D1BC2C530CA640632D801BAD1726E8E0FF4BA039FC9F69C9D758B6"
+    },
+    {
+      "path": "src/features/schedule/dragSchedule.ts",
+      "sha256": "008AEC6633A5781876CC250652AC46AB7B91B1F00BC1979B9DA9FA126DD107C6"
+    },
+    {
+      "path": "src/features/schedule/useSchedule.ts",
+      "sha256": "A226CDD8CC681F024EA707192F755CC23A47BB710FCC2409B21D5D1FD11E1998"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "F850D1904C5DAE8CFB80D03B2B5935D0E1FC676D89AC7A3CE75EECC5AF526652"
+    },
+    {
+      "path": "src/motion/loginScene.test.ts",
+      "sha256": "A27661ED989DA0D16383DE90C5FDFC2F6C4E71ADA05B7F19AA9408FB4F4FF114"
+    },
+    {
+      "path": "src/motion/loginScene.ts",
+      "sha256": "DBA380F6FBFFBF8986E59E60F7B1FF492985484E64309DDB4B8247FE96CFFC25"
+    },
+    {
+      "path": "src/motion/planetTransitionMachine.test.ts",
+      "sha256": "D2D1F881FFFFEC9FC5AEF23CC89E7000E31E727EB7418EC9A4603FD047AD969C"
+    },
+    {
+      "path": "src/motion/planetTransitionMachine.ts",
+      "sha256": "33D45DE550EA7EB47F7C1E1C32C31B3C00A19D955E154EDBCCF1E2AE16271156"
+    },
+    {
+      "path": "src/motion/publicGsap.test.ts",
+      "sha256": "BAD56D92500FA5E30D9FF7DFECD6A52676032CBC7A50F4D5BD819CF4E1CC34AC"
+    },
+    {
+      "path": "src/motion/publicGsap.ts",
+      "sha256": "3262B46127F422485376B62E4612A70D4ACABEE9A8A348051109792C7FAFC8AA"
+    },
+    {
+      "path": "src/pages/PublicDestinationPage.test.tsx",
+      "sha256": "3589E027E2FE0D87B04D351B30B87D3CB63B0F5B9E017D780DEB371C1BF55C3C"
+    },
+    {
+      "path": "src/pages/PublicDestinationPage.tsx",
+      "sha256": "A4BEEE57CA47FEEBC2B8A31FB59007027F886E20C0A7E982828A737274D3E941"
+    },
+    {
+      "path": "src/pages/PublicHomePage.test.tsx",
+      "sha256": "D738654C1F93BF4D88957CD368BDA3432FB89EAF1C3C3C98EA0526A9C733FFFA"
+    },
+    {
+      "path": "src/pages/PublicHomePage.tsx",
+      "sha256": "70E8A1A287E9C840AA97A82322FEA698C8F268356AF35F4BB4898246CC73EABE"
+    },
+    {
+      "path": "src/pages/PublicSnapshotPage.test.tsx",
+      "sha256": "D0972F2D033536570B0813E57D5EDA1A0DF5E9E2E17132B2ACF72B7263331D4B"
+    },
+    {
+      "path": "src/pages/PublicSnapshotPage.tsx",
+      "sha256": "8CD2E54E2A26DF0FE07FF599F3A209A37C9DD6B4BCDEC1D66E37994C04AE165D"
+    },
+    {
+      "path": "src/pages/TechnologyWorldPage.test.tsx",
+      "sha256": "79BFE3AAAD89041A1A89C242BD97A1CC5F2525490612D33E9847E8A0293B094A"
+    },
+    {
+      "path": "src/pages/TechnologyWorldPage.tsx",
+      "sha256": "22B6A7C68758F1EBEFB9AA4F61EE99291A3881F0F9534375D593738DE33CCE06"
+    },
+    {
+      "path": "src/pages/private/KnowledgePage.test.tsx",
+      "sha256": "4887154E7CD74880EED2245D4478DD20279FB6B23E261182983F692EDD96FC35"
+    },
+    {
+      "path": "src/pages/private/KnowledgePage.tsx",
+      "sha256": "DC1B3083404A38284C0100F522877946216116B479A21C801EF04CFEB560AAD4"
+    },
+    {
+      "path": "src/pages/private/PlansPage.test.tsx",
+      "sha256": "C747AAA735065BE99F48377C922A7C541F24FF9D4062C36676DE4D93B740ED5F"
+    },
+    {
+      "path": "src/pages/private/PlansPage.tsx",
+      "sha256": "36AD625EAC6D88A3BB64243EB578C5841C43B0C8FD84F06204859AE774DCA401"
+    },
+    {
+      "path": "src/pages/private/PrivateFlowPages.test.tsx",
+      "sha256": "4A4B627D823AAF67BB3E905C80B336712D684FBA9059469E372A2DCE4794349D"
+    },
+    {
+      "path": "src/pages/private/PrivateHomePage.test.tsx",
+      "sha256": "EA20371D53C178694E179F72797A3671A5A0262687EEE8CEABD9089CD27E16DC"
+    },
+    {
+      "path": "src/pages/private/PrivateHomePage.tsx",
+      "sha256": "44352578219C995F78D95903ADA6571AE36B96285AEF7E7065BCC20CADDF09D6"
+    },
+    {
+      "path": "src/pages/private/RecordsPage.tsx",
+      "sha256": "689A2807ED9E4E2DDBA98D04FE20EA229CC2DBDE86638D2E0B965293D143D293"
+    },
+    {
+      "path": "src/pages/private/ReviewsPage.test.ts",
+      "sha256": "EA1754429315834C67C0AED8FCA2675901574E4C2E4A59ECECA5CD8A52A5F724"
+    },
+    {
+      "path": "src/pages/private/ReviewsPage.tsx",
+      "sha256": "0ABCD2E5A575869EB7485CFDDB8BC638D6D33EE3BE5C95969A57BF44AB3FC5C4"
+    },
+    {
+      "path": "src/pages/private/SnapshotsPage.test.tsx",
+      "sha256": "0EB684E3DFA82231CE540ACA9C09F1C4EAC120AFBC3318D5E4B4EA5095BADB45"
+    },
+    {
+      "path": "src/pages/private/SnapshotsPage.tsx",
+      "sha256": "62B327AFF153023BB8D6B00C64112D6234CCA0140B8EF415DD678131BD40CC7F"
+    },
+    {
+      "path": "src/state/AuthContext.tsx",
+      "sha256": "2C46874C83111E7A4F91E187B323CB2FCF5C088A2921A39F3BAA7F8E3A91C7E5"
+    },
+    {
+      "path": "src/state/LifeDataContext.tsx",
+      "sha256": "A6C676927508D856D6309FD8B278BE61AE2070B5FAD1FA495A307DBF4F715A53"
+    },
+    {
+      "path": "src/styles/base.css",
+      "sha256": "C07FEEFC88EDEFF6136A104D2CCB184A93306BF1A583543964ADD9319F775B96"
+    },
+    {
+      "path": "src/styles/goals.css",
+      "sha256": "A2F156ECF11591C218DD9B9122D7C8F5C2026783F1937A63A93138138CFE793B"
+    },
+    {
+      "path": "src/styles/habits.css",
+      "sha256": "1FE5EE2665269E09EB5B4F3253AC3EB712D5895A1F2F51BC7CFAE7FD9A0F8D8C"
+    },
+    {
+      "path": "src/styles/index.css",
+      "sha256": "F80B3DCEDA9FB55A22F96FA8E87F40ECEBB5B3C38ED8228711B1A2E17BA35FC9"
+    },
+    {
+      "path": "src/styles/life-shell.css",
+      "sha256": "CF2A5BE5034752A37A8BEE3C17A1F914D2C5D9882B7CE9884C21D61D76FD56A8"
+    },
+    {
+      "path": "src/styles/motion.css",
+      "sha256": "83318D62D25D27F7DC307ED452AF1AE48C394A0732192D60E837BE86F750B90E"
+    },
+    {
+      "path": "src/styles/overview.css",
+      "sha256": "30776F899A68BD10BEE8B8E5B3545535158CA749DF4AB5F606A128810C3A34F4"
+    },
+    {
+      "path": "src/styles/private-shell.css",
+      "sha256": "13BC680096ECC4756DFD93FFCF1BA39620F78665E92852A51D0109C86B44D647"
+    },
+    {
+      "path": "src/styles/public.css",
+      "sha256": "EC5B884213A4F4B960983641CB4A110D3B224D2C814D2D484723DECAF97A0421"
+    },
+    {
+      "path": "src/styles/records.css",
+      "sha256": "49441348F5F6468230A681F03D6BE8D5B452AB79DC00963CD1782AC28033C003"
+    },
+    {
+      "path": "src/styles/reviews.css",
+      "sha256": "8CA08173CCE471955DDC447CCD73AF9860B0D86EA6AB7CB08D7F73212A88A212"
+    },
+    {
+      "path": "src/styles/schedule.css",
+      "sha256": "DAA200696CE91870464C57F7A648D4E973C59B1CB68C917EA044CF641239E863"
+    },
+    {
+      "path": "src/test/setup.ts",
+      "sha256": "1F057B37EC52DCB8544F4D3808C9A19FB83CFED34AA699162126C74F9850E46E"
+    },
+    {
+      "path": "src/theme/theme.test.ts",
+      "sha256": "408309159B73A7030D8A5C9E967C77594CE1A64F863082D0051B056A4707B618"
+    },
+    {
+      "path": "src/theme/theme.ts",
+      "sha256": "837733E9CBF3B59797E6CA5B0EBC8F4C4D9978E171CE817ED5839675F756C0EB"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "sha256": "65996936FBB042915F7B74A200FCDDE7E410F32A669B1AB9597CFAA4B0FADDB5"
+    },
+    {
+      "path": "tests-remote/globalSetup.ts",
+      "sha256": "FD1E09C82208CA4214CD9C2C8228E233B291C73F2C4DA9924ACE0CEB7D867106"
+    },
+    {
+      "path": "tests-remote/production-auth.spec.ts",
+      "sha256": "9204621DE5FD2BCA303B35A77F08D53D4A604DCAB7CA3C6A24FBF9DAEBB48593"
+    },
+    {
+      "path": "tests/globalSetup.ts",
+      "sha256": "89BFCCF155EA4727E048A837CF3EF9343CC20C897788E5393F6B20EACB8D4FD4"
+    },
+    {
+      "path": "tests/goals-golden-slice.spec.ts",
+      "sha256": "F3AF22084DD3FDF230B8DA2DAEB645C39E8020DDD9E232D65C80E32FF160EA96"
+    },
+    {
+      "path": "tests/goals-schedule-habits.spec.ts",
+      "sha256": "5ABD2378017A07DA2D752A4956A63AA105A536154F4354B769CFA730C3A6B004"
+    },
+    {
+      "path": "tests/habits-golden-slice.spec.ts",
+      "sha256": "726E31C74CC57F631D523A34427A7A4EBB2F241564401CDDEAA4F54B1A8D2494"
+    },
+    {
+      "path": "tests/life-fixtures.ts",
+      "sha256": "4D9DD3D5FA0679F8DFB3A893279E49D96C27022357245E9B343F9CC9511F87B2"
+    },
+    {
+      "path": "tests/life-globalSetup.ts",
+      "sha256": "51D7B90D85E6035E7FE730C84B393C644ADBAA94A99F8FCF0063B423A2D6F2FE"
+    },
+    {
+      "path": "tests/life-workspace.spec.ts",
+      "sha256": "1A6721B683F01DD2D534413C94B30675497C149A256254398C9F1DE2E936976E"
+    },
+    {
+      "path": "tests/p2-t3-evidence.spec.ts",
+      "sha256": "32791FC6D985F1D605B3C041CDBB385670E42A7D000D52B9A9C4E7F627B67159"
+    },
+    {
+      "path": "tests/private-core-fixtures.ts",
+      "sha256": "FB9581FB891C47B3F28B3AD14FD576A6EF88A2CC2A44203C5379227AC2EFACB1"
+    },
+    {
+      "path": "tests/private-loop.spec.ts",
+      "sha256": "692A709285B1570DFDDBD2ED77C60DAB52D7C6F59C97540CE5DE33B3D329EB2A"
+    },
+    {
+      "path": "tests/private-overview.spec.ts",
+      "sha256": "5A9223F6D4985E5CD05CD12A00614DAB1F91EBA42C09FE21BAD505BB106B0516"
+    },
+    {
+      "path": "tests/public-details.spec.ts",
+      "sha256": "D0E5B9DE09878C91C73564F6882F8363546BAE813AC346196A3986E6F6441FB0"
+    },
+    {
+      "path": "tests/public-final.spec.ts",
+      "sha256": "2CC0AC80193F8FAD28F99CF44EDBA64333C772C175C0EF2FE7CE695B936A1A7B"
+    },
+    {
+      "path": "tests/public-home.spec.ts",
+      "sha256": "0C1274C3D766EBCDD0B5C5ACE6FD47DCF7AD80720DD1046319FF1754181F38FC"
+    },
+    {
+      "path": "tests/public-login.spec.ts",
+      "sha256": "44921AB1977179AF6025305387E06D47CB3EAE0A72AC648BE6B4A3DB0F9F6E8E"
+    },
+    {
+      "path": "tests/records-reviews.spec.ts",
+      "sha256": "30CE2427CF27C4484C8B1A273E7FDC516A7602EAC1660A4F093BC2299A528C87"
+    },
+    {
+      "path": "tests/records.spec.ts",
+      "sha256": "B29F58816795A0E201EF1FE2E7B6A874BFF15EB72C251DAC69EAC93EC0ED3ECE"
+    },
+    {
+      "path": "tests/responsive-accessibility.spec.ts",
+      "sha256": "EC1081C005BF3173B2BE56C8DA02708ACBE0BB0E4DDFB6C37BAB7BF131C76404"
+    },
+    {
+      "path": "tests/reviews.spec.ts",
+      "sha256": "23F03E72CC9247A71118ADBCA19A4C99C6197615EFF3010DB9884D0DB31B41B9"
+    },
+    {
+      "path": "tests/schedule-golden-slice.spec.ts",
+      "sha256": "B56469C45CE9882FAA93093CE048B21C0A55256CBFDA5830FB24F69E82925296"
+    },
+    {
+      "path": "tests/visual-capture.spec.ts",
+      "sha256": "C7964C9F4F521E85FDD4A78BDF72FAAA6203B3187CD98E583C08C6B57CF365C9"
+    },
+    {
+      "path": "tsconfig.app.json",
+      "sha256": "BA158A678C61D303FD5F1548C74F44F6075612831ACD726317833E1DCF4A5451"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "770B4140BBB581E2DFD9EA9946FFC9C75A1D86BA7D2DB5F77C83E37CBDF9D808"
+    },
+    {
+      "path": "tsconfig.node.json",
+      "sha256": "010F34B171223DA908188B341AED45C330BB5845C036D0BCB06810AD841DCA8A"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "406E4321A06A3A85C1066906A70128869A9263EE4F06A3140F7DB65DA1861AED"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "24FCDC944A3D680789658CF19D146D015238930B09DAB5B5FE66C039B24DC353"
+    }
+  ],
+  "includeRules": [
+    "root and server package manifests, Web entrypoint and TypeScript/Vite/Vitest/Playwright configs",
+    "src, server/src, server/migrations, tests, tests-remote and scripts trees",
+    "Docker runtime files, deploy assets and GitHub Actions workflows",
+    "docs/traceability/requirements.md and static docs/traceability contract JSON"
+  ],
+  "excludeRules": [
+    "VCS, editor, dependency, build, coverage and runtime-cache directories",
+    "generated work, evidence, final output, Playwright report and test-result trees",
+    "credentials, environment files, cookies, tokens, kubeconfig and private or generated test-database key material",
+    "dynamic docs/traceability/evidence-manifest.json metadata to prevent checkpoint self-reference",
+    "all paths outside the explicit include rules"
+  ]
+}
