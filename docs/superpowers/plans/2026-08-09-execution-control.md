@@ -1036,3 +1036,15 @@ The refreshed deterministic non-Git checkpoint is `outputs/evidence/source-check
 ## Exact next atomic action
 
 Remain at P6 / P6-T5 / Step 1. Present the final candidate images and obtain an explicit approve/reject decision. Do not promote the seven atoms or start full Step 7 until the user approves the rendered result.
+
+## 2026-08-24 Git initialization and remote-push authorization boundary
+
+The user explicitly authorized creation of private repository `Chen0125-a/lifeops-web`, default branch `main`, `git init`, the first commit and origin binding. The fixed workspace was initialized without reset or loss of user files. A staged audit covered 1468 files, excluded `debug.log`, `playwright-report-remote/` and non-example `.env` files, and found no file above 100 MiB. Root commit `543c6f106919595194730c43ac20be7e947dda27` (`feat: initialize LifeOps Web platform`) exists on local `main`; the working tree is clean and origin is `https://github.com/Chen0125-a/lifeops-web.git`.
+
+The remote is private but still has no `main` or default branch. The initial HTTPS push sent an approximately 181 MiB object pack and ended HTTP 408, exit 1; an HTTP/1.1 buffered retry also ended HTTP 408. Content-preserving bootstrap refs were generated without rewriting `main`; their tree file counts were independently checked. Remote `bootstrap/chunk-01` was confirmed at `b2e8b27e6765c6dd37dd551eb25db18f0406820e`, while later 23 MiB and 8 MiB requests continued to fail with HTTP 408. Git Database API single-blob SHA verification works, but sustained transfer repeatedly returns EOF/400 and is not a credible completion path. No failed request is treated as success.
+
+SSH host connectivity and trust are available, but no GitHub SSH public key is configured. The proposed least-scoped recovery is a repository-only writable deploy key whose private half stays inside this repository's `.git` metadata and whose public half is attached only to `Chen0125-a/lifeops-web`. The security reviewer rejected creation before execution because the prior Git authorization did not explicitly authorize a persistent deploy key. Fresh readback confirms neither local key file nor remote deploy key exists. No requirement, acceptance atom, evidence row or P6-T6 checkbox was promoted; P6 / P6-T6 / Step 3 and 30/44 remain active.
+
+## Exact next atomic action
+
+Obtain explicit user approval to create the repository-scoped writable deploy key described above. If approved, generate it only under `.git`, add only its public key to `Chen0125-a/lifeops-web`, verify SSH identity, push the local `main` history rooted at `543c6f106919595194730c43ac20be7e947dda27`, remove temporary bootstrap refs after verifying the remote commit, then run the exact release preflight as the first product verification command. P6-T6 Step 4 remains blocked until preflight exits 0.
