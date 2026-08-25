@@ -43,7 +43,6 @@ jobs:
           --health-interval=5s
           --health-timeout=5s
           --health-retries=30
-          --log-bin-trust-function-creators=1
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -65,6 +64,13 @@ jobs:
           npm run typecheck:server
           npm run build
           npm run build:server
+      - name: Configure MySQL trigger migration trust
+        working-directory: server
+        env:
+          MYSQL_ADMIN_PASSWORD: root-integration-password
+        run: >-
+          node --input-type=module --eval
+          "import mysql from 'mysql2/promise'; const connection = await mysql.createConnection({ host: '127.0.0.1', port: 3306, user: 'root', password: process.env.MYSQL_ADMIN_PASSWORD, database: 'mysql' }); try { await connection.query('SET GLOBAL log_bin_trust_function_creators = 1'); } finally { await connection.end(); }"
       - name: Real MySQL 8.4 store integration
         env:
           LIFEOPS_MYSQL_INTEGRATION: "true"

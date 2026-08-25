@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+  "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
   "evidence": [
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -148,7 +148,7 @@
     },
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -298,7 +298,7 @@
     },
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -428,7 +428,7 @@
     },
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -574,7 +574,7 @@
     },
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -726,7 +726,7 @@
     },
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -872,7 +872,7 @@
     },
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -1024,7 +1024,7 @@
     },
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -1170,7 +1170,7 @@
     },
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -1322,7 +1322,7 @@
     },
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -1468,7 +1468,7 @@
     },
     {
       "exitCode": 0,
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -1640,7 +1640,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:59:08Z",
       "completedAt": "2026-08-15T14:59:19Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -1719,7 +1719,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:17:28Z",
       "completedAt": "2026-08-15T14:17:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/011_goal_hierarchy_recovery.sql",
@@ -1768,7 +1768,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:04:20Z",
       "completedAt": "2026-08-15T14:04:34Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/011_goal_hierarchy_recovery.sql",
@@ -1822,7 +1822,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:08Z",
       "completedAt": "2026-08-15T14:49:18Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -1890,7 +1890,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:08Z",
       "completedAt": "2026-08-15T14:49:18Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -1957,7 +1957,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:17:28Z",
       "completedAt": "2026-08-15T14:17:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/routes/goals.test.ts",
@@ -2008,7 +2008,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:08Z",
       "completedAt": "2026-08-15T14:49:18Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2081,7 +2081,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:56:00Z",
       "completedAt": "2026-08-15T14:56:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2151,7 +2151,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:08Z",
       "completedAt": "2026-08-15T14:49:18Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2224,7 +2224,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:56:00Z",
       "completedAt": "2026-08-15T14:56:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2294,7 +2294,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:08Z",
       "completedAt": "2026-08-15T14:49:18Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2367,7 +2367,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:56:00Z",
       "completedAt": "2026-08-15T14:56:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2437,7 +2437,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:08Z",
       "completedAt": "2026-08-15T14:49:18Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2510,7 +2510,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:56:00Z",
       "completedAt": "2026-08-15T14:56:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2585,7 +2585,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:59:08Z",
       "completedAt": "2026-08-15T14:59:19Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2685,7 +2685,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:16:49Z",
       "completedAt": "2026-08-15T14:16:52Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -2747,7 +2747,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:04:20Z",
       "completedAt": "2026-08-15T14:04:34Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/002_domain_foundation.sql",
@@ -2802,7 +2802,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:50:20Z",
       "completedAt": "2026-08-15T14:50:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2887,7 +2887,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:50:20Z",
       "completedAt": "2026-08-15T14:50:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -2971,7 +2971,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:16:49Z",
       "completedAt": "2026-08-15T14:16:52Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -3023,7 +3023,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:50:20Z",
       "completedAt": "2026-08-15T14:50:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3092,7 +3092,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:57:00Z",
       "completedAt": "2026-08-15T14:57:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3158,7 +3158,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:50:20Z",
       "completedAt": "2026-08-15T14:50:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3227,7 +3227,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:57:00Z",
       "completedAt": "2026-08-15T14:57:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3293,7 +3293,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:50:20Z",
       "completedAt": "2026-08-15T14:50:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3362,7 +3362,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:57:00Z",
       "completedAt": "2026-08-15T14:57:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3428,7 +3428,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:50:20Z",
       "completedAt": "2026-08-15T14:50:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3497,7 +3497,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:57:00Z",
       "completedAt": "2026-08-15T14:57:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3568,7 +3568,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:47:20Z",
       "completedAt": "2026-08-15T14:47:25Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3651,7 +3651,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:47:20Z",
       "completedAt": "2026-08-15T14:47:23Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -3716,7 +3716,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:53:39Z",
       "completedAt": "2026-08-15T14:53:51Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/002_domain_foundation.sql",
@@ -3773,7 +3773,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:18Z",
       "completedAt": "2026-08-15T14:49:23Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3845,7 +3845,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:18Z",
       "completedAt": "2026-08-15T14:49:23Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -3916,7 +3916,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:47:20Z",
       "completedAt": "2026-08-15T14:47:23Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -3971,7 +3971,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:18Z",
       "completedAt": "2026-08-15T14:49:23Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -4044,7 +4044,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:57:30Z",
       "completedAt": "2026-08-15T14:58:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -4114,7 +4114,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:18Z",
       "completedAt": "2026-08-15T14:49:23Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -4187,7 +4187,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:57:30Z",
       "completedAt": "2026-08-15T14:58:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -4257,7 +4257,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:18Z",
       "completedAt": "2026-08-15T14:49:23Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -4330,7 +4330,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:57:30Z",
       "completedAt": "2026-08-15T14:58:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -4400,7 +4400,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:49:18Z",
       "completedAt": "2026-08-15T14:49:23Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -4473,7 +4473,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-15T14:57:30Z",
       "completedAt": "2026-08-15T14:58:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -4555,7 +4555,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T02:40:00Z",
       "completedAt": "2026-08-21T02:40:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -4660,7 +4660,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T02:41:00Z",
       "completedAt": "2026-08-21T02:41:06Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/api/mediaApi.test.ts",
@@ -4717,7 +4717,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T02:42:00Z",
       "completedAt": "2026-08-21T02:42:08Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -4783,7 +4783,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T02:50:00Z",
       "completedAt": "2026-08-21T02:50:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/004_records_media.sql",
@@ -4851,7 +4851,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T03:22:00Z",
       "completedAt": "2026-08-21T03:27:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -4939,7 +4939,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T03:22:00Z",
       "completedAt": "2026-08-21T03:27:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -5025,7 +5025,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T02:42:00Z",
       "completedAt": "2026-08-21T02:42:08Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -5096,7 +5096,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T03:22:00Z",
       "completedAt": "2026-08-21T03:27:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -5173,7 +5173,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T06:10:00Z",
       "completedAt": "2026-08-21T06:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -5247,7 +5247,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T03:22:00Z",
       "completedAt": "2026-08-21T03:27:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -5324,7 +5324,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T06:10:00Z",
       "completedAt": "2026-08-21T06:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -5398,7 +5398,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T03:22:00Z",
       "completedAt": "2026-08-21T03:27:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -5475,7 +5475,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T06:10:00Z",
       "completedAt": "2026-08-21T06:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -5549,7 +5549,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T03:22:00Z",
       "completedAt": "2026-08-21T03:27:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -5626,7 +5626,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T06:10:00Z",
       "completedAt": "2026-08-21T06:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -5705,7 +5705,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:27:58Z",
       "completedAt": "2026-08-21T07:28:05Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -5788,7 +5788,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:41:53Z",
       "completedAt": "2026-08-21T07:41:55Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/api/queryKeys.ts",
@@ -5835,7 +5835,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:04:34Z",
       "completedAt": "2026-08-21T07:04:37Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -5888,7 +5888,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:23:55Z",
       "completedAt": "2026-08-21T07:24:11Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/005_reviews.sql",
@@ -5945,7 +5945,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:32:04Z",
       "completedAt": "2026-08-21T07:35:25Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -6029,7 +6029,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:09:30Z",
       "completedAt": "2026-08-21T07:09:42Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -6112,7 +6112,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:04:34Z",
       "completedAt": "2026-08-21T07:04:37Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -6183,7 +6183,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:09:30Z",
       "completedAt": "2026-08-21T07:09:42Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -6256,7 +6256,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:10:00Z",
       "completedAt": "2026-08-21T07:12:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -6326,7 +6326,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:09:30Z",
       "completedAt": "2026-08-21T07:09:42Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -6399,7 +6399,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:10:00Z",
       "completedAt": "2026-08-21T07:12:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -6469,7 +6469,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:09:30Z",
       "completedAt": "2026-08-21T07:09:42Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -6542,7 +6542,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:10:00Z",
       "completedAt": "2026-08-21T07:12:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -6612,7 +6612,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:09:30Z",
       "completedAt": "2026-08-21T07:09:42Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -6685,7 +6685,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T07:10:00Z",
       "completedAt": "2026-08-21T07:12:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -6859,7 +6859,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:46Z",
       "completedAt": "2026-08-21T12:22:06Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -7236,7 +7236,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T11:05:10Z",
       "completedAt": "2026-08-21T11:05:25Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.test.ts",
@@ -7676,7 +7676,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T11:12:11Z",
       "completedAt": "2026-08-21T11:12:26Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/001_initial.sql",
@@ -8294,7 +8294,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:26:35Z",
       "completedAt": "2026-08-21T12:27:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -8635,7 +8635,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:29:20Z",
       "completedAt": "2026-08-21T12:29:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.remote.config.ts",
@@ -9315,7 +9315,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:26:35Z",
       "completedAt": "2026-08-21T12:27:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -9650,7 +9650,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:29:20Z",
       "completedAt": "2026-08-21T12:29:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.remote.config.ts",
@@ -10313,7 +10313,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -10570,7 +10570,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -10824,7 +10824,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -11081,7 +11081,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -11335,7 +11335,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -11592,7 +11592,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -11846,7 +11846,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -12103,7 +12103,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -12357,7 +12357,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -12614,7 +12614,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -12868,7 +12868,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -13125,7 +13125,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -13379,7 +13379,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -13636,7 +13636,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -13890,7 +13890,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -14147,7 +14147,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -14401,7 +14401,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -14658,7 +14658,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -14912,7 +14912,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -15169,7 +15169,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -15423,7 +15423,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -15680,7 +15680,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -15934,7 +15934,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -16191,7 +16191,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -16443,7 +16443,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -16695,7 +16695,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -16947,7 +16947,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -17199,7 +17199,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -17451,7 +17451,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -17703,7 +17703,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -17955,7 +17955,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -18207,7 +18207,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -18461,7 +18461,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -18718,7 +18718,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -18972,7 +18972,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -19229,7 +19229,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -19488,7 +19488,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -19747,7 +19747,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -20006,7 +20006,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -20265,7 +20265,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -20518,7 +20518,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -20771,7 +20771,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -21024,7 +21024,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:01Z",
       "completedAt": "2026-08-21T12:28:32Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -21277,7 +21277,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:28:33Z",
       "completedAt": "2026-08-21T12:31:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -21568,7 +21568,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:23:47Z",
       "completedAt": "2026-08-21T12:23:50Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -21732,7 +21732,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:46Z",
       "completedAt": "2026-08-21T12:22:15Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -21862,7 +21862,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:46Z",
       "completedAt": "2026-08-21T12:22:15Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -21983,7 +21983,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:20:58Z",
       "completedAt": "2026-08-21T12:21:13Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -22114,7 +22114,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:13Z",
       "completedAt": "2026-08-21T12:32:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -22244,7 +22244,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:20:58Z",
       "completedAt": "2026-08-21T12:21:13Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -22380,7 +22380,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:13Z",
       "completedAt": "2026-08-21T12:32:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -22508,7 +22508,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:20:58Z",
       "completedAt": "2026-08-21T12:21:13Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -22639,7 +22639,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:13Z",
       "completedAt": "2026-08-21T12:32:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -22769,7 +22769,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:20:58Z",
       "completedAt": "2026-08-21T12:21:13Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -22905,7 +22905,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:13Z",
       "completedAt": "2026-08-21T12:32:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -23033,7 +23033,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:20:58Z",
       "completedAt": "2026-08-21T12:21:13Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -23164,7 +23164,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:13Z",
       "completedAt": "2026-08-21T12:32:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -23294,7 +23294,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:20:58Z",
       "completedAt": "2026-08-21T12:21:13Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -23430,7 +23430,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:13Z",
       "completedAt": "2026-08-21T12:32:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -23558,7 +23558,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:20:58Z",
       "completedAt": "2026-08-21T12:21:13Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -23689,7 +23689,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:13Z",
       "completedAt": "2026-08-21T12:32:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -23819,7 +23819,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:20:58Z",
       "completedAt": "2026-08-21T12:21:13Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -23955,7 +23955,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:21:13Z",
       "completedAt": "2026-08-21T12:32:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -24092,7 +24092,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T12:20:58Z",
       "completedAt": "2026-08-21T12:21:13Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -24265,7 +24265,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:30:17Z",
       "completedAt": "2026-08-21T16:30:45Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -24405,7 +24405,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:30:17Z",
       "completedAt": "2026-08-21T16:30:45Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/domain/life/catalog.test.ts",
@@ -24567,7 +24567,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:30:55Z",
       "completedAt": "2026-08-21T16:31:06Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/006_life_catalog.sql",
@@ -24684,7 +24684,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:31:29Z",
       "completedAt": "2026-08-21T16:32:05Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -24808,7 +24808,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:31:29Z",
       "completedAt": "2026-08-21T16:32:05Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -24935,7 +24935,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:30:17Z",
       "completedAt": "2026-08-21T16:31:06Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/domain/life/catalog.test.ts",
@@ -25072,7 +25072,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:31:29Z",
       "completedAt": "2026-08-21T16:32:05Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -25196,7 +25196,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:23:00Z",
       "completedAt": "2026-08-21T16:32:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -25319,7 +25319,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:31:29Z",
       "completedAt": "2026-08-21T16:32:05Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -25442,7 +25442,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:23:00Z",
       "completedAt": "2026-08-21T16:32:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -25565,7 +25565,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:31:29Z",
       "completedAt": "2026-08-21T16:32:05Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -25688,7 +25688,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:23:00Z",
       "completedAt": "2026-08-21T16:32:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -25811,7 +25811,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:31:29Z",
       "completedAt": "2026-08-21T16:32:05Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -25934,7 +25934,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:23:00Z",
       "completedAt": "2026-08-21T16:32:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -26059,7 +26059,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:23:00Z",
       "completedAt": "2026-08-21T16:32:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -26186,7 +26186,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:31:29Z",
       "completedAt": "2026-08-21T16:32:05Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -26313,7 +26313,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:23:00Z",
       "completedAt": "2026-08-21T16:32:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -26437,7 +26437,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:31:29Z",
       "completedAt": "2026-08-21T16:32:05Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -26561,7 +26561,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T16:23:00Z",
       "completedAt": "2026-08-21T16:32:20Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -26701,7 +26701,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:50:42Z",
       "completedAt": "2026-08-21T17:50:50Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -26817,7 +26817,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:50:42Z",
       "completedAt": "2026-08-21T17:50:50Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/008_life_recipes.sql",
@@ -26978,7 +26978,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:35:15Z",
       "completedAt": "2026-08-21T17:35:29Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/008_life_recipes.sql",
@@ -27073,7 +27073,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:27:46Z",
       "completedAt": "2026-08-21T17:47:56Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -27199,7 +27199,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:27:46Z",
       "completedAt": "2026-08-21T17:28:06Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -27324,7 +27324,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:27:46Z",
       "completedAt": "2026-08-21T17:28:06Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -27448,7 +27448,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:28:06Z",
       "completedAt": "2026-08-21T17:29:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -27571,7 +27571,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:27:46Z",
       "completedAt": "2026-08-21T17:28:06Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -27694,7 +27694,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:28:06Z",
       "completedAt": "2026-08-21T17:29:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -27817,7 +27817,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:27:46Z",
       "completedAt": "2026-08-21T17:28:06Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -27940,7 +27940,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:28:06Z",
       "completedAt": "2026-08-21T17:29:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -28063,7 +28063,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:27:46Z",
       "completedAt": "2026-08-21T17:28:06Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -28186,7 +28186,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:28:06Z",
       "completedAt": "2026-08-21T17:29:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -28311,7 +28311,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:28:06Z",
       "completedAt": "2026-08-21T17:29:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -28436,7 +28436,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:27:46Z",
       "completedAt": "2026-08-21T17:28:06Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -28561,7 +28561,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:28:06Z",
       "completedAt": "2026-08-21T17:29:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -28731,7 +28731,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:05:00Z",
       "completedAt": "2026-08-21T18:41:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/009_life_planning.sql",
@@ -28904,7 +28904,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:05:00Z",
       "completedAt": "2026-08-21T18:41:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/009_life_planning.sql",
@@ -29071,7 +29071,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:42:00Z",
       "completedAt": "2026-08-21T17:55:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/009_life_planning.sql",
@@ -29209,7 +29209,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:42:47Z",
       "completedAt": "2026-08-21T18:59:53Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -29369,7 +29369,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -29522,7 +29522,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T17:05:00Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -29675,7 +29675,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -29815,7 +29815,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -29954,7 +29954,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -30093,7 +30093,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -30232,7 +30232,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -30371,7 +30371,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -30510,7 +30510,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -30649,7 +30649,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -30789,7 +30789,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -30930,7 +30930,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -31071,7 +31071,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -31212,7 +31212,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -31352,7 +31352,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -31492,7 +31492,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -31631,7 +31631,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -31770,7 +31770,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -31909,7 +31909,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -32048,7 +32048,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -32187,7 +32187,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -32326,7 +32326,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -32466,7 +32466,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -32607,7 +32607,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -32748,7 +32748,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:56:50Z",
       "completedAt": "2026-08-21T18:57:35Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -32889,7 +32889,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T18:57:35Z",
       "completedAt": "2026-08-21T18:59:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -33085,7 +33085,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/010_life_commerce.sql",
@@ -33265,7 +33265,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/010_life_commerce.sql",
@@ -33433,7 +33433,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/010_life_commerce.sql",
@@ -33590,7 +33590,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -33774,7 +33774,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -33947,7 +33947,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -34120,7 +34120,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -34268,7 +34268,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -34415,7 +34415,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -34562,7 +34562,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -34709,7 +34709,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -34856,7 +34856,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -35003,7 +35003,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -35150,7 +35150,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -35298,7 +35298,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -35447,7 +35447,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -35596,7 +35596,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -35745,7 +35745,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -35893,7 +35893,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -36041,7 +36041,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -36188,7 +36188,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -36335,7 +36335,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -36482,7 +36482,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -36629,7 +36629,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -36776,7 +36776,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -36923,7 +36923,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -37071,7 +37071,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -37220,7 +37220,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -37369,7 +37369,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -37518,7 +37518,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -37668,7 +37668,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -37818,7 +37818,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -37966,7 +37966,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -38114,7 +38114,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -38262,7 +38262,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -38410,7 +38410,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -38558,7 +38558,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -38706,7 +38706,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -38856,7 +38856,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -39008,7 +39008,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -39160,7 +39160,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -39312,7 +39312,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T19:20:00Z",
       "completedAt": "2026-08-21T19:54:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -39753,7 +39753,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/001_initial.sql",
@@ -40304,7 +40304,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/001_initial.sql",
@@ -40571,7 +40571,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -40907,7 +40907,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -41233,7 +41233,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -41568,7 +41568,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -41878,7 +41878,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -42191,7 +42191,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -42509,7 +42509,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -42833,7 +42833,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -43159,7 +43159,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -43495,7 +43495,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -44209,7 +44209,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -45651,7 +45651,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/001_initial.sql",
@@ -46108,7 +46108,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T21:32:00Z",
       "completedAt": "2026-08-21T21:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/013_knowledge.sql",
@@ -46207,7 +46207,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T21:32:00Z",
       "completedAt": "2026-08-21T21:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.remote.config.ts",
@@ -46316,7 +46316,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T21:32:00Z",
       "completedAt": "2026-08-21T21:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/013_knowledge.sql",
@@ -46385,7 +46385,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T21:32:00Z",
       "completedAt": "2026-08-21T21:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/013_knowledge.sql",
@@ -46465,7 +46465,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -46548,7 +46548,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.remote.config.ts",
@@ -46709,7 +46709,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -46815,7 +46815,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -46921,7 +46921,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.remote.config.ts",
@@ -47062,7 +47062,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -47185,7 +47185,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -47305,7 +47305,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -47425,7 +47425,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -47545,7 +47545,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -47665,7 +47665,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -47785,7 +47785,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -47908,7 +47908,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -48029,7 +48029,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -48151,7 +48151,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:22:00Z",
       "completedAt": "2026-08-21T22:38:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.config.ts",
@@ -48272,7 +48272,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:58:00Z",
       "completedAt": "2026-08-21T23:12:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -48332,7 +48332,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:58:00Z",
       "completedAt": "2026-08-21T23:12:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -48395,7 +48395,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:58:00Z",
       "completedAt": "2026-08-21T23:12:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -48484,7 +48484,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:58:00Z",
       "completedAt": "2026-08-21T23:12:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -48574,7 +48574,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T22:58:00Z",
       "completedAt": "2026-08-21T23:12:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -48669,7 +48669,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T23:31:00Z",
       "completedAt": "2026-08-21T23:43:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/014_publishing.sql",
@@ -48799,7 +48799,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T23:31:00Z",
       "completedAt": "2026-08-21T23:43:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -48906,7 +48906,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T23:31:00Z",
       "completedAt": "2026-08-21T23:43:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/014_publishing.sql",
@@ -48961,7 +48961,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T23:31:00Z",
       "completedAt": "2026-08-21T23:43:10Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/014_publishing.sql",
@@ -49092,7 +49092,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -49207,7 +49207,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/014_publishing.sql",
@@ -49396,7 +49396,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/014_publishing.sql",
@@ -49560,7 +49560,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/014_publishing.sql",
@@ -49725,7 +49725,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/014_publishing.sql",
@@ -49889,7 +49889,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -50008,7 +50008,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -50124,7 +50124,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -50240,7 +50240,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -50356,7 +50356,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -50472,7 +50472,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -50588,7 +50588,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -50707,7 +50707,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -50824,7 +50824,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -50942,7 +50942,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T00:18:00Z",
       "completedAt": "2026-08-22T00:31:40Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -51089,7 +51089,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -51330,7 +51330,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/013_knowledge.sql",
@@ -51653,7 +51653,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/013_knowledge.sql",
@@ -51760,7 +51760,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/013_knowledge.sql",
@@ -52117,7 +52117,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/migrations/013_knowledge.sql",
@@ -52428,7 +52428,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -52652,7 +52652,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -52872,7 +52872,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -53104,7 +53104,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -53336,7 +53336,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -53568,7 +53568,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -53801,7 +53801,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -54034,7 +54034,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -54266,7 +54266,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -54498,7 +54498,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -54730,7 +54730,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -54963,7 +54963,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -55216,7 +55216,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T01:17:50Z",
       "completedAt": "2026-08-22T01:36:31Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/App.tsx",
@@ -55451,7 +55451,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -55645,7 +55645,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/api/lifeCommerceApi.ts",
@@ -55806,7 +55806,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -56000,7 +56000,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/app.ts",
@@ -56058,7 +56058,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/api/lifeCommerceApi.ts",
@@ -56233,7 +56233,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/api/lifeCommerceApi.ts",
@@ -56408,7 +56408,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/api/lifeCommerceApi.ts",
@@ -56583,7 +56583,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/api/lifeCommerceApi.ts",
@@ -56756,7 +56756,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/api/lifeCommerceApi.ts",
@@ -56917,7 +56917,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/api/lifeCommerceApi.ts",
@@ -57078,7 +57078,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T02:10:00Z",
       "completedAt": "2026-08-22T02:36:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "src/api/lifeCommerceApi.ts",
@@ -57253,7 +57253,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T10:56:00+08:00",
       "completedAt": "2026-08-22T11:10:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "docs/traceability/acceptance-matrix.json",
@@ -57261,7 +57261,7 @@
         },
         {
           "path": "docs/traceability/requirements.md",
-          "sha256": "AC103756F5B46B1DD8B6CC092124F817C210B7D8C4E34B2C0BDF3248FE864518"
+          "sha256": "9BF4D4218146F1AF37583C7E4AB578AB44309F24F8132EB72E4CFDB8D040531E"
         },
         {
           "path": "docs/traceability/source-clauses.json",
@@ -57269,7 +57269,7 @@
         },
         {
           "path": "docs/traceability/task-execution.json",
-          "sha256": "B3C32567BB941E0CCFA792D242CF163C88622D42F697C445971BD046A9BAA92A"
+          "sha256": "DC58820332DDAD7FEB27E0A2988473EDC0C194345A6B95D66A61446805A9D98F"
         },
         {
           "path": "scripts/verify-execution-contract.test.mjs",
@@ -57797,7 +57797,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T10:56:00+08:00",
       "completedAt": "2026-08-22T11:10:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "docs/traceability/acceptance-matrix.json",
@@ -57805,7 +57805,7 @@
         },
         {
           "path": "docs/traceability/requirements.md",
-          "sha256": "AC103756F5B46B1DD8B6CC092124F817C210B7D8C4E34B2C0BDF3248FE864518"
+          "sha256": "9BF4D4218146F1AF37583C7E4AB578AB44309F24F8132EB72E4CFDB8D040531E"
         },
         {
           "path": "docs/traceability/source-clauses.json",
@@ -57813,7 +57813,7 @@
         },
         {
           "path": "docs/traceability/task-execution.json",
-          "sha256": "B3C32567BB941E0CCFA792D242CF163C88622D42F697C445971BD046A9BAA92A"
+          "sha256": "DC58820332DDAD7FEB27E0A2988473EDC0C194345A6B95D66A61446805A9D98F"
         },
         {
           "path": "scripts/verify-execution-contract.test.mjs",
@@ -58353,7 +58353,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T10:56:00+08:00",
       "completedAt": "2026-08-22T11:10:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "docs/traceability/acceptance-matrix.json",
@@ -58361,7 +58361,7 @@
         },
         {
           "path": "docs/traceability/requirements.md",
-          "sha256": "AC103756F5B46B1DD8B6CC092124F817C210B7D8C4E34B2C0BDF3248FE864518"
+          "sha256": "9BF4D4218146F1AF37583C7E4AB578AB44309F24F8132EB72E4CFDB8D040531E"
         },
         {
           "path": "docs/traceability/source-clauses.json",
@@ -58369,7 +58369,7 @@
         },
         {
           "path": "docs/traceability/task-execution.json",
-          "sha256": "B3C32567BB941E0CCFA792D242CF163C88622D42F697C445971BD046A9BAA92A"
+          "sha256": "DC58820332DDAD7FEB27E0A2988473EDC0C194345A6B95D66A61446805A9D98F"
         },
         {
           "path": "scripts/verify-execution-contract.test.mjs",
@@ -58921,7 +58921,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:16:57Z",
       "completedAt": "2026-08-22T15:18:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/config.test.ts",
@@ -58971,7 +58971,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:40:18Z",
       "completedAt": "2026-08-22T15:41:12Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/config.ts",
@@ -59092,7 +59092,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:40:18Z",
       "completedAt": "2026-08-22T15:41:12Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/config.ts",
@@ -59206,7 +59206,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:40:18Z",
       "completedAt": "2026-08-22T15:41:12Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "server/src/config.ts",
@@ -59280,7 +59280,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T16:13:00Z",
       "completedAt": "2026-08-22T16:20:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T3-UNIT",
       "atomIds": [
@@ -59427,7 +59427,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T16:13:00Z",
       "completedAt": "2026-08-22T16:20:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T3-API",
       "atomIds": [
@@ -59505,7 +59505,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T16:13:00Z",
       "completedAt": "2026-08-22T16:20:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T3-SECURITY",
       "atomIds": [
@@ -59569,7 +59569,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T16:13:00Z",
       "completedAt": "2026-08-22T16:20:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T3-E2E",
       "atomIds": [
@@ -59734,7 +59734,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T16:13:00Z",
       "completedAt": "2026-08-22T16:20:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T3-A11Y-KEYBOARD",
       "atomIds": [
@@ -59799,7 +59799,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T16:13:00Z",
       "completedAt": "2026-08-22T16:20:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T3-E2E-REDUCED-MOTION",
       "atomIds": [
@@ -59965,7 +59965,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T16:13:00Z",
       "completedAt": "2026-08-22T16:20:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T3-VISUAL-1440",
       "atomIds": [
@@ -60067,7 +60067,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T16:13:00Z",
       "completedAt": "2026-08-22T16:20:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T3-VISUAL-1024",
       "atomIds": [
@@ -60169,7 +60169,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T16:13:00Z",
       "completedAt": "2026-08-22T16:20:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T3-VISUAL-768",
       "atomIds": [
@@ -60271,7 +60271,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T16:13:00Z",
       "completedAt": "2026-08-22T16:20:30Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T3-VISUAL-390",
       "atomIds": [
@@ -60373,7 +60373,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-UNIT",
       "atomIds": [
@@ -60452,7 +60452,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-API",
       "atomIds": [
@@ -60503,7 +60503,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-MYSQL",
       "atomIds": [
@@ -60544,7 +60544,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-SECURITY",
       "atomIds": [
@@ -60591,7 +60591,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-E2E",
       "atomIds": [
@@ -60668,7 +60668,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-A11Y-KEYBOARD",
       "atomIds": [
@@ -60710,7 +60710,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-E2E-REDUCED-MOTION",
       "atomIds": [
@@ -60790,7 +60790,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-MANUAL-REVIEW",
       "atomIds": [
@@ -60862,7 +60862,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-VISUAL-1440",
       "atomIds": [
@@ -60928,7 +60928,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-VISUAL-1024",
       "atomIds": [
@@ -60994,7 +60994,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-VISUAL-768",
       "atomIds": [
@@ -61060,7 +61060,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T15:45:00Z",
       "completedAt": "2026-08-22T17:20:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "id": "EV-P5-T4-VISUAL-390",
       "atomIds": [
@@ -61165,7 +61165,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61233,7 +61233,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61272,7 +61272,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61359,7 +61359,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61404,7 +61404,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61496,7 +61496,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61560,7 +61560,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61630,7 +61630,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61700,7 +61700,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61770,7 +61770,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61840,7 +61840,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T17:20:00Z",
       "completedAt": "2026-08-22T18:05:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -61912,7 +61912,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:00:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Focused settings/data-transfer passed 22 server and 5 Web tests; fresh complete regressions passed 334 ordinary server tests plus 50 exact-only skips and 386/386 Web tests.",
       "sourcePaths": [
@@ -62003,7 +62003,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:00:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Authenticated settings/account/session/audit/export/import routes enforce owner scope, password/checksum confirmation, no-write preview and safe error boundaries; server typecheck and production build pass.",
       "sourcePaths": [
@@ -62058,7 +62058,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:35:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Official isolated MySQL Community Server 8.4.10 passed 50/50 with zero skip, including migration 016, restore checksum, deleted-fact portability, owner remap, immutable audit and all-or-nothing rollback.",
       "sourcePaths": [
@@ -62117,7 +62117,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:45:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Focused Settings passed 2/2, affected Obsidian passed 4/4 and the fresh complete single-worker Chromium regression passed 81/81 across account, sessions, categories, import preview/apply and existing product journeys.",
       "sourcePaths": [
@@ -62183,7 +62183,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:45:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Keyboard-only category entry, mobile Back, selected-category focus restoration, labelled controls, dangerous confirmation and save feedback pass without focus loss.",
       "subtype": "keyboard",
@@ -62265,7 +62265,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:45:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Reduced-motion Settings preserves the same category/detail hierarchy, keyboard semantics, import safeguards and immediate reverse navigation.",
       "subtype": "reduced-motion",
@@ -62334,7 +62334,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:45:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened all seven final Settings images and accepted continuous Daylight hierarchy, truthful connection states, readable recovery copy, reverse mobile navigation, focus, overflow and reduced-motion equivalence.",
       "sourcePaths": [
@@ -62412,7 +62412,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:45:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted the final 1440x900 Settings surface for continuous hierarchy, responsive reflow, approved soft-volume language, no overflow and reduced-motion equivalence.",
       "sourcePaths": [
@@ -62490,7 +62490,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:45:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted the final 1024x768 Settings surface for continuous hierarchy, responsive reflow, approved soft-volume language, no overflow and reduced-motion equivalence.",
       "sourcePaths": [
@@ -62568,7 +62568,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:45:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted the final 768x1024 Settings surface for continuous hierarchy, responsive reflow, approved soft-volume language, no overflow and reduced-motion equivalence.",
       "sourcePaths": [
@@ -62646,7 +62646,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:45:00Z",
       "completedAt": "2026-08-22T19:26:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted the final 390x844 Settings surface for continuous hierarchy, responsive reflow, approved soft-volume language, no overflow and reduced-motion equivalence.",
       "sourcePaths": [
@@ -63008,7 +63008,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:30:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Fresh complete regressions passed 84 Web files / 386 tests and 334 ordinary server tests; 50 exact-only server cases were separately executed by the official MySQL gate.",
       "sourcePaths": [
@@ -63322,7 +63322,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T18:30:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Authenticated platform/global APIs, bounded source errors, owner scope and real Fastify browser journeys passed with server typecheck/build and remote Chromium 4/4.",
       "sourcePaths": [
@@ -63378,7 +63378,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T20:07:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Official isolated MySQL Community Server 8.4.10 executed 50/50 with zero skip; the earlier all-skip invocation was rejected and is not passing evidence.",
       "sourcePaths": [
@@ -63771,7 +63771,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Focused platform/global/responsive Chromium passed 17/17 and real Fastify Chromium passed 4/4, including deep links, filters, polling pause, retry, keyboard focus, undo, settings safety and responsive order.",
       "sourcePaths": [
@@ -63871,7 +63871,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Keyboard tab/search/quick-create/settings operation, labelled chart tables, mobile category return, selected-tab visibility, focus restoration, 320 CSS px and 200% reflow passed.",
       "subtype": "keyboard",
@@ -63974,7 +63974,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Real Fastify injection rejected raw query languages, anonymous private reads and all platform mutation paths; configured token/password/cookie sentinels were absent from serialized responses and import preview remained no-write.",
       "sourcePaths": [
@@ -64130,7 +64130,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened four review sheets and key original-resolution platform late-tab, data-safety and 200%-zoom images. A hidden selected-tab defect and then route-stage clipping were rejected, fixed with RED/GREEN tests and recaptured before final acceptance.",
       "sourcePaths": [
@@ -64260,7 +64260,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted 1440x900 evidence for continuous Daylight hierarchy, truthful values, no clipping/card wall/dark NOC regression and reachable task controls.",
       "sourcePaths": [
@@ -64350,7 +64350,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted 1024x768 evidence for continuous Daylight hierarchy, truthful values, no clipping/card wall/dark NOC regression and reachable task controls.",
       "sourcePaths": [
@@ -64440,7 +64440,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted 768x1024 evidence for continuous Daylight hierarchy, truthful values, no clipping/card wall/dark NOC regression and reachable task controls.",
       "sourcePaths": [
@@ -64530,7 +64530,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted 390x844 evidence for continuous Daylight hierarchy, truthful values, no clipping/card wall/dark NOC regression and reachable task controls.",
       "sourcePaths": [
@@ -64620,7 +64620,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted 390x844 evidence for continuous Daylight hierarchy, truthful values, no clipping/card wall/dark NOC regression and reachable task controls.",
       "sourcePaths": [
@@ -64710,7 +64710,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The opened 200%-zoom platform overview preserves readable order, semantic table fallback and zero document overflow.",
       "sourcePaths": [
@@ -65156,7 +65156,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T19:20:00Z",
       "completedAt": "2026-08-22T20:09:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Opened normal/reduced task-layer filmstrips preserve the same platform-tab, search, Quick Create and settings hierarchy with no hidden work or focus loss.",
       "subtype": "reduced-motion",
@@ -65234,13 +65234,13 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T20:34:46Z",
       "completedAt": "2026-08-22T20:34:51Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Fresh cross-surface security regression passed 5 files / 32 tests for opaque sessions, CSRF, owner isolation, login enumeration resistance, private records/media, settings/session/password/export redaction, exact-origin bounded transport and recursive secret removal. It supplies honest partial local evidence only; P6 still owns image, network-policy and rendered RBAC proof.",
       "sourcePaths": [
         {
           "path": "docs/traceability/requirements.md",
-          "sha256": "AC103756F5B46B1DD8B6CC092124F817C210B7D8C4E34B2C0BDF3248FE864518"
+          "sha256": "9BF4D4218146F1AF37583C7E4AB578AB44309F24F8132EB72E4CFDB8D040531E"
         },
         {
           "path": "server/src/app.test.ts",
@@ -65295,7 +65295,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T20:57:31Z",
       "completedAt": "2026-08-22T20:57:33Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Six focused files pass 42/42 for schema-free API startup, one-shot sanitized migrations, strict media configuration, shared filesystem/S3 validation, private conditional object writes, bounded reads and no fallback.",
       "sourcePaths": [
@@ -65365,7 +65365,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T21:08:42Z",
       "completedAt": "2026-08-22T21:08:59Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Fresh task-owned official MySQL Community Server 8.4.10 passes 50/50 with zero skip for ordered checksum migrations, owner isolation and record/media transaction behavior; normal shutdown exits 0 and post-shutdown ping/PID/listener checks prove the instance is absent.",
       "sourcePaths": [
@@ -65399,7 +65399,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T21:39:00Z",
       "completedAt": "2026-08-22T21:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Fresh P6-T1 media-topology regression remains green after P6-T2 chart hardening: the finite token-free migration Job, filesystem/S3 topology, Secret refs and multi-replica RWO rejection all pass. The same run does not claim cluster or release-image evidence.",
       "sourcePaths": [
@@ -65481,7 +65481,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T21:13:20Z",
       "completedAt": "2026-08-22T21:14:23Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Docker Desktop 29.7.2 with Buildx 0.36.1 builds the local linux/amd64 API image at sha256:2de0391556b5a2f3d47590087c5335444d1e39d5fcafb38e46be923a05f2dec3. This is local build evidence only, not a UHub or formal release digest.",
       "sourcePaths": [
@@ -65527,7 +65527,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T21:16:00Z",
       "completedAt": "2026-08-22T21:16:05Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "A no-network, no-mount, auto-removed local container proves UID 10001, dist/migrate-main.js and exact @aws-sdk/client-s3 3.1097.0 are present. Registry, SBOM, provenance and exact release smoke remain unverified.",
       "sourcePaths": [
@@ -65631,7 +65631,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T21:42:00Z",
       "completedAt": "2026-08-22T21:49:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Helm 4.2.4 passes the complete local rendered-security contract: disabled/enabled exact RBAC and bounded projected token, production Secret/schema rejection, ConfigMap checksums, non-root/drop-ALL workloads, LifeOps-scoped default isolation, named Gateway/Prometheus/DNS/MySQL peers, external-MySQL CIDR/port and reviewed internet-egress override. Production digest-shaped render fixtures remain explicitly release-pending and are not image or registry evidence.",
       "sourcePaths": [
@@ -65689,7 +65689,7 @@
         },
         {
           "path": "docs/traceability/requirements.md",
-          "sha256": "AC103756F5B46B1DD8B6CC092124F817C210B7D8C4E34B2C0BDF3248FE864518"
+          "sha256": "9BF4D4218146F1AF37583C7E4AB578AB44309F24F8132EB72E4CFDB8D040531E"
         },
         {
           "path": "scripts/validate-rendered-helm.ps1",
@@ -65715,7 +65715,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T21:56:00Z",
       "completedAt": "2026-08-22T22:03:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Five focused tests and the rendered contract prove bounded structured fields, recursive credential/control-character sanitization, normalized metric labels, probe exclusion, cluster-internal scraping and no public /metrics route. No cluster or registry state is claimed.",
       "sourcePaths": [
@@ -65729,7 +65729,7 @@
         },
         {
           "path": "docs/traceability/requirements.md",
-          "sha256": "AC103756F5B46B1DD8B6CC092124F817C210B7D8C4E34B2C0BDF3248FE864518"
+          "sha256": "9BF4D4218146F1AF37583C7E4AB578AB44309F24F8132EB72E4CFDB8D040531E"
         },
         {
           "path": "scripts/validate-observability.test.ps1",
@@ -65769,7 +65769,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T22:00:00Z",
       "completedAt": "2026-08-22T22:01:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Helm 4.2.4 production render passes the independent ServiceMonitor, alert, dashboard and internal metrics-path validator; monitoring remains an application-delivery asset and no install, upgrade or Argo synchronization occurred.",
       "sourcePaths": [
@@ -65799,7 +65799,7 @@
         },
         {
           "path": "docs/traceability/requirements.md",
-          "sha256": "AC103756F5B46B1DD8B6CC092124F817C210B7D8C4E34B2C0BDF3248FE864518"
+          "sha256": "9BF4D4218146F1AF37583C7E4AB578AB44309F24F8132EB72E4CFDB8D040531E"
         },
         {
           "path": "scripts/validate-observability.ps1",
@@ -65821,17 +65821,17 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T22:08:00Z",
       "completedAt": "2026-08-22T22:46:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Pinned official action SHAs, complete CI gates, linux/amd64 release builds, provenance/SBOM flags, password-stdin UHub login, registry digest resolution, exact-digest smoke ordering and a two-scalar-only GitOps updater pass locally. This proves the formal workflow contract only; no GitHub run, UHub digest or attestation is claimed.",
       "sourcePaths": [
         {
           "path": ".github/workflows/ci.yml",
-          "sha256": "7013AD57D2CC8B40A2616C4A00749F9F9DC7A4C54353E04843A6F86858A7A6EC"
+          "sha256": "BEED16D1235991E6D3761B6182D0B7F168F02840CACABE39A7D48A6CA418A244"
         },
         {
           "path": ".github/workflows/release.yml",
-          "sha256": "B8E9CD4D5CC717B328BB5DEC08783892238497B20AC818B5C54B3D9054A5CF23"
+          "sha256": "EB145B95A423C272BA64E1795AA2A9B324CE3CBBF63C2DF2DD8B863840BF93BD"
         },
         {
           "path": "scripts/update-gitops-values.mjs",
@@ -65843,11 +65843,11 @@
         },
         {
           "path": "scripts/validate-workflows.ps1",
-          "sha256": "478E19DF76A46F61C8C78FCD151B097A575B13A08289E6FB26ADAD318D2A5CB4"
+          "sha256": "2BBD605A366DA41CB3FB8869A97CD5F32D5E5230A32870E4F9D1662FFA546977"
         },
         {
           "path": "scripts/validate-workflows.test.ps1",
-          "sha256": "04A1142556BF1AED88CE8B715ADBC7123A9479310BFBCD911C546CDFD837594F"
+          "sha256": "0EC322129A43E488572325ECEB2553265F0E7F52F8FCBF3B823F0DCCFAB1E9AF"
         }
       ],
       "artifactPath": "outputs/evidence/supply-chain/p6-t4-local-supply-chain.json",
@@ -65864,7 +65864,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T22:17:00Z",
       "completedAt": "2026-08-22T22:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Local Web/API images build from exact bases and pass fresh MySQL 8.4.10 migrations, API health/readiness/login/goal CRUD, Web deep-link fallback, non-root/read-only runtime and clean SIGTERM with owned cleanup. Local image IDs are not registry digests, so the exact-release boundary remains open.",
       "sourcePaths": [
@@ -65914,7 +65914,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-22T22:31:00Z",
       "completedAt": "2026-08-22T22:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Fresh official MySQL 8.4.10 accepts the application-user connection, applies all 16 migrations and supports the image-smoke API transaction. This is only the MySQL leg of the later exact-digest atom; Web/API registry digests, remote E2E and registry evidence remain absent.",
       "sourcePaths": [
@@ -66192,7 +66192,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -67323,7 +67323,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -68085,7 +68085,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -68607,7 +68607,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:34:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "playwright.life.config.ts",
@@ -69736,7 +69736,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -72306,7 +72306,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -74331,7 +74331,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -75691,7 +75691,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -77690,7 +77690,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -79042,7 +79042,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -80384,7 +80384,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -81736,7 +81736,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -83062,7 +83062,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -84391,7 +84391,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -85725,7 +85725,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -87065,7 +87065,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -88415,7 +88415,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -89778,7 +89778,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-21T20:18:00Z",
       "completedAt": "2026-08-21T20:40:00Z",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "sourcePaths": [
         {
           "path": "package-lock.json",
@@ -91103,7 +91103,7 @@
       "startedAt": "2026-08-24T10:33:17+08:00",
       "completedAt": "2026-08-24T10:33:24+08:00",
       "summary": "Four focused files pass 37/37 for wall-clock title completion, exact ring ownership/playheads, fallback parity, login state and motion-provider semantics.",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -91205,7 +91205,7 @@
       "startedAt": "2026-08-24T10:55:57+08:00",
       "completedAt": "2026-08-24T10:56:45+08:00",
       "summary": "Chromium passes 17/17 including unlit semantic center, mobile breathing space, compositor depth, themed login, complete insets, live playheads, interruption continuity and reduced-motion entry.",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -91307,7 +91307,7 @@
       "startedAt": "2026-08-24T10:56:57+08:00",
       "completedAt": "2026-08-24T10:59:39+08:00",
       "summary": "Windows headed WebKit runs alone with workers=1 and passes the 12/12 ADR-029 and public-login focused contract after the center-light removal.",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -91409,7 +91409,7 @@
       "startedAt": "2026-08-24T10:59:51+08:00",
       "completedAt": "2026-08-24T11:00:37+08:00",
       "summary": "Windows headed Firefox runs alone with workers=1 and passes the same final 12/12 ADR-029 and public-login contract.",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -91511,7 +91511,7 @@
       "startedAt": "2026-08-24T10:53:20+08:00",
       "completedAt": "2026-08-24T10:53:27+08:00",
       "summary": "The opened 1440x900 final night login frame has a plain unlit 05 center, complete four-ring inset, orbit-left/title-recede depth and coordinated dark task surface without blur or white flash.",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -91628,7 +91628,7 @@
       "startedAt": "2026-08-24T10:53:20+08:00",
       "completedAt": "2026-08-24T10:53:27+08:00",
       "summary": "The opened 390x844 final rest frame keeps separate copy/orbit breathing zones, an unlit semantic center, readable labels, complete safe-inset outer ring and zero horizontal overflow.",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -91745,7 +91745,7 @@
       "startedAt": "2026-08-24T10:53:20+08:00",
       "completedAt": "2026-08-24T10:53:27+08:00",
       "summary": "Opened named filmstrips show the orbit moving left while the title recedes and the panel lands; four login-state rotation samples retain distinct transforms after the center-light removal.",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -91862,7 +91862,7 @@
       "startedAt": "2026-08-24T10:50:00+08:00",
       "completedAt": "2026-08-24T10:53:27+08:00",
       "summary": "The user accepted the mobile density, desktop orbit-left/title-recede hierarchy and continuing rotation, requested removal of only the center light orb, and explicitly instructed the task to continue. The regenerated unlit result was opened and preserves every approved surrounding behavior.",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "sourcePaths": [
         {
@@ -92095,7 +92095,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Fresh complete regressions passed 84 Web files / 392 tests and 361 ordinary server tests; the exact-only MySQL cases were run separately and are not counted from skips.",
       "sourcePaths": [
@@ -92195,7 +92195,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Server regression, typecheck/build and real Fastify browser journeys passed, including authenticated write/session/error behavior across Chromium, Windows headed Firefox and WebKit.",
       "sourcePaths": [
@@ -92510,7 +92510,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T11:06:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "An isolated official MySQL Community Server 8.4.10 applied all 16 migrations and passed 50/50 with zero skip; shutdown exited 0, post-run ping exited 1, and the owned PID/listener were absent.",
       "sourcePaths": [
@@ -92714,7 +92714,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Serialized full acceptance passed Chromium 141/141, 1024 48/48, 768 48/48, 390 48/48, Windows headed Firefox critical 25/25 and Windows headed WebKit critical 25/25 without threshold changes.",
       "sourcePaths": [
@@ -92790,7 +92790,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The exact real-Fastify remote matrix ran serially and passed 12/12 across Chromium, Windows headed Firefox and WebKit; no memory-only preview route was substituted.",
       "sourcePaths": [
@@ -92866,7 +92866,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The full Chromium matrix included zero-serious/critical Axe scans, keyboard-only journeys, labelled errors/dialogs/live status, focus restoration, 320 CSS px and 200% reflow across public and private routes.",
       "subtype": "keyboard",
@@ -93123,7 +93123,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "Reduced-motion and normal-mode probes preserve task semantics, focus, scroll/filter/selection state and reverse return with no full-document replacement or white frame.",
       "subtype": "reduced-motion",
@@ -93344,7 +93344,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted the final 1440x900 evidence after regeneration; it preserves approved identity, page-native hierarchy, truthful states, safe insets, readable density and zero horizontal overflow.",
       "manualReview": {
@@ -93577,7 +93577,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted the final 1024x768 evidence after regeneration; it preserves approved identity, page-native hierarchy, truthful states, safe insets, readable density and zero horizontal overflow.",
       "manualReview": {
@@ -93810,7 +93810,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted the final 768x1024 evidence after regeneration; it preserves approved identity, page-native hierarchy, truthful states, safe insets, readable density and zero horizontal overflow.",
       "manualReview": {
@@ -94043,7 +94043,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor opened and accepted the final 390x844 evidence after regeneration; it preserves approved identity, page-native hierarchy, truthful states, safe insets, readable density and zero horizontal overflow.",
       "manualReview": {
@@ -94313,7 +94313,7 @@
       "exitCode": 0,
       "startedAt": "2026-08-24T11:04:00+08:00",
       "completedAt": "2026-08-24T12:50:00+08:00",
-      "checkpoint": "B42AF4559B43A9B2F138A0B99456ED546C79FEA9DCC251D1BEBCE35C6005DD09",
+      "checkpoint": "D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251",
       "skipped": false,
       "summary": "The primary executor directly opened all corrected ADR-029 artifacts and four final contact sheets. The user approved the composition and removal of the center light orb; the regenerated result retains natural rotation, orbit-left/title-recede depth, mobile breathing space and the plain semantic center.",
       "manualReview": {

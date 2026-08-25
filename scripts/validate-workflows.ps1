@@ -24,7 +24,11 @@ foreach ($document in @($ci, $release)) {
   $jobCount = [regex]::Matches($document, '(?m)^  [A-Za-z0-9_-]+:\s*\r?\n\s+runs-on:').Count
   $timeoutCount = [regex]::Matches($document, '(?m)^\s+timeout-minutes:\s*[1-9][0-9]*\s*$').Count
   Require ($jobCount -gt 0 -and $jobCount -eq $timeoutCount) 'Every workflow job must have one finite timeout.'
-  Require ($document -match '--log-bin-trust-function-creators=1') 'Workflow MySQL must permit version-controlled trigger migrations without global app-user privileges.'
+  Require ($document -notmatch '(?ms)options:\s*>-.*?--log-bin-trust-function-creators=1') 'MySQL server arguments must not be placed in service options where Docker treats them as docker create flags.'
+  $trustIndex = $document.IndexOf('Configure MySQL trigger migration trust', [StringComparison]::Ordinal)
+  $mysqlIndex = $document.IndexOf('Real MySQL 8.4 store integration', [StringComparison]::Ordinal)
+  Require ($trustIndex -ge 0 -and $mysqlIndex -gt $trustIndex) 'Workflow must configure MySQL trigger migration trust after service startup and before integration migrations.'
+  Require ($document -match 'SET GLOBAL log_bin_trust_function_creators\s*=\s*1') 'Workflow must enable only the required MySQL global before migrations.'
 }
 
 foreach ($gate in @(

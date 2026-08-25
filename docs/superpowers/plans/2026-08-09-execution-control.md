@@ -785,7 +785,7 @@ The non-Git checkpoint is `outputs/evidence/source-checkpoints/2026-08-23-p6-t4-
 
 ## Next atomic action
 
-P6-T5 is formally closed. P6-T6 Steps 1–6 are complete and P6-T6 Step 7 is the sole current boundary. The repository, preflight, disposable MySQL rehearsal, production configuration, version selection and focused release contracts are verified; GitHub Actions still lacks the two repository-scoped UHub secret names. The first verification command after explicit secret-transfer authorization is `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release-production.ps1 -Version 1.0.0 -Workflow .github/workflows/release.yml -Wait`.
+P6-T5 is formally closed. P6-T6 Steps 1–6 are complete and P6-T6 Step 7 is the sole current boundary. The repository-scoped UHub secret names exist, but the only authorized `1.0.0` run failed during GitHub service initialization before tests or UHub login. The TDD root-cause fix must be checkpointed and pushed; the first verification command after new explicit rerun authorization remains `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release-production.ps1 -Version 1.0.0 -Workflow .github/workflows/release.yml -Wait`.
 
 Do not rerun the detector, read kubeconfig, run kubectl, install Helm, synchronize Argo or claim registry delivery before the pinned workflow and exact digest evidence succeed.
 
@@ -1062,3 +1062,19 @@ The deterministic pre-dispatch checkpoint is `outputs/evidence/source-checkpoint
 ## Exact next atomic action
 
 Remain at P6 / P6-T6 / Step 7. After the pre-dispatch checkpoint and current `main` are pushed, obtain explicit authorization to copy the already stored local UHub Docker username/password into repository-scoped GitHub Actions secrets `UHUB_USERNAME` and `UHUB_PASSWORD` without printing or recording their values. Then dispatch exactly one pinned `1.0.0` release and wait for its real result.
+
+## 2026-08-25 first release failure and MySQL service-option root-cause correction
+
+The user explicitly authorized writing the current Windows credential-store UHub username/password to repository-scoped Actions secrets and exactly one `1.0.0` dispatch. The helper protocol was verified without exposing values, and only the secret names `UHUB_USERNAME` and `UHUB_PASSWORD` were read back. GitHub Actions run `32796276478` was the sole dispatch at source revision `07e1d8b2962b0a5cff567f2f64198d02a564e1c6`.
+
+The run failed in `Initialize containers` before checkout, tests, UHub login or image build. MySQL 8.4.10 pulled successfully, but GitHub generated `docker create ... --log-bin-trust-function-creators=1 ... mysql:8.4.10`; Docker rejected that MySQL server argument as an unknown CLI flag and exited 125. No registry mutation, tag, digest, SBOM, provenance or GitOps change occurred.
+
+Systematic root-cause review found the same invalid service option in CI and release. Behavioral RED `scripts/validate-workflows.test.ps1` failed exactly six assertions across the two workflows: invalid service option, missing post-start/pre-migration configuration step and missing scoped `SET GLOBAL`. Minimal GREEN removes the invalid option, uses the already locked server `mysql2` dependency after service health to run only `SET GLOBAL log_bin_trust_function_creators = 1`, and retains the non-root application integration credentials. Workflow contract, standalone validator and release-production contract pass. A real disposable MySQL 8.4.10 instance started without the invalid option, accepted the exact Node command, returned global value `1` and was cleanly removed.
+
+The original authorization explicitly limited execution to one dispatch. Therefore no automatic retry is permitted even after the correction is pushed. P6-T6 Step 7 remains in progress and the 30/10/4 parent rollup is unchanged.
+
+The root-cause-fix checkpoint is `outputs/evidence/source-checkpoints/2026-08-25-p6-t6-release-run-01-root-cause-fix-uncommitted-local-checkpoint.json`, root `D96DEF69A41680B1367A093F89BBD628D29A27878E308E81FE02E47B7D88C251`, with 599 sorted inputs and 462 existing evidence rows. Execution-contract passes 95/95; the workflow contract, standalone validator, release-production contract, GitOps updater 8/8, focused security 32/32, observability 5/5 and both Helm contracts pass at their original strength.
+
+## Exact next atomic action
+
+Converge the corrected checkpoint/evidence/ledgers, commit and push `main`, then obtain explicit user authorization for one additional `1.0.0` dispatch. After approval, run exactly `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release-production.ps1 -Version 1.0.0 -Workflow .github/workflows/release.yml -Wait` and do not create a concurrent run.

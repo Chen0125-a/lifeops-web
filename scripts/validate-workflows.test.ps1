@@ -26,7 +26,11 @@ Add-Failure ($ci -match '(?m)^concurrency:\s*$') 'CI must define concurrency can
 Add-Failure ($release -match '(?m)^concurrency:\s*$') 'Release must serialize production publication.'
 foreach ($document in @($ci, $release)) {
   Add-Failure ($document -match '(?m)^\s+timeout-minutes:\s*[1-9][0-9]*\s*$') 'Every workflow job must have a finite timeout.'
-  Add-Failure ($document -match '--log-bin-trust-function-creators=1') 'Workflow MySQL must permit version-controlled trigger migrations without global app-user privileges.'
+  Add-Failure ($document -notmatch '(?ms)options:\s*>-.*?--log-bin-trust-function-creators=1') 'MySQL server arguments must not be placed in service options where Docker treats them as docker create flags.'
+  $trustIndex = $document.IndexOf('Configure MySQL trigger migration trust', [StringComparison]::Ordinal)
+  $mysqlIndex = $document.IndexOf('Real MySQL 8.4 store integration', [StringComparison]::Ordinal)
+  Add-Failure ($trustIndex -ge 0 -and $mysqlIndex -gt $trustIndex) 'Workflow must configure MySQL trigger migration trust after service startup and before integration migrations.'
+  Add-Failure ($document -match 'SET GLOBAL log_bin_trust_function_creators\s*=\s*1') 'Workflow must enable only the required MySQL global before migrations.'
 }
 
 foreach ($required in @(
