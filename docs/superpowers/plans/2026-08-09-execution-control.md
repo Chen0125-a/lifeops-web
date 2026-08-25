@@ -1078,3 +1078,15 @@ The root-cause-fix checkpoint is `outputs/evidence/source-checkpoints/2026-08-25
 ## Exact next atomic action
 
 Converge the corrected checkpoint/evidence/ledgers, commit and push `main`, then obtain explicit user authorization for one additional `1.0.0` dispatch. After approval, run exactly `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release-production.ps1 -Version 1.0.0 -Workflow .github/workflows/release.yml -Wait` and do not create a concurrent run.
+
+## 2026-08-25 P6-T6 ordinary CI timeout diagnosis and correction
+
+The MySQL root-cause fix was committed and pushed as `cf6fec7bf66295c895233e77ffa999e22cce4962`. Ordinary CI run `32797026444` proved container initialization, unit/type/production checks, post-start MySQL trigger trust and real MySQL 8.4 integration. It was then canceled after 45m17s solely because the job exceeded the configured 45-minute maximum while `Complete Playwright and accessibility acceptance` was still executing. The step runs 335 local Playwright cases plus 12 real API/MySQL cases with `workers: 1`; no test assertion failure was reported, and later Helm/contracts/image builds did not run.
+
+The timeout correction followed TDD. `scripts/validate-workflows.test.ps1` first exited 1 on the two workflow timeout floors plus the expected standalone-validator wrapper. CI and release now retain a finite `timeout-minutes: 90`; no test, worker count, retry, browser project, motion threshold or acceptance threshold changed. The workflow contract, standalone validator and release-production contract each exit 0. GitHub CLI authentication subsequently reports its stored token invalid, so Actions logs and the later authorized dispatch require credential-safe reauthentication; the repository deploy key still provides the separately verified Git push path.
+
+The timeout-fix checkpoint is `outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-timeout-fix-uncommitted-local-checkpoint.json`, root `1C6CC5DB3A8457D6BEE16F1563E31DA2AF3519850344262408C73987B7C784B1`, with 599 sorted inputs and 462 existing evidence rows.
+
+### Exact next atomic action
+
+Rebase the deterministic checkpoint and 462 existing evidence rows, commit and push the timeout correction to `main`, then obtain explicit approval for the bounded unfamiliar-cluster deployment-manual design and exactly one additional `1.0.0` release dispatch. Restore GitHub CLI authentication without exposing credentials, verify the new ordinary CI at the unchanged full strength, and only then execute the single authorized release command.

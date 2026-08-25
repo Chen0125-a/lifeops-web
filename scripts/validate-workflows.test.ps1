@@ -26,6 +26,8 @@ Add-Failure ($ci -match '(?m)^concurrency:\s*$') 'CI must define concurrency can
 Add-Failure ($release -match '(?m)^concurrency:\s*$') 'Release must serialize production publication.'
 foreach ($document in @($ci, $release)) {
   Add-Failure ($document -match '(?m)^\s+timeout-minutes:\s*[1-9][0-9]*\s*$') 'Every workflow job must have a finite timeout.'
+  $timeoutMatch = [regex]::Match($document, '(?m)^\s+timeout-minutes:\s*([1-9][0-9]*)\s*$')
+  Add-Failure ($timeoutMatch.Success -and [int]$timeoutMatch.Groups[1].Value -ge 90) 'Workflow timeout must accommodate the complete serial browser matrix.'
   Add-Failure ($document -notmatch '(?ms)options:\s*>-.*?--log-bin-trust-function-creators=1') 'MySQL server arguments must not be placed in service options where Docker treats them as docker create flags.'
   $trustIndex = $document.IndexOf('Configure MySQL trigger migration trust', [StringComparison]::Ordinal)
   $mysqlIndex = $document.IndexOf('Real MySQL 8.4 store integration', [StringComparison]::Ordinal)

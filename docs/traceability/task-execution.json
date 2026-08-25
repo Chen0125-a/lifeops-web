@@ -4458,10 +4458,10 @@
         "tests/visual-capture.spec.ts"
       ],
       "extraPathReasons": {
-        ".github/workflows/ci.yml": "The first formal release proved the shared MySQL service options were invalid Docker create flags; the same root cause is corrected in CI so the next main verification does not fail before steps begin.",
-        ".github/workflows/release.yml": "The first and only authorized release run 32796276478 failed during Initialize containers because a MySQL server argument was placed in Docker service options; TDD moves the setting to a post-start SQL step.",
-        "scripts/validate-workflows.ps1": "The standalone workflow validator now rejects MySQL server arguments in service options and requires the post-start pre-migration SQL boundary.",
-        "scripts/validate-workflows.test.ps1": "Behavioral RED reproduced the exact GitHub Docker create failure contract before the workflow correction.",
+        ".github/workflows/ci.yml": "The first formal release proved the shared MySQL service options were invalid Docker create flags; run 32797026444 then passed container initialization and real MySQL but was canceled at the old 45-minute ceiling while executing the unchanged 335+12 serial browser matrix. The finite timeout is raised to 90 minutes without changing tests, workers or thresholds.",
+        ".github/workflows/release.yml": "The first and only authorized release run 32796276478 failed during Initialize containers because a MySQL server argument was placed in Docker service options; TDD moves the setting to a post-start SQL step, and the same complete release gate receives the evidence-backed 90-minute finite ceiling.",
+        "scripts/validate-workflows.ps1": "The standalone workflow validator rejects MySQL server arguments in service options, requires the post-start pre-migration SQL boundary and prevents a timeout below the complete serial browser matrix's 90-minute floor.",
+        "scripts/validate-workflows.test.ps1": "Behavioral RED reproduced both the exact GitHub Docker create failure contract and, after ordinary CI run 32797026444 timed out, the two insufficient-timeout contracts before each minimal workflow correction.",
         "scripts/verify-execution-contract.test.mjs": "The real-manifest invariant is synchronized to the fresh P6-T5 full-quality evidence count and atom-derived 30/10/4 rollup; no validator behavior is weakened."
       },
       "requiredAtomIds": [
@@ -4557,13 +4557,19 @@
           "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-workflows.test.ps1",
           "exitCode": 1,
           "failure": "The contract failed exactly six assertions across CI and release: MySQL server arguments remained in Docker service options, no post-start pre-migration trust step existed, and the required SET GLOBAL statement was absent."
+        },
+        {
+          "classification": "behavioral",
+          "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-workflows.test.ps1",
+          "exitCode": 1,
+          "failure": "After ordinary CI run 32797026444 passed initialization, unit/build and real MySQL gates but was canceled at 45 minutes inside the unchanged 335+12 single-worker browser matrix, the contract failed both workflow timeout floors plus the expected standalone-validator wrapper."
         }
       ],
       "evidenceIds": [],
       "externalBlockers": [
         {
           "code": "RELEASE_RERUN_AUTHORIZATION_REQUIRED",
-          "fact": "UHUB_USERNAME and UHUB_PASSWORD now exist as repository secret names. The only authorized 1.0.0 dispatch, run 32796276478, failed before workflow steps because Docker rejected a MySQL server argument in service options. The TDD root-cause fix is locally green, but the user's authorization explicitly allowed only one dispatch, so a second 1.0.0 run requires new explicit approval after the fix is pushed."
+          "fact": "UHUB_USERNAME and UHUB_PASSWORD now exist as repository secret names. The only authorized 1.0.0 dispatch, run 32796276478, failed before workflow steps because Docker rejected a MySQL server argument in service options. Ordinary CI run 32797026444 proved that fix through real MySQL, then hit the stale 45-minute ceiling during the unchanged 335+12 serial browser gate; the evidence-backed 90-minute timeout correction is locally green. The user's authorization explicitly allowed only one dispatch, so a second 1.0.0 run still requires new explicit approval after this correction is pushed; GitHub CLI authentication must also be restored without exposing credentials before dispatch/watch."
         }
       ]
     }

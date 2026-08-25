@@ -24,6 +24,9 @@ foreach ($document in @($ci, $release)) {
   $jobCount = [regex]::Matches($document, '(?m)^  [A-Za-z0-9_-]+:\s*\r?\n\s+runs-on:').Count
   $timeoutCount = [regex]::Matches($document, '(?m)^\s+timeout-minutes:\s*[1-9][0-9]*\s*$').Count
   Require ($jobCount -gt 0 -and $jobCount -eq $timeoutCount) 'Every workflow job must have one finite timeout.'
+  foreach ($timeout in [regex]::Matches($document, '(?m)^\s+timeout-minutes:\s*([1-9][0-9]*)\s*$')) {
+    Require ([int]$timeout.Groups[1].Value -ge 90) 'Workflow timeout is too short for the complete serial browser matrix.'
+  }
   Require ($document -notmatch '(?ms)options:\s*>-.*?--log-bin-trust-function-creators=1') 'MySQL server arguments must not be placed in service options where Docker treats them as docker create flags.'
   $trustIndex = $document.IndexOf('Configure MySQL trigger migration trust', [StringComparison]::Ordinal)
   $mysqlIndex = $document.IndexOf('Real MySQL 8.4 store integration', [StringComparison]::Ordinal)
