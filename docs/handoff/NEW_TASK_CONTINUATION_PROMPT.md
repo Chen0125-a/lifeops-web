@@ -71,9 +71,9 @@ Obsidian 项目权威账本：
 
 最新本地完整门禁 checkpoint：
 
-`outputs/evidence/source-checkpoints/2026-08-26-p6-t6-local-full-gates-uncommitted-local-checkpoint.json`
+`outputs/evidence/source-checkpoints/2026-08-26-p6-t6-push-authorization-soft-pause-uncommitted-local-checkpoint.json`
 
-- root：`F670579E213E5E53C2F149C69A94C8E7CA0670C5A79B6C45DBE173767A46C912`
+- root：`A569E5527BE52FF7D5A274AF6AD60A14D98D8D65E3A31DC4C7133DE74348B9F7`；旧 `F670579E213E5E53C2F149C69A94C8E7CA0670C5A79B6C45DBE173767A46C912` 已被本次 traceability 状态更新取代
 - 602 sorted inputs
 - 保存值与 fresh rebuild 一致；manifest checkpoint 相同
 - 462 条 source/artifact hash 只在完整 frontend/server/MySQL/Helm/security/image/browser/visual 门禁真实通过后收敛
@@ -82,10 +82,11 @@ Obsidian 项目权威账本：
 
 - 私有仓库：`Chen0125-a/lifeops-web`
 - 分支：`main`
-- 当前 HEAD 与 origin/main：`c387e7ce6d8497ba494b08dd348375995639517e`
+- 当前本地 HEAD：`ebd163ca7627b3c2f9c595b0f06c30f3e35c1d98`
+- 当前 origin/main：`c387e7ce6d8497ba494b08dd348375995639517e`
 - 仓库级 deploy key 私钥只在 `.git` 内且未提交；不得读取或输出内容
 - 临时 bootstrap refs 已清理
-- 当前 WIP 未提交、未推送；本地完整门禁 checkpoint 不是 Git revision
+- 完整修订已经本地提交但尚未推送；第一次 `git push origin main` 被执行安全审查拒绝，原因是默认分支持久共享写入需要在精确远端和风险说明后取得用户新的明确授权。未尝试规避。
 
 当前已知 WIP 至少包括：
 
@@ -115,7 +116,7 @@ Obsidian 项目权威账本：
 - 52 项：workflow 只安装 Chromium，却执行 Firefox/WebKit，属于真实环境覆盖缺口。
 - 4 项 Chromium 真问题：登录淡出标题对比度、149.9ms 主题帧超过未改变的 133.4ms 门、runner 时区导致计划稿缺失、Quick Create 原 opener 被替换后焦点未恢复。
 
-当前未提交 TDD 修订已经覆盖三浏览器安装、`Asia/Shanghai`、detached opener 焦点、登录期间 hero copy `aria-hidden`、主题层 compositor 准备和 WebKit 前台稳定采样。没有放宽 worker、retry、阈值、采样时间、视觉几何或动效速率。
+本地提交 `ebd163c...` 已覆盖三浏览器安装、`Asia/Shanghai`、detached opener 焦点、登录期间 hero copy `aria-hidden`、主题层 compositor 准备和 WebKit 前台稳定采样。没有放宽 worker、retry、阈值、采样时间、视觉几何或动效速率。
 
 新鲜完整 GREEN：frontend typecheck、85/85 files 与 401/401 Vitest、production build；server 361 passed +50 exact-integration skips、typecheck/build；官方 MySQL 8.4.10 50/50；Helm/workflow/security/audit/local-image/data-rehearsal；remote browser 12/12；Lighthouse 1.00/1.00/0.96/0.91；官方 Linux Playwright 335/335（workers=1、retries=0）。最终 diff 审计发现旧 `public-detail-*` 截图只捕获了 route gate；新增证据完整性 behavioral RED 后，`public-final` 必须等待真实 `public-detail-shell` 且 route gate 消失。官方 Linux修正复核为 5/5，20 张详情图全部重生成，1440/390 样本已逐张打开确认真实详情内容。
 
@@ -125,24 +126,22 @@ Obsidian 项目权威账本：
 
 已解决：full frontend Vitest 单独串行最终复核为 85/85 files、401/401 tests，exit 0；此前资源争用假设不再作为 blocker。
 
-唯一下一原子动作：保持 P6 / P6-T6 / Step 7，完成最终 diff/凭据安全/checkpoint identity 审查，随后 commit/push 并观察新的普通 CI。
+唯一下一原子动作：保持 P6 / P6-T6 / Step 7，取得用户对把本地 `ebd163c...` 及本次窄账本提交推送到精确 `https://github.com/Chen0125-a/lifeops-web.git` 的 `main` 的明确授权；授权后执行一次 `git push origin main` 并观察新的普通 CI。此授权不包含 release dispatch。
 
 第一条验证命令严格为：
 
 ```powershell
-git diff --check
+git push origin main
 ```
 
 之后严格按顺序：
 
-1. 运行 `git diff --check` 并完整审查 source/test/workflow/evidence/ledger diff。
-2. 执行凭据安全检查，但不得读取 `.git` 私钥或回显任何 secret 值。
-3. fresh rebuild checkpoint，并确认 saved/fresh/manifest identity 一致。
-4. 保持 30/10/4 和 P6-T6 Step 7，commit/push 当前 WIP 到 `main`。
-5. 观察新的普通 CI 至真实终态，完整读取所有步骤与 exit/result。
-6. 新普通 CI 全绿后仍不得自动 dispatch release；先只读验证 GitHub 身份，再取得新的明确授权。
+1. 用户明确授权精确 origin/main 持久写入后，提交本次 push-authorization soft-pause 窄账本更新。
+2. 执行一次 `git push origin main`；不得改用旁路或其他远端。
+3. 观察新普通 CI 至真实终态，完整读取所有步骤与 exit/result。
+4. 新普通 CI 全绿后仍不得自动 dispatch release；先只读验证 GitHub 身份，再取得与 push 分离的明确 release 授权。
 
-当前待复核 checkpoint root 为 `F670579E213E5E53C2F149C69A94C8E7CA0670C5A79B6C45DBE173767A46C912`，真实派生边界仍为 30/10/4。必须在账本同步后再次 fresh rebuild，并重跑 `test:execution`、startup 与 handoff；任何后续 source/traceability 修改都必须重算，不得沿用本 root 冒充新鲜。
+当前 push-authorization soft-pause checkpoint root 为 `A569E5527BE52FF7D5A274AF6AD60A14D98D8D65E3A31DC4C7133DE74348B9F7`，602 inputs；真实派生边界仍为 30/10/4。必须重跑 `test:execution`、startup 与 handoff；任何后续 source/traceability 修改都必须重算。
 
 ## 5. 已批准视觉方向
 

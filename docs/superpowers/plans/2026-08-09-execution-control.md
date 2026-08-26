@@ -785,7 +785,7 @@ The non-Git checkpoint is `outputs/evidence/source-checkpoints/2026-08-23-p6-t4-
 
 ## Next atomic action
 
-P6-T5 is formally closed. P6-T6 Steps 1–6 are complete and P6-T6 Step 7 is the sole current boundary. The browser-install/timezone/focus/theme correction and public-detail evidence-integrity repair have passed the complete local regression matrix; final diff, credential-safe status and checkpoint-identity review remain before commit/push. The first verification command is `git diff --check`. Release execution remains gated on a fresh ordinary-CI pass and new explicit authorization for exactly one additional `1.0.0` dispatch.
+P6-T5 is formally closed. P6-T6 Steps 1–6 are complete and P6-T6 Step 7 is the sole current boundary. The complete locally verified correction is committed as `ebd163ca7627b3c2f9c595b0f06c30f3e35c1d98`; exact `origin` is `https://github.com/Chen0125-a/lifeops-web.git`, and `origin/main` is still `c387e7ce6d8497ba494b08dd348375995639517e`. The first push was rejected by the execution safety reviewer pending fresh explicit user authorization for this persistent shared default-branch write. After that authorization, the first verification command is `git push origin main`. Release execution remains separately gated on a fresh ordinary-CI pass and new explicit authorization for exactly one additional `1.0.0` dispatch.
 
 Do not rerun the detector, read kubeconfig, run kubectl, install Helm, synchronize Argo or claim registry delivery before the pinned workflow and exact digest evidence succeed.
 
@@ -1154,3 +1154,15 @@ All 462 evidence rows were rebound from current disk sources and artifacts. The 
 ## Exact next atomic action
 
 Remain at P6 / P6-T6 / Step 7 and 30/44. Reconfirm saved/fresh/manifest checkpoint identity; run execution-contract, startup, handoff, final diff and credential-safe audits; then commit and push and observe the new ordinary CI to terminal state. A second `1.0.0` dispatch remains prohibited until ordinary CI is fully green, GitHub identity is verified read-only and the user grants one new explicit authorization. Do not enter P6-T7 early.
+
+## 2026-08-26 P6-T6 exact main-push authorization pause
+
+The complete correction was committed locally as `ebd163ca7627b3c2f9c595b0f06c30f3e35c1d98` after a 241/241 staged-path review, zero unstaged/untracked paths, cached diff check, credential-safe scan and final 95/95 execution-contract pass. Read-only verification reports branch `main`, exact origin `https://github.com/Chen0125-a/lifeops-web.git`, local HEAD `ebd163c...` and `origin/main` `c387e7c...`.
+
+The attempted `git push origin main` did not run: the execution safety reviewer rejected persistent shared default-branch mutation until the user explicitly authorizes this exact destination after being informed of the effect. No alternative command, ref or bypass was attempted. This is the sole current external blocker. An authorization for this push does not authorize a second release dispatch; failed run `32796276478` consumed the only prior `1.0.0` authorization.
+
+The coherent soft-pause checkpoint is `outputs/evidence/source-checkpoints/2026-08-26-p6-t6-push-authorization-soft-pause-uncommitted-local-checkpoint.json`, root `A569E5527BE52FF7D5A274AF6AD60A14D98D8D65E3A31DC4C7133DE74348B9F7`, with 602 sorted inputs and 462 evidence rows. It preserves 30 verified-local / 10 partial / 4 pending and records 242 cumulative task paths without promoting registry evidence.
+
+## Exact next atomic action
+
+Obtain fresh explicit user authorization to push the local LifeOps commits to `https://github.com/Chen0125-a/lifeops-web.git` branch `main`. After approval, commit the narrow pause-ledger update, run exactly `git push origin main`, verify the resulting remote HEAD and observe the new ordinary CI to terminal state. Do not dispatch release and do not enter P6-T7.

@@ -4594,6 +4594,7 @@
         "outputs/evidence/browser/p5-t7/settings-categories-normal-filmstrip.png",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -4851,6 +4852,7 @@
         "outputs/evidence/browser/p5-t7/settings-categories-normal-filmstrip.png",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5059,8 +5061,12 @@
       ],
       "externalBlockers": [
         {
+          "code": "MAIN_PUSH_AUTHORIZATION_REQUIRED",
+          "fact": "The complete correction is committed locally as ebd163ca7627b3c2f9c595b0f06c30f3e35c1d98 on main. Read-only verification confirms origin is https://github.com/Chen0125-a/lifeops-web.git and origin/main remains c387e7ce6d8497ba494b08dd348375995639517e. The first push attempt was rejected by the execution safety reviewer because writing the shared default branch requires fresh explicit user authorization after the exact destination and persistence risk are stated. No workaround was attempted. The sole next external action, only after that authorization, is git push origin main."
+        },
+        {
           "code": "RELEASE_RERUN_AUTHORIZATION_REQUIRED",
-          "fact": "UHUB_USERNAME and UHUB_PASSWORD remain known only as repository secret names; no value was read or recorded. The only previously authorized 1.0.0 dispatch, run 32796276478, was consumed and failed. Current uncommitted WIP now passes the complete local frontend, server, official MySQL 8.4.10, Helm, workflow, security, local image-smoke, remote-browser, Lighthouse and official Linux Playwright 335/335 gates. P6-T6 still requires a coherent deterministic checkpoint, commit/push, a new ordinary CI run that is genuinely green and read-only GitHub identity verification. Only after those boundaries pass may the user be asked for one new explicit authorization for exactly one additional 1.0.0 dispatch; this record does not grant it."
+          "fact": "UHUB_USERNAME and UHUB_PASSWORD remain known only as repository secret names; no value was read or recorded. The only previously authorized 1.0.0 dispatch, run 32796276478, was consumed and failed. Local revision ebd163ca7627b3c2f9c595b0f06c30f3e35c1d98 passes the complete local frontend, server, official MySQL 8.4.10, Helm, workflow, security, local image-smoke, remote-browser, Lighthouse and official Linux Playwright gates. P6-T6 still requires the newly authorized main push, a new ordinary CI run that is genuinely green and read-only GitHub identity verification. Only after those boundaries pass may the user be asked for one separate explicit authorization for exactly one additional 1.0.0 dispatch; a main-push authorization never grants release dispatch."
         }
       ]
     }
