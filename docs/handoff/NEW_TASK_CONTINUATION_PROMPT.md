@@ -289,3 +289,10 @@ P6-T6 合法通过后，连续执行 P6-T6 task-close → deterministic checkpoi
 - `test:execution` 95/95、独立 startup、独立 handoff 均 exit 0；两种模式一致报告 ADR-029、P6 / P6-T6 / Step 7、30/10/4 和 `C4C31E4...D982`，无 issue。五份 authority 哈希仍逐项精确匹配。
 - `git diff --check` exit 0，仅有 Windows 行尾提示；凭据安全审计覆盖 15 个变化路径、0 findings。结构化核对确认 462 evidence IDs 无增删或重排、artifact hash 无变化。
 - 唯一下一动作：只暂存这 15 个已审路径，复核 cached path/diff/凭据后创建本地 remediation commit。新的 `main` push 必须取得新的明确授权；不得 dispatch release 或提前进入 P6-T7。
+
+## 13. 2026-08-26 最新接班增量：本地提交与新 push 授权暂停
+
+- 15 个已审路径已在 `main` 提交为 `0b445f9dad262b9355e91655a8f32e1e592ed1bb`（`test(e2e): stabilize CI browser sampling`）。提交前 staged 15/15 精确匹配、0 unstaged/untracked、cached diff exit 0、credential audit 0 findings；产品源码未改变。
+- 本地 `main` 领先 `origin/main` `97f68ff3af81b2675229f95c4b367e806472a7d4` 一个提交。traceability blocker 已切换为 `MAIN_PUSH_AUTHORIZATION_REQUIRED`。
+- 新 pause checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-browser-remediation-push-authorization-soft-pause-uncommitted-local-checkpoint.json`，root `5617FA459934DC3AB50E7DBAEFE5360C60C232D050F8574F44A8C60A4D8B8ED8`，602 inputs、462 evidence rows、247 cumulative task paths；边界仍为 30/10/4。
+- 唯一下一动作：验证 saved/fresh/manifest、execution/startup/handoff、diff/凭据审计后提交窄账本；随后取得新的明确授权，才可把两个本地提交推送到精确 GitHub `main`。不得 dispatch release 或提前进入 P6-T7。

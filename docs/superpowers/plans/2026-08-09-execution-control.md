@@ -1204,3 +1204,13 @@ Fresh contract closure passes `test:execution` 95/95, standalone startup exit 0 
 ### Exact next atomic action
 
 Stage only the 15 reviewed LifeOps paths, verify the cached path set, cached diff and credential scan, and create the local browser-harness remediation commit. Local and `origin/main` remain `97f68ff3af81b2675229f95c4b367e806472a7d4` until that commit. Any subsequent push to the exact GitHub `main` is a new persistent remote mutation and requires fresh explicit user authorization. Do not dispatch release or enter P6-T7.
+
+## 2026-08-26 P6-T6 browser remediation committed and push-authorization pause
+
+The exact 15-path browser-harness remediation and its complete local evidence were committed on `main` as `0b445f9dad262b9355e91655a8f32e1e592ed1bb` (`test(e2e): stabilize CI browser sampling`). Pre-commit review confirmed 15/15 expected staged paths, zero unstaged/untracked paths, cached diff check exit 0 and credential-safe audit with zero findings. The commit changes no product source. Local `main` is ahead of `origin/main` `97f68ff3af81b2675229f95c4b367e806472a7d4` by one commit.
+
+Traceability now records `MAIN_PUSH_AUTHORIZATION_REQUIRED` rather than an uncommitted correction. The coherent pause checkpoint is `outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-browser-remediation-push-authorization-soft-pause-uncommitted-local-checkpoint.json`, root `5617FA459934DC3AB50E7DBAEFE5360C60C232D050F8574F44A8C60A4D8B8ED8`, with 602 ordinal-sorted inputs, 462 evidence rows and 247 cumulative task paths. The parent boundary remains 30 verified-local / 10 partial / 4 pending.
+
+### Exact next atomic action
+
+Verify saved/fresh/manifest checkpoint identity and rerun execution-contract, startup, handoff, diff and credential-safe audits; then create the narrow local pause-ledger commit. After that commit, request fresh explicit user authorization to push both local commits to exact `https://github.com/Chen0125-a/lifeops-web.git` branch `main`. Push authorization does not authorize release. Do not dispatch `1.0.0` or enter P6-T7.

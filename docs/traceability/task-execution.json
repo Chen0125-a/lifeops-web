@@ -4594,6 +4594,7 @@
         "outputs/evidence/browser/p5-t7/settings-categories-normal-filmstrip.png",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-browser-remediation-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-browser-remediation-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-observation-auth-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
@@ -4856,6 +4857,7 @@
         "outputs/evidence/browser/p5-t7/settings-categories-normal-filmstrip.png",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-browser-remediation-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-browser-remediation-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-observation-auth-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
@@ -5080,12 +5082,12 @@
       ],
       "externalBlockers": [
         {
-          "code": "ORDINARY_CI_GREEN_REQUIRED",
-          "fact": "The user signed in through the visible in-app browser and read-only identity inspection verified GitHub account Chen0125-a. Ordinary CI run 32964834996 for 97f68ff3af81b2675229f95c4b367e806472a7d4 reached a failed terminal state after 36m26s: MySQL, unit, typecheck and production build passed, while Playwright finished 329 passed / 6 failed and later Helm/workflow/image steps were skipped. The uncommitted harness correction now passes the complete local matrix, but it must be committed, explicitly authorized for another main push, and proven by a fresh ordinary CI before release authorization can be requested. No credential, OTP, cookie, token or private key was read or recorded."
+          "code": "MAIN_PUSH_AUTHORIZATION_REQUIRED",
+          "fact": "The browser-harness correction and complete local evidence were committed on main as 0b445f9dad262b9355e91655a8f32e1e592ed1bb after exact 15/15 staged-path review, zero unstaged or untracked paths, cached diff check and a credential-safe audit with zero findings. Local main is ahead of origin/main 97f68ff3af81b2675229f95c4b367e806472a7d4 by one commit. A new push to exact https://github.com/Chen0125-a/lifeops-web.git main is a separate persistent remote mutation and requires fresh explicit user authorization. After the authorized push, a fresh ordinary CI must be genuinely green before release authorization can be requested. No credential, OTP, cookie, token or private key was read or recorded."
         },
         {
           "code": "RELEASE_RERUN_AUTHORIZATION_REQUIRED",
-          "fact": "UHUB_USERNAME and UHUB_PASSWORD remain known only as repository secret names; no value was read or recorded. The only previously authorized 1.0.0 dispatch, run 32796276478, was consumed and failed. Ordinary CI run 32964834996 also failed and never reached release or image publication. Only after the current correction is committed, separately authorized for push and a fresh ordinary CI is genuinely green may the user be asked for one separate explicit authorization for exactly one additional 1.0.0 dispatch; neither the earlier push nor the current local green matrix grants release dispatch."
+          "fact": "UHUB_USERNAME and UHUB_PASSWORD remain known only as repository secret names; no value was read or recorded. The only previously authorized 1.0.0 dispatch, run 32796276478, was consumed and failed. Ordinary CI run 32964834996 also failed and never reached release or image publication. Only after commit 0b445f9dad262b9355e91655a8f32e1e592ed1bb plus the narrow pause ledger are explicitly authorized for push and a fresh ordinary CI is genuinely green may the user be asked for one separate explicit authorization for exactly one additional 1.0.0 dispatch; neither a push authorization nor the current local green matrix grants release dispatch."
         }
       ]
     }
