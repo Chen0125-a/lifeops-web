@@ -785,7 +785,7 @@ The non-Git checkpoint is `outputs/evidence/source-checkpoints/2026-08-23-p6-t4-
 
 ## Next atomic action
 
-P6-T5 is formally closed. P6-T6 Steps 1–6 are complete and P6-T6 Step 7 is the sole current boundary. The complete locally verified correction is committed as `ebd163ca7627b3c2f9c595b0f06c30f3e35c1d98`; exact `origin` is `https://github.com/Chen0125-a/lifeops-web.git`, and `origin/main` is still `c387e7ce6d8497ba494b08dd348375995639517e`. The first push was rejected by the execution safety reviewer pending fresh explicit user authorization for this persistent shared default-branch write. After that authorization, the first verification command is `git push origin main`. Release execution remains separately gated on a fresh ordinary-CI pass and new explicit authorization for exactly one additional `1.0.0` dispatch.
+P6-T5 is formally closed. P6-T6 Steps 1–6 are complete and P6-T6 Step 7 is the sole current boundary. After fresh explicit authorization, the exact `origin/main` push succeeded; local and remote-tracking `main` are `97f68ff3af81b2675229f95c4b367e806472a7d4`. GitHub CLI authentication is invalid and the only available browser is signed out; a visible GitHub login page is handed to the user without reading or entering credentials. After user login, the first verification command is `browser reload https://github.com/Chen0125-a/lifeops-web/actions`. Release execution remains separately gated on a genuinely green ordinary CI and new explicit authorization for exactly one additional `1.0.0` dispatch.
 
 Do not rerun the detector, read kubeconfig, run kubectl, install Helm, synchronize Argo or claim registry delivery before the pinned workflow and exact digest evidence succeed.
 
@@ -1166,3 +1166,41 @@ The coherent soft-pause checkpoint is `outputs/evidence/source-checkpoints/2026-
 ## Exact next atomic action
 
 Obtain fresh explicit user authorization to push the local LifeOps commits to `https://github.com/Chen0125-a/lifeops-web.git` branch `main`. After approval, commit the narrow pause-ledger update, run exactly `git push origin main`, verify the resulting remote HEAD and observe the new ordinary CI to terminal state. Do not dispatch release and do not enter P6-T7.
+
+## 2026-08-26 P6-T6 push success and CI-observation authentication pause
+
+The user explicitly authorized the exact persistent write. The narrow ledger commit `97f68ff3af81b2675229f95c4b367e806472a7d4` followed implementation commit `ebd163ca7627b3c2f9c595b0f06c30f3e35c1d98`; one `git push origin main` succeeded, and `git ls-remote origin refs/heads/main` independently returned `97f68ff3af81b2675229f95c4b367e806472a7d4`. No release workflow was dispatched.
+
+Read-only CI observation is now blocked only by external authentication. `gh auth status` reports the saved `Chen0125-a` token invalid. The in-app browser is the sole connected browser, has no GitHub session and receives signed-out 404 for the private Actions URL; no Chrome/Edge extension session exists. The GitHub sign-in page is visible and handed to the user. No password, OTP, cookie, token or private key was read, entered or recorded.
+
+The coherent CI-observation authentication soft-pause checkpoint is `outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-observation-auth-soft-pause-uncommitted-local-checkpoint.json`, root `D19E1EEB8F486D212966F4BB02FA5F24A9C946EA8BCD45762C0E2BAE97F83857`, with 602 sorted inputs, 462 evidence rows and 243 cumulative task paths. It preserves 30/10/4 without claiming a CI result.
+
+## Exact next atomic action
+
+The user signs in to GitHub in the visible browser and replies `已登录`. Then reload the exact private Actions URL, verify the authenticated GitHub identity, locate the ordinary CI for `97f68ff...` and observe every job to terminal state. Do not dispatch release or enter P6-T7.
+
+## 2026-08-26 P6-T6 authenticated CI failure and browser-harness remediation
+
+The user completed GitHub sign-in in the visible in-app browser. Read-only account inspection verified identity `Chen0125-a`. Ordinary CI run `32964834996`, job `98164958219`, for revision `97f68ff3af81b2675229f95c4b367e806472a7d4` ended failed after 36m26s. MySQL, unit, typecheck and production build passed; the Playwright step ended with 329 passed / 6 failed, so later Helm/workflow/image steps were skipped. No release workflow was dispatched.
+
+The six exact failures were one Chromium desktop-login title-opacity sample (`0.691948` above the approved settled-depth ceiling), one Chromium-768 serious intermediate contrast scan, one Firefox theme-frame p95 sample (`116.52ms`), two WebKit route-continuity samples retaining only eight frames, and one WebKit theme maximum-frame sample (`263ms`). Focused official-Linux reproduction and diagnostics separated product behavior from harness setup: Chromium reproduced the title sample at `0.473896` while the same Axe test passed focused; Firefox intermittently crossed the unchanged relative ceiling; a throttled WebKit diagnostic observed only two raw frames in 600ms and therefore an empty retained baseline after warm-up removal. Full unchanged WebKit critical also passed 25/25, proving the approved behavior and original ceilings remain reachable.
+
+The minimal correction changes only Playwright test boundaries. Desktop depth and Axe scans now wait for the already-approved final title opacity; Firefox/WebKit strict frame probes require two consecutive unchanged-duration foreground cadence windows, reassert foreground from the driver between windows and reject empty retained samples. WebKit private-route sampling uses the same precondition. Product source, worker, retry, browser projects, thresholds, sample durations, geometry and motion rate are unchanged.
+
+Fresh post-correction gates pass: frontend typecheck exit 0; Vitest 85/85 files and 401/401 tests; production build with 883 modules; server 361 ordinary tests with 50 exact-only skips plus typecheck/build; owned official MySQL 8.4.10 native run 50/50 with all 16 migrations and verified shutdown; media topology, Helm lint/default/production render/schema/security, observability, workflow and four P6-T6 release contracts; root/server production audits with zero vulnerabilities; current-source Web/API image build and `image-smoke: ok`; 16-migration dump/restore rehearsal; Firefox theme 3/3 repeated; WebKit critical 25/25; and official `mcr.microsoft.com/playwright:v1.62.1-noble` full acceptance 335/335 in 24.2 minutes with workers=1/retries=0. The real-Fastify matrix first exposed only default-sandbox denial of headed Windows Firefox context creation; the identical authorized foreground run passed 12/12. Lighthouse is 1.00 performance, 1.00 accessibility, 0.96 best practices and 0.91 SEO. The primary executor reopened all seven final ADR-029 artifacts at original resolution and reconfirmed the unlit center, complete safe inset, dark night login, title recession and four continuing rings.
+
+The truthful parent boundary remains 30 verified-local / 10 partial / 4 pending. The correction is uncommitted and unpushed; `main` and `origin/main` remain `97f68ff...`. Registry-bound P6-T6 atoms, UHub digests, digest-bound SBOM/provenance, release success, DNS/TLS and cluster state remain absent. The earlier `1.0.0` authorization remains consumed by failed run `32796276478`.
+
+### Exact next atomic action
+
+Remain at P6 / P6-T6 / Step 7. Rebind the 462 evidence rows to current on-disk sources/artifacts, build the new deterministic checkpoint twice and require saved/fresh/manifest identity, then run execution-contract startup/handoff, diff and credential-safe audits. Commit the corrected local WIP only after those gates pass. A new push to `https://github.com/Chen0125-a/lifeops-web.git` `main` requires fresh explicit authorization; after that push, observe a new ordinary CI to a genuinely green terminal result. Do not request or dispatch another `1.0.0` until that boundary is met, and do not enter P6-T7 early.
+
+## 2026-08-26 P6-T6 local remediation checkpoint finalized
+
+All 462 evidence rows are now rebound to the current on-disk sources and artifacts without rewriting old source or artifact hashes into false positives. The saved checkpoint, two fresh rebuilds and manifest checkpoint are identical at `C4C31E4AB631259D86F5D1C83A7C04352E77DC342031686488C018531576D982` across 602 ordinal-sorted inputs. The historical CI-auth pause checkpoint remains preserved separately.
+
+Fresh contract closure passes `test:execution` 95/95, standalone startup exit 0 and standalone handoff exit 0. Both modes report ADR-029, P6 / P6-T6 / Step 7, 30/10/4 and the same `C4C31E4...D982` checkpoint with no issues. All five locked authority SHA-256 values still match exactly; `git diff --check` exits 0 with only Windows line-ending notices, and the credential-safe WIP audit reports 15 changed paths with zero findings. Structured review confirms the 462 evidence IDs remain in the same order with no additions, removals or artifact-hash changes.
+
+### Exact next atomic action
+
+Stage only the 15 reviewed LifeOps paths, verify the cached path set, cached diff and credential scan, and create the local browser-harness remediation commit. Local and `origin/main` remain `97f68ff3af81b2675229f95c4b367e806472a7d4` until that commit. Any subsequent push to the exact GitHub `main` is a new persistent remote mutation and requires fresh explicit user authorization. Do not dispatch release or enter P6-T7.

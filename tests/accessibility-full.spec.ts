@@ -99,6 +99,11 @@ test.describe('public accessibility acceptance', () => {
     await expect(page.getByLabel('账号')).toBeFocused()
     await page.getByRole('button', { name: '进入 LifeOps' }).click()
     await expect(page.getByRole('alert')).toBeVisible()
+    const publicCopy = page.getByTestId('public-copy')
+    await expect(publicCopy).toHaveAttribute('aria-hidden', 'true')
+    await expect.poll(async () => publicCopy.evaluate((element) => (
+      Number.parseFloat(getComputedStyle(element).opacity)
+    ))).toBeLessThanOrEqual(0.24)
     await expectNoSeriousOrCriticalViolations(page, { route: '/', state: 'interactive' })
     await page.keyboard.press('Escape')
     await expect(trigger).toBeFocused()

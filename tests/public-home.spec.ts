@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { waitForStableFrameCadence } from './helpers/motionProbe'
 
 test.beforeEach(async ({ page }) => {
   await page.route('**/api/v1/public/content?*', (route) => route.fulfill({
@@ -117,7 +118,7 @@ test('the desktop homepage is one viewport scene and object details provide an e
   await expect(page).toHaveURL(/\/$/)
 })
 
-test('the day-night transition stays inside the interaction frame budget', async ({ page }) => {
+test('the day-night transition stays inside the interaction frame budget', async ({ page, browserName }) => {
   await expect(page.getByRole('heading', { name: '把日子，慢慢看清。' })).toHaveAttribute(
     'data-title-state',
     'complete',
@@ -143,9 +144,14 @@ test('the day-night transition stays inside the interaction frame budget', async
     return sorted[Math.floor(sorted.length * 0.95)] ?? Infinity
   }
 
+  if (browserName === 'firefox' || browserName === 'webkit') {
+    await waitForStableFrameCadence(page, 600, 10)
+  }
   const baseline = await sampleFrames(600)
   await page.getByRole('button', { name: '切换为夜间主题' }).click()
   const transition = await sampleFrames(1_200)
+  expect(baseline.length).toBeGreaterThan(0)
+  expect(transition.length).toBeGreaterThan(0)
   expect(percentile95(transition)).toBeLessThanOrEqual(Math.max(34, percentile95(baseline) + 17))
   expect(Math.max(...transition)).toBeLessThanOrEqual(Math.max(100, Math.max(...baseline) + 50))
 })

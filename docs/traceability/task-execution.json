@@ -4593,6 +4593,8 @@
         "outputs/evidence/browser/p5-t7/settings-09-1440x900.png",
         "outputs/evidence/browser/p5-t7/settings-categories-normal-filmstrip.png",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-browser-remediation-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-observation-auth-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
@@ -4635,6 +4637,7 @@
         "src/pages/PublicHomePage.tsx",
         "src/playwrightConfig.test.ts",
         "src/styles/public.css",
+        "tests/accessibility-full.spec.ts",
         "tests/adr029-login-orbit.spec.ts",
         "tests/globalSetup.ts",
         "tests/goals-golden-slice.spec.ts",
@@ -4649,6 +4652,7 @@
         "tests/obsidian-settings.spec.ts",
         "tests/p2-t3-evidence.spec.ts",
         "tests/platform.spec.ts",
+        "tests/private-overview.spec.ts",
         "tests/public-details.spec.ts",
         "tests/public-final.spec.ts",
         "tests/public-home.spec.ts",
@@ -4851,6 +4855,8 @@
         "outputs/evidence/browser/p5-t7/settings-09-1440x900.png",
         "outputs/evidence/browser/p5-t7/settings-categories-normal-filmstrip.png",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-browser-remediation-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-observation-auth-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-26-p6-t6-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
@@ -4880,6 +4886,7 @@
         "src/pages/PublicHomePage.tsx",
         "src/playwrightConfig.test.ts",
         "src/styles/public.css",
+        "tests/accessibility-full.spec.ts",
         "tests/adr029-login-orbit.spec.ts",
         "tests/globalSetup.ts",
         "tests/goals-golden-slice.spec.ts",
@@ -4894,6 +4901,7 @@
         "tests/obsidian-settings.spec.ts",
         "tests/p2-t3-evidence.spec.ts",
         "tests/platform.spec.ts",
+        "tests/private-overview.spec.ts",
         "tests/public-details.spec.ts",
         "tests/public-final.spec.ts",
         "tests/public-home.spec.ts",
@@ -4922,7 +4930,12 @@
         "tests/motion-continuity.spec.ts": "The strict WebKit frame sample is brought to the foreground immediately before capture; no threshold or sample duration changed.",
         "tests/public-login.spec.ts": "The login assertions use the stable title id after aria-hiding and foreground/stability setup for Windows WebKit; approved breakpoints, motion and performance thresholds remain unchanged.",
         "outputs/evidence/browser/p5-t5/quick-create-1440x900.png": "A full browser run regenerated this existing evidence image; it is preserved as WIP and must be reviewed/reconciled before evidence promotion.",
-        "tests/public-final.spec.ts": "Direct image review found 20 generated public-detail files captured the Suspense route gate despite a green suite; a behavioral evidence-integrity RED now requires the real detail shell and zero route gates before every final screenshot."
+        "tests/public-final.spec.ts": "Direct image review found 20 generated public-detail files captured the Suspense route gate despite a green suite; a behavioral evidence-integrity RED now requires the real detail shell and zero route gates before every final screenshot.",
+        "tests/accessibility-full.spec.ts": "Ordinary CI run 32964834996 sampled the login scene while the public copy was still fading; the Axe boundary now requires the already-declared aria-hidden state and the approved final opacity before scanning, without hiding any additional content or changing the product.",
+        "tests/adr029-login-orbit.spec.ts": "The desktop depth assertion now waits for the approved public-copy opacity to settle instead of treating an independent orbit-geometry condition as proof that the title transition completed.",
+        "tests/helpers/motionProbe.ts": "Firefox/WebKit foreground requestAnimationFrame cadence must hold for two consecutive unchanged-duration windows before strict sampling; the driver reasserts foreground between windows and preserves all thresholds.",
+        "tests/private-overview.spec.ts": "WebKit route-continuity sampling now begins only after the shared two-window foreground cadence precondition, preventing a throttled setup window from being counted as product frames.",
+        "tests/public-home.spec.ts": "Firefox/WebKit theme sampling now requires the shared stable foreground precondition and rejects empty retained arrays; the original sample durations, relative p95 ceiling and maximum-frame ceiling are unchanged."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
@@ -5029,6 +5042,12 @@
           "command": "npm.cmd test -- src/playwrightConfig.test.ts",
           "exitCode": 1,
           "failure": "The new evidence-integrity contract failed 1/7 because public-final capture did not require the real public detail shell or the absence of the Suspense route gate before writing final screenshots; direct image review had proven the generated detail artifacts contained only 正在打开工作区…."
+        },
+        {
+          "classification": "behavioral",
+          "command": "GitHub Actions ordinary CI run 32964834996 plus focused mcr.microsoft.com/playwright:v1.62.1-noble reproductions",
+          "exitCode": 1,
+          "failure": "Ordinary CI on 97f68ff3 failed six browser assertions after 329 passed: Chromium sampled the receding title at opacity 0.691948 and one 768 Axe scan saw an intermediate serious contrast state; Firefox theme p95 was 116.52; WebKit retained only eight route frames twice and one theme sample reached 263ms. Focused diagnostics proved the product reaches every unchanged gate while headless Firefox/WebKit could begin with severely throttled or empty retained rAF samples, so the correction strengthens transition-completion and two-window foreground sampling preconditions without changing product code, worker, retry, threshold, duration, geometry or motion rate."
         }
       ],
       "evidenceIds": [
@@ -5061,12 +5080,12 @@
       ],
       "externalBlockers": [
         {
-          "code": "MAIN_PUSH_AUTHORIZATION_REQUIRED",
-          "fact": "The complete correction is committed locally as ebd163ca7627b3c2f9c595b0f06c30f3e35c1d98 on main. Read-only verification confirms origin is https://github.com/Chen0125-a/lifeops-web.git and origin/main remains c387e7ce6d8497ba494b08dd348375995639517e. The first push attempt was rejected by the execution safety reviewer because writing the shared default branch requires fresh explicit user authorization after the exact destination and persistence risk are stated. No workaround was attempted. The sole next external action, only after that authorization, is git push origin main."
+          "code": "ORDINARY_CI_GREEN_REQUIRED",
+          "fact": "The user signed in through the visible in-app browser and read-only identity inspection verified GitHub account Chen0125-a. Ordinary CI run 32964834996 for 97f68ff3af81b2675229f95c4b367e806472a7d4 reached a failed terminal state after 36m26s: MySQL, unit, typecheck and production build passed, while Playwright finished 329 passed / 6 failed and later Helm/workflow/image steps were skipped. The uncommitted harness correction now passes the complete local matrix, but it must be committed, explicitly authorized for another main push, and proven by a fresh ordinary CI before release authorization can be requested. No credential, OTP, cookie, token or private key was read or recorded."
         },
         {
           "code": "RELEASE_RERUN_AUTHORIZATION_REQUIRED",
-          "fact": "UHUB_USERNAME and UHUB_PASSWORD remain known only as repository secret names; no value was read or recorded. The only previously authorized 1.0.0 dispatch, run 32796276478, was consumed and failed. Local revision ebd163ca7627b3c2f9c595b0f06c30f3e35c1d98 passes the complete local frontend, server, official MySQL 8.4.10, Helm, workflow, security, local image-smoke, remote-browser, Lighthouse and official Linux Playwright gates. P6-T6 still requires the newly authorized main push, a new ordinary CI run that is genuinely green and read-only GitHub identity verification. Only after those boundaries pass may the user be asked for one separate explicit authorization for exactly one additional 1.0.0 dispatch; a main-push authorization never grants release dispatch."
+          "fact": "UHUB_USERNAME and UHUB_PASSWORD remain known only as repository secret names; no value was read or recorded. The only previously authorized 1.0.0 dispatch, run 32796276478, was consumed and failed. Ordinary CI run 32964834996 also failed and never reached release or image publication. Only after the current correction is committed, separately authorized for push and a fresh ordinary CI is genuinely green may the user be asked for one separate explicit authorization for exactly one additional 1.0.0 dispatch; neither the earlier push nor the current local green matrix grants release dispatch."
         }
       ]
     }

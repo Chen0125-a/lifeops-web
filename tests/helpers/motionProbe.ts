@@ -110,28 +110,32 @@ export async function waitForStableFrameCadence(
   durationMs: number,
   minimumFrames: number,
 ) {
-  await page.bringToFront()
-  await page.evaluate(async ({ duration, minimum }) => {
-    const deadline = performance.now() + 12_000
-    let observed = 0
+  const deadline = Date.now() + 12_000
+  let observed = 0
+  let stableWindows = 0
 
-    while (performance.now() < deadline) {
-      observed = 0
+  while (Date.now() < deadline) {
+    await page.bringToFront()
+    observed = await page.evaluate(async (duration) => {
+      let frames = 0
       const started = performance.now()
       await new Promise<void>((resolve) => {
         const sample = (at: number) => {
-          observed += 1
+          frames += 1
           if (at - started < duration) requestAnimationFrame(sample)
           else resolve()
         }
         requestAnimationFrame(sample)
       })
-      if (observed >= minimum) return
-      await new Promise((resolveRetry) => setTimeout(resolveRetry, 80))
-    }
+      return frames
+    }, durationMs)
 
-    throw new Error(`Foreground frame cadence did not reach ${minimum} frames in ${duration}ms; observed ${observed}`)
-  }, { duration: durationMs, minimum: minimumFrames })
+    stableWindows = observed >= minimumFrames ? stableWindows + 1 : 0
+    if (stableWindows >= 2) return
+    await page.waitForTimeout(80)
+  }
+
+  throw new Error(`Foreground frame cadence did not hold ${minimum} frames in ${durationMs}ms for two consecutive windows; observed ${observed}`)
 }
 
 export async function measureOrbitPathDistances(page: Page, frameCount = 50) {

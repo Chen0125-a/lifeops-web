@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { positionVerticalScrollOwner, probeVerticalScrollOwners } from './helpers/motionProbe'
+import { positionVerticalScrollOwner, probeVerticalScrollOwners, waitForStableFrameCadence } from './helpers/motionProbe'
 
 const session = { mode: 'local-preview', account: 'p3-t7-overview@lifeops.local' }
 
@@ -128,10 +128,11 @@ test('overview keeps one continuous command surface and every summary continues 
   await expect(page.getByRole('navigation', { name: '私人空间导航' })).toBeVisible()
 })
 
-test('private transitions retain the header and outgoing route, focus the destination, restore state and never expose a white frame', async ({ page }) => {
+test('private transitions retain the header and outgoing route, focus the destination, restore state and never expose a white frame', async ({ page, browserName }) => {
   await page.goto('/app/overview')
   const header = page.locator('.workspace-header')
   await header.evaluate((element) => { element.setAttribute('data-p3-t7-stable-header', 'true') })
+  if (browserName === 'webkit') await waitForStableFrameCadence(page, 420, 12)
   await page.evaluate(() => {
     type Frame = { at: number; shell: boolean; header: boolean; panels: number; white: boolean }
     const runtime = window as typeof window & { __p3t7RouteFrames?: Frame[] }

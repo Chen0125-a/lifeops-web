@@ -71,9 +71,9 @@ Obsidian 项目权威账本：
 
 最新本地完整门禁 checkpoint：
 
-`outputs/evidence/source-checkpoints/2026-08-26-p6-t6-push-authorization-soft-pause-uncommitted-local-checkpoint.json`
+`outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-observation-auth-soft-pause-uncommitted-local-checkpoint.json`
 
-- root：`A569E5527BE52FF7D5A274AF6AD60A14D98D8D65E3A31DC4C7133DE74348B9F7`；旧 `F670579E213E5E53C2F149C69A94C8E7CA0670C5A79B6C45DBE173767A46C912` 已被本次 traceability 状态更新取代
+- root：`D19E1EEB8F486D212966F4BB02FA5F24A9C946EA8BCD45762C0E2BAE97F83857`；旧 `A569E5527BE52FF7D5A274AF6AD60A14D98D8D65E3A31DC4C7133DE74348B9F7` 已被 push 成功与认证状态更新取代
 - 602 sorted inputs
 - 保存值与 fresh rebuild 一致；manifest checkpoint 相同
 - 462 条 source/artifact hash 只在完整 frontend/server/MySQL/Helm/security/image/browser/visual 门禁真实通过后收敛
@@ -82,11 +82,11 @@ Obsidian 项目权威账本：
 
 - 私有仓库：`Chen0125-a/lifeops-web`
 - 分支：`main`
-- 当前本地 HEAD：`ebd163ca7627b3c2f9c595b0f06c30f3e35c1d98`
-- 当前 origin/main：`c387e7ce6d8497ba494b08dd348375995639517e`
+- 当前本地 HEAD 与 origin/main：`97f68ff3af81b2675229f95c4b367e806472a7d4`
 - 仓库级 deploy key 私钥只在 `.git` 内且未提交；不得读取或输出内容
 - 临时 bootstrap refs 已清理
-- 完整修订已经本地提交但尚未推送；第一次 `git push origin main` 被执行安全审查拒绝，原因是默认分支持久共享写入需要在精确远端和风险说明后取得用户新的明确授权。未尝试规避。
+- 用户明确授权后，两个本地提交已通过唯一一次 `git push origin main` 成功推送；`git ls-remote` 精确验证远端 `main` 为 `97f68ff...`。没有 dispatch release。
+- GitHub CLI 已保存 token 无效；唯一可用的内置浏览器未登录，私有 Actions URL 返回 signed-out 404；没有连接的 Chrome/Edge 会话。GitHub 登录页已显示并交给用户，不读取或填写凭据、OTP、Cookie。
 
 当前已知 WIP 至少包括：
 
@@ -126,22 +126,22 @@ Obsidian 项目权威账本：
 
 已解决：full frontend Vitest 单独串行最终复核为 85/85 files、401/401 tests，exit 0；此前资源争用假设不再作为 blocker。
 
-唯一下一原子动作：保持 P6 / P6-T6 / Step 7，取得用户对把本地 `ebd163c...` 及本次窄账本提交推送到精确 `https://github.com/Chen0125-a/lifeops-web.git` 的 `main` 的明确授权；授权后执行一次 `git push origin main` 并观察新的普通 CI。此授权不包含 release dispatch。
+唯一下一原子动作：保持 P6 / P6-T6 / Step 7，由用户在已显示的 GitHub 页面完成登录并回复“已登录”；随后只读刷新私有 Actions 页面，验证 GitHub 身份并观察 `97f68ff...` 的新普通 CI 到终态。不得 dispatch release。
 
 第一条验证命令严格为：
 
 ```powershell
-git push origin main
+browser reload https://github.com/Chen0125-a/lifeops-web/actions
 ```
 
 之后严格按顺序：
 
-1. 用户明确授权精确 origin/main 持久写入后，提交本次 push-authorization soft-pause 窄账本更新。
-2. 执行一次 `git push origin main`；不得改用旁路或其他远端。
-3. 观察新普通 CI 至真实终态，完整读取所有步骤与 exit/result。
-4. 新普通 CI 全绿后仍不得自动 dispatch release；先只读验证 GitHub 身份，再取得与 push 分离的明确 release 授权。
+1. 用户在可见 GitHub 页面自行完成登录；不得读取、输入或记录凭据、OTP、Cookie。
+2. 刷新精确 Actions URL，只读验证登录身份和 `97f68ff...` 的普通 CI run。
+3. 观察该普通 CI 至真实终态，完整读取所有 job/step/result。
+4. 全绿后仍不得自动 dispatch release；取得与 push/登录分离的明确 release 授权。
 
-当前 push-authorization soft-pause checkpoint root 为 `A569E5527BE52FF7D5A274AF6AD60A14D98D8D65E3A31DC4C7133DE74348B9F7`，602 inputs；真实派生边界仍为 30/10/4。必须重跑 `test:execution`、startup 与 handoff；任何后续 source/traceability 修改都必须重算。
+当前 CI-observation auth soft-pause checkpoint root 为 `D19E1EEB8F486D212966F4BB02FA5F24A9C946EA8BCD45762C0E2BAE97F83857`，602 inputs；真实派生边界仍为 30/10/4。必须重跑 `test:execution`、startup 与 handoff；任何后续 source/traceability 修改都必须重算。
 
 ## 5. 已批准视觉方向
 
@@ -273,3 +273,19 @@ P6-T6 合法通过后，连续执行 P6-T6 task-close → deterministic checkpoi
 - 没有伪造 Git、Docker、GitHub Actions、UHub、digest、attestation、DNS/TLS 或网络状态
 
 最终只给用户短、证据化的完成结论和精确的用户侧部署下一动作；在真实视觉决定或外部授权边界之外，不要中途交还。
+
+## 11. 2026-08-26 最新接班增量：认证 CI 失败与本地修订
+
+- GitHub 可见浏览器登录已完成，只读身份验证为 `Chen0125-a`。普通 CI run `32964834996` / job `98164958219` 对应 `97f68ff3af81b2675229f95c4b367e806472a7d4`，36m26s 后失败：MySQL、unit、typecheck、build 通过，Playwright 329 passed / 6 failed；后续 Helm/workflow/image 步骤跳过。没有 dispatch release。
+- 六项为：Chromium 登录标题淡出采样、Chromium-768 登录中间态 Axe 对比度、Firefox 主题帧、WebKit 两条路由帧数及 WebKit 主题帧。官方容器 focused 诊断证明产品在原门槛下可达，问题是独立过渡完成条件和 Firefox/WebKit 前台 rAF 稳定窗口不足；WebKit 曾在 600ms 内只有两帧原始样本，warm-up 切片后为空。
+- 当前未提交修订只改测试：登录 depth/Axe 在批准的最终 opacity 后采样；共享 `waitForStableFrameCadence` 要求两个连续、时长不变的前台稳定窗口并从 driver 重申 `bringToFront()`；主题采样拒绝空数组；WebKit 私有路由使用相同前置条件。未改变产品源码、worker、retry、浏览器项目、阈值、采样时长、几何或动效速率。
+- 新鲜完整本地通过：frontend typecheck；85/85 Vitest files、401/401 tests；production build 883 modules；server 361 ordinary + 50 exact-only skips、server typecheck/build；官方 MySQL 8.4.10 50/50、16 migrations、关闭后无进程/监听；Helm/media/security/observability/workflow/P6-T6 release contracts；root/server audit 0 vulnerabilities；current-source Web/API image smoke；dump/restore rehearsal；Firefox theme 3/3；WebKit critical 25/25；官方 Linux full Playwright 335/335、24.2m、workers=1/retries=0；real-Fastify 12/12；Lighthouse 1.00/1.00/0.96/0.91。七张 ADR-029 最终图已按原分辨率重新打开并通过。
+- 当前仍是 P6 / P6-T6 / Step 7，30 verified-local / 10 partial / 4 pending。`main`/`origin/main` 仍为 `97f68ff...`；本次修订尚未 commit/push。旧 CI-auth soft-pause checkpoint 保留作历史，新权威 checkpoint 将写入 `outputs/evidence/source-checkpoints/2026-08-26-p6-t6-ci-browser-remediation-local-full-gates-uncommitted-local-checkpoint.json`。
+- 唯一下一动作：合法重绑 462 evidence rows，构建并复核 saved/fresh/manifest checkpoint identity，运行 execution/startup/handoff、diff 和凭据安全审计后本地提交。再次推送精确 GitHub `main` 必须取得新的明确授权；推送后观察新普通 CI 全绿。此前 release 授权已被失败 run `32796276478` 消耗，不得 dispatch 或提前进入 P6-T7。
+
+## 12. 2026-08-26 最新接班增量：本地 remediation checkpoint 已收口
+
+- 462 条 evidence rows 已合法重绑；saved、两次 fresh rebuild 与 manifest checkpoint 四方一致，root 为 `C4C31E4AB631259D86F5D1C83A7C04352E77DC342031686488C018531576D982`，602 个 ordinal-sorted inputs。旧 CI-auth pause checkpoint 作为历史保留。
+- `test:execution` 95/95、独立 startup、独立 handoff 均 exit 0；两种模式一致报告 ADR-029、P6 / P6-T6 / Step 7、30/10/4 和 `C4C31E4...D982`，无 issue。五份 authority 哈希仍逐项精确匹配。
+- `git diff --check` exit 0，仅有 Windows 行尾提示；凭据安全审计覆盖 15 个变化路径、0 findings。结构化核对确认 462 evidence IDs 无增删或重排、artifact hash 无变化。
+- 唯一下一动作：只暂存这 15 个已审路径，复核 cached path/diff/凭据后创建本地 remediation commit。新的 `main` push 必须取得新的明确授权；不得 dispatch release 或提前进入 P6-T7。
