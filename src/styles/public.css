@@ -18,7 +18,7 @@
   color: var(--public-ink);
   color-scheme: light;
   background-color: var(--public-bg);
-  transition: color 900ms cubic-bezier(.2, .8, .2, 1), background-color 900ms cubic-bezier(.2, .8, .2, 1);
+  transition: background-color 900ms cubic-bezier(.2, .8, .2, 1);
 }
 
 .public-home[data-public-theme='night'] {
@@ -40,6 +40,7 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  contain: paint;
 }
 
 .public-home .public-sky::before,
@@ -47,8 +48,11 @@
   position: absolute;
   content: '';
   border-radius: 50%;
-  filter: blur(2px);
+  backface-visibility: hidden;
+  contain: paint;
+  transform: translateZ(0);
   transition: opacity 900ms cubic-bezier(.2, .8, .2, 1);
+  will-change: opacity;
 }
 
 .public-home .public-sky::before {
@@ -74,49 +78,29 @@
   opacity: 0;
 }
 
-.public-home .public-sky__layer {
+.public-home .public-sky__stars {
   position: absolute;
-  inset: -24px;
-  opacity: .08;
+  inset: 0;
+  opacity: .14;
+  backface-visibility: hidden;
+  contain: paint;
+  transform: translateZ(0);
   transition: opacity 900ms cubic-bezier(.2, .8, .2, 1);
+  will-change: opacity;
 }
 
-.public-home .public-sky__layer--far {
-  background-image:
-    radial-gradient(circle at 7% 19%, #fff 0 1px, transparent 1.6px),
-    radial-gradient(circle at 31% 72%, #fff6e7 0 .8px, transparent 1.4px),
-    radial-gradient(circle at 58% 11%, #eaf3ff 0 1px, transparent 1.7px),
-    radial-gradient(circle at 82% 63%, #fff 0 .7px, transparent 1.3px),
-    radial-gradient(circle at 94% 28%, #dceaff 0 1px, transparent 1.6px);
-  background-size: 337px 281px, 271px 319px, 409px 263px, 293px 367px, 359px 307px;
-  background-position: 13px 7px, 41px 29px, 83px 17px, 23px 61px, 109px 43px;
+.public-home[data-public-theme='night'] .public-sky__stars {
+  opacity: 1;
 }
 
-.public-home .public-sky__layer--middle {
-  background-image:
-    radial-gradient(circle at 13% 47%, #fff 0 1.2px, transparent 1.8px),
-    radial-gradient(circle at 36% 14%, #ffe9c9 0 .9px, transparent 1.5px),
-    radial-gradient(circle at 64% 81%, #e1edff 0 1px, transparent 1.7px),
-    radial-gradient(circle at 77% 33%, #fff 0 .8px, transparent 1.4px),
-    radial-gradient(circle at 91% 69%, #fff5df 0 1.1px, transparent 1.7px);
-  background-size: 283px 347px, 431px 293px, 311px 401px, 379px 271px, 263px 359px;
-  background-position: 67px 23px, 17px 89px, 101px 47px, 53px 11px, 127px 71px;
+.public-home .public-sky__field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
 }
-
-.public-home .public-sky__layer--near {
-  background-image:
-    radial-gradient(circle at 18% 84%, #fff 0 1.4px, transparent 2px),
-    radial-gradient(circle at 42% 38%, #ffe6bd 0 1px, transparent 1.7px),
-    radial-gradient(circle at 69% 17%, #d9e9ff 0 1.3px, transparent 1.9px),
-    radial-gradient(circle at 88% 76%, #fff 0 1px, transparent 1.6px),
-    radial-gradient(circle at 97% 44%, #fff0d7 0 1.2px, transparent 1.8px);
-  background-size: 397px 313px, 317px 389px, 457px 337px, 347px 433px, 419px 283px;
-  background-position: 31px 79px, 97px 37px, 19px 113px, 137px 59px, 73px 5px;
-}
-
-.public-home[data-public-theme='night'] .public-sky__layer--far { opacity: .42; }
-.public-home[data-public-theme='night'] .public-sky__layer--middle { opacity: .58; }
-.public-home[data-public-theme='night'] .public-sky__layer--near { opacity: .72; }
 
 .public-home .public-header {
   position: relative;

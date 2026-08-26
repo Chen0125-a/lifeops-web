@@ -27,6 +27,14 @@ export interface PublicDestination {
   color: string
 }
 
+export const publicDestinationLayouts: Record<PublicDestinationSlug, string> = {
+  now: 'status-rhythm',
+  doing: 'project-ledger',
+  learning: 'learning-notebook',
+  moments: 'moment-stream',
+  archive: 'archive-index',
+}
+
 export const publicDestinations: readonly PublicDestination[] = [
   {
     slug: 'now',

@@ -6,6 +6,7 @@ coverage/
 playwright-report/
 playwright-report-remote/
 test-results/
+.playwright-dist/
 .npm-cache/
 .env
 .env.*

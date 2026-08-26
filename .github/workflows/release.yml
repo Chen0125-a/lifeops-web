@@ -82,7 +82,7 @@ jobs:
         run: npm run test:mysql
       - name: Complete Playwright and accessibility acceptance
         run: |
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium firefox webkit
           npm run test:e2e
           npm run test:e2e:remote
       - uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1

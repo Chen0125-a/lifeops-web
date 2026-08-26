@@ -71,24 +71,29 @@ test('night theme restores a near-black deep-sky surface with layered stars', as
   await page.getByRole('button', { name: '切换为夜间主题' }).click()
   await expect(page.locator('.public-home')).toHaveAttribute('data-public-theme', 'night')
 
-  const starLayers = page.locator('[data-star-layer]')
-  await expect(starLayers).toHaveCount(3)
+  const starField = page.locator('[data-star-field]')
+  await expect(starField).toHaveCount(1)
   await expect(page.locator('.public-home')).toHaveCSS('background-color', 'rgb(2, 3, 6)')
-  const night = await page.locator('.public-home').evaluate((element) => {
+  const night = await page.locator('.public-home').evaluate(async (element) => {
     const surface = getComputedStyle(element)
-    const stars = [...element.querySelectorAll('[data-star-layer]')].map((layer) => getComputedStyle(layer))
+    const stars = element.querySelector<HTMLImageElement>('[data-star-field]')!
+    const starAsset = await fetch(stars.currentSrc || stars.src).then((response) => response.text())
     const tracks = [...element.querySelectorAll<HTMLElement>('[data-orbit-ring]')]
     return {
       backgroundColor: surface.backgroundColor,
-      starOpacities: stars.map((style) => Number(style.opacity)),
-      starCounts: stars.map((style) => (style.backgroundImage.match(/radial-gradient/g) ?? []).length),
+      starFieldOpacity: Number(getComputedStyle(element.querySelector('.public-sky__stars')!).opacity),
+      starLayers: [...starAsset.matchAll(/id="layer-(far|middle|near)"/g)].map((match) => match[1]),
+      starSource: new URL(stars.currentSrc || stars.src).pathname,
+      starsLoaded: stars.complete && stars.naturalWidth === 1440 && stars.naturalHeight === 900,
       trackMasks: tracks.map((track) => getComputedStyle(track, '::before').backgroundImage),
     }
   })
 
   expect(night.backgroundColor).toBe('rgb(2, 3, 6)')
-  expect(Math.min(...night.starOpacities)).toBeGreaterThanOrEqual(0.34)
-  expect(night.starCounts.reduce((total, count) => total + count, 0)).toBeGreaterThanOrEqual(12)
+  expect(night.starFieldOpacity).toBeGreaterThanOrEqual(0.99)
+  expect(night.starLayers).toEqual(['far', 'middle', 'near'])
+  expect(night.starSource).toBe('/public-stars.svg')
+  expect(night.starsLoaded).toBe(true)
   expect(night.trackMasks).toHaveLength(4)
   expect(night.trackMasks.every((mask) => mask.includes('linear-gradient'))).toBe(true)
 })

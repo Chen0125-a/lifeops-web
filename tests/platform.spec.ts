@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p5-t3')
 const checkedAt = '2026-08-23T00:14:43.000Z'
@@ -96,7 +97,7 @@ test('platform operations center keeps truthful states, keyboard tabs and approv
       return activeBox.x >= navigationBox.x - 1
         && activeBox.x + activeBox.width <= navigationBox.x + navigationBox.width + 1
     }, { message: `active platform route stays inside the ${viewport.width} CSS px navigation` }).toBe(true)
-    await page.screenshot({ path: resolve(evidenceDir, viewport.name), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, viewport.name), fullPage: true })
   }
 
   await page.setViewportSize({ width: 1440, height: 900 })
@@ -128,5 +129,5 @@ test('platform route respects reduced motion without hiding its current navigati
   })))
   expect(maximumDuration).toBeLessThanOrEqual(.001)
   await expect(page.getByRole('navigation', { name: '私人空间导航' }).getByRole('link', { name: '平台' })).toBeVisible()
-  await page.screenshot({ path: resolve(evidenceDir, 'platform-overview-390x844-reduced-motion.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'platform-overview-390x844-reduced-motion.png'), fullPage: true })
 })

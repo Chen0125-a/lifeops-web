@@ -1,5 +1,8 @@
 import { lazy, Suspense, type ReactNode } from 'react'
-import { Link, Navigate, Outlet, type RouteObject } from 'react-router-dom'
+import { Link, Navigate, Outlet, useLocation, type RouteObject } from 'react-router-dom'
+import { OrbitGlyph } from './components/public/OrbitGlyph'
+import type { PublicReturnState } from './components/public/publicReturnState'
+import { getPublicDestination, publicDestinationLayouts, type PublicDestinationSlug } from './content/publicDestinations'
 import { PublicHomePage } from './pages/PublicHomePage'
 import { AuthProvider, useAuth } from './state/AuthContext'
 
@@ -32,6 +35,29 @@ const PlatformPage = lazy(() => import('./features/platform/PlatformPage').then(
 
 function deferredRoute(children: ReactNode) {
   return <Suspense fallback={<div aria-live="polite" className="route-gate">正在打开工作区…</div>}>{children}</Suspense>
+}
+
+function PublicDestinationRoute({ slug }: { slug: PublicDestinationSlug }) {
+  const location = useLocation()
+  const destination = getPublicDestination(slug)
+  const returnState = (location.state as { publicReturn?: PublicReturnState } | null)?.publicReturn
+  const fallback = destination ? (
+    <main
+      className={`public-detail public-detail--${destination.slug}`}
+      data-direct-entry={returnState ? 'false' : 'true'}
+      data-public-detail-layout={publicDestinationLayouts[destination.slug]}
+      data-public-motion-subtree="detail-continuity"
+    >
+      {returnState ? (
+        <span aria-hidden="true" data-flip-id={`public-object-${returnState.sourceObjectId}`}>
+          <OrbitGlyph glyph={destination.glyph} />
+        </span>
+      ) : null}
+      <div aria-live="polite" className="route-gate">正在打开工作区…</div>
+    </main>
+  ) : <div aria-live="polite" className="route-gate">正在打开工作区…</div>
+
+  return <Suspense fallback={fallback}><PublicDestinationPage slug={slug} /></Suspense>
 }
 
 function RoutePlaceholder({ title }: { title: string }) {
@@ -78,11 +104,11 @@ export const appRoutes: RouteObject[] = [
     element: <App />,
     children: [
       { path: '/', element: <PublicHomePage /> },
-      { path: '/now', element: deferredRoute(<PublicDestinationPage slug="now" />) },
-      { path: '/doing', element: deferredRoute(<PublicDestinationPage slug="doing" />) },
-      { path: '/learning', element: deferredRoute(<PublicDestinationPage slug="learning" />) },
-      { path: '/moments', element: deferredRoute(<PublicDestinationPage slug="moments" />) },
-      { path: '/archive', element: deferredRoute(<PublicDestinationPage slug="archive" />) },
+      { path: '/now', element: <PublicDestinationRoute slug="now" /> },
+      { path: '/doing', element: <PublicDestinationRoute slug="doing" /> },
+      { path: '/learning', element: <PublicDestinationRoute slug="learning" /> },
+      { path: '/moments', element: <PublicDestinationRoute slug="moments" /> },
+      { path: '/archive', element: <PublicDestinationRoute slug="archive" /> },
       { path: '/explore/now', element: <Navigate to="/now" replace /> },
       { path: '/explore/projects', element: <Navigate to="/doing" replace /> },
       { path: '/explore/notes', element: <Navigate to="/learning" replace /> },

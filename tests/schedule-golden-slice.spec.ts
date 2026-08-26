@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p3-t3')
 const session = { mode: 'local-preview', account: 'schedule-e2e@lifeops.local' }
@@ -115,7 +116,7 @@ test('schedule golden slice keeps responsive geometry and a complete keyboard sc
     await page.getByRole('button', { name: '撤销排期' }).click()
     await expect.poll(() => calls.deletes).toEqual(['/api/v1/schedule-blocks/block-new'])
   } finally {
-    await context.tracing.stop({ path: resolve(evidenceDir, 'schedule-responsive-keyboard-trace.zip') })
+    await traceToPath(context, resolve(evidenceDir, 'schedule-responsive-keyboard-trace.zip'))
   }
 })
 

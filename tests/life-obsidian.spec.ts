@@ -2,6 +2,7 @@ import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
 import { strToU8, zipSync } from 'fflate'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const timestamp = '2026-08-22T08:00:00.000Z'
 const session = { mode: 'local-preview', account: 'p4-t7-life-obsidian@lifeops.local' }
@@ -297,20 +298,20 @@ test('Life Obsidian conflict workspace passes responsive, keyboard, Back, zoom a
     }))
     expect(geometry.fits, `${viewport.name}: ${JSON.stringify(geometry)}`).toBe(true)
     await expectActiveLifeRouteVisible(viewport.name)
-    await page.screenshot({ path: resolve(evidenceDir, `life-obsidian-conflict-${viewport.name}.png`), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, `life-obsidian-conflict-${viewport.name}.png`), fullPage: true })
   }
 
   await page.setViewportSize({ width: 320, height: 900 })
   await page.evaluate(() => scrollTo(0, 0))
   await expectActiveLifeRouteVisible('320x900')
-  await page.screenshot({ path: resolve(evidenceDir, 'life-obsidian-conflict-320x900.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'life-obsidian-conflict-320x900.png'), fullPage: true })
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true)
 
   await page.setViewportSize({ width: 640, height: 900 })
   await page.evaluate(() => { document.documentElement.style.zoom = '200%' })
   await page.evaluate(() => scrollTo(0, 0))
   await expectActiveLifeRouteVisible('200pct')
-  await page.screenshot({ path: resolve(evidenceDir, 'life-obsidian-conflict-200pct.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'life-obsidian-conflict-200pct.png'), fullPage: true })
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true)
   await page.evaluate(() => { document.documentElement.style.zoom = '' })
 
@@ -330,7 +331,7 @@ test('Life Obsidian conflict workspace passes responsive, keyboard, Back, zoom a
   expect(maximumMotion).toBeLessThanOrEqual(0.001)
   await page.setViewportSize({ width: 390, height: 844 })
   await page.evaluate(() => scrollTo(0, 0))
-  await page.screenshot({ path: resolve(evidenceDir, 'life-obsidian-conflict-390x844-reduced-motion.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'life-obsidian-conflict-390x844-reduced-motion.png'), fullPage: true })
 })
 
 test('Life Obsidian offline refresh stays unconnected and preserves a bounded diagnostic', async ({ page }) => {
@@ -343,5 +344,5 @@ test('Life Obsidian offline refresh stays unconnected and preserves a bounded di
   await expect(page.getByText('降级状态 · 尚未连接')).toBeVisible()
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.evaluate(() => scrollTo(0, 0))
-  await page.screenshot({ path: resolve(evidenceDir, 'life-obsidian-offline-1440x900.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'life-obsidian-offline-1440x900.png'), fullPage: true })
 })

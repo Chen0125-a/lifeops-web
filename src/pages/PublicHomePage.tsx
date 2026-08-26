@@ -42,7 +42,7 @@ function useReducedMotionPreference() {
   return reducedMotion
 }
 
-function PublicHeroCopy() {
+function PublicHeroCopy({ hidden = false }: { hidden?: boolean }) {
   const copyRef = useRef<HTMLDivElement>(null)
   const reducedMotion = useReducedMotionPreference()
   const playedRef = useRef(false)
@@ -109,6 +109,7 @@ function PublicHeroCopy() {
 
   return (
     <div
+      aria-hidden={hidden || undefined}
       className="public-hero__copy"
       data-layout-share="36"
       data-testid="public-copy"
@@ -332,9 +333,9 @@ export function PublicHomePage() {
       ref={homeRef}
     >
       <div aria-hidden="true" className="public-sky">
-        <span className="public-sky__layer public-sky__layer--far" data-star-layer="far" />
-        <span className="public-sky__layer public-sky__layer--middle" data-star-layer="middle" />
-        <span className="public-sky__layer public-sky__layer--near" data-star-layer="near" />
+        <div className="public-sky__stars">
+          <img alt="" aria-hidden="true" className="public-sky__field" data-star-field data-star-layers="far middle near" src="/public-stars.svg" />
+        </div>
       </div>
 
       <header className="public-header">
@@ -375,7 +376,7 @@ export function PublicHomePage() {
       </header>
 
       <section aria-labelledby="hero-title" className="public-hero">
-        <PublicHeroCopy />
+        <PublicHeroCopy hidden={loginScene.phase !== 'closed'} />
 
         <div
           className="public-hero__stage"

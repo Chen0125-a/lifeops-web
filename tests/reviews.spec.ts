@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p3-t6')
 const session = { mode: 'local-preview', account: 'reviews-e2e@lifeops.local' }
@@ -218,7 +219,7 @@ test('review workspace preserves the 3/6/3 facts, URL modes and ordered mobile l
     expect(dateGeometry).toEqual({ separateRows: true, contained: true })
     await page.screenshot({ path: resolve(evidenceDir, 'reviews-320x900-200pct-reflow.png'), fullPage: true })
   } finally {
-    await context.tracing.stop({ path: resolve(evidenceDir, 'reviews-responsive-history-trace.zip') })
+    await traceToPath(context, resolve(evidenceDir, 'reviews-responsive-history-trace.zip'))
   }
 })
 

@@ -5,7 +5,7 @@ WORKDIR /workspace
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
 
-COPY index.html tsconfig*.json vite.config.ts vitest.config.ts ./
+COPY index.html tsconfig*.json vite.config.ts vitest.config.ts playwright.config.ts ./
 COPY src ./src
 RUN npm run build
 

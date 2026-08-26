@@ -68,8 +68,8 @@ jobs:
           MYSQL_USER: lifeops
           MYSQL_PASSWORD: lifeops-integration-password
         run: npm run test:mysql
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
+      - name: Install acceptance browsers
+        run: npx playwright install --with-deps chromium firefox webkit
       - name: Complete Playwright and accessibility acceptance
         run: |
           npm run test:e2e

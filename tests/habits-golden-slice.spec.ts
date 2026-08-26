@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p3-t4')
 const session = { mode: 'local-preview', account: 'habits-e2e@lifeops.local' }
@@ -148,7 +149,7 @@ test('habit rhythm passes responsive, keyboard, entry and history acceptance', a
     await page.keyboard.press('Escape')
     await expect(edit).toBeFocused()
   } finally {
-    await context.tracing.stop({ path: resolve(evidenceDir, 'habits-responsive-keyboard-trace.zip') })
+    await traceToPath(context, resolve(evidenceDir, 'habits-responsive-keyboard-trace.zip'))
   }
 })
 

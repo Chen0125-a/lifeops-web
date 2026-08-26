@@ -150,6 +150,16 @@ describe('PublicHomePage', () => {
     ])
   })
 
+  it('renders one cached SVG star field with three authored decorative layers', () => {
+    const { container } = renderPublicHome()
+    const field = container.querySelector<HTMLImageElement>('img[data-star-field]')
+
+    expect(field).toHaveAttribute('src', '/public-stars.svg')
+    expect(field).toHaveAttribute('data-star-layers', 'far middle near')
+    expect(field).toHaveAttribute('aria-hidden', 'true')
+    expect(field?.alt).toBe('')
+  })
+
   it('exposes pause and resume without registering wheel navigation', () => {
     const addEventListener = vi.spyOn(window, 'addEventListener')
 
@@ -194,6 +204,7 @@ describe('PublicHomePage', () => {
     await waitFor(() => expect(container.querySelector('[data-public-orbit]')).toHaveAttribute('data-motion-enhanced', 'true'))
     await user.click(trigger)
     await waitFor(() => expect(home).toHaveAttribute('data-login-phase', 'open'))
+    expect(container.querySelector('.public-hero__copy')).toHaveAttribute('aria-hidden', 'true')
     expect(home).toHaveAttribute('data-public-scene', 'login')
     expect(container.querySelector('[data-public-orbit]')).toHaveAttribute(
       'data-motion-rate',

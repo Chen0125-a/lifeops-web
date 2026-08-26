@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { publicDestinations, type PublicDestination, type PublicDestinationSlug } from '../../content/publicDestinations'
+import { publicDestinationLayouts, publicDestinations, type PublicDestination, type PublicDestinationSlug } from '../../content/publicDestinations'
 import { gsap, useGSAP } from '../../motion/publicGsap'
 import { OrbitGlyph } from './OrbitGlyph'
 import type { PublicReturnState } from './publicReturnState'
@@ -22,14 +22,6 @@ export interface PublicDetailShellProps {
   onReturn?: (state?: PublicReturnState) => void
   returnState?: PublicReturnState
   transitioning?: boolean
-}
-
-const layoutByDestination: Record<PublicDestinationSlug, string> = {
-  now: 'status-rhythm',
-  doing: 'project-ledger',
-  learning: 'learning-notebook',
-  moments: 'moment-stream',
-  archive: 'archive-index',
 }
 
 const sectionTitle: Record<PublicDestinationSlug, string> = {
@@ -69,7 +61,7 @@ export function PublicDetailShell({ destination, items, contentStatus = 'ready',
   const related = items.slice(0, 3)
   const adjacentDestinations = publicDestinations.filter((item) => item.slug !== destination.slug).slice(0, 2)
   return (
-    <main className={`public-detail public-detail--${destination.slug}`} data-direct-entry={returnState ? 'false' : 'true'} data-public-detail-layout={layoutByDestination[destination.slug]} data-public-motion-subtree="detail-continuity" data-testid="public-detail-shell" ref={shellRef}>
+    <main className={`public-detail public-detail--${destination.slug}`} data-direct-entry={returnState ? 'false' : 'true'} data-public-detail-layout={publicDestinationLayouts[destination.slug]} data-public-motion-subtree="detail-continuity" data-testid="public-detail-shell" ref={shellRef}>
       {returnState && transitioning ? <span aria-hidden="true" data-flip-id={`public-object-${returnState.sourceObjectId}`}><OrbitGlyph glyph={destination.glyph} /></span> : null}
       <header className="public-detail__bar" data-fixed-return data-sticky-exit style={{ height: '64px' }}><button aria-label="返回公开星盘" onClick={requestReturn} type="button"><span aria-hidden="true">←</span><span>返回公开星盘</span></button><span>{destination.label}</span><span>ESC</span></header>
       <section className="public-detail__hero"><div className="public-detail__glyph"><OrbitGlyph glyph={destination.glyph} /></div><div><p>LifeOps / {destination.shortLabel}</p><h1 ref={headingRef} tabIndex={-1}>{destination.label}</h1><span>{destination.description}</span></div></section>

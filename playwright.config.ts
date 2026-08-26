@@ -26,6 +26,7 @@ export default defineConfig({
   use: {
     actionTimeout: 15_000,
     baseURL: 'http://127.0.0.1:4193',
+    timezoneId: 'Asia/Shanghai',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
@@ -49,6 +50,7 @@ export default defineConfig({
     {
       name: 'firefox-critical',
       testMatch: /(?:adr029-login-orbit|public-home|public-login|private-overview|motion-continuity)\.spec\.ts/,
+      timeout: 90_000,
       // Firefox 153 cannot create an SWGL draw target in this Windows headless session.
       // Headed mode exercises the same product paths and keeps headless CI on other platforms.
       use: { ...devices['Desktop Firefox'], headless: process.platform !== 'win32', viewport: { width: 1440, height: 900 } },
@@ -56,6 +58,7 @@ export default defineConfig({
     {
       name: 'webkit-critical',
       testMatch: /(?:adr029-login-orbit|public-home|public-login|private-overview|motion-continuity)\.spec\.ts/,
+      timeout: 90_000,
       // The Windows WebKit port throttles rAF when its headless page is backgrounded.
       // Headed mode plus explicit page foregrounding keeps timing and resize evidence valid.
       use: { ...devices['Desktop Safari'], headless: process.platform !== 'win32', viewport: { width: 1440, height: 900 } },

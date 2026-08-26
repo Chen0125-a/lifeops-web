@@ -73,8 +73,15 @@ test('1440 rest and login compositions keep the locked outer ring fully visible 
   await page.setViewportSize(viewport)
   await page.goto('/')
 
-  const ring = page.locator('[data-orbit-boundary="orbit-d"]')
+  const enhancedOrbit = page.locator('[data-public-orbit][data-motion-enhanced="true"]')
+  await expect(enhancedOrbit).toBeAttached()
+  const ring = enhancedOrbit.locator('[data-orbit-boundary="orbit-d"]')
   await expect(ring).toBeAttached()
+  await expect.poll(async () => {
+    const box = await bounds(ring)
+    return Math.abs(box.width - OUTER_DIAMETER) < 0.5
+      && Math.abs(box.height - OUTER_DIAMETER) < 0.5
+  }).toBe(true)
   const rest = await bounds(ring)
   expect(rest.width).toBeCloseTo(OUTER_DIAMETER, 0)
   expect(rest.height).toBeCloseTo(OUTER_DIAMETER, 0)

@@ -1,377 +1,276 @@
 # LifeOps Web 新对话完整接班提示词
 
-继续 LifeOps Web，高质量、按顺序持续执行。固定工作区：
+继续并最终完成 LifeOps Web 项目。这是用户明确授权的新窗口接班任务。
+
+固定工作区：
 
 `C:\Users\Administrator\Documents\Codex\2026-08-08\bug\lifeops-web`
 
-本次不是重新规划项目，而是从 P4 完整本地关闭后的新鲜检查点停在 P5-T1 Step 1 实施前。不得重新讨论已批准设计，不得重复安装依赖，不得初始化 Git，也不得把旧对话结果直接当作当前证据。
+Obsidian 项目权威账本：
 
-## 开始时严格只读
+`D:\笔记\项目\LifeOps-高可用K8s平台`
 
-在完成全部启动核验和接班报告前，不得修改源码、测试、计划、追踪、证据、依赖、数据库或部署状态。
+## 0. 接班执行原则
+
+- 不创建子 Agent、并行 Agent、新工作树或新的 Codex 任务；在当前任务内持续执行。
+- 除真实需要用户视觉决定、外部授权、凭据或外部系统状态外，不要在单个 task、阶段说明、checkpoint、局部绿灯或上下文压缩后停止。
+- 磁盘中的最新权威文件高于本提示词。发现差异时先解释并按变更控制处理，不得用本提示词覆盖磁盘事实。
+- 保护全部现有用户/WIP 变化。禁止 reset、checkout 丢弃、clean、覆盖或擅自还原文件。
+- 工作区已经是 Git 仓库，绝不再次 `git init`。
+- 不得泄露、回显、记录或提交密码、令牌、Cookie、私钥、认证文件及凭据值。
+- 用户已批准最终陌生 K8s 集群部署手册的设计合同；不要再次要求批准该设计。这个批准不等于批准第二次 release dispatch。
+
+## 1. Mandatory startup：任何写操作前完整执行
 
 1. 完整读取工作区 `AGENTS.md`。
-2. 完整读取本文件；不得只看摘要。本文件是正式、完整的新对话接班入口。
+2. 完整读取本文件；它是正式的新窗口接班入口，不得只读聊天摘要。
 3. 完整读取：
    - `D:\笔记\项目\LifeOps-高可用K8s平台\CURRENT.md`
-   - `D:\笔记\项目\LifeOps-高可用K8s平台\DECISIONS.md` 中 ADR-016 至 ADR-027
-   - 最新 session：`D:\笔记\项目\LifeOps-高可用K8s平台\sessions\2026-08-15_S021_ADR-025目标层级恢复与P3-T2执行.md`
+   - `D:\笔记\项目\LifeOps-高可用K8s平台\DECISIONS.md` 中 ADR-016 至最新 ADR-029
+   - `D:\笔记\项目\LifeOps-高可用K8s平台\sessions\2026-08-23_S022_P6-T5参考圆环正式整合.md` 最新尾部
+4. 完整读取四份权威设计：
    - `docs/superpowers/specs/2026-08-09-lifeops-web-final-redesign-design.md`
    - `docs/superpowers/specs/2026-08-10-lifeops-life-domain-design.md`
    - `docs/superpowers/specs/2026-08-10-lifeops-execution-completeness-design.md`
    - `docs/superpowers/specs/2026-08-10-lifeops-web-image-delivery-boundary-design.md`
+5. 完整读取：
    - `docs/superpowers/plans/2026-08-09-00-lifeops-final-master-plan.md`
    - `docs/superpowers/plans/2026-08-09-execution-control.md`
-   - `docs/traceability/requirements.md`
-   - `docs/traceability/source-clauses.json`
-   - `docs/traceability/acceptance-matrix.json`
-   - `docs/traceability/evidence-manifest.json`
-   - `docs/superpowers/plans/2026-08-09-04-lifeops-knowledge-publishing-obsidian-plan.md` 的 P4-T3 全文，包括 Files、Interfaces、checkbox、命令和退出门禁。
-4. 检查目录、package manifests、源码和已有用户修改。当前不是 Git 仓库；未经用户明确授权不得 `git init`、reset、checkout、clean、覆盖、清理或丢弃文件。
-5. 使用 `obsidian-user-memory` 运行 `memory-health` 和 `runtime-context`，只读加载 LifeOps Web 相关长期事实；不记录凭据，不执行 Git 或远程记忆同步。
-6. 只读核对下面的 authority 哈希、checkpoint 和执行状态。无法由已批准变更解释的不一致是停线条件。
+   - `docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md`
+   - 当前 P6-T6 的 Files、Interfaces、全部步骤、checkbox 与退出门禁
+   - 后续 P6-T7、P6-T8、P6 phase-close 和 project-close 的完整合同
+6. 只读复核：
+   - `git status`、HEAD、origin/main 和全部 WIP
+   - 五份 authority SHA-256
+   - source registry、acceptance matrix、task-execution、requirements、evidence manifest
+   - 保存 checkpoint、fresh rebuild 和 manifest checkpoint identity
+   - 残留 preview/test/browser 进程；只可识别明确属于本轮的 owned 进程，绝不终止用户浏览器
+7. 不读取 kubeconfig，不执行 kubectl、Helm install、Argo sync/rollback 或 cluster smoke。
+8. 写操作前先向用户简短陈述：active tuple、最后可信完成边界、当前 WIP 派生状态、真实 blocker、唯一下一原子动作和第一条验证命令。
 
-## 当前 authority 与锁定哈希
+五份 authority 的锁定 SHA-256：
 
-Authority 是 ADR-027。五份 authority SHA-256 必须新鲜复算并全部匹配：
-
-- final redesign：`7CFD778463BA871D283BD0B3E89BD458C45303905F6025E3BDD05225B8CC8B23`
+- final redesign：`59104F2C275207401C7A70E0539CB15C7FF305F92348BE695C73F854FF1AD617`
 - life domain：`ADF4BCD234D43035B1115864FE3579CAE7CC61C341E1142F6B3203C0A3E9CC24`
 - execution completeness：`43ECB091350925A90620E3D88E778F8F6AD6E547B11CDB5D806248E92D07B112`
-- image boundary：`63F3D2903D6BDC98A2C04C2DDC111D69AA9D8A8A97766B98899918A1D49800B6`
-- master plan：`11DFDF44A2344594BFE2135DFA81743BD1CDBB30236C35FF546DFC87AA2CEFF7`
+- image delivery boundary：`63F3D2903D6BDC98A2C04C2DDC111D69AA9D8A8A97766B98899918A1D49800B6`
+- master plan：`1B89E19803B1C588228EBD3BFEFC64DE84DA3AAC797AF6C272EE3FAA16664716`
 
-任一不一致都先判断是否发生用户批准的设计/计划变更；完成变更控制前不得继续产品实现。
+任何无法由已批准变更解释的哈希差异都是停线条件。
 
-## 当前正式状态
+## 2. 当前权威执行状态
 
-- Status：`implementation-active`
-- Active plan/task/step：P4 / P4-T4 / Step 1
-- Requirements：24/44
-- Parent rollup：24 `verified-local` + 10 `partial` + 10 `pending`
-- Atom rollup：515 `verified-local` + 434 `partial` + 471 `pending`
-- Catalog：44 parents、52 surfaces、1,420 atoms（776 original + 644 life）
-- Evidence manifest：330 rows
-- Execution guard Task 1–10、P1-T1 至 P1-T13、P2-T1 至 P2-T6、P3-T1 至 P3-T14、P4-T1 至 P4-T3 已本地完成并 checkpoint。
-- GOAL-01、SCHEDULE-01、HABIT-01、REVIEW-01、KNOW-01、OBS-01、LIFE-02 至 LIFE-18、LIFE-22 为 atom-derived `verified-local`。
-- APP-01、RECORD-01、LIFE-01、LIFE-19、LIFE-21、LIFE-23、LIFE-24 为 `partial`。不得冒充 P4-T4 及以后任务、P5/P6、immutable-image、registry 或最终交付完成。
-- P3-T14 的最终反向审计在 `outputs/final/private-core-verification.md`。
+- authority revision：ADR-029
+- status：`implementation-active`
+- active tuple：P6 / P6-T6 / Step 7
+- 最后可信完成边界：30/44，即 30 `verified-local` + 10 `partial` + 4 `pending`
+- 当前 WIP 已由新鲜完整本地门禁和合法哈希收敛重新派生为 30 `verified-local` + 10 `partial` + 4 `pending`
+- registry-bound P6-T6 原子仍未满足；本地收敛不提升 30/10/4，也不声称发布完成
+- matrix：44 parents / 52 surfaces / 1,427 atoms
+- evidence manifest：462 条既有 evidence rows
 
-## 当前非 Git 完成 checkpoint
+最新本地完整门禁 checkpoint：
 
-`outputs/evidence/source-checkpoints/2026-08-22-p4-t3-obsidian-manual-sync-uncommitted-local-checkpoint.json`
+`outputs/evidence/source-checkpoints/2026-08-26-p6-t6-local-full-gates-uncommitted-local-checkpoint.json`
 
-预期：
+- root：`F670579E213E5E53C2F149C69A94C8E7CA0670C5A79B6C45DBE173767A46C912`
+- 602 sorted inputs
+- 保存值与 fresh rebuild 一致；manifest checkpoint 相同
+- 462 条 source/artifact hash 只在完整 frontend/server/MySQL/Helm/security/image/browser/visual 门禁真实通过后收敛
 
-- root：`74ABFE2B4E8974FA474298C37EA83A10D4AA81243B94A5733C1CBF0812D36DAC`
-- 447 个排序输入
-- `docs/traceability/evidence-manifest.json` 为 330 行 evidence
-- saved checkpoint、新鲜重建 checkpoint 和 manifest root 必须一致。
+## 3. Git、CI 与远端事实
 
-本接班文件、execution-control、工作包、CURRENT 和 session 不在 allowlisted source inputs 内；只更新这些控制文件不应改变上述 root。不得运行历史 task 的 evidence helper 覆盖当前停点。
+- 私有仓库：`Chen0125-a/lifeops-web`
+- 分支：`main`
+- 当前 HEAD 与 origin/main：`c387e7ce6d8497ba494b08dd348375995639517e`
+- 仓库级 deploy key 私钥只在 `.git` 内且未提交；不得读取或输出内容
+- 临时 bootstrap refs 已清理
+- 当前 WIP 未提交、未推送；本地完整门禁 checkpoint 不是 Git revision
 
-## 启动执行门禁
+当前已知 WIP 至少包括：
 
-完成只读回读、五份哈希和 checkpoint 核对后，第一条执行门禁命令必须是：
+- `.github/workflows/ci.yml`
+- `.github/workflows/release.yml`
+- `docs/superpowers/plans/2026-08-09-execution-control.md`
+- `docs/traceability/evidence-manifest.json`
+- `docs/traceability/requirements.md`
+- `docs/traceability/task-execution.json`
+- `outputs/evidence/browser/p5-t5/quick-create-1440x900.png`
+- `playwright.config.ts`
+- `scripts/validate-workflows.test.ps1`
+- `src/playwrightConfig.test.ts`
+- `src/components/private/QuickCreate.test.tsx`
+- `src/components/private/QuickCreate.tsx`
+- `src/pages/PublicHomePage.test.tsx`
+- `src/pages/PublicHomePage.tsx`
+- `src/styles/public.css`
+- `tests/motion-continuity.spec.ts`
+- `tests/public-login.spec.ts`
+- 最新 local-full-gates checkpoint 与本接班/账本更新
 
-```powershell
-npm.cmd run verify:execution -- --mode startup
-```
+不得擅自还原被测试重生成的 `outputs/evidence/browser/p5-t5/quick-create-1440x900.png`；先打开复核，再按合法证据流程处理。
 
-必须阅读完整输出和退出码。预期 exit 0，并报告：
+普通 CI run `32800641280`（revision `c387e7c...`）耗时 50m54s：MySQL、unit、typecheck、production build 通过；浏览器步骤 279 passed / 56 failed。
 
-- ADR-027、`implementation-active`
-- P4 / P4-T4 / Step 1
-- 24/44
-- 24 verified-local + 10 partial + 10 pending parents
-- checkpoint root `74ABFE2B4E8974FA474298C37EA83A10D4AA81243B94A5733C1CBF0812D36DAC`
-- blockers `[]`
-- next action `P4-T4 Step 1`
-- first verification command `npm.cmd run test:server -- server/src/domain/publishing.test.ts server/src/services/publicationScheduler.test.ts server/src/routes/publishing.test.ts server/src/routes/publicContent.test.ts`
+- 52 项：workflow 只安装 Chromium，却执行 Firefox/WebKit，属于真实环境覆盖缺口。
+- 4 项 Chromium 真问题：登录淡出标题对比度、149.9ms 主题帧超过未改变的 133.4ms 门、runner 时区导致计划稿缺失、Quick Create 原 opener 被替换后焦点未恢复。
 
-P3 关闭前的产品证据仅供比对；新对话仍须新鲜运行 execution-contract、startup 和后续任务门禁。
+当前未提交 TDD 修订已经覆盖三浏览器安装、`Asia/Shanghai`、detached opener 焦点、登录期间 hero copy `aria-hidden`、主题层 compositor 准备和 WebKit 前台稳定采样。没有放宽 worker、retry、阈值、采样时间、视觉几何或动效速率。
 
-## P3-T14 已完成边界
+新鲜完整 GREEN：frontend typecheck、85/85 files 与 401/401 Vitest、production build；server 361 passed +50 exact-integration skips、typecheck/build；官方 MySQL 8.4.10 50/50；Helm/workflow/security/audit/local-image/data-rehearsal；remote browser 12/12；Lighthouse 1.00/1.00/0.96/0.91；官方 Linux Playwright 335/335（workers=1、retries=0）。最终 diff 审计发现旧 `public-detail-*` 截图只捕获了 route gate；新增证据完整性 behavioral RED 后，`public-final` 必须等待真实 `public-detail-shell` 且 route gate 消失。官方 Linux修正复核为 5/5，20 张详情图全部重生成，1440/390 样本已逐张打开确认真实详情内容。
 
-- `outputs/final/private-core-verification.md` 已记录精确自动化计数、环境/字体/DPR/视口/动效/lock 元数据、失败状态和 30 个 P3 parent 的反向证据链。
-- Fresh gates：Web 64 files/288；server 220 pass +45 exact-only skip；official MySQL 8.4.10/34034 45/45 zero skip；双 typecheck/build exit 0；Life comprehensive 20/20；canonical Life 19/19；ordinary 57/57；real Fastify 3/3。
-- 主执行者重新生成并打开 8 张 contact sheet；306-row manifest 派生 488 verified-local +434 partial +498 pending atoms、22 verified-local +10 partial +12 pending parents。
-- P3 phase-close 只承认 P3 责任边界；P4/P5/P6、immutable image/UHub/registry/final delivery 仍未完成。
+## 4. 当前边界与第一条命令
 
-## P4-T3 已完成边界与 P4-T4 精确起点
+已解决：Playwright 配置合同测试保留，且已从 frontend application TypeScript graph 正确隔离；frontend typecheck exit 0。
 
-1. P4-T1/P4-T2 已完成 knowledge domain/workspace；P4-T3 已完成 exact `fflate@0.8.3`、stable frontmatter、pure no-delete sync plan、permission-gated read-only-first folder scan、backup-before-write atomic batch、deterministic ZIP preview/apply、fallback 与 standalone settings behavior。
-2. Fresh gates：focused 24/24、full Web 72 files/326、typecheck/build、shared Chromium 60/60、standalone P4-T3 Chromium 1/1；P4-T3 无 MySQL schema/persistence，exact MySQL 不适用。
-3. 主执行者已打开 1440/1024/768/390、320 CSS px/200%、preview 与 reduced-motion 成品图；OBS-01 的四 atoms 和 parent 均为 `verified-local`。P4-T6 仍负责真实 route integration。
-4. P4-T4 Step 1 只写 publishing domain RED，覆盖 five categories、slug、copied-source whitelist、immutable revision、schedule timestamp 与 revision diff；不得先写实现。
-5. 第一条命令为：
+已解决：full frontend Vitest 单独串行最终复核为 85/85 files、401/401 tests，exit 0；此前资源争用假设不再作为 blocker。
 
-```powershell
-npm.cmd run test:server -- server/src/domain/publishing.test.ts server/src/services/publicationScheduler.test.ts server/src/routes/publishing.test.ts server/src/routes/publicContent.test.ts
-```
+唯一下一原子动作：保持 P6 / P6-T6 / Step 7，完成最终 diff/凭据安全/checkpoint identity 审查，随后 commit/push 并观察新的普通 CI。
 
-6. GREEN 只能实现 P4-T4 声明的 revisioned publishing domain/store/routes/scheduler/RSS/client contract；不得提前实现 P4-T5 publishing workbench 或改变 public/private page design。
-
-## P3-T13 已完成边界
-
-- 五份综合规格复用 canonical P3-T8 至 P3-T12 stateful fixtures，并新增 pending/duplicate/offline calendar-copy 行为。有效 RED 为 19/20；ordinary 配置污染又以原 goals/habits 前五条失败暴露，最终受影响组 7/7、综合 20/20、ordinary 57/57。
-- Fresh gates：calendar 6/6；comprehensive Life 20/20；canonical Life 19/19；full Web 64 files/288 tests；full server 220 pass +45 exact-only skip；official isolated MySQL 8.4.10/34034 45/45 zero skip；双 typecheck/双 build exit 0；ordinary browser 57/57；real Fastify 3/3。
-- 主执行者重新生成并打开 8 张 contact sheet，索引 89 份命名截图/filmstrip；覆盖 desktop/mobile、planning tablet、320/200%、normal/reduced 与交互状态，五轴验收通过。
-- task-only MySQL 34034 已正常 shutdown，post-run ping exit 1，listener/PID absent。
-
-## P3-T14 精确执行顺序
-
-1. Step 1 在 `outputs/final/private-core-verification.md` 记录准确测试计数、浏览器/OS/font/DPR/viewport/color-scheme/reduced-motion、依赖锁哈希与截图/filmstrip/trace 路径。
-2. 第一条验证命令：
+第一条验证命令严格为：
 
 ```powershell
-npm.cmd run test:execution
+git diff --check
 ```
 
-3. Step 2 从每个 original private 与 LIFE ID 反向核对 API、page、state、E2E 和 screenshot，缺链即重开，父状态只取原子最小值。
-4. Step 3 同步 requirements、CURRENT、session、execution-control 与本文件，唯一下一动作为 `P4-T1 knowledge data/version API failing test`。
-5. Step 4 生成 P3-T14 非 Git checkpoint，并运行 execution-contract、startup、handoff；然后完整读取 P4 计划再开始 P4-T1。
+之后严格按顺序：
 
-## 持续执行终点与顺序
+1. 运行 `git diff --check` 并完整审查 source/test/workflow/evidence/ledger diff。
+2. 执行凭据安全检查，但不得读取 `.git` 私钥或回显任何 secret 值。
+3. fresh rebuild checkpoint，并确认 saved/fresh/manifest identity 一致。
+4. 保持 30/10/4 和 P6-T6 Step 7，commit/push 当前 WIP 到 `main`。
+5. 观察新的普通 CI 至真实终态，完整读取所有步骤与 exit/result。
+6. 新普通 CI 全绿后仍不得自动 dispatch release；先只读验证 GitHub 身份，再取得新的明确授权。
 
-- Exactly one task in progress。
-- P3 与 P4-T1 至 P4-T3 已完整关闭；严格 P4-T4 → P4-T5 → P4-T6 → P4-T7 → P4-T8。
-- P4 完整关闭并完成 fresh handoff 后，将状态推进到 P5 / P5-T1 / Step 1，停在实施 P5 前。
-- 普通 task 完成、checkpoint、阶段报告、上下文压缩或自动续接都不是停止理由；完成当前门禁后直接继续下一个顺序任务。
-- 完成 P4 不等于完成 LifeOps Web；P5、P6、immutable-image/UHub 和最终交付边界仍未完成。
+当前待复核 checkpoint root 为 `F670579E213E5E53C2F149C69A94C8E7CA0670C5A79B6C45DBE173767A46C912`，真实派生边界仍为 30/10/4。必须在账本同步后再次 fresh rebuild，并重跑 `test:execution`、startup 与 handoff；任何后续 source/traceability 修改都必须重算，不得沿用本 root 冒充新鲜。
 
-## 每个任务的执行与验收边界
+## 5. 已批准视觉方向
 
-- 每个 feature/bugfix 必须 TDD：测试先行，运行并确认有效行为 RED，再做最小 GREEN。
-- 遇到异常先系统排错，不猜修；语法、依赖、fixture、浏览器启动或 DB 连接失败不算有效 RED。
-- focused gate、相关完整回归、双 typecheck/build、真实浏览器和 atomic evidence 缺一不可。
-- UI 变更必须覆盖 1440×900、1024×768、768×1024、390×844、200% zoom/320 CSS px、键盘、焦点、Back、loading/empty/error/offline/403/409、reduced motion 和五轴整页复核；截图/filmstrip 必须实际打开。
-- 改共享 App、styles、routes 或 providers，必须重跑受影响的 P2/P3/P4 浏览器回归。
-- 需要 exact MySQL 时使用 task-only官方 MySQL 8.4.10，零 skip；结束后正常 shutdown 并验证 ping 失败。
-- 关闭 task 或跨上下文时同步 execution-control、工作包 checkbox、requirements/atomic evidence、project CURRENT、最新 session、正式接班文件和 non-Git checkpoint，并运行 execution-contract、startup、handoff。
+用户已批准当前方向并明确要求：手机端不过度拥挤；登录出现时圆环自然左移；左侧标题自然淡化、后退让位并有层次；保持高帧率；四圈持续自然转动；删除中心发光光球；中心只保留 `05 / 此刻正在发生`。
 
-## 已批准 UI 与责任边界
+已真实打开复核 1440×900 与 390×844 rest/login、day/night 稳定帧。390 最外轨完整入窗且底部约 16px，无 overflow；night 登录为深色；登录标题后退；650ms 间隔 transform 不同，证明轨道继续转动。
 
-- 私人产品保持 ADR-022 Daylight Command Center：明亮连续画布、soft-volume hierarchy、批准的顶部导航和 page-native composition。
-- 不得恢复 private planets、private galaxy/orbit shell、左侧栏加卡墙、直角纸页、等大圆角卡墙或整页白闪导航。
-- 私人产品用 Motion；GSAP 仅属于公开首页/登录批准边界。不得引入 ScrollTrigger、ScrollSmoother、滚轮导航或通用 scroll reveal。
-- Medicine 只保存用户事实、库存、有效期、日程和历史，不提供诊断或用药建议。生产数据来自 Fastify/MySQL，fixtures 不得作为生产事实。
-- workspace 不是 Git repository。Docker/Buildx、GitHub、UHub、release digests 未刷新，不得声称可用或完成。
-- 本项目只负责 Web/API/MySQL、测试、双镜像、UHub release evidence 和 application-delivery assets。Kubernetes/Helm/Argo 部署、同步、回滚、cluster smoke 由用户负责，不是 Web 完成门禁。
-- 不请求 kubeconfig，不调用已退役的 `build-ha-k8s-platform`，不执行集群操作，不记录密码、token、Cookie、API key、私钥或认证文件。
+禁止恢复中心光球、ADR-028 offset ellipse/right crop、白色 night 登录框、右下 pause pill、47/59/68/79/87 MotionPath、旧静态轨道或被拒候选。Impeccable detector 历史上已经且仅运行一次，绝不重跑。
 
-完成接班报告后，从 P4 / P4-T4 / Step 1 的 publishing domain RED 开始；不得越过 P4-T4 提前实现 P4-T5。
+## 6. 发布与外部授权边界
 
-## 2026-08-22 P4-T4 已关闭后的最新正式接班覆盖
+- GitHub Actions 中只确认 `UHUB_USERNAME`、`UHUB_PASSWORD` secret 名存在；不得读取、输出或记录值。
+- 用户此前仅授权一次 `1.0.0` dispatch，已被失败 run `32796276478` 消耗。第二次 release 尚未获授权。
+- 只有本地完整门禁、合法 checkpoint/evidence、commit/push、新普通 CI 全绿和 GitHub 身份只读验证都通过后，才请求“且仅一次额外 `1.0.0` dispatch”的最小授权。
+- 授权前不得运行 release；授权后只运行一个串行实例并等待真实结果。
+- 正式发布主线仍是 GitHub Actions → UHub。华为 SWR 只作为已知私有仓库，不得在没有新批准/ADR 时替换正式主线。
+- production hostname 为 `lifeops.chenspace.com`；用户拥有 `chenspace.com`/`www.chenspace.com`。DNS/TLS 外部状态未验证时不得声称生产可访问。
+- production values 的 Web/API digest 在真实 release 前必须保持明确待填，不能用 tag、本地 image ID 或伪造 digest 代替。
 
-本节覆盖本文件更早的 P4-T4 起点；历史内容仅保留审计。ADR-027、`implementation-active`、24/44 不变。P4-T4 Steps 1–10 已按 TDD 完整关闭：13/13 server behavior RED、3/3 client RED、scheduler secret-free log RED 和 official MySQL missing-schema/method RED 均有效；最终 focused server 15/15、client 3/3、full server 239 pass +48 exact-only skip、exclusive full Web 73 files/329、dual typecheck/build、real Fastify Chromium 4/4、official MySQL Community Server 8.4.10/34036 48/48 zero skip。任务 MySQL normal shutdown exit 0，post-run ping exit 1，PID/listener absent。
+## 7. 镜像、数据库、网关与默认部署架构真相
 
-当前 manifest 为 334 rows，派生 515 verified-local +455 partial +450 pending atoms 与 24 verified-local +10 partial +10 pending parents。PUBLISH-01 仍 pending，因为 P4-T5/P4-T6 的 workbench、dynamic public pages、state/responsive/a11y/motion/browser/image 子项没有被提前冒充。Saved/fresh/manifest checkpoint 应一致为：
+项目自建镜像严格为两个：
 
-- path：`outputs/evidence/source-checkpoints/2026-08-22-p4-t4-revisioned-publishing-uncommitted-local-checkpoint.json`
-- root：`3F740062B9B34A83A555376AEEF61A1734662F70311307697EAAC91436840A65`
-- inputs：459
+1. `lifeops-web`：React 静态产物，镜像内由 `nginx:1.30.4-alpine3.24` 提供静态页面。
+2. `lifeops-api`：Fastify API；同一个镜像复用于 PreSync migration Job（`node dist/migrate-main.js`），不额外制作 migration 镜像。
 
-当前唯一 tuple 是 P4 / P4-T5 / Step 1。下一原子动作是先写 source library/status tabs/editor/live preview/privacy checklist/immediate-scheduled publish/revoke/revision diff 与 five public route 的失败测试；第一条验证命令为：
+MySQL 不属于项目自建镜像：chart 内置时使用官方 `mysql:8.4.10`；也支持 `mysql.enabled: false` + `externalDatabase`。当前应用没有 Redis 依赖、Redis chart 或 Redis 镜像；会话、幂等和核心状态由 MySQL 持久化。
 
-```powershell
-npm.cmd test -- src/features/publishing src/pages/PublicDestinationPage.test.tsx src/pages/PublicSnapshotPage.test.tsx
-```
+Gateway API 是 Kubernetes 路由规范。Envoy Gateway 或 NGINX Gateway Fabric 是用户集群中单独安装的 controller。Web 镜像内的 Nginx 只服务静态文件，绝不包含 Gateway controller。当前 HTTPRoute 以 `/api` 指向 API Service、`/` 指向 Web Service；更换 controller 修改 parentRef/namespace/NetworkPolicy/values，不重做应用镜像。
 
-不得在 RED 前实现 P4-T5，不得越过 P4-T5 开始 P4-T6。完成 P4-T5 后继续既定 P4-T6→P4-T8；P4 完整关闭后停在 P5-T1 实施前。
+默认 chart 拓扑：Web Deployment 2 pods + ClusterIP；API Deployment + HPA min 2/max 6 + ClusterIP；PreSync migration Job 复用 API image；可选内置 MySQL 单副本 StatefulSet + headless Service + 10Gi RWO PVC；媒体使用 RWX filesystem 或 S3；并包含适用的 NetworkPolicy、PDB、监控资产。
 
-## 2026-08-22 P4-T5 已关闭后的最新正式接班覆盖
+内置 MySQL 是单实例、非 HA，只适合本地 VM、演示、小规模或明确接受风险的场景。真正生产应根据现有平台选择外部托管 RDS、独立 VM 上的二进制 MySQL，或用户自管 HA/Operator MySQL。不要把 MySQL 二进制直接装在 K8s worker 节点上充当 LifeOps 生产数据库。
 
-本节覆盖本文件更早的 P4-T4/P4-T5 起点；历史内容仅保留审计。ADR-027、`implementation-active`、24/44 不变。P4-T5 Steps 1–10 已按 TDD 完整关闭：首个可加载三文件门禁为 15 pass +11 behavior fail；最终 focused Web 26/26、publishing/public route 6/6、full Web 74 files/341、full server 239 pass +48 exact-only skip、dual typecheck/build 与 real Fastify/Chromium 22 checks 全部通过。P4-T5 无 server schema/persistence 改动，exact MySQL 不适用；P4-T4 official 8.4.10/34036 48/48 保持当前存储证据。
+## 8. 已批准的最终部署手册验收合同
 
-当前实现包括 3/5/4 source/editor/preview、mobile source→edit→preview、四来源/四状态、完整 public fields、shared day/night + desktop/mobile renderer、exact-version privacy confirmation、immediate/scheduled/revoke、immutable revision/diff、unsaved-leave、network/403/409/offline、stable `/p/:slug`、featured ordering、legacy redirect 和 RSS。真实浏览器确认 private source sentinel/ID 不进入公开 DOM，冲突/离线保留本地文本，Back/focus/reduced-motion/320 CSS px/200% zoom 均通过。主执行者已打开六张最终图；初轮 1024/768 压缩和 mobile layer disclosure 修复后全部重新生成并通过五轴复核。
+用户已明确批准本节，不要再次请求设计批准。手册在 P6-T7/P6-T8 的既定顺序内实现，不得提前跳过 P6-T6。开始写手册前，先把本节正式同步到 P6 工作包、source registry、acceptance matrix 与 traceability，使其成为可执行的原子验收合同，而不是只存在于交接文字。
 
-当前 registry 为 2,819 clauses，manifest 为 349 rows，派生 515 verified-local +470 partial +435 pending atoms 与 24 verified-local +11 partial +9 pending parents。PUBLISH-01 只到 partial；P4-T6 formal cross-domain E2E/visual 和后续 exact-image public read 未完成。Saved/fresh/manifest checkpoint 必须一致为：
+目标：交付一份思路清晰、通俗、完整、可操作，并能适配陌生本地 VM、裸金属或云上 Kubernetes 集群的部署手册。它不是一份只对当前测试集群有效的命令清单。
 
-- path：`outputs/evidence/source-checkpoints/2026-08-22-p4-t5-publishing-workbench-uncommitted-local-checkpoint.json`
-- root：`604997074DD463A3989F036EF0A098996BC4E4F96EB9F43354332CF90DC19115`
-- inputs：468
+### 8.1 先解释“是什么”和“为什么这样选”
 
-当前唯一 tuple 是 P4 / P4-T6 / Step 1。先写 knowledge create/derive/edit/search/relation/review-date/resurface/archive/restore 与 Markdown XSS journeys，再按工作包顺序补 Obsidian/publishing journeys；第一条验证命令为：
+- 解释为什么只制作 Web/API 两个自有镜像，为什么 migration 复用 API image。
+- 区分 Web 静态 Nginx、Gateway API 规范、Envoy Gateway/NGINX Gateway Fabric controller。
+- 解释内置单实例 MySQL 与外部生产 MySQL 的取舍、适用边界、风险和迁移路线。
+- 解释当前为什么没有 Redis；只有出现有证据的缓存、跨副本短期状态、队列或分布式限流需求，并完成 ADR、一致性/故障/回退设计后才允许引入。
 
-```powershell
-npm.cmd run test:e2e -- tests/knowledge-obsidian.spec.ts tests/publishing-public.spec.ts
-```
+### 8.2 陌生集群必须 capability-first
 
-不得跳过 P4-T6 的 formal E2E/visual gate，不得越过 P4-T6 开始 P4-T7。完成 P4-T6 后继续 P4-T7→P4-T8；P4 完整关闭并同步新鲜 handoff 后，停在 P5/P5-T1/Step 1 实施前。
+让用户在自己的终端执行只读预检，并解释预期结果和分支：Kubernetes 版本/CPU 架构、节点、Gateway API/Ingress、LoadBalancer/MetalLB/外部 LB、DNS/TLS、StorageClass 动态供给、RWO/RWX、Secret/ExternalSecret、监控、镜像仓库访问。
 
-## 2026-08-22 P4-T6 已关闭后的最新正式接班覆盖
+Codex 不读取 kubeconfig，也不替用户执行 kubectl、Helm install、Argo sync/rollback 或 cluster smoke。手册必须明确分开“平台前置条件”和“LifeOps 应用交付”。
 
-本节覆盖本文件更早的 P4-T4/P4-T5/P4-T6 起点；历史内容仅保留审计。ADR-027、`implementation-active`、24/44 不变。P4-T6 Steps 1–8 已按 TDD 完整关闭。正式 knowledge/Obsidian/publishing RED 在 selector-only 修正后暴露四个真实缺口：settings route placeholder、未要求逐项 conflict choice、draft 未实时驱动 public preview，以及 query invalidation 可能重复新建 draft。当前真实 `/app/settings`、permission-gated preview/apply、keep-Web/keep-Obsidian/keep-both、backup-before-write、live preview 与 stable dedupe 均已完成，未新增 migration 或改变数据语义。
+### 8.3 数据库分支
 
-Fresh gates：exclusive Web 74 files/341 tests；full server 239 pass +48 exact-only skip；dual typecheck/build；focused cross-domain Chromium 13/13；real Fastify Chromium 4/4；complete ordinary Chromium 69/69；official task-only MySQL Community Server 8.4.10/34037 48/48 zero skip、14 migrations。任务数据库 normal shutdown exit 0，post-run ping exit 1，PID/listener absent。完整普通 Chromium 首轮 68/69 只暴露静态 CSS manifest 缺少已批准 publishing/settings layers；同步后 focused 与整套 69/69 均通过。
+- 内置官方 MySQL 8.4.10 单副本 StatefulSet + RWO：用于本地/小规模/风险接受环境。
+- 外部托管 RDS：用于已有云数据库能力的生产环境。
+- 独立 VM 二进制 MySQL：适合本地虚拟化或传统基础设施，但数据库运行在独立主机，不装在 worker 节点。
+- 用户自管 HA/Operator MySQL：适合有成熟数据库运维能力的环境。
 
-主执行者打开全部 36 张 knowledge/settings/publishing/public category/public article 最终 PNG。首轮 reduced filmstrip crop、200% public detail 双栏和 fixed mobile return 遮挡均被拒收；修复并重新生成后，五轴与执行合同 manual checklist 均通过。
+每个分支都说明 Secret/TLS、网络、备份恢复、升级、连接限制、故障边界和从内置实例迁出的步骤。不要把单副本 StatefulSet 写成“高可用 MySQL 集群”。
 
-当前 registry 为 2,832 clauses，manifest 为 367 rows，派生 515 verified-local +470 partial +435 pending atoms 与 24 verified-local +11 partial +9 pending parents。PUBLISH-01 只因 later exact-image public read 保持 partial。Saved/fresh/manifest checkpoint 必须一致为：
+### 8.4 媒体存储分支
 
-- path：`outputs/evidence/source-checkpoints/2026-08-22-p4-t6-content-acceptance-uncommitted-local-checkpoint.json`
-- root：`E3AE8B1FEA01DBA18E6ECFB52F7402117CB421CBDC66A2C09AC286979EC96B44`
-- inputs：472
+- 多副本 API + filesystem 必须使用 RWX（如 NFS/CephFS 等）。
+- 陌生集群没有 RWX 时优先使用 S3/兼容对象存储。
+- 只有本地/小规模且明确接受限制时，才提供单副本 API + RWO 的有界方案。
+- 不得绕过 chart 对“多副本 API + 非 RWX filesystem”的安全拒绝。
 
-当前唯一 tuple 是 P4 / P4-T7 / Step 1。先写 projection/import-plan/panel RED，覆盖 stable paths/frontmatter、recipe/cooking/fitness/review Markdown、raw inventory/idempotency/credentials exclusion、first-connect preview、selected-type export、conflict/backup/version-draft/no-delete、ZIP fallback 与 permission-loss degradation；第一条验证命令为：
+### 8.5 入口和控制器分支
 
-```powershell
-npm.cmd test -- src/integrations/obsidian/lifeProjection.test.ts src/integrations/obsidian/lifeImportPlan.test.ts src/features/life/data/LifeObsidianPanel.test.tsx
-```
+- 推荐 Gateway API + Envoy Gateway。
+- 说明如何适配 NGINX Gateway Fabric：修改 controller、parentRef、namespace、策略和 values，不重做 Web/API 镜像。
+- Gateway API 不可用时提供与真实 chart 资产一致的 Ingress 兼容方案；不能只写概念而没有资源/values 映射。
+- 解释 LoadBalancer、MetalLB、外部 LB、DNS 和 TLS 各自负责什么。
 
-不得越过 P4-T7 开始 P4-T8。完成 P4-T7 后按工作包执行 P4-T8 reverse audit/phase close；P4 完整关闭并同步 fresh handoff 后，只推进到 P5/P5-T1/Step 1 并停在实施 P5 前。
+### 8.6 扩展性与扩容方法
 
-## 2026-08-22 P4-T7 已关闭后的最新正式接班覆盖
+必须说明 Web/API 水平和垂直扩容、API HPA 当前 min 2/max 6、requests/limits、PDB、反亲和/拓扑分布、Gateway 容量、数据库连接数、数据库性能和媒体吞吐之间的约束。
 
-本节覆盖本文件更早的 P4-T7 起点；历史内容仅保留审计。ADR-027、`implementation-active`、24/44 不变。P4-T7 Steps 1–7 已按 TDD 完整关闭：projection/import-plan/panel 首轮三文件正常加载并产生 10 个行为 RED；最终 strict deterministic recipe/cooking-note/fitness/review/selected shopping-budget Markdown/ZIP、稳定 allowlisted path/frontmatter、敏感/运营字段排除、read-only first scan、explicit conflict/version intent、backup-first/no-delete、preview-only P1 import draft 和 truthful ZIP/permission/write/offline degradation 均已完成。
+不要编造统一硬件规格或固定 QPS。给出基于实际指标的判断和公式，例如：
 
-Fresh gates：focused Web 43/43；exclusive full Web 77 files/352 tests；full server 239 pass +48 exact-only skip；dual typecheck/build；focused P4 Chromium 19/19；affected P3 Life Chromium 20/20；complete ordinary Chromium 75/75；real Fastify Chromium 4/4；official task-only MySQL Community Server 8.4.10/34039 48/48 zero skip、14 migrations。任务数据库 normal shutdown exit 0，post-run ping exit 1，PID/listener absent。一次 34038 name-resolution 环境错误发生在数据库创建和测试前；其 exact task PID 已移除并验证 ping/PID/listener absent，未触碰无关 MySQL。
+`API 最大数据库连接需求 = API 最大副本数 × 每副本连接上限 + migration/admin 余量`
 
-主执行者打开全部 8 张 final PNG。capture origin、mobile data tabs、active Life route visibility 与 Back focus 的首轮拒收均已用单元/真实浏览器 RED 修复；最终 1440/1024/768/390/320、200%、reduced-motion 与 offline 五轴通过。
+说明何时增加 pod、何时提高单 pod 资源、何时扩数据库、何时从 filesystem 迁移 S3、何时从内置 MySQL 迁移外部 HA 服务，以及如何验证扩容没有破坏会话、幂等、媒体和迁移安全。
 
-当前 registry 为 2,836 clauses，manifest 为 378 rows，派生 515 verified-local +474 partial +431 pending atoms 与 24 verified-local +12 partial +8 pending parents。LIFE-20 只到 partial，因为其 `image` requirement 是后续 immutable-container-image boundary，不是截图。Saved/fresh/manifest checkpoint 必须一致为：
+### 8.7 手册结构和可操作性
 
-- path：`outputs/evidence/source-checkpoints/2026-08-22-p4-t7-life-obsidian-complete-uncommitted-local-checkpoint.json`
-- root：`A631623F17C8D90A2DC433A279FA1463BE2E236B584D4F8F76607C33A9484F9D`
-- inputs：479
+最终手册至少按以下顺序组织：
 
-当前唯一 tuple 是 P4 / P4-T8 / Step 1。记录 automated/visual metadata、dependency-lock hash、artifact paths、ZIP checksum、conflict/backup results、publication revision IDs、revoked 404 与 RSS validation，不记录 private note bodies；第一条验证命令为：
+1. 术语、镜像和架构图
+2. 集群能力矩阵与选择决策树
+3. 平台前置条件
+4. imagePullSecret、应用/数据库 Secret 或 ExternalSecret
+5. MySQL、媒体存储、入口 controller 三组选择分支
+6. 填入真实 Web/API immutable digest
+7. Helm lint/render/schema 预检
+8. 用户通过 Argo CD（推荐）或 Helm 部署
+9. migration Job、Web/API/MySQL 工作负载顺序
+10. HTTPRoute/Ingress、DNS、TLS
+11. 健康、登录、写入、重启、exact-digest smoke
+12. 监控、日志、告警、备份恢复
+13. 升级、回滚、故障排查
+14. 水平/垂直扩容与组件迁移
 
-```powershell
-npm.cmd run test:execution
-```
+每条命令都必须：使用占位符；说明在哪台机器/哪个目录执行；给出预期输出、失败含义和安全回退。不得让用户把凭据粘贴到聊天，也不得把明文 Secret 写入 Git。
 
-完成 P4-T8 reverse audit、final content verification、phase close 和 fresh handoff 后，推进到 P5/P5-T1/Step 1 并停在实施 P5 前。不得把 P4 local close 冒充整个 LifeOps Web 完成，不得提前实施 P5。
+每个分支必须映射到仓库真实 Helm values、templates 和资源（Deployment、Service、HTTPRoute/Ingress、StatefulSet、Job、PVC、NetworkPolicy、PDB、HPA、ExternalSecret 等），并通过文档链接检查、Helm lint/render/schema、示例配置和用户可执行 smoke 清单验证。正式 digest 未产生前只能保留清晰占位符。
 
-## 2026-08-22 P4-T8 与 P4 phase close 后的最新正式接班覆盖
+## 9. P6-T6 之后的连续执行顺序
 
-本节覆盖本文件更早的 P4 起点；历史内容仅保留审计。P4-T1 至 P4-T8 已全部本地关闭。`outputs/final/content-verification.md` 记录环境、dependency-lock、36 张 P4-T6 图/filmstrip、8 张 P4-T7 图、4 个 P4-T8 trace、deterministic ZIP checksum、conflict/backup order、publication revision IDs、revoked 404 与 private-safe RSS，且不含 actual private note body。
+P6-T6 合法通过后，连续执行 P6-T6 task-close → deterministic checkpoint → handoff/startup → P6-T7 → P6-T8 → P6 phase-close → project-close。始终只保持一个 task in progress，按 checkbox 顺序严格 TDD；环境、语法、依赖或连接失败不算 behavioral RED。
 
-Fresh closure gates：trace-focused Chromium 11/11；exclusive Web 77 files/352 tests；server 239 pass +48 exact-only skip；dual typecheck/build；ordinary Chromium 75/75；real Fastify 4/4；P4-T7 official MySQL 8.4.10/34039 48/48 zero skip、normal shutdown、post-shutdown ping exit 1、PID/listener absent。44 个最终 P4-T6/P4-T7 视觉文件在最后完整浏览器复跑后与已打开复核集合 byte-identical。
+每个 task 都要同步 task-execution、evidence-manifest、requirements、work-package checkbox、execution-control、CURRENT、S022/后续 session 与本接班文件；重算 deterministic checkpoint；完整读取 focused/full/MySQL/image/Helm/security/browser/visual gate 的输出和 exit code。
 
-Reverse audit：KNOW-01 23/23 与 OBS-01 4/4 为 `verified-local`；PUBLISH-01 32/32 与 LIFE-20 4/4 仅因后续 immutable-container-image 证据为 `partial`。P4-T8 的旧 interface 句已按 execution-completeness/image-boundary 高阶 authority 修正，未手工抬升 parent。Registry 2,836 clauses；manifest 381 rows；atoms 515 verified-local +474 partial +431 pending；parents 24 verified-local +12 partial +8 pending。
+## 10. Web-owned 边界与 project-close 真值
 
-Saved/fresh/manifest checkpoint 必须一致为：
+本项目只负责 Web/API/MySQL 应用 schema、双 immutable images、UHub 发布证据、digest-bound SBOM/provenance、exact-digest image smoke，以及应用级 Helm/GitOps/Argo 示例和部署手册。
 
-- path：`outputs/evidence/source-checkpoints/2026-08-22-p4-t8-content-closure-uncommitted-local-checkpoint.json`
-- root：`E28D8257C5813CEFD9F94E786624B5969E7746BF0035DB9AB7E39194B7EC8759`
-- inputs：479
+不读取 kubeconfig，不执行 kubectl、Helm install、Argo sync/rollback、cluster smoke，不搭建或修改用户 Kubernetes 集群，也不调用已退役的 `build-ha-k8s-platform`。Argo `Synced/Healthy` 和 cluster smoke 是用户部署证据，不阻塞 Web-owned 完成。
 
-当前唯一 tuple 是 P5 / P5-T1 / Step 1。下一原子动作是 `P5-T1 platform adapter security contract test`；第一条验证命令为 `npm.cmd run test:server -- server/src/config.test.ts server/src/integrations/safeFetch.test.ts server/src/integrations/redact.test.ts`，但本接班点明确停在 P5 实施前。P5、P6、immutable-image/UHub、SBOM/provenance 与最终交付仍未完成；不得把 P4 local close 冒充 LifeOps Web project completion。
+只有以下全部真实满足，才允许 project-close：
 
-## 2026-08-22 P5-T1 关闭后的最新正式接班覆盖
+- 所有适用 atomic rows 合法 roll up 到 44/44
+- Web/API 两个 immutable UHub digest 真实存在
+- digest-bound SBOM/provenance 可验证
+- exact-digest image smoke 通过
+- Helm/GitOps/部署手册与用户 handoff 已验证
+- 没有伪造 Git、Docker、GitHub Actions、UHub、digest、attestation、DNS/TLS 或网络状态
 
-本节覆盖本文件更早的 P5-T1 实施前起点；历史内容只保留审计。P5-T1 Steps 1–7 已按严格 TDD 完成：首个 focused 命令中 config 11/11 行为失败，safeFetch/redact 因计划模块尚不存在而加载失败；最小实现完成六源 disabled-default integration config、enabled URL/protocol/range、credential-free serialization、typed source status、exact-origin SSRF bounds、raw-query/redirect/deadline/byte/content-type/JSON enforcement 与 recursive secret/body/header/Kubernetes annotation redaction。
-
-Fresh gates：focused security 25/25；server typecheck exit 0；complete server 264 ordinary pass +48 exact-only skip；task-close exit 0、0 blocker/issue。任务未改 schema/persistence/UI/deployment，MySQL 与 visual N/A。Registry 2,836 clauses；matrix 44 parents / 52 surfaces / 1,420 atoms；manifest 382 rows；atoms 515 verified-local +501 partial +404 pending；parents 24 verified-local +12 partial +8 pending。27 required task atoms 为 partial；PLATFORM-01 与 SEC-01 继续按 least child 为 pending。
-
-Saved/fresh/manifest checkpoint 必须一致为：
-
-- path：`outputs/evidence/source-checkpoints/2026-08-22-p5-t1-integration-security-uncommitted-local-checkpoint.json`
-- root：`FB21D786FBD5446BB836505E3A3A33BCEE26AE1FE6F15761482E4472D977A18B`
-- inputs：485
-
-Git 仍不存在；Docker/Buildx、GitHub、UHub、immutable digests、SBOM/provenance 均未刷新或宣称；没有 MySQL、Kubernetes、Helm、Argo、kubeconfig、cluster smoke 或退役 Skill 操作。
-
-当前唯一 tuple 是 P5 / P5-T2 / Step 1。只读接班时必须完整读取 P5 工作包的 P5-T2 Files、Interfaces、Steps 和 exit gate；下一动作是先写 15 秒 hit、visibility-independent server cache、concurrent coalescing、三秒 failure cache 与 key-isolation 行为 RED。第一条验证命令为：
-
-```powershell
-npm.cmd run test:server -- server/src/integrations
-```
-
-不得越过 P5-T2 开始 P5-T3，也不得把 P5-T1 的 local security foundation 冒充 PLATFORM-01、P5 或整个 LifeOps Web 完成。
-
-## 2026-08-22 P5-T2 关闭后的最新正式接班覆盖
-
-本节覆盖本文件更早的 P5-T2 实施前起点；历史内容只保留审计。P5-T2 Steps 1–9 已按严格 TDD 完成。首个 adapter 命令保留 P5-T1 14/14 green，并因六个计划 cache/adapter 模块缺失而失败；独立 service-account RED 随后证明初版 transport 未读取配置的 bearer-token/CA 文件。最小实现现包含 visibility-independent 15-second success cache、coalescing、three-second failure containment、key isolation，allowlisted Kubernetes/Prometheus/Alertmanager/Elasticsearch/GitHub/Argo reads，固定 server-owned queries/templates，source-local failures，file-backed service-account TLS，以及 immutable Web/API digest parsing。
-
-Fresh gates：focused integration 40/40；server typecheck exit 0；complete server 290 ordinary pass +48 exact-only skip；task-close exit 0、0 blocker/issue。无 schema 或 UI 变化，MySQL 与 visual N/A。Matrix 仍为 44 parents / 52 surfaces / 1,420 atoms；manifest 385 rows；atoms 515 verified-local +516 partial +389 pending；parents 24 verified-local +12 partial +8 pending。42 required P5-T2 atoms 均为 partial；PLATFORM-01/SEC-01 仍按 least child 为 pending。
-
-Saved/fresh/manifest checkpoint 必须一致为：
-
-- path：`outputs/evidence/source-checkpoints/2026-08-22-p5-t2-read-only-adapters-uncommitted-local-checkpoint.json`
-- root：`10B1CD33A241A432B1D013EA72048835F0D307075B824A58FFDABB05020A5F1F`
-- inputs：497
-
-Git 仍不存在；Docker/Buildx、GitHub、UHub、immutable digests、SBOM/provenance 均未刷新或宣称；没有 MySQL、Kubernetes cluster、Helm、Argo deployment、kubeconfig、cluster smoke 或退役 Skill 操作。
-
-当前唯一 tuple 是 P5 / P5-T3 / Step 1。第一动作是在 server package 精确安装并锁定 `prom-client@15.1.3`；第一条命令为：
-
-```powershell
-npm.cmd --prefix server install --save-exact prom-client@15.1.3
-```
-
-安装后必须先写 metrics、platform routes、platform UI 与 accessible chart 的行为 RED，再实施 P5-T3；不得越过 P5-T3 开始 P5-T4，也不得把 adapters local close 冒充 PLATFORM-01、P5 或项目完成。
-
-## 2026-08-23 P5-T3 关闭后的最新正式接班覆盖
-
-本节覆盖本文件更早的 P5-T3 实施前起点；历史内容只保留审计。P5-T3 Steps 1–11 已按严格 TDD 完成。Exact `prom-client@15.1.3`、public bounded metrics、seven authenticated platform routes、truthful source-local degradation、bright continuous operations UI、accessible trends、technology delivery truth 和 visibility-only polling/abort 均已有当前证据。真实 390×844 浏览器验收曾拒收 off-screen 当前一级 `平台`；route/resize-aware centering 现使 390/320 当前项可见且不隐藏批准的十项 IA。
-
-Fresh gates：focused server 8/8；focused platform/navigation Web 11/11；complete server 298 ordinary pass +48 exact-only skip；complete Web 79 files/359 tests；dual typecheck/build；focused Chromium 2/2。Primary executor inspected the authenticated page、monitoring/technology tabs、1440/1024/768/390/320 geometry and opened the final standard/reduced-motion artifacts。P5-T3 无 migration/persistence 语义，MySQL N/A。
-
-Matrix 仍为 44 parents / 52 surfaces / 1,420 atoms；manifest 395 rows；atoms 572 verified-local +564 partial +284 pending；parents 24 verified-local +13 partial +7 pending。PLATFORM-01 只到 atom-derived partial；SEC-01 仍因 later rendered-RBAC least child 为 pending。
-
-Saved/fresh/manifest checkpoint 必须一致为：
-
-- path：`outputs/evidence/source-checkpoints/2026-08-23-p5-t3-truthful-operations-center-uncommitted-local-checkpoint.json`
-- root：`C4FD4B2547D398DE7199CA580A62101E251EDFD85BCF9B38E9E3339E4B236A73`
-- inputs：512
-
-Git 仍不存在；Docker/Buildx、GitHub、UHub、immutable digests、SBOM/provenance 均未刷新或宣称；没有 MySQL、Kubernetes cluster、Helm、Argo deployment、kubeconfig、cluster smoke 或退役 Skill 操作。
-
-当前唯一 tuple 是 P5 / P5-T4 / Step 1。只读接班时必须完整读取 P5 工作包的 P5-T4 Files、Interfaces、Steps 和 exit gate；下一动作是写 personal-search ranking behavioral RED。第一条验证命令为：
-
-```powershell
-npm.cmd run test:server -- server/src/domain/search.test.ts server/src/routes/search.test.ts
-```
-
-不得越过 P5-T4 开始 P5-T5，也不得把 platform-center local close 冒充 PLATFORM-01、SEC-01、P5 或整个 LifeOps Web 完成。
-
-## 2026-08-23 P5-T4 关闭后的最新正式接班覆盖
-
-本节覆盖本文件更早的 P5-T4 实施前起点；历史内容只保留审计。P5-T4 Steps 1–8 已按严格 TDD 完成。Migration 015 search index/backfill/transaction-local triggers、owner/type/deleted bounds、literal LIKE escaping、deterministic title/tag/body/recency ranking、Chinese substring、recipe/day-plan context、plain-text excerpts 与十五种 approved types 均有当前 server/API/MySQL/security evidence。Command overlay 已具备 180ms debounce、stale abort、分组、private recent、keyboard/Enter/Escape/focus restore、route navigation 和 honest loading/empty/error states。
-
-Fresh gates：focused server 14/14；focused Web/layout 12/12；complete server 312 ordinary pass +49 exact-only skip；official isolated MySQL Community Server 8.4.10 49/49 zero-skip；complete Web 81 files/366 tests；dual typecheck/build；focused Chromium 1/1；complete Chromium 78/78。Primary executor inspected the authenticated overlay and opened final 1440/1024/768/390/320/reduced-motion artifacts。The isolated MySQL task instance was cleanly shut down and verified absent by ping/process/listener/pidfile。
-
-Matrix remains 44 parents / 52 surfaces / 1,420 atoms；manifest 407 rows；atoms 601 verified-local +553 partial +266 pending；parents 24 verified-local +13 partial +7 pending。All 44 search-surface atoms are verified-local；GLOBAL-01 remains pending on P5-T5/P5-T6 and LIFE-21 remains partial on P5-T5。
-
-Saved/fresh/manifest checkpoint 必须一致为：
-
-- path：`outputs/evidence/source-checkpoints/2026-08-23-p5-t4-unified-personal-search-uncommitted-local-checkpoint.json`
-- root：`FEE7B3FAA84C7CBF4E469B34721C6F95FB7B9920CC006105FAA25D8B0EE484A4`
-- inputs：522
-
-Git 仍不存在；Docker/Buildx、GitHub、UHub、immutable digests、SBOM/provenance 均未刷新或宣称；没有 Kubernetes cluster、Helm、Argo deployment、kubeconfig、cluster smoke 或退役 Skill 操作。
-
-当前唯一 tuple 是 P5 / P5-T5 / Step 1。只读接班时必须完整读取 P5 工作包的 P5-T5 Files、Interfaces、Steps 和 exit gate；下一动作是写 context-aware quick-create behavioral RED。第一条验证命令为：
-
-```powershell
-npm.cmd test -- src/components/private/QuickCreate.test.tsx src/components/private/quickCreateContext.test.ts
-```
-
-不得越过 P5-T5 开始 P5-T6，也不得把 personal-search local close 冒充 GLOBAL-01、LIFE-21、P5 或整个 LifeOps Web 完成。
-
-## 2026-08-23 P5-T5 关闭后的最新正式接班覆盖
-
-本节覆盖本文件更早的 P5-T5 实施前起点；历史内容只保留审计。P5-T5 Steps 1–8 已按严格 TDD 完成。Loaded-user-ID-only context、十五种 approved create adapters、one-key retry/fresh create-another、pending duplicate suppression、server-confirmed success、expiry-safe undo、focus trap/restore、responsive task layering 与 reduced motion 均有当前证据。真实 390px browser RED 曾证明 record editor 位于全局 dialog 上方；最终全局层级修正后，标题输入在所有 viewport 都由 elementFromPoint 验证为 topmost interactive。
-
-Fresh gates：focused Quick Create/context/shell 19/19；all 15 adapter types；complete Web 83 files/381 tests；dual client/server typecheck/build；complete server 312 ordinary pass +49 unchanged exact-only skip；focused Chromium 1/1；reviews 4/4；complete Chromium 79/79。Primary executor opened the final 1440/1024/768/390/320/reduced-motion artifacts after the z-index correction。P5-T5 changes no server/schema；no fresh MySQL run is claimed，and only the unchanged official P5-T4 49/49 baseline is reused for existing domain endpoints。
-
-Matrix remains 44 parents / 52 surfaces / 1,420 atoms；manifest 418 rows；atoms 635 verified-local +542 partial +243 pending；parents 25 verified-local +12 partial +7 pending。All 54 scoped Quick Create/Life relation atoms are verified-local；generic cross-surface state atoms remain P5-T7。LIFE-21 is verified-local；GLOBAL-01 remains pending on P5-T6 settings least children。
-
-Saved/fresh/manifest checkpoint 必须一致为：
-
-- path：`outputs/evidence/source-checkpoints/2026-08-23-p5-t5-context-aware-quick-create-uncommitted-local-checkpoint.json`
-- root：`38B5AD311D49DC44DEFF572BB80E1638608417C653161604212E24C2A332CB47`
-- inputs：526
-
-Git 仍不存在；Docker/Buildx、GitHub、UHub、immutable digests、SBOM/provenance 均未刷新或宣称；没有新的 MySQL、Kubernetes cluster、Helm、Argo deployment、kubeconfig、cluster smoke 或退役 Skill 操作。
-
-当前唯一 tuple 是 P5 / P5-T6 / Step 1。只读接班时必须完整读取 P5 工作包的 P5-T6 Files、Interfaces、Steps 和 exit gate；下一动作是写 settings/account behavioral RED。第一条验证命令为：
-
-```powershell
-npm.cmd run test:server -- server/src/services/dataTransfer.test.ts server/src/routes/settings.test.ts
-```
-
-不得越过 P5-T6 开始 P5-T7，也不得把 Quick Create local close 冒充 GLOBAL-01、P5 或整个 LifeOps Web 完成。
+最终只给用户短、证据化的完成结论和精确的用户侧部署下一动作；在真实视觉决定或外部授权边界之外，不要中途交还。

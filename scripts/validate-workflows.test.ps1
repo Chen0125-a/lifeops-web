@@ -32,6 +32,7 @@ foreach ($document in @($ci, $release)) {
   $trustIndex = $document.IndexOf('Configure MySQL trigger migration trust', [StringComparison]::Ordinal)
   $mysqlIndex = $document.IndexOf('Real MySQL 8.4 store integration', [StringComparison]::Ordinal)
   Add-Failure ($trustIndex -ge 0 -and $mysqlIndex -gt $trustIndex) 'Workflow must configure MySQL trigger migration trust after service startup and before integration migrations.'
+  Add-Failure ($document -match 'playwright install --with-deps chromium firefox webkit') 'Workflow must install every browser exercised by the complete Playwright matrix.'
   Add-Failure ($document -match 'SET GLOBAL log_bin_trust_function_creators\s*=\s*1') 'Workflow must enable only the required MySQL global before migrations.'
 }
 

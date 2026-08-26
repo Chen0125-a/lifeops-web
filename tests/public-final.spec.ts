@@ -1,8 +1,9 @@
 import { createHash } from 'node:crypto'
-import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, readdirSync, statSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Browser, type Page } from '@playwright/test'
-import { screenshotToPath } from './helpers/screenshotToPath'
+import { screenshotToPath, writeBufferToPath } from './helpers/screenshotToPath'
+import { traceToPath } from './helpers/traceToPath'
 
 const viewports = [
   { name: '1440', width: 1440, height: 900 },
@@ -369,6 +370,8 @@ test('capture the final public screenshot, filmstrip, trace and performance mani
     await page.setViewportSize(viewport)
     for (const theme of ['day', 'night'] as const) {
       await setPublicTheme(page, theme)
+      await expect(page.locator('#hero-title')).toHaveAttribute('data-title-state', 'complete')
+      await expect(page.locator('.public-orbit__count')).toHaveText('05')
       await page.getByRole('button', { name: '暂停星盘动画' }).click()
       await capture(page, `public-home-${theme}-${viewport.name}.png`)
       await page.getByRole('button', { name: '继续星盘动画' }).click()
@@ -390,6 +393,8 @@ test('capture the final public screenshot, filmstrip, trace and performance mani
     await setPublicTheme(page, 'day')
     for (const category of categories) {
       await page.goto(`/${category}`)
+      await expect(page.getByTestId('public-detail-shell')).toBeVisible()
+      await expect(page.locator('.route-gate')).toHaveCount(0)
       await expect(page.getByText('正在读取已发布内容…')).toHaveCount(0)
       await expect(page.locator('[data-public-detail-layout]')).toBeVisible()
       await capture(page, `public-detail-${category}-${viewport.name}.png`, true)
@@ -398,6 +403,8 @@ test('capture the final public screenshot, filmstrip, trace and performance mani
 
   const zoom = await openZoomEquivalent(browser)
   try {
+    await expect(zoom.page.locator('#hero-title')).toHaveAttribute('data-title-state', 'complete')
+    await expect(zoom.page.locator('.public-orbit__count')).toHaveText('05')
     await zoom.page.getByRole('button', { name: '暂停星盘动画' }).click()
     await zoom.page.evaluate(() => window.scrollTo(0, 0))
     await capture(zoom.page, 'public-home-day-320-dpr2.png')
@@ -458,7 +465,7 @@ test('capture the final public screenshot, filmstrip, trace and performance mani
   await expect(page.getByRole('heading', { name: '最近在学', level: 1 })).toBeFocused()
   await page.getByRole('button', { name: '返回公开星盘', exact: true }).click()
   await expect(page.getByRole('link', { name: '探索最近在学' })).toBeFocused()
-  await context.tracing.stop({ path: resolve(evidenceDirectory, 'public-home-detail-return-trace.zip') })
+  await traceToPath(context, resolve(evidenceDirectory, 'public-home-detail-return-trace.zip'))
 
   await setPublicTheme(page, 'night')
   const frameIntervals = await page.evaluate(async () => {
@@ -515,7 +522,10 @@ test('capture the final public screenshot, filmstrip, trace and performance mani
     viewportDiagnostics,
     zoomEquivalent: { devicePixelRatio: 2, height: 720, width: 320 },
   }
-  writeFileSync(resolve(evidenceDirectory, 'public-browser-performance-manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`)
+  await writeBufferToPath(
+    resolve(evidenceDirectory, 'public-browser-performance-manifest.json'),
+    `${JSON.stringify(manifest, null, 2)}\n`,
+  )
 
   expect(artifacts.filter((artifact) => artifact.name.endsWith('.png'))).toHaveLength(48)
   expect(artifacts.filter((artifact) => artifact.name.endsWith('.zip'))).toHaveLength(1)

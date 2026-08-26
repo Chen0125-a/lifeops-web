@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 import { installPrivateCoreFixture } from './private-core-fixtures'
-import { probeVerticalScrollOwners, recordMotionFrames } from './helpers/motionProbe'
+import { probeVerticalScrollOwners, recordMotionFrames, waitForStableFrameCadence } from './helpers/motionProbe'
 
 test.beforeEach(async ({ page, browserName }, testInfo) => {
   if (browserName === 'webkit') {
@@ -84,11 +84,12 @@ test('interrupted login reverses from the live frame and leaves a fixed usable e
   expect(await exit.evaluate((element) => ['fixed', 'sticky'].includes(getComputedStyle(element).position))).toBe(true)
 })
 
-test('private routing keeps the shell and outgoing panel, restores focus and never paints white', async ({ page }) => {
+test('private routing keeps the shell and outgoing panel, restores focus and never paints white', async ({ page, browserName }) => {
   await installPrivateCoreFixture(page)
   await page.goto('/app/overview')
   const navigation = page.getByRole('region', { name: '最近记录' }).getByRole('link', { name: '全部记录' })
   await navigation.focus()
+  if (browserName === 'webkit') await waitForStableFrameCadence(page, 360, 10)
   const framePromise = recordMotionFrames(page, 360)
   await navigation.click()
   const frames = await framePromise

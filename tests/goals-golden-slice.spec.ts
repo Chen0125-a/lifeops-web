@@ -1,6 +1,8 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
+import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p3-t2')
 const session = { mode: 'local-preview', account: 'goals-e2e@lifeops.local' }
@@ -68,7 +70,7 @@ test('goals golden slice preserves hierarchy, keyboard, history and responsive t
     ]) {
       await page.setViewportSize(viewport)
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), `${viewport.width} CSS px`).toBe(true)
-      await page.screenshot({ path: resolve(evidenceDir, viewport.name), fullPage: true })
+      await screenshotToPath(page, { path: resolve(evidenceDir, viewport.name), fullPage: true })
     }
 
     await page.setViewportSize({ width: 1440, height: 900 })
@@ -79,23 +81,23 @@ test('goals golden slice preserves hierarchy, keyboard, history and responsive t
     await page.keyboard.press('Escape')
     await expect(editGoal).toBeFocused()
 
-    await page.screenshot({ path: resolve(evidenceDir, 'filmstrip-goals-000-map.png') })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'filmstrip-goals-000-map.png') })
     await page.getByRole('button', { name: `选择项目 ${project.title}` }).click()
-    await page.screenshot({ path: resolve(evidenceDir, 'filmstrip-goals-120-project.png') })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'filmstrip-goals-120-project.png') })
     await page.getByRole('button', { name: `选择里程碑 ${milestone.title}` }).click()
     await page.goBack()
     await expect(page.getByRole('region', { name: '对象检查器' }).getByRole('heading')).toHaveText(project.title)
-    await page.screenshot({ path: resolve(evidenceDir, 'filmstrip-goals-240-back.png') })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'filmstrip-goals-240-back.png') })
 
     await page.setViewportSize({ width: 390, height: 844 })
     await expect(page.getByRole('button', { name: '返回成果地图' })).toBeVisible()
     await expect(page.getByRole('region', { name: '对象检查器' })).toHaveCSS('position', 'fixed')
-    await page.screenshot({ path: resolve(evidenceDir, 'goals-390x844-e2e-inspector.png') })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'goals-390x844-e2e-inspector.png') })
     await page.getByRole('button', { name: '返回成果地图' }).click()
     await expect(page.getByRole('heading', { name: '成果地图' })).toBeVisible()
-    await page.screenshot({ path: resolve(evidenceDir, 'goals-390x844-e2e-map.png') })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'goals-390x844-e2e-map.png') })
   } finally {
-    await context.tracing.stop({ path: resolve(evidenceDir, 'goals-route-inspector-trace.zip') })
+    await traceToPath(context, resolve(evidenceDir, 'goals-route-inspector-trace.zip'))
   }
 })
 

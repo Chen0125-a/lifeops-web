@@ -1,6 +1,7 @@
 import { mkdir } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { expect, test, type Page } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const categories = ['now', 'doing', 'learning', 'moments', 'archive'] as const
 const layouts = {
@@ -72,7 +73,7 @@ test('all five page-native details pass the four approved breakpoints', async ({
       expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1)
       if (viewport.width === 390) await expect(page.getByRole('button', { name: '返回公开星盘（底部）' })).toBeVisible()
       else await expect(page.getByRole('button', { name: '返回公开星盘（底部）' })).toBeHidden()
-      await page.screenshot({ path: resolve(evidenceDir, `detail-${category}-${viewport.name}.png`), fullPage: true })
+      await screenshotToPath(page, { path: resolve(evidenceDir, `detail-${category}-${viewport.name}.png`), fullPage: true })
     }
   }
   expect(browserErrors).toEqual([])
@@ -133,11 +134,11 @@ test('direct entry, reduced motion, empty and error states remain truthful', asy
   await expect(page.locator('[data-flip-id]')).toHaveCount(0)
   await expect(page.getByText('这个栏目暂时没有已发布内容。')).toBeVisible()
   expect(await page.getByTestId('public-detail-related').locator(':scope > *').count()).toBeGreaterThanOrEqual(2)
-  await page.screenshot({ path: resolve(evidenceDir, 'detail-archive-empty-390.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'detail-archive-empty-390.png'), fullPage: true })
 
   await page.goto('/moments')
   await expect(page.getByRole('alert')).toContainText('暂时无法读取公开内容')
   await expect(page.getByRole('button', { name: '重试' })).toBeVisible()
   expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1)
-  await page.screenshot({ path: resolve(evidenceDir, 'detail-moments-error-390.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'detail-moments-error-390.png'), fullPage: true })
 })

@@ -1,6 +1,8 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
+import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p3-t5')
 const session = { mode: 'local-preview', account: 'records-e2e@lifeops.local' }
@@ -199,7 +201,7 @@ test('record stream preserves source identity, keyboard history and responsive e
     ]) {
       await page.setViewportSize(viewport)
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), `${viewport.width} CSS px`).toBe(true)
-      await page.screenshot({ path: resolve(evidenceDir, viewport.name), fullPage: true })
+      await screenshotToPath(page, { path: resolve(evidenceDir, viewport.name), fullPage: true })
     }
 
     await page.setViewportSize({ width: 1440, height: 900 })
@@ -220,9 +222,9 @@ test('record stream preserves source identity, keyboard history and responsive e
     await page.setViewportSize({ width: 320, height: 900 })
     await page.evaluate(() => { document.documentElement.style.fontSize = '200%' })
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), '200% text / 320 CSS px').toBe(true)
-    await page.screenshot({ path: resolve(evidenceDir, 'records-320x900-200pct-reflow.png'), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'records-320x900-200pct-reflow.png'), fullPage: true })
   } finally {
-    await context.tracing.stop({ path: resolve(evidenceDir, 'records-responsive-keyboard-trace.zip') })
+    await traceToPath(context, resolve(evidenceDir, 'records-responsive-keyboard-trace.zip'))
   }
 })
 
@@ -252,7 +254,7 @@ test('record autosave exposes timestamp, local 409 recovery and honest offline s
     expect(await page.evaluate(() => localStorage.getItem('lifeops:record-draft:record-release'))).toBeNull()
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.evaluate(() => scrollTo(0, 0))
-    await page.screenshot({ path: resolve(evidenceDir, 'records-1440x900-offline.png') })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'records-1440x900-offline.png') })
   } finally {
     await context.setOffline(false)
   }

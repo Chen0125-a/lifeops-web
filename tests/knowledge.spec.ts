@@ -1,6 +1,8 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
+import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p4-t2')
 const session = { mode: 'local-preview', account: 'knowledge-e2e@lifeops.local' }
@@ -126,7 +128,7 @@ test('knowledge workspace preserves 2.5/3.5/6, URL history, keyboard focus and r
     ]) {
       await page.setViewportSize(viewport)
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), `${viewport.width} CSS px`).toBe(true)
-      await page.screenshot({ path: resolve(evidenceDir, viewport.name), fullPage: true })
+      await screenshotToPath(page, { path: resolve(evidenceDir, viewport.name), fullPage: true })
     }
 
     await page.setViewportSize({ width: 1440, height: 900 })
@@ -143,15 +145,15 @@ test('knowledge workspace preserves 2.5/3.5/6, URL history, keyboard focus and r
     await page.getByRole('button', { name: '返回知识列表' }).click()
     await expect(page.getByRole('region', { name: '知识列表' })).toBeVisible()
     await expect(page.getByRole('region', { name: '知识阅读与编辑' })).toBeHidden()
-    await page.screenshot({ path: resolve(evidenceDir, 'knowledge-390x844-list.png'), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'knowledge-390x844-list.png'), fullPage: true })
 
     await page.setViewportSize({ width: 320, height: 900 })
     await page.evaluate(() => { document.documentElement.style.fontSize = '200%' })
     await page.evaluate(() => scrollTo(0, 0))
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), '200% text / 320 CSS px').toBe(true)
-    await page.screenshot({ path: resolve(evidenceDir, 'knowledge-320x900-200pct-reflow.png'), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'knowledge-320x900-200pct-reflow.png'), fullPage: true })
   } finally {
-    await context.tracing.stop({ path: resolve(evidenceDir, 'knowledge-responsive-keyboard-trace.zip') })
+    await traceToPath(context, resolve(evidenceDir, 'knowledge-responsive-keyboard-trace.zip'))
   }
 })
 
@@ -176,7 +178,7 @@ test('knowledge autosave preserves conflict and offline drafts and reduced motio
     await expect(page.getByText('离线草稿', { exact: true })).toBeVisible({ timeout: 4_000 })
     await expect(page.getByText(/当前浏览器会话.*明文/)).toBeVisible()
     expect(await page.evaluate(() => localStorage.getItem('lifeops:record-draft:knowledge:note-release'))).toBeNull()
-    await page.screenshot({ path: resolve(evidenceDir, 'knowledge-1440x900-offline.png'), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'knowledge-1440x900-offline.png'), fullPage: true })
   } finally {
     await context.setOffline(false)
   }
@@ -186,7 +188,7 @@ test('knowledge autosave preserves conflict and offline drafts and reduced motio
   await expect(page.getByRole('region', { name: '知识阅读与编辑' })).toBeVisible()
   const maximumTransition = await page.locator('.knowledge-page').evaluate((root) => Math.max(...Array.from(root.querySelectorAll('*')).map((element) => Number.parseFloat(getComputedStyle(element).transitionDuration) || 0)))
   expect(maximumTransition).toBeLessThanOrEqual(.001)
-  await page.screenshot({ path: resolve(evidenceDir, 'knowledge-1440x900-reduced-motion.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'knowledge-1440x900-reduced-motion.png'), fullPage: true })
 })
 
 test('knowledge permission failure stays scoped and retryable', async ({ page }) => {

@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p5-t6')
 const timestamp = '2026-08-23T02:50:00.000Z'
@@ -107,7 +108,7 @@ test('settings workbench holds continuous geometry, mobile reverse navigation an
     await page.goto('/app/settings')
     await expect(page.getByRole('heading', { name: '账户与设置', level: 1 })).toBeVisible()
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), `${viewport.width} CSS px`).toBe(true)
-    await page.screenshot({ path: resolve(evidenceDir, viewport.name), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, viewport.name), fullPage: true })
   }
 
   await page.setViewportSize({ width: 390, height: 844 })
@@ -117,7 +118,7 @@ test('settings workbench holds continuous geometry, mobile reverse navigation an
   await page.keyboard.press('Enter')
   await expect(page.getByRole('heading', { name: '时间与区域', level: 2 })).toBeVisible()
   await expect(page.getByRole('button', { name: '返回设置分类' })).toBeFocused()
-  await page.screenshot({ path: resolve(evidenceDir, 'settings-locale-390x844.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'settings-locale-390x844.png'), fullPage: true })
   await page.getByRole('button', { name: '返回设置分类' }).click()
   await expect(localeCategory).toHaveAttribute('aria-current', 'page')
   await expect(localeCategory).toBeFocused()
@@ -126,7 +127,7 @@ test('settings workbench holds continuous geometry, mobile reverse navigation an
   await page.goto('/app/settings')
   await page.evaluate(() => { document.documentElement.style.fontSize = '200%' })
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), '320 CSS px at 200% text').toBe(true)
-  await page.screenshot({ path: resolve(evidenceDir, 'settings-categories-320x900-200pct.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'settings-categories-320x900-200pct.png'), fullPage: true })
   await page.evaluate(() => { document.documentElement.style.fontSize = '' })
 
   await page.emulateMedia({ reducedMotion: 'reduce' })
@@ -138,5 +139,5 @@ test('settings workbench holds continuous geometry, mobile reverse navigation an
     return [style.animationDuration, style.transitionDuration].map((duration) => Number.parseFloat(duration) || 0)
   })))
   expect(maximumDuration).toBeLessThanOrEqual(.001)
-  await page.screenshot({ path: resolve(evidenceDir, 'settings-data-390x844-reduced-motion.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'settings-data-390x844-reduced-motion.png'), fullPage: true })
 })

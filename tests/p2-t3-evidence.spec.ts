@@ -3,6 +3,7 @@ import { mkdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page } from '@playwright/test'
 import { screenshotToPath } from './helpers/screenshotToPath'
+import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDirectory = resolve('outputs/evidence/browser/p2-t3')
 const viewports = [
@@ -53,6 +54,8 @@ test('capture the P2-T3 login golden-slice evidence set', async ({ browser, cont
 
     for (const theme of ['day', 'night'] as const) {
       await prepare(page, theme)
+      await expect(page.locator('#hero-title')).toHaveAttribute('data-title-state', 'complete')
+      await expect(page.locator('.public-orbit__count')).toHaveText('05')
       await page.getByRole('button', { name: '暂停星盘动画' }).click()
       await screenshot(page, `${viewport.name}-${theme}-home-paused`)
       await page.getByRole('button', { name: '继续星盘动画' }).click()
@@ -117,7 +120,7 @@ test('capture the P2-T3 login golden-slice evidence set', async ({ browser, cont
     await screenshot(page, `filmstrip-normal-close-${String(closingTimes[index]).padStart(3, '0')}ms`)
   }
   await expect(page.locator('[data-login-phase="closed"]')).toBeVisible()
-  await context.tracing.stop({ path: resolve(evidenceDirectory, 'login-open-close-no-credentials-trace.zip') })
+  await traceToPath(context, resolve(evidenceDirectory, 'login-open-close-no-credentials-trace.zip'))
 
   await prepare(page, 'night')
   const frameTelemetry = await page.evaluate(async () => {

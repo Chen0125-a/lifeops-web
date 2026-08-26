@@ -63,6 +63,28 @@ function Harness({ api = actions(), keys = ['key-1', 'key-2'] }: { api?: QuickCr
   </>
 }
 
+function ReplacingTriggerHarness() {
+  const [open, setOpen] = useState(false)
+  const [generation, setGeneration] = useState(0)
+  return <>
+    <button
+      key={generation}
+      type="button"
+      aria-label="快速记录"
+      onClick={() => setOpen(true)}
+    >快速记录</button>
+    <button type="button" onClick={() => setGeneration((value) => value + 1)}>替换触发器</button>
+    <QuickCreate
+      open={open}
+      context={{}}
+      actions={actions()}
+      onOpen={() => setOpen(true)}
+      onClose={() => setOpen(false)}
+      onOpenResult={vi.fn()}
+    />
+  </>
+}
+
 describe('QuickCreate', () => {
   it('opens from the global shortcut, defaults to record and restores the invoking focus on Escape', async () => {
     const user = userEvent.setup()
@@ -77,6 +99,20 @@ describe('QuickCreate', () => {
 
     await user.keyboard('{Escape}')
     await waitFor(() => expect(trigger).toHaveFocus())
+  })
+
+  it('restores focus to the current quick-create trigger when the original trigger was replaced', async () => {
+    const user = userEvent.setup()
+    render(<ReplacingTriggerHarness />)
+    const original = screen.getByRole('button', { name: '快速记录' })
+    original.focus()
+    await user.keyboard('{Control>}/{/Control}')
+    await user.click(screen.getByRole('button', { name: '替换触发器' }))
+    expect(original.isConnected).toBe(false)
+
+    await user.keyboard('{Escape}')
+
+    await waitFor(() => expect(screen.getByRole('button', { name: '快速记录' })).toHaveFocus())
   })
 
   it('supports explicit type selection, minimal fields, inherited context and expandable advanced fields', async () => {

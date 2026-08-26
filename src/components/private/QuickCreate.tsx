@@ -216,6 +216,7 @@ export function QuickCreate({
   const inputRef = useRef<HTMLInputElement>(null)
   const panelRef = useRef<HTMLFormElement>(null)
   const returnFocusRef = useRef<HTMLElement | null>(null)
+  const pendingReturnFocusRef = useRef<HTMLElement | null>(null)
   const wasOpenRef = useRef(false)
   const keyRef = useRef<string | null>(null)
   const submittingRef = useRef(false)
@@ -232,6 +233,14 @@ export function QuickCreate({
     && created.undoExpiresAt
     && Date.parse(created.undoExpiresAt) > Date.now(),
   )
+  const restorePendingFocus = () => {
+    const target = pendingReturnFocusRef.current
+    if (!target) return
+    const currentTarget = target.isConnected
+      ? target
+      : document.querySelector<HTMLElement>('.workspace-capture-button, [aria-label="快速记录"]')
+    currentTarget?.focus()
+  }
 
   useEffect(() => {
     const shortcut = (event: KeyboardEvent) => {
@@ -246,6 +255,7 @@ export function QuickCreate({
 
   useEffect(() => {
     if (open && !wasOpenRef.current) {
+      pendingReturnFocusRef.current = null
       returnFocusRef.current ??= document.activeElement instanceof HTMLElement ? document.activeElement : null
       wasOpenRef.current = true
       keyRef.current = createIdempotencyKey()
@@ -259,7 +269,8 @@ export function QuickCreate({
       keyRef.current = null
       const target = returnFocusRef.current
       returnFocusRef.current = null
-      const frame = requestAnimationFrame(() => target?.focus())
+      pendingReturnFocusRef.current = target
+      const frame = requestAnimationFrame(restorePendingFocus)
       return () => cancelAnimationFrame(frame)
     }
   }, [createIdempotencyKey, open])
@@ -314,7 +325,12 @@ export function QuickCreate({
     }
   }
 
-  return <AnimatePresence initial={false}>
+  return <AnimatePresence initial={false} onExitComplete={() => {
+    requestAnimationFrame(() => {
+      restorePendingFocus()
+      pendingReturnFocusRef.current = null
+    })
+  }}>
     {open && <motion.div
       className="quick-create"
       role="dialog"

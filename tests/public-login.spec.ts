@@ -53,7 +53,7 @@ test('default night, explicit day and one-shot title survive login close and reo
   await page.goto('/', { waitUntil: 'commit' })
 
   const home = page.locator('[data-public-theme]')
-  const title = page.getByRole('heading', { name: '把日子，慢慢看清。' })
+  const title = page.locator('#hero-title')
   const object = page.locator('[data-public-object="now"]')
   await title.waitFor({ state: 'attached' })
   await expect(title).toHaveAccessibleName('把日子，慢慢看清。')
@@ -67,6 +67,7 @@ test('default night, explicit day and one-shot title survive login close and reo
   await expect(home).toHaveAttribute('data-public-theme', 'day')
   await page.getByRole('button', { name: '登录 LifeOps' }).click()
   await expect(page.locator('[data-login-phase="open"]')).toBeVisible()
+  await expect(page.locator('.public-hero__copy')).toHaveAttribute('aria-hidden', 'true')
   await page.getByRole('button', { name: '关闭登录窗口' }).click()
   await expect(page.locator('[data-login-phase="closed"]')).toBeVisible({ timeout: webkitTransitionTimeout(browserName) })
   await page.getByRole('button', { name: '登录 LifeOps' }).click()
@@ -83,11 +84,15 @@ test('default night, explicit day and one-shot title survive login close and reo
   await expect(home).toHaveAttribute('data-public-theme', 'day')
 })
 
-test('explicit public day stays separate from the authenticated private daylight prepaint', async ({ page }) => {
+test('explicit public day stays separate from the authenticated private daylight prepaint', async ({ page, browserName }) => {
   await page.goto('/')
+  await expect(page.locator('[data-public-orbit]')).toHaveAttribute('data-motion-enhanced', 'true')
+  await page.bringToFront()
   await page.getByRole('button', { name: '切换为日间主题' }).click()
   await expect(page.locator('[data-public-theme]')).toHaveAttribute('data-public-theme', 'day')
   await page.getByRole('button', { name: '登录 LifeOps' }).click()
+  await expect(page.locator('[data-login-phase="open"]')).toBeVisible()
+  await waitForDesktopLoginComposition(page, browserName)
   await page.getByLabel('账号').fill('owner@example.com')
   await page.getByRole('textbox', { name: '密码', exact: true }).fill('local-preview')
   await page.getByRole('button', { name: '进入 LifeOps' }).click()
@@ -128,6 +133,7 @@ test('desktop login is a 460px live-playhead task layer beside a fully inset 520
   expect(ring!.x + ring!.width).toBeLessThanOrEqual(1424)
   expect(ring!.y + ring!.height).toBeLessThanOrEqual(884)
 
+  await page.bringToFront()
   const movingFrom = await object.boundingBox()
   await page.waitForTimeout(420)
   const movingTo = await object.boundingBox()
