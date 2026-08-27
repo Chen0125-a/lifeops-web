@@ -2,11 +2,125 @@ import { act, fireEvent, render, screen } from '@testing-library/react'
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { describe, expect, it, vi } from 'vitest'
 import { publicDestinations } from '../../content/publicDestinations'
+import { gsap } from '../../motion/publicGsap'
 import { orbitDefinitions } from './orbitGeometry'
 import { PublicOrbit } from './PublicOrbit'
 import { PublicOrbitFallback } from './PublicOrbitFallback'
 
 describe('PublicOrbit', () => {
+  it('gives native Web Animations exclusive ownership of the four rings and five upright counters', () => {
+    const originalAnimate = Object.getOwnPropertyDescriptor(Element.prototype, 'animate')
+    const calls: Array<{
+      animation: Animation
+      keyframes: Keyframe[] | PropertyIndexedKeyframes | null
+      options: number | KeyframeAnimationOptions | undefined
+      target: Element
+    }> = []
+    const animate = vi.fn(function animate(
+      this: Element,
+      keyframes: Keyframe[] | PropertyIndexedKeyframes | null,
+      options?: number | KeyframeAnimationOptions,
+    ) {
+      const duration = typeof options === 'number' ? options : Number(options?.duration ?? 0)
+      const animation = {
+        cancel: vi.fn(),
+        currentTime: 0,
+        effect: { getTiming: () => ({ duration }) },
+        pause: vi.fn(),
+        play: vi.fn(),
+        playbackRate: 1,
+      } as unknown as Animation
+      calls.push({ animation, keyframes, options, target: this })
+      return animation
+    })
+    Object.defineProperty(Element.prototype, 'animate', {
+      configurable: true,
+      value: animate,
+      writable: true,
+    })
+
+    try {
+      const playheads = { now: 0.11, doing: 0.22, learning: 0.22, moments: 0.44, archive: 0.55 }
+      const view = render(
+        <MemoryRouter>
+          <PublicOrbit initialPlayheads={playheads} sceneState="rest" paused={false} />
+        </MemoryRouter>,
+      )
+
+      expect(calls).toHaveLength(9)
+      for (const orbit of orbitDefinitions) {
+        const target = view.container.querySelector(`[data-orbit-ring="${orbit.id}"]`)
+        const call = calls.find((candidate) => candidate.target === target)
+        const direction = orbit.direction === 'cw' ? 360 : -360
+        const firstDestination = publicDestinations.find((destination) => destination.orbitId === orbit.id)
+
+        expect(target).toHaveAttribute('data-continuous-motion-owner', 'waapi')
+        expect(call?.keyframes).toEqual([
+          { transform: 'rotate(0deg)' },
+          { transform: `rotate(${direction}deg)` },
+        ])
+        expect(call?.options).toMatchObject({
+          duration: orbit.periodSeconds * 1000,
+          easing: 'linear',
+          iterations: Infinity,
+        })
+        expect(call?.animation.currentTime).toBe(
+          orbit.periodSeconds * 1000 * playheads[firstDestination!.slug],
+        )
+        expect(call?.animation.playbackRate).toBe(1)
+        expect(call?.animation.play).toHaveBeenCalled()
+        expect(gsap.getTweensOf(target)).toHaveLength(0)
+      }
+
+      for (const destination of publicDestinations) {
+        const target = view.container.querySelector(`[data-public-object="${destination.slug}"]`)
+        const call = calls.find((candidate) => candidate.target === target)
+        const orbit = orbitDefinitions.find((candidate) => candidate.id === destination.orbitId)!
+        const direction = orbit.direction === 'cw' ? 360 : -360
+        const initialRotation = -destination.angleDegrees
+
+        expect(target).toHaveAttribute('data-continuous-motion-owner', 'waapi')
+        expect(call?.keyframes).toEqual([
+          { transform: `rotate(${initialRotation}deg)` },
+          { transform: `rotate(${initialRotation - direction}deg)` },
+        ])
+        expect(call?.options).toMatchObject({
+          duration: destination.periodSeconds * 1000,
+          easing: 'linear',
+          iterations: Infinity,
+        })
+        expect(call?.animation.currentTime).toBe(
+          destination.periodSeconds * 1000 * playheads[destination.slug],
+        )
+        expect(call?.animation.playbackRate).toBe(1)
+        expect(call?.animation.play).toHaveBeenCalled()
+        expect(gsap.getTweensOf(target)).toHaveLength(0)
+      }
+
+      view.rerender(
+        <MemoryRouter>
+          <PublicOrbit initialPlayheads={playheads} sceneState="login" paused={false} />
+        </MemoryRouter>,
+      )
+      expect(calls).toHaveLength(9)
+      expect(calls.every(({ animation }) => animation.playbackRate === 1 / 3)).toBe(true)
+
+      fireEvent.focus(screen.getByRole('link', { name: '探索正在做' }))
+      const orbitBTargets = calls.filter(({ target }) => (
+        target.matches('[data-orbit-ring="orbit-b"]')
+        || target.matches('[data-orbit-id="orbit-b"]')
+      ))
+      expect(orbitBTargets).toHaveLength(3)
+      expect(orbitBTargets.every(({ animation }) => vi.mocked(animation.pause).mock.calls.length > 0)).toBe(true)
+
+      view.unmount()
+      expect(calls.every(({ animation }) => vi.mocked(animation.cancel).mock.calls.length === 1)).toBe(true)
+    } finally {
+      if (originalAnimate) Object.defineProperty(Element.prototype, 'animate', originalAnimate)
+      else Reflect.deleteProperty(Element.prototype, 'animate')
+    }
+  })
+
   it('persists all five live playheads, scroll, theme and source focus in router and session state', async () => {
     const playheads = { now: 0.11, doing: 0.22, learning: 0.22, moments: 0.44, archive: 0.55 }
 

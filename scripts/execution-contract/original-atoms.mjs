@@ -329,6 +329,13 @@ const DEDICATED_ATOMS = Object.freeze([
   ['DATA-01.DATA_MODEL.DATA.02', 'DATA-01', 'memory and MySQL parity', 'Keeps memory-test and MySQL production contracts behaviorally equivalent while production remains Fastify/MySQL only.', ['PRIVATE_SHELL'], ['P1-T1', 'P1-T13'], ['unit', 'api', 'mysql'], ['local']],
   ['DATA-01.DATA_MODEL.SEC.01', 'DATA-01', 'tenant data isolation', 'Scopes every persisted entity, query, migration and export to the authenticated owner.', ['PRIVATE_SHELL'], ['P1-T1', 'P6-T1'], ['mysql', 'security'], ['local']],
   ['DATA-01.DATA_MODEL.DATA.03', 'DATA-01', 'history snapshot integrity', 'Preserves completed historical snapshots and changes them only through an explicit audited recalculation.', ['PRIVATE_OVERVIEW'], ['P1-T13'], ['unit', 'mysql'], ['local']],
+  ['PUB-01.PUBLIC_HOME.LAYOUT.01', 'PUB-01', 'public orbit home semantic glyph system', 'Public home preserves sundial, navigation flag, open book, viewfinder and tree-ring/archive semantics in one authored SVG language, keeps every glyph upright and visibly attached to its ring, and keeps all five labels visible without collisions at every required breakpoint.', ['PUBLIC_HOME'], ['P6-T5'], ['unit', 'e2e-local', 'visual', 'manual-review'], ['local']],
+  ['PUB-01.PUBLIC_HOME.FUNC.02', 'PUB-01', 'public orbit home theme default and override', 'Public home defaults to the near-black night scene when no valid user override exists, honors an explicit day override, and never exports the public starfield theme into the private daylight shell.', ['PUBLIC_HOME'], ['P6-T5'], ['unit', 'e2e-local', 'visual', 'manual-review'], ['local']],
+  ['PUB-01.PUBLIC_HOME.FUNC.03', 'PUB-01', 'public orbit home reference-locked four-ring system', 'Public home renders the exact ADR-029 1132 by 750 four-ring system at center 792,371 and scale .85 with base diameters 353,501,649,797, one uncompensated 1px masked gradient, CCW30/CW40/CW50/CCW60 rotation, five-to-four semantic mapping and no hidden or clipped outer edge.', ['PUBLIC_HOME'], ['P6-T5'], ['unit', 'e2e-local', 'visual', 'manual-review'], ['local']],
+  ['AUTH-01.LOGIN_OVERLAY.FUNC.02', 'AUTH-01', 'login overlay preserves themed public-scene continuity', 'Opening, closing, reverse-closing and reopening login preserve title completion, live ring playheads, center completion and selected theme; night uses a dark themed identity surface, day uses a compatible light surface, and all existing form, request, authentication, Escape, focus and return contracts remain intact.', ['LOGIN_OVERLAY', 'PUBLIC_HOME'], ['P2-T3', 'P6-T5'], ['unit', 'e2e-local', 'visual', 'manual-review'], ['local']],
+  ['MOTION-01.PUBLIC_HOME.MOTION.04', 'MOTION-01', 'public home reference-ring arrival and one-shot reveal', 'Native Web Animations exclusively owns the four continuous ring rotations and five upright counter transforms; GSAP exclusively owns title, group and object arrival, login, public-detail continuity, scene and aperture motion; no node or transform property has competing engine or CSS owners.', ['PUBLIC_HOME'], ['P6-T5', 'P6-T6'], ['unit', 'e2e-local', 'visual', 'manual-review'], ['local']],
+  ['SPACE-01.PUBLIC_HOME.RESP.05', 'SPACE-01', 'public orbit complete viewport inset and responsive composition', 'At 1440,1024,768,390 and 320 CSS px in rest and login states the entire outer ring remains inside the viewport safe inset without clipping, controls remain reachable, labels remain readable and the page has zero horizontal overflow; the wide login relation is approximately 520 ring, 32 gap and 460 panel.', ['PUBLIC_HOME', 'LOGIN_OVERLAY'], ['P6-T5'], ['e2e-local', 'visual', 'manual-review'], ['local']],
+  ['STATE-01.PUBLIC_HOME.STATE.06', 'STATE-01', 'public home visual preference and reveal continuity', 'Public home deterministically distinguishes no override, explicit day, explicit night, reduced-motion and enhanced/fallback states; login and route continuity preserve theme, title/count completion and live ring playheads without a white flash, white night panel or false reset.', ['PUBLIC_HOME', 'LOGIN_OVERLAY'], ['P6-T5'], ['unit', 'e2e-local', 'visual', 'manual-review'], ['local']],
   ['RECORD-01.RECORDS_ROUTE.DATA.02', 'RECORD-01', 'record cover create default', 'Creates every record with a persisted nullable cover identity whose default is null.', ['RECORDS_ROUTE'], ['P1-T6', 'P3-T5'], ['unit', 'api', 'mysql', 'e2e-local', 'image'], ['local', 'image']],
   ['RECORD-01.RECORDS_ROUTE.DATA.03', 'RECORD-01', 'record cover PATCH omission', 'Preserves the current cover identity when a PATCH omits coverMediaId.', ['RECORDS_ROUTE'], ['P1-T6', 'P3-T5'], ['unit', 'api', 'mysql', 'e2e-local', 'image'], ['local', 'image']],
   ['RECORD-01.RECORDS_ROUTE.DATA.04', 'RECORD-01', 'record cover explicit clear', 'Clears the current cover identity when a PATCH sends coverMediaId as null.', ['RECORDS_ROUTE'], ['P1-T6', 'P3-T5'], ['unit', 'api', 'mysql', 'e2e-local', 'image'], ['local', 'image']],
@@ -465,6 +472,27 @@ const RECORD_CONTRACT_CLAUSE_RULES = Object.freeze([
   ['[ ] **Step 4: Write failing page and record-contract tests**', ['RECORD-01.RECORDS_ROUTE.DATA.02', 'RECORD-01.RECORDS_ROUTE.DATA.03', 'RECORD-01.RECORDS_ROUTE.DATA.04', 'RECORD-01.RECORDS_ROUTE.DATA.05', 'RECORD-01.RECORDS_ROUTE.TXN.05', 'RECORD-01.RECORDS_ROUTE.SEC.01', 'RECORD-01.RECORDS_ROUTE.NAV.04', 'RECORD-01.RECORDS_ROUTE.FUNC.02', 'RECORD-01.RECORDS_ROUTE.STATE.01']],
 ])
 
+const PUBLIC_MOTION_OWNER_CLAUSE_PREFIXES = Object.freeze([
+  '原生 Web Animations API 只拥有四个持续圆环',
+  '除四个持续圆环 rotation 与五个 upright counter transform',
+  '四条 masked-gradient 圆环各自持续旋转',
+  '**Architecture:** Work is split into six ordered vertical plans.',
+  'Native Web Animations owns only the four continuous ring rotations',
+  'ADR-030 changes only the scheduler owner for nine continuous transforms',
+  'Ordinary CI remediation under this still-open step must preserve the ADR-030 engine boundary',
+])
+
+function explicitPublicMotionOwnerAtom(clause, atoms) {
+  if (!PUBLIC_MOTION_OWNER_CLAUSE_PREFIXES.some((prefix) => clause.textSummary.startsWith(prefix))) {
+    return null
+  }
+  const atomId = 'MOTION-01.PUBLIC_HOME.MOTION.04'
+  if (!atoms.some((atom) => atom.id === atomId)) {
+    throw new Error(`Public motion-owner clause references unknown atom: ${atomId}`)
+  }
+  return [atomId]
+}
+
 function explicitRecordContractAtoms(clause, atoms) {
   const rule = RECORD_CONTRACT_CLAUSE_RULES.find(([prefix]) => clause.textSummary.startsWith(prefix))
   if (!rule) return null
@@ -476,6 +504,8 @@ function explicitRecordContractAtoms(clause, atoms) {
 }
 
 function selectAtomsForClause(clause, atoms) {
+  const publicMotionOwner = explicitPublicMotionOwnerAtom(clause, atoms)
+  if (publicMotionOwner) return publicMotionOwner
   const explicit = explicitRecordContractAtoms(clause, atoms)
   if (explicit) return explicit
   const parents = inferParents(clause)

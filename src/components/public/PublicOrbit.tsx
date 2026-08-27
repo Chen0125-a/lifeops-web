@@ -1,4 +1,5 @@
 import {
+  memo,
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -46,28 +47,45 @@ function readDocumentHidden() {
   return typeof document !== 'undefined' && document.hidden
 }
 
-function normalizedTimelinePlayhead(timeline: gsap.core.Timeline) {
-  const duration = timeline.duration()
-  if (!Number.isFinite(duration) || duration <= 0) return 0
-  return Number(Math.min(0.999999, Math.max(0, timeline.time() / duration)).toFixed(6))
-}
-
 function boundedPlayhead(value: number | undefined) {
   return Math.min(0.999999, Math.max(0, value ?? 0))
 }
 
-export function PublicOrbit({
+interface ContinuousAnimation {
+  animation: Animation
+  durationMs: number
+}
+
+function normalizedAnimationPlayhead({ animation, durationMs }: ContinuousAnimation) {
+  const currentTime = Number(animation.currentTime ?? 0)
+  if (!Number.isFinite(currentTime) || !Number.isFinite(durationMs) || durationMs <= 0) return 0
+  const normalized = ((currentTime % durationMs) + durationMs) % durationMs / durationMs
+  return Number(Math.min(0.999999, Math.max(0, normalized)).toFixed(6))
+}
+
+function suspendAnimation(animation: Animation) {
+  const currentTime = animation.currentTime
+  animation.pause()
+  if (currentTime !== null) animation.currentTime = currentTime
+}
+
+function readCurrentTheme(root: HTMLElement | null, fallback: 'day' | 'night') {
+  const publicHome = root?.closest<HTMLElement>('[data-public-theme]')
+  return publicHome?.dataset.publicTheme === 'day' ? 'day' : publicHome ? 'night' : fallback
+}
+
+function PublicOrbitComponent({
   sceneState = 'rest',
   paused = false,
   onSceneRestored,
   initialPlayheads,
   restoreFocusId,
-  theme = 'night',
+  theme: initialTheme = 'night',
 }: PublicOrbitProps) {
   const navigate = useNavigate()
   const orbitRef = useRef<HTMLElement>(null)
-  const ringTimelinesRef = useRef(new Map<string, gsap.core.Timeline>())
-  const objectTimelinesRef = useRef(new Map<PublicDestinationSlug, gsap.core.Timeline>())
+  const ringAnimationsRef = useRef(new Map<string, ContinuousAnimation>())
+  const objectAnimationsRef = useRef(new Map<PublicDestinationSlug, ContinuousAnimation>())
   const progressRef = useRef(new Map<PublicDestinationSlug, number>(
     publicDestinations.map((destination) => [
       destination.slug,
@@ -134,8 +152,8 @@ export function PublicOrbit({
   }, [])
 
   const snapshotProgress = useCallback(() => {
-    objectTimelinesRef.current.forEach((timeline, slug) => {
-      progressRef.current.set(slug, normalizedTimelinePlayhead(timeline))
+    objectAnimationsRef.current.forEach((animation, slug) => {
+      progressRef.current.set(slug, normalizedAnimationPlayhead(animation))
     })
   }, [])
 
@@ -151,12 +169,12 @@ export function PublicOrbit({
       sourceObjectId: slug,
       objectPlayheads,
       homeScrollY: window.scrollY,
-      theme,
+      theme: readCurrentTheme(orbitRef.current, initialTheme),
       sourceFocusId: `public-object-${slug}`,
     }
     persistPublicReturnState(returnState)
     navigate(`/${slug}`, { state: { publicReturn: returnState } })
-  }, [navigate, snapshotProgress, theme])
+  }, [initialTheme, navigate, snapshotProgress])
 
   useEffect(() => {
     const orbit = orbitRef.current
@@ -193,46 +211,65 @@ export function PublicOrbit({
     }
   }, [snapshotProgress])
 
-  useGSAP(() => {
+  useLayoutEffect(() => {
     const root = orbitRef.current
-    ringTimelinesRef.current.clear()
-    objectTimelinesRef.current.clear()
+    ringAnimationsRef.current.clear()
+    objectAnimationsRef.current.clear()
     if (!root || reducedMotion) return
 
     for (const orbit of orbitDefinitions) {
       const ring = root.querySelector<HTMLElement>(`[data-orbit-ring="${orbit.id}"]`)
-      if (!ring) continue
+      if (!ring || typeof ring.animate !== 'function') continue
       const ringDestinations = publicDestinations.filter((destination) => destination.orbitId === orbit.id)
       const direction = orbit.direction === 'cw' ? 360 : -360
-      gsap.set(ring, { rotation: 0, transformOrigin: '50% 50%' })
+      const durationMs = orbit.periodSeconds * 1000
+      const ringAnimation = ring.animate([
+        { transform: 'rotate(0deg)' },
+        { transform: `rotate(${direction}deg)` },
+      ], {
+        duration: durationMs,
+        easing: 'linear',
+        iterations: Infinity,
+      })
+      const ringPlayhead = boundedPlayhead(
+        progressRef.current.get(ringDestinations[0]?.slug) ?? ringDestinations[0]?.phase,
+      )
+      ringAnimation.currentTime = ringPlayhead * durationMs
+      suspendAnimation(ringAnimation)
+      ringAnimationsRef.current.set(orbit.id, { animation: ringAnimation, durationMs })
+
       for (const destination of ringDestinations) {
         const upright = root.querySelector<HTMLElement>(`[data-public-object="${destination.slug}"]`)
-        if (upright) gsap.set(upright, { rotation: -destination.angleDegrees })
+        if (!upright || typeof upright.animate !== 'function') continue
+        const initialRotation = -destination.angleDegrees
+        const uprightAnimation = upright.animate([
+          { transform: `rotate(${initialRotation}deg)` },
+          { transform: `rotate(${initialRotation - direction}deg)` },
+        ], {
+          duration: durationMs,
+          easing: 'linear',
+          iterations: Infinity,
+        })
+        const objectPlayhead = boundedPlayhead(
+          progressRef.current.get(destination.slug) ?? destination.phase,
+        )
+        uprightAnimation.currentTime = objectPlayhead * durationMs
+        suspendAnimation(uprightAnimation)
+        objectAnimationsRef.current.set(destination.slug, {
+          animation: uprightAnimation,
+          durationMs,
+        })
       }
-
-      const timeline = gsap.timeline({ paused: true, repeat: -1 })
-      timeline.to(ring, { duration: orbit.periodSeconds, ease: 'none', rotation: direction }, 0)
-      for (const destination of ringDestinations) {
-        const upright = root.querySelector<HTMLElement>(`[data-public-object="${destination.slug}"]`)
-        if (!upright) continue
-        timeline.to(upright, {
-          duration: orbit.periodSeconds,
-          ease: 'none',
-          rotation: -destination.angleDegrees - direction,
-        }, 0)
-      }
-
-      const restored = boundedPlayhead(initialPlayheads?.[ringDestinations[0]?.slug] ?? ringDestinations[0]?.phase)
-      timeline.progress(restored, true).pause()
-      ringTimelinesRef.current.set(orbit.id, timeline)
-      for (const destination of ringDestinations) objectTimelinesRef.current.set(destination.slug, timeline)
     }
 
     return () => {
-      ringTimelinesRef.current.clear()
-      objectTimelinesRef.current.clear()
+      snapshotProgress()
+      for (const { animation } of ringAnimationsRef.current.values()) animation.cancel()
+      for (const { animation } of objectAnimationsRef.current.values()) animation.cancel()
+      ringAnimationsRef.current.clear()
+      objectAnimationsRef.current.clear()
     }
-  }, { dependencies: [layoutRevision, reducedMotion], revertOnUpdate: true, scope: orbitRef })
+  }, [reducedMotion, snapshotProgress])
 
   useGSAP(() => {
     const root = orbitRef.current
@@ -345,13 +382,22 @@ export function PublicOrbit({
 
   useEffect(() => {
     const hasAnyAttention = Object.values(attentionBySlug).some((flags) => (flags ?? 0) !== 0)
-    for (const [orbitId, timeline] of ringTimelinesRef.current) {
+    for (const [orbitId, ring] of ringAnimationsRef.current) {
       const hasAttention = publicDestinations.some((destination) => (
         destination.orbitId === orbitId && (attentionBySlug[destination.slug] ?? 0) !== 0
       ))
-      timeline.timeScale(motionRate)
-      if (motionSuspended || hasAttention) timeline.pause()
-      else timeline.resume()
+      const animations = [
+        ring,
+        ...publicDestinations
+          .filter((destination) => destination.orbitId === orbitId)
+          .map((destination) => objectAnimationsRef.current.get(destination.slug))
+          .filter((animation): animation is ContinuousAnimation => Boolean(animation)),
+      ]
+      for (const { animation } of animations) {
+        animation.playbackRate = motionRate
+        if (motionSuspended || hasAttention) suspendAnimation(animation)
+        else animation.play()
+      }
     }
     if (motionSuspended || hasAnyAttention) arrivalTimelineRef.current?.pause()
     else arrivalTimelineRef.current?.resume()
@@ -450,6 +496,7 @@ export function PublicOrbit({
                   data-base-diameter={orbit.baseDiameter}
                   data-direction={orbit.direction}
                   data-duration={orbit.periodSeconds}
+                  data-continuous-motion-owner="waapi"
                   data-orbit-ring={orbit.id}
                   data-screen-diameter={orbit.screenDiameter}
                   data-track-width={orbit.trackWidth}
@@ -474,6 +521,7 @@ export function PublicOrbit({
                         aria-label={`探索${destination.label}`}
                         className="public-object"
                         data-arrival-delay={destination.arrivalDelaySeconds}
+                        data-continuous-motion-owner="waapi"
                         data-glyph-upright="true"
                         data-object-angle={destination.angleDegrees}
                         data-object-paused={(attentionBySlug[destination.slug] ?? 0) !== 0 ? 'true' : 'false'}
@@ -534,3 +582,5 @@ export function PublicOrbit({
     </section>
   )
 }
+
+export const PublicOrbit = memo(PublicOrbitComponent)

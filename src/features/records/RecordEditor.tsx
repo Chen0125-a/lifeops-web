@@ -33,6 +33,7 @@ function ExistingRecordEditor({ csrfToken, isSaving, onBack, onDelete, onDirtyCh
   const [title, setTitle] = useState(record.title)
   const [body, setBody] = useState(record.body)
   const [tagText, setTagText] = useState(record.tags.join('，'))
+  const [previewOpen, setPreviewOpen] = useState(false)
   const draft = useMemo(() => JSON.stringify({ body, tags: tags(tagText), title }), [body, tagText, title])
   const autosave = useAutosave({
     delay: 800,
@@ -128,7 +129,10 @@ function ExistingRecordEditor({ csrfToken, isSaving, onBack, onDelete, onDirtyCh
         />
       </section>
 
-      <details className="record-editor__preview"><summary>安全预览</summary><MarkdownView source={body} /></details>
+      <details className="record-editor__preview" onToggle={(event) => setPreviewOpen(event.currentTarget.open)}>
+        <summary>安全预览</summary>
+        {previewOpen ? <MarkdownView className="record-editor__preview-content" source={body} /> : null}
+      </details>
       <p className="record-editor__privacy"><strong>仅自己可见</strong>。公开必须进入独立发布流程，私人媒体地址不会自动写入 Markdown。</p>
       {autosave.status === 'offline' || autosave.status === 'conflict' ? <div className="record-editor__recovery" role="alert">
         <p>{autosave.status === 'conflict' ? '服务器版本已变化，本地草稿没有覆盖新内容。' : autosave.privacyNote}</p>
@@ -158,6 +162,7 @@ function CreateRecordEditor({ csrfToken, isSaving, onBack, onCreate, onDirtyChan
   const [tagText, setTagText] = useState('')
   const [assets, setAssets] = useState<MediaAsset[]>([])
   const [coverMediaId, setCoverMediaId] = useState<string | null>(null)
+  const [previewOpen, setPreviewOpen] = useState(false)
   const dirty = Boolean(title || body || tagText || assets.length)
 
   useEffect(() => onDirtyChange(dirty), [dirty, onDirtyChange])
@@ -206,7 +211,10 @@ function CreateRecordEditor({ csrfToken, isSaving, onBack, onCreate, onDirtyChan
         }}
         onUploaded={(asset) => setAssets((current) => [...current, asset])}
       />
-      {body ? <details className="record-editor__preview"><summary>安全预览</summary><MarkdownView source={body} /></details> : null}
+      {body ? <details className="record-editor__preview" onToggle={(event) => setPreviewOpen(event.currentTarget.open)}>
+        <summary>安全预览</summary>
+        {previewOpen ? <MarkdownView className="record-editor__preview-content" source={body} /> : null}
+      </details> : null}
       <p className="record-editor__privacy">默认仅自己可见；公开必须进入独立发布流程。</p>
       <footer className="record-editor__actions">
         <button className="is-primary" type="button" disabled={isSaving || !title.trim() || !body.trim()} onClick={() => void submit()}>

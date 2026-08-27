@@ -1,9 +1,9 @@
 # LifeOps Web 最终重设计规格
 
-- 状态：`approved-design / amended-through-ADR-029 / uncommitted-local-checkpoint`
-- 日期：2026-08-09；生活专区增量于 2026-08-10 批准；受控 UI 重设计于 2026-08-14 最终批准；参考锁定圆环、主题化登录层与完整入窗比例于 2026-08-23 批准
+- 状态：`approved-design / amended-through-ADR-030 / uncommitted-local-checkpoint`
+- 日期：2026-08-09；生活专区增量于 2026-08-10 批准；受控 UI 重设计于 2026-08-14 最终批准；参考锁定圆环、主题化登录层与完整入窗比例于 2026-08-23 批准；九个持续 transform 的原生 Web Animations 窄所有权例外于 2026-08-27 批准
 - 基线：S012《公开轨道与夜景恢复》
-- 决策：ADR-016、ADR-017、ADR-019、ADR-020、ADR-021、ADR-022、ADR-028、ADR-029
+- 决策：ADR-016、ADR-017、ADR-019、ADR-020、ADR-021、ADR-022、ADR-028、ADR-029、ADR-030
 - 目标：完成 Web、API 与 MySQL 应用层，构建并推送 UHub 双镜像，交付用户可独立部署的 Helm/GitOps 包
 
 ## 1. 规格效力与边界
@@ -13,7 +13,7 @@
 ### 1.1 决策优先级
 
 1. 用户在本轮逐项明确确认的要求。
-2. 本规格、生活专区增量规格、执行完整性规格、镜像交付边界规格与 ADR-016、ADR-017、ADR-019、ADR-020、ADR-021、ADR-022、ADR-028、ADR-029；公开首页的参考锁定圆环、对象入轨、中心文案、登录比例、完整入窗和主题化登录表面以 ADR-029 为最新专门决定。
+2. 本规格、生活专区增量规格、执行完整性规格、镜像交付边界规格与 ADR-016、ADR-017、ADR-019、ADR-020、ADR-021、ADR-022、ADR-028、ADR-029、ADR-030；公开首页的参考锁定圆环、对象入轨、中心文案、登录比例、完整入窗和主题化登录表面以 ADR-029 为视觉专门决定，九个持续 transform 的调度所有权以 ADR-030 为最新窄专门决定。
 3. `2026-08-10-lifeops-life-domain-design.md` 对生活专区的详细产品、数据和验收定义。
 4. S012 中未被本轮调整的公开轨道与夜景基线。
 5. 仍有效且不冲突的历史 ADR、部署合同与源码行为。
@@ -95,6 +95,7 @@
 - 轨道固定为参考锁定的四条同心圆环。统一 `1132×750` 场景坐标，圆心 `(792,371)`；base diameter 为 `353/501/649/797`，统一 scale `.85` 后精确屏幕直径为 `300.05/425.85/551.65/677.45px`。不得改用 `.866` 拟合、偏心椭圆、等间距重算或第五条轨道。
 - 四轨共享同一条未补偿 `1px` masked gradient：`rgba(217,161,255,0) 0% → rgba(217,161,255,1) 43% → rgba(217,161,255,0) 100%`。透明段就是轨道断点，不增加连续底线、补偿线宽、drop-shadow 或每圈独立 opacity。
 - 四轨持续自转，方向/周期依次为 `CCW 30s`、`CW 40s`、`CW 50s`、`CCW 60s`。五对象映射到四轨并保持最终角度 `314/236/161/96/88deg`；共享轨道的两个对象保持分离角度。
+- 原生 Web Animations API 只拥有四个持续圆环 rotation transform 与五个对应的 upright counter transform。GSAP 不写这九个持续 transform；CSS animation/transition、Motion 或第三个引擎也不得写入这些节点的 transform。该窄所有权例外只改变调度层，不改变方向、周期、相位、暂停/恢复、登录三分之一速度、hidden/offscreen/reduced-motion 或 live playhead 合同。
 - 每个对象的局部进度 `u=clamp((time-delay)/0.72s,0,1)`，缓动 `E=cubic-bezier(.22,1,.36,1)(u)`；半径为 `finalRadius×(.3+.7E)`，相对所属旋转轨道的角度为 `finalAngle-180°(1-E)`，局部 scale 为 `.3+.7E`、rotation 为 `-180°(1-E)`、blur 为 `10px(1-E)`，opacity 在 18% 时到 1。延迟固定为 `.60/.80/1.00/1.20/1.40s`；独立 counter 层抵消定位角度扫掠，避免图标自身旋转被叠加，结束帧必须无跳变衔接持续自转。
 - 整组使用独立的 1.2 秒 `.85→1` scale-in；该组入场、四轨持续旋转、对象入轨和图标自身动画不得混成一个 transform owner。中心计数 `00→05`，下方文案固定为“此刻正在发生”。fallback 与 enhanced DOM 使用同一语义、轨道定义、初始/最终几何和 reduced-motion 稳定帧。
 - 登录时圆环持续运行但速度降至三分之一；关闭从当前相位恢复，不重播整组入场、对象入轨或计数。
@@ -279,10 +280,10 @@
 - 快速连续操作从当前动画进度衔接，不重播、不排队。
 - 节奏 token：反馈 120ms、局部状态 180ms、私人任务区 240ms、任务层进入/退出 320/220ms、登录打开/关闭 480/360ms、孔径 680ms、昼夜变化 900ms。退出快于进入，不使用反射性 bounce、elastic 或弹簧回弹。
 - 动画主要使用 `transform` 与 `opacity`；避免大面积模糊、弹跳和装饰性旋转。
-- 公开首页、公开详情连续性、登录和孔径由 `gsap@3.15.0`、`@gsap/react@2.1.2`、GSAP Core 与 MotionPathPlugin 独占；私人产品继续由 Motion 独占；CSS 不得在同一节点上另开 transform 动画。禁止 ScrollTrigger、ScrollSmoother、滚轮导航、全站视差和通用滚动揭示。
+- 除四个持续圆环 rotation 与五个 upright counter transform 由原生 Web Animations API 窄独占外，公开首页标题/整组入场/对象入轨、公开详情连续性、登录、场景和孔径继续由 `gsap@3.15.0`、`@gsap/react@2.1.2`、GSAP Core 与 MotionPathPlugin 独占；私人产品继续由 Motion 独占。任何节点及其 transform 属性不得被两个引擎或 CSS animation/transition 同时写入。禁止 ScrollTrigger、ScrollSmoother、滚轮导航、全站视差和通用滚动揭示。
 - 左侧标题入场同样由公共 GSAP owner 独占，只动画 `transform`、`opacity` 与极小有界 blur。完整标题及其 accessible name 从首帧可读；逐字视觉 span 对读屏隐藏。无 JS/增强失败时直接显示完整标题；reduced-motion 直接稳定显示完整标题且不运行循环光标。
 - 星盘提供位于页头控制组的 44px 暂停/继续图标按钮，不保留右下悬浮胶囊。对象获得键盘焦点或指针停留时暂停其所属共享圆环；页面隐藏、场景离开视口或用户暂停时停止环境循环。减少动态模式停止环境漂移和对象入轨，直接显示完整稳定帧，并以不超过约 80ms 的必要颜色/透明度变化保留状态连续性。
-- 四条 masked-gradient 圆环各自持续旋转；定位层、路径 counter、upright counter 和图标 material 分层拥有 transform，任何单节点不得由 CSS 与 GSAP 同时写 transform。登录整组位移/缩放不能重置各圈或对象 playhead。
+- 四条 masked-gradient 圆环各自持续旋转；定位层、路径 counter、upright counter 和图标 material 分层拥有 transform，其中四个 ring rotation 与五个 upright counter 由原生 Web Animations 独占，其余层由 GSAP 独占。任何单节点不得出现 CSS/GSAP/Web Animations/Motion 的 transform 所有权竞争；登录整组位移/缩放不能重置各圈或对象 playhead。
 
 ## 9. 响应式、状态与可访问性
 

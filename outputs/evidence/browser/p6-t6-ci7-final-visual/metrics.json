@@ -1,0 +1,226 @@
+{
+  "ok": true,
+  "outputDirectory": "/work/outputs/evidence/browser/p6-t6-ci7-final-visual",
+  "captures": [
+    {
+      "filename": "day-rest-1440x900.png",
+      "afterContent": "none",
+      "bloomBackgroundImage": "url(\"http://127.0.0.1:4193/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4193/public-day-sky-bottom.svg\")",
+      "center": {
+        "count": "05",
+        "label": "此刻正在发生"
+      },
+      "login": false,
+      "loginBounds": null,
+      "overflow": 0,
+      "supportVisibility": [
+        "visible",
+        "visible",
+        "visible"
+      ],
+      "theme": "day",
+      "viewport": {
+        "name": "1440x900",
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "filename": "day-login-1440x900.png",
+      "afterContent": "none",
+      "bloomBackgroundImage": "url(\"http://127.0.0.1:4193/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4193/public-day-sky-bottom.svg\")",
+      "center": {
+        "count": "05",
+        "label": "此刻正在发生"
+      },
+      "login": true,
+      "loginBounds": {
+        "x": 908,
+        "y": 155.0078125,
+        "width": 460,
+        "height": 589.984375,
+        "top": 155.0078125,
+        "right": 1368,
+        "bottom": 744.9921875,
+        "left": 908
+      },
+      "overflow": 0,
+      "supportVisibility": [
+        "hidden",
+        "hidden",
+        "hidden"
+      ],
+      "theme": "day",
+      "viewport": {
+        "name": "1440x900",
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "filename": "night-rest-1440x900.png",
+      "afterContent": "none",
+      "bloomBackgroundImage": "url(\"http://127.0.0.1:4193/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4193/public-day-sky-bottom.svg\")",
+      "center": {
+        "count": "05",
+        "label": "此刻正在发生"
+      },
+      "login": false,
+      "loginBounds": null,
+      "overflow": 0,
+      "supportVisibility": [
+        "visible",
+        "visible",
+        "visible"
+      ],
+      "theme": "night",
+      "viewport": {
+        "name": "1440x900",
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "filename": "night-login-1440x900.png",
+      "afterContent": "none",
+      "bloomBackgroundImage": "url(\"http://127.0.0.1:4193/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4193/public-day-sky-bottom.svg\")",
+      "center": {
+        "count": "05",
+        "label": "此刻正在发生"
+      },
+      "login": true,
+      "loginBounds": {
+        "x": 908,
+        "y": 155.0078125,
+        "width": 460,
+        "height": 589.984375,
+        "top": 155.0078125,
+        "right": 1368,
+        "bottom": 744.9921875,
+        "left": 908
+      },
+      "overflow": 0,
+      "supportVisibility": [
+        "hidden",
+        "hidden",
+        "hidden"
+      ],
+      "theme": "night",
+      "viewport": {
+        "name": "1440x900",
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "filename": "day-rest-390x844.png",
+      "afterContent": "none",
+      "bloomBackgroundImage": "url(\"http://127.0.0.1:4193/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4193/public-day-sky-bottom.svg\")",
+      "center": {
+        "count": "05",
+        "label": "此刻正在发生"
+      },
+      "login": false,
+      "loginBounds": null,
+      "overflow": 0,
+      "supportVisibility": [
+        "visible",
+        "visible",
+        "visible"
+      ],
+      "theme": "day",
+      "viewport": {
+        "name": "390x844",
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "filename": "day-login-390x844.png",
+      "afterContent": "none",
+      "bloomBackgroundImage": "url(\"http://127.0.0.1:4193/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4193/public-day-sky-bottom.svg\")",
+      "center": {
+        "count": "05",
+        "label": "此刻正在发生"
+      },
+      "login": true,
+      "loginBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "overflow": 0,
+      "supportVisibility": [
+        "hidden",
+        "hidden",
+        "hidden"
+      ],
+      "theme": "day",
+      "viewport": {
+        "name": "390x844",
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "filename": "night-rest-390x844.png",
+      "afterContent": "none",
+      "bloomBackgroundImage": "url(\"http://127.0.0.1:4193/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4193/public-day-sky-bottom.svg\")",
+      "center": {
+        "count": "05",
+        "label": "此刻正在发生"
+      },
+      "login": false,
+      "loginBounds": null,
+      "overflow": 0,
+      "supportVisibility": [
+        "visible",
+        "visible",
+        "visible"
+      ],
+      "theme": "night",
+      "viewport": {
+        "name": "390x844",
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "filename": "night-login-390x844.png",
+      "afterContent": "none",
+      "bloomBackgroundImage": "url(\"http://127.0.0.1:4193/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4193/public-day-sky-bottom.svg\")",
+      "center": {
+        "count": "05",
+        "label": "此刻正在发生"
+      },
+      "login": true,
+      "loginBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "overflow": 0,
+      "supportVisibility": [
+        "hidden",
+        "hidden",
+        "hidden"
+      ],
+      "theme": "night",
+      "viewport": {
+        "name": "390x844",
+        "width": 390,
+        "height": 844
+      }
+    }
+  ]
+}

@@ -1055,6 +1055,60 @@ test('real acceptance matrix keeps exact catalogs and the complete original plus
   )), false)
 })
 
+test('rebuilding original atoms preserves all seven ADR-029 atoms and the ADR-030 motion-owner contract', async () => {
+  const matrix = await readJson(path.resolve('docs/traceability/acceptance-matrix.json'))
+  const sourceRegistry = await readJson(path.resolve('docs/traceability/source-clauses.json'))
+  const built = buildOriginalAcceptance(matrix, sourceRegistry)
+  const expectedAtomIds = [
+    'AUTH-01.LOGIN_OVERLAY.FUNC.02',
+    'MOTION-01.PUBLIC_HOME.MOTION.04',
+    'PUB-01.PUBLIC_HOME.FUNC.02',
+    'PUB-01.PUBLIC_HOME.FUNC.03',
+    'PUB-01.PUBLIC_HOME.LAYOUT.01',
+    'SPACE-01.PUBLIC_HOME.RESP.05',
+    'STATE-01.PUBLIC_HOME.STATE.06',
+  ]
+  const builtAtoms = new Map(built.matrix.atoms.map((atom) => [atom.id, atom]))
+
+  assert.deepEqual(expectedAtomIds.filter((atomId) => !builtAtoms.has(atomId)), [])
+  assert.equal(
+    builtAtoms.get('MOTION-01.PUBLIC_HOME.MOTION.04')?.contract,
+    'Native Web Animations exclusively owns the four continuous ring rotations and five upright counter transforms; GSAP exclusively owns title, group and object arrival, login, public-detail continuity, scene and aperture motion; no node or transform property has competing engine or CSS owners.',
+  )
+  assert.deepEqual(
+    builtAtoms.get('MOTION-01.PUBLIC_HOME.MOTION.04')?.plannedTasks,
+    ['P6-T5', 'P6-T6'],
+  )
+})
+
+test('ADR-030 authority and execution clauses map reciprocally to the dedicated motion-owner atom', async () => {
+  const matrix = await readJson(path.resolve('docs/traceability/acceptance-matrix.json'))
+  const sourceRegistry = await readJson(path.resolve('docs/traceability/source-clauses.json'))
+  const built = buildOriginalAcceptance(matrix, sourceRegistry)
+  const atomId = 'MOTION-01.PUBLIC_HOME.MOTION.04'
+  const prefixes = [
+    '原生 Web Animations API 只拥有四个持续圆环',
+    '除四个持续圆环 rotation 与五个 upright counter transform',
+    '四条 masked-gradient 圆环各自持续旋转',
+    '**Architecture:** Work is split into six ordered vertical plans.',
+    'Native Web Animations owns only the four continuous ring rotations',
+    'ADR-030 changes only the scheduler owner for nine continuous transforms',
+    'Ordinary CI remediation under this still-open step must preserve the ADR-030 engine boundary',
+  ]
+  const clauses = prefixes.map((prefix) => {
+    const clause = built.sourceRegistry.clauses.find((row) => row.textSummary.startsWith(prefix))
+    assert.ok(clause, `missing ADR-030 clause ${prefix}`)
+    return clause
+  })
+  const atom = built.matrix.atoms.find((row) => row.id === atomId)
+
+  assert.ok(atom)
+  for (const clause of clauses) {
+    assert.ok(clause.atomIds.includes(atomId), `${clause.id} must map to ${atomId}`)
+    assert.ok(atom.sourceClauseIds.includes(clause.id), `${atomId} must reciprocally include ${clause.id}`)
+  }
+})
+
 test('record cover identity and source adapter remain independently atomic', async () => {
   const matrix = await readJson(path.resolve('docs/traceability/acceptance-matrix.json'))
   const sourceRegistry = await readJson(path.resolve('docs/traceability/source-clauses.json'))

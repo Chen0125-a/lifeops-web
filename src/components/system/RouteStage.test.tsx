@@ -118,4 +118,60 @@ describe('RouteStage', () => {
 
     await waitFor(() => expect(screen.getByRole('heading', { name: '目标与项目', level: 1 })).toHaveFocus())
   })
+
+  it('keeps one native 240ms entering-panel owner while retaining outgoing content before mounting heavy content', async () => {
+    const originalAnimate = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'animate')
+    const activeOwners = new WeakSet<HTMLElement>()
+    const calls: Array<{ element: HTMLElement; finish: () => void; frames: Keyframe[]; options: KeyframeAnimationOptions }> = []
+
+    Object.defineProperty(HTMLElement.prototype, 'animate', {
+      configurable: true,
+      value(this: HTMLElement, frames: Keyframe[], options: KeyframeAnimationOptions) {
+        if (activeOwners.has(this)) throw new Error('competing native route animation owner')
+        activeOwners.add(this)
+        let finish: (animation: Animation) => void = () => undefined
+        const animation = {
+          cancel: () => activeOwners.delete(this),
+          finished: new Promise<Animation>((resolve) => { finish = resolve }),
+        } as unknown as Animation
+        calls.push({ element: this, finish: () => finish(animation), frames, options })
+        return animation
+      },
+    })
+
+    try {
+      const { rerender, unmount } = render(
+        <RouteStage direction="forward" routeKey="/app/overview"><h1 tabIndex={-1}>总览</h1></RouteStage>,
+      )
+      expect(document.querySelector<HTMLElement>('[data-route-panel-current]')?.style.transform).toBe('none')
+      rerender(<RouteStage direction="forward" routeKey="/app/records"><h1 tabIndex={-1}>记录</h1></RouteStage>)
+
+      expect(screen.queryByRole('heading', { name: '记录', level: 1 })).not.toBeInTheDocument()
+      const transitions = calls.map(({ element, frames }) => ({
+        routeKey: element.dataset.routeKey,
+        targetOpacity: frames[1]?.opacity,
+        targetTransform: frames[1]?.transform,
+      }))
+      expect(transitions.filter(({ routeKey }) => routeKey === '/app/overview')).toHaveLength(0)
+      expect(transitions.filter(({ routeKey, targetOpacity }) => routeKey === '/app/records' && targetOpacity === 1)).toHaveLength(1)
+      expect(transitions.filter(({ routeKey, targetOpacity }) => routeKey === '/app/overview' && targetOpacity === 1)).toHaveLength(0)
+      calls.forEach(({ frames, options }) => {
+        expect(options).toMatchObject({
+          duration: 240,
+          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          fill: 'both',
+        })
+        expect(frames).toHaveLength(2)
+        frames.forEach((frame) => expect(Object.keys(frame).sort()).toEqual(['opacity', 'transform']))
+      })
+      expect(new Set(calls.filter(({ element }) => element.isConnected).map(({ element }) => element)).size).toBe(1)
+      calls.find(({ element, frames }) => element.dataset.routeKey === '/app/records' && frames[1]?.opacity === 1)?.finish()
+      await waitFor(() => expect(screen.getByRole('heading', { name: '记录', level: 1 })).toBeVisible())
+      expect(document.querySelector<HTMLElement>('[data-route-panel-current]')?.style.transform).toBe('none')
+      unmount()
+    } finally {
+      if (originalAnimate) Object.defineProperty(HTMLElement.prototype, 'animate', originalAnimate)
+      else Reflect.deleteProperty(HTMLElement.prototype, 'animate')
+    }
+  })
 })

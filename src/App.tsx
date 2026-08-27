@@ -1,5 +1,6 @@
-import { lazy, Suspense, type ReactNode } from 'react'
+import { lazy, Suspense, type ReactNode, useEffect, useState } from 'react'
 import { Link, Navigate, Outlet, useLocation, type RouteObject } from 'react-router-dom'
+import { EntryTransitionSurface } from './components/auth/EntryTransitionSurface'
 import { OrbitGlyph } from './components/public/OrbitGlyph'
 import type { PublicReturnState } from './components/public/publicReturnState'
 import { getPublicDestination, publicDestinationLayouts, type PublicDestinationSlug } from './content/publicDestinations'
@@ -90,11 +91,37 @@ function PrivateAccess({ children }: { children: ReactNode }) {
   return auth.status === 'authenticated' ? children : <Navigate to="/" replace />
 }
 
+function ReducedEntryCarry() {
+  const location = useLocation()
+  const state = location.state as {
+    publicTheme?: 'day' | 'night'
+    reducedEntryPrepaint?: boolean
+  } | null
+  const active = location.pathname.startsWith('/app/') && state?.reducedEntryPrepaint === true
+  const [finishedLocationKey, setFinishedLocationKey] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!active || finishedLocationKey === location.key) return
+    const timer = window.setTimeout(() => setFinishedLocationKey(location.key), 64)
+    return () => window.clearTimeout(timer)
+  }, [active, finishedLocationKey, location.key])
+
+  if (!active || finishedLocationKey === location.key) return null
+  return (
+    <EntryTransitionSurface
+      privateReady={false}
+      reduced
+      theme={state?.publicTheme ?? 'day'}
+    />
+  )
+}
+
 /** The provider shell stays mounted while the data router performs route transitions. */
 export function App() {
   return (
     <AuthProvider>
       <Outlet />
+      <ReducedEntryCarry />
     </AuthProvider>
   )
 }

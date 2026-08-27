@@ -94,7 +94,10 @@ test('private routing keeps the shell and outgoing panel, restores focus and nev
   await navigation.click()
   const frames = await framePromise
   await expect(page.getByRole('heading', { name: '记录', level: 1 })).toBeFocused()
-  expect(frames.length).toBeGreaterThanOrEqual(10)
+  const routeResources = await page.evaluate(() => performance.getEntriesByType('resource')
+    .filter((entry) => entry.name.includes('RecordsPage'))
+    .map((entry) => ({ duration: Math.round(entry.duration), name: entry.name, startTime: Math.round(entry.startTime) })))
+  expect(frames.length, JSON.stringify({ frames, routeResources })).toBeGreaterThanOrEqual(10)
   expect(frames.every((frame) => frame.main && frame.shell && frame.routePanels >= 1 && !frame.whiteFrame), JSON.stringify(frames)).toBe(true)
   await page.goBack()
   await expect(page.getByRole('region', { name: '最近记录' }).getByRole('link', { name: '全部记录' })).toBeFocused()

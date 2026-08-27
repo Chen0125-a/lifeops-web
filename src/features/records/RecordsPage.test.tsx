@@ -92,6 +92,7 @@ describe('RecordsPage', () => {
   })
 
   it('renders the native 8/4 date-grouped stream, selected editor, links and private cover truth', async () => {
+    const user = userEvent.setup()
     renderRecords()
 
     expect(await screen.findByRole('heading', { level: 1, name: '记录' })).toBeVisible()
@@ -112,6 +113,10 @@ describe('RecordsPage', () => {
       .toHaveAttribute('src', '/api/v1/media/media-cover')
     expect(within(editor).getByText('仅自己可见')).toBeVisible()
     expect(within(editor).getByRole('button', { name: '当前封面 media-cover' })).toHaveAttribute('aria-pressed', 'true')
+    const preview = within(editor).getByText('安全预览').closest('details')
+    expect(preview?.querySelector('.record-editor__preview-content')).toBeNull()
+    await user.click(within(editor).getByText('安全预览'))
+    expect(preview?.querySelector('.record-editor__preview-content')).not.toBeNull()
   })
 
   it('decodes source once, splits at the first colon and maps only to existing paired filters', async () => {

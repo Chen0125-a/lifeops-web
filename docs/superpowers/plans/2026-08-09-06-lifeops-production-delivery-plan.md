@@ -323,6 +323,7 @@ Network-dependent audit failure must be recorded as infrastructure failure, not 
 - Lighthouse public-page budgets: performance >= 0.85, accessibility >= 0.95, best-practices >= 0.95, SEO >= 0.90; compressed initial JavaScript <= 350 KiB and initial CSS <= 120 KiB.
 - `visual-evidence-manifest.json` records source/checkpoint root, dependency-lock hash, browser/OS/font/DPR/viewport, locale/timezone, color scheme, reduced-motion state, fixture/seed ID, screenshot/filmstrip/trace paths and reviewer result for each required state.
 - ADR-029 correction keeps the public home default/common state at night without changing explicit day override or private daylight; uses the reference-locked `1132×750` four-ring stage at center `(792,371)`, scale `.85`, base diameters `353/501/649/797`, exact `CCW30/CW40/CW50/CCW60` rotation and one uncompensated 1px masked gradient while carrying the same five semantic objects; layers the approved 0.72-second `0.3R / A-180°` spiral arrival, `05 / 此刻正在发生` center, header motion control, theme-scoped login surface and whole-viewport safe-inset contract without replaying on login.
+- ADR-030 changes only the scheduler owner for nine continuous transforms: native Web Animations exclusively owns the four ring rotations and five upright counter transforms; GSAP exclusively retains title, whole-group arrival, object spiral arrival, login, public-detail continuity, scene and aperture motion. Existing directions, periods, live phases, pause/focus/hidden/offscreen/reduced behavior, login one-third speed, geometry and performance gates remain unchanged, and no node may receive transform writes from both engines or CSS/Motion.
 
 - [x] **Step 1: Install and lock browser acceptance dependencies.**
 
@@ -341,6 +342,8 @@ npm.cmd install --save-dev --save-exact @axe-core/playwright@4.12.1 lighthouse@1
 - [x] **Step 6: Fix only evidence-backed failures.** Do not lower thresholds, disable animations globally, hide content from Axe, skip a browser or delete assertions to make the gate green. Optimize route splitting, stable shell, image sizing, query caching and animation composition while preserving the approved design.
 
 - [x] **Step 7: Run the full acceptance matrix, build the reproducibility manifest and open every artifact.** Compare public home/login to the accepted P2 golden slice and private overview/complex workspaces to the accepted P3 slices before judging local polish. Reject the whole page for failure on identity, page-native structure, data/state truth, accessibility or performance/motion; a component-level pass cannot override a page-level veto.
+
+  Ordinary CI remediation under this still-open step must preserve the ADR-030 engine boundary. Before product implementation, formalize the approved exception in ADR/spec/master/source registry/acceptance traceability, prove the unit/DOM owner contract and unchanged official Linux WebKit cadence/theme gate RED, then require both to pass without lowering workers, retries, browser coverage, sample durations, thresholds, geometry, periods or motion rates.
 
   Before this full matrix, the approved ADR-029 visual-correction atom must complete its own RED/GREEN and focused gate: default night/manual day/private daylight; exact reference-locked four-ring geometry and full-viewport safe inset; five-to-four mapping; approved spiral-arrival samples and counter layers; unified semantic glyphs and always-visible labels; `05 / 此刻正在发生`; complete accessible title, typing/complete/once/reduced states; night dark/day light login surfaces; unchanged form/auth/focus/return state; header pause control; fallback/enhanced parity; Chromium plus Windows headed Firefox/WebKit critical. Its visual evidence must include night at 1440/1024/768/390/320, night login, manual day, reduced motion, title initial/mid/final filmstrip, arrival filmstrip and multi-frame full-orbit geometry with numeric viewport-edge measurements. Completion of that atom does not itself run this Step 7 full matrix, rerun the already-consumed Impeccable detector, close P6-T5 or enter P6-T6.
 
@@ -366,6 +369,18 @@ Inspect rather than merely generate public day/night, five details, login open/s
 ### P6-T6: Release preflight and immutable UHub publication
 
 **Files:**
+- Modify under ADR-030 change control: `docs/superpowers/specs/2026-08-09-lifeops-web-final-redesign-design.md`
+- Modify under ADR-030 change control: `docs/superpowers/plans/2026-08-09-00-lifeops-final-master-plan.md`
+- Modify under ADR-030 change control: `docs/traceability/source-clause-review-rules.json`
+- Modify under ADR-030 change control: `docs/traceability/source-clauses.json`
+- Modify under ADR-030 change control: `docs/traceability/acceptance-matrix.json`
+- Modify under ADR-030 change control: `scripts/execution-contract/original-atoms.mjs`
+- Modify under ADR-030 change control: `scripts/verify-execution-contract.test.mjs`
+- Modify under ADR-030 change control: `src/components/public/PublicOrbit.tsx`
+- Modify under ADR-030 change control: `src/components/public/PublicOrbit.test.tsx`
+- Modify under ADR-030 change control: `src/pages/PublicHomePage.tsx`
+- Modify under ADR-030 change control: `src/pages/PublicHomePage.test.tsx`
+- Modify under ADR-030 change control: `tests/public-home.spec.ts`
 - Modify: `.gitignore`
 - Create: `scripts/release-preflight.ps1`
 - Create: `scripts/release-preflight.test.ps1`

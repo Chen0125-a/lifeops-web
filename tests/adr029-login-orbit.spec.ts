@@ -184,9 +184,11 @@ test('desktop login lets the astrolabe lead while the title recedes on composito
     const width = (await bounds(page.locator('[data-orbit-boundary="orbit-d"]'))).width
     return width >= 516 && width <= 524
   }).toBe(true)
-  await expect.poll(async () => page.getByTestId('public-copy').evaluate((element) => (
-    Number.parseFloat(getComputedStyle(element).opacity)
-  ))).toBeLessThanOrEqual(0.24)
+  await expect.poll(async () => page.getByTestId('public-copy').evaluate(async (element) => {
+    await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
+    return element.getAnimations().length === 0
+      && Number.parseFloat(getComputedStyle(element).opacity) <= 0.24
+  })).toBe(true)
 
   const depth = await page.locator('[data-public-scene="login"]').evaluate((home) => {
     const copy = home.querySelector<HTMLElement>('.public-hero__copy')!

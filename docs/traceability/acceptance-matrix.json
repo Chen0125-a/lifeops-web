@@ -1225,6 +1225,7 @@
       "title": "public orbit home layout primary",
       "contract": "public orbit home preserves the approved continuous spatial hierarchy, readable density and non-card-wall composition.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0019",
         "SC-EXECUTION_COMPLETENESS-0021",
         "SC-EXECUTION_COMPLETENESS-0171",
         "SC-EXECUTION_COMPLETENESS-0182",
@@ -1236,6 +1237,7 @@
         "SC-EXECUTION_COMPLETENESS-0328",
         "SC-EXECUTION_COMPLETENESS-0331",
         "SC-EXECUTION_COMPLETENESS-0333",
+        "SC-FINAL_REDESIGN-0011",
         "SC-FINAL_REDESIGN-0017",
         "SC-FINAL_REDESIGN-0077",
         "SC-FINAL_REDESIGN-0091",
@@ -1244,11 +1246,12 @@
         "SC-FINAL_REDESIGN-0336",
         "SC-FINAL_REDESIGN-0338",
         "SC-FINAL_REDESIGN-0341",
+        "SC-FINAL_REDESIGN-0342",
         "SC-FINAL_REDESIGN-0345",
         "SC-MASTER_PLAN-0008",
         "SC-MASTER_PLAN-0031",
         "SC-MASTER_PLAN-0091",
-        "SC-P2-0110",
+        "SC-P2-0118",
         "SC-P3-0173",
         "SC-P3-0175",
         "SC-P3-0177",
@@ -1264,18 +1267,20 @@
         "SC-P6-0169",
         "SC-P6-0170",
         "SC-P6-0172",
+        "SC-P6-0175",
         "SC-P6-0176",
-        "SC-P6-0178",
         "SC-P6-0181",
-        "SC-P6-0279",
+        "SC-P6-0183",
         "SC-P6-0280",
         "SC-P6-0282",
+        "SC-P6-0283",
         "SC-P6-0284",
         "SC-P6-0286",
         "SC-P6-0288",
         "SC-P6-0291",
         "SC-P6-0293",
-        "SC-P6-0295"
+        "SC-P6-0295",
+        "SC-P6-0297"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1300,24 +1305,18 @@
       "id": "PUB-01.PUBLIC_HOME.FUNC.01",
       "parentRequirementId": "PUB-01",
       "title": "public orbit home func primary",
-      "contract": "public orbit home renders the exact ADR-029 four-ring star system, visible night/day depth and five fixed semantic life objects without the rejected offset-ellipse candidate, three-track regression, clipped outer edge or technology-logo primaries.",
+      "contract": "public orbit home renders the authored ellipse, visible day/night tracks and the five fixed semantic objects without forbidden orbit patterns or technology-logo primaries.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0267",
-        "SC-P2-0002",
-        "SC-P2-0011",
-        "SC-P2-0020",
-        "SC-P2-0039",
-        "SC-P2-0048",
-        "SC-P2-0057",
-        "SC-P2-0147"
+        "SC-P2-0034",
+        "SC-P2-0140"
       ],
       "surfaces": [
         "PUBLIC_HOME"
       ],
       "plannedTasks": [
         "P2-T1",
-        "P2-T2",
-        "P6-T5"
+        "P2-T2"
       ],
       "requiredEvidence": [
         "unit",
@@ -1339,7 +1338,6 @@
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0267",
         "SC-P1-0343",
-        "SC-P2-0003",
         "SC-P2-0012",
         "SC-P2-0020",
         "SC-P2-0021",
@@ -1360,9 +1358,7 @@
         "SC-P2-0037",
         "SC-P2-0038",
         "SC-P2-0039",
-        "SC-P2-0049",
-        "SC-P2-0051",
-        "SC-P2-0058"
+        "SC-P2-0051"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1389,9 +1385,9 @@
       "title": "public orbit home state loading",
       "contract": "public orbit home shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0211",
+        "SC-EXECUTION_COMPLETENESS-0274",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0179"
+        "SC-MASTER_PLAN-0020"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1418,7 +1414,6 @@
       "title": "public orbit home state empty",
       "contract": "public orbit home shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0212",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -1446,7 +1441,7 @@
       "title": "public orbit home state error-retry",
       "contract": "public orbit home shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0213",
+        "SC-EXECUTION_COMPLETENESS-0063",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -1474,8 +1469,7 @@
       "title": "public orbit home state offline",
       "contract": "public orbit home shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-MASTER_PLAN-0030"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1532,14 +1526,10 @@
         "SC-FINAL_REDESIGN-0267",
         "SC-P2-0003",
         "SC-P2-0012",
-        "SC-P2-0013",
-        "SC-P2-0022",
-        "SC-P2-0031",
         "SC-P2-0033",
         "SC-P2-0057",
         "SC-P2-0059",
-        "SC-P2-0130",
-        "SC-P2-0149"
+        "SC-P2-0137"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1567,10 +1557,8 @@
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0267",
         "SC-P2-0013",
-        "SC-P2-0023",
-        "SC-P2-0032",
-        "SC-P2-0131",
-        "SC-P2-0140",
+        "SC-P2-0037",
+        "SC-P2-0143",
         "SC-P2-0145"
       ],
       "surfaces": [
@@ -1598,14 +1586,8 @@
       "contract": "public orbit home restores selection, filters, scroll and focus after reverse or interrupted navigation.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0267",
-        "SC-P2-0015",
-        "SC-P2-0024",
         "SC-P2-0029",
-        "SC-P2-0033",
-        "SC-P2-0042",
-        "SC-P2-0051",
         "SC-P2-0053",
-        "SC-P2-0132",
         "SC-P2-0140",
         "SC-P2-0143"
       ],
@@ -1633,27 +1615,22 @@
       "title": "public orbit home resp desktop-1440",
       "contract": "public orbit home at 1440x900 without clipping, card-wall regression or unreachable controls.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0021",
+        "SC-EXECUTION_COMPLETENESS-0057",
         "SC-FINAL_REDESIGN-0282",
-        "SC-FINAL_REDESIGN-0339",
         "SC-FINAL_REDESIGN-0345",
-        "SC-FINAL_REDESIGN-0357",
-        "SC-MASTER_PLAN-0072",
-        "SC-P2-0109",
-        "SC-P2-0111",
-        "SC-P2-0112",
+        "SC-P2-0108",
+        "SC-P2-0114",
         "SC-P2-0118",
         "SC-P2-0119",
         "SC-P2-0120",
-        "SC-P2-0123",
         "SC-P3-0179",
-        "SC-P3-0182",
-        "SC-P3-0183",
+        "SC-P3-0185",
         "SC-P3-0187",
-        "SC-P6-0162",
-        "SC-P6-0173",
-        "SC-P6-0180",
-        "SC-P6-0183",
-        "SC-P6-0289"
+        "SC-P6-0164",
+        "SC-P6-0176",
+        "SC-P6-0284",
+        "SC-P6-0296"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1680,25 +1657,24 @@
       "contract": "public orbit home at 1024x768 without clipping, overlap or loss of hierarchy.",
       "sourceClauseIds": [
         "SC-EXECUTION_COMPLETENESS-0154",
-        "SC-EXECUTION_COMPLETENESS-0171",
+        "SC-EXECUTION_COMPLETENESS-0286",
+        "SC-EXECUTION_COMPLETENESS-0321",
         "SC-EXECUTION_COMPLETENESS-0333",
         "SC-FINAL_REDESIGN-0282",
+        "SC-FINAL_REDESIGN-0344",
         "SC-FINAL_REDESIGN-0345",
-        "SC-P2-0112",
-        "SC-P2-0113",
+        "SC-MASTER_PLAN-0091",
+        "SC-P2-0108",
+        "SC-P2-0109",
+        "SC-P2-0115",
         "SC-P2-0118",
-        "SC-P2-0119",
         "SC-P2-0121",
-        "SC-P2-0124",
-        "SC-P3-0183",
-        "SC-P3-0184",
+        "SC-P3-0186",
         "SC-P3-0187",
-        "SC-P6-0163",
-        "SC-P6-0172",
-        "SC-P6-0173",
-        "SC-P6-0181",
-        "SC-P6-0183",
-        "SC-P6-0280"
+        "SC-P6-0165",
+        "SC-P6-0177",
+        "SC-P6-0285",
+        "SC-P6-0297"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1724,31 +1700,21 @@
       "title": "public orbit home resp tablet-768",
       "contract": "public orbit home at 768x1024 with reachable navigation, content and exit controls.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0019",
-        "SC-EXECUTION_COMPLETENESS-0145",
-        "SC-EXECUTION_COMPLETENESS-0154",
-        "SC-EXECUTION_COMPLETENESS-0181",
-        "SC-EXECUTION_COMPLETENESS-0316",
+        "SC-EXECUTION_COMPLETENESS-0309",
+        "SC-EXECUTION_COMPLETENESS-0322",
         "SC-EXECUTION_COMPLETENESS-0334",
         "SC-FINAL_REDESIGN-0282",
+        "SC-FINAL_REDESIGN-0336",
         "SC-FINAL_REDESIGN-0345",
-        "SC-P2-0113",
-        "SC-P2-0114",
+        "SC-FINAL_REDESIGN-0357",
+        "SC-P2-0109",
+        "SC-P2-0110",
+        "SC-P2-0116",
         "SC-P2-0118",
-        "SC-P2-0119",
         "SC-P2-0122",
-        "SC-P2-0125",
-        "SC-P3-0173",
-        "SC-P3-0184",
-        "SC-P3-0185",
         "SC-P3-0187",
-        "SC-P6-0155",
-        "SC-P6-0164",
-        "SC-P6-0173",
-        "SC-P6-0182",
-        "SC-P6-0183",
-        "SC-P6-0281",
-        "SC-P6-0290"
+        "SC-P6-0166",
+        "SC-P6-0286"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1774,30 +1740,25 @@
       "title": "public orbit home resp mobile-390",
       "contract": "public orbit home at 390x844 without horizontal overflow, top-scroll escape or hidden actions.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0182",
-        "SC-EXECUTION_COMPLETENESS-0317",
+        "SC-EXECUTION_COMPLETENESS-0154",
+        "SC-EXECUTION_COMPLETENESS-0181",
         "SC-FINAL_REDESIGN-0282",
-        "SC-FINAL_REDESIGN-0341",
+        "SC-FINAL_REDESIGN-0334",
         "SC-FINAL_REDESIGN-0345",
         "SC-FINAL_REDESIGN-0346",
-        "SC-FINAL_REDESIGN-0357",
-        "SC-P2-0114",
-        "SC-P2-0115",
+        "SC-MASTER_PLAN-0072",
+        "SC-P2-0111",
         "SC-P2-0118",
-        "SC-P2-0119",
         "SC-P2-0123",
-        "SC-P2-0126",
-        "SC-P3-0174",
-        "SC-P3-0185",
-        "SC-P3-0186",
+        "SC-P3-0173",
+        "SC-P3-0183",
         "SC-P3-0187",
-        "SC-P6-0156",
-        "SC-P6-0165",
-        "SC-P6-0173",
-        "SC-P6-0174",
-        "SC-P6-0183",
-        "SC-P6-0282",
-        "SC-P6-0291"
+        "SC-P3-0188",
+        "SC-P6-0155",
+        "SC-P6-0167",
+        "SC-P6-0179",
+        "SC-P6-0180",
+        "SC-P6-0287"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1824,13 +1785,7 @@
       "contract": "public orbit home supports complete keyboard operation with visible focus and no pointer-only action.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0267",
-        "SC-MASTER_PLAN-0076",
-        "SC-P2-0007",
-        "SC-P2-0025",
-        "SC-P2-0034",
-        "SC-P2-0043",
-        "SC-P2-0052",
-        "SC-P2-0133"
+        "SC-P2-0039"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1859,13 +1814,8 @@
       "contract": "public orbit home moves, traps where required and restores focus predictably on open, close and return.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0267",
-        "SC-P2-0008",
-        "SC-P2-0026",
-        "SC-P2-0035",
-        "SC-P2-0044",
-        "SC-P2-0053",
         "SC-P2-0055",
-        "SC-P2-0143"
+        "SC-P2-0146"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1894,14 +1844,8 @@
       "contract": "public orbit home exposes meaningful landmarks, names, states, order and non-color-only cues.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0267",
-        "SC-P1-0343",
-        "SC-P2-0009",
         "SC-P2-0035",
-        "SC-P2-0036",
         "SC-P2-0038",
-        "SC-P2-0045",
-        "SC-P2-0054",
-        "SC-P2-0135",
         "SC-P2-0137",
         "SC-P2-0146"
       ],
@@ -1931,20 +1875,13 @@
       "title": "public orbit home motion forward",
       "contract": "public orbit home uses a continuous interruptible forward transition with no whole-page white flash.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0202",
+        "SC-EXECUTION_COMPLETENESS-0143",
+        "SC-FINAL_REDESIGN-0084",
+        "SC-FINAL_REDESIGN-0194",
+        "SC-FINAL_REDESIGN-0204",
+        "SC-FINAL_REDESIGN-0244",
         "SC-FINAL_REDESIGN-0281",
-        "SC-P1-0049",
-        "SC-P1-0058",
-        "SC-P1-0067",
-        "SC-P2-0156",
-        "SC-P2-0165",
-        "SC-P2-0174",
-        "SC-P2-0183",
-        "SC-P2-0192",
-        "SC-P3-0173",
-        "SC-P3-0182",
-        "SC-P6-0161",
-        "SC-P6-0170"
+        "SC-FINAL_REDESIGN-0364"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -1974,22 +1911,11 @@
       "title": "public orbit home motion reverse",
       "contract": "public orbit home uses the spatially consistent reverse transition and restores prior state.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0143",
-        "SC-EXECUTION_COMPLETENESS-0161",
-        "SC-EXECUTION_COMPLETENESS-0215",
-        "SC-EXECUTION_COMPLETENESS-0332",
-        "SC-FINAL_REDESIGN-0203",
-        "SC-FINAL_REDESIGN-0281",
-        "SC-P1-0068",
-        "SC-P2-0157",
-        "SC-P2-0166",
-        "SC-P2-0175",
-        "SC-P2-0184",
-        "SC-P2-0193",
-        "SC-P3-0174",
-        "SC-P3-0183",
-        "SC-P6-0162",
-        "SC-P6-0180"
+        "SC-EXECUTION_COMPLETENESS-0094",
+        "SC-EXECUTION_COMPLETENESS-0324",
+        "SC-FINAL_REDESIGN-0195",
+        "SC-FINAL_REDESIGN-0245",
+        "SC-FINAL_REDESIGN-0281"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -2019,23 +1945,11 @@
       "title": "public orbit home motion reduced",
       "contract": "public orbit home honors prefers-reduced-motion while preserving orientation, feedback and reachability.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0324",
-        "SC-FINAL_REDESIGN-0204",
-        "SC-FINAL_REDESIGN-0281",
-        "SC-FINAL_REDESIGN-0330",
-        "SC-P1-0069",
-        "SC-P2-0158",
-        "SC-P2-0167",
-        "SC-P2-0176",
-        "SC-P2-0185",
-        "SC-P2-0194",
-        "SC-P3-0175",
-        "SC-P3-0184",
-        "SC-P4-0165",
-        "SC-P6-0163",
-        "SC-P6-0172",
-        "SC-P6-0181",
-        "SC-P6-0280"
+        "SC-EXECUTION_COMPLETENESS-0015",
+        "SC-EXECUTION_COMPLETENESS-0215",
+        "SC-EXECUTION_COMPLETENESS-0325",
+        "SC-FINAL_REDESIGN-0196",
+        "SC-FINAL_REDESIGN-0281"
       ],
       "surfaces": [
         "PUBLIC_HOME"
@@ -2265,7 +2179,8 @@
       "title": "Now public detail state loading",
       "contract": "Now public detail shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0190"
       ],
       "surfaces": [
         "PUBLIC_NOW"
@@ -2292,8 +2207,8 @@
       "title": "Now public detail state empty",
       "contract": "Now public detail shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0217",
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0191"
       ],
       "surfaces": [
         "PUBLIC_NOW"
@@ -2320,7 +2235,8 @@
       "title": "Now public detail state error-retry",
       "contract": "Now public detail shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0192"
       ],
       "surfaces": [
         "PUBLIC_NOW"
@@ -2347,7 +2263,8 @@
       "title": "Now public detail state offline",
       "contract": "Now public detail shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0193"
       ],
       "surfaces": [
         "PUBLIC_NOW"
@@ -2374,7 +2291,8 @@
       "title": "Now public detail state success",
       "contract": "Now public detail shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0194"
       ],
       "surfaces": [
         "PUBLIC_NOW"
@@ -2673,23 +2591,9 @@
       "title": "Now public detail motion forward",
       "contract": "Now public detail uses a continuous interruptible forward transition with no whole-page white flash.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0325",
-        "SC-FINAL_REDESIGN-0070",
-        "SC-FINAL_REDESIGN-0205",
-        "SC-FINAL_REDESIGN-0281",
-        "SC-P2-0159",
-        "SC-P2-0168",
-        "SC-P2-0177",
-        "SC-P2-0186",
-        "SC-P2-0195",
-        "SC-P3-0176",
-        "SC-P3-0185",
-        "SC-P6-0155",
-        "SC-P6-0164",
-        "SC-P6-0173",
-        "SC-P6-0182",
-        "SC-P6-0281",
-        "SC-P6-0290"
+        "SC-EXECUTION_COMPLETENESS-0066",
+        "SC-EXECUTION_COMPLETENESS-0326",
+        "SC-FINAL_REDESIGN-0281"
       ],
       "surfaces": [
         "PUBLIC_NOW"
@@ -2719,22 +2623,10 @@
       "title": "Now public detail motion reverse",
       "contract": "Now public detail uses the spatially consistent reverse transition and restores prior state.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0326",
-        "SC-FINAL_REDESIGN-0251",
-        "SC-FINAL_REDESIGN-0281",
-        "SC-FINAL_REDESIGN-0350",
-        "SC-P2-0169",
-        "SC-P2-0178",
-        "SC-P2-0187",
-        "SC-P2-0196",
-        "SC-P3-0177",
-        "SC-P3-0186",
-        "SC-P6-0156",
-        "SC-P6-0165",
-        "SC-P6-0174",
-        "SC-P6-0183",
-        "SC-P6-0282",
-        "SC-P6-0291"
+        "SC-EXECUTION_COMPLETENESS-0187",
+        "SC-FINAL_REDESIGN-0068",
+        "SC-FINAL_REDESIGN-0198",
+        "SC-FINAL_REDESIGN-0281"
       ],
       "surfaces": [
         "PUBLIC_NOW"
@@ -2764,20 +2656,27 @@
       "title": "Now public detail motion reduced",
       "contract": "Now public detail honors prefers-reduced-motion while preserving orientation, feedback and reachability.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0066",
         "SC-EXECUTION_COMPLETENESS-0318",
+        "SC-FINAL_REDESIGN-0199",
         "SC-FINAL_REDESIGN-0281",
-        "SC-FINAL_REDESIGN-0351",
-        "SC-P2-0188",
-        "SC-P2-0197",
-        "SC-P3-0178",
-        "SC-P3-0187",
-        "SC-P6-0157",
-        "SC-P6-0166",
-        "SC-P6-0175",
-        "SC-P6-0184",
-        "SC-P6-0283",
-        "SC-P6-0292"
+        "SC-FINAL_REDESIGN-0329",
+        "SC-FINAL_REDESIGN-0349",
+        "SC-FINAL_REDESIGN-0359",
+        "SC-P1-0050",
+        "SC-P1-0060",
+        "SC-P1-0070",
+        "SC-P2-0110",
+        "SC-P2-0120",
+        "SC-P2-0160",
+        "SC-P2-0170",
+        "SC-P2-0200",
+        "SC-P3-0180",
+        "SC-P3-0190",
+        "SC-P6-0160",
+        "SC-P6-0170",
+        "SC-P6-0180",
+        "SC-P6-0280",
+        "SC-P6-0290"
       ],
       "surfaces": [
         "PUBLIC_NOW"
@@ -2949,8 +2848,9 @@
       "title": "Doing public detail state loading",
       "contract": "Doing public detail shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0281",
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0347",
+        "SC-P5-0195"
       ],
       "surfaces": [
         "PUBLIC_DOING"
@@ -2977,7 +2877,8 @@
       "title": "Doing public detail state empty",
       "contract": "Doing public detail shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0196"
       ],
       "surfaces": [
         "PUBLIC_DOING"
@@ -3004,7 +2905,9 @@
       "title": "Doing public detail state error-retry",
       "contract": "Doing public detail shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0085",
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0197"
       ],
       "surfaces": [
         "PUBLIC_DOING"
@@ -3031,6 +2934,7 @@
       "title": "Doing public detail state offline",
       "contract": "Doing public detail shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0229",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -3354,19 +3258,21 @@
       "title": "Doing public detail motion forward",
       "contract": "Doing public detail uses a continuous interruptible forward transition with no whole-page white flash.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0094",
-        "SC-FINAL_REDESIGN-0190",
-        "SC-FINAL_REDESIGN-0244",
         "SC-FINAL_REDESIGN-0281",
-        "SC-P2-0189",
-        "SC-P2-0198",
-        "SC-P3-0179",
-        "SC-P3-0188",
-        "SC-P6-0158",
-        "SC-P6-0167",
-        "SC-P6-0176",
-        "SC-P6-0284",
-        "SC-P6-0293"
+        "SC-P1-0051",
+        "SC-P1-0061",
+        "SC-P1-0071",
+        "SC-P2-0111",
+        "SC-P2-0121",
+        "SC-P2-0161",
+        "SC-P2-0171",
+        "SC-P2-0181",
+        "SC-P2-0191",
+        "SC-P2-0201",
+        "SC-P6-0161",
+        "SC-P6-0181",
+        "SC-P6-0281",
+        "SC-P6-0291"
       ],
       "surfaces": [
         "PUBLIC_DOING"
@@ -3396,16 +3302,24 @@
       "title": "Doing public detail motion reverse",
       "contract": "Doing public detail uses the spatially consistent reverse transition and restores prior state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0191",
-        "SC-FINAL_REDESIGN-0245",
         "SC-FINAL_REDESIGN-0281",
-        "SC-P2-0199",
-        "SC-P3-0189",
-        "SC-P6-0159",
-        "SC-P6-0168",
-        "SC-P6-0177",
-        "SC-P6-0285",
-        "SC-P6-0294"
+        "SC-P1-0052",
+        "SC-P1-0062",
+        "SC-P1-0072",
+        "SC-P2-0112",
+        "SC-P2-0122",
+        "SC-P2-0152",
+        "SC-P2-0162",
+        "SC-P2-0172",
+        "SC-P2-0182",
+        "SC-P2-0192",
+        "SC-P2-0202",
+        "SC-P3-0182",
+        "SC-P6-0162",
+        "SC-P6-0172",
+        "SC-P6-0182",
+        "SC-P6-0282",
+        "SC-P6-0292"
       ],
       "surfaces": [
         "PUBLIC_DOING"
@@ -3435,14 +3349,24 @@
       "title": "Doing public detail motion reduced",
       "contract": "Doing public detail honors prefers-reduced-motion while preserving orientation, feedback and reachability.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0084",
-        "SC-FINAL_REDESIGN-0192",
         "SC-FINAL_REDESIGN-0281",
-        "SC-FINAL_REDESIGN-0363",
-        "SC-P6-0169",
-        "SC-P6-0178",
-        "SC-P6-0286",
-        "SC-P6-0295"
+        "SC-P1-0053",
+        "SC-P1-0063",
+        "SC-P2-0113",
+        "SC-P2-0123",
+        "SC-P2-0153",
+        "SC-P2-0163",
+        "SC-P2-0173",
+        "SC-P2-0183",
+        "SC-P2-0193",
+        "SC-P2-0203",
+        "SC-P3-0173",
+        "SC-P3-0183",
+        "SC-P6-0163",
+        "SC-P6-0173",
+        "SC-P6-0183",
+        "SC-P6-0283",
+        "SC-P6-0293"
       ],
       "surfaces": [
         "PUBLIC_DOING"
@@ -3610,7 +3534,6 @@
       "title": "Learning public detail state loading",
       "contract": "Learning public detail shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0028",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -3665,8 +3588,8 @@
       "title": "Learning public detail state error-retry",
       "contract": "Learning public detail shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0288",
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P3-0190"
       ],
       "surfaces": [
         "PUBLIC_LEARNING"
@@ -4014,12 +3937,22 @@
       "title": "Learning public detail motion forward",
       "contract": "Learning public detail uses a continuous interruptible forward transition with no whole-page white flash.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0187",
-        "SC-FINAL_REDESIGN-0067",
-        "SC-FINAL_REDESIGN-0193",
         "SC-FINAL_REDESIGN-0281",
-        "SC-P6-0179",
-        "SC-P6-0287"
+        "SC-P1-0054",
+        "SC-P1-0064",
+        "SC-P2-0114",
+        "SC-P2-0124",
+        "SC-P2-0154",
+        "SC-P2-0174",
+        "SC-P2-0184",
+        "SC-P2-0194",
+        "SC-P2-0204",
+        "SC-P3-0174",
+        "SC-P3-0184",
+        "SC-P6-0164",
+        "SC-P6-0174",
+        "SC-P6-0184",
+        "SC-P6-0284"
       ],
       "surfaces": [
         "PUBLIC_LEARNING"
@@ -4049,12 +3982,26 @@
       "title": "Learning public detail motion reverse",
       "contract": "Learning public detail uses the spatially consistent reverse transition and restores prior state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0194",
         "SC-FINAL_REDESIGN-0281",
-        "SC-FINAL_REDESIGN-0329",
-        "SC-P5-0199",
-        "SC-P6-0279",
-        "SC-P6-0288"
+        "SC-P1-0005",
+        "SC-P1-0055",
+        "SC-P1-0065",
+        "SC-P2-0115",
+        "SC-P2-0125",
+        "SC-P2-0155",
+        "SC-P2-0165",
+        "SC-P2-0175",
+        "SC-P2-0185",
+        "SC-P2-0195",
+        "SC-P2-0205",
+        "SC-P3-0175",
+        "SC-P3-0185",
+        "SC-P4-0165",
+        "SC-P6-0155",
+        "SC-P6-0165",
+        "SC-P6-0175",
+        "SC-P6-0285",
+        "SC-P6-0295"
       ],
       "surfaces": [
         "PUBLIC_LEARNING"
@@ -4084,9 +4031,23 @@
       "title": "Learning public detail motion reduced",
       "contract": "Learning public detail honors prefers-reduced-motion while preserving orientation, feedback and reachability.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0195",
         "SC-FINAL_REDESIGN-0281",
-        "SC-P6-0289"
+        "SC-P1-0056",
+        "SC-P1-0066",
+        "SC-P2-0116",
+        "SC-P2-0126",
+        "SC-P2-0156",
+        "SC-P2-0166",
+        "SC-P2-0176",
+        "SC-P2-0186",
+        "SC-P2-0196",
+        "SC-P3-0176",
+        "SC-P3-0186",
+        "SC-P6-0156",
+        "SC-P6-0166",
+        "SC-P6-0176",
+        "SC-P6-0286",
+        "SC-P6-0296"
       ],
       "surfaces": [
         "PUBLIC_LEARNING"
@@ -4286,7 +4247,6 @@
       "title": "Moments public detail state empty",
       "contract": "Moments public detail shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0235",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -4314,8 +4274,7 @@
       "title": "Moments public detail state error-retry",
       "contract": "Moments public detail shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0180"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PUBLIC_MOMENTS"
@@ -4369,8 +4328,8 @@
       "title": "Moments public detail state success",
       "contract": "Moments public detail shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0182"
+        "SC-EXECUTION_COMPLETENESS-0123",
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PUBLIC_MOMENTS"
@@ -4665,9 +4624,22 @@
       "title": "Moments public detail motion forward",
       "contract": "Moments public detail uses a continuous interruptible forward transition with no whole-page white flash.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0196",
         "SC-FINAL_REDESIGN-0281",
-        "SC-FINAL_REDESIGN-0349"
+        "SC-P1-0057",
+        "SC-P1-0067",
+        "SC-P2-0127",
+        "SC-P2-0157",
+        "SC-P2-0167",
+        "SC-P2-0177",
+        "SC-P2-0187",
+        "SC-P2-0197",
+        "SC-P3-0177",
+        "SC-P3-0187",
+        "SC-P6-0157",
+        "SC-P6-0167",
+        "SC-P6-0177",
+        "SC-P6-0287",
+        "SC-P6-0297"
       ],
       "surfaces": [
         "PUBLIC_MOMENTS"
@@ -4698,7 +4670,21 @@
       "contract": "Moments public detail uses the spatially consistent reverse transition and restores prior state.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0281",
-        "SC-FINAL_REDESIGN-0359"
+        "SC-P1-0048",
+        "SC-P1-0058",
+        "SC-P1-0068",
+        "SC-P2-0108",
+        "SC-P2-0118",
+        "SC-P2-0158",
+        "SC-P2-0168",
+        "SC-P2-0178",
+        "SC-P2-0188",
+        "SC-P2-0198",
+        "SC-P3-0178",
+        "SC-P3-0188",
+        "SC-P6-0158",
+        "SC-P6-0168",
+        "SC-P6-0288"
       ],
       "surfaces": [
         "PUBLIC_MOMENTS"
@@ -4728,8 +4714,23 @@
       "title": "Moments public detail motion reduced",
       "contract": "Moments public detail honors prefers-reduced-motion while preserving orientation, feedback and reachability.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0198",
-        "SC-FINAL_REDESIGN-0281"
+        "SC-FINAL_REDESIGN-0281",
+        "SC-P1-0049",
+        "SC-P1-0069",
+        "SC-P2-0109",
+        "SC-P2-0119",
+        "SC-P2-0159",
+        "SC-P2-0169",
+        "SC-P2-0189",
+        "SC-P2-0199",
+        "SC-P3-0179",
+        "SC-P3-0189",
+        "SC-P5-0199",
+        "SC-P6-0159",
+        "SC-P6-0169",
+        "SC-P6-0179",
+        "SC-P6-0279",
+        "SC-P6-0289"
       ],
       "surfaces": [
         "PUBLIC_MOMENTS"
@@ -4900,9 +4901,7 @@
       "title": "Archive public detail state loading",
       "contract": "Archive public detail shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0014",
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0183"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PUBLIC_ARCHIVE"
@@ -4930,8 +4929,7 @@
       "contract": "Archive public detail shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0183",
-        "SC-P3-0184"
+        "SC-P3-0183"
       ],
       "surfaces": [
         "PUBLIC_ARCHIVE"
@@ -4958,8 +4956,7 @@
       "title": "Archive public detail state error-retry",
       "contract": "Archive public detail shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0185"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PUBLIC_ARCHIVE"
@@ -4986,8 +4983,8 @@
       "title": "Archive public detail state offline",
       "contract": "Archive public detail shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0186"
+        "SC-EXECUTION_COMPLETENESS-0281",
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PUBLIC_ARCHIVE"
@@ -5014,11 +5011,7 @@
       "title": "Archive public detail state success",
       "contract": "Archive public detail shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-MASTER_PLAN-0092",
-        "SC-MASTER_PLAN-0146",
-        "SC-P1-0048",
-        "SC-P3-0187"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PUBLIC_ARCHIVE"
@@ -5316,8 +5309,8 @@
       "title": "Archive public detail motion forward",
       "contract": "Archive public detail uses a continuous interruptible forward transition with no whole-page white flash.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0199",
-        "SC-FINAL_REDESIGN-0281"
+        "SC-FINAL_REDESIGN-0281",
+        "SC-P6-0182"
       ],
       "surfaces": [
         "PUBLIC_ARCHIVE"
@@ -5378,9 +5371,7 @@
       "title": "Archive public detail motion reduced",
       "contract": "Archive public detail honors prefers-reduced-motion while preserving orientation, feedback and reachability.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0281",
-        "SC-MASTER_PLAN-0005",
-        "SC-P6-0181"
+        "SC-FINAL_REDESIGN-0281"
       ],
       "surfaces": [
         "PUBLIC_ARCHIVE"
@@ -5522,8 +5513,9 @@
       "title": "login overlay func primary",
       "contract": "login overlay opens, submits real credentials, reports failure honestly, closes and transfers authenticated users into the private shell.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0033",
         "SC-FINAL_REDESIGN-0269",
-        "SC-P2-0159"
+        "SC-P2-0144"
       ],
       "surfaces": [
         "LOGIN_OVERLAY"
@@ -5550,9 +5542,8 @@
       "contract": "login overlay uses production Fastify/MySQL or allowlisted adapter data, preserves stable identifiers and ships no preview fixture as production truth.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0269",
-        "SC-MASTER_PLAN-0037",
-        "SC-P2-0142",
-        "SC-P2-0165",
+        "SC-P2-0138",
+        "SC-P2-0152",
         "SC-P5-0226"
       ],
       "surfaces": [
@@ -5579,10 +5570,7 @@
       "title": "login overlay state idle",
       "contract": "login overlay shows a usable initial form without leaking authentication state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0019",
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0049",
-        "SC-P3-0188"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "LOGIN_OVERLAY"
@@ -5609,9 +5597,8 @@
       "title": "login overlay state submitting",
       "contract": "login overlay prevents duplicate submission while preserving cancel and reduced-motion behavior.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0080",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0189"
+        "SC-MASTER_PLAN-0030"
       ],
       "surfaces": [
         "LOGIN_OVERLAY"
@@ -5720,13 +5707,10 @@
       "contract": "login overlay supports direct entry, stable canonical routes and forward navigation.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0269",
-        "SC-MASTER_PLAN-0018",
-        "SC-P2-0014",
-        "SC-P2-0138",
         "SC-P2-0144",
-        "SC-P2-0165",
-        "SC-P2-0166",
-        "SC-P2-0171"
+        "SC-P2-0153",
+        "SC-P2-0160",
+        "SC-P2-0165"
       ],
       "surfaces": [
         "LOGIN_OVERLAY"
@@ -5752,12 +5736,11 @@
       "contract": "login overlay supports browser back, explicit return or close without losing prior context.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0269",
-        "SC-MASTER_PLAN-0004",
+        "SC-MASTER_PLAN-0017",
         "SC-P2-0016",
-        "SC-P2-0144",
-        "SC-P2-0167",
+        "SC-P2-0154",
+        "SC-P2-0161",
         "SC-P2-0169",
-        "SC-P2-0172",
         "SC-P2-0175",
         "SC-P2-0196"
       ],
@@ -5787,12 +5770,13 @@
         "SC-EXECUTION_COMPLETENESS-0033",
         "SC-FINAL_REDESIGN-0269",
         "SC-MASTER_PLAN-0017",
+        "SC-MASTER_PLAN-0032",
         "SC-P2-0005",
-        "SC-P2-0016",
-        "SC-P2-0168",
+        "SC-P2-0148",
+        "SC-P2-0155",
+        "SC-P2-0162",
         "SC-P2-0170",
-        "SC-P2-0173",
-        "SC-P2-0196"
+        "SC-P2-0173"
       ],
       "surfaces": [
         "LOGIN_OVERLAY"
@@ -5820,11 +5804,10 @@
         "SC-FINAL_REDESIGN-0269",
         "SC-MASTER_PLAN-0011",
         "SC-MASTER_PLAN-0013",
-        "SC-MASTER_PLAN-0018",
         "SC-P2-0016",
-        "SC-P2-0169",
+        "SC-P2-0156",
+        "SC-P2-0163",
         "SC-P2-0170",
-        "SC-P2-0174",
         "SC-P2-0177"
       ],
       "surfaces": [
@@ -5855,10 +5838,11 @@
         "SC-MASTER_PLAN-0013",
         "SC-P2-0014",
         "SC-P2-0016",
-        "SC-P2-0152",
+        "SC-P2-0157",
         "SC-P2-0170",
-        "SC-P2-0175",
-        "SC-P2-0177"
+        "SC-P2-0171",
+        "SC-P2-0177",
+        "SC-P5-0226"
       ],
       "surfaces": [
         "LOGIN_OVERLAY"
@@ -5886,11 +5870,12 @@
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0269",
         "SC-MASTER_PLAN-0013",
+        "SC-P2-0004",
         "SC-P2-0016",
-        "SC-P2-0148",
-        "SC-P2-0153",
+        "SC-P2-0158",
+        "SC-P2-0165",
         "SC-P2-0170",
-        "SC-P2-0176",
+        "SC-P2-0172",
         "SC-P2-0177"
       ],
       "surfaces": [
@@ -5919,10 +5904,14 @@
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0269",
         "SC-MASTER_PLAN-0013",
+        "SC-MASTER_PLAN-0078",
+        "SC-P2-0005",
         "SC-P2-0016",
         "SC-P2-0148",
-        "SC-P2-0154",
+        "SC-P2-0159",
+        "SC-P2-0166",
         "SC-P2-0170",
+        "SC-P2-0173",
         "SC-P2-0177"
       ],
       "surfaces": [
@@ -5950,15 +5939,11 @@
       "contract": "login overlay supports complete keyboard operation with visible focus and no pointer-only action.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0269",
-        "SC-MASTER_PLAN-0004",
-        "SC-MASTER_PLAN-0032",
-        "SC-MASTER_PLAN-0078",
-        "SC-P2-0155",
-        "SC-P2-0160",
+        "SC-MASTER_PLAN-0037",
+        "SC-P2-0167",
         "SC-P2-0171",
-        "SC-P2-0177",
-        "SC-P2-0178",
-        "SC-P5-0226"
+        "SC-P2-0174",
+        "SC-P2-0177"
       ],
       "surfaces": [
         "LOGIN_OVERLAY"
@@ -5985,13 +5970,12 @@
       "title": "login overlay a11y focus",
       "contract": "login overlay moves, traps where required and restores focus predictably on open, close and return.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0033",
         "SC-FINAL_REDESIGN-0269",
         "SC-MASTER_PLAN-0013",
-        "SC-P2-0004",
+        "SC-P2-0014",
         "SC-P2-0148",
-        "SC-P2-0156",
-        "SC-P2-0161",
+        "SC-P2-0168",
+        "SC-P2-0175",
         "SC-P2-0196"
       ],
       "surfaces": [
@@ -6021,9 +6005,7 @@
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0269",
         "SC-MASTER_PLAN-0011",
-        "SC-P2-0005",
-        "SC-P2-0157",
-        "SC-P2-0162",
+        "SC-P2-0169",
         "SC-P2-0170",
         "SC-P2-0176"
       ],
@@ -6053,6 +6035,7 @@
       "contract": "login overlay uses a continuous interruptible forward transition with no whole-page white flash.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0281",
+        "SC-MASTER_PLAN-0090",
         "SC-P2-0153",
         "SC-P2-0156",
         "SC-P2-0159",
@@ -6062,8 +6045,7 @@
         "SC-P2-0171",
         "SC-P2-0174",
         "SC-P2-0177",
-        "SC-P6-0173",
-        "SC-P6-0179"
+        "SC-P6-0173"
       ],
       "surfaces": [
         "LOGIN_OVERLAY"
@@ -6094,7 +6076,6 @@
       "contract": "login overlay uses the spatially consistent reverse transition and restores prior state.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0281",
-        "SC-MASTER_PLAN-0052",
         "SC-P2-0154",
         "SC-P2-0157",
         "SC-P2-0160",
@@ -6104,8 +6085,7 @@
         "SC-P2-0172",
         "SC-P2-0175",
         "SC-P2-0178",
-        "SC-P6-0183",
-        "SC-P6-0279"
+        "SC-P6-0180"
       ],
       "surfaces": [
         "LOGIN_OVERLAY"
@@ -6136,7 +6116,7 @@
       "contract": "login overlay honors prefers-reduced-motion while preserving orientation, feedback and reachability.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0281",
-        "SC-P2-0110",
+        "SC-MASTER_PLAN-0052",
         "SC-P2-0119",
         "SC-P2-0125",
         "SC-P2-0152",
@@ -6147,7 +6127,7 @@
         "SC-P2-0170",
         "SC-P2-0173",
         "SC-P2-0176",
-        "SC-P2-0200",
+        "SC-P6-0280",
         "SC-P6-0292",
         "SC-P6-0295"
       ],
@@ -6307,7 +6287,9 @@
       "title": "public enter and return flow state pending",
       "contract": "public enter and return flow exposes a non-final pending state before server confirmation.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-EXECUTION_COMPLETENESS-0288",
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0200"
       ],
       "surfaces": [
         "PUBLIC_NAVIGATION_FLOW"
@@ -6334,7 +6316,8 @@
       "title": "public enter and return flow state success",
       "contract": "public enter and return flow records success only after the whole contract commits.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0201"
       ],
       "surfaces": [
         "PUBLIC_NAVIGATION_FLOW"
@@ -6361,7 +6344,8 @@
       "title": "public enter and return flow state failure",
       "contract": "public enter and return flow leaves no partial committed state after failure.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0202"
       ],
       "surfaces": [
         "PUBLIC_NAVIGATION_FLOW"
@@ -6388,8 +6372,8 @@
       "title": "public enter and return flow state conflict",
       "contract": "public enter and return flow reports version or idempotency conflict without duplicate effects.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0087",
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0203"
       ],
       "surfaces": [
         "PUBLIC_NAVIGATION_FLOW"
@@ -6579,12 +6563,7 @@
       "title": "public enter and return flow motion forward",
       "contract": "public enter and return flow uses a continuous interruptible forward transition with no whole-page white flash.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0281",
-        "SC-MASTER_PLAN-0036",
-        "SC-MASTER_PLAN-0090",
-        "SC-P2-0111",
-        "SC-P2-0120",
-        "SC-P2-0201"
+        "SC-FINAL_REDESIGN-0281"
       ],
       "surfaces": [
         "PUBLIC_NAVIGATION_FLOW"
@@ -6614,13 +6593,7 @@
       "title": "public enter and return flow motion reverse",
       "contract": "public enter and return flow uses the spatially consistent reverse transition and restores prior state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0281",
-        "SC-MASTER_PLAN-0127",
-        "SC-P1-0005",
-        "SC-P1-0050",
-        "SC-P2-0112",
-        "SC-P2-0121",
-        "SC-P2-0202"
+        "SC-FINAL_REDESIGN-0281"
       ],
       "surfaces": [
         "PUBLIC_NAVIGATION_FLOW"
@@ -6651,13 +6624,7 @@
       "contract": "public enter and return flow honors prefers-reduced-motion while preserving orientation, feedback and reachability.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0281",
-        "SC-MASTER_PLAN-0056",
-        "SC-MASTER_PLAN-0128",
-        "SC-P1-0051",
-        "SC-P1-0060",
-        "SC-P2-0113",
-        "SC-P2-0122",
-        "SC-P2-0203"
+        "SC-MASTER_PLAN-0005"
       ],
       "surfaces": [
         "PUBLIC_NAVIGATION_FLOW"
@@ -6750,6 +6717,7 @@
         "SC-EXECUTION_COMPLETENESS-0145",
         "SC-EXECUTION_COMPLETENESS-0154",
         "SC-EXECUTION_COMPLETENESS-0181",
+        "SC-EXECUTION_COMPLETENESS-0182",
         "SC-EXECUTION_COMPLETENESS-0183",
         "SC-EXECUTION_COMPLETENESS-0185",
         "SC-EXECUTION_COMPLETENESS-0286",
@@ -6773,13 +6741,15 @@
         "SC-MASTER_PLAN-0016",
         "SC-MASTER_PLAN-0038",
         "SC-MASTER_PLAN-0072",
-        "SC-P2-0115",
+        "SC-P2-0112",
         "SC-P2-0124",
         "SC-P3-0174",
         "SC-P3-0176",
         "SC-P3-0178",
+        "SC-P3-0184",
         "SC-P3-0187",
         "SC-P6-0155",
+        "SC-P6-0156",
         "SC-P6-0157",
         "SC-P6-0159",
         "SC-P6-0160",
@@ -6791,15 +6761,17 @@
         "SC-P6-0177",
         "SC-P6-0179",
         "SC-P6-0180",
-        "SC-P6-0184",
+        "SC-P6-0181",
+        "SC-P6-0182",
         "SC-P6-0281",
         "SC-P6-0283",
         "SC-P6-0285",
         "SC-P6-0287",
+        "SC-P6-0288",
         "SC-P6-0289",
         "SC-P6-0290",
         "SC-P6-0292",
-        "SC-P6-0294"
+        "SC-P6-0296"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -6941,7 +6913,7 @@
       "contract": "Daylight Command Center shell shows a stable non-flashing loading state.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-MASTER_PLAN-0045"
+        "SC-P5-0204"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -6968,8 +6940,9 @@
       "title": "Daylight Command Center shell state empty",
       "contract": "Daylight Command Center shell shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0290",
-        "SC-FINAL_REDESIGN-0283"
+        "SC-EXECUTION_COMPLETENESS-0235",
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0205"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -6996,7 +6969,8 @@
       "title": "Daylight Command Center shell state error-retry",
       "contract": "Daylight Command Center shell shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0206"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -7023,7 +6997,8 @@
       "title": "Daylight Command Center shell state offline",
       "contract": "Daylight Command Center shell shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P5-0207"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -7225,32 +7200,28 @@
       "title": "Daylight Command Center shell resp desktop-1440",
       "contract": "Daylight Command Center shell at 1440x900 without clipping, card-wall regression or unreachable controls.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0021",
-        "SC-EXECUTION_COMPLETENESS-0184",
-        "SC-EXECUTION_COMPLETENESS-0328",
+        "SC-EXECUTION_COMPLETENESS-0171",
+        "SC-EXECUTION_COMPLETENESS-0183",
+        "SC-EXECUTION_COMPLETENESS-0291",
         "SC-FINAL_REDESIGN-0282",
-        "SC-FINAL_REDESIGN-0334",
         "SC-FINAL_REDESIGN-0336",
         "SC-FINAL_REDESIGN-0345",
-        "SC-MASTER_PLAN-0091",
-        "SC-P2-0116",
+        "SC-P2-0113",
         "SC-P2-0118",
-        "SC-P2-0119",
+        "SC-P2-0124",
         "SC-P2-0125",
-        "SC-P2-0127",
-        "SC-P3-0175",
-        "SC-P3-0179",
-        "SC-P3-0186",
+        "SC-P3-0174",
+        "SC-P3-0180",
+        "SC-P3-0185",
         "SC-P3-0187",
-        "SC-P3-0188",
+        "SC-P3-0189",
         "SC-P5-0199",
-        "SC-P6-0158",
-        "SC-P6-0167",
-        "SC-P6-0173",
-        "SC-P6-0176",
-        "SC-P6-0183",
-        "SC-P6-0284",
-        "SC-P6-0293"
+        "SC-P6-0157",
+        "SC-P6-0169",
+        "SC-P6-0170",
+        "SC-P6-0182",
+        "SC-P6-0289",
+        "SC-P6-0290"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -7276,30 +7247,20 @@
       "title": "Daylight Command Center shell resp compact-desktop-1024",
       "contract": "Daylight Command Center shell at 1024x768 without clipping, overlap or loss of hierarchy.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0013",
-        "SC-EXECUTION_COMPLETENESS-0185",
-        "SC-EXECUTION_COMPLETENESS-0329",
+        "SC-EXECUTION_COMPLETENESS-0088",
+        "SC-EXECUTION_COMPLETENESS-0184",
         "SC-FINAL_REDESIGN-0282",
-        "SC-FINAL_REDESIGN-0335",
-        "SC-FINAL_REDESIGN-0344",
         "SC-FINAL_REDESIGN-0345",
-        "SC-FINAL_REDESIGN-0353",
-        "SC-P2-0108",
+        "SC-P2-0110",
+        "SC-P2-0114",
         "SC-P2-0118",
-        "SC-P2-0119",
-        "SC-P2-0120",
         "SC-P2-0126",
-        "SC-P3-0176",
+        "SC-P3-0175",
+        "SC-P3-0186",
         "SC-P3-0187",
-        "SC-P3-0189",
-        "SC-P3-0190",
-        "SC-P6-0159",
-        "SC-P6-0168",
-        "SC-P6-0173",
-        "SC-P6-0177",
+        "SC-P6-0158",
         "SC-P6-0183",
-        "SC-P6-0285",
-        "SC-P6-0294"
+        "SC-P6-0291"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -7325,26 +7286,25 @@
       "title": "Daylight Command Center shell resp tablet-768",
       "contract": "Daylight Command Center shell at 768x1024 with reachable navigation, content and exit controls.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0186",
+        "SC-EXECUTION_COMPLETENESS-0185",
         "SC-FINAL_REDESIGN-0282",
-        "SC-FINAL_REDESIGN-0336",
         "SC-FINAL_REDESIGN-0345",
-        "SC-P2-0109",
-        "SC-P2-0110",
+        "SC-FINAL_REDESIGN-0346",
+        "SC-P2-0111",
+        "SC-P2-0115",
         "SC-P2-0118",
-        "SC-P2-0119",
-        "SC-P2-0121",
+        "SC-P2-0126",
         "SC-P2-0127",
-        "SC-P3-0177",
-        "SC-P3-0180",
+        "SC-P3-0176",
+        "SC-P3-0182",
         "SC-P3-0187",
-        "SC-P3-0188",
-        "SC-P6-0169",
-        "SC-P6-0173",
-        "SC-P6-0178",
-        "SC-P6-0183",
-        "SC-P6-0286",
-        "SC-P6-0295"
+        "SC-P6-0159",
+        "SC-P6-0160",
+        "SC-P6-0172",
+        "SC-P6-0184",
+        "SC-P6-0279",
+        "SC-P6-0280",
+        "SC-P6-0292"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -7370,27 +7330,26 @@
       "title": "Daylight Command Center shell resp mobile-390",
       "contract": "Daylight Command Center shell at 390x844 without horizontal overflow, top-scroll escape or hidden actions.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0088",
-        "SC-EXECUTION_COMPLETENESS-0286",
-        "SC-EXECUTION_COMPLETENESS-0321",
+        "SC-EXECUTION_COMPLETENESS-0186",
+        "SC-EXECUTION_COMPLETENESS-0316",
+        "SC-EXECUTION_COMPLETENESS-0328",
+        "SC-FINAL_REDESIGN-0077",
         "SC-FINAL_REDESIGN-0256",
         "SC-FINAL_REDESIGN-0282",
+        "SC-FINAL_REDESIGN-0339",
         "SC-FINAL_REDESIGN-0345",
-        "SC-FINAL_REDESIGN-0346",
-        "SC-P2-0108",
-        "SC-P2-0111",
+        "SC-P2-0112",
+        "SC-P2-0116",
         "SC-P2-0118",
-        "SC-P2-0119",
-        "SC-P2-0122",
-        "SC-P3-0178",
+        "SC-P2-0127",
+        "SC-P3-0177",
+        "SC-P3-0183",
         "SC-P3-0187",
-        "SC-P3-0189",
-        "SC-P3-0190",
-        "SC-P6-0160",
+        "SC-P3-0188",
+        "SC-P6-0161",
         "SC-P6-0173",
-        "SC-P6-0179",
-        "SC-P6-0183",
-        "SC-P6-0287"
+        "SC-P6-0281",
+        "SC-P6-0293"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -7507,13 +7466,9 @@
       "contract": "Daylight Command Center shell uses a continuous interruptible forward transition with no whole-page white flash.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0281",
-        "SC-MASTER_PLAN-0147",
-        "SC-P1-0052",
-        "SC-P1-0061",
-        "SC-P1-0070",
-        "SC-P2-0114",
-        "SC-P2-0123",
-        "SC-P2-0204"
+        "SC-MASTER_PLAN-0036",
+        "SC-MASTER_PLAN-0056",
+        "SC-MASTER_PLAN-0166"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -7544,14 +7499,8 @@
       "contract": "Daylight Command Center shell uses the spatially consistent reverse transition and restores prior state.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0281",
-        "SC-MASTER_PLAN-0166",
-        "SC-P1-0053",
-        "SC-P1-0062",
-        "SC-P1-0071",
-        "SC-P2-0115",
-        "SC-P2-0124",
-        "SC-P2-0160",
-        "SC-P2-0205"
+        "SC-MASTER_PLAN-0127",
+        "SC-MASTER_PLAN-0147"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -7582,14 +7531,7 @@
       "contract": "Daylight Command Center shell honors prefers-reduced-motion while preserving orientation, feedback and reachability.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0281",
-        "SC-P1-0054",
-        "SC-P1-0063",
-        "SC-P1-0072",
-        "SC-P2-0116",
-        "SC-P2-0125",
-        "SC-P2-0152",
-        "SC-P2-0161",
-        "SC-P2-0170"
+        "SC-MASTER_PLAN-0128"
       ],
       "surfaces": [
         "PRIVATE_SHELL"
@@ -7797,7 +7739,7 @@
       "title": "private overview state loading",
       "contract": "private overview shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0038",
+        "SC-EXECUTION_COMPLETENESS-0028",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -7879,7 +7821,6 @@
       "title": "private overview state offline",
       "contract": "private overview shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0242",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -7907,7 +7848,6 @@
       "title": "private overview state conflict",
       "contract": "private overview preserves both sides of a version conflict until the user resolves it.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0075",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -7936,7 +7876,7 @@
       "contract": "private overview denies unauthorized data or writes without exposing private content.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-FINAL_REDESIGN-0331"
+        "SC-MASTER_PLAN-0146"
       ],
       "surfaces": [
         "PRIVATE_OVERVIEW"
@@ -7963,8 +7903,7 @@
       "title": "private overview state success",
       "contract": "private overview shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0050"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PRIVATE_OVERVIEW"
@@ -8559,9 +8498,7 @@
       "title": "global search overlay state loading",
       "contract": "global search overlay shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0051",
-        "SC-P3-0190"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "GLOBAL_SEARCH_OVERLAY"
@@ -8588,8 +8525,7 @@
       "title": "global search overlay state empty",
       "contract": "global search overlay shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0052"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "GLOBAL_SEARCH_OVERLAY"
@@ -8616,8 +8552,7 @@
       "title": "global search overlay state error-retry",
       "contract": "global search overlay shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0053"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "GLOBAL_SEARCH_OVERLAY"
@@ -8645,7 +8580,7 @@
       "contract": "global search overlay shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0054"
+        "SC-MASTER_PLAN-0092"
       ],
       "surfaces": [
         "GLOBAL_SEARCH_OVERLAY"
@@ -8672,8 +8607,7 @@
       "title": "global search overlay state conflict",
       "contract": "global search overlay preserves both sides of a version conflict until the user resolves it.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0055"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "GLOBAL_SEARCH_OVERLAY"
@@ -8700,8 +8634,9 @@
       "title": "global search overlay state permission",
       "contract": "global search overlay denies unauthorized data or writes without exposing private content.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0056"
+        "SC-EXECUTION_COMPLETENESS-0290",
+        "SC-FINAL_REDESIGN-0207",
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "GLOBAL_SEARCH_OVERLAY"
@@ -8728,8 +8663,8 @@
       "title": "global search overlay state success",
       "contract": "global search overlay shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0057"
+        "SC-FINAL_REDESIGN-0208",
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "GLOBAL_SEARCH_OVERLAY"
@@ -9337,9 +9272,7 @@
       "title": "quick-create overlay state loading",
       "contract": "quick-create overlay shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0142",
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0058"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "QUICK_CREATE_OVERLAY"
@@ -9366,6 +9299,7 @@
       "title": "quick-create overlay state empty",
       "contract": "quick-create overlay shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0080",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -9394,7 +9328,7 @@
       "contract": "quick-create overlay shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0003"
+        "SC-P1-0048"
       ],
       "surfaces": [
         "QUICK_CREATE_OVERLAY"
@@ -9421,7 +9355,8 @@
       "title": "quick-create overlay state offline",
       "contract": "quick-create overlay shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0049"
       ],
       "surfaces": [
         "QUICK_CREATE_OVERLAY"
@@ -9448,7 +9383,6 @@
       "title": "quick-create overlay state conflict",
       "contract": "quick-create overlay preserves both sides of a version conflict until the user resolves it.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0146",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -10239,8 +10173,8 @@
       "title": "cross-page return flow state pending",
       "contract": "cross-page return flow exposes a non-final pending state before server confirmation.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0182",
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-MASTER_PLAN-0045"
       ],
       "surfaces": [
         "GLOBAL_RETURN_FLOW"
@@ -10267,6 +10201,8 @@
       "title": "cross-page return flow state success",
       "contract": "cross-page return flow records success only after the whole contract commits.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0087",
+        "SC-EXECUTION_COMPLETENESS-0242",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -10294,7 +10230,6 @@
       "title": "cross-page return flow state failure",
       "contract": "cross-page return flow leaves no partial committed state after failure.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0097",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -10528,14 +10463,11 @@
       "title": "cross-page return flow motion forward",
       "contract": "cross-page return flow uses a continuous interruptible forward transition with no whole-page white flash.",
       "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0190",
+        "SC-FINAL_REDESIGN-0200",
         "SC-FINAL_REDESIGN-0281",
-        "SC-P1-0055",
-        "SC-P1-0064",
-        "SC-P2-0108",
-        "SC-P2-0126",
-        "SC-P2-0153",
-        "SC-P2-0162",
-        "SC-P2-0171"
+        "SC-FINAL_REDESIGN-0330",
+        "SC-FINAL_REDESIGN-0350"
       ],
       "surfaces": [
         "GLOBAL_RETURN_FLOW"
@@ -10565,19 +10497,14 @@
       "title": "cross-page return flow motion reverse",
       "contract": "cross-page return flow uses the spatially consistent reverse transition and restores prior state.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0240",
         "SC-EXECUTION_COMPLETENESS-0320",
-        "SC-FINAL_REDESIGN-0200",
+        "SC-EXECUTION_COMPLETENESS-0330",
+        "SC-FINAL_REDESIGN-0191",
+        "SC-FINAL_REDESIGN-0201",
+        "SC-FINAL_REDESIGN-0251",
         "SC-FINAL_REDESIGN-0281",
-        "SC-P1-0056",
-        "SC-P1-0065",
-        "SC-P2-0109",
-        "SC-P2-0118",
-        "SC-P2-0127",
-        "SC-P2-0154",
-        "SC-P2-0163",
-        "SC-P2-0172",
-        "SC-P2-0181",
-        "SC-P3-0180"
+        "SC-FINAL_REDESIGN-0351"
       ],
       "surfaces": [
         "GLOBAL_RETURN_FLOW"
@@ -10607,21 +10534,10 @@
       "title": "cross-page return flow motion reduced",
       "contract": "cross-page return flow honors prefers-reduced-motion while preserving orientation, feedback and reachability.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0015",
-        "SC-EXECUTION_COMPLETENESS-0240",
-        "SC-EXECUTION_COMPLETENESS-0330",
-        "SC-FINAL_REDESIGN-0201",
-        "SC-FINAL_REDESIGN-0281",
-        "SC-P1-0048",
-        "SC-P1-0057",
-        "SC-P1-0066",
-        "SC-P2-0119",
-        "SC-P2-0155",
-        "SC-P2-0173",
-        "SC-P2-0182",
-        "SC-P2-0191",
-        "SC-P3-0190",
-        "SC-P6-0160"
+        "SC-EXECUTION_COMPLETENESS-0161",
+        "SC-FINAL_REDESIGN-0192",
+        "SC-FINAL_REDESIGN-0202",
+        "SC-FINAL_REDESIGN-0281"
       ],
       "surfaces": [
         "GLOBAL_RETURN_FLOW"
@@ -11010,6 +10926,7 @@
       "title": "goals and projects workspace state success",
       "contract": "goals and projects workspace shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0038",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -11683,7 +11600,9 @@
       "title": "schedule workspace state loading",
       "contract": "schedule workspace shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0264",
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P2-0108"
       ],
       "surfaces": [
         "SCHEDULE_ROUTE"
@@ -11710,7 +11629,9 @@
       "title": "schedule workspace state empty",
       "contract": "schedule workspace shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0052",
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P2-0109"
       ],
       "surfaces": [
         "SCHEDULE_ROUTE"
@@ -11764,10 +11685,7 @@
       "title": "schedule workspace state offline",
       "contract": "schedule workspace shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0307",
-        "SC-FINAL_REDESIGN-0085",
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0108"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "SCHEDULE_ROUTE"
@@ -11794,8 +11712,8 @@
       "title": "schedule workspace state conflict",
       "contract": "schedule workspace preserves both sides of a version conflict until the user resolves it.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0109"
+        "SC-FINAL_REDESIGN-0210",
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "SCHEDULE_ROUTE"
@@ -11822,8 +11740,8 @@
       "title": "schedule workspace state permission",
       "contract": "schedule workspace denies unauthorized data or writes without exposing private content.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0060"
+        "SC-FINAL_REDESIGN-0211",
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "SCHEDULE_ROUTE"
@@ -11850,8 +11768,8 @@
       "title": "schedule workspace state success",
       "contract": "schedule workspace shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0061"
+        "SC-FINAL_REDESIGN-0212",
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "SCHEDULE_ROUTE"
@@ -12568,8 +12486,11 @@
       "title": "habit rhythm workspace state loading",
       "contract": "habit rhythm workspace shows a stable non-flashing loading state.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0142",
+        "SC-FINAL_REDESIGN-0058",
+        "SC-FINAL_REDESIGN-0213",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0062"
+        "SC-P1-0050"
       ],
       "surfaces": [
         "HABITS_ROUTE"
@@ -12597,7 +12518,7 @@
       "contract": "habit rhythm workspace shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0063"
+        "SC-P1-0051"
       ],
       "surfaces": [
         "HABITS_ROUTE"
@@ -12624,9 +12545,8 @@
       "title": "habit rhythm workspace state error-retry",
       "contract": "habit rhythm workspace shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0259",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0064"
+        "SC-P1-0052"
       ],
       "surfaces": [
         "HABITS_ROUTE"
@@ -12654,7 +12574,7 @@
       "contract": "habit rhythm workspace shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0065"
+        "SC-P1-0053"
       ],
       "surfaces": [
         "HABITS_ROUTE"
@@ -12681,9 +12601,10 @@
       "title": "habit rhythm workspace state conflict",
       "contract": "habit rhythm workspace preserves both sides of a version conflict until the user resolves it.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0150",
+        "SC-EXECUTION_COMPLETENESS-0146",
+        "SC-FINAL_REDESIGN-0217",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0066"
+        "SC-P1-0054"
       ],
       "surfaces": [
         "HABITS_ROUTE"
@@ -12711,8 +12632,7 @@
       "contract": "habit rhythm workspace denies unauthorized data or writes without exposing private content.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0010",
-        "SC-P1-0067"
+        "SC-P1-0055"
       ],
       "surfaces": [
         "HABITS_ROUTE"
@@ -12739,9 +12659,8 @@
       "title": "habit rhythm workspace state success",
       "contract": "habit rhythm workspace shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0206",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0068"
+        "SC-P1-0056"
       ],
       "surfaces": [
         "HABITS_ROUTE"
@@ -13409,7 +13328,7 @@
       "contract": "record stream and editor shows a stable non-flashing loading state.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0069"
+        "SC-P1-0057"
       ],
       "surfaces": [
         "RECORDS_ROUTE"
@@ -13436,7 +13355,8 @@
       "title": "record stream and editor state empty",
       "contract": "record stream and editor shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0058"
       ],
       "surfaces": [
         "RECORDS_ROUTE"
@@ -13490,6 +13410,7 @@
       "title": "record stream and editor state offline",
       "contract": "record stream and editor shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0307",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -13517,7 +13438,8 @@
       "title": "record stream and editor state conflict",
       "contract": "record stream and editor preserves both sides of a version conflict until the user resolves it.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0003"
       ],
       "surfaces": [
         "RECORDS_ROUTE"
@@ -14173,7 +14095,6 @@
       "contract": "record stream and editor sanitizes content and redacts credentials, secrets and private payloads from output, logs and evidence.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0285",
-        "SC-FINAL_REDESIGN-0364",
         "SC-P1-0028",
         "SC-P1-0040",
         "SC-P4-0106",
@@ -14331,6 +14252,7 @@
       "title": "evidence review workspace state loading",
       "contract": "evidence review workspace shows a stable non-flashing loading state.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0097",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -14385,7 +14307,8 @@
       "title": "evidence review workspace state error-retry",
       "contract": "evidence review workspace shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P2-0110"
       ],
       "surfaces": [
         "REVIEWS_ROUTE"
@@ -14412,7 +14335,8 @@
       "title": "evidence review workspace state offline",
       "contract": "evidence review workspace shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P2-0111"
       ],
       "surfaces": [
         "REVIEWS_ROUTE"
@@ -14440,7 +14364,7 @@
       "contract": "evidence review workspace preserves both sides of a version conflict until the user resolves it.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P5-0190"
+        "SC-P2-0112"
       ],
       "surfaces": [
         "REVIEWS_ROUTE"
@@ -14468,8 +14392,7 @@
       "contract": "evidence review workspace denies unauthorized data or writes without exposing private content.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0110",
-        "SC-P5-0191"
+        "SC-P2-0113"
       ],
       "surfaces": [
         "REVIEWS_ROUTE"
@@ -14497,8 +14420,7 @@
       "contract": "evidence review workspace shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0111",
-        "SC-P5-0192"
+        "SC-P2-0114"
       ],
       "surfaces": [
         "REVIEWS_ROUTE"
@@ -15223,9 +15145,9 @@
       "title": "knowledge workspace state loading",
       "contract": "knowledge workspace shows a stable non-flashing loading state.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0259",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0112",
-        "SC-P5-0193"
+        "SC-P2-0115"
       ],
       "surfaces": [
         "KNOWLEDGE_ROUTE"
@@ -15253,8 +15175,7 @@
       "contract": "knowledge workspace shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0113",
-        "SC-P5-0194"
+        "SC-P2-0116"
       ],
       "surfaces": [
         "KNOWLEDGE_ROUTE"
@@ -15281,9 +15202,7 @@
       "title": "knowledge workspace state error-retry",
       "contract": "knowledge workspace shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0114",
-        "SC-P5-0195"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "KNOWLEDGE_ROUTE"
@@ -15311,8 +15230,7 @@
       "contract": "knowledge workspace shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0115",
-        "SC-P5-0196"
+        "SC-P2-0118"
       ],
       "surfaces": [
         "KNOWLEDGE_ROUTE"
@@ -15340,8 +15258,7 @@
       "contract": "knowledge workspace preserves both sides of a version conflict until the user resolves it.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0116",
-        "SC-P5-0197"
+        "SC-P2-0119"
       ],
       "surfaces": [
         "KNOWLEDGE_ROUTE"
@@ -15368,6 +15285,7 @@
       "title": "knowledge workspace state permission",
       "contract": "knowledge workspace denies unauthorized data or writes without exposing private content.",
       "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0206",
         "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
@@ -15395,9 +15313,7 @@
       "title": "knowledge workspace state success",
       "contract": "knowledge workspace shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0005",
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0118"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "KNOWLEDGE_ROUTE"
@@ -16159,8 +16075,7 @@
       "title": "publishing workbench state loading",
       "contract": "publishing workbench shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0119"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PUBLISH_ROUTE"
@@ -16187,8 +16102,8 @@
       "title": "publishing workbench state empty",
       "contract": "publishing workbench shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0070"
+        "SC-EXECUTION_COMPLETENESS-0150",
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PUBLISH_ROUTE"
@@ -16215,9 +16130,7 @@
       "title": "publishing workbench state error-retry",
       "contract": "publishing workbench shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0008",
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0071"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PUBLISH_ROUTE"
@@ -16245,7 +16158,7 @@
       "contract": "publishing workbench shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0072"
+        "SC-P1-0060"
       ],
       "surfaces": [
         "PUBLISH_ROUTE"
@@ -16272,8 +16185,8 @@
       "title": "publishing workbench state conflict",
       "contract": "publishing workbench preserves both sides of a version conflict until the user resolves it.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0211",
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0061"
       ],
       "surfaces": [
         "PUBLISH_ROUTE"
@@ -16300,7 +16213,8 @@
       "title": "publishing workbench state permission",
       "contract": "publishing workbench denies unauthorized data or writes without exposing private content.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0062"
       ],
       "surfaces": [
         "PUBLISH_ROUTE"
@@ -16327,7 +16241,8 @@
       "title": "publishing workbench state success",
       "contract": "publishing workbench shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0063"
       ],
       "surfaces": [
         "PUBLISH_ROUTE"
@@ -16909,6 +16824,7 @@
         "SC-EXECUTION_COMPLETENESS-0302",
         "SC-FINAL_REDESIGN-0242",
         "SC-FINAL_REDESIGN-0285",
+        "SC-FINAL_REDESIGN-0365",
         "SC-P1-0041",
         "SC-P4-0107",
         "SC-P5-0034",
@@ -17092,7 +17008,9 @@
       "title": "settings and data-management workspace state loading",
       "contract": "settings and data-management workspace shows a stable non-flashing loading state.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0014",
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0064"
       ],
       "surfaces": [
         "SETTINGS_ROUTE"
@@ -17119,7 +17037,9 @@
       "title": "settings and data-management workspace state empty",
       "contract": "settings and data-management workspace shows a truthful empty state with a valid next action where creation is allowed.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0065",
+        "SC-P3-0173"
       ],
       "surfaces": [
         "SETTINGS_ROUTE"
@@ -17146,7 +17066,9 @@
       "title": "settings and data-management workspace state error-retry",
       "contract": "settings and data-management workspace shows a bounded error and retry path without replacing real data with fixtures.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0066",
+        "SC-P3-0174"
       ],
       "surfaces": [
         "SETTINGS_ROUTE"
@@ -17173,7 +17095,9 @@
       "title": "settings and data-management workspace state offline",
       "contract": "settings and data-management workspace shows offline or pending state honestly and never confirms a write before the server.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0067",
+        "SC-P3-0175"
       ],
       "surfaces": [
         "SETTINGS_ROUTE"
@@ -17200,7 +17124,10 @@
       "title": "settings and data-management workspace state conflict",
       "contract": "settings and data-management workspace preserves both sides of a version conflict until the user resolves it.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0010",
+        "SC-P1-0068",
+        "SC-P3-0176"
       ],
       "surfaces": [
         "SETTINGS_ROUTE"
@@ -17227,7 +17154,10 @@
       "title": "settings and data-management workspace state permission",
       "contract": "settings and data-management workspace denies unauthorized data or writes without exposing private content.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0019",
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0069",
+        "SC-P3-0177"
       ],
       "surfaces": [
         "SETTINGS_ROUTE"
@@ -17254,7 +17184,8 @@
       "title": "settings and data-management workspace state success",
       "contract": "settings and data-management workspace shows successful data or completion only after current server confirmation.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P3-0178"
       ],
       "surfaces": [
         "SETTINGS_ROUTE"
@@ -18010,7 +17941,8 @@
       "title": "platform overview state connected",
       "contract": "platform overview shows connected facts only when the allowlisted server adapter verifies them.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P3-0179"
       ],
       "surfaces": [
         "PLATFORM_OVERVIEW"
@@ -18037,7 +17969,8 @@
       "title": "platform overview state degraded",
       "contract": "platform overview shows degraded or partial data explicitly without converting it into healthy data.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-FINAL_REDESIGN-0331"
       ],
       "surfaces": [
         "PLATFORM_OVERVIEW"
@@ -18791,7 +18724,8 @@
       "title": "Kubernetes status subtab state connected",
       "contract": "Kubernetes status subtab shows connected facts only when the allowlisted server adapter verifies them.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P2-0120"
       ],
       "surfaces": [
         "PLATFORM_KUBERNETES"
@@ -18818,7 +18752,8 @@
       "title": "Kubernetes status subtab state degraded",
       "contract": "Kubernetes status subtab shows degraded or partial data explicitly without converting it into healthy data.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P2-0121"
       ],
       "surfaces": [
         "PLATFORM_KUBERNETES"
@@ -18845,9 +18780,8 @@
       "title": "Kubernetes status subtab state disabled",
       "contract": "Kubernetes status subtab shows disabled or not-connected integrations as disabled and non-actionable.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0063",
         "SC-FINAL_REDESIGN-0283",
-        "SC-MASTER_PLAN-0020"
+        "SC-P2-0122"
       ],
       "surfaces": [
         "PLATFORM_KUBERNETES"
@@ -18875,7 +18809,7 @@
       "contract": "Kubernetes status subtab shows unverified state when current evidence is unavailable.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0120"
+        "SC-P2-0123"
       ],
       "surfaces": [
         "PLATFORM_KUBERNETES"
@@ -18903,7 +18837,7 @@
       "contract": "Kubernetes status subtab contains adapter failures and offers a bounded retry without fabricated fallback values.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0121"
+        "SC-P2-0124"
       ],
       "surfaces": [
         "PLATFORM_KUBERNETES"
@@ -19564,10 +19498,9 @@
       "title": "monitoring subtab state connected",
       "contract": "monitoring subtab shows connected facts only when the allowlisted server adapter verifies them.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0207",
+        "SC-EXECUTION_COMPLETENESS-0211",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0122",
-        "SC-P5-0200"
+        "SC-P2-0125"
       ],
       "surfaces": [
         "PLATFORM_MONITORING"
@@ -19594,10 +19527,8 @@
       "title": "monitoring subtab state degraded",
       "contract": "monitoring subtab shows degraded or partial data explicitly without converting it into healthy data.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0208",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0123",
-        "SC-P5-0201"
+        "SC-P2-0126"
       ],
       "surfaces": [
         "PLATFORM_MONITORING"
@@ -19625,8 +19556,7 @@
       "contract": "monitoring subtab shows disabled or not-connected integrations as disabled and non-actionable.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0124",
-        "SC-P5-0202"
+        "SC-P2-0127"
       ],
       "surfaces": [
         "PLATFORM_MONITORING"
@@ -19653,9 +19583,7 @@
       "title": "monitoring subtab state unverified",
       "contract": "monitoring subtab shows unverified state when current evidence is unavailable.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0125",
-        "SC-P5-0203"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PLATFORM_MONITORING"
@@ -19682,9 +19610,7 @@
       "title": "monitoring subtab state failure-retry",
       "contract": "monitoring subtab contains adapter failures and offers a bounded retry without fabricated fallback values.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0126",
-        "SC-P5-0204"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PLATFORM_MONITORING"
@@ -20339,9 +20265,7 @@
       "title": "alerts subtab state connected",
       "contract": "alerts subtab shows connected facts only when the allowlisted server adapter verifies them.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P2-0127",
-        "SC-P5-0205"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PLATFORM_ALERTS"
@@ -20368,8 +20292,7 @@
       "title": "alerts subtab state degraded",
       "contract": "alerts subtab shows degraded or partial data explicitly without converting it into healthy data.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P5-0206"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PLATFORM_ALERTS"
@@ -20396,9 +20319,9 @@
       "title": "alerts subtab state disabled",
       "contract": "alerts subtab shows disabled or not-connected integrations as disabled and non-actionable.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0274",
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P5-0207"
+        "SC-EXECUTION_COMPLETENESS-0005",
+        "SC-FINAL_REDESIGN-0075",
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PLATFORM_ALERTS"
@@ -21093,8 +21016,9 @@
       "title": "logs subtab state connected",
       "contract": "logs subtab shows connected facts only when the allowlisted server adapter verifies them.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0052",
-        "SC-FINAL_REDESIGN-0283"
+        "SC-EXECUTION_COMPLETENESS-0008",
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0070"
       ],
       "surfaces": [
         "PLATFORM_LOGS"
@@ -21121,7 +21045,8 @@
       "title": "logs subtab state degraded",
       "contract": "logs subtab shows degraded or partial data explicitly without converting it into healthy data.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0071"
       ],
       "surfaces": [
         "PLATFORM_LOGS"
@@ -21148,7 +21073,9 @@
       "title": "logs subtab state disabled",
       "contract": "logs subtab shows disabled or not-connected integrations as disabled and non-actionable.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P1-0072",
+        "SC-P3-0180"
       ],
       "surfaces": [
         "PLATFORM_LOGS"
@@ -21202,7 +21129,8 @@
       "title": "logs subtab state failure-retry",
       "contract": "logs subtab contains adapter failures and offers a bounded retry without fabricated fallback values.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P3-0182"
       ],
       "surfaces": [
         "PLATFORM_LOGS"
@@ -21860,7 +21788,8 @@
       "title": "release status subtab state connected",
       "contract": "release status subtab shows connected facts only when the allowlisted server adapter verifies them.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P3-0183"
       ],
       "surfaces": [
         "PLATFORM_RELEASES"
@@ -21887,8 +21816,8 @@
       "title": "release status subtab state degraded",
       "contract": "release status subtab shows degraded or partial data explicitly without converting it into healthy data.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0058",
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P3-0184"
       ],
       "surfaces": [
         "PLATFORM_RELEASES"
@@ -21915,7 +21844,8 @@
       "title": "release status subtab state disabled",
       "contract": "release status subtab shows disabled or not-connected integrations as disabled and non-actionable.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P3-0185"
       ],
       "surfaces": [
         "PLATFORM_RELEASES"
@@ -21942,7 +21872,9 @@
       "title": "release status subtab state unverified",
       "contract": "release status subtab shows unverified state when current evidence is unavailable.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283"
+        "SC-FINAL_REDESIGN-0182",
+        "SC-FINAL_REDESIGN-0283",
+        "SC-P3-0186"
       ],
       "surfaces": [
         "PLATFORM_RELEASES"
@@ -21969,9 +21901,8 @@
       "title": "release status subtab state failure-retry",
       "contract": "release status subtab contains adapter failures and offers a bounded retry without fabricated fallback values.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0229",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0173"
+        "SC-P3-0187"
       ],
       "surfaces": [
         "PLATFORM_RELEASES"
@@ -22620,8 +22551,7 @@
       "contract": "technology dossier subtab shows connected facts only when the allowlisted server adapter verifies them.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0283",
-        "SC-P1-0347",
-        "SC-P3-0174"
+        "SC-P3-0188"
       ],
       "surfaces": [
         "PLATFORM_TECHNOLOGY"
@@ -22648,9 +22578,8 @@
       "title": "technology dossier subtab state degraded",
       "contract": "technology dossier subtab shows degraded or partial data explicitly without converting it into healthy data.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0264",
         "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0175"
+        "SC-P3-0189"
       ],
       "surfaces": [
         "PLATFORM_TECHNOLOGY"
@@ -22677,8 +22606,7 @@
       "title": "technology dossier subtab state disabled",
       "contract": "technology dossier subtab shows disabled or not-connected integrations as disabled and non-actionable.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0176"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PLATFORM_TECHNOLOGY"
@@ -22705,8 +22633,7 @@
       "title": "technology dossier subtab state unverified",
       "contract": "technology dossier subtab shows unverified state when current evidence is unavailable.",
       "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0177"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PLATFORM_TECHNOLOGY"
@@ -22733,10 +22660,7 @@
       "title": "technology dossier subtab state failure-retry",
       "contract": "technology dossier subtab contains adapter failures and offers a bounded retry without fabricated fallback values.",
       "sourceClauseIds": [
-        "SC-EXECUTION_COMPLETENESS-0123",
-        "SC-FINAL_REDESIGN-0210",
-        "SC-FINAL_REDESIGN-0283",
-        "SC-P3-0178"
+        "SC-FINAL_REDESIGN-0283"
       ],
       "surfaces": [
         "PLATFORM_TECHNOLOGY"
@@ -23761,14 +23685,14 @@
         "SC-P6-0117",
         "SC-P6-0143",
         "SC-P6-0146",
-        "SC-P6-0191",
-        "SC-P6-0209",
-        "SC-P6-0212",
+        "SC-P6-0203",
         "SC-P6-0236",
         "SC-P6-0239",
         "SC-P6-0266",
         "SC-P6-0269",
-        "SC-P6-0275"
+        "SC-P6-0275",
+        "SC-P6-0302",
+        "SC-P6-0305"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -23915,7 +23839,6 @@
         "SC-IMAGE_DELIVERY_BOUNDARY-0092",
         "SC-P6-0140",
         "SC-P6-0145",
-        "SC-P6-0217",
         "SC-P6-0262",
         "SC-P6-0271"
       ],
@@ -23952,6 +23875,7 @@
         "SC-IMAGE_DELIVERY_BOUNDARY-0025",
         "SC-IMAGE_DELIVERY_BOUNDARY-0052",
         "SC-P6-0010",
+        "SC-P6-0194",
         "SC-P6-0227",
         "SC-P6-0239",
         "SC-P6-0254"
@@ -23988,7 +23912,7 @@
         "SC-FINAL_REDESIGN-0286",
         "SC-IMAGE_DELIVERY_BOUNDARY-0006",
         "SC-IMAGE_DELIVERY_BOUNDARY-0060",
-        "SC-P6-0208",
+        "SC-P6-0195",
         "SC-P6-0240",
         "SC-P6-0277"
       ],
@@ -24068,7 +23992,9 @@
         "SC-IMAGE_DELIVERY_BOUNDARY-0089",
         "SC-P6-0007",
         "SC-P6-0118",
-        "SC-P6-0231"
+        "SC-P6-0231",
+        "SC-P6-0301",
+        "SC-P6-0304"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -24471,7 +24397,6 @@
         "SC-FINAL_REDESIGN-0015",
         "SC-FINAL_REDESIGN-0033",
         "SC-FINAL_REDESIGN-0060",
-        "SC-FINAL_REDESIGN-0066",
         "SC-FINAL_REDESIGN-0174",
         "SC-FINAL_REDESIGN-0183",
         "SC-FINAL_REDESIGN-0184",
@@ -24548,6 +24473,8 @@
         "SC-FINAL_REDESIGN-0010",
         "SC-FINAL_REDESIGN-0061",
         "SC-FINAL_REDESIGN-0062",
+        "SC-FINAL_REDESIGN-0067",
+        "SC-FINAL_REDESIGN-0070",
         "SC-FINAL_REDESIGN-0218",
         "SC-FINAL_REDESIGN-0224",
         "SC-FINAL_REDESIGN-0227",
@@ -24787,13 +24714,11 @@
         "SC-EXECUTION_COMPLETENESS-0313",
         "SC-EXECUTION_COMPLETENESS-0335",
         "SC-FINAL_REDESIGN-0008",
-        "SC-FINAL_REDESIGN-0011",
         "SC-FINAL_REDESIGN-0020",
         "SC-FINAL_REDESIGN-0026",
         "SC-FINAL_REDESIGN-0035",
         "SC-FINAL_REDESIGN-0053",
         "SC-FINAL_REDESIGN-0059",
-        "SC-FINAL_REDESIGN-0068",
         "SC-FINAL_REDESIGN-0086",
         "SC-FINAL_REDESIGN-0222",
         "SC-FINAL_REDESIGN-0260",
@@ -24939,6 +24864,279 @@
       "requiredEvidence": [
         "unit",
         "mysql"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "PUB-01.PUBLIC_HOME.LAYOUT.01",
+      "parentRequirementId": "PUB-01",
+      "title": "public orbit home semantic glyph system",
+      "contract": "Public home preserves sundial, navigation flag, open book, viewfinder and tree-ring/archive semantics in one authored SVG language, keeps every glyph upright and visibly attached to its ring, and keeps all five labels visible without collisions at every required breakpoint.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0267",
+        "SC-MASTER_PLAN-0076",
+        "SC-P1-0343",
+        "SC-P2-0002",
+        "SC-P2-0003",
+        "SC-P2-0007",
+        "SC-P2-0008",
+        "SC-P2-0009",
+        "SC-P2-0010",
+        "SC-P2-0011",
+        "SC-P2-0012",
+        "SC-P2-0013",
+        "SC-P2-0015",
+        "SC-P2-0020",
+        "SC-P2-0021",
+        "SC-P2-0022",
+        "SC-P2-0023",
+        "SC-P2-0024",
+        "SC-P2-0025",
+        "SC-P2-0026",
+        "SC-P2-0028",
+        "SC-P2-0029",
+        "SC-P2-0030",
+        "SC-P2-0031",
+        "SC-P2-0032",
+        "SC-P2-0033",
+        "SC-P2-0034",
+        "SC-P2-0035",
+        "SC-P2-0036",
+        "SC-P2-0038",
+        "SC-P2-0039",
+        "SC-P2-0042",
+        "SC-P2-0043",
+        "SC-P2-0044",
+        "SC-P2-0045",
+        "SC-P2-0046",
+        "SC-P2-0047",
+        "SC-P2-0048",
+        "SC-P2-0049",
+        "SC-P2-0051",
+        "SC-P2-0052",
+        "SC-P2-0053",
+        "SC-P2-0054",
+        "SC-P2-0055",
+        "SC-P2-0056",
+        "SC-P2-0057",
+        "SC-P2-0058",
+        "SC-P2-0059",
+        "SC-P2-0130",
+        "SC-P2-0131",
+        "SC-P2-0132",
+        "SC-P2-0133",
+        "SC-P2-0135",
+        "SC-P2-0136",
+        "SC-P2-0140",
+        "SC-P2-0145",
+        "SC-P2-0146",
+        "SC-P2-0147",
+        "SC-P2-0149"
+      ],
+      "surfaces": [
+        "PUBLIC_HOME"
+      ],
+      "plannedTasks": [
+        "P6-T5"
+      ],
+      "requiredEvidence": [
+        "unit",
+        "e2e-local",
+        "visual",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "PUB-01.PUBLIC_HOME.FUNC.02",
+      "parentRequirementId": "PUB-01",
+      "title": "public orbit home theme default and override",
+      "contract": "Public home defaults to the near-black night scene when no valid user override exists, honors an explicit day override, and never exports the public starfield theme into the private daylight shell.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0267"
+      ],
+      "surfaces": [
+        "PUBLIC_HOME"
+      ],
+      "plannedTasks": [
+        "P6-T5"
+      ],
+      "requiredEvidence": [
+        "unit",
+        "e2e-local",
+        "visual",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "PUB-01.PUBLIC_HOME.FUNC.03",
+      "parentRequirementId": "PUB-01",
+      "title": "public orbit home reference-locked four-ring system",
+      "contract": "Public home renders the exact ADR-029 1132 by 750 four-ring system at center 792,371 and scale .85 with base diameters 353,501,649,797, one uncompensated 1px masked gradient, CCW30/CW40/CW50/CCW60 rotation, five-to-four semantic mapping and no hidden or clipped outer edge.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0267",
+        "SC-P2-0010",
+        "SC-P2-0056"
+      ],
+      "surfaces": [
+        "PUBLIC_HOME"
+      ],
+      "plannedTasks": [
+        "P6-T5"
+      ],
+      "requiredEvidence": [
+        "unit",
+        "e2e-local",
+        "visual",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "AUTH-01.LOGIN_OVERLAY.FUNC.02",
+      "parentRequirementId": "AUTH-01",
+      "title": "login overlay preserves themed public-scene continuity",
+      "contract": "Opening, closing, reverse-closing and reopening login preserve title completion, live ring playheads, center completion and selected theme; night uses a dark themed identity surface, day uses a compatible light surface, and all existing form, request, authentication, Escape, focus and return contracts remain intact.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0269",
+        "SC-P2-0016",
+        "SC-P2-0135",
+        "SC-P2-0142",
+        "SC-P2-0177"
+      ],
+      "surfaces": [
+        "LOGIN_OVERLAY",
+        "PUBLIC_HOME"
+      ],
+      "plannedTasks": [
+        "P2-T3",
+        "P6-T5"
+      ],
+      "requiredEvidence": [
+        "unit",
+        "e2e-local",
+        "visual",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "MOTION-01.PUBLIC_HOME.MOTION.04",
+      "parentRequirementId": "MOTION-01",
+      "title": "public home reference-ring arrival and one-shot reveal",
+      "contract": "Native Web Animations exclusively owns the four continuous ring rotations and five upright counter transforms; GSAP exclusively owns title, group and object arrival, login, public-detail continuity, scene and aperture motion; no node or transform property has competing engine or CSS owners.",
+      "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0332",
+        "SC-FINAL_REDESIGN-0066",
+        "SC-FINAL_REDESIGN-0193",
+        "SC-FINAL_REDESIGN-0203",
+        "SC-FINAL_REDESIGN-0205",
+        "SC-FINAL_REDESIGN-0281",
+        "SC-FINAL_REDESIGN-0363",
+        "SC-MASTER_PLAN-0004",
+        "SC-MASTER_PLAN-0018",
+        "SC-P6-0178",
+        "SC-P6-0294"
+      ],
+      "surfaces": [
+        "PUBLIC_HOME"
+      ],
+      "plannedTasks": [
+        "P6-T5",
+        "P6-T6"
+      ],
+      "requiredEvidence": [
+        "unit",
+        "e2e-local",
+        "visual",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "SPACE-01.PUBLIC_HOME.RESP.05",
+      "parentRequirementId": "SPACE-01",
+      "title": "public orbit complete viewport inset and responsive composition",
+      "contract": "At 1440,1024,768,390 and 320 CSS px in rest and login states the entire outer ring remains inside the viewport safe inset without clipping, controls remain reachable, labels remain readable and the page has zero horizontal overflow; the wide login relation is approximately 520 ring, 32 gap and 460 panel.",
+      "sourceClauseIds": [
+        "SC-EXECUTION_COMPLETENESS-0317",
+        "SC-EXECUTION_COMPLETENESS-0329",
+        "SC-FINAL_REDESIGN-0282",
+        "SC-FINAL_REDESIGN-0341",
+        "SC-FINAL_REDESIGN-0345",
+        "SC-FINAL_REDESIGN-0353",
+        "SC-P2-0113",
+        "SC-P2-0118",
+        "SC-P2-0119",
+        "SC-P2-0125",
+        "SC-P3-0178",
+        "SC-P3-0184",
+        "SC-P3-0187",
+        "SC-P3-0189",
+        "SC-P3-0190",
+        "SC-P6-0162",
+        "SC-P6-0169",
+        "SC-P6-0173",
+        "SC-P6-0174",
+        "SC-P6-0282",
+        "SC-P6-0295"
+      ],
+      "surfaces": [
+        "PUBLIC_HOME",
+        "LOGIN_OVERLAY"
+      ],
+      "plannedTasks": [
+        "P6-T5"
+      ],
+      "requiredEvidence": [
+        "e2e-local",
+        "visual",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "STATE-01.PUBLIC_HOME.STATE.06",
+      "parentRequirementId": "STATE-01",
+      "title": "public home visual preference and reveal continuity",
+      "contract": "Public home deterministically distinguishes no override, explicit day, explicit night, reduced-motion and enhanced/fallback states; login and route continuity preserve theme, title/count completion and live ring playheads without a white flash, white night panel or false reset.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0283"
+      ],
+      "surfaces": [
+        "PUBLIC_HOME",
+        "LOGIN_OVERLAY"
+      ],
+      "plannedTasks": [
+        "P6-T5"
+      ],
+      "requiredEvidence": [
+        "unit",
+        "e2e-local",
+        "visual",
+        "manual-review"
       ],
       "finalBoundary": [
         "local"
@@ -25606,7 +25804,13 @@
         "SC-P6-0261",
         "SC-P6-0273",
         "SC-P6-0275",
-        "SC-P6-0277"
+        "SC-P6-0277",
+        "SC-P6-0299",
+        "SC-P6-0301",
+        "SC-P6-0303",
+        "SC-P6-0305",
+        "SC-P6-0307",
+        "SC-P6-0309"
       ],
       "surfaces": [
         "PLATFORM_RELEASES",
@@ -25725,7 +25929,8 @@
         "SC-P6-0124",
         "SC-P6-0147",
         "SC-P6-0237",
-        "SC-P6-0241"
+        "SC-P6-0241",
+        "SC-P6-0309"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -25763,6 +25968,7 @@
         "SC-P6-0012",
         "SC-P6-0018",
         "SC-P6-0141",
+        "SC-P6-0204",
         "SC-P6-0213",
         "SC-P6-0231",
         "SC-P6-0243",
@@ -25820,7 +26026,6 @@
         "SC-P6-0144",
         "SC-P6-0146",
         "SC-P6-0147",
-        "SC-P6-0209",
         "SC-P6-0211",
         "SC-P6-0232",
         "SC-P6-0233",
@@ -25833,7 +26038,8 @@
         "SC-P6-0268",
         "SC-P6-0269",
         "SC-P6-0273",
-        "SC-P6-0276"
+        "SC-P6-0276",
+        "SC-P6-0302"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -25911,7 +26117,13 @@
         "SC-P6-0241",
         "SC-P6-0243",
         "SC-P6-0267",
-        "SC-P6-0269"
+        "SC-P6-0269",
+        "SC-P6-0298",
+        "SC-P6-0300",
+        "SC-P6-0302",
+        "SC-P6-0304",
+        "SC-P6-0306",
+        "SC-P6-0308"
       ],
       "surfaces": [
         "PLATFORM_RELEASES",
@@ -25950,15 +26162,14 @@
         "SC-P6-0010",
         "SC-P6-0015",
         "SC-P6-0114",
-        "SC-P6-0190",
-        "SC-P6-0199",
-        "SC-P6-0205",
-        "SC-P6-0208",
         "SC-P6-0235",
         "SC-P6-0238",
         "SC-P6-0262",
         "SC-P6-0265",
-        "SC-P6-0268"
+        "SC-P6-0268",
+        "SC-P6-0298",
+        "SC-P6-0301",
+        "SC-P6-0304"
       ],
       "surfaces": [
         "PLATFORM_RELEASES",
@@ -47492,259 +47703,6 @@
         "image"
       ],
       "notApplicable": null
-    },
-    {
-      "id": "PUB-01.PUBLIC_HOME.FUNC.02",
-      "parentRequirementId": "PUB-01",
-      "title": "public orbit home theme default and override",
-      "contract": "Public home defaults to the near-black night scene when no valid user override exists, honors an explicit day override, and never exports the public starfield theme into the private daylight shell.",
-      "surfaces": [
-        "PUBLIC_HOME"
-      ],
-      "requiredEvidence": [
-        "unit",
-        "e2e-local",
-        "visual",
-        "manual-review"
-      ],
-      "plannedTasks": [
-        "P6-T5"
-      ],
-      "finalBoundary": [
-        "local"
-      ],
-      "notApplicable": null,
-      "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0017",
-        "SC-FINAL_REDESIGN-0083",
-        "SC-FINAL_REDESIGN-0340",
-        "SC-P6-0293",
-        "SC-P6-0294",
-        "SC-P6-0295"
-      ]
-    },
-    {
-      "id": "PUB-01.PUBLIC_HOME.FUNC.03",
-      "parentRequirementId": "PUB-01",
-      "title": "public orbit home reference-locked four-ring system",
-      "contract": "Public home renders the exact ADR-029 1132 by 750 four-ring system at center 792,371 and scale .85 with base diameters 353,501,649,797, one uncompensated 1px masked gradient, CCW30/CW40/CW50/CCW60 rotation, five-to-four semantic mapping and no hidden or clipped outer edge.",
-      "surfaces": [
-        "PUBLIC_HOME"
-      ],
-      "requiredEvidence": [
-        "unit",
-        "e2e-local",
-        "visual",
-        "manual-review"
-      ],
-      "plannedTasks": [
-        "P6-T5"
-      ],
-      "finalBoundary": [
-        "local"
-      ],
-      "notApplicable": null,
-      "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0003",
-        "SC-FINAL_REDESIGN-0011",
-        "SC-FINAL_REDESIGN-0018",
-        "SC-FINAL_REDESIGN-0065",
-        "SC-FINAL_REDESIGN-0081",
-        "SC-FINAL_REDESIGN-0086",
-        "SC-FINAL_REDESIGN-0334",
-        "SC-FINAL_REDESIGN-0360",
-        "SC-FINAL_REDESIGN-0361",
-        "SC-FINAL_REDESIGN-0362",
-        "SC-FINAL_REDESIGN-0364",
-        "SC-MASTER_PLAN-0008",
-        "SC-MASTER_PLAN-0011",
-        "SC-MASTER_PLAN-0012",
-        "SC-MASTER_PLAN-0013",
-        "SC-P6-0293",
-        "SC-P6-0294",
-        "SC-P6-0295"
-      ]
-    },
-    {
-      "id": "PUB-01.PUBLIC_HOME.LAYOUT.01",
-      "parentRequirementId": "PUB-01",
-      "title": "public orbit home semantic glyph system",
-      "contract": "Public home preserves sundial, navigation flag, open book, viewfinder and tree-ring/archive semantics in one authored SVG language, keeps every glyph upright and visibly attached to its ring, and keeps all five labels visible without collisions at every required breakpoint.",
-      "surfaces": [
-        "PUBLIC_HOME"
-      ],
-      "requiredEvidence": [
-        "unit",
-        "e2e-local",
-        "visual",
-        "manual-review"
-      ],
-      "plannedTasks": [
-        "P6-T5"
-      ],
-      "finalBoundary": [
-        "local"
-      ],
-      "notApplicable": null,
-      "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0357",
-        "SC-P6-0293",
-        "SC-P6-0294",
-        "SC-P6-0295"
-      ]
-    },
-    {
-      "id": "MOTION-01.PUBLIC_HOME.MOTION.04",
-      "parentRequirementId": "MOTION-01",
-      "title": "public home reference-ring arrival and one-shot reveal",
-      "contract": "Public home keeps whole-group scale-in, ring spin, 0.72-second 0.3R/A-180 degree object arrival, path/upright/material counters, center count and accessible title reveal as bounded independent owners; login never replays them and reduced motion renders the stable complete frame.",
-      "surfaces": [
-        "PUBLIC_HOME"
-      ],
-      "requiredEvidence": [
-        "unit",
-        "e2e-local",
-        "visual",
-        "manual-review"
-      ],
-      "plannedTasks": [
-        "P6-T5"
-      ],
-      "finalBoundary": [
-        "local"
-      ],
-      "notApplicable": null,
-      "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0066",
-        "SC-FINAL_REDESIGN-0067",
-        "SC-FINAL_REDESIGN-0334",
-        "SC-FINAL_REDESIGN-0359",
-        "SC-FINAL_REDESIGN-0363",
-        "SC-MASTER_PLAN-0010",
-        "SC-MASTER_PLAN-0012",
-        "SC-P6-0293",
-        "SC-P6-0294",
-        "SC-P6-0295"
-      ]
-    },
-    {
-      "id": "AUTH-01.LOGIN_OVERLAY.FUNC.02",
-      "parentRequirementId": "AUTH-01",
-      "title": "login overlay preserves themed public-scene continuity",
-      "contract": "Opening, closing, reverse-closing and reopening login preserve title completion, live ring playheads, center completion and selected theme; night uses a dark themed identity surface, day uses a compatible light surface, and all existing form, request, authentication, Escape, focus and return contracts remain intact.",
-      "surfaces": [
-        "LOGIN_OVERLAY",
-        "PUBLIC_HOME"
-      ],
-      "requiredEvidence": [
-        "unit",
-        "e2e-local",
-        "visual",
-        "manual-review"
-      ],
-      "plannedTasks": [
-        "P2-T3",
-        "P6-T5"
-      ],
-      "finalBoundary": [
-        "local"
-      ],
-      "notApplicable": null,
-      "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0068",
-        "SC-FINAL_REDESIGN-0080",
-        "SC-FINAL_REDESIGN-0081",
-        "SC-FINAL_REDESIGN-0083",
-        "SC-FINAL_REDESIGN-0086",
-        "SC-FINAL_REDESIGN-0202",
-        "SC-FINAL_REDESIGN-0203",
-        "SC-FINAL_REDESIGN-0356",
-        "SC-FINAL_REDESIGN-0358",
-        "SC-MASTER_PLAN-0013",
-        "SC-P6-0293",
-        "SC-P6-0294",
-        "SC-P6-0295"
-      ]
-    },
-    {
-      "id": "SPACE-01.PUBLIC_HOME.RESP.05",
-      "parentRequirementId": "SPACE-01",
-      "title": "public orbit complete viewport inset and responsive composition",
-      "contract": "At 1440,1024,768,390 and 320 CSS px in rest and login states the entire outer ring remains inside the viewport safe inset without clipping, controls remain reachable, labels remain readable and the page has zero horizontal overflow; the wide login relation is approximately 520 ring, 32 gap and 460 panel.",
-      "surfaces": [
-        "PUBLIC_HOME",
-        "LOGIN_OVERLAY"
-      ],
-      "requiredEvidence": [
-        "e2e-local",
-        "visual",
-        "manual-review"
-      ],
-      "plannedTasks": [
-        "P6-T5"
-      ],
-      "finalBoundary": [
-        "local"
-      ],
-      "notApplicable": null,
-      "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0003",
-        "SC-FINAL_REDESIGN-0011",
-        "SC-FINAL_REDESIGN-0018",
-        "SC-FINAL_REDESIGN-0081",
-        "SC-FINAL_REDESIGN-0086",
-        "SC-FINAL_REDESIGN-0207",
-        "SC-FINAL_REDESIGN-0331",
-        "SC-FINAL_REDESIGN-0334",
-        "SC-FINAL_REDESIGN-0357",
-        "SC-FINAL_REDESIGN-0360",
-        "SC-FINAL_REDESIGN-0364",
-        "SC-MASTER_PLAN-0011",
-        "SC-MASTER_PLAN-0019",
-        "SC-P6-0293",
-        "SC-P6-0294",
-        "SC-P6-0295"
-      ]
-    },
-    {
-      "id": "STATE-01.PUBLIC_HOME.STATE.06",
-      "parentRequirementId": "STATE-01",
-      "title": "public home visual preference and reveal continuity",
-      "contract": "Public home deterministically distinguishes no override, explicit day, explicit night, reduced-motion and enhanced/fallback states; login and route continuity preserve theme, title/count completion and live ring playheads without a white flash, white night panel or false reset.",
-      "surfaces": [
-        "PUBLIC_HOME",
-        "LOGIN_OVERLAY"
-      ],
-      "requiredEvidence": [
-        "unit",
-        "e2e-local",
-        "visual",
-        "manual-review"
-      ],
-      "plannedTasks": [
-        "P6-T5"
-      ],
-      "finalBoundary": [
-        "local"
-      ],
-      "notApplicable": null,
-      "sourceClauseIds": [
-        "SC-FINAL_REDESIGN-0017",
-        "SC-FINAL_REDESIGN-0068",
-        "SC-FINAL_REDESIGN-0080",
-        "SC-FINAL_REDESIGN-0081",
-        "SC-FINAL_REDESIGN-0083",
-        "SC-FINAL_REDESIGN-0086",
-        "SC-FINAL_REDESIGN-0202",
-        "SC-FINAL_REDESIGN-0203",
-        "SC-FINAL_REDESIGN-0340",
-        "SC-FINAL_REDESIGN-0356",
-        "SC-FINAL_REDESIGN-0358",
-        "SC-MASTER_PLAN-0013",
-        "SC-P6-0293",
-        "SC-P6-0294",
-        "SC-P6-0295"
-      ]
     }
   ]
 }

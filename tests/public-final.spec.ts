@@ -262,31 +262,36 @@ test('pause, hidden suspension and reduced motion preserve equivalent public mea
   await expect(page.getByRole('link', { name: '探索生活切片' })).toBeFocused()
 })
 
-test('fifty animation frames keep root anchors path-attached under the scoped GSAP owner', async ({ page }) => {
+test('fifty animation frames keep root anchors path-attached under the scoped ADR-030 native owners', async ({ page }) => {
   test.setTimeout(90_000)
   await page.setViewportSize({ width: 1440, height: 900 })
   await preparePublicHome(page)
   await expect(page.locator('.public-orbit__count')).toHaveText('05', { timeout: 6_000 })
 
   const result = await page.evaluate(async () => {
-    const mutatedOutsideOwner = new Set<string>()
-    const mutatedTargets = new Set<string>()
     const motionOwner = document.querySelector<HTMLElement>('[data-public-motion-owner="public-orbit"]')
     if (!motionOwner) throw new Error('Public orbit motion owner is missing')
-    const ownedTransformElements = new WeakSet<Element>([
-      motionOwner,
-      ...motionOwner.querySelectorAll('*'),
-    ])
-    const observer = new MutationObserver((records) => {
-      for (const record of records) {
-        const target = record.target
-        if (!(target instanceof HTMLElement) || !target.style.transform) continue
-        const identity = target.getAttribute('data-public-object') ?? target.className
-        mutatedTargets.add(String(identity))
-        if (!ownedTransformElements.has(target)) mutatedOutsideOwner.add(String(identity))
-      }
+    const nativeTransformOwners = motionOwner.getAnimations({ subtree: true }).flatMap((animation) => {
+      const effect = animation.effect
+      if (!(effect instanceof KeyframeEffect) || !(effect.target instanceof HTMLElement)) return []
+      const target = effect.target
+      const kind = target.matches('[data-orbit-ring]')
+        ? 'ring'
+        : target.matches('[data-public-object]')
+          ? 'upright'
+          : null
+      if (!kind || !effect.getKeyframes().some((frame) => typeof frame.transform === 'string')) return []
+      return [{
+        identity: target.getAttribute('data-orbit-ring') ?? target.getAttribute('data-public-object'),
+        kind,
+        playState: animation.playState,
+      }]
     })
-    observer.observe(motionOwner, { attributes: true, attributeFilter: ['style'], subtree: true })
+    const ownerCounts = nativeTransformOwners.reduce<Record<string, number>>((counts, owner) => {
+      const key = `${owner.kind}:${owner.identity}:transform`
+      counts[key] = (counts[key] ?? 0) + 1
+      return counts
+    }, {})
 
     const frameErrors: number[][] = []
     for (let frame = 0; frame < 50; frame += 1) {
@@ -314,12 +319,16 @@ test('fifty animation frames keep root anchors path-attached under the scoped GS
       frameErrors.push(errors)
     }
     await new Promise<void>((resolveFrame) => requestAnimationFrame(() => resolveFrame()))
-    observer.disconnect()
 
     return {
       maxPathError: Math.max(...frameErrors.flat()),
-      mutatedOutsideOwner: [...mutatedOutsideOwner],
-      mutatedTargets: [...mutatedTargets],
+      duplicateOwnerKeys: Object.entries(ownerCounts).filter(([, count]) => count !== 1).map(([key]) => key),
+      nativeOwnerCount: nativeTransformOwners.length,
+      nativeOwnerKinds: nativeTransformOwners.reduce<Record<string, number>>((counts, owner) => {
+        counts[owner.kind] = (counts[owner.kind] ?? 0) + 1
+        return counts
+      }, {}),
+      nativeOwnerStates: nativeTransformOwners.map((owner) => owner.playState),
       ownerCount: document.querySelectorAll('[data-public-motion-owner="public-orbit"]').length,
       samples: frameErrors.length,
       samplesPerFrame: frameErrors.map((frame) => frame.length),
@@ -329,8 +338,10 @@ test('fifty animation frames keep root anchors path-attached under the scoped GS
   expect(result.ownerCount).toBe(1)
   expect(result.samples).toBe(50)
   expect(result.samplesPerFrame).toEqual(Array(50).fill(5))
-  expect(result.mutatedTargets.length).toBeGreaterThanOrEqual(5)
-  expect(result.mutatedOutsideOwner).toEqual([])
+  expect(result.nativeOwnerCount).toBe(9)
+  expect(result.nativeOwnerKinds).toEqual({ ring: 4, upright: 5 })
+  expect(result.nativeOwnerStates).toEqual(Array(9).fill('running'))
+  expect(result.duplicateOwnerKeys).toEqual([])
   expect(result.maxPathError).toBeLessThanOrEqual(4)
 })
 

@@ -47,8 +47,7 @@ describe('EntryTransition', () => {
     expect(complete).toHaveBeenCalledOnce()
   })
 
-  it('uses an at-most-80ms opacity continuity in reduced-motion mode', () => {
-    vi.useFakeTimers()
+  it('completes reduced navigation without waiting for a delayed paint frame', async () => {
     vi.spyOn(window, 'matchMedia').mockImplementation(
       (query) => ({
         matches: query === '(prefers-reduced-motion: reduce)',
@@ -65,9 +64,8 @@ describe('EntryTransition', () => {
     render(<EntryTransition active privateReady theme="day" onComplete={complete} />)
 
     expect(screen.getByRole('status')).toHaveAttribute('data-entry-motion', 'reduced')
-    act(() => vi.advanceTimersByTime(31))
     expect(complete).not.toHaveBeenCalled()
-    act(() => vi.advanceTimersByTime(1))
+    await act(async () => { await Promise.resolve() })
     expect(complete).toHaveBeenCalledOnce()
   })
 

@@ -270,9 +270,13 @@ export function PublicHomePage() {
     }
     dispatchLoginScene({ type: 'ENTRY_COMPLETED' })
     navigate('/app/overview', {
-      state: { portalEntry: true, publicTheme: theme },
+      state: {
+        portalEntry: true,
+        publicTheme: theme,
+        reducedEntryPrepaint: loginScene.reducedMotion,
+      },
     })
-  }, [navigate, theme])
+  }, [loginScene.reducedMotion, navigate, theme])
 
   useEffect(() => {
     const handlePopState = () => {
@@ -400,7 +404,6 @@ export function PublicHomePage() {
                 paused={motionPaused}
                 restoreFocusId={publicReturnState?.sourceFocusId}
                 sceneState={sceneState}
-                theme={theme}
               />
             </Suspense>
           ) : (

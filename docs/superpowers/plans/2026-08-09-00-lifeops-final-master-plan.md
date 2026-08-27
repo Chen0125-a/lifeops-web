@@ -4,7 +4,7 @@
 
 **Goal:** Implement every approved LifeOps Web requirement, publish immutable Web/API images to UHub, and deliver a validated user-operated Kubernetes deployment package without losing any feature or overstating availability.
 
-**Architecture:** Work is split into six ordered vertical plans. Every plan delivers a runnable, testable slice and closes its requirement IDs before the next plan starts; the master ledger is the only completion authority. GSAP exclusively owns the public home/detail/login/aperture animation subtree, Motion exclusively owns private interruptible layout/overlay transitions, and neither engine may control the same element property. Fastify exposes versioned domain APIs, and MySQL migrations preserve existing plans/snapshots while adding life catalog, inventory, recipe, planning, commerce and analytics transactions. Future life forecasts follow current facts; completed history is immutable unless explicitly recalculated.
+**Architecture:** Work is split into six ordered vertical plans. Every plan delivers a runnable, testable slice and closes its requirement IDs before the next plan starts; the master ledger is the only completion authority. Native Web Animations exclusively owns the four continuous public ring rotations and five upright counter transforms; GSAP exclusively owns the remaining public home/detail/login/aperture motion; Motion exclusively owns private interruptible layout/overlay transitions; no node or transform property may have competing owners. Fastify exposes versioned domain APIs, and MySQL migrations preserve existing plans/snapshots while adding life catalog, inventory, recipe, planning, commerce and analytics transactions. Future life forecasts follow current facts; completed history is immutable unless explicitly recalculated.
 
 **Tech Stack:** React 19.2.8, TypeScript 7.0.2, React Router 7.18.2, Motion 12.43.0, GSAP 3.15.0, @gsap/react 2.1.2, TanStack React Query 5.101.4, React Markdown 10.1.0, Remark GFM 4.0.1, Rehype Sanitize 6.0.0, fflate 0.8.3, Fastify 5.11.3, Fastify Multipart 10.1.0, MySQL 8.4.10, AWS S3 Client 3.1097.0, prom-client 15.1.3, Vitest 4.1.10, Playwright 1.62.1, Axe Playwright 4.12.1, Lighthouse 13.4.1, Helm 3.19.0, GitHub Actions, UHub, Argo CD.
 
@@ -21,7 +21,7 @@
 - Private UI contains no planets, galaxy, left navigation plus generic content frame, right-angle paper sheets, or equal-card dashboard wall.
 - Private layout uses a bright continuous canvas and soft-volume hierarchy; orange/red only communicate real warning/critical state.
 - Route, panel, filter, detail, and return transitions preserve spatial context and state. Approved tokens are feedback 120ms, state 180ms, private route 240ms, task-layer in/out 320/220ms, login open/close 480/360ms, aperture 680ms and day/night 900ms; reduced motion removes ambient and large spatial movement and uses at most about 80ms for necessary continuity.
-- GSAP Core + MotionPathPlugin + @gsap/react are code-split to public/detail/login only; Motion remains private-only. ScrollTrigger, ScrollSmoother, wheel navigation, generic scroll reveals, global parallax and competing transform owners are forbidden.
+- Native Web Animations owns only the four continuous ring rotations and five upright counter transforms. GSAP Core + MotionPathPlugin + @gsap/react remain code-split to the other public/detail/login motion; Motion remains private-only. ScrollTrigger, ScrollSmoother, wheel navigation, generic scroll reveals, global parallax and competing transform owners are forbidden.
 - `1440×900`, `1024×768`, `768×1024` and `390×844` are mandatory evidence viewports; 200% text zoom and 320 CSS px reflow are supplemental gates. Tablet and mobile reorder by task priority instead of shrinking desktop cards.
 - Every page implements loading, data, empty, saving/saved, permission, network error, conflict, delete/undo, and disconnected states that apply to that page.
 - Production data comes from Fastify/MySQL. Sample data is allowed only in an explicitly marked local-preview adapter and never in a production image.
@@ -117,7 +117,7 @@ Do not begin a later plan because its UI appears easier. A failed exit gate keep
 | PUBLISH-01 | P4-T4, P4-T5 | public-copy/privacy/scheduling E2E |
 | PLATFORM-01 | P5-T1, P5-T2, P5-T3 | adapter contract/security/UI E2E |
 | GLOBAL-01 | P5-T4, P5-T5, P5-T6 | search/quick-create/settings E2E |
-| MOTION-01 | P1-T2, P2-T3, P2-T4, P6-T5 | engine ownership, motion unit, filmstrip/trace, interruption and reduced motion |
+| MOTION-01 | P1-T2, P2-T3, P2-T4, P6-T5, P6-T6 | engine ownership, motion unit, unchanged WebKit performance gate, filmstrip/trace, interruption and reduced motion |
 | SPACE-01 | P2-T5, P3-T7, P6-T5 | breakpoint visual review |
 | STATE-01 | P1-T2 and every page task | state-boundary unit + failure journeys |
 | DATA-01 | P1-T1 through P1-T13 | migration checksum + original/life MySQL integration |

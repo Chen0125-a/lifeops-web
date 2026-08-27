@@ -1,11 +1,8 @@
-import { type CSSProperties, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import type { LifeOpsTheme } from '../../theme/theme'
+import { EntryTransitionSurface, type EntryOrigin } from './EntryTransitionSurface'
 
-export interface EntryOrigin {
-  x: number
-  y: number
-  size: number
-}
+export type { EntryOrigin } from './EntryTransitionSurface'
 
 interface EntryTransitionProps {
   active: boolean
@@ -32,42 +29,24 @@ export function EntryTransition({
     if (!privateReady) return
     if (fired.current) return
     fired.current = true
-    const timer = window.setTimeout(onComplete, reduced ? 32 : 680)
+    if (reduced) {
+      let cancelled = false
+      queueMicrotask(() => {
+        if (!cancelled) onComplete()
+      })
+      return () => { cancelled = true }
+    }
+    const timer = window.setTimeout(onComplete, 680)
     return () => window.clearTimeout(timer)
   }, [active, onComplete, privateReady, reduced])
   if (!active) return null
 
-  const style = origin
-    ? {
-        '--entry-origin-x': `${origin.x}px`,
-        '--entry-origin-y': `${origin.y}px`,
-        '--entry-origin-size': `${origin.size}px`,
-      } as CSSProperties
-    : undefined
-
   return (
-    <div
-      aria-label="正在进入 LifeOps"
-      className="entry-transition"
-      data-entry-motion={reduced ? 'reduced' : 'full'}
-      data-entry-ready={privateReady ? 'true' : 'false'}
-      data-entry-surface="daylight-prepaint"
-      data-entry-theme={theme}
-      role="status"
-      style={style}
-    >
-      <div
-        aria-hidden="true"
-        className="entry-transition__private-canvas"
-        data-testid="private-daylight-prepaint"
-        data-workspace-theme="daylight"
-      >
-        <i className="entry-transition__prepaint-bar" />
-        <i className="entry-transition__prepaint-timeline" />
-        <i className="entry-transition__prepaint-focus" />
-      </div>
-      <div aria-hidden="true" className="entry-transition__aperture" />
-      <span>正在展开今天</span>
-    </div>
+    <EntryTransitionSurface
+      origin={origin}
+      privateReady={privateReady}
+      reduced={reduced}
+      theme={theme}
+    />
   )
 }

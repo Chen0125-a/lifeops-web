@@ -1,11 +1,8 @@
-import { AnimatePresence, motion, useIsPresent, useReducedMotion } from 'motion/react'
-import { forwardRef, type FocusEvent as ReactFocusEvent, type ReactNode, type UIEvent as ReactUIEvent, useEffect, useRef } from 'react'
+import { useReducedMotion } from 'motion/react'
+import { type FocusEvent as ReactFocusEvent, type ReactNode, type UIEvent as ReactUIEvent, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
-const routeVariants = {
-  enter: (direction: 'forward' | 'back') => ({ opacity: 0.001, x: direction === 'back' ? -18 : 18 }),
-  center: { opacity: 1, x: 0 },
-  exit: (direction: 'forward' | 'back') => ({ opacity: 0.001, x: direction === 'back' ? 18 : -18 }),
-}
+const ROUTE_TRANSITION_DURATION = 240
+const ROUTE_TRANSITION_EASING = 'cubic-bezier(0.22, 1, 0.36, 1)'
 
 interface RouteFocusDescriptor {
   tagName: string
@@ -58,32 +55,109 @@ function scrollOwners(panel: HTMLElement) {
   return [...panel.querySelectorAll<HTMLElement>('*')].filter(isVerticalScrollOwner)
 }
 
-const RoutePanel = forwardRef<HTMLDivElement, {
+interface RoutePanelSnapshot {
   children: ReactNode
-  direction: 'forward' | 'back'
+  enterDirection: 'forward' | 'back'
+  id: number
+  routeKey: string
+}
+
+type OutgoingRoutePanel = RoutePanelSnapshot
+
+function NativeRoutePanel({
+  children,
+  enterDirection,
+  id,
+  onExited,
+  phase,
+  reducedMotion,
+  routeKey,
+}: {
+  children: ReactNode
+  enterDirection: 'forward' | 'back'
+  id: number
+  onExited: (id: number) => void
+  phase: 'current' | 'outgoing'
   reducedMotion: boolean | null
   routeKey: string
-}>(function RoutePanel({ children, direction, reducedMotion, routeKey }, ref) {
-  const isPresent = useIsPresent()
+}) {
+  const panelRef = useRef<HTMLDivElement>(null)
+  const enterAnimationRef = useRef<Animation | null>(null)
+  const initialDirection = useRef(enterDirection).current
+  const initialReducedMotion = useRef(Boolean(reducedMotion)).current
+  const deferContent = id > 0
+  const nativeAnimationAvailable = typeof HTMLElement !== 'undefined' && typeof HTMLElement.prototype.animate === 'function'
+  const [contentReady, setContentReady] = useState(() => !deferContent || initialReducedMotion || !nativeAnimationAvailable)
+
+  useLayoutEffect(() => {
+    const panel = panelRef.current
+    if (!panel) return
+    if (!deferContent || initialReducedMotion || typeof panel.animate !== 'function') {
+      panel.style.opacity = '1'
+      panel.style.transform = 'none'
+      setContentReady(true)
+      return
+    }
+    const animation = panel.animate([
+      { opacity: 0.001, transform: `translateX(${initialDirection === 'back' ? -18 : 18}px)` },
+      { opacity: 1, transform: 'translateX(0px)' },
+    ], {
+      duration: ROUTE_TRANSITION_DURATION,
+      easing: ROUTE_TRANSITION_EASING,
+      fill: 'both',
+    })
+    enterAnimationRef.current = animation
+    let active = true
+    void animation.finished.then(() => {
+      if (!active || enterAnimationRef.current !== animation) return
+      panel.style.opacity = '1'
+      panel.style.transform = 'none'
+      setContentReady(true)
+      animation.cancel()
+      enterAnimationRef.current = null
+    }).catch(() => undefined)
+    return () => {
+      active = false
+      animation.cancel()
+      if (enterAnimationRef.current === animation) enterAnimationRef.current = null
+    }
+  }, [deferContent, initialDirection, initialReducedMotion])
+
+  useLayoutEffect(() => {
+    if (phase !== 'outgoing') return
+    const panel = panelRef.current
+    if (!panel) return
+    const from = getComputedStyle(panel)
+    const fromTransform = from.transform
+    panel.style.opacity = from.opacity
+    panel.style.transform = fromTransform
+    enterAnimationRef.current?.cancel()
+    enterAnimationRef.current = null
+    const timer = window.setTimeout(() => onExited(id), reducedMotion ? 0 : ROUTE_TRANSITION_DURATION)
+    return () => window.clearTimeout(timer)
+  }, [id, onExited, phase, reducedMotion])
+
+  const isCurrent = phase === 'current'
   return (
-    <motion.div
-      ref={ref}
+    <div
+      ref={panelRef}
       className="route-stage__panel"
       data-route-key={routeKey}
-      data-route-panel-current={isPresent ? true : undefined}
-      aria-hidden={isPresent ? undefined : true}
-      inert={isPresent ? undefined : true}
-      custom={direction}
-      variants={routeVariants}
-      initial={reducedMotion ? false : 'enter'}
-      animate="center"
-      exit={reducedMotion ? undefined : 'exit'}
-      transition={{ duration: reducedMotion ? 0.001 : 0.24, ease: [0.22, 1, 0.36, 1] }}
+      data-route-motion-owner="native-waapi"
+      data-route-panel-current={isCurrent ? true : undefined}
+      data-route-panel-phase={phase}
+      aria-hidden={isCurrent ? undefined : true}
+      inert={isCurrent ? undefined : true}
+      style={isCurrent ? undefined : { inset: 0, pointerEvents: 'none', position: 'absolute', width: '100%' }}
     >
-      {children}
-    </motion.div>
+      {contentReady ? children : (
+        <div aria-live="polite" className="route-gate" data-deferred-private-route={routeKey}>
+          正在打开工作区…
+        </div>
+      )}
+    </div>
   )
-})
+}
 
 export function RouteStage({ children, routeKey, navigationKey = routeKey, direction }: { routeKey: string; navigationKey?: string; direction: 'forward' | 'back'; children: ReactNode }) {
   const stageRef = useRef<HTMLDivElement>(null)
@@ -91,6 +165,34 @@ export function RouteStage({ children, routeKey, navigationKey = routeKey, direc
   const previousRouteKey = useRef<string | null>(null)
   const scrollByNavigation = useRef(new Map<string, Map<string, number>>())
   const reducedMotion = useReducedMotion()
+  const nextPanelId = useRef(1)
+  const currentPanel = useRef<RoutePanelSnapshot>({ children, enterDirection: direction, id: 0, routeKey })
+  const [panelState, setPanelState] = useState<{ currentId: number; outgoing: OutgoingRoutePanel[]; routeKey: string }>(() => ({
+    currentId: 0,
+    outgoing: [],
+    routeKey,
+  }))
+
+  if (panelState.routeKey !== routeKey) {
+    const nextId = nextPanelId.current
+    nextPanelId.current += 1
+    const outgoing = currentPanel.current
+    currentPanel.current = { children, enterDirection: direction, id: nextId, routeKey }
+    setPanelState({
+      currentId: nextId,
+      outgoing: [...panelState.outgoing, outgoing],
+      routeKey,
+    })
+  } else {
+    currentPanel.current = { ...currentPanel.current, children }
+  }
+
+  const removeOutgoingPanel = useCallback((id: number) => {
+    setPanelState((current) => ({
+      ...current,
+      outgoing: current.outgoing.filter((panel) => panel.id !== id),
+    }))
+  }, [])
 
   useEffect(() => {
     if (direction !== 'back') return
@@ -172,16 +274,22 @@ export function RouteStage({ children, routeKey, navigationKey = routeKey, direc
 
   return (
     <div ref={stageRef} className="route-stage" data-route-stage data-route-direction={direction} onFocusCapture={rememberFocus} onScrollCapture={rememberScroll}>
-      <AnimatePresence initial={false} mode="popLayout" custom={direction}>
-        <RoutePanel
-          key={routeKey}
-          routeKey={routeKey}
-          direction={direction}
+      {panelState.outgoing.map((panel) => (
+        <NativeRoutePanel
+          key={panel.id}
+          {...panel}
+          onExited={removeOutgoingPanel}
+          phase="outgoing"
           reducedMotion={reducedMotion}
-        >
-          {children}
-        </RoutePanel>
-      </AnimatePresence>
+        />
+      ))}
+      <NativeRoutePanel
+        key={panelState.currentId}
+        {...currentPanel.current}
+        onExited={removeOutgoingPanel}
+        phase="current"
+        reducedMotion={reducedMotion}
+      />
     </div>
   )
 }

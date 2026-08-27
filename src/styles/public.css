@@ -16,7 +16,6 @@
   min-height: 680px;
   overflow: hidden;
   color: var(--public-ink);
-  color-scheme: light;
   background-color: var(--public-bg);
   transition: background-color 900ms cubic-bezier(.2, .8, .2, 1);
 }
@@ -29,7 +28,6 @@
   --public-track: #526678;
   --public-line: rgb(82 102 120 / 42%);
   --public-line-strong: rgb(82 102 120 / 76%);
-  color-scheme: dark;
   background-color: #020306;
   background-image: none;
 }
@@ -55,7 +53,7 @@
   backface-visibility: hidden;
   contain: paint;
   transform: translateZ(0);
-  transition: opacity 900ms cubic-bezier(.2, .8, .2, 1);
+  transition: none;
   will-change: opacity;
 }
 
@@ -74,7 +72,7 @@
   backface-visibility: hidden;
   contain: paint;
   transform: translateZ(0);
-  transition: opacity 900ms cubic-bezier(.2, .8, .2, 1);
+  transition: none;
   will-change: opacity;
 }
 
@@ -382,7 +380,6 @@
   color: color-mix(in srgb, currentColor 82%, var(--public-ink));
   filter: drop-shadow(0 9px 15px rgb(21 33 42 / 16%));
   transform: translate(-50%, calc(-50% - 14px));
-  transition: color 180ms ease, filter 180ms ease;
 }
 
 .public-home[data-public-theme='night'] .public-object__medallion {
