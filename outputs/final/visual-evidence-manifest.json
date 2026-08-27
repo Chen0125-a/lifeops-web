@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-029",
-  "checkpointRootSha256": "ECB7E65BA5C00AD9E9C635029105046C4D337F546F8E1DB244BC0A43740522A9",
+  "checkpointRootSha256": "BF75B8BCAE61911192F496A8CBB76A0B0EB17E9A9222B52CCF87E840782FA99E",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
   "generatedAt": "2026-08-24T13:00:00+08:00",
   "environment": {
@@ -483,8 +483,8 @@
   "latestRevalidation": {
     "taskId": "P6-T6",
     "step": 7,
-    "revalidatedAt": "2026-08-27T05:37:56.230Z",
-    "checkpointRootSha256": "ECB7E65BA5C00AD9E9C635029105046C4D337F546F8E1DB244BC0A43740522A9",
+    "revalidatedAt": "2026-08-27T05:50:47.268Z",
+    "checkpointRootSha256": "BF75B8BCAE61911192F496A8CBB76A0B0EB17E9A9222B52CCF87E840782FA99E",
     "metricsPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/metrics.json",
     "metricsSha256": "9740BC57B8864198F0B8313D759F50E7D5F11ABC2A777A2BE9DA3EDB8D0E2463",
     "openedOriginalResolution": true,

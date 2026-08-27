@@ -7,7 +7,7 @@ active_task: P6-T6
 active_step: 7
 requirements_verified: 30/44
 execution_guard: complete-fresh-task-drill-passed
-last_reviewed: 2026-08-24
+last_reviewed: 2026-08-27
 ---
 
 # LifeOps Web Execution Control
@@ -785,7 +785,7 @@ The non-Git checkpoint is `outputs/evidence/source-checkpoints/2026-08-23-p6-t4-
 
 ## Next atomic action
 
-P6-T5 is formally closed. P6-T6 Steps 1–6 are complete and P6-T6 Step 7 is the sole current boundary. After fresh explicit authorization, the exact `origin/main` push succeeded; local and remote-tracking `main` are `97f68ff3af81b2675229f95c4b367e806472a7d4`. GitHub CLI authentication is invalid and the only available browser is signed out; a visible GitHub login page is handed to the user without reading or entering credentials. After user login, the first verification command is `browser reload https://github.com/Chen0125-a/lifeops-web/actions`. Release execution remains separately gated on a genuinely green ordinary CI and new explicit authorization for exactly one additional `1.0.0` dispatch.
+P6-T5 is formally closed. P6-T6 Steps 1–6 are complete and P6-T6 Step 7 is the sole current boundary. Ordinary CI run `32981072818` on exact GitHub `main` at `12f8899429070bbf21cf981142dd596c46213fae` failed with 330 passed / 5 failed; all five failures and the related diagnostic, detached-focus, TypeScript-boundary, Web public-asset and checkpoint public-source defects now pass fresh original-strength local gates. The reviewed implementation/evidence correction is committed locally as `d6f2c73764d7a9ef1122f1c968a348510cbe169f`; `origin/main` remains `12f8899429070bbf21cf981142dd596c46213fae`. The current 462-row manifest and 606-input push-authorization checkpoint validate at `BF75B8BCAE61911192F496A8CBB76A0B0EB17E9A9222B52CCF87E840782FA99E`. The next atom is the final execution/startup/handoff plus identity/diff/credential review before the narrow ledger commit; the first verification command is `npm.cmd run test:execution`. Release execution remains separately gated on a newly authorized push, a genuinely green fresh ordinary CI and new explicit authorization for exactly one additional `1.0.0` dispatch.
 
 Do not rerun the detector, read kubeconfig, run kubectl, install Helm, synchronize Argo or claim registry delivery before the pinned workflow and exact digest evidence succeed.
 
@@ -1214,3 +1214,53 @@ Traceability now records `MAIN_PUSH_AUTHORIZATION_REQUIRED` rather than an uncom
 ### Exact next atomic action
 
 Verify saved/fresh/manifest checkpoint identity and rerun execution-contract, startup, handoff, diff and credential-safe audits; then create the narrow local pause-ledger commit. After that commit, request fresh explicit user authorization to push both local commits to exact `https://github.com/Chen0125-a/lifeops-web.git` branch `main`. Push authorization does not authorize release. Do not dispatch `1.0.0` or enter P6-T7.
+
+## 2026-08-26 P6-T6 remediation push, ordinary CI #6 failure and soft pause
+
+The user explicitly authorized the exact `main` push. Implementation commit `0b445f9dad262b9355e91655a8f32e1e592ed1bb` and narrow ledger commit `12f8899429070bbf21cf981142dd596c46213fae` were pushed in one `git push origin main`; independent `git ls-remote` verification returned `12f8899429070bbf21cf981142dd596c46213fae`. Local HEAD, `origin/main` and the remote matched before this ledger-only pause. That push authorization is consumed. No release workflow was dispatched.
+
+Authenticated read-only GitHub inspection verified account `Chen0125-a`. Ordinary CI run `32981072818`, job `98217589919`, for `12f8899...` reached terminal failure after 38m43s. Unit, typecheck, production build, MySQL and browser installation passed. Playwright finished 330 passed / 5 failed, so Helm/workflow/image build steps were skipped. The failed tests were Chromium 1024 and 390 login-dialog accessibility, Firefox critical theme-frame sampling, WebKit critical private-route continuity and WebKit critical theme-frame sampling. WebKit route continuity retained 7 frames against the unchanged minimum 10.
+
+The WebKit theme failure entered the final timeout path in `tests/helpers/motionProbe.ts` and exposed `ReferenceError: minimum is not defined`; the diagnostic template refers to a nonexistent identifier instead of the parameter `minimumFrames`. Local 335/335 did not enter this failure path, so it could not prove that branch. The error masks the full cadence failure and must not be treated as a product pass or a flaky waiver. The correct TDD atom is to add a focused contract that forces the helper timeout path and asserts the diagnostic, observe behavioral RED, then minimally replace the bad identifier. Exact logs and focused reproductions must still determine the causes of both Chromium accessibility failures and the Firefox/WebKit original-strength frame gates. Workers, retries, thresholds, sample durations, geometry and motion rate remain unchanged.
+
+The parent boundary remains 30 verified-local / 10 partial / 4 pending. The only prior `1.0.0` dispatch authorization remains consumed by failed run `32796276478`; neither the completed push nor browser login authorizes a release retry. Any future push is another persistent remote mutation and requires fresh explicit authorization.
+
+### Exact next atomic action
+
+Remain at P6 / P6-T6 / Step 7. Add the forced failure-path test for `waitForStableFrameCadence`, then run exactly `npm.cmd test -- src/motionProbeContract.test.ts` and require the expected diagnostic-path RED before changing `tests/helpers/motionProbe.ts`. Do not dispatch release or enter P6-T7.
+
+```powershell
+npm.cmd test -- src/motionProbeContract.test.ts
+```
+
+Soft-pause verification is coherent. Saved checkpoint, two fresh rebuilds and manifest all equal `070852E43BFC990D89376C9B42E172457439F0A1E27A8D39FAC6E2731CAFC108` with 602 inputs and 462 evidence rows. An initial execution-contract run correctly rejected a transient unregistered status paragraph inserted inside the P6 work-package contract; that paragraph was removed, the unchanged Step 7 checkbox remains open, and the final contract run passes 95/95. Standalone startup and handoff both exit 0 with ADR-029, P6 / P6-T6 / Step 7, 30/10/4 and the new first command. All five authority hashes match; JSON parse, `git diff --check` and an eight-file high-confidence credential scan pass with zero findings. Evidence IDs and artifact hashes are unchanged. This ledger-only WIP is not committed or pushed.
+
+## 2026-08-27 P6-T6 CI #6 remediation complete local replay and public-source checkpoint correction
+
+The five failures from ordinary CI run `32981072818` are corrected under unchanged acceptance strength. The timeout-path contract now proves the exact `minimumFrames` diagnostic; login Axe waits for the already-approved settled hidden-copy state; Firefox and WebKit theme performance each run as one dedicated serial project before the unchanged 333-test matrix; WebKit foreground cadence retains its original durations and ceilings; and the platform polling test observes the first real overview request before hidden/retry assertions. Detached-opener focus restoration is covered in the route stage. Frontend Node/config contracts remain executed by Vitest but are isolated from the browser application TypeScript graph.
+
+Fresh final gates pass frontend 86/86 files and 408/408 tests, typecheck and the 883-module production build; server 361 ordinary tests plus 50 exact-only skips, typecheck/build; official MySQL 8.4.10 exact 50/50 and the 16-migration rehearsal; official Linux Playwright 335/335 as WebKit theme 1/1, Firefox theme 1/1 and full matrix 333/333 in 23.8 minutes with workers=1/retries=0; real-Fastify 12/12; Helm/media/security/observability/workflow/release contracts; root/server production audits at zero vulnerabilities; current-source Web/API image smoke; and Lighthouse 1.00/1.00/0.96/0.91. The Web Dockerfile now copies `public/`; both day-sky SVGs are non-empty inside the final Nginx layer. Eight current 1440×900/390×844 day/night rest/login images were opened at original resolution and accepted.
+
+The checkpoint contract itself received a behavioral RED/GREEN because `public/` was absent from its production-input classes. It now includes all three repository public SVGs while preserving ordinal sorting and sensitive-path filtering. All 462 evidence rows retain the exact HEAD ID order, validate against current source/artifact hashes and point to checkpoint `outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci6-remediation-local-full-gates-uncommitted-local-checkpoint.json`, root `ECB7E65BA5C00AD9E9C635029105046C4D337F546F8E1DB244BC0A43740522A9`, with 606 sorted inputs. Immediate fresh rebuild and manifest identity match. `test:execution` passes 95/95. The P6-T6 Step 7 checkbox remains open because no UHub digest, digest-bound SBOM/provenance, exact-digest smoke or release success exists; the parent boundary stays 30/10/4.
+
+### Exact next atomic action
+
+Remain at P6 / P6-T6 / Step 7. Run standalone startup then handoff against the synchronized ledgers, verify a second fresh checkpoint plus authority hashes, run `git diff --check`, JSON and credential-safe WIP audits, then create the local implementation/evidence commit and narrow ledger commit. Any new push to exact `https://github.com/Chen0125-a/lifeops-web.git` `main` requires fresh explicit user authorization. Do not dispatch `1.0.0` or enter P6-T7.
+
+```powershell
+node scripts/verify-execution-contract.mjs startup
+```
+
+## 2026-08-27 P6-T6 local implementation commit and push-authorization checkpoint
+
+The reviewed 30-path implementation and current-evidence set is committed locally on `main` as `d6f2c73764d7a9ef1122f1c968a348510cbe169f` (`fix(ci): close browser and image evidence gaps`). Its cached path count was exactly 30 after the seven unreferenced generated failure diagnostics were removed only from the index; those local files remain intact and untracked. Cached diff check passed and the credential-safe 44-file WIP audit reported zero findings. No push or release occurred.
+
+`origin/main` remains `12f8899429070bbf21cf981142dd596c46213fae`. Traceability now records `MAIN_PUSH_AUTHORIZATION_REQUIRED`. The narrow pause checkpoint is `outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci6-remediation-push-authorization-soft-pause-uncommitted-local-checkpoint.json`, root `BF75B8BCAE61911192F496A8CBB76A0B0EB17E9A9222B52CCF87E840782FA99E`, with 606 ordinal-sorted inputs and all 462 evidence rows in exact order. The earlier full-gates checkpoint `ECB7E65B...522A9` remains preserved as the pre-commit evidence boundary. Parent truth remains 30/10/4 and Step 7 stays open.
+
+### Exact next atomic action
+
+Run final execution-contract, standalone startup/handoff, saved/fresh/manifest identity, five authority hashes, diff/JSON and credential-safe staged review; then create the narrow local ledger commit. After it exists, stop at fresh explicit authorization for pushing both local commits to exact GitHub `main`. Do not push, dispatch `1.0.0` or enter P6-T7 without the required later authorization.
+
+```powershell
+npm.cmd run test:execution
+```
