@@ -26,7 +26,7 @@ Obsidian 项目权威账本：
 2. 完整读取本文件；它是正式的新窗口接班入口，不得只读聊天摘要。
 3. 完整读取：
    - `D:\笔记\项目\LifeOps-高可用K8s平台\CURRENT.md`
-   - `D:\笔记\项目\LifeOps-高可用K8s平台\DECISIONS.md` 中 ADR-016 至最新 ADR-029
+   - `D:\笔记\项目\LifeOps-高可用K8s平台\DECISIONS.md` 中 ADR-016 至最新 ADR-030
    - `D:\笔记\项目\LifeOps-高可用K8s平台\sessions\2026-08-23_S022_P6-T5参考圆环正式整合.md` 最新尾部
 4. 完整读取四份权威设计：
    - `docs/superpowers/specs/2026-08-09-lifeops-web-final-redesign-design.md`
@@ -50,17 +50,17 @@ Obsidian 项目权威账本：
 
 五份 authority 的锁定 SHA-256：
 
-- final redesign：`59104F2C275207401C7A70E0539CB15C7FF305F92348BE695C73F854FF1AD617`
+- final redesign：`C00CFBE41E670CD7D1F9018D1ADA6D289B60285740A0F4034C3666AF9C35ED09`
 - life domain：`ADF4BCD234D43035B1115864FE3579CAE7CC61C341E1142F6B3203C0A3E9CC24`
 - execution completeness：`43ECB091350925A90620E3D88E778F8F6AD6E547B11CDB5D806248E92D07B112`
 - image delivery boundary：`63F3D2903D6BDC98A2C04C2DDC111D69AA9D8A8A97766B98899918A1D49800B6`
-- master plan：`1B89E19803B1C588228EBD3BFEFC64DE84DA3AAC797AF6C272EE3FAA16664716`
+- master plan：`C30EB0BD774F8B40B570EB74564FD57111126E9E6CCDBBE77865F8414F5554FC`
 
 任何无法由已批准变更解释的哈希差异都是停线条件。
 
 ## 2. 当前权威执行状态
 
-- authority revision：ADR-029
+- authority revision：ADR-030
 - status：`implementation-active`
 - active tuple：P6 / P6-T6 / Step 7
 - 最后可信完成边界：30/44，即 30 `verified-local` + 10 `partial` + 4 `pending`
@@ -71,10 +71,10 @@ Obsidian 项目权威账本：
 
 最新本地完整门禁 checkpoint：
 
-`outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci6-remediation-push-authorization-soft-pause-uncommitted-local-checkpoint.json`
+`outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-motion-owner-push-authorization-soft-pause-uncommitted-local-checkpoint.json`
 
-- root：`BF75B8BCAE61911192F496A8CBB76A0B0EB17E9A9222B52CCF87E840782FA99E`
-- 606 sorted inputs，其中三份 `public/*.svg` 均被纳入生产源 checkpoint
+- root：`193D84A3CEDFA5C1B4DE2C0D68034EB721D4BA328991460D74C23AA2D723DDD7`
+- 607 sorted inputs，其中三份 `public/*.svg` 均被纳入生产源 checkpoint
 - 保存值与 fresh rebuild 一致；manifest checkpoint 相同
 - 462 条 source/artifact hash 只在完整 frontend/server/MySQL/Helm/security/image/browser/visual 门禁真实通过后收敛
 
@@ -82,32 +82,24 @@ Obsidian 项目权威账本：
 
 - 私有仓库：`Chen0125-a/lifeops-web`
 - 分支：`main`
-- 暂停写入前本地 HEAD、origin/main 与独立远端回读：`12f8899429070bbf21cf981142dd596c46213fae`
+- 最新产品实现提交：`39c99cd81b2274badc54e6a9d867e70ab3ae55a2`；包含本文件的最终窄账本提交创建后将成为本地 `HEAD`；origin/main 在获批 push 前保持 `bf1ad3b9d05ba2d315526b460be3423b44e6648d`
 - 仓库级 deploy key 私钥只在 `.git` 内且未提交；不得读取或输出内容
 - 临时 bootstrap refs 已清理
-- 用户明确授权后，remediation 提交 `0b445f9...` 与窄账本提交 `12f8899...` 已通过一次 `git push origin main` 成功推送；`git ls-remote` 精确验证远端 `main` 为 `12f8899...`。该 push 授权已消耗；没有 dispatch release。
+- 用户明确授权后，实现/证据提交 `d6f2c73...` 与窄账本提交 `bf1ad3b...` 已通过一次 `git push origin main` 成功推送；当次远端只读回读精确匹配 `bf1ad3b...`。该 push 授权已消耗；没有 dispatch release。
 - GitHub CLI 已保存 token 仍无效；内置浏览器已由用户自行登录，只读身份核对为 `Chen0125-a`。Codex 未读取或填写凭据、OTP、Cookie、token 或私钥。
 
-当前已知 WIP 至少包括：
+包含本文件的最终窄账本/checkpoint 提交精确包含：
 
-- `.github/workflows/ci.yml`
-- `.github/workflows/release.yml`
+- `docs/handoff/NEW_TASK_CONTINUATION_PROMPT.md`
 - `docs/superpowers/plans/2026-08-09-execution-control.md`
 - `docs/traceability/evidence-manifest.json`
 - `docs/traceability/requirements.md`
 - `docs/traceability/task-execution.json`
-- `outputs/evidence/browser/p5-t5/quick-create-1440x900.png`
-- `playwright.config.ts`
-- `scripts/validate-workflows.test.ps1`
-- `src/playwrightConfig.test.ts`
-- `src/components/private/QuickCreate.test.tsx`
-- `src/components/private/QuickCreate.tsx`
-- `src/pages/PublicHomePage.test.tsx`
-- `src/pages/PublicHomePage.tsx`
-- `src/styles/public.css`
-- `tests/motion-continuity.spec.ts`
-- `tests/public-login.spec.ts`
-- 最新 local-full-gates checkpoint 与本接班/账本更新
+- `outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-motion-owner-local-full-gates-uncommitted-local-checkpoint.json`
+- `outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-motion-owner-push-authorization-soft-pause-uncommitted-local-checkpoint.json`
+- `outputs/final/visual-evidence-manifest.json`
+
+历史 `outputs/evidence/browser/p6-t6-ci6-full-browser-failures/` 与 `outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-webkit-motion-engine-change-control-soft-pause-uncommitted-local-checkpoint.json` 保持本地 untracked，不属于上述提交。
 
 不得擅自还原被测试重生成的 `outputs/evidence/browser/p5-t5/quick-create-1440x900.png`；先打开复核，再按合法证据流程处理。
 
@@ -118,15 +110,15 @@ Obsidian 项目权威账本：
 
 本地提交 `ebd163c...` 已覆盖三浏览器安装、`Asia/Shanghai`、detached opener 焦点、登录期间 hero copy `aria-hidden`、主题层 compositor 准备和 WebKit 前台稳定采样。没有放宽 worker、retry、阈值、采样时间、视觉几何或动效速率。
 
-新鲜完整 GREEN：frontend typecheck、86/86 files 与 408/408 Vitest、883-module production build；server 361 passed +50 exact-integration skips、typecheck/build；官方 MySQL 8.4.10 50/50；Helm/workflow/security/audit/current-source images/data rehearsal；remote browser 12/12；Lighthouse 1.00/1.00/0.96/0.91；官方 Linux Playwright 335/335（WebKit theme 1/1 + Firefox theme 1/1 + full matrix 333/333，23.8m，workers=1、retries=0）。Web 最终镜像内两份 day-sky SVG 均存在且非空。8 张当前 1440×900/390×844 day/night rest/login 图已逐张按原分辨率打开确认。
+新鲜完整 GREEN：frontend typecheck、86/86 files 与 411/411 Vitest、884-module production build；server 361 passed +50 exact-integration skips、typecheck/build；官方 MySQL 8.4.10 50/50；Helm/workflow/security/audit/current-source images/data rehearsal；官方 Linux remote browser 12/12；Lighthouse 1.00/1.00/0.96/0.91；官方 Linux Playwright 335/335（WebKit theme 1/1 + Firefox theme 1/1 + full matrix 333/333，26.1m，workers=1、retries=0）。Web 最终镜像内三份 public SVG 均存在且非空。8 张当前 CI7 1440×900/390×844 day/night rest/login 图和 4 张 regenerated contact sheets 已逐张按原分辨率打开确认。
 
 ## 4. 当前边界与第一条命令
 
-已解决：Playwright 配置合同测试保留并从 frontend application TypeScript graph 正确隔离；frontend typecheck exit 0，full frontend 为 86/86 files、408/408 tests。
+已解决：Playwright 配置合同测试保留并从 frontend application TypeScript graph 正确隔离；frontend typecheck exit 0，full frontend 为 86/86 files、411/411 tests。
 
-已解决：CI #6 五项 browser 失败、detached opener 焦点、Web `public/` 镜像复制与 checkpoint `public/` 覆盖均已按原强度 TDD 关闭。
+已解决：CI #7 WebKit cadence 失败已按 ADR-030 的九节点窄所有权例外关闭；detached opener、64ms reduced-motion entry carry、lazy record preview、WebKit settled-opacity sampling、Web `public/` 镜像复制与 checkpoint `public/` 覆盖均已按原强度 TDD 复核。
 
-唯一下一原子动作：保持 P6 / P6-T6 / Step 7，运行最终 execution/startup/handoff、saved/fresh/manifest、五份 authority、diff/JSON/凭据安全 staged 审计；全部通过后只创建窄账本提交。新的 `main` push 必须取得新的明确授权；不得 dispatch release。
+唯一下一原子动作：保持 P6 / P6-T6 / Step 7。若包含本文件的窄账本提交尚未创建，先运行最终 execution/startup/handoff、saved/fresh/manifest、五份 authority、diff/JSON/凭据安全 staged 审计并提交精确八路径；该提交一旦存在，下一动作就是取得新的明确授权后才可 push 两个本地提交。不得 dispatch release。
 
 第一条验证命令严格为：
 
@@ -139,10 +131,10 @@ npm.cmd run test:execution
 1. 运行最终 `test:execution`、独立 startup 与 handoff，并读取完整输出和 exit code。
 2. 重建 fresh checkpoint，核对 saved/fresh/manifest identity 与 462 ID 顺序。
 3. 重算五份 authority SHA-256，运行 `git diff --check`、JSON 与 credential-safe WIP audit。
-4. 只暂存窄账本/checkpoint 路径，复核 cached path/diff/凭据后创建本地窄账本提交。
+4. 若最终窄账本提交尚未存在，只暂存上述八个精确路径，复核 cached path/diff/凭据后创建该提交。
 5. 停在新的 `MAIN_PUSH_AUTHORIZATION_REQUIRED` 外部边界；没有新授权不得 push。新普通 CI 全绿后仍需独立 release 授权。
 
-当前 CI #6 push-authorization checkpoint root 为 `BF75B8BCAE61911192F496A8CBB76A0B0EB17E9A9222B52CCF87E840782FA99E`，606 inputs；462 evidence rows 已合法收敛，真实派生边界仍为 30/10/4。实现/证据提交为 `d6f2c73764d7a9ef1122f1c968a348510cbe169f`，`origin/main` 仍为 `12f8899...`；任何后续 source/traceability 修改都必须重算。
+当前 CI7 push-authorization checkpoint root 为 `193D84A3CEDFA5C1B4DE2C0D68034EB721D4BA328991460D74C23AA2D723DDD7`，607 inputs；462 evidence rows 已合法收敛，真实派生边界仍为 30/10/4。实现/当前证据提交为 `39c99cd81b2274badc54e6a9d867e70ab3ae55a2`，包含本文件的精确八路径提交是最终窄账本原子；`origin/main` 在新 push 授权前仍为 `bf1ad3b...`。任何后续 source/traceability 修改都必须重算。
 
 ## 5. 已批准视觉方向
 
@@ -319,3 +311,35 @@ P6-T6 合法通过后，连续执行 P6-T6 task-close → deterministic checkpoi
 - 30 个已审实现/当前证据路径提交为 `d6f2c73764d7a9ef1122f1c968a348510cbe169f`（`fix(ci): close browser and image evidence gaps`）。cached diff 通过；7 个未引用的自动失败诊断制品仅从 index 撤下，文件仍在本地 untracked，不删除、不进入 462 行 manifest。
 - `origin/main` 仍为 `12f8899429070bbf21cf981142dd596c46213fae`。新的窄账本 checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci6-remediation-push-authorization-soft-pause-uncommitted-local-checkpoint.json`，root `BF75B8BCAE61911192F496A8CBB76A0B0EB17E9A9222B52CCF87E840782FA99E`，606 inputs、462 同序 evidence rows；边界仍为 30/10/4。
 - 唯一下一动作是最终 execution/startup/handoff、identity/authority/diff/JSON/credential staged 审计后创建窄账本提交。随后必须停在新的 push 授权边界；不得 push 或 release。
+
+## 17. 2026-08-27 最新接班增量：CI #7 WebKit 合成诊断与动效所有权批准边界
+
+- 用户授权的 `main` push 已执行并消耗。`HEAD`、`origin/main` 与远端 `main` 均为 `bf1ad3b9d05ba2d315526b460be3423b44e6648d`。普通 CI `33046420164` 仅在 dedicated Linux WebKit theme-performance 失败：600ms 前台稳定窗观察到 6 帧；MySQL、unit、typecheck、production build 已通过。未 dispatch release。
+- 当前 tracked 产品 WIP 仅为 `src/components/public/PublicOrbit.tsx` 与 `src/pages/PublicHomePage.tsx`：增强星盘 memo 化、父 theme 不再触发重渲染、返回状态读取实时 DOM theme。focused 33/33、frontend typecheck exit 0。`outputs/evidence/browser/p6-t6-ci6-full-browser-failures/` 仍为保留的 untracked 用户制品，不得删除、移动或暂存。
+- owned 官方 Playwright 容器已证伪 GSAP-only 的多 timeline、单 ticker/quickSetter、继承变量、2D、will-change、headed Xvfb、round-robin、Canvas 与普通坐标候选，均约 3–8 帧/600ms；失败候选均已从产品源码撤销。原生 Web Animations 能跨过 cadence 前置条件，但主题预算仍需继续 TDD，而且会修改 ADR-022/029 的 GSAP 独占合同。
+- 最新 soft-pause checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-webkit-motion-engine-change-control-soft-pause-uncommitted-local-checkpoint.json`，root `EF1B87367692F0F8BA22CB858BB046E2F0198FC75EFCEE08D6C3811241E9C324`，606 inputs，saved/fresh byte-identical。evidence manifest 仍绑定最后可信 `BF75B8B...FA99E`，不得洗绿；30/10/4 是最后可信边界。
+- 唯一下一动作是取得用户明确窄批准：仅四个持续 ring rotation 与五个 upright counter transform 改由原生 Web Animations；GSAP 继续独占标题、入轨、登录、场景与孔径，且任何节点不得双引擎争抢。批准后先同步 ADR/spec/plan/source registry/acceptance matrix/requirements，再重跑同一正式 WebKit RED 后实现。批准前不得继续该实现、push、release 或进入 P6-T7。
+- 软暂停门禁保持诚实非绿：saved/fresh checkpoint 在 606 inputs 上 byte-identical，root `EF1B87367692F0F8BA22CB858BB046E2F0198FC75EFCEE08D6C3811241E9C324`；`test:execution` 93/95、exit 1；startup exit 1，blockers 为 `MANIFEST_CHECKPOINT_STALE`、`EVIDENCE_CHECKPOINT_STALE`、`EVIDENCE_SOURCE_HASH_MISMATCH`；handoff exit 1，另含 `HANDOFF_REQUIREMENT_STATUS_MISMATCH`。临时 44 `invalidated` 只是当前 WIP 的 validator 派生状态，不覆盖最后可信 30/10/4。不得通过重写旧 evidence hash、parent status、push 或 release 状态越过上述动效所有权授权边界。
+
+## 18. 2026-08-27 最新接班增量：ADR-030 窄动效所有权例外已批准并正式化
+
+- 用户明确批准：原生 Web Animations 仅独占四个持续 ring rotation 与五个 upright counter transform；GSAP 继续独占标题、分组/对象入场、登录、公开详情连续性、场景与孔径，任何节点或 transform 属性不得存在引擎/CSS 竞争所有者。该批准不授权 push 或 release。
+- ADR-030、final redesign、master plan、P6-T6 工作包、source review/registry、acceptance matrix 与 requirements 已同步。锁定 authority hash 现在为 final redesign `C00CFBE41E670CD7D1F9018D1ADA6D289B60285740A0F4034C3666AF9C35ED09`、master plan `C30EB0BD774F8B40B570EB74564FD57111126E9E6CCDBBE77865F8414F5554FC`，其余三份不变。
+- 生成器回归先真实暴露七个 ADR-029 dedicated atoms 会在 rebuild 中被删除，修复后 7/7 由生成器稳定产生；第二个 RED/GREEN 锁定 ADR-030 authority/execution clauses 与 `MOTION-01.PUBLIC_HOME.MOTION.04` 的双向映射。当前为 2,876 clauses、44 parents、52 surfaces、1,427 atoms（783 original + 644 life），零覆盖缺口。
+- evidence manifest 仍故意绑定最后可信 checkpoint；authority/product WIP 在完成正式 WebKit RED、九节点 owner 合同 RED/GREEN、完整回归与新 checkpoint 前继续派生为 invalidated，不得机械恢复 30/10/4。
+- 唯一下一原子动作：新增 `PublicOrbit` 动效 owner 合同测试并获取预期 RED，同时在 owned 官方 Linux WebKit 环境复跑未改变的主题 cadence 门禁取得性能 RED；之后才实施最小 WAAPI owner 迁移。任何新的 `main` push 与任何 `1.0.0` dispatch 都分别需要新的明确授权；不得进入 P6-T7。
+
+## 19. 2026-08-27 最新接班增量：ADR-030 实现、完整本地门禁与证据收敛
+
+- ADR-030 九节点 owner 合同和正式 Linux WebKit cadence RED/GREEN 已完成。原生 Web Animations 仅写四个 ring rotation 与五个 upright counter transform；GSAP 继续独占其余 public motion。附带收口包括 RouteStage 进入/退出分离、64ms reduced-motion entry carry、Markdown preview 懒加载及 WebKit settled-opacity 零剩余 animation 采样边界；worker、retry、阈值、采样时间、几何、周期和动效速率均未放宽。
+- 新鲜完整门禁：frontend 86/86 files、411/411 tests、typecheck、884-module build；server 361 ordinary +50 exact-only skips、typecheck/build；官方 MySQL 8.4.10 50/50；官方 Linux Playwright WebKit theme 1/1 + Firefox theme 1/1 + full matrix 333/333（26.1m，workers=1/retries=0）；官方 Linux real-Fastify remote 12/12；Helm/media/security/observability/workflow/release contracts、root/server production audit、current-source 双镜像 smoke、16-migration data rehearsal 与 Lighthouse 1.00/1.00/0.96/0.91 全部 exit 0。Windows-host remote 仅因 restricted non-GUI sandbox 无法启动 headed Firefox，未冒充 behavioral RED 或 GREEN。
+- 8 张 CI7 1440×900/390×844 day/night rest/login 图与 4 张 regenerated contact sheets 已由 primary executor 逐张按原分辨率打开；自动 metrics 为 8/8、overflow 0、中心仅 `05 / 此刻正在发生`、登录标题支持全部 hidden、手机 dialog 390×844 全屏。视觉合同通过。
+- 462 evidence rows 已按当前 source/artifact 合法重绑并保持 ID 顺序哈希 `19DFAE...FD32`。保存 checkpoint、fresh rebuild 与 manifest 同为 `43AEF6D605FFBF2B5D2CA082B08555EBBC04D4432CC457F1AD1A2BD9B0C5C38D`，607 sorted inputs。`test:execution` 97/97；独立 startup/handoff 都 `ok:true`，一致报告 ADR-030、P6/P6-T6/Step 7、30/10/4、零 issue。
+- P6-T6 Step 7 仍未勾选，registry-bound release atoms 仍开放；没有 UHub digest、digest-bound SBOM/provenance、exact-digest smoke、release success、DNS/TLS 或 cluster 声明。`HEAD`/`origin/main` 仍为 `bf1ad3b...`，当前 WIP 未提交未推送；历史 browser failure 目录和 soft-pause checkpoint 原样保留。
+- 唯一下一原子动作：完成 authority/saved-fresh-manifest/diff/JSON/credential-safe WIP 审计，创建本地实现/证据提交；随后重绑 checkpoint/evidence 并创建窄账本提交。任何新的 `main` push 与任何额外 `1.0.0` dispatch 均需各自新的明确授权；不得进入 P6-T7。
+
+## 20. 2026-08-27 最新接班增量：ADR-030 本地实现提交与 push 授权 checkpoint
+
+- 47 个已审 ADR-030 实现/当前证据路径已提交为 `39c99cd81b2274badc54e6a9d867e70ab3ae55a2`（`fix(motion): stabilize ADR-030 transitions`）。cached path set 为 47，cached diff check exit 0；历史 CI failure 目录与旧 motion-owner soft-pause checkpoint 保持本地 untracked，未删除、未移动、未暂存。
+- `origin/main` 仍为 `bf1ad3b9d05ba2d315526b460be3423b44e6648d`。post-commit 窄账本 checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-motion-owner-push-authorization-soft-pause-uncommitted-local-checkpoint.json`，root `193D84A3CEDFA5C1B4DE2C0D68034EB721D4BA328991460D74C23AA2D723DDD7`，607 inputs、462 同序 evidence rows、304 cumulative task paths；边界仍为 30/10/4。
+- 包含本段的精确八路径提交是最终窄账本/checkpoint 原子；该提交创建后，本地 `main` 由 ADR-030 实现提交与窄账本提交组成。唯一下一动作切换为取得新的明确授权后才可 push 两个本地提交；该 push 不包含第二次 release dispatch。

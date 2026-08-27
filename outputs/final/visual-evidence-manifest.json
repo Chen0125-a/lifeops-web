@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "taskId": "P6-T5",
-  "authorityRevision": "ADR-029",
-  "checkpointRootSha256": "BF75B8BCAE61911192F496A8CBB76A0B0EB17E9A9222B52CCF87E840782FA99E",
+  "authorityRevision": "ADR-030",
+  "checkpointRootSha256": "193D84A3CEDFA5C1B4DE2C0D68034EB721D4BA328991460D74C23AA2D723DDD7",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-24T13:00:00+08:00",
+  "generatedAt": "2026-08-27T14:29:33.727Z",
   "environment": {
-    "os": "Microsoft Windows NT 10.0.22631.0",
-    "node": "v24.15.0",
+    "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
+    "node": "v24.18.1 (official Playwright container)",
     "npm": "11.12.1",
     "playwright": "1.62.1",
-    "browserPolicy": "Chromium local; Firefox and WebKit critical serialized with workers=1; Windows Firefox headed because the local headless engine failed before page creation; Linux CI remains headless",
+    "browserPolicy": "Chromium, Firefox and WebKit run serially in the official Linux Playwright image with workers=1 and retries=0; host-only headed Firefox launch failure from the restricted non-GUI sandbox is classified as environment-only",
     "font": "Noto Sans SC Variable 5.3.0 bundled locally, with system sans-serif fallback",
     "locale": "zh-CN",
     "timezone": "Asia/Shanghai (UTC+08:00)",
@@ -40,7 +40,7 @@
       "openedOriginalResolution": true,
       "result": "pass",
       "screenshotSha256": "2485C85155968213D94C7C53169DB4F3CA024488BC985DB610DCCDB256E2D066",
-      "traceSha256": "2E99904A0522725B54F0D3A267A20BEE5CCDF3EFCC2B5B97335633244BA121E3"
+      "traceSha256": "43A446E7FF28E44F561EA68A8736E7575EDBFB6DD22D3339EE35C536AAD269E7"
     },
     {
       "id": "public-night-login-desktop",
@@ -58,7 +58,7 @@
       "result": "pass",
       "screenshotSha256": "CF44F636154B7661965E24D22039FA7FE1DF6A80928E98BC83A48B70F839593E",
       "filmstripSha256": "4AA920192C4EB1D38193AB365E5BFBAC1DE93C80EC6337EA93DE3A76ED1753DB",
-      "traceSha256": "E02D2C33C9FF1EAEA3E25CE96C9EE585C5E941D00289D589A0E49553A88D9564"
+      "traceSha256": "45791622E51E8E10CA82AE1ADFC4A0E78E17BF3FF6F24CCD19109565A6793534"
     },
     {
       "id": "public-day-login-desktop",
@@ -75,7 +75,7 @@
       "openedOriginalResolution": true,
       "result": "pass",
       "screenshotSha256": "BA5ED6FD8D0C7BDF1A972B27C5D69BB478571EE530A9C9C31317CF03BDB07175",
-      "traceSha256": "E02D2C33C9FF1EAEA3E25CE96C9EE585C5E941D00289D589A0E49553A88D9564"
+      "traceSha256": "45791622E51E8E10CA82AE1ADFC4A0E78E17BF3FF6F24CCD19109565A6793534"
     },
     {
       "id": "public-night-rest-phone",
@@ -92,7 +92,7 @@
       "openedOriginalResolution": true,
       "result": "pass",
       "screenshotSha256": "2E8EEBCFE984B5F79156DB4299E281465E01C7F62C80460E819418A6CF2DB769",
-      "traceSha256": "2E99904A0522725B54F0D3A267A20BEE5CCDF3EFCC2B5B97335633244BA121E3"
+      "traceSha256": "43A446E7FF28E44F561EA68A8736E7575EDBFB6DD22D3339EE35C536AAD269E7"
     },
     {
       "id": "public-night-login-phone",
@@ -110,7 +110,7 @@
       "result": "pass",
       "screenshotSha256": "33E82EAD985B97DF313D96EB2282B3FB9D49760E723CEAA2710619A2011EEFC4",
       "filmstripSha256": "4AA920192C4EB1D38193AB365E5BFBAC1DE93C80EC6337EA93DE3A76ED1753DB",
-      "traceSha256": "E02D2C33C9FF1EAEA3E25CE96C9EE585C5E941D00289D589A0E49553A88D9564"
+      "traceSha256": "45791622E51E8E10CA82AE1ADFC4A0E78E17BF3FF6F24CCD19109565A6793534"
     },
     {
       "id": "public-login-rotation-continuity",
@@ -133,7 +133,7 @@
         "matrix(0.728347, -0.685208, 0.685208, 0.728347, 0, 0)"
       ],
       "filmstripSha256": "8B978819333CB5308FD8F8E96B952D7549AF0CA18CB34D6BCBD86FC6C2027AAD",
-      "traceSha256": "E02D2C33C9FF1EAEA3E25CE96C9EE585C5E941D00289D589A0E49553A88D9564"
+      "traceSha256": "45791622E51E8E10CA82AE1ADFC4A0E78E17BF3FF6F24CCD19109565A6793534"
     },
     {
       "id": "public-breakpoint-matrix",
@@ -149,9 +149,9 @@
       "reviewer": "primary-agent",
       "openedOriginalResolution": true,
       "result": "pass",
-      "screenshotSha256": "9489899AAB333002BD44CD306FF79204554103DD09D0C07788201698CEDEB03F",
+      "screenshotSha256": "D8649E14B224E5AF9FBCCB6747A48AA3C6A07A274313B58DD458A1E31F42AFC5",
       "filmstripSha256": "4AA920192C4EB1D38193AB365E5BFBAC1DE93C80EC6337EA93DE3A76ED1753DB",
-      "traceSha256": "2E99904A0522725B54F0D3A267A20BEE5CCDF3EFCC2B5B97335633244BA121E3"
+      "traceSha256": "43A446E7FF28E44F561EA68A8736E7575EDBFB6DD22D3339EE35C536AAD269E7"
     },
     {
       "id": "public-five-details",
@@ -167,9 +167,9 @@
       "reviewer": "primary-agent",
       "openedOriginalResolution": true,
       "result": "pass",
-      "screenshotSha256": "D17694F3CBB7B04EB59FB603FC1B27888ECDCB0170B78F1109CEA4D69DE27321",
-      "filmstripSha256": "EADEFB78B47DB307AE650E2614441FBC1A56B717D4350D1B9BFD6154489570DC",
-      "traceSha256": "2E99904A0522725B54F0D3A267A20BEE5CCDF3EFCC2B5B97335633244BA121E3"
+      "screenshotSha256": "FE4A97BDE73D1C0F0FF0334BD48D51ECA8224D49ADD49E70679D81C453242689",
+      "filmstripSha256": "17D2D66AD47C2377E01358ACF7E7518EDCCFF8C527D92550A5A529DD5548682D",
+      "traceSha256": "43A446E7FF28E44F561EA68A8736E7575EDBFB6DD22D3339EE35C536AAD269E7"
     },
     {
       "id": "private-core-and-life-workspaces",
@@ -185,9 +185,9 @@
       "reviewer": "primary-agent",
       "openedOriginalResolution": true,
       "result": "pass",
-      "screenshotSha256": "2D33D61BC7CB54096DF1F62409D1C3C037343AAF15B91219453D86D69522AC2E",
+      "screenshotSha256": "7E5CB549F01B163CDA70CFD24793006FAFF7A7E45809C1F3BA83995584275EC5",
       "filmstripSha256": "6C0D93BCCBA8F7445DE3A4D0EFEA665CFF0CF8A083F26078F1926F6AE6E2C2BC",
-      "traceSha256": "3AA53F06B2EC4E0FFD106EB47941A94C4A3467D8C614458918AC16C2754D9A28"
+      "traceSha256": "4B68B5F0876E16535D442CA9684763041F1B8B6547BB2DF1BAFD24FC0DF409FB"
     },
     {
       "id": "platform-global-overlays-and-settings",
@@ -203,19 +203,19 @@
       "reviewer": "primary-agent",
       "openedOriginalResolution": true,
       "result": "pass",
-      "screenshotSha256": "AE04FB8D63E32E554DD53B395320FECB9202829AF29DE181ECC29483F0667C31",
+      "screenshotSha256": "5812C512501D685B743E0DF744E86D5F79F84A5FA0F15770230AFAD1C41C0413",
       "filmstripSha256": "CC09485CB3C4F2AFAB3F4531F08CFD90BD086B869E10D1B49D5E4C3483848AED",
       "traceSha256": "6FB87DE363D6AD9D4AE5A85B5601828C07244433F759A9F61E344635B40F860F"
     },
     {
-      "id": "p6-t6-ci6-day-rest-desktop",
+      "id": "p6-t6-ci7-day-rest-desktop",
       "browser": "Playwright Chromium 1.62.1 final visual capture",
       "viewport": "1440x900",
       "dpr": 1,
       "colorScheme": "light",
       "reducedMotion": "no-preference",
-      "fixtureSeedId": "p6-t6-ci6-day-rest",
-      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-1440x900.png",
+      "fixtureSeedId": "p6-t6-ci7-day-rest",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci7-final-visual/day-rest-1440x900.png",
       "filmstripPath": null,
       "tracePath": null,
       "reviewer": "primary-agent",
@@ -236,17 +236,17 @@
         "afterContent": "none",
         "daySkyAssetsReferenced": true
       },
-      "screenshotSha256": "8C81AC38ED5F679559EC428DA84AF7E3D9F746B2EA8B51ED7AA9FF8913FB807D"
+      "screenshotSha256": "74423BD3AC625CFD00280EC7C21EFA2A490606E970DE25763DEB2454D27BA049"
     },
     {
-      "id": "p6-t6-ci6-day-login-desktop",
+      "id": "p6-t6-ci7-day-login-desktop",
       "browser": "Playwright Chromium 1.62.1 final visual capture",
       "viewport": "1440x900",
       "dpr": 1,
       "colorScheme": "light",
       "reducedMotion": "no-preference",
-      "fixtureSeedId": "p6-t6-ci6-day-login",
-      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-1440x900.png",
+      "fixtureSeedId": "p6-t6-ci7-day-login",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci7-final-visual/day-login-1440x900.png",
       "filmstripPath": null,
       "tracePath": null,
       "reviewer": "primary-agent",
@@ -267,17 +267,17 @@
         "afterContent": "none",
         "daySkyAssetsReferenced": true
       },
-      "screenshotSha256": "0FCA6122E50ACF413F37F03FFF3C388120194BFE962075CFE2DBDF46DE522192"
+      "screenshotSha256": "F5EE3AF9277FA23512566B71D1DA4D2A0FD262ECF4B7D5E26F3C273FF6761CA0"
     },
     {
-      "id": "p6-t6-ci6-night-rest-desktop",
+      "id": "p6-t6-ci7-night-rest-desktop",
       "browser": "Playwright Chromium 1.62.1 final visual capture",
       "viewport": "1440x900",
       "dpr": 1,
       "colorScheme": "dark",
       "reducedMotion": "no-preference",
-      "fixtureSeedId": "p6-t6-ci6-night-rest",
-      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/night-rest-1440x900.png",
+      "fixtureSeedId": "p6-t6-ci7-night-rest",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci7-final-visual/night-rest-1440x900.png",
       "filmstripPath": null,
       "tracePath": null,
       "reviewer": "primary-agent",
@@ -298,17 +298,17 @@
         "afterContent": "none",
         "daySkyAssetsReferenced": true
       },
-      "screenshotSha256": "1798310D877A2C775ED0720B4ADBF3E27F8F721D3BD1D881F0E41B978BC1466A"
+      "screenshotSha256": "71DABC9F20A17FD71809198285DAA87E65F99F66B8D85EC57520F620F0A2F59B"
     },
     {
-      "id": "p6-t6-ci6-night-login-desktop",
+      "id": "p6-t6-ci7-night-login-desktop",
       "browser": "Playwright Chromium 1.62.1 final visual capture",
       "viewport": "1440x900",
       "dpr": 1,
       "colorScheme": "dark",
       "reducedMotion": "no-preference",
-      "fixtureSeedId": "p6-t6-ci6-night-login",
-      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/night-login-1440x900.png",
+      "fixtureSeedId": "p6-t6-ci7-night-login",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci7-final-visual/night-login-1440x900.png",
       "filmstripPath": null,
       "tracePath": null,
       "reviewer": "primary-agent",
@@ -329,17 +329,17 @@
         "afterContent": "none",
         "daySkyAssetsReferenced": true
       },
-      "screenshotSha256": "1C65B8D9A4DB9212DDD611D925A863F8A85E4031463BA2B893AACE8D399FA83B"
+      "screenshotSha256": "7868F06FE77FC9416995EC1127E80EE4532AF6FA8907FC79DDE20BE91B1039C2"
     },
     {
-      "id": "p6-t6-ci6-day-rest-phone",
+      "id": "p6-t6-ci7-day-rest-phone",
       "browser": "Playwright Chromium 1.62.1 final visual capture",
       "viewport": "390x844",
       "dpr": 1,
       "colorScheme": "light",
       "reducedMotion": "no-preference",
-      "fixtureSeedId": "p6-t6-ci6-day-rest",
-      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-390x844.png",
+      "fixtureSeedId": "p6-t6-ci7-day-rest",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci7-final-visual/day-rest-390x844.png",
       "filmstripPath": null,
       "tracePath": null,
       "reviewer": "primary-agent",
@@ -360,17 +360,17 @@
         "afterContent": "none",
         "daySkyAssetsReferenced": true
       },
-      "screenshotSha256": "4E0862CC6A4F095385517F5762FDAC1AAEEDDFE4E2AE71C4B26DC52BA601A217"
+      "screenshotSha256": "2615C7D607DF683A36DB62B2F31198E755527B860A5995757DB56D833C437400"
     },
     {
-      "id": "p6-t6-ci6-day-login-phone",
+      "id": "p6-t6-ci7-day-login-phone",
       "browser": "Playwright Chromium 1.62.1 final visual capture",
       "viewport": "390x844",
       "dpr": 1,
       "colorScheme": "light",
       "reducedMotion": "no-preference",
-      "fixtureSeedId": "p6-t6-ci6-day-login",
-      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-390x844.png",
+      "fixtureSeedId": "p6-t6-ci7-day-login",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci7-final-visual/day-login-390x844.png",
       "filmstripPath": null,
       "tracePath": null,
       "reviewer": "primary-agent",
@@ -391,17 +391,17 @@
         "afterContent": "none",
         "daySkyAssetsReferenced": true
       },
-      "screenshotSha256": "F9F7D2ECA971939BEDA5FB3DCB6525F2CFDBBB21B4F06429F02191A2BEC8E66C"
+      "screenshotSha256": "F71F7C6A1A2CF81717F1B7A4513597AB13BFBD0E6DF61445CED95B8F6E5469A1"
     },
     {
-      "id": "p6-t6-ci6-night-rest-phone",
+      "id": "p6-t6-ci7-night-rest-phone",
       "browser": "Playwright Chromium 1.62.1 final visual capture",
       "viewport": "390x844",
       "dpr": 1,
       "colorScheme": "dark",
       "reducedMotion": "no-preference",
-      "fixtureSeedId": "p6-t6-ci6-night-rest",
-      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/night-rest-390x844.png",
+      "fixtureSeedId": "p6-t6-ci7-night-rest",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci7-final-visual/night-rest-390x844.png",
       "filmstripPath": null,
       "tracePath": null,
       "reviewer": "primary-agent",
@@ -422,17 +422,17 @@
         "afterContent": "none",
         "daySkyAssetsReferenced": true
       },
-      "screenshotSha256": "F38349C6BD2C8C9BA970B7BAC8A4485259BF6E5FB81AAD4FCDCD1C1069748FF8"
+      "screenshotSha256": "D4445FD750E383F945D418DEE17EECA621BC0301C77256D1374C3ECA2B181224"
     },
     {
-      "id": "p6-t6-ci6-night-login-phone",
+      "id": "p6-t6-ci7-night-login-phone",
       "browser": "Playwright Chromium 1.62.1 final visual capture",
       "viewport": "390x844",
       "dpr": 1,
       "colorScheme": "dark",
       "reducedMotion": "no-preference",
-      "fixtureSeedId": "p6-t6-ci6-night-login",
-      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/night-login-390x844.png",
+      "fixtureSeedId": "p6-t6-ci7-night-login",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci7-final-visual/night-login-390x844.png",
       "filmstripPath": null,
       "tracePath": null,
       "reviewer": "primary-agent",
@@ -453,7 +453,7 @@
         "afterContent": "none",
         "daySkyAssetsReferenced": true
       },
-      "screenshotSha256": "33E82EAD985B97DF313D96EB2282B3FB9D49760E723CEAA2710619A2011EEFC4"
+      "screenshotSha256": "C3D5F8737B16C761E6F8C43F886515A5479307ED55D91D41E20DF02AFA6EFDB3"
     }
   ],
   "performanceReports": [
@@ -466,7 +466,7 @@
       "reducedMotion": "no-preference",
       "fixtureSeedId": "production-preview-public",
       "result": "pass",
-      "sha256": "E3731F00CDB84BF19489B80424632AC7C369BB0F33A0F245DC716E41DB276BC7"
+      "sha256": "FCFBEFFBFAAE8BECD1F31482D4F9705FC1D26B3EBFE883FF18952E41CF4F8EFF"
     },
     {
       "id": "private-performance",
@@ -477,16 +477,16 @@
       "reducedMotion": "no-preference",
       "fixtureSeedId": "authenticated-production-preview",
       "result": "pass",
-      "sha256": "1ED94DEA52D6266BD726ABF3A0D3EEB0EA6B9939AFEEA408599A4381FF1A96D0"
+      "sha256": "062BD65B15C6C5AC8DD80B312A5BB12A88BAA3D48A272713D11E9326CED4A87D"
     }
   ],
   "latestRevalidation": {
     "taskId": "P6-T6",
     "step": 7,
-    "revalidatedAt": "2026-08-27T05:50:47.268Z",
-    "checkpointRootSha256": "BF75B8BCAE61911192F496A8CBB76A0B0EB17E9A9222B52CCF87E840782FA99E",
-    "metricsPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/metrics.json",
-    "metricsSha256": "9740BC57B8864198F0B8313D759F50E7D5F11ABC2A777A2BE9DA3EDB8D0E2463",
+    "revalidatedAt": "2026-08-27T14:45:18.331Z",
+    "checkpointRootSha256": "193D84A3CEDFA5C1B4DE2C0D68034EB721D4BA328991460D74C23AA2D723DDD7",
+    "metricsPath": "outputs/evidence/browser/p6-t6-ci7-final-visual/metrics.json",
+    "metricsSha256": "88A991E08BF6B620DB07A21A939191DF7A6C74BF4604E4E8A1C3E46582BF5546",
     "openedOriginalResolution": true,
     "captureCount": 8,
     "conclusion": "pass"
