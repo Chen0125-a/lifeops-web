@@ -150,10 +150,26 @@ test('the day-night transition stays inside the interaction frame budget', async
   const baseline = await sampleFrames(600)
   await page.getByRole('button', { name: '切换为夜间主题' }).click()
   const transition = await sampleFrames(1_200)
+  const baselineP95 = percentile95(baseline)
+  const transitionP95 = percentile95(transition)
+  const p95Budget = Math.max(34, baselineP95 + 17)
+  const baselineMax = Math.max(...baseline)
+  const transitionMax = Math.max(...transition)
+  const maxBudget = Math.max(100, baselineMax + 50)
+  const cadenceEvidence = JSON.stringify({
+    baseline,
+    baselineP95,
+    baselineMax,
+    transition,
+    transitionP95,
+    transitionMax,
+    p95Budget,
+    maxBudget,
+  })
   expect(baseline.length).toBeGreaterThan(0)
   expect(transition.length).toBeGreaterThan(0)
-  expect(percentile95(transition)).toBeLessThanOrEqual(Math.max(34, percentile95(baseline) + 17))
-  expect(Math.max(...transition)).toBeLessThanOrEqual(Math.max(100, Math.max(...baseline) + 50))
+  expect(transitionP95, cadenceEvidence).toBeLessThanOrEqual(p95Budget)
+  expect(transitionMax, cadenceEvidence).toBeLessThanOrEqual(maxBudget)
 })
 
 test('visible object labels stay separate at desktop and phone widths', async ({ page }) => {

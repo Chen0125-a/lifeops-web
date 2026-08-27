@@ -79,4 +79,43 @@ describe('RouteStage', () => {
       cancelFrame.mockRestore()
     }
   })
+
+  it('does not steal focus from a shell control before deferred heading focus', () => {
+    let pendingFrame: FrameRequestCallback | undefined
+    const requestFrame = vi.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => {
+      pendingFrame = callback
+      return 1
+    })
+    const cancelFrame = vi.spyOn(window, 'cancelAnimationFrame').mockImplementation(() => undefined)
+
+    try {
+      render(<>
+        <button type="button">快速记录</button>
+        <RouteStage direction="forward" routeKey="/app/records"><Editor /></RouteStage>
+      </>)
+      const shellControl = screen.getByRole('button', { name: '快速记录' })
+      shellControl.focus()
+      pendingFrame?.(0)
+      expect(shellControl).toHaveFocus()
+    } finally {
+      requestFrame.mockRestore()
+      cancelFrame.mockRestore()
+    }
+  })
+
+  it('moves focus from a shell navigation trigger to the destination heading after a route change', async () => {
+    const { rerender } = render(<>
+      <button type="button">目标与项目</button>
+      <RouteStage direction="forward" routeKey="/app/overview"><h1 tabIndex={-1}>总览</h1></RouteStage>
+    </>)
+    await waitFor(() => expect(screen.getByRole('heading', { name: '总览', level: 1 })).toHaveFocus())
+
+    screen.getByRole('button', { name: '目标与项目' }).focus()
+    rerender(<>
+      <button type="button">目标与项目</button>
+      <RouteStage direction="forward" routeKey="/app/goals"><h1 tabIndex={-1}>目标与项目</h1></RouteStage>
+    </>)
+
+    await waitFor(() => expect(screen.getByRole('heading', { name: '目标与项目', level: 1 })).toHaveFocus())
+  })
 })

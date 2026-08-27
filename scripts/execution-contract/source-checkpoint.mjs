@@ -6,7 +6,7 @@ import { normalizeRelativePath } from './load-json.mjs'
 
 const INCLUDE_RULES = Object.freeze([
   'root and server package manifests, Web entrypoint and TypeScript/Vite/Vitest/Playwright configs',
-  'src, server/src, server/migrations, tests, tests-remote and scripts trees',
+  'src, public, server/src, server/migrations, tests, tests-remote and scripts trees',
   'Docker runtime files, deploy assets and GitHub Actions workflows',
   'docs/traceability/requirements.md and static docs/traceability contract JSON',
 ])
@@ -86,6 +86,7 @@ function isIncluded(relativePath) {
 
   if (
     relativePath.startsWith('src/')
+    || relativePath.startsWith('public/')
     || relativePath.startsWith('server/src/')
     || relativePath.startsWith('server/migrations/')
     || relativePath.startsWith('tests/')

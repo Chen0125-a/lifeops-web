@@ -88,6 +88,7 @@ const RoutePanel = forwardRef<HTMLDivElement, {
 export function RouteStage({ children, routeKey, navigationKey = routeKey, direction }: { routeKey: string; navigationKey?: string; direction: 'forward' | 'back'; children: ReactNode }) {
   const stageRef = useRef<HTMLDivElement>(null)
   const focusByRoute = useRef(new Map<string, RouteFocusDescriptor>())
+  const previousRouteKey = useRef<string | null>(null)
   const scrollByNavigation = useRef(new Map<string, Map<string, number>>())
   const reducedMotion = useReducedMotion()
 
@@ -122,9 +123,16 @@ export function RouteStage({ children, routeKey, navigationKey = routeKey, direc
 
   useEffect(() => {
     let observer: MutationObserver | undefined
+    const routeChanged = previousRouteKey.current !== null && previousRouteKey.current !== routeKey
+    previousRouteKey.current = routeKey
     const focusCurrentPanel = () => {
       const activeNow = document.activeElement as HTMLElement | null
-      if (activeNow && activeNow !== document.body && activeNow.closest('[data-route-panel-current]')) return true
+      const stage = stageRef.current
+      if (
+        activeNow
+        && activeNow !== document.body
+        && (activeNow.closest('[data-route-panel-current]') || (!routeChanged && !stage?.contains(activeNow)))
+      ) return true
       const panels = stageRef.current?.querySelectorAll<HTMLElement>('[data-route-panel-current]')
       const panel = panels?.item((panels.length ?? 1) - 1)
       const remembered = direction === 'back' ? focusByRoute.current.get(routeKey) : undefined

@@ -135,7 +135,7 @@ export async function waitForStableFrameCadence(
     await page.waitForTimeout(80)
   }
 
-  throw new Error(`Foreground frame cadence did not hold ${minimum} frames in ${durationMs}ms for two consecutive windows; observed ${observed}`)
+  throw new Error(`Foreground frame cadence did not hold ${minimumFrames} frames in ${durationMs}ms for two consecutive windows; observed ${observed}`)
 }
 
 export async function measureOrbitPathDistances(page: Page, frameCount = 50) {

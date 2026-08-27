@@ -19,5 +19,5 @@
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
   "include": ["src"],
-  "exclude": ["src/playwrightConfig.test.ts"]
+  "exclude": ["src/playwrightConfig.test.ts", "src/motionProbeContract.test.ts"]
 }

@@ -43,11 +43,15 @@
   contain: paint;
 }
 
-.public-home .public-sky::before,
-.public-home .public-sky::after {
+.public-home .public-sky::before {
   position: absolute;
   content: '';
-  border-radius: 50%;
+  inset: 0;
+  opacity: 1;
+  background-image: url('/public-day-sky-top.svg'), url('/public-day-sky-bottom.svg');
+  background-position: right -9vw top -22vh, left -13vw bottom -37vh;
+  background-repeat: no-repeat;
+  background-size: min(58vw, 880px) min(58vw, 880px), min(50vw, 760px) min(50vw, 760px);
   backface-visibility: hidden;
   contain: paint;
   transform: translateZ(0);
@@ -55,26 +59,11 @@
   will-change: opacity;
 }
 
-.public-home .public-sky::before {
-  top: -22%;
-  right: -9%;
-  width: min(58vw, 880px);
-  aspect-ratio: 1;
-  opacity: .58;
-  background: radial-gradient(circle, rgb(186 223 255 / 72%) 0, rgb(186 223 255 / 22%) 32%, transparent 68%);
-}
-
 .public-home .public-sky::after {
-  bottom: -37%;
-  left: -13%;
-  width: min(50vw, 760px);
-  aspect-ratio: 1;
-  opacity: .5;
-  background: radial-gradient(circle, rgb(216 240 226 / 86%) 0, rgb(255 217 168 / 22%) 43%, transparent 70%);
+  content: none;
 }
 
-.public-home[data-public-theme='night'] .public-sky::before,
-.public-home[data-public-theme='night'] .public-sky::after {
+.public-home[data-public-theme='night'] .public-sky::before {
   opacity: 0;
 }
 
@@ -714,6 +703,10 @@
   opacity: .18;
   transform: translate3d(-20px, 0, 0) scale(.97);
   will-change: opacity, transform;
+}
+
+.public-home:is([data-public-scene='login'], [data-login-phase='closing']) [data-title-support] {
+  visibility: hidden !important;
 }
 
 .public-home:is([data-public-scene='login'], [data-login-phase='closing']) .public-hero__stage {

@@ -145,8 +145,8 @@ test('platform polling stops while hidden and a partial tab failure retries loca
   const fixture = await installFixture(page, { failFirstLogs: true })
   await page.goto('/app/platform')
   await expect(page.getByRole('heading', { name: '平台运行中心', level: 1 })).toBeVisible()
+  await expect.poll(fixture.overviewReads).toBeGreaterThan(0)
   const visibleBaseline = fixture.overviewReads()
-  expect(visibleBaseline).toBeGreaterThan(0)
 
   await page.evaluate(() => {
     Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => 'hidden' })

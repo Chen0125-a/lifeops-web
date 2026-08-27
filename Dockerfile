@@ -7,6 +7,7 @@ RUN npm ci --no-audit --no-fund
 
 COPY index.html tsconfig*.json vite.config.ts vitest.config.ts playwright.config.ts ./
 COPY src ./src
+COPY public ./public
 RUN npm run build
 
 FROM nginx:1.30.4-alpine3.24 AS runtime

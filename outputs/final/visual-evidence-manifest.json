@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-029",
-  "checkpointRootSha256": "BA9F1B91F9772220E8AFFF1ED2E32798CD6EE12D9F0267F3CCC66378457AF5FB",
+  "checkpointRootSha256": "ECB7E65BA5C00AD9E9C635029105046C4D337F546F8E1DB244BC0A43740522A9",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
   "generatedAt": "2026-08-24T13:00:00+08:00",
   "environment": {
@@ -206,6 +206,254 @@
       "screenshotSha256": "AE04FB8D63E32E554DD53B395320FECB9202829AF29DE181ECC29483F0667C31",
       "filmstripSha256": "CC09485CB3C4F2AFAB3F4531F08CFD90BD086B869E10D1B49D5E4C3483848AED",
       "traceSha256": "6FB87DE363D6AD9D4AE5A85B5601828C07244433F759A9F61E344635B40F860F"
+    },
+    {
+      "id": "p6-t6-ci6-day-rest-desktop",
+      "browser": "Playwright Chromium 1.62.1 final visual capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci6-day-rest",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-1440x900.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": [
+          "visible",
+          "visible",
+          "visible"
+        ],
+        "afterContent": "none",
+        "daySkyAssetsReferenced": true
+      },
+      "screenshotSha256": "8C81AC38ED5F679559EC428DA84AF7E3D9F746B2EA8B51ED7AA9FF8913FB807D"
+    },
+    {
+      "id": "p6-t6-ci6-day-login-desktop",
+      "browser": "Playwright Chromium 1.62.1 final visual capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci6-day-login",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-1440x900.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": [
+          "hidden",
+          "hidden",
+          "hidden"
+        ],
+        "afterContent": "none",
+        "daySkyAssetsReferenced": true
+      },
+      "screenshotSha256": "0FCA6122E50ACF413F37F03FFF3C388120194BFE962075CFE2DBDF46DE522192"
+    },
+    {
+      "id": "p6-t6-ci6-night-rest-desktop",
+      "browser": "Playwright Chromium 1.62.1 final visual capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci6-night-rest",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/night-rest-1440x900.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": [
+          "visible",
+          "visible",
+          "visible"
+        ],
+        "afterContent": "none",
+        "daySkyAssetsReferenced": true
+      },
+      "screenshotSha256": "1798310D877A2C775ED0720B4ADBF3E27F8F721D3BD1D881F0E41B978BC1466A"
+    },
+    {
+      "id": "p6-t6-ci6-night-login-desktop",
+      "browser": "Playwright Chromium 1.62.1 final visual capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci6-night-login",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/night-login-1440x900.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": [
+          "hidden",
+          "hidden",
+          "hidden"
+        ],
+        "afterContent": "none",
+        "daySkyAssetsReferenced": true
+      },
+      "screenshotSha256": "1C65B8D9A4DB9212DDD611D925A863F8A85E4031463BA2B893AACE8D399FA83B"
+    },
+    {
+      "id": "p6-t6-ci6-day-rest-phone",
+      "browser": "Playwright Chromium 1.62.1 final visual capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci6-day-rest",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-390x844.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": [
+          "visible",
+          "visible",
+          "visible"
+        ],
+        "afterContent": "none",
+        "daySkyAssetsReferenced": true
+      },
+      "screenshotSha256": "4E0862CC6A4F095385517F5762FDAC1AAEEDDFE4E2AE71C4B26DC52BA601A217"
+    },
+    {
+      "id": "p6-t6-ci6-day-login-phone",
+      "browser": "Playwright Chromium 1.62.1 final visual capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci6-day-login",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-390x844.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": [
+          "hidden",
+          "hidden",
+          "hidden"
+        ],
+        "afterContent": "none",
+        "daySkyAssetsReferenced": true
+      },
+      "screenshotSha256": "F9F7D2ECA971939BEDA5FB3DCB6525F2CFDBBB21B4F06429F02191A2BEC8E66C"
+    },
+    {
+      "id": "p6-t6-ci6-night-rest-phone",
+      "browser": "Playwright Chromium 1.62.1 final visual capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci6-night-rest",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/night-rest-390x844.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": [
+          "visible",
+          "visible",
+          "visible"
+        ],
+        "afterContent": "none",
+        "daySkyAssetsReferenced": true
+      },
+      "screenshotSha256": "F38349C6BD2C8C9BA970B7BAC8A4485259BF6E5FB81AAD4FCDCD1C1069748FF8"
+    },
+    {
+      "id": "p6-t6-ci6-night-login-phone",
+      "browser": "Playwright Chromium 1.62.1 final visual capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci6-night-login",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/night-login-390x844.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": [
+          "hidden",
+          "hidden",
+          "hidden"
+        ],
+        "afterContent": "none",
+        "daySkyAssetsReferenced": true
+      },
+      "screenshotSha256": "33E82EAD985B97DF313D96EB2282B3FB9D49760E723CEAA2710619A2011EEFC4"
     }
   ],
   "performanceReports": [
@@ -231,5 +479,16 @@
       "result": "pass",
       "sha256": "1ED94DEA52D6266BD726ABF3A0D3EEB0EA6B9939AFEEA408599A4381FF1A96D0"
     }
-  ]
+  ],
+  "latestRevalidation": {
+    "taskId": "P6-T6",
+    "step": 7,
+    "revalidatedAt": "2026-08-27T05:37:56.230Z",
+    "checkpointRootSha256": "ECB7E65BA5C00AD9E9C635029105046C4D337F546F8E1DB244BC0A43740522A9",
+    "metricsPath": "outputs/evidence/browser/p6-t6-ci6-final-visual/metrics.json",
+    "metricsSha256": "9740BC57B8864198F0B8313D759F50E7D5F11ABC2A777A2BE9DA3EDB8D0E2463",
+    "openedOriginalResolution": true,
+    "captureCount": 8,
+    "conclusion": "pass"
+  }
 }

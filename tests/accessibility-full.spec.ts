@@ -93,6 +93,10 @@ test.describe('public accessibility acceptance', () => {
 
   test('login dialog exposes focus, errors and a keyboard-only close path', async ({ page }) => {
     await page.goto('/')
+    await expect(page.getByRole('heading', { name: '把日子，慢慢看清。' })).toHaveAttribute(
+      'data-title-state',
+      'complete',
+    )
     const trigger = page.getByRole('button', { name: '登录 LifeOps' })
     await trigger.focus()
     await page.keyboard.press('Enter')
@@ -104,6 +108,9 @@ test.describe('public accessibility acceptance', () => {
     await expect.poll(async () => publicCopy.evaluate((element) => (
       Number.parseFloat(getComputedStyle(element).opacity)
     ))).toBeLessThanOrEqual(0.24)
+    const titleSupport = await page.locator('[data-title-support]').all()
+    expect(titleSupport).toHaveLength(3)
+    for (const support of titleSupport) await expect(support).toHaveCSS('visibility', 'hidden')
     await expectNoSeriousOrCriticalViolations(page, { route: '/', state: 'interactive' })
     await page.keyboard.press('Escape')
     await expect(trigger).toBeFocused()

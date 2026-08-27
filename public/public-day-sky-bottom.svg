@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <defs>
+    <radialGradient id="day-sky-bottom" cx="50%" cy="50%" r="70.710678%">
+      <stop offset="0" stop-color="#d8f0e2" stop-opacity=".43" />
+      <stop offset=".43" stop-color="#ffd9a8" stop-opacity=".11" />
+      <stop offset=".7" stop-color="#ffd9a8" stop-opacity="0" />
+      <stop offset="1" stop-color="#ffd9a8" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="100" height="100" fill="url(#day-sky-bottom)" />
+</svg>
