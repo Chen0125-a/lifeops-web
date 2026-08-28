@@ -86,7 +86,12 @@ test('night theme restores a near-black deep-sky surface with layered stars', as
       starLayers: [...starAsset.matchAll(/id="layer-(far|middle|near)"/g)].map((match) => match[1]),
       starSource: new URL(stars.currentSrc || stars.src).pathname,
       starsLoaded: stars.complete && stars.naturalWidth === 1440 && stars.naturalHeight === 900,
-      trackMasks: tracks.map((track) => getComputedStyle(track, '::before').backgroundImage),
+      trackPaint: tracks.map((track) => ({
+        legacyContent: getComputedStyle(track, '::before').content,
+        markerBackground: getComputedStyle(track.querySelector('[data-orbit-track-motion]')!).backgroundColor,
+      })),
+      trackStrokes: [...element.querySelectorAll<HTMLElement>('[data-orbit-track-static]')]
+        .map((track) => getComputedStyle(track).borderTopColor),
     }
   })
 
@@ -95,8 +100,10 @@ test('night theme restores a near-black deep-sky surface with layered stars', as
   expect(night.starLayers).toEqual(['far', 'middle', 'near'])
   expect(night.starSource).toBe('/public-stars.svg')
   expect(night.starsLoaded).toBe(true)
-  expect(night.trackMasks).toHaveLength(4)
-  expect(night.trackMasks.every((mask) => mask.includes('linear-gradient'))).toBe(true)
+  expect(night.trackPaint).toHaveLength(4)
+  expect(night.trackPaint.every(({ legacyContent }) => legacyContent === 'none')).toBe(true)
+  expect(night.trackPaint.every(({ markerBackground }) => markerBackground === 'rgba(217, 161, 255, 0.92)')).toBe(true)
+  expect(night.trackStrokes).toEqual(Array(4).fill('rgba(217, 161, 255, 0.38)'))
 })
 
 test('the desktop homepage is one viewport scene and object details provide an exit', async ({ page }) => {

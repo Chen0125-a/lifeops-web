@@ -168,7 +168,7 @@ describe('PublicOrbit', () => {
     expect(container.querySelectorAll('[data-public-object]')).toHaveLength(5)
   })
 
-  it('renders the exact four masked rings on the normalized reference stage', () => {
+  it('renders four compositor-safe tracks with moving markers on the normalized reference stage', () => {
     const { container } = render(
       <MemoryRouter>
         <PublicOrbit sceneState="rest" paused={false} />
@@ -181,13 +181,19 @@ describe('PublicOrbit', () => {
     expect(container.querySelector('[data-orbit-scaler]')).toHaveAttribute('data-center-y', '371')
     expect(container.querySelector('[data-orbit-scaler]')).toHaveAttribute('data-orbit-scale', '0.85')
     expect(container.querySelectorAll('[data-orbit-ring]')).toHaveLength(4)
+    expect(container.querySelectorAll('[data-orbit-track-static]')).toHaveLength(4)
+    expect(container.querySelectorAll('[data-orbit-track-motion]')).toHaveLength(4)
     for (const orbit of orbitDefinitions) {
       const ring = container.querySelector(`[data-orbit-ring="${orbit.id}"]`)
+      const boundary = container.querySelector(`[data-orbit-track-static="${orbit.id}"]`)
+      const marker = ring?.querySelector(`[data-orbit-track-motion="${orbit.id}"]`)
       expect(ring).toHaveAttribute('data-base-diameter', String(orbit.baseDiameter))
       expect(ring).toHaveAttribute('data-screen-diameter', String(orbit.screenDiameter))
       expect(ring).toHaveAttribute('data-direction', orbit.direction)
       expect(ring).toHaveAttribute('data-duration', String(orbit.periodSeconds))
       expect(ring).toHaveAttribute('data-track-width', '1')
+      expect(boundary).toHaveAttribute('data-track-width', '1')
+      expect(marker).toHaveAttribute('aria-hidden', 'true')
     }
   })
 

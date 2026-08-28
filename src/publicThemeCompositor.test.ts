@@ -32,16 +32,32 @@ describe('public theme compositor contract', () => {
     expect(motionControl).not.toMatch(/backdrop-filter/i)
   })
 
-  it('keeps orbit filter topology stable while preserving the day track tone', () => {
+  it('uses static ring strokes and tiny promoted motion markers instead of full-ring masks', () => {
+    const legacyRingPaint = publicCss.match(
+      /\.public-home \.public-orbit__ring::before\s*\{(?<body>[^}]*)\}/s,
+    )?.groups?.body ?? ''
+    const boundary = publicCss.match(
+      /\.public-home \.public-orbit__boundary\s*\{(?<body>[^}]*)\}/s,
+    )?.groups?.body ?? ''
+    const marker = publicCss.match(
+      /\.public-home \.public-orbit__track-marker\s*\{(?<body>[^}]*)\}/s,
+    )?.groups?.body ?? ''
     const dayTrack = publicCss.match(
-      /\.public-hero__stage\[data-public-surface-theme='day'\] \.public-orbit__ring::before\s*\{(?<body>[^}]*)\}/s,
+      /\.public-hero__stage\[data-public-surface-theme='day'\] \.public-orbit__(?:boundary|track-marker)\s*\{(?<body>[^}]*)\}/s,
     )?.groups?.body ?? ''
     const nightMedallion = publicCss.match(
       /\.public-hero__stage\[data-public-surface-theme='night'\] \.public-object__medallion\s*\{(?<body>[^}]*)\}/s,
     )?.groups?.body ?? ''
 
-    expect(dayTrack).not.toMatch(/filter\s*:/i)
-    expect(dayTrack).toMatch(/rgba\(149, 120, 168, 1\) 43%/i)
+    expect(legacyRingPaint).toMatch(/content\s*:\s*none/i)
+    expect(legacyRingPaint).not.toMatch(/mask|linear-gradient/i)
+    expect(boundary).toMatch(/border\s*:\s*var\(--ring-track-width\) solid/i)
+    expect(boundary).toMatch(/opacity\s*:\s*1/i)
+    expect(marker).toMatch(/width\s*:\s*6px/i)
+    expect(marker).toMatch(/height\s*:\s*2px/i)
+    expect(marker).toMatch(/contain\s*:\s*paint/i)
+    expect(marker).toMatch(/will-change\s*:\s*transform/i)
+    expect(dayTrack).toMatch(/rgba\(149, 120, 168,/i)
     expect(nightMedallion).not.toMatch(/filter\s*:/i)
   })
 

@@ -808,27 +808,36 @@
   width: calc(var(--ring-diameter) * 1px);
   height: calc(var(--ring-diameter) * 1px);
   margin: calc(var(--ring-diameter) * -.5px) 0 0 calc(var(--ring-diameter) * -.5px);
+  border: var(--ring-track-width) solid rgba(217, 161, 255, .38);
   border-radius: 50%;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
 }
 
 .public-home .public-orbit__ring::before {
-  position: absolute;
-  inset: 0;
-  padding: var(--ring-track-width);
-  border-radius: inherit;
-  background: linear-gradient(180deg, rgba(217, 161, 255, 0) 0%, rgba(217, 161, 255, 1) 43%, rgba(217, 161, 255, 0) 100%);
-  content: '';
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  content: none;
 }
 
-.public-hero__stage[data-public-surface-theme='day'] .public-orbit__ring::before {
-  background: linear-gradient(180deg, rgba(149, 120, 168, 0) 0%, rgba(149, 120, 168, 1) 43%, rgba(149, 120, 168, 0) 100%);
+.public-home .public-orbit__track-marker {
+  position: absolute;
+  top: -1px;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 2px;
+  contain: paint;
+  border-radius: 999px;
+  background: rgba(217, 161, 255, .92);
+  pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.public-hero__stage[data-public-surface-theme='day'] .public-orbit__boundary {
+  border-color: rgba(149, 120, 168, .38);
+}
+
+.public-hero__stage[data-public-surface-theme='day'] .public-orbit__track-marker {
+  background: rgba(149, 120, 168, .92);
 }
 
 .public-home .public-object__track {

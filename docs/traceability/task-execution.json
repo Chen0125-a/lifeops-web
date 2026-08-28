@@ -4733,6 +4733,14 @@
         "outputs/evidence/browser/p5-t7/settings-09-390x844.png",
         "outputs/evidence/browser/p5-t7/settings-categories-normal-filmstrip.png",
         "outputs/evidence/browser/p5-t7/settings-categories-reduced-filmstrip.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-day-login.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-day-rest.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-night-login.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-night-rest.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-day-login.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-day-rest.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-login.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-rest.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-1440x900.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-390x844.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-1440x900.png",
@@ -4770,6 +4778,7 @@
         "outputs/evidence/p6-t6-ci11-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci12-mysql-hook-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci13-trace-isolation-manifest-refresh.mjs",
+        "outputs/evidence/p6-t6-ci14-orbit-track-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci8-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci9-manifest-refresh.mjs",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
@@ -4791,6 +4800,7 @@
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5228,6 +5238,14 @@
         "outputs/evidence/browser/p5-t7/settings-09-390x844.png",
         "outputs/evidence/browser/p5-t7/settings-categories-normal-filmstrip.png",
         "outputs/evidence/browser/p5-t7/settings-categories-reduced-filmstrip.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-day-login.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-day-rest.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-night-login.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-night-rest.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-day-login.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-day-rest.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-login.png",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-rest.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-1440x900.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-390x844.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-1440x900.png",
@@ -5265,6 +5283,7 @@
         "outputs/evidence/p6-t6-ci11-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci12-mysql-hook-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci13-trace-isolation-manifest-refresh.mjs",
+        "outputs/evidence/p6-t6-ci14-orbit-track-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci8-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci9-manifest-refresh.mjs",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
@@ -5286,6 +5305,7 @@
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5769,7 +5789,17 @@
         "server/src/deployment.test.ts": "The delivery harness contract requires only the cold MySQL setup hook to declare a 60-second budget and forbids a global Vitest hook-timeout relaxation.",
         "server/src/mysql.integration.test.ts": "The official MySQL suite retains every exact behavioral assertion while its cold concurrent-migration setup receives an explicit 60-second hook budget instead of Vitest's 10-second default.",
         "outputs/evidence/p6-t6-ci13-trace-isolation-manifest-refresh.mjs": "The deterministic CI13 refresh preserves all 462 evidence IDs, rehashes current sources and artifacts and records the fresh official Linux 338/338 browser replay without promoting registry status.",
-        "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci13-trace-isolation-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI13 trace-observer isolation to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths."
+        "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci13-trace-isolation-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI13 trace-observer isolation to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-day-login.png": "This primary-agent-opened CI14 frame records the final compositor-safe track rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-day-rest.png": "This primary-agent-opened CI14 frame records the final compositor-safe track rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-night-login.png": "This primary-agent-opened CI14 frame records the final compositor-safe track rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-night-rest.png": "This primary-agent-opened CI14 frame records the final compositor-safe track rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-day-login.png": "This primary-agent-opened CI14 frame records the final compositor-safe track rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-day-rest.png": "This primary-agent-opened CI14 frame records the final compositor-safe track rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-login.png": "This primary-agent-opened CI14 frame records the final compositor-safe track rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-rest.png": "This primary-agent-opened CI14 frame records the final compositor-safe track rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/p6-t6-ci14-orbit-track-manifest-refresh.mjs": "The deterministic CI14 refresh preserves all 462 evidence IDs, rehashes current sources and artifacts and records the fresh official Linux 338/338 plus real-Fastify 12/12 replay without promoting registry status.",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI14 compositor-safe orbit correction to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
@@ -5974,6 +6004,12 @@
           "command": "npm.cmd test -- src/playwrightConfig.test.ts",
           "exitCode": 1,
           "failure": "The focused Playwright configuration contract failed 1/14 because both dedicated non-Chromium theme-performance projects still inherited trace collection. The implementation disables trace only for those timing projects while leaving global and critical-project failure tracing unchanged."
+        },
+        {
+          "classification": "behavioral",
+          "command": "npm.cmd test -- src/components/public/PublicOrbit.test.tsx src/publicThemeCompositor.test.ts",
+          "exitCode": 1,
+          "failure": "The focused orbit-track contract failed exactly two assertions because the DOM lacked four static boundaries/four moving markers and CSS still painted full-size masked pseudo-rings. The implementation preserves the four original WAAPI owners and geometry while separating static complete tracks from tiny moving markers."
         }
       ],
       "evidenceIds": [
@@ -6007,11 +6043,11 @@
       "externalBlockers": [
         {
           "code": "ORDINARY_CI_PENDING",
-          "fact": "Ordinary CI run 33175188848 passed unit/type/build, the official MySQL 8.4 step and browser installation, then failed only the WebKit theme-performance project because inherited trace capture overlapped the first two post-click rAF samples. The two-project trace isolation passes focused TDD, frontend gates and a fresh official Linux 338/338 browser replay. The user's continuing authorization covers committing and pushing it; a new ordinary CI must still become genuinely green."
+          "fact": "Ordinary CI run 33180615592 passed unit/type/build, official MySQL 8.4 and browser installation, then failed only the WebKit theme-performance project because four full-size rotating mask-composite pseudo-rings exceeded the unchanged P95 budget. Static full-ring boundaries plus tiny promoted moving markers pass focused TDD, fresh full local gates and official Linux Playwright 338/338. The user's continuing authorization covers committing and pushing this correction; a new ordinary CI must still become genuinely green."
         },
         {
           "code": "RELEASE_PREREQUISITES_PENDING",
-          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33175188848."
+          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33180615592."
         }
       ]
     }

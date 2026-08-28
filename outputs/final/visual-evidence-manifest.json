@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "82D6C92069A051A2D09C74766B01E0BCEF74AE04674C6960A9F6B17B09E62519",
+  "checkpointRootSha256": "18BBA6CE7B121E75B7FFBC3D2A661DECBFE57BDBD579271FF1FA0B4D830D0235",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-28T14:25:16.709Z",
+  "generatedAt": "2026-08-28T16:19:41.612Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
@@ -1164,6 +1164,238 @@
         "route": "/app/overview"
       },
       "screenshotSha256": "E73A3F04819534FB9EB537D324975EAB5F26F7E374529606612B0B42759257E0"
+    },
+    {
+      "id": "p6-t6-ci14-day-rest-desktop",
+      "browser": "Playwright Chromium 1.62.1 compositor-safe orbit acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci14-day-rest-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-day-rest.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "visible",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "FA653794458EB82A43E71297381ADAF61ED2203A5977EE35452D7635BD34B929"
+    },
+    {
+      "id": "p6-t6-ci14-day-login-desktop",
+      "browser": "Playwright Chromium 1.62.1 compositor-safe orbit acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci14-day-login-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-day-login.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": null,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "hidden",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "11A6D7411BBCE74742461D30EC7C2BC0259CE1D5599A79256786295681C6CF72"
+    },
+    {
+      "id": "p6-t6-ci14-night-rest-desktop",
+      "browser": "Playwright Chromium 1.62.1 compositor-safe orbit acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci14-night-rest-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-night-rest.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "visible",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "BC910E89BA83170601E49ACF4F48871F596738374B409A5F4D5810CD59969CB3"
+    },
+    {
+      "id": "p6-t6-ci14-night-login-desktop",
+      "browser": "Playwright Chromium 1.62.1 compositor-safe orbit acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci14-night-login-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci14-orbit-track/1440x900-night-login.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": null,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "hidden",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "82FF1A71EEC75793747291C77BED26E549BFA0E51044AD8462E3237F07AD3D95"
+    },
+    {
+      "id": "p6-t6-ci14-day-rest-phone",
+      "browser": "Playwright Chromium 1.62.1 compositor-safe orbit acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci14-day-rest-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-day-rest.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "visible",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "0FCA1B9E0268ED02DB235BD7175586B17BFCD287643FB41CF40AB0AF3014FB17"
+    },
+    {
+      "id": "p6-t6-ci14-day-login-phone",
+      "browser": "Playwright Chromium 1.62.1 compositor-safe orbit acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci14-day-login-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-day-login.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": null,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "hidden",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "638BF708DE82F14A59A9031076287460723E2A4A4C5DD92A23CDC9F8516F30C0"
+    },
+    {
+      "id": "p6-t6-ci14-night-rest-phone",
+      "browser": "Playwright Chromium 1.62.1 compositor-safe orbit acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci14-night-rest-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-rest.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "visible",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "CA38D7C4A71EF61FCC388C218A6820AB7B67CB6BD6B83C135F6431B79BCA7591"
+    },
+    {
+      "id": "p6-t6-ci14-night-login-phone",
+      "browser": "Playwright Chromium 1.62.1 compositor-safe orbit acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci14-night-login-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-login.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": null,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "hidden",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "DAE7859A521AD501F2D64642E3B3FE1F68419306351B6318BB7AAEDD27C7FC86"
     }
   ],
   "performanceReports": [
@@ -1193,13 +1425,13 @@
   "latestRevalidation": {
     "taskId": "P6-T6",
     "step": 7,
-    "revalidatedAt": "2026-08-28T14:25:16.709Z",
-    "checkpointRootSha256": "82D6C92069A051A2D09C74766B01E0BCEF74AE04674C6960A9F6B17B09E62519",
+    "revalidatedAt": "2026-08-28T16:19:41.612Z",
+    "checkpointRootSha256": "18BBA6CE7B121E75B7FFBC3D2A661DECBFE57BDBD579271FF1FA0B4D830D0235",
     "metricsPath": "outputs/evidence/browser/p2-t5/public-browser-performance-manifest.json",
     "metricsSha256": "5FB3BEE1F51E49D8AB312E0FE148736C381592474261731711D2FFD57D17043A",
     "openedOriginalResolution": true,
-    "captureCount": 9,
+    "captureCount": 8,
     "conclusion": "pass",
-    "note": "The CI13 change is confined to Playwright timing-project trace collection; no product, style, image, browser-test or visual artifact source changed after the nine CI11 images were opened individually at original resolution."
+    "note": "The primary executor opened all eight CI14 1440x900 and 390x844 day/night rest/login frames individually at original resolution. Complete static boundaries, subtle moving markers, orbit-left/title-recede depth, dark night login, mobile safe inset and the unlit 05 center all pass."
   }
 }

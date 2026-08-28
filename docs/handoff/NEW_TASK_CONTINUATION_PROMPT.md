@@ -404,3 +404,15 @@ npm.cmd run test:execution
 - 根因是专用 timing project 继承 `trace: retain-on-failure`，点击后的 trace snapshot/screencast 与紧随其后的 rAF 采样竞争。focused contract 先 1/14 RED；最小实现只给 Firefox/WebKit 两个 theme-performance 项目设 `trace: 'off'`，全局失败 trace 与 critical projects 不变，worker/retry/browser/test/sample/threshold/geometry/motion 均未放宽，随后 14/14 GREEN。
 - 官方 `mcr.microsoft.com/playwright:v1.62.1-noble` 通过 WebKit theme 1/1、Firefox theme 1/1，并新鲜完成完整六项目 matrix 336/336（24.0 分钟、workers=1、retries=0），当前浏览器合计 338/338；完整 frontend 88/88、425/425、typecheck、885-module build、workflow contract/validator 均通过。本轮 owned 容器和两个专属卷已精确清理，并确认无残留 `lifeops-ci13-` 资源。产品/CSS/image/visual/browser test source 未变化；real-Fastify 12/12 与其他冻结门禁保持 source-current。
 - CI13 saved checkpoint 已生成于 `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci13-trace-isolation-uncommitted-local-checkpoint.json`，root `82D6C92069A051A2D09C74766B01E0BCEF74AE04674C6960A9F6B17B09E62519`、610 sorted inputs、462 同序 evidence rows、43 visual states。父边界仍为 30/10/4，P6-T6 Step 7 开放。唯一下一动作：完成 execution/startup/handoff 与最终审计，commit/push 后观察新普通 CI；全绿才 dispatch 唯一一次已授权 `1.0.0` release。
+
+## 33. 2026-08-29 最新接班增量：CI #14 轨道合成修复与完整本地门禁
+
+- `9303d0ad2cd7652c4bb671fa0e8a9b906bd055ba` 已在本地、tracking 与远端 `main` 一致。普通 CI run `33180615592` / job `98880586693` 通过 unit/type/build、官方 MySQL 8.4 与 browser install 后，只在 WebKit theme-performance 失败：baseline P95/max 18/18ms，transition P95/max 50/52ms，未改变预算 35/100ms；没有 release。
+- 系统化诊断锁定四个全尺寸旋转 `mask-composite` 伪元素为主成本。focused TDD 先精确 2 assertions RED；最小实现把完整可见轨道改为独立静态 1px boundary，每个既有 WAAPI ring owner 只携带一个 promoted 6×2 marker。四环几何、方向、30/40/50/60s 周期、workers=1、retries=0、浏览器、采样、阈值与场景动效均未放宽。
+- 新鲜当前源码门禁通过 focused 20/20；frontend 88/88 files、425/425 tests、typecheck、885-module build；server 362 ordinary +50 exact-only skips、typecheck/build；官方 MySQL 50/50；Helm/media/security/observability/workflow/release contracts；current-source 双镜像 smoke；官方 Linux Playwright 338/338（1+1+336，23.9m，workers=1/retries=0）以及 WebKit theme 重复 5/5；real-Fastify 12/12。一次手工 matrix 因漏带 CI 前置 `dist/index.html` 被诚实判为 infrastructure failure；补齐同序 `npm run build` 后 production asset budget 与整套 gate 原强度通过。
+- primary executor 已逐张按原分辨率打开 `outputs/evidence/browser/p6-t6-ci14-orbit-track/` 的 8 张 1440×900/390×844 day/night rest/login 图；完整静态边界、细微动态标记、orbit-left/title-recede、深色 night login、手机全屏任务层、安全内缩、零 overflow 与无光球中心均通过。CI14 owned containers、3 卷、2 本地测试镜像与临时 Helm 目录已精确清理；8 个受保护历史 untracked 文件未触碰。
+- 462 evidence IDs 保持同序；父边界仍为 30/10/4，P6-T6 Step 7 仍因 UHub immutable digests、digest-bound SBOM/provenance、exact-digest smoke 与 release success 不存在而开放。用户持续授权 commit/push，并且仅在新普通 CI 真正全绿后执行唯一一次 `1.0.0` dispatch。
+
+### 当前唯一下一原子动作
+
+运行 CI14 deterministic refresh、execution/startup/handoff、authority/identity/JSON/diff/credential-safe 审计，commit/push 后观察新普通 CI；全绿才执行唯一一次授权 release。不得提前进入 P6-T7。

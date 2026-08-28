@@ -604,8 +604,13 @@ function PublicOrbitComponent({
                   aria-hidden="true"
                   className="public-orbit__boundary"
                   data-orbit-boundary={orbit.id}
+                  data-orbit-track-static={orbit.id}
+                  data-track-width={orbit.trackWidth}
                   key={`boundary-${orbit.id}`}
-                  style={{ '--ring-diameter': orbit.baseDiameter } as CSSProperties}
+                  style={{
+                    '--ring-diameter': orbit.baseDiameter,
+                    '--ring-track-width': `${orbit.trackWidth}px`,
+                  } as CSSProperties}
                 />
               ))}
               {orbitDefinitions.map((orbit) => (
@@ -625,6 +630,11 @@ function PublicOrbitComponent({
                     '--ring-track-width': `${orbit.trackWidth}px`,
                   } as CSSProperties}
                 >
+                  <span
+                    aria-hidden="true"
+                    className="public-orbit__track-marker"
+                    data-orbit-track-motion={orbit.id}
+                  />
                   {publicDestinations.filter((destination) => destination.orbitId === orbit.id).map((destination) => (
                     <div
                       className="public-object__track"

@@ -1462,3 +1462,23 @@ The generated CI13 checkpoint is `outputs/evidence/source-checkpoints/2026-08-28
 ```powershell
 npm.cmd run test:execution
 ```
+
+## 2026-08-29 P6-T6 ordinary CI #14 orbit-track compositor correction and local convergence
+
+CI13 commit `9303d0ad2cd7652c4bb671fa0e8a9b906bd055ba` is present on local, tracking and verified remote `main`. Ordinary CI run `33180615592`, job `98880586693`, passed unit/type/build, official MySQL 8.4 and browser installation, then failed only `webkit-theme-performance`: baseline P95/max 18/18 ms and transition P95/max 50/52 ms against the unchanged 35/100 ms budgets. The release workflow was not dispatched.
+
+Systematic diagnostics isolated the dominant rendering cost to four full-size rotating `mask-composite` pseudo-rings. Direct SVG and dash-path candidates retained the same cost class and were not kept. Focused TDD failed exactly two assertions until complete visible tracks became separate static one-pixel boundaries and each existing WAAPI ring owner carried only one promoted 6×2 marker. The four original geometries, directions and 30/40/50/60-second owners remain unchanged; workers=1, retries=0, browser coverage, sample duration, P95/max thresholds, scene motion and approved responsive geometry were not relaxed.
+
+Fresh current-source gates pass focused orbit/compositor 20/20; frontend 88/88 files and 425/425 tests, typecheck and an 885-module production build; server 362 ordinary tests plus 50 exact-only skips, typecheck/build; official MySQL 8.4.10 exact 50/50; all declared Helm/media/security/observability/workflow/release contracts; current-source Web/API image smoke; official Linux Playwright WebKit theme 1/1, Firefox theme 1/1 and matrix 336/336 for 338/338 total with workers=1/retries=0; five repeated WebKit theme runs 5/5; and official Linux real-Fastify 12/12. A manual matrix attempt that lacked `/work/dist/index.html` was correctly rejected as an infrastructure failure; after restoring the CI-order `npm run build` prerequisite, the unchanged production compressed-asset budget and the complete gate passed.
+
+The primary executor opened all eight `outputs/evidence/browser/p6-t6-ci14-orbit-track/` 1440×900 and 390×844 day/night rest/login frames individually at original resolution. Direct review confirms complete static boundaries, subtle live markers, orbit-left/title-recede depth, dark night login, full-screen mobile task layer, safe outer inset, zero overflow and the plain unlit `05 / 此刻正在发生` center. The CI14-owned containers, three named volumes, two local test images and repository-local temporary Helm directory were precisely removed; user browsers, protected historical evidence and unrelated Docker resources were not touched.
+
+All 462 evidence rows retain their logical IDs and order. The deterministic CI14 checkpoint is generated only after the repository traceability and handoff files are synchronized. Parent truth remains 30 verified-local / 10 partial / 4 pending and P6-T6 Step 7 stays open because immutable UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and a successful release do not yet exist.
+
+### Exact next atomic action
+
+Generate and validate the CI14 checkpoint/manifests, run execution/startup/handoff plus authority/identity/JSON/diff/credential-safe audits, commit and push the correction under continuing authorization, then observe the new ordinary CI to terminal state. Only if it is genuinely green may the single authorized `1.0.0` release be dispatched. Do not enter P6-T7 before release closure.
+
+```powershell
+node outputs/evidence/p6-t6-ci14-orbit-track-manifest-refresh.mjs
+```
