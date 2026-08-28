@@ -7,7 +7,7 @@ active_task: P6-T6
 active_step: 7
 requirements_verified: 30/44
 execution_guard: complete-fresh-task-drill-passed
-last_reviewed: 2026-08-27
+last_reviewed: 2026-08-28
 ---
 
 # LifeOps Web Execution Control
@@ -56,7 +56,7 @@ The execution-completeness and image-delivery-boundary specifications passed exp
 - Scope boundary: this execution track builds and delivers LifeOps Web/API/MySQL, immutable Web/API images in UHub and a validated Helm/GitOps/user-deployment package. Kubernetes cluster construction, platform installation and LifeOps application deployment/reconciliation/rollback/cluster smoke are user-owned and out of scope. Lack of a cluster never blocks Web completion or expands this task.
 - Skill boundary: `build-ha-k8s-platform` is retired from this Web workspace's startup, execution and portability requirements. Installed files may remain as historical tooling but must not be invoked.
 - Implementation plans: master plus P1–P6 now contain 448 ordered checkbox steps. The amended UI tasks enforce login-first and private/life golden slices, page-native replication gates, four viewports plus zoom/reflow, complete state/keyboard/focus/return behavior and reproducible screenshot/filmstrip/trace evidence.
-- Execution-completeness implementation: the reviewed exact eleven-file registry contains 2,876 clauses with zero placeholder or coverage gap. The catalog remains 44 parents and 52 surfaces. The reciprocal matrix contains 1,427 contracts: 783 original atoms plus 644 life atoms. The seven ADR-029 dedicated children are generated deterministically rather than manually retained, and `MOTION-01.PUBLIC_HOME.MOTION.04` reciprocally maps the ADR-030 ownership clauses. The last trusted P6-T5/P6-T6 evidence boundary remains 936 `verified-local` + 384 `partial` + 107 `pending` atoms and 30 `verified-local` + 10 `partial` + 4 `pending` parents; current authority/product WIP is intentionally invalidated until new evidence and checkpoint binding pass.
+- Execution-completeness implementation: the reviewed exact eleven-file registry contains 2,876 clauses with zero placeholder or coverage gap. The catalog remains 44 parents and 52 surfaces. The reciprocal matrix contains 1,427 contracts: 783 original atoms plus 644 life atoms. The seven ADR-029 dedicated children are generated deterministically rather than manually retained, and `MOTION-01.PUBLIC_HOME.MOTION.04` reciprocally maps the ADR-030 ownership clauses. The current P6-T5/P6-T6 evidence boundary is legally rebound to checkpoint `DC411F68A7D1A11140E97FA228C4B3509CD1AFD977AD0F604A2619DAA0F34B72`: 936 `verified-local` + 384 `partial` + 107 `pending` atoms and 30 `verified-local` + 10 `partial` + 4 `pending` parents. Registry-bound release atoms remain open, so this convergence does not promote any parent or close P6-T6 Step 7.
 - Business source changes for the final redesign: P1-T1 through P1-T11 are checkpointed. P1-T11 closes the ADR-023 A+ occurrence ledger, merged timeline, discriminated completion, immutable source/history, state-aware reversal, Memory owner-atomic isolation and exact MySQL 8.4.10 parity without changing rendered UI.
 - Current implementation gate: the execution guard, all P1 tasks, all P2 tasks, all P3 tasks, all P4 tasks, all P5 tasks and P6-T1 through P6-T5 are locally complete and checkpointed. GOAL-01, SCHEDULE-01, HABIT-01, REVIEW-01, KNOW-01, OBS-01, PLATFORM-01, GLOBAL-01, MOTION-01, SPACE-01, STATE-01, LIFE-02 through LIFE-18, LIFE-21 and LIFE-22 are atom-derived `verified-local`; APP-01, RECORD-01, PUBLISH-01, DATA-01, SEC-01, LIFE-01, LIFE-19, LIFE-20, LIFE-23 and LIFE-24 are `partial`; PUB-01, PUB-02, AUTH-01 and DELIVERY-01 are pending. P6-T5 passed task-close at root `25CF5AF17AFB6D6ABCE26CCAE2267C9AEF9AC38289A3FFD75BF56819294443AA`. P6-T6 Steps 1–2 completed under behavioral TDD. Step 3 accepts either environment or Docker credential-store records, uses credential-safe Docker-native manifest probes and treats two empty pre-release digests as `not-applicable`. GitHub browser authentication is valid for `Chen0125-a`, Docker Engine 29.7.2 is running, and the user-approved production hostname `lifeops.chenspace.com` replaces both deployable placeholders; production Helm render validation passes in honest release-pending mode. Both fixed UHub image paths return exact first-release `no such manifest`, while a guaranteed nonexistent parent path returns unauthorized, proving the `chenucloud` parent repository exists and is readable without claiming an image digest. The exact real preflight is 12 pass / 1 fail / 8 not-applicable: only the fixed workspace's non-Git state remains. The current local boundary remains 30/44 and Step 4 is not authorized before Step 3 passes.
 - Task 1 evidence: `node --test scripts/verify-execution-contract.test.mjs` first exited 1 with `ERR_MODULE_NOT_FOUND`; this was classified as environment setup and not accepted as red. After minimal loadable interfaces were added, the same command exited 1 with six expected behavioral assertion failures, then exited 0. Independent review found sparse heading paths on skipped ATX levels; its focused regression failed 1/7 as expected and passed 7/7 after the one-line fix.
@@ -1267,6 +1267,40 @@ Run final execution-contract, standalone startup/handoff, saved/fresh/manifest i
 npm.cmd run test:execution
 ```
 
+## 2026-08-28 P6-T6 CI #9 latest-order override
+
+This tail entry is the current execution truth and supersedes older CI #8/#7 next-action text above. Local `HEAD` and `origin/main` are `10a86adb271f849dcf91bf46d7b09265aa829127`; the authorization that pushed through this revision is consumed. Ordinary CI run `33137867114`, job `98741846244`, failed only the dedicated WebKit theme-performance assertion after unit, typecheck, build and exact MySQL passed. The bounded current WIP has fresh green frontend 88/88 files and 425/425 tests, typecheck/build, complete server/MySQL/Helm/security/workflow/image/data gates, official Linux Playwright 335/335, real-Fastify 12/12 and Lighthouse 1.00/1.00/0.96/0.91. Eight canonical 1440×900/390×844 day/night rest/login images were opened individually and passed direct visual review.
+
+The current checkpoint is `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json`, root `DC411F68A7D1A11140E97FA228C4B3509CD1AFD977AD0F604A2619DAA0F34B72`, with 609 ordinal-sorted inputs and all 462 evidence rows in unchanged logical order. Parent truth remains 30 verified-local / 10 partial / 4 pending. P6-T6 Step 7 remains open because immutable UHub digests, digest-bound SBOM/provenance, exact-digest smoke and release success do not exist.
+
+### Exact next atomic action
+
+Run execution-contract, standalone startup/handoff, saved/fresh/manifest identity, authority, JSON/diff and credential-safe review; remove only explicitly owned CI9 Docker validation resources; create the local implementation/evidence commit; then rebind the post-commit source root and create the narrow ledger commit. Any push of those future commits to exact GitHub `main` requires fresh explicit authorization. Any additional `1.0.0` release dispatch remains separately unauthorized. Do not enter P6-T7.
+
+```powershell
+npm.cmd run test:execution
+```
+
+## 2026-08-28 P6-T6 ordinary CI #9 single failure and complete local convergence
+
+The user-authorized CI #8 implementation/ledger push is complete and consumed. Local `HEAD`, `origin/main` and the verified repository-tracking ref are `10a86adb271f849dcf91bf46d7b09265aa829127` before this WIP. Read-only GitHub inspection confirms ordinary CI run `33137867114`, job `98741846244`, reached terminal failure after passing unit, frontend typecheck, production build and exact MySQL. It failed only `tests/public-home.spec.ts:121` in the dedicated WebKit theme-performance project: baseline P95 19ms, transition P95 88ms against the unchanged 36ms budget, with maximum 88ms under the unchanged 100ms ceiling. The skipped Helm/workflow/image tail is not claimed as passed. No release was dispatched.
+
+The bounded correction preserves every worker, retry, browser, sample-duration, geometry, period, motion-rate and performance threshold. Theme state is committed atomically on the root and four paint surfaces; the switch remains unavailable only until the cached star field decodes; WebKit-heavy backdrop/filter topology is removed; keyboard/pointer intent evaluates the Records route before the existing 360ms transition sample; settled outgoing routes avoid a forced computed-style read and native inert subtree walk; the motion observer performs one pre-loop surface-color read; trace screencast is disabled only for that observer; and all path-backed browser artifacts use same-directory temporary writes plus atomic rename. Lighthouse additionally uses Chromium's standard Docker shared-memory fallback after a direct-page-health check and raw A/B proved the 64MiB `/dev/shm` target crash; JavaScript, images, web security, page behavior and all four budgets remain enabled.
+
+Fresh current-source gates pass frontend typecheck, 88/88 Vitest files with 425/425 tests and an 884-module production build; server 361 ordinary tests plus 50 exact-only skips, typecheck/build; official MySQL 8.4.10 exact 50/50; official Linux Playwright WebKit theme 1/1, Firefox theme 1/1 and full matrix 333/333 for 335/335 with workers=1/retries=0; official Linux real-Fastify 12/12; all media/Helm/security/observability/workflow/release contracts; root/server production audits; current-source Web/API image builds and `image-smoke: ok`; the 16-migration dump/restore rehearsal; and clean Lighthouse scores 1.00/1.00/0.96/0.91. The owned browser container was rebuilt with Docker init after 912 inherited zombies were proven to be environment contamination; the final complete browser and Lighthouse runs left zero zombies or preview processes. No user browser was touched.
+
+The primary executor opened all eight current canonical `p2-t3` 1440×900/390×844 day/night rest/login images individually at original resolution. Direct review confirms the approved four live rings, orbit-left/title-recede login depth, dark night surface, full-screen mobile task layer, complete safe outer-ring inset, zero overflow and plain unlit `05 / 此刻正在发生` center. The current metrics report 71 frames at 16.7ms P95 and 16.8ms maximum.
+
+All 462 evidence rows retain their logical IDs and order and are rebound only after the complete replay, with every source/artifact hash read from disk. The saved checkpoint is `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json`, root `DC411F68A7D1A11140E97FA228C4B3509CD1AFD977AD0F604A2619DAA0F34B72`, with 609 ordinal-sorted inputs. The refresher's immediate fresh rebuild matches. Parent truth remains 30 verified-local / 10 partial / 4 pending. P6-T6 Step 7 stays open because immutable UHub digests, digest-bound SBOM/provenance, exact-digest smoke and release success do not exist.
+
+### Exact next atomic action
+
+Run `npm.cmd run test:execution`, standalone startup/handoff, a second saved/fresh/manifest identity rebuild, five authority hashes, JSON/diff and credential-safe WIP review. If all pass, stop and remove only the explicitly owned CI9 validation container/volumes and local test images, then create the local implementation/evidence commit. Rebind evidence/checkpoint to the post-commit source root and create the narrow ledger commit. Any push of those future commits to exact GitHub `main` requires fresh explicit authorization; any additional `1.0.0` dispatch remains separately unauthorized. Do not enter P6-T7.
+
+```powershell
+npm.cmd run test:execution
+```
+
 ## 2026-08-27 P6-T6 ordinary CI #7 WebKit compositor diagnosis and motion-owner change-control stop
 
 The user-authorized push is complete and consumed. Local `HEAD`, `origin/main` and the verified remote `main` are `bf1ad3b9d05ba2d315526b460be3423b44e6648d`. Ordinary CI run `33046420164` passed MySQL, unit, typecheck and the production build, then failed only the dedicated WebKit theme-performance boundary because `waitForStableFrameCadence(600, 10)` observed six frames. No release workflow was dispatched and no new push authorization remains.
@@ -1358,6 +1392,20 @@ The reviewed CI #8 implementation/current-evidence correction is committed local
 ### Exact next atomic action
 
 Run the final execution-contract, standalone startup/handoff, saved/fresh/manifest identity, five authority hashes, JSON/diff and credential-safe staged review; commit this narrow ledger/checkpoint atom locally; then stop for fresh explicit authorization to push `a2dd3375b382e41e332a9205253605b9e085e9ae` and that exact narrow HEAD to GitHub `main`. Push authorization does not authorize an additional `1.0.0` dispatch. Do not enter P6-T7.
+
+```powershell
+npm.cmd run test:execution
+```
+
+## 2026-08-28 P6-T6 CI #9 current tail override
+
+This final entry is the current execution truth. The reviewed implementation/evidence correction is committed locally as `0718cb2815d170da59595b9c401ad36e2fddd834` (`fix(ci): stabilize browser acceptance gates`) while `origin/main` remains `10a86adb271f849dcf91bf46d7b09265aa829127`; the earlier push authorization is consumed. Ordinary CI run `33137867114`, job `98741846244`, failed only the dedicated WebKit theme-performance assertion after unit, frontend typecheck, production build and exact MySQL passed. The bounded correction has fresh green frontend 88/88 files and 425/425 tests, typecheck/build, server/MySQL/Helm/security/workflow/image/data gates, official Linux Playwright 335/335, real-Fastify 12/12 and Lighthouse 1.00/1.00/0.96/0.91. Eight canonical 1440×900/390×844 day/night rest/login images passed individual original-resolution review. The explicitly owned CI9 validation container, two volumes and two local test images were removed after all gates; no user browser or unrelated Docker resource was touched.
+
+The post-implementation checkpoint is `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json`, root `392830696452098E2959CA5871A6951F6AAE8E3F4A57A48482A0665BCC8F8225`, with 609 ordinal-sorted inputs and 462 evidence rows in unchanged logical order. Parent truth remains 30 verified-local / 10 partial / 4 pending. P6-T6 Step 7 remains open because immutable UHub digests, digest-bound SBOM/provenance, exact-digest smoke and release success do not exist.
+
+### Exact next atomic action
+
+Run execution-contract, standalone startup/handoff, saved/fresh/manifest identity, authority, JSON/diff and credential-safe staged review, then create the narrow ledger/checkpoint commit. Any push of `0718cb2815d170da59595b9c401ad36e2fddd834` and that future narrow HEAD to exact GitHub `main` requires fresh explicit authorization. Any additional `1.0.0` release dispatch remains separately unauthorized. Do not enter P6-T7.
 
 ```powershell
 npm.cmd run test:execution

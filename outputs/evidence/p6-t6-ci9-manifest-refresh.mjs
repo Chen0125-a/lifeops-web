@@ -6,7 +6,7 @@ import path from 'node:path'
 import { buildLocalCheckpoint } from '../../scripts/execution-contract/source-checkpoint.mjs'
 
 const root = process.cwd()
-const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json'
+const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json'
 const refreshPath = 'outputs/evidence/p6-t6-ci9-manifest-refresh.mjs'
 const evidenceManifestPath = 'docs/traceability/evidence-manifest.json'
 const taskExecutionPath = 'docs/traceability/task-execution.json'
@@ -74,7 +74,7 @@ for (const relativePath of currentPaths) {
 task.externalBlockers = [
   {
     code: 'MAIN_PUSH_AUTHORIZATION_REQUIRED',
-    fact: 'The authorized push through 10a86adb271f849dcf91bf46d7b09265aa829127 is complete and consumed, and local HEAD currently equals origin/main. Ordinary CI run 33137867114 failed only the dedicated WebKit theme-performance step. The current CI9 implementation/evidence correction is uncommitted and unpushed; after a reviewed local implementation commit and narrow ledger commit exist, pushing them to exact https://github.com/Chen0125-a/lifeops-web.git main is a new persistent remote mutation and requires fresh explicit user authorization. The historical browser-failure diagnostics and earlier motion-owner soft-pause checkpoint remain preserved locally and untracked. No credential, OTP, cookie, token or private key was read or recorded.',
+    fact: 'The authorized push through 10a86adb271f849dcf91bf46d7b09265aa829127 is complete and consumed. The reviewed CI9 implementation/evidence correction is committed locally as 0718cb2815d170da59595b9c401ad36e2fddd834 while origin/main remains 10a86adb271f849dcf91bf46d7b09265aa829127. After the narrow ledger commit exists, pushing both local commits to exact https://github.com/Chen0125-a/lifeops-web.git main is a new persistent remote mutation and requires fresh explicit user authorization. The historical browser-failure diagnostics and earlier motion-owner soft-pause checkpoint remain preserved locally and untracked. No credential, OTP, cookie, token or private key was read or recorded.',
   },
   {
     code: 'RELEASE_RERUN_AUTHORIZATION_REQUIRED',
@@ -239,7 +239,7 @@ manifest.revalidation = {
   taskId: 'P6-T6',
   step: 7,
   revalidatedAt,
-  basis: 'Fresh complete local CI9 remediation evidence is bound to the current workspace while HEAD and origin/main remain 10a86adb271f849dcf91bf46d7b09265aa829127. Ordinary CI run 33137867114 passed unit/type/build/exact-MySQL and failed only the unchanged dedicated WebKit theme-performance budget. Current local gates pass 88/88 frontend files and 425/425 tests, complete server/exact-MySQL, official Linux 335/335 Playwright, real-Fastify 12/12, Helm/security/workflow/audit/image/data, Lighthouse and eight opened current visual states. All 462 logical evidence IDs remain in order without registry promotion; the parent boundary remains 30/10/4. A fresh explicit authorization is required before pushing the future local implementation and narrow ledger commits, and separate authorization remains required for any additional 1.0.0 dispatch.',
+  basis: 'Fresh complete local CI9 remediation evidence is bound to the current workspace. The reviewed implementation/evidence commit is 0718cb2815d170da59595b9c401ad36e2fddd834 while origin/main remains 10a86adb271f849dcf91bf46d7b09265aa829127. Ordinary CI run 33137867114 passed unit/type/build/exact-MySQL and failed only the unchanged dedicated WebKit theme-performance budget. Current local gates pass 88/88 frontend files and 425/425 tests, complete server/exact-MySQL, official Linux 335/335 Playwright, real-Fastify 12/12, Helm/security/workflow/audit/image/data, Lighthouse and eight opened current visual states. All 462 logical evidence IDs remain in order without registry promotion; the parent boundary remains 30/10/4. A fresh explicit authorization is required before pushing the local implementation and narrow ledger commits, and separate authorization remains required for any additional 1.0.0 dispatch.',
 }
 await writeJson(evidenceManifestPath, manifest)
 

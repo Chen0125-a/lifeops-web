@@ -4784,6 +4784,7 @@
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5267,6 +5268,7 @@
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5724,7 +5726,10 @@
         "tests/private-loop.spec.ts": "This current P6-T6 CI9 remediation path is covered by the fresh full unit/type/build/browser/image gate and retained under the unchanged release boundary.",
         "tests/reviews.spec.ts": "This current P6-T6 CI9 remediation path is covered by the fresh full unit/type/build/browser/image gate and retained under the unchanged release boundary.",
         "tests/schedule-golden-slice.spec.ts": "This current P6-T6 CI9 remediation path is covered by the fresh full unit/type/build/browser/image gate and retained under the unchanged release boundary.",
-        "tests/search.spec.ts": "This current P6-T6 CI9 remediation path is covered by the fresh full unit/type/build/browser/image gate and retained under the unchanged release boundary."
+        "tests/search.spec.ts": "This current P6-T6 CI9 remediation path is covered by the fresh full unit/type/build/browser/image gate and retained under the unchanged release boundary.",
+        "docs/handoff/NEW_TASK_CONTINUATION_PROMPT.md": "This current P6-T6 CI9 remediation path is covered by the fresh full unit/type/build/browser/image gate and retained under the unchanged release boundary.",
+        "docs/superpowers/plans/2026-08-09-execution-control.md": "This current P6-T6 CI9 remediation path is covered by the fresh full unit/type/build/browser/image gate and retained under the unchanged release boundary.",
+        "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json": "The deterministic non-self-referential checkpoint binds the complete current local gate to ordinal-sorted production inputs while excluding generated evidence metadata and sensitive paths."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
@@ -5938,7 +5943,7 @@
       "externalBlockers": [
         {
           "code": "MAIN_PUSH_AUTHORIZATION_REQUIRED",
-          "fact": "The authorized push through 10a86adb271f849dcf91bf46d7b09265aa829127 is complete and consumed, and local HEAD currently equals origin/main. Ordinary CI run 33137867114 failed only the dedicated WebKit theme-performance step. The current CI9 implementation/evidence correction is uncommitted and unpushed; after a reviewed local implementation commit and narrow ledger commit exist, pushing them to exact https://github.com/Chen0125-a/lifeops-web.git main is a new persistent remote mutation and requires fresh explicit user authorization. The historical browser-failure diagnostics and earlier motion-owner soft-pause checkpoint remain preserved locally and untracked. No credential, OTP, cookie, token or private key was read or recorded."
+          "fact": "The authorized push through 10a86adb271f849dcf91bf46d7b09265aa829127 is complete and consumed. The reviewed CI9 implementation/evidence correction is committed locally as 0718cb2815d170da59595b9c401ad36e2fddd834 while origin/main remains 10a86adb271f849dcf91bf46d7b09265aa829127. After the narrow ledger commit exists, pushing both local commits to exact https://github.com/Chen0125-a/lifeops-web.git main is a new persistent remote mutation and requires fresh explicit user authorization. The historical browser-failure diagnostics and earlier motion-owner soft-pause checkpoint remain preserved locally and untracked. No credential, OTP, cookie, token or private key was read or recorded."
         },
         {
           "code": "RELEASE_RERUN_AUTHORIZATION_REQUIRED",

@@ -126,6 +126,18 @@ Obsidian 项目权威账本：
 npm.cmd run test:execution
 ```
 
+## 24. 2026-08-28 最新接班增量：普通 CI #9 单点失败与完整本地收敛
+
+- 本节是当前最新覆盖，优先于上文 CI #8/#7 的旧下一动作。此前授权的 CI #8 两笔提交已经推送且授权已消耗；当前 `HEAD` 与 `origin/main` 均为 `10a86adb271f849dcf91bf46d7b09265aa829127`。普通 CI run `33137867114` / job `98741846244` 在 unit、frontend typecheck、production build、精确 MySQL 通过后，仅 dedicated WebKit theme-performance 失败：baseline P95 19ms、transition P95 88ms、未改变预算 36ms、max 88ms 低于未改变 ceiling 100ms。后续 Helm/workflow/image tail 被跳过；没有 release。
+- 当前 WIP 保持所有原强度门禁，完成原子主题表面、缓存星空解码边界、受控路由预加载/入场、单次 motion 采样、trace observer 边界和原子 browser artifact 写入。Lighthouse 在直接页面健康与 raw A/B 证明 Docker 64MiB `/dev/shm` target crash 后，仅增加标准 `--disable-dev-shm-usage` fallback；JavaScript、图片、web security 与四项预算均未关闭。
+- 新鲜完整本地证据：frontend 88/88 files、425/425 tests、typecheck、884-module build；server 361 ordinary +50 exact-only skips、typecheck/build；官方 MySQL 8.4.10 exact 50/50；官方 Linux Playwright 335/335（WebKit theme 1 + Firefox theme 1 + matrix 333，workers=1/retries=0）；real-Fastify 12/12；Helm/media/security/observability/workflow/release contracts；root/server production audit；current-source 双镜像与 `image-smoke: ok`；16-migration rehearsal；Lighthouse 1.00/1.00/0.96/0.91。8 张当前 1440×900/390×844 day/night rest/login 图已逐张原分辨率打开通过。
+- 462 evidence rows 保持逻辑 ID 与顺序并按磁盘当前 source/artifact 合法重绑。checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json`，root `DC411F68A7D1A11140E97FA228C4B3509CD1AFD977AD0F604A2619DAA0F34B72`，609 sorted inputs。父边界仍为 30/10/4，P6-T6 Step 7 因正式 UHub digest、digest-bound SBOM/provenance、exact-digest smoke 与 release success 不存在而开放。
+- 当前唯一下一动作：完成 execution/startup/handoff、saved/fresh/manifest、五份 authority、JSON/diff/credential-safe 审计；只清理明确 owned CI9 Docker 资源；创建本地实现/证据提交，再按 post-commit source root 重绑并创建窄账本提交。任何新 push 与额外 `1.0.0` dispatch 分别需要新的明确授权；不得进入 P6-T7。
+
+```powershell
+npm.cmd run test:execution
+```
+
 之后严格按顺序：
 
 1. 运行最终 `test:execution`、独立 startup 与 handoff，并读取完整输出和 exit code。
@@ -358,3 +370,14 @@ P6-T6 合法通过后，连续执行 P6-T6 task-close → deterministic checkpoi
 - 当前 CI #8 实现/证据修订已提交为 `a2dd3375b382e41e332a9205253605b9e085e9ae`（`fix(theme): make public theme surfaces atomic`）。提交包含 24 个已审当前任务路径；历史 CI6 failure 目录与旧 CI7 WebKit soft-pause checkpoint 保持本地 untracked，未移动、未删除、未暂存。本轮 owned Playwright 容器已停止并自动移除，未触碰用户浏览器。
 - `origin/main` 仍为 `5585f0aabaebbbf05a76a8a12aa017445716a009`。post-commit checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json`，root `BC1A9D79B9D82BB8A96822EEDD7714623C28D3F450FA77B2C842B434CDB8EA51`，608 inputs、462 同序 evidence rows；边界仍为 30/10/4，Step 7 仍开放。
 - 包含本段的仓库提交是最终窄账本/checkpoint 原子。其创建后，唯一下一动作是取得新的明确授权，才能把 `a2dd337...` 与该精确 narrow HEAD 推送到 GitHub `main`；该授权不包含第二次 `1.0.0` dispatch，不得进入 P6-T7。
+
+## 24. 2026-08-28 当前尾部覆盖：普通 CI #9 单点失败与完整本地收敛
+
+- 本节位于文件尾并构成最新接班事实。当前本地实现/证据提交为 `0718cb2815d170da59595b9c401ad36e2fddd834`，`origin/main` 仍为 `10a86adb271f849dcf91bf46d7b09265aa829127`，对应旧 push 授权已经消耗。普通 CI run `33137867114` / job `98741846244` 在 unit、frontend typecheck、production build 与 exact MySQL 通过后，仅 dedicated WebKit theme-performance 失败；未运行 release。
+- 当前 WIP 在不放宽任何 worker、retry、浏览器、阈值、采样时长、几何、周期或动效速率的前提下，本地通过 frontend 88/88 files、425/425 tests、typecheck/build；server/MySQL/Helm/security/workflow/image/data；官方 Linux Playwright 335/335；real-Fastify 12/12；Lighthouse 1.00/1.00/0.96/0.91。8 张当前 canonical 图已逐张原分辨率复核。
+- owned CI9 validation container、两个专用卷和两个本地测试镜像已在所有门禁后精确清理；未触碰用户浏览器或其他 Docker 资源。post-implementation checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json`，root `392830696452098E2959CA5871A6951F6AAE8E3F4A57A48482A0665BCC8F8225`，609 sorted inputs、462 同序 evidence rows；父级边界仍为 30/10/4，P6-T6 Step 7 仍开放。
+- 下一原子动作是完成最终 execution/startup/handoff、identity/authority、JSON/diff/credential-safe staged 审计并创建窄账本提交。新的 push 与额外 `1.0.0` dispatch 分别需要新的明确授权；不得进入 P6-T7。
+
+```powershell
+npm.cmd run test:execution
+```

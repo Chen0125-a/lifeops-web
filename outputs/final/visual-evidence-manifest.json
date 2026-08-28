@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "DC411F68A7D1A11140E97FA228C4B3509CD1AFD977AD0F604A2619DAA0F34B72",
+  "checkpointRootSha256": "392830696452098E2959CA5871A6951F6AAE8E3F4A57A48482A0665BCC8F8225",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-28T08:24:57.376Z",
+  "generatedAt": "2026-08-28T08:38:05.700Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
@@ -939,8 +939,8 @@
   "latestRevalidation": {
     "taskId": "P6-T6",
     "step": 7,
-    "revalidatedAt": "2026-08-28T08:24:57.376Z",
-    "checkpointRootSha256": "DC411F68A7D1A11140E97FA228C4B3509CD1AFD977AD0F604A2619DAA0F34B72",
+    "revalidatedAt": "2026-08-28T08:38:05.700Z",
+    "checkpointRootSha256": "392830696452098E2959CA5871A6951F6AAE8E3F4A57A48482A0665BCC8F8225",
     "metricsPath": "outputs/evidence/browser/p2-t5/public-browser-performance-manifest.json",
     "metricsSha256": "CD727BD707DD2C8E763FCEAEBA547E86DE065E95E7856D47F7AE74951B6C99F0",
     "openedOriginalResolution": true,
