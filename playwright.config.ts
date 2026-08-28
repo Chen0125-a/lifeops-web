@@ -63,7 +63,7 @@ export default defineConfig({
       grep: themeFrameBudgetTest,
       timeout: 90_000,
       // Keep this timing-sensitive sample in a fresh Firefox worker/browser process.
-      use: { ...devices['Desktop Firefox'], headless: process.platform !== 'win32', viewport: { width: 1440, height: 900 } },
+      use: { ...devices['Desktop Firefox'], headless: process.platform !== 'win32', trace: 'off', viewport: { width: 1440, height: 900 } },
     },
     {
       name: 'webkit-critical',
@@ -80,7 +80,7 @@ export default defineConfig({
       grep: themeFrameBudgetTest,
       timeout: 90_000,
       // Keep this timing-sensitive sample in a fresh WebKit worker/browser process.
-      use: { ...devices['Desktop Safari'], headless: process.platform !== 'win32', viewport: { width: 1440, height: 900 } },
+      use: { ...devices['Desktop Safari'], headless: process.platform !== 'win32', trace: 'off', viewport: { width: 1440, height: 900 } },
     },
   ],
 })

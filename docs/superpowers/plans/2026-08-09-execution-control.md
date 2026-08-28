@@ -1444,3 +1444,21 @@ Run standalone startup/handoff and the final identity/authority/diff/JSON/creden
 ```powershell
 npm.cmd run test:execution
 ```
+
+## 2026-08-28 P6-T6 ordinary CI #12 trace-observer failure and CI #13 isolation
+
+CI12 harness commit `0ec4832df07f9189232e4e9939c1cd951e8d7c5b` is present on local, tracking and verified remote `main`. Ordinary CI run `33175188848`, job `98861853310`, passed the 4m03s unit/type/build step, the official MySQL 8.4 integration step and browser installation. It then failed only `webkit-theme-performance` after 15 seconds: baseline P95/max were 18/18 ms, transition samples began with 72/70 ms and then held 9–19 ms, producing P95 70 ms above the unchanged 35 ms budget while max 72 ms stayed below the unchanged 100 ms ceiling. Helm, workflow/image and local image-build tail steps did not run; no release was dispatched.
+
+Systematic diagnosis identified a measurement-observer boundary rather than a persistent rendering regression. The two isolated theme timing projects inherited global `trace: retain-on-failure`, so Playwright's post-click trace snapshot/screencast competed with the rAF probe immediately after the click. Focused TDD added a contract requiring `trace: 'off'` only on `firefox-theme-performance` and `webkit-theme-performance`; it failed 1/14 before the exact config change and passes 14/14 afterward. The global trace policy, shared critical projects, worker/retry/browser matrix, timing test, sample duration, P95/max thresholds, page rendering, geometry and motion remain unchanged. Official `mcr.microsoft.com/playwright:v1.62.1-noble` focused runs pass WebKit theme 1/1 and Firefox theme 1/1. Fresh frontend gates pass 88/88 files, 425/425 tests, typecheck and an 885-module production build; workflow contract and validator pass. The first official-container attempt failed before tests only because a deliberately read-only reused dependency volume blocked Vite's `.vite-temp`; an owned writable copy was used for the real runs and then the exact container/volume resources were removed.
+
+No product, CSS, image, visual artifact or browser test source changed. A fresh isolated official Linux six-project matrix passes 336/336 in 24.0 minutes with workers=1/retries=0; combined with the two fresh dedicated theme runs, current browser evidence is 338/338. The unchanged real-Fastify 12/12, Helm/security/image/data/Lighthouse gates and nine opened final frames remain source-current. The exact CI13 matrix container and both owned work/dependency volumes were removed and a read-only name-filter check found no remaining `lifeops-ci13-` resource. Parent truth remains 30 verified-local / 10 partial / 4 pending and P6-T6 Step 7 remains open.
+
+### Exact next atomic action
+
+Generate and validate the CI13 deterministic checkpoint and manifests, run execution/startup/handoff plus authority/diff/JSON/credential-safe audits, commit and push the bounded trace-observer isolation under continuing authorization, then observe the new ordinary CI. Only after it is genuinely green may the single authorized `1.0.0` release be dispatched.
+
+The generated CI13 checkpoint is `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci13-trace-isolation-uncommitted-local-checkpoint.json`, root `82D6C92069A051A2D09C74766B01E0BCEF74AE04674C6960A9F6B17B09E62519`, 610 ordinal-sorted inputs, 462 unchanged-order evidence rows and 43 visual states. The exact next action is now the execution/startup/handoff and authority/diff/JSON/credential-safe audit before commit/push.
+
+```powershell
+npm.cmd run test:execution
+```

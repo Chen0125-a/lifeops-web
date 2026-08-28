@@ -397,3 +397,10 @@ npm.cmd run test:execution
 - CI-equivalent front half 新鲜通过 frontend 425/425、server 362 ordinary +50 exact-only skips、双 typecheck/双 build、885 modules；workflow contract/validator 与 execution 97/97 通过。产品/browser/image/visual source 未改变，既有 Playwright 338/338、real-Fastify 12/12、Helm/security/image/data/Lighthouse 与 9 张逐图复核证据保持 source-current。
 - CI #12 checkpoint 为 `3E852927E0496CC31A7F7D677F0DAEBE887EE3333562D7974FBE0E9F7CDD4D85`、610 inputs、462 evidence rows、43 visual states；边界仍为 30/10/4，P6-T6 Step 7 仍开放。
 - 唯一下一动作：startup/handoff 与最终审计后，在持续授权下 commit/push 本次窄修复并观察下一普通 CI；只有它真实全绿才执行唯一一次已授权 `1.0.0` release。
+
+## 31. 2026-08-28 最新接班增量：CI #12 trace observer 失败与 CI #13 精确隔离
+
+- CI12 commit `0ec4832df07f9189232e4e9939c1cd951e8d7c5b` 已在三个 `main` ref 上一致。普通 CI run `33175188848` / job `98861853310` 通过 unit/type/build、官方 MySQL 与 browser install 后，只在 WebKit theme-performance 失败：baseline P95/max 18/18ms；transition 先 72/70ms，后 22 帧均为 9–19ms；P95 70ms 超过未改变的 35ms 门，max 72ms 仍低于未改变的 100ms 门。tail 未运行，没有 release。
+- 根因是专用 timing project 继承 `trace: retain-on-failure`，点击后的 trace snapshot/screencast 与紧随其后的 rAF 采样竞争。focused contract 先 1/14 RED；最小实现只给 Firefox/WebKit 两个 theme-performance 项目设 `trace: 'off'`，全局失败 trace 与 critical projects 不变，worker/retry/browser/test/sample/threshold/geometry/motion 均未放宽，随后 14/14 GREEN。
+- 官方 `mcr.microsoft.com/playwright:v1.62.1-noble` 通过 WebKit theme 1/1、Firefox theme 1/1，并新鲜完成完整六项目 matrix 336/336（24.0 分钟、workers=1、retries=0），当前浏览器合计 338/338；完整 frontend 88/88、425/425、typecheck、885-module build、workflow contract/validator 均通过。本轮 owned 容器和两个专属卷已精确清理，并确认无残留 `lifeops-ci13-` 资源。产品/CSS/image/visual/browser test source 未变化；real-Fastify 12/12 与其他冻结门禁保持 source-current。
+- CI13 saved checkpoint 已生成于 `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci13-trace-isolation-uncommitted-local-checkpoint.json`，root `82D6C92069A051A2D09C74766B01E0BCEF74AE04674C6960A9F6B17B09E62519`、610 sorted inputs、462 同序 evidence rows、43 visual states。父边界仍为 30/10/4，P6-T6 Step 7 开放。唯一下一动作：完成 execution/startup/handoff 与最终审计，commit/push 后观察新普通 CI；全绿才 dispatch 唯一一次已授权 `1.0.0` release。

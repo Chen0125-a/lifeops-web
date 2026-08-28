@@ -85,6 +85,7 @@ describe('Playwright acceptance environment', () => {
     expect((sharedWebkit?.grepInvert as RegExp).source).toBe(exactTitle)
     for (const performanceProject of [performanceFirefox, performanceWebkit]) {
       expect(performanceProject).toMatchObject({ timeout: 90_000 })
+      expect(performanceProject?.use).toMatchObject({ trace: 'off' })
       expect(performanceProject?.testMatch).toBeInstanceOf(RegExp)
       expect((performanceProject?.testMatch as RegExp).source).toBe('public-home\\.spec\\.ts')
       expect(performanceProject?.grep).toBeInstanceOf(RegExp)
