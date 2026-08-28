@@ -4768,6 +4768,7 @@
         "outputs/evidence/browser/p6-t6-ci8-final-visual/night-rest-390x844.png",
         "outputs/evidence/browser/p6-t6-ci8-final-visual/public-browser-performance-manifest.json",
         "outputs/evidence/p6-t6-ci11-manifest-refresh.mjs",
+        "outputs/evidence/p6-t6-ci12-mysql-hook-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci8-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci9-manifest-refresh.mjs",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
@@ -4783,6 +4784,7 @@
         "outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-motion-owner-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-webkit-motion-engine-change-control-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci11-final-local-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci12-mysql-hook-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json",
@@ -4825,6 +4827,8 @@
         "scripts/verify-execution-contract.test.mjs",
         "scripts/verify-release-manifest.ps1",
         "scripts/verify-release-manifest.test.ps1",
+        "server/src/deployment.test.ts",
+        "server/src/mysql.integration.test.ts",
         "src/App.tsx",
         "src/components/auth/EntryTransition.test.tsx",
         "src/components/auth/EntryTransition.tsx",
@@ -5257,6 +5261,7 @@
         "outputs/evidence/browser/p6-t6-ci8-final-visual/night-rest-390x844.png",
         "outputs/evidence/browser/p6-t6-ci8-final-visual/public-browser-performance-manifest.json",
         "outputs/evidence/p6-t6-ci11-manifest-refresh.mjs",
+        "outputs/evidence/p6-t6-ci12-mysql-hook-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci8-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci9-manifest-refresh.mjs",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
@@ -5272,6 +5277,7 @@
         "outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-motion-owner-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-webkit-motion-engine-change-control-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci11-final-local-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci12-mysql-hook-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json",
@@ -5302,6 +5308,8 @@
         "scripts/run-lighthouse.mjs",
         "scripts/validate-workflows.test.ps1",
         "scripts/verify-execution-contract.test.mjs",
+        "server/src/deployment.test.ts",
+        "server/src/mysql.integration.test.ts",
         "src/App.tsx",
         "src/components/auth/EntryTransition.test.tsx",
         "src/components/auth/EntryTransition.tsx",
@@ -5751,7 +5759,11 @@
         "src/privateEntryModules.ts": "The authenticated private route graph is loaded once from explicit interaction intent so the unchanged 680 ms aperture ends on a painted private workspace instead of an intermediate blank frame.",
         "tests-remote/knowledge.spec.ts": "Only the long real-Fastify knowledge journey receives a 60-second test timeout; action and autosave timeouts remain unchanged.",
         "docs/traceability/task-execution.json": "This bounded P6-T6 CI11 path is covered by the final unit, type, build, browser, image and data gates under the unchanged release boundary.",
-        "outputs/final/visual-evidence-manifest.json": "The frozen-source CI11 browser, image, Lighthouse or data gate regenerated this existing evidence artifact; its current bytes are hashed before evidence revalidation."
+        "outputs/final/visual-evidence-manifest.json": "The frozen-source CI11 browser, image, Lighthouse or data gate regenerated this existing evidence artifact; its current bytes are hashed before evidence revalidation.",
+        "outputs/evidence/p6-t6-ci12-mysql-hook-manifest-refresh.mjs": "The deterministic CI12 refresh preserves all 462 evidence IDs, rehashes current sources and artifacts and records the bounded MySQL harness revalidation without promoting registry status.",
+        "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci12-mysql-hook-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI12 MySQL harness correction to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.",
+        "server/src/deployment.test.ts": "The delivery harness contract requires only the cold MySQL setup hook to declare a 60-second budget and forbids a global Vitest hook-timeout relaxation.",
+        "server/src/mysql.integration.test.ts": "The official MySQL suite retains every exact behavioral assertion while its cold concurrent-migration setup receives an explicit 60-second hook budget instead of Vitest's 10-second default."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
@@ -5944,6 +5956,12 @@
           "command": "npm.cmd test -- src/App.test.tsx src/pages/PublicHomePage.test.tsx",
           "exitCode": 1,
           "failure": "The focused entry contract first proved the authenticated private graph was not requested until after route state changed, permitting the aperture to end before the private workspace was ready. The shared preload owner now starts from login submit intent and is consumed by the unchanged lazy route boundary."
+        },
+        {
+          "classification": "behavioral",
+          "command": "npm.cmd run test:server -- server/src/deployment.test.ts",
+          "exitCode": 1,
+          "failure": "The focused delivery-harness contract failed 1/5 because the cold concurrent-migration beforeAll still inherited Vitest's 10-second default. The implementation adds only a 60-second setup-hook argument and leaves every behavioral test timeout and global hookTimeout unchanged."
         }
       ],
       "evidenceIds": [
@@ -5977,11 +5995,11 @@
       "externalBlockers": [
         {
           "code": "ORDINARY_CI_PENDING",
-          "fact": "The user explicitly authorized all remaining in-scope LifeOps commit and push operations. The current CI11 implementation/evidence WIP must first be committed and pushed to exact https://github.com/Chen0125-a/lifeops-web.git main, then a fresh ordinary CI must reach a genuinely green terminal result before release dispatch."
+          "fact": "Ordinary CI run 33173546102 passed unit, type and build, then the official MySQL setup exceeded Vitest's default 10-second beforeAll budget and skipped all 50 exact tests. The bounded two-file harness correction passes local focused/full/unit/type/build and a fresh official MySQL 8.4.10 50/50 gate. The user's continuing authorization covers committing and pushing it; a new ordinary CI must still become genuinely green."
         },
         {
           "code": "RELEASE_PREREQUISITES_PENDING",
-          "fact": "The same explicit authorization covers exactly one additional 1.0.0 release dispatch only after the fresh ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent until that single authorized workflow completes; no credential value is read or recorded."
+          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33173546102."
         }
       ]
     }

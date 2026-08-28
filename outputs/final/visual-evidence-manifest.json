@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "1BCAFA4C8BCD579BB00677FD43623E8ED0A4A47CA1DBB328F50E871D3388557B",
+  "checkpointRootSha256": "3E852927E0496CC31A7F7D677F0DAEBE887EE3333562D7974FBE0E9F7CDD4D85",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-28T12:44:15.959Z",
+  "generatedAt": "2026-08-28T13:16:35.121Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
@@ -1193,12 +1193,13 @@
   "latestRevalidation": {
     "taskId": "P6-T6",
     "step": 7,
-    "revalidatedAt": "2026-08-28T12:44:15.959Z",
-    "checkpointRootSha256": "1BCAFA4C8BCD579BB00677FD43623E8ED0A4A47CA1DBB328F50E871D3388557B",
+    "revalidatedAt": "2026-08-28T13:16:35.121Z",
+    "checkpointRootSha256": "3E852927E0496CC31A7F7D677F0DAEBE887EE3333562D7974FBE0E9F7CDD4D85",
     "metricsPath": "outputs/evidence/browser/p2-t5/public-browser-performance-manifest.json",
     "metricsSha256": "5FB3BEE1F51E49D8AB312E0FE148736C381592474261731711D2FFD57D17043A",
     "openedOriginalResolution": true,
     "captureCount": 9,
-    "conclusion": "pass"
+    "conclusion": "pass",
+    "note": "The CI12 change is confined to the server MySQL test harness; no product, browser, style, image or visual artifact source changed after the nine CI11 images were opened."
   }
 }

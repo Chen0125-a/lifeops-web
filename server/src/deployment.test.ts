@@ -35,6 +35,17 @@ describe('production delivery contract', () => {
     expect(workflow).toContain('LIFEOPS_MYSQL_INTEGRATION: "true"')
   })
 
+  it('gives only the cold MySQL setup hook an explicit startup budget', async () => {
+    const integration = await read('server/src/mysql.integration.test.ts')
+    const setupBlock = integration.slice(
+      integration.indexOf('beforeAll('),
+      integration.indexOf('afterAll('),
+    ).trim()
+
+    expect(setupBlock).toMatch(/\},\s*60_000\s*\)$/)
+    expect(integration).not.toContain('hookTimeout')
+  })
+
   it('publishes immutable digests and updates the GitOps values file', async () => {
     const workflow = await read('.github/workflows/release.yml')
     expect(workflow).toContain('uhub.service.ucloud.cn/chenucloud/lifeops-web')

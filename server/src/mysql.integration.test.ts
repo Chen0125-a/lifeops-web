@@ -135,7 +135,7 @@ describe.runIf(integration)('MySQL 8.4 integration', () => {
     })
     await Promise.all([runMigrations(pool), runMigrations(pool)])
     store = new MySqlLifeStore(pool, { now: () => '2026-08-15T12:00:00.000Z' })
-  })
+  }, 60_000)
 
   afterAll(async () => pool?.end())
 

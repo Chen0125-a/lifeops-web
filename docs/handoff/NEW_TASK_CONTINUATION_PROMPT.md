@@ -389,3 +389,11 @@ npm.cmd run test:execution
 - saved/fresh/evidence/visual checkpoint 一致为 root `1BCAFA4C8BCD579BB00677FD43623E8ED0A4A47CA1DBB328F50E871D3388557B`、610 inputs、462 同序 evidence rows；visual manifest 累计 43 states，其中 9 张为本次 CI #11 逐张复核图。execution-contract 为 97/97。父边界仍为 30/10/4，P6-T6 Step 7 仍开放。
 - 用户已经明确持续授权项目范围内全部剩余操作：创建窄账本提交、把实现与账本提交推送到精确 GitHub `main`，并且仅在新普通 CI 全绿后额外 dispatch 恰好一次 `1.0.0`。不得读取凭据值、kubeconfig，不得执行 kubectl、Helm install/upgrade、Argo sync/rollback 或 cluster smoke。
 - 唯一下一动作：提交窄账本，推送两个提交，等待普通 CI 终态；若全绿则执行唯一一次已授权 release，并以真实 UHub digest、digest-bound SBOM/provenance 与 exact-digest smoke 证据继续完成 P6-T6 -> P6-T7 -> P6-T8 -> phase-close -> project-close。
+
+## 29. 2026-08-28 最新接班增量：CI #11 冷 MySQL 失败与 CI #12 harness 修复
+
+- 已授权 push 完成后，本地 `HEAD`、`origin/main` 与远端 `main` 均为 `a668e001b6dec8fffeb33ce07046134fe87f7ca2`。普通 CI run `33173546102` 通过 unit/type/build 后，仅因官方 MySQL 冷启动并发 migration 的 `beforeAll` 超过 Vitest 默认 10 秒而失败；50 个 exact tests 全部未运行，browser/Helm/image tail 未执行，没有 release。
+- 该失败是测试环境边界，不是产品 behavioral RED。focused delivery-harness 合同先 1/5 RED，要求仅该 cold setup hook 为 60 秒并禁止全局 `hookTimeout`；实现只把 `beforeAll` 改为 `beforeAll(..., 60_000)`，随后 5/5 GREEN。新官方 MySQL 8.4.10 容器用 SQL readiness 探针通过 50/50 exact tests（26.39 秒）并精确清理。
+- CI-equivalent front half 新鲜通过 frontend 425/425、server 362 ordinary +50 exact-only skips、双 typecheck/双 build、885 modules；workflow contract/validator 与 execution 97/97 通过。产品/browser/image/visual source 未改变，既有 Playwright 338/338、real-Fastify 12/12、Helm/security/image/data/Lighthouse 与 9 张逐图复核证据保持 source-current。
+- CI #12 checkpoint 为 `3E852927E0496CC31A7F7D677F0DAEBE887EE3333562D7974FBE0E9F7CDD4D85`、610 inputs、462 evidence rows、43 visual states；边界仍为 30/10/4，P6-T6 Step 7 仍开放。
+- 唯一下一动作：startup/handoff 与最终审计后，在持续授权下 commit/push 本次窄修复并观察下一普通 CI；只有它真实全绿才执行唯一一次已授权 `1.0.0` release。

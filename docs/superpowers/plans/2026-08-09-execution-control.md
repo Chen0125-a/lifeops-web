@@ -1428,3 +1428,19 @@ Commit the narrow ledger atom, push the implementation and ledger commits to exa
 ```powershell
 node scripts/verify-execution-contract.mjs --mode startup
 ```
+
+## 2026-08-28 P6-T6 CI #11 cold-MySQL failure and CI #12 harness correction
+
+The authorized push is complete: local `HEAD`, `origin/main` and verified remote `main` are `a668e001b6dec8fffeb33ce07046134fe87f7ca2`. Ordinary CI run `33173546102` passed the combined unit, typecheck and production-build step, then failed the official MySQL 8.4.10 step because the cold concurrent-migration `beforeAll` exceeded Vitest's default 10-second hook budget. All 50 exact tests were skipped, the browser/Helm/image tail did not run, and no release was dispatched.
+
+This was an infrastructure-boundary failure rather than a product behavioral failure. Focused TDD added a delivery-harness contract that requires only the cold MySQL setup hook to declare 60 seconds and forbids global `hookTimeout`; it failed 1/5 before implementation and passes 5/5 after changing only `beforeAll(..., 60_000)`. A new owned official MySQL 8.4.10 container using an actual SQL-readiness probe applies all 16 migrations and passes 50/50 exact tests in 26.39 seconds, then is removed. Fresh CI-equivalent front-half gates pass frontend 88/88 files and 425/425 tests, server 59 passed files plus one exact-only skipped file with 362 ordinary tests and 50 skips, both typechecks, both builds and the 885-module frontend build. Workflow contract/validator and execution-contract 97/97 also pass. No product, browser, style, image or visual source changed, so the already frozen official Linux Playwright 338/338, real-Fastify 12/12, Helm/security/image/data/Lighthouse gates and nine opened images remain source-current.
+
+The CI #12 checkpoint is `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci12-mysql-hook-uncommitted-local-checkpoint.json`, root `3E852927E0496CC31A7F7D677F0DAEBE887EE3333562D7974FBE0E9F7CDD4D85`, with 610 inputs, 462 evidence rows and 43 visual states. Saved, fresh, evidence and visual-manifest identities match. Parent truth remains 30 verified-local / 10 partial / 4 pending and P6-T6 Step 7 remains open.
+
+### Exact next atomic action
+
+Run standalone startup/handoff and the final identity/authority/diff/JSON/credential-safe audit, commit and push this bounded CI harness correction under the user's continuing authorization, then observe the next ordinary CI. Only after that run is genuinely green may the single authorized `1.0.0` release be dispatched.
+
+```powershell
+npm.cmd run test:execution
+```
