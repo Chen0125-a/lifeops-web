@@ -44,12 +44,12 @@ async function expectCompleteInset(page: Page, ring: Locator, viewport: { width:
     const stageStyle = getComputedStyle(stage)
     const scalerStyle = getComputedStyle(scaler)
     return {
-      centerX: rootStyle.getPropertyValue('--scene-center-x'),
-      centerY: rootStyle.getPropertyValue('--scene-center-y'),
+      centerX: stageStyle.getPropertyValue('--scene-center-x'),
+      centerY: stageStyle.getPropertyValue('--scene-center-y'),
       rootTransform: rootStyle.transform,
       rootBox: root.getBoundingClientRect().toJSON(),
       rootPosition: rootStyle.position,
-      scale: rootStyle.getPropertyValue('--scene-scale'),
+      scale: stageStyle.getPropertyValue('--scene-scale'),
       stageLeft: stageStyle.left,
       stageTop: stageStyle.top,
       stageTransform: stageStyle.transform,
@@ -209,6 +209,7 @@ test('desktop login lets the astrolabe lead while the title recedes on composito
       dialogBackdropFilter: dialogStyle.backdropFilter,
       stageZ: Number.parseInt(stageStyle.zIndex, 10),
       transitionProperties: referenceStyle.transitionProperty.split(',').map((value) => value.trim()),
+      willChangeProperties: referenceStyle.willChange.split(',').map((value) => value.trim()),
     }
   })
 
@@ -218,7 +219,7 @@ test('desktop login lets the astrolabe lead while the title recedes on composito
   expect(depth.stageZ).toBeGreaterThan(depth.copyZ)
   expect(depth.backdropFilter).toBe('none')
   expect(depth.dialogBackdropFilter).toBe('none')
-  expect(depth.transitionProperties).toContain('transform')
+  expect(depth.willChangeProperties).toContain('transform')
   expect(depth.transitionProperties).not.toContain('top')
   expect(depth.transitionProperties).not.toContain('left')
 })

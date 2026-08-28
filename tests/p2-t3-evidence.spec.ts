@@ -186,8 +186,14 @@ test('capture the P2-T3 login golden-slice evidence set', async ({ browser, cont
     )
   }
   expect(entrySamples.some((sample) => sample.entryActive)).toBe(true)
-  expect(entrySamples.at(-1)?.path).toBe('/app/overview')
+  expect(entrySamples.at(-1)).toMatchObject({
+    entryActive: false,
+    path: '/app/overview',
+    surface: 'daylight',
+  })
   expect(entrySamples.map((sample) => sample.backgroundColor)).not.toContain('rgb(255, 255, 255)')
+  await expect(page.locator('[data-private-shell]')).toBeVisible()
+  await expect(page.locator('.route-gate')).toHaveCount(0)
 
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await prepare(page, 'night')

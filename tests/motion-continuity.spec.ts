@@ -55,28 +55,119 @@ test('detail return restores focus, theme and live playheads from the desktop si
 })
 
 test('interrupted login reverses from the live frame and leaves a fixed usable exit', async ({ page, browserName }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' })
   await page.goto('/')
   const trigger = page.getByRole('button', { name: '登录 LifeOps' })
   await expect(page.locator('[data-public-orbit]')).toHaveAttribute('data-motion-enhanced', 'true')
+  if (browserName === 'webkit') await waitForStableFrameCadence(page, 420, 12)
   await trigger.click()
   await expect(page.getByLabel('账号')).toBeFocused()
   await page.waitForTimeout(140)
-  const sceneWitness = () => page.locator('[data-public-orbit]').evaluate((element) => JSON.stringify({
-    stageLeft: getComputedStyle(element.querySelector('[data-orbit-reference-stage]')!).left,
-    stageOpacity: getComputedStyle(element.querySelector('[data-orbit-reference-stage]')!).opacity,
-    stageTransform: getComputedStyle(element.querySelector('[data-orbit-reference-stage]')!).transform,
-  }))
-  const before = await sceneWitness()
-  await page.keyboard.press('Escape')
-  if (browserName === 'webkit') {
-    await expect.poll(sceneWitness, { timeout: 12_000 }).not.toBe(before)
-  } else {
-    await page.waitForTimeout(80)
-  }
-  const after = await sceneWitness()
-  expect(after).not.toBe(before)
+  const before = await page.locator('[data-public-orbit]').evaluate((element) => {
+    const stage = element.querySelector<HTMLElement>('[data-orbit-reference-stage]')!
+    const bounds = stage.getBoundingClientRect()
+    return {
+      layoutResizing: stage.dataset.layoutResizing ?? null,
+      width: bounds.width,
+      y: bounds.y,
+    }
+  })
+  const reverseMetrics = await page.evaluate(async (initialState) => {
+    type ReverseFrame = {
+      elapsedMs: number
+      layoutResizing: string | null
+      phase: string | null
+      sceneScale: string
+      sceneState: string | null
+      stageTransform: string
+      width: number
+      y: number
+    }
+    const readStage = () => {
+      const orbit = document.querySelector<HTMLElement>('[data-public-orbit]')!
+      const stage = orbit.querySelector<HTMLElement>('[data-orbit-reference-stage]')!
+      const bounds = stage.getBoundingClientRect()
+      const stageStyle = getComputedStyle(stage)
+      return {
+        layoutResizing: stage.dataset.layoutResizing ?? null,
+        sceneScale: stageStyle.getPropertyValue('--scene-scale').trim(),
+        sceneState: orbit.dataset.sceneState ?? null,
+        stageTransform: stageStyle.transform,
+        width: bounds.width,
+        y: bounds.y,
+      }
+    }
+    const startedAt = performance.now()
+    const frames: ReverseFrame[] = []
+    const mediaReduced = matchMedia('(prefers-reduced-motion: reduce)').matches
+    const orbitReduced = document.querySelector<HTMLElement>('[data-public-orbit]')?.dataset.reducedMotion ?? null
+    const historyState = { ...(window.history.state ?? {}) }
+    delete historyState['lifeops-login-task']
+    window.history.replaceState(historyState, '', window.location.href)
+    window.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Escape' }))
+    const immediatePhase = document.querySelector<HTMLElement>('.public-home')?.dataset.loginPhase ?? null
+    while (performance.now() - startedAt < 1_200) {
+      const now = await new Promise<number>((resolveFrame) => {
+        const fallback = window.setTimeout(() => resolveFrame(performance.now()), 16)
+        requestAnimationFrame((frameTime) => {
+          window.clearTimeout(fallback)
+          resolveFrame(frameTime)
+        })
+      })
+      const phase = document.querySelector<HTMLElement>('.public-home')?.dataset.loginPhase ?? null
+      frames.push({
+        elapsedMs: now - startedAt,
+        phase,
+        ...readStage(),
+      })
+      if (phase === 'closed') break
+    }
+    const closingStarted = frames.find((frame) => frame.phase === 'closing')
+    const firstMovement = frames.find((frame) => frame.phase === 'closing' && (
+      innerWidth >= 900
+        ? frame.width > initialState.width + 0.1
+        : frame.y > initialState.y + 0.1
+    ))
+    const closed = frames.find((frame) => frame.phase === 'closed')
+    return {
+      closedMs: closingStarted && closed ? closed.elapsedMs - closingStarted.elapsedMs : null,
+      finalWidth: closed?.width ?? null,
+      finalY: closed?.y ?? null,
+      finalSceneScale: closed?.sceneScale ?? null,
+      finalSceneState: closed?.sceneState ?? null,
+      finalStageTransform: closed?.stageTransform ?? null,
+      firstPhase: frames[0]?.phase ?? null,
+      firstLayoutResizing: frames[0]?.layoutResizing ?? null,
+      firstSceneScale: frames[0]?.sceneScale ?? null,
+      firstSceneState: frames[0]?.sceneState ?? null,
+      firstStageTransform: frames[0]?.stageTransform ?? null,
+      firstMovementMs: closingStarted && firstMovement ? firstMovement.elapsedMs - closingStarted.elapsedMs : null,
+      immediatePhase,
+      initialWidth: initialState.width,
+      initialY: initialState.y,
+      initialLayoutResizing: initialState.layoutResizing,
+      intermediateFrames: frames.filter((frame) => frame.phase === 'closing').length,
+      layoutResizingFrames: frames.filter((frame) => frame.layoutResizing === 'true').length,
+      mediaReduced,
+      orbitReduced,
+    }
+  }, before)
+  const reverseTimeout = browserName === 'webkit' ? 12_000 : 5_000
   await expect(trigger).toBeFocused()
-  await expect(page.locator('[data-login-phase="closed"]')).toBeVisible({ timeout: browserName === 'webkit' ? 12_000 : 5_000 })
+  await expect(page.locator('[data-login-phase="closed"]')).toBeVisible({ timeout: reverseTimeout })
+  expect(reverseMetrics.firstMovementMs, JSON.stringify(reverseMetrics)).not.toBeNull()
+  expect(reverseMetrics.firstMovementMs!).toBeLessThanOrEqual(360)
+  expect(reverseMetrics.intermediateFrames).toBeGreaterThan(0)
+  expect(reverseMetrics.closedMs).not.toBeNull()
+  expect(reverseMetrics.closedMs!).toBeGreaterThanOrEqual(300)
+  expect(reverseMetrics.closedMs!).toBeLessThanOrEqual(900)
+  if (browserName === 'webkit') {
+    if (await page.evaluate(() => innerWidth >= 900)) {
+      expect(reverseMetrics.finalWidth!).toBeGreaterThan(reverseMetrics.initialWidth)
+    } else {
+      expect(reverseMetrics.finalY!).toBeGreaterThan(reverseMetrics.initialY)
+    }
+  }
 
   const detailTrigger = page.locator('[data-public-object="doing"]')
   await detailTrigger.focus()

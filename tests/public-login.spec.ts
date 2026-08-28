@@ -103,6 +103,42 @@ test('explicit public day stays separate from the authenticated private daylight
   )
 })
 
+test('authenticated entry preloads the private shell before the 680ms aperture completes', async ({ page, browserName }) => {
+  let delayedPrivateModules = 0
+  let releasePrivateModules!: () => void
+  const privateModulesReleased = new Promise<void>((resolveRelease) => {
+    releasePrivateModules = resolveRelease
+  })
+  await page.route(/\/assets\/(?:PrivateAppBoundary|OverviewPage)-[^/]+\.js/, async (route) => {
+    delayedPrivateModules += 1
+    await privateModulesReleased
+    await route.continue()
+  })
+
+  await page.goto('/')
+  await page.getByRole('button', { name: '登录 LifeOps' }).click()
+  await expect(page.locator('[data-login-phase="open"]')).toBeVisible()
+  await expect.poll(() => delayedPrivateModules).toBeGreaterThan(0)
+  await page.getByLabel('账号').fill('owner@example.com')
+  await page.getByRole('textbox', { name: '密码', exact: true }).fill('local-preview')
+  await page.getByRole('button', { name: '进入 LifeOps' }).click()
+
+  const transition = page.locator('.entry-transition')
+  await expect(page.getByTestId('private-daylight-prepaint')).toBeVisible()
+  await expect(transition).toHaveAttribute('data-entry-ready', 'false')
+  await expect(page).toHaveURL(/\/$/)
+  await expect(page.locator('.route-gate')).toHaveCount(0)
+
+  releasePrivateModules()
+  await expect(transition).toHaveAttribute('data-entry-ready', 'true', {
+    timeout: webkitTransitionTimeout(browserName),
+  })
+  await expect(page.locator('[data-private-shell]')).toBeVisible({
+    timeout: webkitTransitionTimeout(browserName),
+  })
+  await expect(page.locator('.route-gate')).toHaveCount(0)
+})
+
 test('desktop login is a 460px live-playhead task layer beside a fully inset 520px astrolabe', async ({ page, browserName }) => {
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.goto('/')
@@ -139,11 +175,22 @@ test('desktop login is a 460px live-playhead task layer beside a fully inset 520
   const movingTo = await object.boundingBox()
   expect(Math.hypot(movingTo!.x - movingFrom!.x, movingTo!.y - movingFrom!.y)).toBeGreaterThan(1)
 
-  const beforeClose = await object.boundingBox()
-  await page.getByRole('button', { name: '关闭登录窗口' }).click()
-  await page.waitForTimeout(40)
-  const afterClose = await object.boundingBox()
-  expect(Math.hypot(afterClose!.x - beforeClose!.x, afterClose!.y - beforeClose!.y)).toBeLessThan(80)
+  const closeContinuity = await page.evaluate(() => {
+    const publicObject = document.querySelector<HTMLElement>('[data-public-object="now"]')!
+    const closeButton = document.querySelector<HTMLButtonElement>('[aria-label="关闭登录窗口"]')!
+    const beforeClose = publicObject.getBoundingClientRect()
+    closeButton.click()
+    const afterClose = publicObject.getBoundingClientRect()
+    return {
+      afterClose: afterClose.toJSON(),
+      beforeClose: beforeClose.toJSON(),
+      distance: Math.hypot(afterClose.x - beforeClose.x, afterClose.y - beforeClose.y),
+    }
+  })
+  expect(
+    closeContinuity.distance,
+    JSON.stringify(closeContinuity),
+  ).toBeLessThan(80)
   await expect(trigger).toBeFocused()
   if (browserName !== 'webkit') await page.waitForTimeout(760)
   await expect(page.locator('[data-public-scene="rest"]')).toBeVisible()

@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "392830696452098E2959CA5871A6951F6AAE8E3F4A57A48482A0665BCC8F8225",
+  "checkpointRootSha256": "1BCAFA4C8BCD579BB00677FD43623E8ED0A4A47CA1DBB328F50E871D3388557B",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-28T08:38:05.700Z",
+  "generatedAt": "2026-08-28T12:44:15.959Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
     "npm": "11.12.1",
     "playwright": "1.62.1",
-    "browserPolicy": "Chromium, Firefox and WebKit run serially in the official Linux Playwright image with workers=1 and retries=0; host-only headed Firefox launch failure from the restricted non-GUI sandbox is classified as environment-only",
+    "browserPolicy": "Chromium, Firefox and WebKit run serially in the official Playwright 1.62.1 Linux image with workers=1 and retries=0; dedicated WebKit and Firefox theme-performance projects run in fresh browser processes.",
     "font": "Noto Sans SC Variable 5.3.0 bundled locally, with system sans-serif fallback",
     "locale": "zh-CN",
     "timezone": "Asia/Shanghai (UTC+08:00)",
@@ -40,7 +40,7 @@
       "openedOriginalResolution": true,
       "result": "pass",
       "screenshotSha256": "2485C85155968213D94C7C53169DB4F3CA024488BC985DB610DCCDB256E2D066",
-      "traceSha256": "43A446E7FF28E44F561EA68A8736E7575EDBFB6DD22D3339EE35C536AAD269E7"
+      "traceSha256": "2A352B8DD32ED1501A46EB692C2648B4FD83FF00FF53ECDB9FE0DAFA28776225"
     },
     {
       "id": "public-night-login-desktop",
@@ -58,7 +58,7 @@
       "result": "pass",
       "screenshotSha256": "CF44F636154B7661965E24D22039FA7FE1DF6A80928E98BC83A48B70F839593E",
       "filmstripSha256": "4AA920192C4EB1D38193AB365E5BFBAC1DE93C80EC6337EA93DE3A76ED1753DB",
-      "traceSha256": "45791622E51E8E10CA82AE1ADFC4A0E78E17BF3FF6F24CCD19109565A6793534"
+      "traceSha256": "1E0787562C894EA167095B5E403C8C8389F4A8E3184053AF93905F477471B3DF"
     },
     {
       "id": "public-day-login-desktop",
@@ -75,7 +75,7 @@
       "openedOriginalResolution": true,
       "result": "pass",
       "screenshotSha256": "BA5ED6FD8D0C7BDF1A972B27C5D69BB478571EE530A9C9C31317CF03BDB07175",
-      "traceSha256": "45791622E51E8E10CA82AE1ADFC4A0E78E17BF3FF6F24CCD19109565A6793534"
+      "traceSha256": "1E0787562C894EA167095B5E403C8C8389F4A8E3184053AF93905F477471B3DF"
     },
     {
       "id": "public-night-rest-phone",
@@ -92,7 +92,7 @@
       "openedOriginalResolution": true,
       "result": "pass",
       "screenshotSha256": "2E8EEBCFE984B5F79156DB4299E281465E01C7F62C80460E819418A6CF2DB769",
-      "traceSha256": "43A446E7FF28E44F561EA68A8736E7575EDBFB6DD22D3339EE35C536AAD269E7"
+      "traceSha256": "2A352B8DD32ED1501A46EB692C2648B4FD83FF00FF53ECDB9FE0DAFA28776225"
     },
     {
       "id": "public-night-login-phone",
@@ -110,7 +110,7 @@
       "result": "pass",
       "screenshotSha256": "33E82EAD985B97DF313D96EB2282B3FB9D49760E723CEAA2710619A2011EEFC4",
       "filmstripSha256": "4AA920192C4EB1D38193AB365E5BFBAC1DE93C80EC6337EA93DE3A76ED1753DB",
-      "traceSha256": "45791622E51E8E10CA82AE1ADFC4A0E78E17BF3FF6F24CCD19109565A6793534"
+      "traceSha256": "1E0787562C894EA167095B5E403C8C8389F4A8E3184053AF93905F477471B3DF"
     },
     {
       "id": "public-login-rotation-continuity",
@@ -133,7 +133,7 @@
         "matrix(0.728347, -0.685208, 0.685208, 0.728347, 0, 0)"
       ],
       "filmstripSha256": "8B978819333CB5308FD8F8E96B952D7549AF0CA18CB34D6BCBD86FC6C2027AAD",
-      "traceSha256": "45791622E51E8E10CA82AE1ADFC4A0E78E17BF3FF6F24CCD19109565A6793534"
+      "traceSha256": "1E0787562C894EA167095B5E403C8C8389F4A8E3184053AF93905F477471B3DF"
     },
     {
       "id": "public-breakpoint-matrix",
@@ -149,9 +149,9 @@
       "reviewer": "primary-agent",
       "openedOriginalResolution": true,
       "result": "pass",
-      "screenshotSha256": "D8649E14B224E5AF9FBCCB6747A48AA3C6A07A274313B58DD458A1E31F42AFC5",
+      "screenshotSha256": "44D9302F6562113A5D69A0DD34559CF40075085FFB3EF251700781B5C85D8E06",
       "filmstripSha256": "4AA920192C4EB1D38193AB365E5BFBAC1DE93C80EC6337EA93DE3A76ED1753DB",
-      "traceSha256": "43A446E7FF28E44F561EA68A8736E7575EDBFB6DD22D3339EE35C536AAD269E7"
+      "traceSha256": "2A352B8DD32ED1501A46EB692C2648B4FD83FF00FF53ECDB9FE0DAFA28776225"
     },
     {
       "id": "public-five-details",
@@ -168,8 +168,8 @@
       "openedOriginalResolution": true,
       "result": "pass",
       "screenshotSha256": "FE4A97BDE73D1C0F0FF0334BD48D51ECA8224D49ADD49E70679D81C453242689",
-      "filmstripSha256": "17D2D66AD47C2377E01358ACF7E7518EDCCFF8C527D92550A5A529DD5548682D",
-      "traceSha256": "43A446E7FF28E44F561EA68A8736E7575EDBFB6DD22D3339EE35C536AAD269E7"
+      "filmstripSha256": "638D8DD6F56365258579C53779F96425AF0AAC68B3EBDC0E5FE880594245B411",
+      "traceSha256": "2A352B8DD32ED1501A46EB692C2648B4FD83FF00FF53ECDB9FE0DAFA28776225"
     },
     {
       "id": "private-core-and-life-workspaces",
@@ -185,9 +185,9 @@
       "reviewer": "primary-agent",
       "openedOriginalResolution": true,
       "result": "pass",
-      "screenshotSha256": "7E5CB549F01B163CDA70CFD24793006FAFF7A7E45809C1F3BA83995584275EC5",
+      "screenshotSha256": "1BA2DBF44DD8AB1676B2B6EE71FA406C407E3B73D19F40CF703F8729D61BF573",
       "filmstripSha256": "6C0D93BCCBA8F7445DE3A4D0EFEA665CFF0CF8A083F26078F1926F6AE6E2C2BC",
-      "traceSha256": "4B68B5F0876E16535D442CA9684763041F1B8B6547BB2DF1BAFD24FC0DF409FB"
+      "traceSha256": "26B38FFC4E1C83BADCA95BEBF288D1D2C55207F1C2EC5C8FB6500E84B08DBFA5"
     },
     {
       "id": "platform-global-overlays-and-settings",
@@ -203,7 +203,7 @@
       "reviewer": "primary-agent",
       "openedOriginalResolution": true,
       "result": "pass",
-      "screenshotSha256": "5812C512501D685B743E0DF744E86D5F79F84A5FA0F15770230AFAD1C41C0413",
+      "screenshotSha256": "E16AAEB8893E353D2D7DD7DA33D4A1AB7A49B16EB56BAF76C3634795009411F6",
       "filmstripSha256": "CC09485CB3C4F2AFAB3F4531F08CFD90BD086B869E10D1B49D5E4C3483848AED",
       "traceSha256": "6FB87DE363D6AD9D4AE5A85B5601828C07244433F759A9F61E344635B40F860F"
     },
@@ -713,7 +713,7 @@
         "themeSurfaces": "atomic",
         "outerRingSafeInset": "pass"
       },
-      "screenshotSha256": "A69F447AA3CBF2B0AF37AF0C71A8ABBAF05BF6C6CAA2959018D0A61BE9E97F30"
+      "screenshotSha256": "955F9A9AE8F443A9D0B7BD9C8855D8D8ED783E1F10B3B7E2C6EF2D20391E16EB"
     },
     {
       "id": "p6-t6-ci9-day-login-desktop",
@@ -741,7 +741,7 @@
         "themeSurfaces": "atomic",
         "outerRingSafeInset": "pass"
       },
-      "screenshotSha256": "9A981D5EC6C60A938F8B43F0BAE2CD63E01BE0547B1BC1469285022301866612"
+      "screenshotSha256": "B0AE726E5F0CF43A379A523EA92CE6938CAED20AD3C609766716FDFAD134ACEB"
     },
     {
       "id": "p6-t6-ci9-night-rest-desktop",
@@ -769,7 +769,7 @@
         "themeSurfaces": "atomic",
         "outerRingSafeInset": "pass"
       },
-      "screenshotSha256": "5152E2010782D08D3486B3D4C50057BD921E35CEEF04DBF8DF7E2CB279502224"
+      "screenshotSha256": "94F76DD019478795A94C297E6F7E0B6F8830EA1E29634438BBC7EE08FADACFFD"
     },
     {
       "id": "p6-t6-ci9-night-login-desktop",
@@ -797,7 +797,7 @@
         "themeSurfaces": "atomic",
         "outerRingSafeInset": "pass"
       },
-      "screenshotSha256": "B6324BAF11A3B21125494989679BA3F73AFB6D7FB8AB0142543D2E1CBEFC2ABE"
+      "screenshotSha256": "77F9E8FB4141134A729631389ED5E00DAD0CB630D847D6E41B6944042296DE9C"
     },
     {
       "id": "p6-t6-ci9-day-rest-phone",
@@ -825,7 +825,7 @@
         "themeSurfaces": "atomic",
         "outerRingSafeInset": "pass"
       },
-      "screenshotSha256": "8D982CAD229955086CE825B0AD3AAB0DC5E76D7BCD0DBF025ACB26D25DB01408"
+      "screenshotSha256": "C620214167D0C36AF391A0D4D9DE1BE3BA1086B5A70285A6E565872F5B6C8FC4"
     },
     {
       "id": "p6-t6-ci9-day-login-phone",
@@ -853,7 +853,7 @@
         "themeSurfaces": "atomic",
         "outerRingSafeInset": "pass"
       },
-      "screenshotSha256": "6007ABD6EF477AD75F1A341E42BFCC4A40800E9F3D165C0F479D20127BB92670"
+      "screenshotSha256": "D7FFC7756BFC3ECA44860711A816B7EE7306FBF3A9193CAFA49F57106216DF11"
     },
     {
       "id": "p6-t6-ci9-night-rest-phone",
@@ -881,7 +881,7 @@
         "themeSurfaces": "atomic",
         "outerRingSafeInset": "pass"
       },
-      "screenshotSha256": "EF3610953763A87CA326DCE431E0B9C7DF1457C5203645212178DAE16E280651"
+      "screenshotSha256": "0E3CC4D79AA07E0B04556F2FED400EB5D7E4A765F113E67899D6FC4E29CCC62A"
     },
     {
       "id": "p6-t6-ci9-night-login-phone",
@@ -909,7 +909,261 @@
         "themeSurfaces": "atomic",
         "outerRingSafeInset": "pass"
       },
-      "screenshotSha256": "BF4D7AB49C856C80EAE183423911FD5D8F7EFCFEDA5817461BA11B1B782A6AFF"
+      "screenshotSha256": "127857BD75AAFD343ACA256F89CF793BA1A9BDE7FC7281D098ACEB79E2A7939C"
+    },
+    {
+      "id": "p6-t6-ci11-day-rest-desktop",
+      "browser": "Playwright Chromium 1.62.1 frozen-source acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci11-day-rest",
+      "screenshotPath": "outputs/evidence/browser/p2-t3/1440x900-day-home-paused.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "visible",
+        "themeSurfaces": "atomic",
+        "outerRingSafeInset": "pass",
+        "sceneOwner": "single-cancelable-matrix-interpolation"
+      },
+      "screenshotSha256": "955F9A9AE8F443A9D0B7BD9C8855D8D8ED783E1F10B3B7E2C6EF2D20391E16EB"
+    },
+    {
+      "id": "p6-t6-ci11-day-login-desktop",
+      "browser": "Playwright Chromium 1.62.1 frozen-source acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci11-day-login",
+      "screenshotPath": "outputs/evidence/browser/p2-t3/1440x900-day-login-open.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": null,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "hidden",
+        "themeSurfaces": "atomic",
+        "outerRingSafeInset": "pass",
+        "sceneOwner": "single-cancelable-matrix-interpolation"
+      },
+      "screenshotSha256": "B0AE726E5F0CF43A379A523EA92CE6938CAED20AD3C609766716FDFAD134ACEB"
+    },
+    {
+      "id": "p6-t6-ci11-night-rest-desktop",
+      "browser": "Playwright Chromium 1.62.1 frozen-source acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci11-night-rest",
+      "screenshotPath": "outputs/evidence/browser/p2-t3/1440x900-night-home-paused.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "visible",
+        "themeSurfaces": "atomic",
+        "outerRingSafeInset": "pass",
+        "sceneOwner": "single-cancelable-matrix-interpolation"
+      },
+      "screenshotSha256": "94F76DD019478795A94C297E6F7E0B6F8830EA1E29634438BBC7EE08FADACFFD"
+    },
+    {
+      "id": "p6-t6-ci11-night-login-desktop",
+      "browser": "Playwright Chromium 1.62.1 frozen-source acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci11-night-login",
+      "screenshotPath": "outputs/evidence/browser/p2-t3/1440x900-night-login-open.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": null,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "hidden",
+        "themeSurfaces": "atomic",
+        "outerRingSafeInset": "pass",
+        "sceneOwner": "single-cancelable-matrix-interpolation"
+      },
+      "screenshotSha256": "77F9E8FB4141134A729631389ED5E00DAD0CB630D847D6E41B6944042296DE9C"
+    },
+    {
+      "id": "p6-t6-ci11-day-rest-phone",
+      "browser": "Playwright Chromium 1.62.1 frozen-source acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci11-day-rest",
+      "screenshotPath": "outputs/evidence/browser/p2-t3/390x844-day-home-paused.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "visible",
+        "themeSurfaces": "atomic",
+        "outerRingSafeInset": "pass",
+        "sceneOwner": "single-cancelable-matrix-interpolation"
+      },
+      "screenshotSha256": "C620214167D0C36AF391A0D4D9DE1BE3BA1086B5A70285A6E565872F5B6C8FC4"
+    },
+    {
+      "id": "p6-t6-ci11-day-login-phone",
+      "browser": "Playwright Chromium 1.62.1 frozen-source acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci11-day-login",
+      "screenshotPath": "outputs/evidence/browser/p2-t3/390x844-day-login-open.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": null,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "hidden",
+        "themeSurfaces": "atomic",
+        "outerRingSafeInset": "pass",
+        "sceneOwner": "single-cancelable-matrix-interpolation"
+      },
+      "screenshotSha256": "D7FFC7756BFC3ECA44860711A816B7EE7306FBF3A9193CAFA49F57106216DF11"
+    },
+    {
+      "id": "p6-t6-ci11-night-rest-phone",
+      "browser": "Playwright Chromium 1.62.1 frozen-source acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci11-night-rest",
+      "screenshotPath": "outputs/evidence/browser/p2-t3/390x844-night-home-paused.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "visible",
+        "themeSurfaces": "atomic",
+        "outerRingSafeInset": "pass",
+        "sceneOwner": "single-cancelable-matrix-interpolation"
+      },
+      "screenshotSha256": "0E3CC4D79AA07E0B04556F2FED400EB5D7E4A765F113E67899D6FC4E29CCC62A"
+    },
+    {
+      "id": "p6-t6-ci11-night-login-phone",
+      "browser": "Playwright Chromium 1.62.1 frozen-source acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci11-night-login",
+      "screenshotPath": "outputs/evidence/browser/p2-t3/390x844-night-login-open.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": null,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "titleSupportVisibility": "hidden",
+        "themeSurfaces": "atomic",
+        "outerRingSafeInset": "pass",
+        "sceneOwner": "single-cancelable-matrix-interpolation"
+      },
+      "screenshotSha256": "127857BD75AAFD343ACA256F89CF793BA1A9BDE7FC7281D098ACEB79E2A7939C"
+    },
+    {
+      "id": "p6-t6-ci11-entry-1000ms",
+      "browser": "Playwright Chromium 1.62.1 frozen-source acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "private-daylight",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci11-authenticated-entry",
+      "screenshotPath": "outputs/evidence/browser/p2-t3/filmstrip-entry-normal-1000ms.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "frameMs": 1000,
+        "privateShellPainted": true,
+        "blankFrame": false,
+        "route": "/app/overview"
+      },
+      "screenshotSha256": "E73A3F04819534FB9EB537D324975EAB5F26F7E374529606612B0B42759257E0"
     }
   ],
   "performanceReports": [
@@ -922,7 +1176,7 @@
       "reducedMotion": "no-preference",
       "fixtureSeedId": "production-preview-public",
       "result": "pass",
-      "sha256": "B629452208FB6B4B359C027C5482F6F285D85DD990AFC1B16059A7031F9105B0"
+      "sha256": "AF6E55E889394AB51787235F8F29C8FBABE6A42AF352EACC32893DEF8EF46F90"
     },
     {
       "id": "private-performance",
@@ -933,18 +1187,18 @@
       "reducedMotion": "no-preference",
       "fixtureSeedId": "authenticated-production-preview",
       "result": "pass",
-      "sha256": "C5326CED2217F2C6E2A5E2F91806A7FD89C1147F94364B93058AD32E32C35F2A"
+      "sha256": "D243044DA587D567C61B5F8E08F99604F5D0266F909ACC510CDE140F2771D5CC"
     }
   ],
   "latestRevalidation": {
     "taskId": "P6-T6",
     "step": 7,
-    "revalidatedAt": "2026-08-28T08:38:05.700Z",
-    "checkpointRootSha256": "392830696452098E2959CA5871A6951F6AAE8E3F4A57A48482A0665BCC8F8225",
+    "revalidatedAt": "2026-08-28T12:44:15.959Z",
+    "checkpointRootSha256": "1BCAFA4C8BCD579BB00677FD43623E8ED0A4A47CA1DBB328F50E871D3388557B",
     "metricsPath": "outputs/evidence/browser/p2-t5/public-browser-performance-manifest.json",
-    "metricsSha256": "CD727BD707DD2C8E763FCEAEBA547E86DE065E95E7856D47F7AE74951B6C99F0",
+    "metricsSha256": "5FB3BEE1F51E49D8AB312E0FE148736C381592474261731711D2FFD57D17043A",
     "openedOriginalResolution": true,
-    "captureCount": 8,
+    "captureCount": 9,
     "conclusion": "pass"
   }
 }

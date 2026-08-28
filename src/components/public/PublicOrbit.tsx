@@ -56,6 +56,91 @@ interface ContinuousAnimation {
   durationMs: number
 }
 
+interface SceneTransformAnimation {
+  cancel: () => void
+}
+
+interface SceneTransformMatrix {
+  a: number
+  b: number
+  c: number
+  d: number
+  e: number
+  f: number
+}
+
+function readSceneTransformMatrix(transform: string): SceneTransformMatrix {
+  if (typeof DOMMatrixReadOnly === 'function') {
+    try {
+      const matrix = new DOMMatrixReadOnly(transform === 'none' ? undefined : transform)
+      return { a: matrix.a, b: matrix.b, c: matrix.c, d: matrix.d, e: matrix.e, f: matrix.f }
+    } catch {
+      // The identity fallback keeps non-layout DOM test environments deterministic.
+    }
+  }
+  return { a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 }
+}
+
+function sceneTransitionEase(progress: number) {
+  const coordinate = (time: number, first: number, second: number) => {
+    const inverse = 1 - time
+    return 3 * inverse * inverse * time * first + 3 * inverse * time * time * second + time * time * time
+  }
+  let lower = 0
+  let upper = 1
+  let parameter = progress
+  for (let iteration = 0; iteration < 12; iteration += 1) {
+    parameter = (lower + upper) / 2
+    if (coordinate(parameter, .22, .36) < progress) lower = parameter
+    else upper = parameter
+  }
+  return coordinate(parameter, 1, 1)
+}
+
+function startSceneTransformAnimation(
+  stage: HTMLElement,
+  fromTransform: string,
+  toTransform: string,
+): SceneTransformAnimation {
+  const from = readSceneTransformMatrix(fromTransform)
+  const to = readSceneTransformMatrix(toTransform)
+  const startedAt = performance.now()
+  let animationFrame = 0
+  let fallbackTimer = 0
+  let cancelled = false
+
+  const cancel = () => {
+    cancelled = true
+    window.cancelAnimationFrame(animationFrame)
+    window.clearTimeout(fallbackTimer)
+  }
+  const render = (now: number) => {
+    if (cancelled) return
+    const linearProgress = Math.min(1, Math.max(0, (now - startedAt) / 680))
+    const progress = sceneTransitionEase(linearProgress)
+    const value = (start: number, end: number) => start + (end - start) * progress
+    stage.style.transform = `matrix(${value(from.a, to.a)}, ${value(from.b, to.b)}, ${value(from.c, to.c)}, ${value(from.d, to.d)}, ${value(from.e, to.e)}, ${value(from.f, to.f)})`
+    if (linearProgress >= 1) return
+
+    let settled = false
+    animationFrame = window.requestAnimationFrame((frameTime) => {
+      if (settled) return
+      settled = true
+      window.clearTimeout(fallbackTimer)
+      render(frameTime)
+    })
+    fallbackTimer = window.setTimeout(() => {
+      if (settled) return
+      settled = true
+      window.cancelAnimationFrame(animationFrame)
+      render(performance.now())
+    }, 16)
+  }
+
+  render(startedAt)
+  return { cancel }
+}
+
 function normalizedAnimationPlayhead({ animation, durationMs }: ContinuousAnimation) {
   const currentTime = Number(animation.currentTime ?? 0)
   if (!Number.isFinite(currentTime) || !Number.isFinite(durationMs) || durationMs <= 0) return 0
@@ -84,6 +169,8 @@ function PublicOrbitComponent({
 }: PublicOrbitProps) {
   const navigate = useNavigate()
   const orbitRef = useRef<HTMLElement>(null)
+  const sceneTransformAnimationRef = useRef<SceneTransformAnimation | null>(null)
+  const animatedSceneRef = useRef(sceneState)
   const ringAnimationsRef = useRef(new Map<string, ContinuousAnimation>())
   const objectAnimationsRef = useRef(new Map<PublicDestinationSlug, ContinuousAnimation>())
   const progressRef = useRef(new Map<PublicDestinationSlug, number>(
@@ -107,6 +194,36 @@ function PublicOrbitComponent({
 
   const motionRate = sceneState === 'login' ? 1 / 3 : sceneState === 'entering' ? 2 / 3 : 1
   const motionSuspended = paused || documentHidden || !inViewport || reducedMotion
+
+  useLayoutEffect(() => {
+    const stage = orbitRef.current?.querySelector<HTMLElement>('[data-orbit-reference-stage]')
+    if (!stage) return
+
+    const previousScene = animatedSceneRef.current
+    animatedSceneRef.current = sceneState
+
+    if (previousScene === sceneState || reducedMotion) {
+      sceneTransformAnimationRef.current?.cancel()
+      sceneTransformAnimationRef.current = null
+      stage.style.removeProperty('transform')
+      const targetTransform = getComputedStyle(stage).transform
+      stage.style.transform = targetTransform
+      return
+    }
+
+    const liveTransform = getComputedStyle(stage).transform
+    sceneTransformAnimationRef.current?.cancel()
+    sceneTransformAnimationRef.current = null
+    stage.style.removeProperty('transform')
+    const targetTransform = getComputedStyle(stage).transform
+    stage.style.transform = liveTransform
+    void stage.offsetWidth
+    sceneTransformAnimationRef.current = startSceneTransformAnimation(stage, liveTransform, targetTransform)
+  }, [layoutRevision, reducedMotion, sceneState])
+
+  useEffect(() => () => {
+    sceneTransformAnimationRef.current?.cancel()
+  }, [])
 
   useLayoutEffect(() => {
     if (!restoreFocusId) return
@@ -447,6 +564,7 @@ function PublicOrbitComponent({
         data-orbit-reference-stage
         data-reference-height={PUBLIC_ORBIT_STAGE.height}
         data-reference-width={PUBLIC_ORBIT_STAGE.width}
+        data-scene-state={sceneState}
       >
         <svg
           aria-hidden="true"

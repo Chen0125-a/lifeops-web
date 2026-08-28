@@ -5,14 +5,18 @@ import { OrbitGlyph } from './components/public/OrbitGlyph'
 import type { PublicReturnState } from './components/public/publicReturnState'
 import { getPublicDestination, publicDestinationLayouts, type PublicDestinationSlug } from './content/publicDestinations'
 import { PublicHomePage } from './pages/PublicHomePage'
+import {
+  loadOverviewRoute,
+  loadPrivateAppBoundary,
+  readOverviewRoute,
+  readPrivateAppBoundary,
+} from './privateEntryModules'
 import { AuthProvider, useAuth } from './state/AuthContext'
 
 const TechnologyWorldPage = lazy(() => import('./pages/TechnologyWorldPage').then((module) => ({ default: module.TechnologyWorldPage })))
-const PrivateAppBoundary = lazy(() => import('./components/private/PrivateAppBoundary').then((module) => ({ default: module.PrivateAppBoundary })))
 const LifeLayout = lazy(() => import('./features/life/LifeLayout').then((module) => ({ default: module.LifeLayout })))
 const PublicSnapshotRoute = lazy(() => import('./pages/PublicSnapshotRoute').then((module) => ({ default: module.PublicSnapshotRoute })))
 const PublicDestinationPage = lazy(() => import('./pages/PublicDestinationPage').then((module) => ({ default: module.PublicDestinationPage })))
-const OverviewRoute = lazy(() => import('./features/overview/OverviewPage').then((module) => ({ default: module.OverviewRoute })))
 const GoalsPage = lazy(() => import('./features/goals/GoalsPage').then((module) => ({ default: module.GoalsPage })))
 const SchedulePage = lazy(() => import('./features/schedule/SchedulePage').then((module) => ({ default: module.SchedulePage })))
 const HabitsPage = lazy(() => import('./features/habits/HabitsPage').then((module) => ({ default: module.HabitsPage })))
@@ -33,6 +37,18 @@ const FitnessRoute = lazy(() => import('./features/life/fitness/FitnessPage').th
 const ShoppingPage = lazy(() => import('./features/life/shopping/ShoppingPage').then((module) => ({ default: module.ShoppingPage })))
 const LifeAnalyticsPage = lazy(() => import('./features/life/analytics/LifeAnalyticsPage').then((module) => ({ default: module.LifeAnalyticsPage })))
 const PlatformPage = lazy(() => import('./features/platform/PlatformPage').then((module) => ({ default: module.PlatformPage })))
+
+function PrivateAppBoundary() {
+  const module = readPrivateAppBoundary()
+  if (!module) throw loadPrivateAppBoundary()
+  return <module.PrivateAppBoundary />
+}
+
+function OverviewRoute() {
+  const module = readOverviewRoute()
+  if (!module) throw loadOverviewRoute()
+  return <module.OverviewRoute />
+}
 
 function deferredRoute(children: ReactNode) {
   return <Suspense fallback={<div aria-live="polite" className="route-gate">正在打开工作区…</div>}>{children}</Suspense>

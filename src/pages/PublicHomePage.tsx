@@ -12,6 +12,7 @@ import {
   type LoginScenePhase,
 } from '../motion/loginScene'
 import { gsap, useGSAP } from '../motion/publicGsap'
+import { preloadPrivateEntryModules } from '../privateEntryModules'
 import { type LifeOpsTheme, useLifeOpsTheme } from '../theme/theme'
 
 const LOGIN_HISTORY_STATE = 'lifeops-login-task'
@@ -206,6 +207,7 @@ export function PublicHomePage() {
   }, [])
 
   const openLogin = useCallback(() => {
+    void preloadPrivateEntryModules().catch(() => undefined)
     if (!loginHistoryArmedRef.current) {
       window.history.pushState(
         { ...(window.history.state ?? {}), [LOGIN_HISTORY_STATE]: true },
@@ -249,13 +251,18 @@ export function PublicHomePage() {
 
     const reducedMotion = typeof window.matchMedia === 'function'
       && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    setPrivateReady(reducedMotion)
-    if (reducedMotion) return
-    const firstFrame = window.requestAnimationFrame(() => {
-      const secondFrame = window.requestAnimationFrame(() => setPrivateReady(true))
-      prepaintFramesRef.current.push(secondFrame)
-    })
-    prepaintFramesRef.current.push(firstFrame)
+    const markPrivateReady = () => {
+      if (reducedMotion) {
+        setPrivateReady(true)
+        return
+      }
+      const firstFrame = window.requestAnimationFrame(() => {
+        const secondFrame = window.requestAnimationFrame(() => setPrivateReady(true))
+        prepaintFramesRef.current.push(secondFrame)
+      })
+      prepaintFramesRef.current.push(firstFrame)
+    }
+    void preloadPrivateEntryModules().then(markPrivateReady, markPrivateReady)
   }, [])
 
   const handleSceneRestored = useCallback(() => {
@@ -271,7 +278,6 @@ export function PublicHomePage() {
       )
       loginHistoryArmedRef.current = false
     }
-    dispatchLoginScene({ type: 'ENTRY_COMPLETED' })
     navigate('/app/overview', {
       state: {
         portalEntry: true,

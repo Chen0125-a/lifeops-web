@@ -10,6 +10,7 @@ async function login(page: import('@playwright/test').Page) {
 }
 
 test('real Fastify session creates, edits, relates and reloads private knowledge', async ({ page }) => {
+  test.setTimeout(60_000)
   const consoleErrors: string[] = []
   page.on('console', (message) => { if (message.type() === 'error') consoleErrors.push(message.text()) })
   await login(page)

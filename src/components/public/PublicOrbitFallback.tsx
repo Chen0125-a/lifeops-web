@@ -70,6 +70,7 @@ export function PublicOrbitFallback({
         data-orbit-reference-stage
         data-reference-height={PUBLIC_ORBIT_STAGE.height}
         data-reference-width={PUBLIC_ORBIT_STAGE.width}
+        data-scene-state={sceneState}
       >
         <svg aria-hidden="true" className="public-orbit__geometry" focusable="false" viewBox={`0 0 ${PUBLIC_ORBIT_STAGE.width} ${PUBLIC_ORBIT_STAGE.height}`}>
           {orbitDefinitions.map((orbit) => (
