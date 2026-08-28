@@ -5,7 +5,7 @@ import path from 'node:path'
 import { buildLocalCheckpoint } from '../../scripts/execution-contract/source-checkpoint.mjs'
 
 const root = process.cwd()
-const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-local-full-gates-uncommitted-local-checkpoint.json'
+const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json'
 const evidenceManifestPath = 'docs/traceability/evidence-manifest.json'
 const visualManifestPath = 'outputs/final/visual-evidence-manifest.json'
 const visualDirectory = 'outputs/evidence/browser/p6-t6-ci8-final-visual'

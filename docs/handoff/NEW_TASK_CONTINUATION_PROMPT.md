@@ -352,3 +352,9 @@ P6-T6 合法通过后，连续执行 P6-T6 task-close → deterministic checkpoi
 - 8 张 CI8 1440×900/390×844 day/night rest/login 图已由 primary executor 逐张按原分辨率打开；当前浏览器 manifest 在四断点均 overflow 0/labels 5，71 帧 P95/最大 16.8ms。直接复核保持 orbit-left/title-recede、深色 night login、手机全屏任务层、完整安全内缩与无中心光球。
 - 462 evidence rows 保持逻辑 ID 数与顺序，按磁盘当前 source/artifact 重绑。保存 checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-local-full-gates-uncommitted-local-checkpoint.json`，root `6F846F3DBA3BE53238B6F7ACF0B85D83BD1FC89A2C7E02607620B96D0C682D9C`，608 sorted inputs。边界仍为 30/10/4，Step 7 checkbox 仍未勾选。
 - 唯一下一动作：运行 execution/startup/handoff、saved/fresh/manifest、五 authority、diff/JSON/credential-safe 审计后创建本地实现/证据提交；随后重绑 post-commit checkpoint 并创建窄账本提交。任何新 push 与任何额外 `1.0.0` dispatch 分别需要新的明确授权；不得进入 P6-T7。
+
+## 22. 2026-08-28 最新接班增量：CI #8 本地实现提交与 push-authorization checkpoint
+
+- 当前 CI #8 实现/证据修订已提交为 `a2dd3375b382e41e332a9205253605b9e085e9ae`（`fix(theme): make public theme surfaces atomic`）。提交包含 24 个已审当前任务路径；历史 CI6 failure 目录与旧 CI7 WebKit soft-pause checkpoint 保持本地 untracked，未移动、未删除、未暂存。本轮 owned Playwright 容器已停止并自动移除，未触碰用户浏览器。
+- `origin/main` 仍为 `5585f0aabaebbbf05a76a8a12aa017445716a009`。post-commit checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json`，root `BC1A9D79B9D82BB8A96822EEDD7714623C28D3F450FA77B2C842B434CDB8EA51`，608 inputs、462 同序 evidence rows；边界仍为 30/10/4，Step 7 仍开放。
+- 包含本段的仓库提交是最终窄账本/checkpoint 原子。其创建后，唯一下一动作是取得新的明确授权，才能把 `a2dd337...` 与该精确 narrow HEAD 推送到 GitHub `main`；该授权不包含第二次 `1.0.0` dispatch，不得进入 P6-T7。

@@ -4644,6 +4644,7 @@
         "outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-motion-owner-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-webkit-motion-engine-change-control-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -4975,6 +4976,7 @@
         "outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-motion-owner-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-webkit-motion-engine-change-control-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5299,7 +5301,7 @@
       "externalBlockers": [
         {
           "code": "MAIN_PUSH_AUTHORIZATION_REQUIRED",
-          "fact": "The previously authorized push of 39c99cd81b2274badc54e6a9d867e70ab3ae55a2 and 5585f0aabaebbbf05a76a8a12aa017445716a009 is complete and consumed; local HEAD and origin/main are 5585f0aabaebbbf05a76a8a12aa017445716a009 before the current uncommitted CI #8 correction. Once the new implementation/evidence commit and its narrow ledger commit exist, pushing either to exact https://github.com/Chen0125-a/lifeops-web.git main is a new persistent remote mutation and requires fresh explicit user authorization. The historical browser-failure diagnostics and earlier motion-owner soft-pause checkpoint remain preserved locally and untracked; they are not required by the 462-row manifest. No credential, OTP, cookie, token or private key was read or recorded."
+          "fact": "The CI #8 implementation/current-evidence correction is committed locally on main as a2dd3375b382e41e332a9205253605b9e085e9ae while origin/main remains 5585f0aabaebbbf05a76a8a12aa017445716a009. The repository commit containing this exact fact is the final narrow ledger/checkpoint atom; once it exists, pushing a2dd3375b382e41e332a9205253605b9e085e9ae and that narrow HEAD to exact https://github.com/Chen0125-a/lifeops-web.git main is a new persistent remote mutation and requires fresh explicit user authorization. The historical browser-failure diagnostics and earlier motion-owner soft-pause checkpoint remain preserved locally and untracked; they are not required by the 462-row manifest. No credential, OTP, cookie, token or private key was read or recorded."
         },
         {
           "code": "RELEASE_RERUN_AUTHORIZATION_REQUIRED",

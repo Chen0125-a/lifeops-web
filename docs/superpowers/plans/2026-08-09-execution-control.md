@@ -1348,3 +1348,17 @@ Run `npm.cmd run test:execution`, standalone startup/handoff, saved/fresh/manife
 ```powershell
 npm.cmd run test:execution
 ```
+
+## 2026-08-28 P6-T6 CI #8 implementation commit and push-authorization checkpoint
+
+The reviewed CI #8 implementation/current-evidence correction is committed locally on `main` as `a2dd3375b382e41e332a9205253605b9e085e9ae` (`fix(theme): make public theme surfaces atomic`). The cached set contained 24 current-task paths and passed `git diff --cached --check`; the historical CI6 browser-failure directory and earlier CI7 WebKit soft-pause checkpoint remain local untracked assets and were not staged, moved or deleted. The explicitly owned Playwright container was stopped and auto-removed; no user browser was touched.
+
+`origin/main` remains `5585f0aabaebbbf05a76a8a12aa017445716a009`. The post-commit checkpoint is `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-push-authorization-soft-pause-uncommitted-local-checkpoint.json`, root `BC1A9D79B9D82BB8A96822EEDD7714623C28D3F450FA77B2C842B434CDB8EA51`, with 608 ordinal-sorted inputs and 462 unchanged-order evidence rows. The parent boundary remains 30/10/4 and P6-T6 Step 7 remains open.
+
+### Exact next atomic action
+
+Run the final execution-contract, standalone startup/handoff, saved/fresh/manifest identity, five authority hashes, JSON/diff and credential-safe staged review; commit this narrow ledger/checkpoint atom locally; then stop for fresh explicit authorization to push `a2dd3375b382e41e332a9205253605b9e085e9ae` and that exact narrow HEAD to GitHub `main`. Push authorization does not authorize an additional `1.0.0` dispatch. Do not enter P6-T7.
+
+```powershell
+npm.cmd run test:execution
+```
