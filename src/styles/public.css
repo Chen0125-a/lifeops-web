@@ -17,7 +17,6 @@
   overflow: hidden;
   color: var(--public-ink);
   background-color: var(--public-bg);
-  transition: background-color 900ms cubic-bezier(.2, .8, .2, 1);
 }
 
 .public-home[data-public-theme='night'] {
@@ -61,10 +60,6 @@
   content: none;
 }
 
-.public-home[data-public-theme='night'] .public-sky::before {
-  opacity: 0;
-}
-
 .public-home .public-sky__stars {
   position: absolute;
   inset: 0;
@@ -74,6 +69,10 @@
   transform: translateZ(0);
   transition: none;
   will-change: opacity;
+}
+
+.public-home[data-public-theme='night'] .public-sky::before {
+  opacity: 0;
 }
 
 .public-home[data-public-theme='night'] .public-sky__stars {
@@ -143,6 +142,9 @@
   height: 15px;
   border: 1.5px solid currentColor;
   border-radius: 50%;
+  transform: rotate(0);
+  transition: transform 420ms cubic-bezier(.2, .8, .2, 1);
+  will-change: transform;
 }
 
 .public-home .theme-switch__mark::after {
@@ -151,6 +153,10 @@
   inset: 3px;
   border-radius: 50%;
   background: currentColor;
+}
+
+.public-home[data-public-theme='night'] .theme-switch__mark {
+  transform: rotate(-180deg);
 }
 
 .public-home[data-public-theme='night'] .theme-switch__mark::after {
@@ -649,6 +655,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .public-home,
+  .public-home .theme-switch__mark,
   .public-home *,
   .public-home *::before,
   .public-home *::after {

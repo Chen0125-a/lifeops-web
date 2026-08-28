@@ -1328,3 +1328,23 @@ Run the final execution-contract, standalone startup/handoff, saved/fresh/manife
 ```powershell
 npm.cmd run test:execution
 ```
+
+## 2026-08-28 P6-T6 ordinary CI #8 theme-surface correction and local evidence convergence
+
+The user-authorized push of `39c99cd81b2274badc54e6a9d867e70ab3ae55a2` and `5585f0aabaebbbf05a76a8a12aa017445716a009` is complete and consumed. Local `HEAD` and `origin/main` are `5585f0aabaebbbf05a76a8a12aa017445716a009` before the current WIP. Ordinary CI run `33131639326`, job `98722279599`, passed unit, typecheck, production build and exact MySQL, then failed only the dedicated WebKit theme-performance assertion: baseline P95 25ms, transition P95 89ms against the unchanged 42ms budget, max 89ms under the unchanged 100ms ceiling. No release was dispatched.
+
+Focused TDD first rejected the retained full-viewport theme transitions. The minimal implementation makes root, day-sky and star surfaces switch atomically and keeps bounded 420ms transform feedback only on the existing theme-control mark, including its reduced-motion override. It does not lower workers, retries, browser coverage, thresholds or sample durations and does not change approved stable geometry, ring periods or motion rates.
+
+Fresh complete gates pass frontend 87/87 files and 412/412 tests, typecheck and an 884-module build; server 361 ordinary plus 50 exact-only skips, typecheck/build; official MySQL 8.4.10 exact 50/50; official Linux Playwright WebKit theme 1/1, Firefox theme 1/1 and full matrix 333/333 for 335/335 with workers=1/retries=0; official Linux real-Fastify 12/12; Helm/media/security/observability/workflow/release contracts; root/server production audits; current-source Web/API image smoke; the 16-migration data rehearsal; and Lighthouse 1.00/1.00/0.96/0.91. The host Lighthouse attempt was rejected as an environment failure because Windows denied cleanup of its owned temp directory; the unchanged gate passed in the official Linux Playwright container with its bundled Chrome 151 path.
+
+The primary executor opened all eight current CI8 1440×900/390×844 day/night rest/login images individually at original resolution. The current browser manifest reports zero overflow and five labels at all four viewports plus 71 frames at 16.8ms P95/maximum. Direct review preserves the approved orbit-left/title-recede depth, dark night login, complete mobile safe inset and unlit `05 / 此刻正在发生` center.
+
+All 462 evidence rows keep their logical IDs and order and are legally rebound to current checkpointed sources and current artifacts. The saved checkpoint is `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci8-theme-transition-local-full-gates-uncommitted-local-checkpoint.json`, root `6F846F3DBA3BE53238B6F7ACF0B85D83BD1FC89A2C7E02607620B96D0C682D9C`, with 608 ordinal-sorted inputs. Parent truth remains 30/10/4 and P6-T6 Step 7 remains open because UHub digests, digest-bound SBOM/provenance, exact-digest smoke and release success do not exist.
+
+### Exact next atomic action
+
+Run `npm.cmd run test:execution`, standalone startup/handoff, saved/fresh/manifest identity, five authority hashes, diff/JSON and credential-safe WIP review; create the local implementation/evidence commit; then rebind to the post-commit source root and create the narrow ledger commit. Any new exact GitHub `main` push and any additional `1.0.0` dispatch require separate fresh explicit authorization. Do not enter P6-T7.
+
+```powershell
+npm.cmd run test:execution
+```

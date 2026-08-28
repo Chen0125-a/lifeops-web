@@ -21,6 +21,7 @@ describe('Playwright acceptance environment', () => {
     expect(applicationTsConfig.exclude).toEqual([
       'src/playwrightConfig.test.ts',
       'src/motionProbeContract.test.ts',
+      'src/publicThemeCompositor.test.ts',
     ])
   })
 
