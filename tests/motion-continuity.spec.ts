@@ -2,6 +2,8 @@ import { expect, test } from '@playwright/test'
 import { installPrivateCoreFixture } from './private-core-fixtures'
 import { probeVerticalScrollOwners, recordMotionFrames, waitForStableFrameCadence } from './helpers/motionProbe'
 
+test.use({ trace: 'off' })
+
 test.beforeEach(async ({ page, browserName }, testInfo) => {
   if (browserName === 'webkit') {
     testInfo.setTimeout(90_000)
@@ -89,6 +91,8 @@ test('private routing keeps the shell and outgoing panel, restores focus and nev
   await page.goto('/app/overview')
   const navigation = page.getByRole('region', { name: '最近记录' }).getByRole('link', { name: '全部记录' })
   await navigation.focus()
+  await expect(navigation, 'Keyboard intent should evaluate the Records route before the transition sample.')
+    .toHaveAttribute('data-route-preload-state', 'ready')
   if (browserName === 'webkit') await waitForStableFrameCadence(page, 360, 10)
   const framePromise = recordMotionFrames(page, 360)
   await navigation.click()

@@ -1,5 +1,6 @@
 import { mkdir } from 'node:fs/promises'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 import { installLifeFixture } from './life-fixtures'
 
 const fixtureId = 'p3-t9-catalog-golden-slice-2026-08-22-v1'
@@ -114,10 +115,10 @@ test('P3-T9 catalog visual gate covers four viewports, 320 CSS px, 200% zoom and
       ])
       expect(Math.abs((headerBox!.y + headerBox!.height) - inspectorBox!.y), JSON.stringify({ viewport, headerBox, inspectorBox })).toBeLessThanOrEqual(1)
     }
-    await page.screenshot({ path: `${evidenceDir}/inventory-${viewport.name}.png`, fullPage: viewport.width > 1040 })
+    await screenshotToPath(page, { path: `${evidenceDir}/inventory-${viewport.name}.png`, fullPage: viewport.width > 1040 })
     if (viewport.width <= 768) {
       await page.getByRole('button', { name: '返回列表' }).click()
-      await page.screenshot({ path: `${evidenceDir}/inventory-list-${viewport.name}-full-page.png`, fullPage: true })
+      await screenshotToPath(page, { path: `${evidenceDir}/inventory-list-${viewport.name}-full-page.png`, fullPage: true })
     }
   }
 
@@ -125,13 +126,13 @@ test('P3-T9 catalog visual gate covers four viewports, 320 CSS px, 200% zoom and
   await page.goto('/app/life/ingredients')
   await page.evaluate(() => { document.documentElement.style.zoom = '2' })
   await expect(page.getByRole('heading', { name: '物品与库存', level: 1 })).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/inventory-200-percent-zoom.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/inventory-200-percent-zoom.png`, fullPage: true })
 
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto('/app/life/medicines')
   await expect(page.getByText('本页不验证或推断药品用法。需要医疗判断时请联系有资质的专业人员。')).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/medicine-390x844-reduced-motion.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/medicine-390x844-reduced-motion.png` })
 })
 
 test('P3-T9 keyboard, focus, Back, dense taxonomy, batch, editor and mobile task-layer journeys remain reversible', async ({ page }) => {
@@ -148,12 +149,12 @@ test('P3-T9 keyboard, focus, Back, dense taxonomy, batch, editor and mobile task
   await page.getByRole('searchbox', { name: '搜索当前列表' }).fill('')
   await page.getByRole('button', { name: '查看 燕麦' }).click()
   await expect(page).toHaveURL(/item=oat/)
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-01-inspector.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-01-inspector.png`, fullPage: true })
   await page.getByRole('button', { name: '编辑', exact: true }).click()
   const editor = page.getByRole('dialog', { name: '编辑 燕麦' })
   await expect(editor).toBeVisible()
   expect(await editor.evaluate((element) => element.contains(document.activeElement))).toBe(true)
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-02-editor.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-02-editor.png` })
   await page.keyboard.press('Escape')
   await expect(editor).toBeHidden()
   await page.goBack()
@@ -164,7 +165,7 @@ test('P3-T9 keyboard, focus, Back, dense taxonomy, batch, editor and mobile task
   await page.getByRole('button', { name: '批量修改 2 项' }).click()
   await page.getByLabel('批量分类').selectOption('fresh')
   await expect(page.getByRole('region', { name: '批量变更预览' })).toContainText('分类将改为“生鲜”')
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-03-batch-preview.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-03-batch-preview.png`, fullPage: true })
   await page.getByRole('button', { name: '确认批量修改' }).click()
   await page.getByRole('button', { name: '撤销上次批量修改' }).click()
 
@@ -172,7 +173,7 @@ test('P3-T9 keyboard, focus, Back, dense taxonomy, batch, editor and mobile task
   await page.goto('/app/life/household?kind=household_durable')
   await page.getByRole('button', { name: '查看 吸尘器' }).click()
   await expect(page.getByRole('button', { name: '返回列表' })).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-04-mobile-household-inspector.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-04-mobile-household-inspector.png` })
   await page.getByRole('button', { name: '返回列表' }).click()
   await expect(page).not.toHaveURL(/item=vacuum/)
 })
@@ -183,18 +184,18 @@ test('P3-T9 preserves the Today and Calendar daylight workspaces at desktop and 
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.goto('/app/life?date=2026-08-21')
   await expect(page.getByRole('heading', { name: '今日生活', level: 1 })).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/today-1440x900.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/today-1440x900.png`, fullPage: true })
   await page.goto('/app/life/calendar?date=2026-08-21')
   await expect(page.getByRole('dialog', { name: '生活日历' })).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/calendar-1440x900.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/calendar-1440x900.png`, fullPage: true })
 
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto('/app/life?date=2026-08-21')
   await expect(page.getByRole('heading', { name: '今日生活', level: 1 })).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/today-390x844.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/today-390x844.png`, fullPage: true })
   await page.goto('/app/life/calendar?date=2026-08-21')
   await expect(page.getByRole('dialog', { name: '生活日历' })).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/calendar-390x844.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/calendar-390x844.png`, fullPage: true })
 })
 
 test('P3-T9 failure states keep loading, 403, 500 retry, conflict and offline changes scoped', async ({ page, context }) => {

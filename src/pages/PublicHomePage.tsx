@@ -12,7 +12,7 @@ import {
   type LoginScenePhase,
 } from '../motion/loginScene'
 import { gsap, useGSAP } from '../motion/publicGsap'
-import { useLifeOpsTheme } from '../theme/theme'
+import { type LifeOpsTheme, useLifeOpsTheme } from '../theme/theme'
 
 const LOGIN_HISTORY_STATE = 'lifeops-login-task'
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
@@ -42,7 +42,7 @@ function useReducedMotionPreference() {
   return reducedMotion
 }
 
-function PublicHeroCopy({ hidden = false }: { hidden?: boolean }) {
+function PublicHeroCopy({ hidden = false, paintTheme }: { hidden?: boolean; paintTheme: LifeOpsTheme }) {
   const copyRef = useRef<HTMLDivElement>(null)
   const reducedMotion = useReducedMotionPreference()
   const playedRef = useRef(false)
@@ -112,6 +112,7 @@ function PublicHeroCopy({ hidden = false }: { hidden?: boolean }) {
       aria-hidden={hidden || undefined}
       className="public-hero__copy"
       data-layout-share="36"
+      data-public-surface-theme={paintTheme}
       data-testid="public-copy"
       ref={copyRef}
     >
@@ -172,9 +173,11 @@ export function PublicHomePage() {
   const [privateReady, setPrivateReady] = useState(false)
   const [orbitEnhancementReady, setOrbitEnhancementReady] = useState(false)
   const [motionPaused, setMotionPaused] = useState(false)
+  const [themeAssetReady, setThemeAssetReady] = useState(false)
   const [entryOrigin, setEntryOrigin] = useState<{ x: number; y: number; size: number }>()
   const homeRef = useRef<HTMLElement>(null)
   const loginTriggerRef = useRef<HTMLButtonElement>(null)
+  const starFieldRef = useRef<HTMLImageElement>(null)
   const loginHistoryArmedRef = useRef(false)
   const prepaintFramesRef = useRef<number[]>([])
   const loginVisible = loginScene.phase === 'opening'
@@ -316,6 +319,29 @@ export function PublicHomePage() {
   }, [])
 
   useEffect(() => {
+    const starField = starFieldRef.current
+    if (!starField) {
+      setThemeAssetReady(true)
+      return
+    }
+
+    let active = true
+    const finish = () => {
+      if (active) setThemeAssetReady(true)
+    }
+
+    if (typeof starField.decode === 'function') {
+      void starField.decode().then(finish, finish)
+    } else {
+      finish()
+    }
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  useEffect(() => {
     const idleWindow = window as Window & {
       requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number
       cancelIdleCallback?: (handle: number) => void
@@ -336,13 +362,13 @@ export function PublicHomePage() {
       data-public-theme={theme}
       ref={homeRef}
     >
-      <div aria-hidden="true" className="public-sky">
+      <div aria-hidden="true" className="public-sky" data-public-surface-theme={theme}>
         <div className="public-sky__stars">
-          <img alt="" aria-hidden="true" className="public-sky__field" data-star-field data-star-layers="far middle near" src="/public-stars.svg" />
+          <img alt="" aria-hidden="true" className="public-sky__field" data-star-field data-star-layers="far middle near" decoding="async" ref={starFieldRef} src="/public-stars.svg" />
         </div>
       </div>
 
-      <header className="public-header">
+      <header className="public-header" data-public-surface-theme={theme}>
         <Link aria-label="LifeOps 首页" className="wordmark" to="/">LifeOps</Link>
         <div className="public-header__actions">
           <button
@@ -359,6 +385,7 @@ export function PublicHomePage() {
           <button
             aria-label={`切换为${theme === 'day' ? '夜间' : '日间'}主题`}
             className="theme-switch"
+            disabled={!themeAssetReady}
             onClick={toggleTheme}
             type="button"
           >
@@ -380,11 +407,12 @@ export function PublicHomePage() {
       </header>
 
       <section aria-labelledby="hero-title" className="public-hero">
-        <PublicHeroCopy hidden={loginScene.phase !== 'closed'} />
+        <PublicHeroCopy hidden={loginScene.phase !== 'closed'} paintTheme={theme} />
 
         <div
           className="public-hero__stage"
           data-layout-share="64"
+          data-public-surface-theme={theme}
           data-testid="public-scene"
         >
           {orbitEnhancementReady ? (

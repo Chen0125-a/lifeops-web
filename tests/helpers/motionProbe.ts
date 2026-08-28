@@ -81,19 +81,25 @@ export async function recordMotionFrames(page: Page, durationMs: number) {
   return page.evaluate(async (duration) => {
     const frames: MotionFrame[] = []
     const started = performance.now()
+    const surface = document.querySelector<HTMLElement>('[data-private-shell], .public-home, .public-detail')
+    const surfaceColor = surface ? getComputedStyle(surface).backgroundColor : ''
+    const whiteSurface = !surface || surfaceColor === 'rgb(255, 255, 255)' || surfaceColor === 'rgba(255, 255, 255, 1)'
     await new Promise<void>((resolve) => {
       const sample = (at: number) => {
-        const surface = document.querySelector<HTMLElement>('[data-private-shell], .public-home, .public-detail')
-        const color = surface ? getComputedStyle(surface).backgroundColor : ''
+        const activeElement = document.activeElement instanceof HTMLElement ? document.activeElement : null
         frames.push({
           at: Math.round((at - started) * 100) / 100,
           pathname: location.pathname,
           shell: Boolean(document.querySelector('[data-private-shell]')),
           main: Boolean(document.querySelector('main')),
           routePanels: document.querySelectorAll('[data-route-key]').length,
-          whiteFrame: !surface || color === 'rgb(255, 255, 255)' || color === 'rgba(255, 255, 255, 1)',
-          activeElement: document.activeElement instanceof HTMLElement
-            ? document.activeElement.getAttribute('aria-label') || document.activeElement.textContent?.trim() || document.activeElement.tagName
+          whiteFrame: !surface?.isConnected || whiteSurface,
+          activeElement: activeElement
+            ? activeElement.getAttribute('aria-label')
+              || activeElement.id
+              || activeElement.getAttribute('name')
+              || activeElement.getAttribute('href')
+              || activeElement.tagName
             : '',
         })
         if (at - started < duration) requestAnimationFrame(sample)

@@ -83,6 +83,7 @@ function NativeRoutePanel({
 }) {
   const panelRef = useRef<HTMLDivElement>(null)
   const enterAnimationRef = useRef<Animation | null>(null)
+  const contentFrameRef = useRef<number | null>(null)
   const initialDirection = useRef(enterDirection).current
   const initialReducedMotion = useRef(Boolean(reducedMotion)).current
   const deferContent = id > 0
@@ -112,13 +113,18 @@ function NativeRoutePanel({
       if (!active || enterAnimationRef.current !== animation) return
       panel.style.opacity = '1'
       panel.style.transform = 'none'
-      setContentReady(true)
       animation.cancel()
       enterAnimationRef.current = null
+      contentFrameRef.current = requestAnimationFrame(() => {
+        contentFrameRef.current = null
+        if (active) setContentReady(true)
+      })
     }).catch(() => undefined)
     return () => {
       active = false
       animation.cancel()
+      if (contentFrameRef.current !== null) cancelAnimationFrame(contentFrameRef.current)
+      contentFrameRef.current = null
       if (enterAnimationRef.current === animation) enterAnimationRef.current = null
     }
   }, [deferContent, initialDirection, initialReducedMotion])
@@ -127,12 +133,19 @@ function NativeRoutePanel({
     if (phase !== 'outgoing') return
     const panel = panelRef.current
     if (!panel) return
-    const from = getComputedStyle(panel)
-    const fromTransform = from.transform
-    panel.style.opacity = from.opacity
-    panel.style.transform = fromTransform
-    enterAnimationRef.current?.cancel()
+    const enterAnimation = enterAnimationRef.current
+    if (enterAnimation) {
+      const from = getComputedStyle(panel)
+      panel.style.opacity = from.opacity
+      panel.style.transform = from.transform
+      enterAnimation.cancel()
+    } else {
+      panel.style.opacity = '1'
+      panel.style.transform = 'none'
+    }
     enterAnimationRef.current = null
+    if (contentFrameRef.current !== null) cancelAnimationFrame(contentFrameRef.current)
+    contentFrameRef.current = null
     const timer = window.setTimeout(() => onExited(id), reducedMotion ? 0 : ROUTE_TRANSITION_DURATION)
     return () => window.clearTimeout(timer)
   }, [id, onExited, phase, reducedMotion])
@@ -147,7 +160,6 @@ function NativeRoutePanel({
       data-route-panel-current={isCurrent ? true : undefined}
       data-route-panel-phase={phase}
       aria-hidden={isCurrent ? undefined : true}
-      inert={isCurrent ? undefined : true}
       style={isCurrent ? undefined : { inset: 0, pointerEvents: 'none', position: 'absolute', width: '100%' }}
     >
       {contentReady ? children : (

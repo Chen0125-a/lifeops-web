@@ -1,5 +1,6 @@
 import { mkdir } from 'node:fs/promises'
 import { expect, test, type BrowserContext, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const fixtureId = 'p3-t10-recipes-cooking-golden-slice-2026-08-22-v1'
 const evidenceDir = 'outputs/evidence/p3-t10-life-recipes-browser-gate'
@@ -166,10 +167,10 @@ test('P3-T10 visual gate covers four standard viewports, 320 CSS px, 200% zoom a
       const [headerBox, inspectorBox] = await Promise.all([page.locator('.workspace-header').boundingBox(), page.locator('.recipe-inspector').boundingBox()])
       expect(Math.abs((headerBox!.y + headerBox!.height) - inspectorBox!.y), JSON.stringify({ viewport, headerBox, inspectorBox })).toBeLessThanOrEqual(1)
     }
-    await page.screenshot({ path: `${evidenceDir}/recipes-${viewport.name}.png`, fullPage: viewport.width > 1040 })
+    await screenshotToPath(page, { path: `${evidenceDir}/recipes-${viewport.name}.png`, fullPage: viewport.width > 1040 })
     if (viewport.width <= 768) {
       await page.getByRole('button', { name: '返回食谱列表' }).click()
-      await page.screenshot({ path: `${evidenceDir}/recipe-list-${viewport.name}-full-page.png`, fullPage: true })
+      await screenshotToPath(page, { path: `${evidenceDir}/recipe-list-${viewport.name}-full-page.png`, fullPage: true })
     }
   }
 
@@ -177,14 +178,14 @@ test('P3-T10 visual gate covers four standard viewports, 320 CSS px, 200% zoom a
   await page.goto('/app/life/recipes?recipe=recipe-1')
   await page.evaluate(() => { document.documentElement.style.zoom = '2' })
   await expect(page.getByRole('region', { name: '番茄鸡蛋饭详情' })).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/recipes-200-percent-zoom.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/recipes-200-percent-zoom.png` })
 
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto('/app/life/recipes?recipe=recipe-incomplete')
   await expect(page.getByText('牛奶：缺少单位换算')).toBeVisible()
   await expect(page.getByRole('button', { name: '开始做菜' })).toBeDisabled()
-  await page.screenshot({ path: `${evidenceDir}/recipe-incomplete-390x844-reduced-motion.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/recipe-incomplete-390x844-reduced-motion.png` })
 })
 
 test('P3-T10 keyboard, focus, Back, scaling, pinned versions, version impact and relations stay reversible', async ({ page }) => {
@@ -200,7 +201,7 @@ test('P3-T10 keyboard, focus, Back, scaling, pinned versions, version impact and
   await expect(inspector.getByRole('link', { name: '米饭' }).locator('..')).toContainText('100 g')
   await inspector.getByRole('button', { name: '查看版本 1' }).click()
   await expect(inspector.getByText('固定版本 1')).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-01-pinned-version.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-01-pinned-version.png`, fullPage: true })
 
   await inspector.getByRole('button', { name: '编辑食谱' }).click()
   const editor = page.getByRole('dialog', { name: '编辑番茄鸡蛋饭' })
@@ -211,7 +212,7 @@ test('P3-T10 keyboard, focus, Back, scaling, pinned versions, version impact and
   const preview = page.getByRole('dialog', { name: '版本影响预览' })
   await expect(preview.getByText('将创建版本 3')).toBeVisible()
   await expect(preview.getByText('影响 2 个未来计划')).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-02-version-impact.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-02-version-impact.png` })
   await preview.getByRole('button', { name: '返回编辑' }).click()
   await editor.getByRole('button', { name: '关闭编辑器' }).click()
 
@@ -227,7 +228,7 @@ test('P3-T10 keyboard, focus, Back, scaling, pinned versions, version impact and
   await expect(relationView.getByText('关系列表始终保留为完整入口', { exact: false })).toBeVisible()
   await relationView.getByRole('button', { name: '关系列表' }).click()
   await expect(relationView.getByRole('table', { name: '食谱与食材关系列表' })).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-03-relations-list.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-03-relations-list.png`, fullPage: true })
   await relationView.getByRole('button', { name: '返回食谱' }).click()
   await expect(page.getByRole('region', { name: '番茄鸡蛋饭详情' })).toBeVisible()
   await page.getByRole('button', { name: '返回食谱列表' }).click()
@@ -244,7 +245,7 @@ test('P3-T10 cooking mode persists progress, resumes and previews one factual co
   await page.getByRole('button', { name: '开始做菜' }).click()
   const cooking = page.getByRole('dialog', { name: '做菜模式：番茄鸡蛋饭' })
   await expect(cooking.getByText('第 1 / 2 步')).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-04-cooking-start.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-04-cooking-start.png` })
   await cooking.getByRole('button', { name: '启动计时 切好配料' }).click()
   await cooking.getByRole('spinbutton', { name: /实际用量 米饭/ }).fill('180')
   await cooking.getByRole('button', { name: '保存做菜进度' }).click()
@@ -252,7 +253,7 @@ test('P3-T10 cooking mode persists progress, resumes and previews one factual co
   await page.getByRole('button', { name: '继续做菜' }).click()
   const resumed = page.getByRole('dialog', { name: '做菜模式：番茄鸡蛋饭' })
   await expect(resumed.getByRole('spinbutton', { name: /实际用量 米饭/ })).toHaveValue('180')
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-05-cooking-resumed.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-05-cooking-resumed.png` })
   await resumed.getByRole('button', { name: '提升为新版本' }).click()
   await expect(resumed.getByText('已提升为食谱版本 3')).toBeVisible()
   await resumed.getByRole('button', { name: '准备完成' }).click()
@@ -260,7 +261,7 @@ test('P3-T10 cooking mode persists progress, resumes and previews one factual co
   await expect(preview.getByText('将消耗：米饭 180 g；鸡蛋 2 个')).toBeVisible()
   await expect(preview.getByText('剩余成品 3 份')).toBeVisible()
   await expect(preview.getByText('总营养 640 kcal · 总成本 ¥5.40')).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-06-completion-preview.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-06-completion-preview.png` })
   await preview.getByRole('button', { name: '确认完成' }).click()
   await expect(page.getByText('已记录吃掉 1 份，并保存 3 份成品库存。')).toBeVisible()
 })

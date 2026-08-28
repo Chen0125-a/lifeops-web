@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p4-t3')
 
@@ -38,13 +39,13 @@ test('standalone Obsidian settings preserves preview-before-apply, fallback, per
   ]) {
     await page.setViewportSize(viewport)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true)
-    await page.screenshot({ path: resolve(evidenceDir, viewport.file), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, viewport.file), fullPage: true })
   }
 
   await page.setViewportSize({ width: 320, height: 900 })
   await page.evaluate(() => { document.documentElement.style.fontSize = '200%' })
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true)
-  await page.screenshot({ path: resolve(evidenceDir, 'settings-fallback-320x900-200pct.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'settings-fallback-320x900-200pct.png'), fullPage: true })
 
   await page.setViewportSize({ width: 390, height: 844 })
   await page.evaluate(() => { document.documentElement.style.fontSize = '' })
@@ -55,7 +56,7 @@ test('standalone Obsidian settings preserves preview-before-apply, fallback, per
   expect(await page.evaluate(() => (window as unknown as Record<string, unknown>).__obsidianApplyCount)).toBe(0)
   await expect(page.getByRole('button', { name: '确认并应用' })).toBeDisabled()
   await page.getByRole('group', { name: 'note-2 冲突处理' }).getByRole('button', { name: '保留 Web 版本' }).click()
-  await page.screenshot({ path: resolve(evidenceDir, 'settings-preview-390x844.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'settings-preview-390x844.png'), fullPage: true })
   await page.getByRole('button', { name: '确认并应用' }).click()
   expect(await page.evaluate(() => (window as unknown as Record<string, unknown>).__obsidianApplyCount)).toBe(1)
 
@@ -67,5 +68,5 @@ test('standalone Obsidian settings preserves preview-before-apply, fallback, per
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await mountSettings(page, 'fallback')
   expect(await page.locator('#obsidian-browser-harness').evaluate((root) => root.getAnimations().length)).toBe(0)
-  await page.screenshot({ path: resolve(evidenceDir, 'settings-fallback-390x844-reduced-motion.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'settings-fallback-390x844-reduced-motion.png'), fullPage: true })
 })

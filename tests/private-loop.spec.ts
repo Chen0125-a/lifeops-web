@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const overviewEvidenceDir = resolve('outputs/evidence/browser/p3-t1')
 
@@ -118,6 +119,6 @@ test('workspace route changes are animated and global search stays keyboard-acce
   ]) {
     await page.setViewportSize(viewport)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), `${viewport.width} CSS px`).toBe(true)
-    await page.screenshot({ path: resolve(overviewEvidenceDir, viewport.name), fullPage: true, type: 'jpeg', quality: 90 })
+    await screenshotToPath(page, { path: resolve(overviewEvidenceDir, viewport.name), fullPage: true, type: 'jpeg', quality: 90 })
   }
 })

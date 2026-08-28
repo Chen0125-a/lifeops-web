@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p3-t6')
@@ -189,23 +190,23 @@ test('review workspace preserves the 3/6/3 facts, URL modes and ordered mobile l
     ]) {
       await page.setViewportSize(viewport)
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), `${viewport.width} CSS px`).toBe(true)
-      await page.screenshot({ path: resolve(evidenceDir, viewport.name), fullPage: true })
+      await screenshotToPath(page, { path: resolve(evidenceDir, viewport.name), fullPage: true })
     }
 
     await page.setViewportSize({ width: 390, height: 844 })
     await expect(page.getByRole('button', { name: '证据 1/3' })).toHaveAttribute('aria-current', 'step')
     await expect(evidenceRail).toBeVisible()
     await expect(editor).toBeHidden()
-    await page.screenshot({ path: resolve(evidenceDir, 'reviews-390x844-evidence.png'), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'reviews-390x844-evidence.png'), fullPage: true })
     await page.getByRole('button', { name: '继续到书写' }).click()
     await expect(page.getByRole('button', { name: '书写 2/3' })).toHaveAttribute('aria-current', 'step')
     await expect(editor).toBeVisible()
-    await page.screenshot({ path: resolve(evidenceDir, 'reviews-390x844-writing.png'), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'reviews-390x844-writing.png'), fullPage: true })
     await page.getByRole('button', { name: '继续到行动' }).click()
     await expect(page.getByRole('button', { name: '行动 3/3' })).toHaveAttribute('aria-current', 'step')
     await expect(actionRail).toBeVisible()
     await expect(page.getByRole('button', { name: '返回书写' })).toHaveCSS('position', 'static')
-    await page.screenshot({ path: resolve(evidenceDir, 'reviews-390x844-actions.png'), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'reviews-390x844-actions.png'), fullPage: true })
 
     await page.setViewportSize({ width: 320, height: 900 })
     await page.evaluate(() => { document.documentElement.style.fontSize = '200%' })
@@ -217,7 +218,7 @@ test('review workspace preserves the 3/6/3 facts, URL modes and ordered mobile l
       return { separateRows: from.bottom <= to.top, contained: from.left >= 0 && from.right <= innerWidth && to.left >= 0 && to.right <= innerWidth }
     })
     expect(dateGeometry).toEqual({ separateRows: true, contained: true })
-    await page.screenshot({ path: resolve(evidenceDir, 'reviews-320x900-200pct-reflow.png'), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, 'reviews-320x900-200pct-reflow.png'), fullPage: true })
   } finally {
     await traceToPath(context, resolve(evidenceDir, 'reviews-responsive-history-trace.zip'))
   }

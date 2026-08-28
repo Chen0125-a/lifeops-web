@@ -1,5 +1,6 @@
 import { mkdir } from 'node:fs/promises'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const fixtureId = 'p3-t12-commerce-portability-golden-slice-2026-08-22-v1'
 const evidenceDir = 'outputs/evidence/p3-t12-life-commerce-browser-gate'
@@ -153,21 +154,21 @@ test('P3-T12 visual gate covers three routes, standard viewports, 320 CSS px, 20
         expect(box!.x + box!.width, `analytics date label clipped at ${viewport.name}`).toBeLessThanOrEqual(viewport.width)
       }
     }
-    await page.screenshot({ path: `${evidenceDir}/${route.name}-${viewport.name}-full-page.png`, fullPage: true })
+    await screenshotToPath(page, { path: `${evidenceDir}/${route.name}-${viewport.name}-full-page.png`, fullPage: true })
   }
   for (const route of routes) {
     await page.setViewportSize({ width: 640, height: 900 })
     await page.goto(route.path)
     await page.evaluate(() => { document.documentElement.style.zoom = '2' })
     await expect(page.getByRole('heading', { name: route.heading, level: 1 })).toBeVisible()
-    await page.screenshot({ path: `${evidenceDir}/${route.name}-200-percent-zoom.png`, fullPage: true })
+    await screenshotToPath(page, { path: `${evidenceDir}/${route.name}-200-percent-zoom.png`, fullPage: true })
     await page.evaluate(() => { document.documentElement.style.zoom = '1' })
     await page.emulateMedia({ reducedMotion: 'reduce' })
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto(route.path)
     await expect(page.getByRole('heading', { name: route.heading, level: 1 })).toBeVisible()
     await assertNoHorizontalOverflow(page, 390)
-    await page.screenshot({ path: `${evidenceDir}/${route.name}-390x844-reduced-motion.png`, fullPage: true })
+    await screenshotToPath(page, { path: `${evidenceDir}/${route.name}-390x844-reduced-motion.png`, fullPage: true })
   }
 })
 
@@ -190,7 +191,7 @@ test('P3-T12 purchase/refund, drill-down Back, budget and import/export flows ar
   await purchase.getByRole('button', { name: '确认部分采购' }).click()
   await expect(page.getByRole('status', { name: '采购结果' })).toContainText('清单剩余 250 g')
   await settleVisualFrame(page)
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-01-partial-purchase.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-01-partial-purchase.png`, fullPage: true })
   await page.getByRole('button', { name: '为本次采购办理退款' }).click()
   const refund = page.getByRole('dialog', { name: '办理燕麦退款' })
   await refund.getByLabel('退回数量').fill('50')
@@ -213,7 +214,7 @@ test('P3-T12 purchase/refund, drill-down Back, budget and import/export flows ar
   await budgetDialog.getByRole('button', { name: '创建预算' }).click()
   await expect(page.getByRole('status', { name: '预算结果' })).toContainText('支出事实与消耗成本仍分开计算')
   await settleVisualFrame(page)
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-02-analysis-and-budget.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-02-analysis-and-budget.png`, fullPage: true })
 
   await page.goto('/app/life/data?section=export')
   await page.getByRole('button', { name: '创建导出' }).click()
@@ -235,7 +236,7 @@ test('P3-T12 purchase/refund, drill-down Back, budget and import/export flows ar
   await page.getByRole('button', { name: '创建恢复点并替换' }).click()
   await expect(page.getByRole('status', { name: '导入结果' })).toContainText('恢复点 restore-1')
   await settleVisualFrame(page)
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-03-import-applied.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-03-import-applied.png`, fullPage: true })
   await page.getByRole('tab', { name: '回收站' }).click()
   await expect(page.getByRole('region', { name: '生活数据回收站' })).toContainText('回收站为空')
   expect(pageErrors).toEqual([])

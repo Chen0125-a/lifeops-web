@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { act, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { useState } from 'react'
 import { describe, expect, it, vi } from 'vitest'
@@ -119,6 +119,39 @@ describe('RouteStage', () => {
     await waitFor(() => expect(screen.getByRole('heading', { name: '目标与项目', level: 1 })).toHaveFocus())
   })
 
+  it('does not force a computed-style layout read when a settled panel starts leaving', () => {
+    const computedStyle = vi.spyOn(window, 'getComputedStyle')
+
+    try {
+      const { rerender } = render(
+        <RouteStage direction="forward" routeKey="/app/overview"><h1 tabIndex={-1}>总览</h1></RouteStage>,
+      )
+      computedStyle.mockClear()
+
+      rerender(<RouteStage direction="forward" routeKey="/app/records"><h1 tabIndex={-1}>记录</h1></RouteStage>)
+
+      const settledOverviewReads = computedStyle.mock.calls.filter(([element]) => (
+        element instanceof HTMLElement && element.dataset.routeKey === '/app/overview'
+      ))
+      expect(settledOverviewReads).toEqual([])
+    } finally {
+      computedStyle.mockRestore()
+    }
+  })
+
+  it('retains outgoing pixels without triggering a native inert subtree walk', () => {
+    const { container, rerender } = render(
+      <RouteStage direction="forward" routeKey="/app/overview"><h1 tabIndex={-1}>总览</h1><a href="/app/records">全部记录</a></RouteStage>,
+    )
+
+    rerender(<RouteStage direction="forward" routeKey="/app/records"><h1 tabIndex={-1}>记录</h1></RouteStage>)
+
+    const outgoing = container.querySelector<HTMLElement>('[data-route-panel-phase="outgoing"]')
+    expect(outgoing).toHaveAttribute('aria-hidden', 'true')
+    expect(outgoing).toHaveStyle({ pointerEvents: 'none', position: 'absolute' })
+    expect(outgoing).not.toHaveAttribute('inert')
+  })
+
   it('keeps one native 240ms entering-panel owner while retaining outgoing content before mounting heavy content', async () => {
     const originalAnimate = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'animate')
     const activeOwners = new WeakSet<HTMLElement>()
@@ -165,7 +198,11 @@ describe('RouteStage', () => {
         frames.forEach((frame) => expect(Object.keys(frame).sort()).toEqual(['opacity', 'transform']))
       })
       expect(new Set(calls.filter(({ element }) => element.isConnected).map(({ element }) => element)).size).toBe(1)
-      calls.find(({ element, frames }) => element.dataset.routeKey === '/app/records' && frames[1]?.opacity === 1)?.finish()
+      await act(async () => {
+        calls.find(({ element, frames }) => element.dataset.routeKey === '/app/records' && frames[1]?.opacity === 1)?.finish()
+        await Promise.resolve()
+      })
+      expect(screen.queryByRole('heading', { name: '记录', level: 1 })).not.toBeInTheDocument()
       await waitFor(() => expect(screen.getByRole('heading', { name: '记录', level: 1 })).toBeVisible())
       expect(document.querySelector<HTMLElement>('[data-route-panel-current]')?.style.transform).toBe('none')
       unmount()

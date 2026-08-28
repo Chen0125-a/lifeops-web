@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react'
+import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, expect, it, vi } from 'vitest'
@@ -50,6 +50,15 @@ describe('OverviewPage', () => {
     expect(screen.getByRole('region', { name: '今天时间线' })).toHaveTextContent('完成私人总览')
     await user.click(screen.getByRole('button', { name: '重试当前重点' }))
     expect(retry).toHaveBeenCalledWith('goals')
+  })
+
+  it('exposes evaluated Records route readiness after keyboard preload intent', async () => {
+    renderPage()
+    const recordsLink = within(screen.getByRole('region', { name: '最近记录' })).getByRole('link', { name: '全部记录' })
+
+    recordsLink.focus()
+
+    await waitFor(() => expect(recordsLink).toHaveAttribute('data-route-preload-state', 'ready'))
   })
 
   it('offers direct next actions in every empty overview band', () => {

@@ -45,7 +45,7 @@ async function main() {
       lighthouseCli,
       `${origin}/`,
       `--chrome-path=${chromium.executablePath()}`,
-      '--chrome-flags=--headless --no-sandbox --disable-gpu',
+      '--chrome-flags=--headless --no-sandbox --disable-gpu --disable-dev-shm-usage',
       '--config-path=lighthouse.config.cjs',
       '--output=json',
       `--output-path=${publicReportPath}`,

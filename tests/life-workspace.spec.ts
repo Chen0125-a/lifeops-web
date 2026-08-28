@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 import { installLifeFixture } from './life-fixtures'
 
 const outputDir = resolve('outputs', 'evidence', 'browser', 'p3-t8')
@@ -114,7 +115,7 @@ test('life overview summary and four breakpoints keep one continuous responsive 
       const order = await page.evaluate(() => ['.life-next-action', '.life-timeline', '.life-nutrition', '.life-inventory-notices', '.life-budget'].map((selector) => document.querySelector(selector)?.getBoundingClientRect().top ?? -1))
       expect(order, JSON.stringify(order)).toEqual([...order].sort((left, right) => left - right))
     }
-    await page.screenshot({ path: resolve(outputDir, `p3-t8-life-today-${viewport.name}.png`), fullPage: false, animations: 'disabled' })
+    await screenshotToPath(page, { path: resolve(outputDir, `p3-t8-life-today-${viewport.name}.png`), fullPage: false, animations: 'disabled' })
 
     await page.getByRole('link', { name: '打开生活日历' }).click()
     await expect(page.getByRole('dialog', { name: '生活日历' })).toBeVisible()
@@ -126,18 +127,18 @@ test('life overview summary and four breakpoints keep one continuous responsive 
     expect(summary).not.toBeNull()
     if (viewport.width > 860) expect(summary!.x).toBeGreaterThan(month!.x + month!.width * .7)
     else expect(summary!.y).toBeGreaterThan(month!.y + month!.height * .8)
-    await page.screenshot({ path: resolve(outputDir, `p3-t8-life-calendar-${viewport.name}.png`), fullPage: false, animations: 'disabled' })
+    await screenshotToPath(page, { path: resolve(outputDir, `p3-t8-life-calendar-${viewport.name}.png`), fullPage: false, animations: 'disabled' })
   }
 
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.goto('/app/life?date=2026-08-21')
   await expect(page.getByRole('heading', { name: '今日生活', level: 1 })).toBeVisible()
-  await page.screenshot({ path: resolve(outputDir, 'p3-t8-life-today-desktop-full.png'), fullPage: true, animations: 'disabled' })
+  await screenshotToPath(page, { path: resolve(outputDir, 'p3-t8-life-today-desktop-full.png'), fullPage: true, animations: 'disabled' })
 
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto('/app/life?date=2026-08-21')
   await expect(page.getByRole('heading', { name: '今日生活', level: 1 })).toBeVisible()
-  await page.screenshot({ path: resolve(outputDir, 'p3-t8-life-today-mobile-full.png'), fullPage: true, animations: 'disabled' })
+  await screenshotToPath(page, { path: resolve(outputDir, 'p3-t8-life-today-mobile-full.png'), fullPage: true, animations: 'disabled' })
   await page.goto('/app/life/calendar?date=2026-08-21')
   await expect(page.getByRole('dialog', { name: '生活日历' })).toBeVisible()
   await page.waitForTimeout(320)
@@ -154,13 +155,13 @@ test('life overview summary and four breakpoints keep one continuous responsive 
   expect(persistentCloseBox).not.toBeNull()
   expect(persistentCloseBox!.y, JSON.stringify(persistentCloseBox)).toBeGreaterThanOrEqual(112)
   expect(persistentCloseBox!.y + persistentCloseBox!.height, JSON.stringify(persistentCloseBox)).toBeLessThanOrEqual(844)
-  await page.screenshot({ path: resolve(outputDir, 'p3-t8-life-calendar-mobile-summary.png'), fullPage: false, animations: 'disabled' })
+  await screenshotToPath(page, { path: resolve(outputDir, 'p3-t8-life-calendar-mobile-summary.png'), fullPage: false, animations: 'disabled' })
 
   await page.setViewportSize({ width: 1440, height: 1100 })
   await page.goto('/app/life/calendar?date=2026-08-21')
   await expect(page.getByRole('dialog', { name: '生活日历' })).toBeVisible()
   await page.waitForTimeout(320)
-  await page.screenshot({ path: resolve(outputDir, 'p3-t8-life-calendar-desktop-tall.png'), fullPage: false, animations: 'disabled' })
+  await screenshotToPath(page, { path: resolve(outputDir, 'p3-t8-life-calendar-desktop-tall.png'), fullPage: false, animations: 'disabled' })
 
   await page.setViewportSize({ width: 1024, height: 768 })
   await page.goto('/app/overview')

@@ -1,5 +1,6 @@
 import { mkdir } from 'node:fs/promises'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const fixtureId = 'p3-t11-planning-fitness-golden-slice-2026-08-22-v1'
 const evidenceDir = 'outputs/evidence/p3-t11-life-planning-browser-gate'
@@ -217,7 +218,7 @@ test('P3-T11 visual gate covers standard viewports, 320 CSS px, 200% zoom and re
       ))
       expect(rowPositions, `desktop week columns wrapped at ${viewport.name}`).toHaveLength(1)
     }
-    await page.screenshot({ path: `${evidenceDir}/plans-${viewport.name}-full-page.png`, fullPage: true })
+    await screenshotToPath(page, { path: `${evidenceDir}/plans-${viewport.name}-full-page.png`, fullPage: true })
   }
 
   for (const viewport of viewports) {
@@ -226,18 +227,18 @@ test('P3-T11 visual gate covers standard viewports, 320 CSS px, 200% zoom and re
     await expect(page.getByRole('heading', { name: '健身计划', level: 1 })).toBeVisible()
     await expect(page.locator('.fitness-workspace__today')).toBeVisible()
     await assertNoHorizontalOverflow(page, viewport.width)
-    await page.screenshot({ path: `${evidenceDir}/fitness-${viewport.name}-full-page.png`, fullPage: true })
+    await screenshotToPath(page, { path: `${evidenceDir}/fitness-${viewport.name}-full-page.png`, fullPage: true })
   }
 
   await page.setViewportSize({ width: 640, height: 900 })
   await page.goto('/app/life/plans?week=2026-08-17&day=2026-08-18')
   await page.evaluate(() => { document.documentElement.style.zoom = '2' })
   await expect(page.getByRole('heading', { name: '周生活计划', level: 1 })).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/plans-200-percent-zoom.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/plans-200-percent-zoom.png`, fullPage: true })
 
   await page.goto('/app/life/fitness?date=2026-08-18')
   await expect(page.getByRole('heading', { name: '健身计划', level: 1 })).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/fitness-200-percent-zoom.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/fitness-200-percent-zoom.png`, fullPage: true })
 
   await page.evaluate(() => { document.documentElement.style.zoom = '1' })
   await page.emulateMedia({ reducedMotion: 'reduce' })
@@ -245,12 +246,12 @@ test('P3-T11 visual gate covers standard viewports, 320 CSS px, 200% zoom and re
   await page.goto('/app/life/plans?week=2026-08-17&day=2026-08-18')
   await expect(page.getByRole('heading', { name: '周生活计划', level: 1 })).toBeVisible()
   await assertNoHorizontalOverflow(page, 390)
-  await page.screenshot({ path: `${evidenceDir}/plans-390x844-reduced-motion.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/plans-390x844-reduced-motion.png`, fullPage: true })
 
   await page.goto('/app/life/fitness?date=2026-08-18')
   await expect(page.getByRole('heading', { name: '健身计划', level: 1 })).toBeVisible()
   await assertNoHorizontalOverflow(page, 390)
-  await page.screenshot({ path: `${evidenceDir}/fitness-390x844-reduced-motion.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/fitness-390x844-reduced-motion.png`, fullPage: true })
 })
 
 test('P3-T11 scheduling, template, medicine, keyboard, focus and Back flows remain explicit and reversible', async ({ page }) => {
@@ -290,7 +291,7 @@ test('P3-T11 scheduling, template, medicine, keyboard, focus and Back flows rema
   await supplementEditor.getByRole('button', { name: '保存本地编辑' }).click()
   await page.getByRole('button', { name: '保存当天计划' }).click()
   await expect.poll(() => state.writes.filter((entry) => entry === 'PATCH /api/v1/life/day-plans/2026-08-18').length).toBe(1)
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-01-scheduled-day.png`, fullPage: true })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-01-scheduled-day.png`, fullPage: true })
 
   await page.getByRole('button', { name: '模板与同步', exact: true }).click()
   const library = page.getByRole('dialog', { name: '模板与同步' })
@@ -299,7 +300,7 @@ test('P3-T11 scheduling, template, medicine, keyboard, focus and Back flows rema
   const conflict = page.getByRole('dialog', { name: '模板冲突预览' })
   await expect(conflict.getByText('写入尚未发生')).toBeVisible()
   await conflict.getByRole('radio', { name: '合并两边' }).check()
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-02-template-conflict.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-02-template-conflict.png` })
   await conflict.getByRole('button', { name: '确认应用模板' }).click()
   await page.getByRole('button', { name: '模板与同步', exact: true }).click()
   await page.getByRole('dialog', { name: '模板与同步' }).getByRole('button', { name: '同步工作日模板' }).click()
@@ -310,7 +311,7 @@ test('P3-T11 scheduling, template, medicine, keyboard, focus and Back flows rema
   await sync.getByRole('button', { name: '预览同步' }).click()
   await expect(sync.getByText('将更新 1 天')).toBeVisible()
   await expect(sync.getByText('已完成而排除：2026-08-20')).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-03-explicit-sync.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-03-explicit-sync.png` })
   await sync.getByRole('button', { name: '确认显式同步' }).click()
 
   await page.getByRole('button', { name: '复制当天计划' }).click()
@@ -347,7 +348,7 @@ test('P3-T11 fitness composition, duplicate-submit protection, completion facts 
   const builder = page.getByRole('dialog', { name: '组合训练' })
   await expect(builder.getByText('计划 50 分钟')).toBeVisible()
   await expect(builder.getByText('预计消耗 340 kcal · 用户估算')).toBeVisible()
-  await page.screenshot({ path: `${evidenceDir}/filmstrip-04-fitness-combination.png` })
+  await screenshotToPath(page, { path: `${evidenceDir}/filmstrip-04-fitness-combination.png` })
   await builder.getByRole('button', { name: '加入 2026-08-18' }).click()
   await expect(page.getByText('组合训练已加入当天计划。')).toBeVisible()
 

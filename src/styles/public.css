@@ -16,10 +16,10 @@
   min-height: 680px;
   overflow: hidden;
   color: var(--public-ink);
-  background-color: var(--public-bg);
+  background-color: #020306;
 }
 
-.public-home[data-public-theme='night'] {
+.public-header[data-public-surface-theme='night'] {
   --public-bg: #020306;
   --public-ink: #f5f2ea;
   --public-muted: #b3bcc8;
@@ -27,8 +27,26 @@
   --public-track: #526678;
   --public-line: rgb(82 102 120 / 42%);
   --public-line-strong: rgb(82 102 120 / 76%);
-  background-color: #020306;
-  background-image: none;
+}
+
+.public-hero__copy[data-public-surface-theme='night'] {
+  --public-bg: #020306;
+  --public-ink: #f5f2ea;
+  --public-muted: #b3bcc8;
+  --public-quiet: #929eac;
+  --public-track: #526678;
+  --public-line: rgb(82 102 120 / 42%);
+  --public-line-strong: rgb(82 102 120 / 76%);
+}
+
+.public-hero__stage[data-public-surface-theme='night'] {
+  --public-bg: #020306;
+  --public-ink: #f5f2ea;
+  --public-muted: #b3bcc8;
+  --public-quiet: #929eac;
+  --public-track: #526678;
+  --public-line: rgb(82 102 120 / 42%);
+  --public-line-strong: rgb(82 102 120 / 76%);
 }
 
 .public-home .public-sky {
@@ -37,23 +55,16 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  contain: paint;
-}
-
-.public-home .public-sky::before {
-  position: absolute;
-  content: '';
-  inset: 0;
-  opacity: 1;
+  background-color: #f3f8f5;
   background-image: url('/public-day-sky-top.svg'), url('/public-day-sky-bottom.svg');
   background-position: right -9vw top -22vh, left -13vw bottom -37vh;
   background-repeat: no-repeat;
   background-size: min(58vw, 880px) min(58vw, 880px), min(50vw, 760px) min(50vw, 760px);
-  backface-visibility: hidden;
   contain: paint;
-  transform: translateZ(0);
-  transition: none;
-  will-change: opacity;
+}
+
+.public-home .public-sky::before {
+  content: none;
 }
 
 .public-home .public-sky::after {
@@ -63,20 +74,14 @@
 .public-home .public-sky__stars {
   position: absolute;
   inset: 0;
-  opacity: .14;
-  backface-visibility: hidden;
-  contain: paint;
-  transform: translateZ(0);
-  transition: none;
-  will-change: opacity;
+  visibility: hidden;
 }
 
-.public-home[data-public-theme='night'] .public-sky::before {
-  opacity: 0;
-}
-
-.public-home[data-public-theme='night'] .public-sky__stars {
-  opacity: 1;
+.public-sky[data-public-surface-theme='night'] {
+  background-color: #020306;
+  background-image: url('/public-stars.svg');
+  background-position: center;
+  background-size: cover;
 }
 
 .public-home .public-sky__field {
@@ -124,7 +129,6 @@
   border: 1px solid var(--public-line-strong);
   color: var(--public-ink);
   background: color-mix(in srgb, var(--public-bg) 82%, transparent);
-  backdrop-filter: blur(14px);
 }
 
 .public-home .theme-switch {
@@ -155,11 +159,11 @@
   background: currentColor;
 }
 
-.public-home[data-public-theme='night'] .theme-switch__mark {
+.public-header[data-public-surface-theme='night'] .theme-switch__mark {
   transform: rotate(-180deg);
 }
 
-.public-home[data-public-theme='night'] .theme-switch__mark::after {
+.public-header[data-public-surface-theme='night'] .theme-switch__mark::after {
   inset: -3px -1px 3px 5px;
   background: var(--public-bg);
 }
@@ -334,7 +338,7 @@
   content: none;
 }
 
-.public-home[data-public-theme='night'] .public-orbit__aperture {
+.public-hero__stage[data-public-surface-theme='night'] .public-orbit__aperture {
   border-color: transparent;
   box-shadow: none;
 }
@@ -388,9 +392,8 @@
   transform: translate(-50%, calc(-50% - 14px));
 }
 
-.public-home[data-public-theme='night'] .public-object__medallion {
+.public-hero__stage[data-public-surface-theme='night'] .public-object__medallion {
   color: color-mix(in srgb, currentColor 68%, #f5f2ea 32%);
-  filter: drop-shadow(0 9px 18px rgb(0 0 0 / 48%));
 }
 
 .public-home .public-object:hover .public-object__medallion,
@@ -676,7 +679,6 @@
   border-radius: 50%;
   color: var(--public-ink);
   background: color-mix(in srgb, var(--public-bg) 82%, transparent);
-  backdrop-filter: blur(14px);
 }
 
 .public-home .motion-switch__mark {
@@ -820,8 +822,8 @@
   mask-composite: exclude;
 }
 
-.public-home[data-public-theme='day'] .public-orbit__ring::before {
-  filter: saturate(.72) brightness(.72);
+.public-hero__stage[data-public-surface-theme='day'] .public-orbit__ring::before {
+  background: linear-gradient(180deg, rgba(149, 120, 168, 0) 0%, rgba(149, 120, 168, 1) 43%, rgba(149, 120, 168, 0) 100%);
 }
 
 .public-home .public-object__track {
@@ -932,7 +934,7 @@
   box-shadow: none;
 }
 
-.public-home[data-public-theme='night'] .public-orbit__aperture {
+.public-hero__stage[data-public-surface-theme='night'] .public-orbit__aperture {
   border-color: transparent;
   box-shadow: none;
 }

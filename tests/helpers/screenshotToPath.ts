@@ -1,16 +1,22 @@
-import { writeFile } from 'node:fs/promises'
+import { randomUUID } from 'node:crypto'
+import { rename, unlink, writeFile } from 'node:fs/promises'
+import { basename, dirname, resolve } from 'node:path'
 import type { Page } from '@playwright/test'
 
 type ScreenshotOptions = NonNullable<Parameters<Page['screenshot']>[0]>
 
-const RETRYABLE_WRITE_CODES = new Set(['EACCES', 'EBUSY', 'EPERM', 'UNKNOWN'])
+const RETRYABLE_WRITE_CODES = new Set(['EACCES', 'EBUSY', 'EINVAL', 'EPERM', 'UNKNOWN'])
 
 export async function writeBufferToPath(path: string, contents: string | Uint8Array) {
   for (let attempt = 0; attempt < 5; attempt += 1) {
+    const temporaryPath = resolve(dirname(path), `.${basename(path)}.${randomUUID()}.tmp`)
+
     try {
-      await writeFile(path, contents)
+      await writeFile(temporaryPath, contents)
+      await rename(temporaryPath, path)
       return
     } catch (error) {
+      await unlink(temporaryPath).catch(() => undefined)
       const code = error instanceof Error && 'code' in error
         ? String((error as NodeJS.ErrnoException).code)
         : ''

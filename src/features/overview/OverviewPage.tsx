@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { type FocusEvent, type PointerEvent, useMemo } from 'react'
 import { useQueries, useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 import { goalsApi } from '../../api/goalsApi'
@@ -28,6 +28,16 @@ const healthLabel = {
   disconnected: '服务未连接',
   unknown: '状态未验证',
 } as const
+
+function preloadRecordsRoute(event: FocusEvent<HTMLAnchorElement> | PointerEvent<HTMLAnchorElement>) {
+  const link = event.currentTarget
+  link.dataset.routePreloadState = 'loading'
+  void import('../records/RecordsPage').then(() => {
+    if (link.isConnected) link.dataset.routePreloadState = 'ready'
+  }).catch(() => {
+    if (link.isConnected) link.dataset.routePreloadState = 'failed'
+  })
+}
 
 function SectionError({ message, name, section, onRetry }: { message: string; name: string; section: OverviewSection; onRetry?: (section: OverviewSection) => void }) {
   return <div className="overview-inline-error"><p role="alert">{message}</p><button type="button" onClick={() => onRetry?.(section)}>重试{name}</button></div>
@@ -88,8 +98,8 @@ export function OverviewPage({ model, lifeSummary, componentErrors = {}, onRetry
           {componentErrors.trends ? <SectionError message={componentErrors.trends} name="本周趋势" section="trends" onRetry={onRetry} /> : <dl><div><dt>完成任务</dt><dd>{model.trends.completedTasks}</dd></div><div><dt>习惯完成</dt><dd>{model.trends.habitCompletions}</dd></div><div><dt>生活记录</dt><dd>{model.trends.recordCount}</dd></div></dl>}
         </section>
         <section aria-label="最近记录">
-          <header><h2>最近记录</h2><Link to="/app/records">全部记录</Link></header>
-          {componentErrors.records ? <SectionError message={componentErrors.records} name="最近记录" section="records" onRetry={onRetry} /> : model.recentRecords.length ? <ol>{model.recentRecords.map((record) => <li key={record.id}><time>{new Date(record.occurredAt).toLocaleDateString('zh-CN', { month: 'numeric', day: 'numeric' })}</time><strong>{record.title}</strong></li>)}</ol> : <div className="overview-empty"><p>记录真实发生过的事，回顾才有证据。</p><Link to="/app/records?create=record">写下今天</Link></div>}
+          <header><h2>最近记录</h2><Link onFocus={preloadRecordsRoute} onPointerEnter={preloadRecordsRoute} to="/app/records">全部记录</Link></header>
+          {componentErrors.records ? <SectionError message={componentErrors.records} name="最近记录" section="records" onRetry={onRetry} /> : model.recentRecords.length ? <ol>{model.recentRecords.map((record) => <li key={record.id}><time>{new Date(record.occurredAt).toLocaleDateString('zh-CN', { month: 'numeric', day: 'numeric' })}</time><strong>{record.title}</strong></li>)}</ol> : <div className="overview-empty"><p>记录真实发生过的事，回顾才有证据。</p><Link onFocus={preloadRecordsRoute} onPointerEnter={preloadRecordsRoute} to="/app/records?create=record">写下今天</Link></div>}
         </section>
         <section aria-label="上次回顾">
           <header><h2>上次回顾</h2><Link to="/app/reviews">查看回顾</Link></header>

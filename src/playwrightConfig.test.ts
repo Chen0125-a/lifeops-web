@@ -6,8 +6,10 @@ import viteConfig from '../vite.config'
 
 const workspaceRoot = resolve(import.meta.dirname, '..')
 const globalSetupSource = readFileSync(resolve(workspaceRoot, 'tests/globalSetup.ts'), 'utf8')
+const motionContinuitySpecSource = readFileSync(resolve(workspaceRoot, 'tests/motion-continuity.spec.ts'), 'utf8')
 const obsidianSettingsSpecSource = readFileSync(resolve(workspaceRoot, 'tests/obsidian-settings.spec.ts'), 'utf8')
 const publicFinalSpecSource = readFileSync(resolve(workspaceRoot, 'tests/public-final.spec.ts'), 'utf8')
+const screenshotToPathSource = readFileSync(resolve(workspaceRoot, 'tests/helpers/screenshotToPath.ts'), 'utf8')
 const packageScripts = JSON.parse(readFileSync(resolve(workspaceRoot, 'package.json'), 'utf8')).scripts as Record<string, string>
 const applicationTsConfig = JSON.parse(readFileSync(resolve(workspaceRoot, 'tsconfig.app.json'), 'utf8')) as { exclude?: string[] }
 const webDockerfileSource = readFileSync(resolve(workspaceRoot, 'Dockerfile'), 'utf8')
@@ -20,6 +22,7 @@ describe('Playwright acceptance environment', () => {
   it('keeps external browser-harness contracts outside the production TypeScript graph', () => {
     expect(applicationTsConfig.exclude).toEqual([
       'src/playwrightConfig.test.ts',
+      'src/lighthouseRunner.test.ts',
       'src/motionProbeContract.test.ts',
       'src/publicThemeCompositor.test.ts',
     ])
@@ -61,6 +64,11 @@ describe('Playwright acceptance environment', () => {
     const webkit = config.projects?.find((project) => project.name === 'webkit-critical')
     expect(firefox?.timeout).toBe(90_000)
     expect(webkit?.timeout).toBe(90_000)
+  })
+
+  it('keeps trace screencast work outside the motion frame observer', () => {
+    expect(config.use).toMatchObject({ trace: 'retain-on-failure' })
+    expect(motionContinuitySpecSource).toContain("test.use({ trace: 'off' })")
   })
 
   it('isolates each non-Chromium theme frame budget without weakening the gate', () => {
@@ -107,6 +115,28 @@ describe('Playwright acceptance environment', () => {
       .map((entry) => entry.name)
 
     expect(directTraceWrites).toEqual([])
+  })
+
+  it('routes every path-backed browser artifact through the atomic write helper', () => {
+    const directArtifactWrites = readdirSync(resolve(workspaceRoot, 'tests'), { withFileTypes: true })
+      .filter((entry) => entry.isFile() && entry.name.endsWith('.spec.ts'))
+      .filter((entry) => {
+        const source = readFileSync(resolve(workspaceRoot, 'tests', entry.name), 'utf8')
+        return /page\.screenshot\(\s*\{\s*path\s*:/.test(source) || source.includes('writeFileSync(')
+      })
+      .map((entry) => entry.name)
+
+    expect(directArtifactWrites).toEqual([])
+  })
+
+  it('atomically replaces existing evidence on the Windows-backed browser runner', () => {
+    expect(screenshotToPathSource).toContain("import { randomUUID } from 'node:crypto'")
+    expect(screenshotToPathSource).toContain("import { basename, dirname, resolve } from 'node:path'")
+    expect(screenshotToPathSource).toContain("await writeFile(temporaryPath, contents)")
+    expect(screenshotToPathSource).toContain("await rename(temporaryPath, path)")
+    expect(screenshotToPathSource).toContain("await unlink(temporaryPath).catch(() => undefined)")
+    expect(screenshotToPathSource).toContain("'EINVAL'")
+    expect(screenshotToPathSource).not.toContain("await writeFile(path, contents)")
   })
 
   it('waits for the real public detail shell before writing final evidence', () => {

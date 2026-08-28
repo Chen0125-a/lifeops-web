@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p3-t3')
@@ -94,7 +95,7 @@ test('schedule golden slice keeps responsive geometry and a complete keyboard sc
     ]) {
       await page.setViewportSize(viewport)
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), `${viewport.width} CSS px`).toBe(true)
-      await page.screenshot({ path: resolve(evidenceDir, viewport.name), fullPage: true })
+      await screenshotToPath(page, { path: resolve(evidenceDir, viewport.name), fullPage: true })
     }
 
     await page.setViewportSize({ width: 390, height: 844 })
@@ -138,7 +139,7 @@ test('pointer scheduling commits once and a 409 keeps the preview recoverable', 
   await expect(page.getByRole('alert').filter({ hasText: '预览没有丢失' })).toBeVisible()
   await expect(page.getByRole('button', { name: '恢复原时间' })).toBeVisible()
   await expect(page.getByRole('button', { name: '选择新时间' })).toBeVisible()
-  await page.screenshot({ path: resolve(evidenceDir, 'schedule-1440x900-conflict.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'schedule-1440x900-conflict.png'), fullPage: true })
 })
 
 test('schedule permission failure stays scoped and retry remains available', async ({ page }) => {

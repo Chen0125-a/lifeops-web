@@ -52,6 +52,26 @@ describe('PublicHomePage', () => {
     vi.useRealTimers()
   })
 
+  it('commits the semantic theme and all four paint surfaces atomically', () => {
+    const { container } = renderPublicHome()
+    const surfaces = [
+      container.querySelector('.public-sky'),
+      container.querySelector('.public-header'),
+      container.querySelector('.public-hero__copy'),
+      container.querySelector('.public-hero__stage'),
+    ]
+
+    for (const surface of surfaces) {
+      expect(surface).toHaveAttribute('data-public-surface-theme', 'night')
+    }
+
+    fireEvent.click(screen.getByRole('button', { name: '切换为日间主题' }))
+    expect(container.querySelector('.public-home')).toHaveAttribute('data-public-theme', 'day')
+    for (const surface of surfaces) {
+      expect(surface).toHaveAttribute('data-public-surface-theme', 'day')
+    }
+  })
+
   it('exposes the complete title from first paint while the visual characters start typing', () => {
     renderPublicHome()
 
@@ -158,6 +178,35 @@ describe('PublicHomePage', () => {
     expect(field).toHaveAttribute('data-star-layers', 'far middle near')
     expect(field).toHaveAttribute('aria-hidden', 'true')
     expect(field?.alt).toBe('')
+  })
+
+  it('keeps theme switching unavailable until the cached star field is decoded', async () => {
+    let finishDecode: (() => void) | undefined
+    const decode = vi.fn(() => new Promise<void>((resolve) => {
+      finishDecode = resolve
+    }))
+    const originalDecode = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'decode')
+    Object.defineProperty(HTMLImageElement.prototype, 'decode', {
+      configurable: true,
+      value: decode,
+    })
+
+    try {
+      renderPublicHome()
+
+      const themeSwitch = screen.getByRole('button', { name: /切换为.+主题/ })
+      expect(themeSwitch).toBeDisabled()
+      expect(decode).toHaveBeenCalledTimes(1)
+
+      finishDecode?.()
+      await waitFor(() => expect(themeSwitch).toBeEnabled())
+    } finally {
+      if (originalDecode) {
+        Object.defineProperty(HTMLImageElement.prototype, 'decode', originalDecode)
+      } else {
+        Reflect.deleteProperty(HTMLImageElement.prototype, 'decode')
+      }
+    }
   })
 
   it('exposes pause and resume without registering wheel navigation', () => {

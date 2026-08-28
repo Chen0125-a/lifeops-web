@@ -1,8 +1,8 @@
 import { createHash } from 'node:crypto'
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page } from '@playwright/test'
-import { screenshotToPath } from './helpers/screenshotToPath'
+import { screenshotToPath, writeBufferToPath } from './helpers/screenshotToPath'
 import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDirectory = resolve('outputs/evidence/browser/p2-t3')
@@ -247,9 +247,8 @@ test('capture the P2-T3 login golden-slice evidence set', async ({ browser, cont
       interpretation: '320 CSS px reflow captured at DPR 2',
     },
   }
-  writeFileSync(
+  await writeBufferToPath(
     resolve(evidenceDirectory, 'metadata.json'),
     `${JSON.stringify(metadata, null, 2)}\n`,
-    'utf8',
   )
 })

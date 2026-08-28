@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test, type Page, type Route } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 import { traceToPath } from './helpers/traceToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p3-t4')
@@ -97,7 +98,7 @@ test('habit rhythm passes responsive, keyboard, entry and history acceptance', a
     ]) {
       await page.setViewportSize(viewport)
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), `${viewport.width} CSS px`).toBe(true)
-      await page.screenshot({ path: resolve(evidenceDir, viewport.name), fullPage: true })
+      await screenshotToPath(page, { path: resolve(evidenceDir, viewport.name), fullPage: true })
     }
 
     await page.setViewportSize({ width: 390, height: 844 })
@@ -175,7 +176,7 @@ test('habit 409 stays local, preserves the matrix and exposes retry', async ({ p
   await expect(page.getByRole('grid', { name: '28 日习惯节奏' })).toBeVisible()
   await expect(page.getByRole('button', { name: '重试' })).toBeVisible()
   expect(pageErrors).toEqual([])
-  await page.screenshot({ path: resolve(evidenceDir, 'habits-1440x900-conflict.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'habits-1440x900-conflict.png'), fullPage: true })
 })
 
 test('habit reduced motion keeps controls immediate and semantics unchanged', async ({ page }) => {

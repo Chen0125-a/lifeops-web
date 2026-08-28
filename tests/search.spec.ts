@@ -1,6 +1,7 @@
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { expect, test } from '@playwright/test'
+import { screenshotToPath } from './helpers/screenshotToPath'
 
 const evidenceDir = resolve('outputs/evidence/browser/p5-t4')
 
@@ -52,12 +53,12 @@ test('personal command search is grouped, keyboard-operable, private and respons
   ]) {
     await page.setViewportSize(viewport)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), `${viewport.width} CSS px`).toBe(true)
-    await page.screenshot({ path: resolve(evidenceDir, viewport.name), fullPage: true })
+    await screenshotToPath(page, { path: resolve(evidenceDir, viewport.name), fullPage: true })
   }
 
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.screenshot({ path: resolve(evidenceDir, 'search-390x844-reduced-motion.png'), fullPage: true })
+  await screenshotToPath(page, { path: resolve(evidenceDir, 'search-390x844-reduced-motion.png'), fullPage: true })
 
   await searchbox.press('ArrowDown')
   await searchbox.press('ArrowDown')
