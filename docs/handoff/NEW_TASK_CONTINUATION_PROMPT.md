@@ -381,3 +381,11 @@ P6-T6 合法通过后，连续执行 P6-T6 task-close → deterministic checkpoi
 ```powershell
 npm.cmd run test:execution
 ```
+
+## 27. 2026-08-28 最新接班增量：CI #11 完整本地门禁、实现提交与持续授权边界
+
+- 本节位于文件尾并覆盖早先 next-action。CI #11 实现与当前证据集已提交为 `5c7a16f53d116ac177861c526b5f6cd4d7c29b39`（`fix(entry): stabilize cross-browser login transition`）；授权推送前 `origin/main` 仍为 `52aeecc23dc5468a36e20caacfbc43aaff268dc5`。8 个受保护历史 untracked 文件保持原样，未暂存、移动或删除。
+- 冻结源码的新鲜门禁通过 frontend typecheck、88/88 files、425/425 tests、885-module build；server 361 ordinary +50 exact-only skips、typecheck/build；官方 MySQL 8.4.10 50/50；官方 Linux Playwright 338/338（WebKit theme 1/1、Firefox theme 1/1、matrix 336/336，workers=1/retries=0）；real-Fastify 12/12；Helm/media/security/observability/workflow/release、audit、current-source images、16 migrations 与 Lighthouse 1.00/1.00/0.96/0.91。9 张当前视觉证据已由 primary executor 逐张原分辨率打开并通过。
+- saved/fresh/evidence/visual checkpoint 一致为 root `1BCAFA4C8BCD579BB00677FD43623E8ED0A4A47CA1DBB328F50E871D3388557B`、610 inputs、462 同序 evidence rows；visual manifest 累计 43 states，其中 9 张为本次 CI #11 逐张复核图。execution-contract 为 97/97。父边界仍为 30/10/4，P6-T6 Step 7 仍开放。
+- 用户已经明确持续授权项目范围内全部剩余操作：创建窄账本提交、把实现与账本提交推送到精确 GitHub `main`，并且仅在新普通 CI 全绿后额外 dispatch 恰好一次 `1.0.0`。不得读取凭据值、kubeconfig，不得执行 kubectl、Helm install/upgrade、Argo sync/rollback 或 cluster smoke。
+- 唯一下一动作：提交窄账本，推送两个提交，等待普通 CI 终态；若全绿则执行唯一一次已授权 release，并以真实 UHub digest、digest-bound SBOM/provenance 与 exact-digest smoke 证据继续完成 P6-T6 -> P6-T7 -> P6-T8 -> phase-close -> project-close。

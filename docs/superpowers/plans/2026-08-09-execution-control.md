@@ -1410,3 +1410,21 @@ Run execution-contract, standalone startup/handoff, saved/fresh/manifest identit
 ```powershell
 npm.cmd run test:execution
 ```
+
+## 2026-08-28 P6-T6 CI #11 final local gates, implementation commit and authorized release boundary
+
+This tail entry supersedes the earlier CI #9 next-action text. The complete CI #11 correction and current evidence set is committed locally on `main` as `5c7a16f53d116ac177861c526b5f6cd4d7c29b39` (`fix(entry): stabilize cross-browser login transition`); `origin/main` is still `52aeecc23dc5468a36e20caacfbc43aaff268dc5` before the authorized push. The protected CI6 browser-failure directory and CI7 WebKit soft-pause checkpoint remain untracked and untouched.
+
+Fresh frozen-source gates pass frontend typecheck, 88/88 files and 425/425 tests, and the 885-module production build; server typecheck/build and 361 ordinary tests with 50 exact-only skips; official MySQL 8.4.10 exact integration 50/50; official Linux Playwright WebKit theme 1/1, Firefox theme 1/1 and full matrix 336/336 for 338/338 total with workers=1/retries=0; real-Fastify 12/12; Helm/media/security/observability/workflow/release contracts; root/server production audits; current-source Web/API image smoke; the 16-migration rehearsal; and Lighthouse 1.00/1.00/0.96/0.91. The primary executor opened the eight current 1440x900/390x844 day/night rest/login images and the final 1000ms entry frame individually at original resolution; all preserve the approved geometry, dark night login, safe mobile inset, receding title and plain `05 / 此刻正在发生` center, with no blank private entry frame.
+
+All 462 evidence rows remain in their original logical order. The saved checkpoint is `outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci11-final-local-gates-uncommitted-local-checkpoint.json`, root `1BCAFA4C8BCD579BB00677FD43623E8ED0A4A47CA1DBB328F50E871D3388557B`, with 610 ordinal-sorted inputs; saved, fresh, evidence and visual-manifest checkpoint identities match, and the visual manifest contains 43 cumulative states including the nine CI #11 images reviewed above. `npm.cmd run test:execution` passes 97/97. Parent truth remains 30 verified-local / 10 partial / 4 pending and P6-T6 Step 7 remains open until immutable UHub digests, digest-bound SBOM/provenance, exact-digest smoke and release success genuinely exist.
+
+The user has explicitly authorized all remaining in-scope operations, including committing and pushing this implementation plus the narrow ledger atom to exact GitHub `main`, and exactly one additional `1.0.0` dispatch only after the resulting ordinary CI is genuinely green. This authorization does not permit credential disclosure, kubeconfig access, Kubernetes/Helm/Argo cluster actions, cluster smoke or unrelated destructive work.
+
+### Exact next atomic action
+
+Commit the narrow ledger atom, push the implementation and ledger commits to exact GitHub `main`, then observe the fresh ordinary CI to a terminal result. Only if it is green, dispatch exactly one `1.0.0` release and verify the real UHub/digest/attestation/exact-digest evidence before closing P6-T6 and entering P6-T7.
+
+```powershell
+node scripts/verify-execution-contract.mjs --mode startup
+```
