@@ -445,3 +445,14 @@ npm.cmd run test:execution
 ```powershell
 node outputs/evidence/p6-t6-ci16-raster-predecode-manifest-refresh.mjs
 ```
+
+## 37. 2026-08-29 最新接班增量：CI16 本地实现提交与授权 push checkpoint
+
+- CI16 实现/当前证据已提交为 `f5217fcbaa08c2af75ad43b514253bd1909ec2b4`（`fix(theme): predecode raster star field`）；`origin/main` 仍为 `63483511cbed0ddb198a851b595d87656cbcdfd1`。8 个受保护历史 untracked 文件保持未暂存、未移动、未删除。
+- post-implementation checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json`，root `B47D7D3E4F5873139F86EECD44D4494E6BD36C10452DB13BD9125B83DB4BB489`，611 inputs、462 同序 evidence rows、67 visual states。包含本节、同步 manifests 与该 checkpoint 的仓库提交是最终窄账本原子。
+- 父边界仍为 30/10/4，P6-T6 Step 7 开放；release、UHub digest、attestation 与 exact-digest smoke 均未声称。
+- 唯一下一动作：运行 execution/startup/handoff 与最终审计，创建窄账本提交；随后按已授权边界把两笔提交推送到精确 GitHub `main`，等待 ordinary CI。只有全绿才 dispatch 唯一一次已授权 `1.0.0`。
+
+```powershell
+npm.cmd run test:execution
+```

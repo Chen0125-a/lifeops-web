@@ -4825,6 +4825,7 @@
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci15-raster-stars-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5356,6 +5357,7 @@
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci15-raster-stars-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5879,7 +5881,8 @@
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI16 raster-predecode correction to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.",
         "src/components/public/DaylightAperture.test.tsx": "The aperture contract now expects the same raster preload source as the public page.",
         "vitest.config.ts": "The four-worker jsdom ceiling keeps unchanged lazy-route assertion budgets deterministic on high-core memory-constrained hosts without reducing test count or coverage.",
-        "docs/traceability/evidence-manifest.json": "This bounded CI16 path is covered by the focused RED/GREEN, complete local gate replay and current visual review."
+        "docs/traceability/evidence-manifest.json": "This bounded CI16 path is covered by the focused RED/GREEN, complete local gate replay and current visual review.",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json": "The post-implementation deterministic checkpoint binds the committed CI16 raster-predecode correction and narrow push-ready ledger to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",

@@ -6,7 +6,7 @@ import path from 'node:path'
 import { buildLocalCheckpoint } from '../../scripts/execution-contract/source-checkpoint.mjs'
 
 const root = process.cwd()
-const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-local-full-gates-uncommitted-local-checkpoint.json'
+const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json'
 const refreshPath = 'outputs/evidence/p6-t6-ci16-raster-predecode-manifest-refresh.mjs'
 const evidenceManifestPath = 'docs/traceability/evidence-manifest.json'
 const taskExecutionPath = 'docs/traceability/task-execution.json'
@@ -66,7 +66,7 @@ const sourceReasons = new Map([
   ['vitest.config.ts', 'The four-worker jsdom ceiling keeps unchanged lazy-route assertion budgets deterministic on high-core memory-constrained hosts without reducing test count or coverage.'],
   ['outputs/evidence/p6-t6-ci16-raster-predecode-visual-capture.mjs', 'This reproducible evidence-only capture records eight approved desktop/phone day/night rest/login states, exact geometry and the raster preload source without altering product behavior.'],
   [refreshPath, 'The deterministic CI16 refresh preserves all 462 evidence IDs and order, rehashes current sources/artifacts, records fresh complete local gates and refuses dirty tracked historical browser evidence.'],
-  [checkpointPath, 'The deterministic checkpoint binds the CI16 raster-predecode correction to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.'],
+  [checkpointPath, 'The post-implementation deterministic checkpoint binds the committed CI16 raster-predecode correction and narrow push-ready ledger to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.'],
 ])
 
 const taskExecution = await readJson(taskExecutionPath)

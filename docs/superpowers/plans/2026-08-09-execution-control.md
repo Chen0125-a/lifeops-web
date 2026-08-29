@@ -1532,3 +1532,19 @@ Run the CI16 deterministic manifest refresh, then execution/startup/handoff, aut
 ```powershell
 node outputs/evidence/p6-t6-ci16-raster-predecode-manifest-refresh.mjs
 ```
+
+## 2026-08-29 P6-T6 CI16 implementation commit and authorized push boundary
+
+The bounded CI16 implementation and current evidence are committed as `f5217fcbaa08c2af75ad43b514253bd1909ec2b4` (`fix(theme): predecode raster star field`). `origin/main` remains `63483511cbed0ddb198a851b595d87656cbcdfd1`; the two protected historical untracked groups remain unstaged and untouched.
+
+The post-implementation checkpoint is `outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json`, root `B47D7D3E4F5873139F86EECD44D4494E6BD36C10452DB13BD9125B83DB4BB489`, with 611 ordinal-sorted inputs, 462 unchanged-order evidence rows and 67 visual states. The repository commit containing this section, the synchronized manifests and that checkpoint is the final narrow local ledger atom; once it exists, local `main` consists of the implementation commit followed by that ledger commit and is ready for the already authorized push.
+
+Parent truth remains 30 verified-local / 10 partial / 4 pending and P6-T6 Step 7 remains open. No release has been dispatched and no UHub digest, attestation, exact-digest smoke, DNS/TLS or cluster state is claimed.
+
+### Exact next atomic action
+
+Run execution 97/97, standalone startup/handoff, checkpoint identity, authority, JSON, diff and credential-safe staged audits; commit the narrow ledger atom, push both commits to exact GitHub `main`, then observe the new ordinary CI. Dispatch exactly one authorized `1.0.0` only if that ordinary CI is genuinely green.
+
+```powershell
+npm.cmd run test:execution
+```
