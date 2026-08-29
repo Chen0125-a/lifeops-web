@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
 const publicCss = readFileSync(resolve(process.cwd(), 'src/styles/public.css'), 'utf8')
+const publicStarsRaster = readFileSync(resolve(process.cwd(), 'public/public-stars-raster.png'))
 
 describe('public theme compositor contract', () => {
   it('keeps full-screen theme surfaces atomic and limits animated feedback to the header control', () => {
@@ -61,7 +62,7 @@ describe('public theme compositor contract', () => {
     expect(nightMedallion).not.toMatch(/filter\s*:/i)
   })
 
-  it('paints day or night art on one contained sky surface without full-screen compositor layers', () => {
+  it('paints day or night art on one contained sky surface with a bounded raster night field', () => {
     const root = publicCss.match(
       /\.public-home\s*\{(?<body>[^}]*)\}/s,
     )?.groups?.body ?? ''
@@ -88,7 +89,8 @@ describe('public theme compositor contract', () => {
     expect(sky).toMatch(/url\('\/public-day-sky-top\.svg'\).*url\('\/public-day-sky-bottom\.svg'\)/s)
     expect(sky).not.toMatch(/will-change|translateZ|opacity\s*:/i)
     expect(nightSky).toMatch(/background-color\s*:\s*#020306/i)
-    expect(nightSky).toMatch(/background-image\s*:\s*url\('\/public-stars\.svg'\)/i)
+    expect(nightSky).toMatch(/background-image\s*:\s*url\('\/public-stars-raster\.png'\)/i)
+    expect(nightSky).not.toMatch(/public-stars\.svg/i)
     expect(nightSky).toMatch(/background-position\s*:\s*center/i)
     expect(nightSky).toMatch(/background-size\s*:\s*cover/i)
     expect(skyBefore).toMatch(/content\s*:\s*none/i)
@@ -102,5 +104,10 @@ describe('public theme compositor contract', () => {
     expect(publicCss).toMatch(/\.public-hero__copy\[data-public-surface-theme='night'\]\s*\{/s)
     expect(publicCss).toMatch(/\.public-hero__stage\[data-public-surface-theme='night'\]\s*\{/s)
     expect(publicCss).not.toMatch(/\.public-home\[data-public-theme='(?:day|night)'\] \.public-(?:sky|header|hero|orbit|object)/s)
+
+    expect(publicStarsRaster.subarray(0, 8).toString('hex')).toBe('89504e470d0a1a0a')
+    expect(publicStarsRaster.readUInt32BE(16)).toBe(1440)
+    expect(publicStarsRaster.readUInt32BE(20)).toBe(900)
+    expect(publicStarsRaster.byteLength).toBeLessThanOrEqual(12_000)
   })
 })

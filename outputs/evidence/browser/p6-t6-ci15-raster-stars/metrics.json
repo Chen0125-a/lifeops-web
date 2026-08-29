@@ -1,0 +1,202 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "capture": "1440x900",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "day",
+      "state": "rest",
+      "overflowX": 0,
+      "centerText": "05此刻正在发生",
+      "visibleLabels": 5,
+      "outerRing": {
+        "x": 746.5250244140625,
+        "y": 111.27499389648438,
+        "width": 677.4500732421875,
+        "height": 677.4500732421875
+      },
+      "dialog": null,
+      "publicTheme": "day",
+      "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4173/public-day-sky-bottom.svg\")",
+      "loginPhase": "closed"
+    },
+    {
+      "capture": "1440x900",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "day",
+      "state": "login",
+      "overflowX": 0,
+      "centerText": "05此刻正在发生",
+      "visibleLabels": 5,
+      "outerRing": {
+        "x": 356.0000915527344,
+        "y": 190.00010681152344,
+        "width": 519.9998779296875,
+        "height": 519.9998168945312
+      },
+      "dialog": {
+        "x": 908,
+        "y": 153.0078125,
+        "width": 460,
+        "height": 593.984375
+      },
+      "publicTheme": "day",
+      "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4173/public-day-sky-bottom.svg\")",
+      "loginPhase": "open"
+    },
+    {
+      "capture": "1440x900",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "night",
+      "state": "rest",
+      "overflowX": 0,
+      "centerText": "05此刻正在发生",
+      "visibleLabels": 5,
+      "outerRing": {
+        "x": 746.5250244140625,
+        "y": 111.27499389648438,
+        "width": 677.4500732421875,
+        "height": 677.4500732421875
+      },
+      "dialog": null,
+      "publicTheme": "night",
+      "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-stars-raster.png\")",
+      "loginPhase": "closed"
+    },
+    {
+      "capture": "1440x900",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "night",
+      "state": "login",
+      "overflowX": 0,
+      "centerText": "05此刻正在发生",
+      "visibleLabels": 5,
+      "outerRing": {
+        "x": 356.0000915527344,
+        "y": 190.00010681152344,
+        "width": 519.9998779296875,
+        "height": 519.9998168945312
+      },
+      "dialog": {
+        "x": 908,
+        "y": 153.0078125,
+        "width": 460,
+        "height": 593.984375
+      },
+      "publicTheme": "night",
+      "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-stars-raster.png\")",
+      "loginPhase": "open"
+    },
+    {
+      "capture": "390x844",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "day",
+      "state": "rest",
+      "overflowX": 0,
+      "centerText": "05此刻正在发生",
+      "visibleLabels": 5,
+      "outerRing": {
+        "x": 43.02492904663086,
+        "y": 524.02490234375,
+        "width": 303.9501647949219,
+        "height": 303.9501953125
+      },
+      "dialog": null,
+      "publicTheme": "day",
+      "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4173/public-day-sky-bottom.svg\")",
+      "loginPhase": "closed"
+    },
+    {
+      "capture": "390x844",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "day",
+      "state": "login",
+      "overflowX": 0,
+      "centerText": "05此刻正在发生",
+      "visibleLabels": 5,
+      "outerRing": {
+        "x": 43.02492904663086,
+        "y": 134.98492431640625,
+        "width": 303.9501647949219,
+        "height": 303.9501647949219
+      },
+      "dialog": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "publicTheme": "day",
+      "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4173/public-day-sky-bottom.svg\")",
+      "loginPhase": "open"
+    },
+    {
+      "capture": "390x844",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "night",
+      "state": "rest",
+      "overflowX": 0,
+      "centerText": "05此刻正在发生",
+      "visibleLabels": 5,
+      "outerRing": {
+        "x": 43.02492904663086,
+        "y": 524.02490234375,
+        "width": 303.9501647949219,
+        "height": 303.9501953125
+      },
+      "dialog": null,
+      "publicTheme": "night",
+      "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-stars-raster.png\")",
+      "loginPhase": "closed"
+    },
+    {
+      "capture": "390x844",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "night",
+      "state": "login",
+      "overflowX": 0,
+      "centerText": "05此刻正在发生",
+      "visibleLabels": 5,
+      "outerRing": {
+        "x": 43.02492904663086,
+        "y": 134.98492431640625,
+        "width": 303.9501647949219,
+        "height": 303.9501647949219
+      },
+      "dialog": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "publicTheme": "night",
+      "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-stars-raster.png\")",
+      "loginPhase": "open"
+    }
+  ],
+  "failures": []
+}

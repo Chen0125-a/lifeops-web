@@ -416,3 +416,20 @@ npm.cmd run test:execution
 ### 当前唯一下一原子动作
 
 运行 CI14 deterministic refresh、execution/startup/handoff、authority/identity/JSON/diff/credential-safe 审计，commit/push 后观察新普通 CI；全绿才执行唯一一次授权 release。不得提前进入 P6-T7。
+
+## 35. 2026-08-29 最新接班增量：CI #15 raster 星空完整本地收敛
+
+- 本节位于文件尾并覆盖上文所有旧 checkpoint、提交与 next-action。当前本地 `HEAD`、`origin/main` 与已核验远端 `main` 是 `6ee094ac829756648d7655a942b3f02a5acf47a4`，当前 CI15 WIP 尚未提交。普通 CI run `33190109857` / job `98913130047` 通过 unit/type/build、官方 MySQL 8.4 与 browser install 后，只在 WebKit theme-performance 失败：baseline P95/max 18/18ms，transition P95/max 52/56ms，预算仍为 35/100ms；没有 release。
+- 系统化诊断隔离到 night theme 切换时同步 rasterize 全屏 `public-stars.svg`。原 SVG 继续作为可审计源，产品只新增其机械渲染的透明 1440×900 PNG delivery asset（8,814 bytes，SHA-256 `83B997E0E1C13D62BF3E00787A2A9AC4F968F6AAC5D3BE279378E3BC4729A309`）。focused contract 先 3 pass/1 fail，随后 4/4；combined affected 为 21/21。worker、retry、browser、sample、threshold、四环几何、方向、30/40/50/60s 周期与场景动效均未放宽。
+- 新鲜完整本地门禁通过 frontend 88/88 files、425/425 tests、typecheck、885-module build；server 362 ordinary +50 exact-only skips、typecheck/build；官方 MySQL 50/50；官方 Linux Playwright WebKit theme 1/1、Firefox theme 1/1、matrix 336/336，合计 338/338（24.7m，workers=1、retries=0），另有 WebKit repeat 10/10；real-Fastify 12/12；Helm/media/security/observability/workflow/release contracts；root/server audit；current-source Web/API image smoke；16-migration rehearsal；Lighthouse 1.00/1.00/0.96/0.91。
+- primary executor 已逐张原分辨率打开 `outputs/evidence/browser/p6-t6-ci15-raster-stars/` 的 8 张 desktop/phone day/night rest/login 图；raster stars、完整四环、orbit-left/title-recede、深色 night login、手机全屏登录、安全下内缩、零 overflow 与无光球中心通过。用户已精确批准并完成 145 个本轮自动重生成历史 browser evidence 的 HEAD 恢复；CI15 新证据与 8 个受保护旧 untracked evidence 保持原样，当前无 tracked 历史 evidence 漂移。
+- CI15 saved/fresh/evidence/visual checkpoint 四向一致为 `3020641D4D57A54B3691425C3E54A651741AC28AD6088AB50755B0A3E75DC521`，611 sorted inputs、462 同序 evidence rows、59 visual states。execution 97/97、startup/handoff `ok:true`；五份 authority 哈希保持锁定值。父边界仍为 30/10/4，P6-T6 Step 7 继续等待普通 CI 和 immutable release 闭环。
+- 用户持续授权当前范围的 commit/push，并授权仅在新的 ordinary CI 真正全绿后 dispatch 恰好一次额外 `1.0.0`。不得读取凭据值或 kubeconfig，不得执行 kubectl、Helm install/upgrade、Argo sync/rollback 或 cluster smoke。
+
+### 当前唯一下一原子动作
+
+完成最终 JSON/diff/credential-safe staged audit，精确提交并推送 CI15 correction，等待新的 ordinary CI 终态。只有普通 CI 全绿才运行唯一一次已授权 release；在真实 UHub digests、digest-bound SBOM/provenance、exact-digest smoke 与 release success 存在前不得关闭 P6-T6 或进入 P6-T7。
+
+```powershell
+npm.cmd run test:execution
+```

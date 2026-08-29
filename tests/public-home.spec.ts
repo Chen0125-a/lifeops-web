@@ -82,6 +82,7 @@ test('night theme restores a near-black deep-sky surface with layered stars', as
     const tracks = [...element.querySelectorAll<HTMLElement>('[data-orbit-ring]')]
     return {
       backgroundColor: surface.backgroundColor,
+      skyBackgroundImage: getComputedStyle(element.querySelector('.public-sky')!).backgroundImage,
       starFieldOpacity: Number(getComputedStyle(element.querySelector('.public-sky__stars')!).opacity),
       starLayers: [...starAsset.matchAll(/id="layer-(far|middle|near)"/g)].map((match) => match[1]),
       starSource: new URL(stars.currentSrc || stars.src).pathname,
@@ -96,6 +97,7 @@ test('night theme restores a near-black deep-sky surface with layered stars', as
   })
 
   expect(night.backgroundColor).toBe('rgb(2, 3, 6)')
+  expect(night.skyBackgroundImage).toContain('/public-stars-raster.png')
   expect(night.starFieldOpacity).toBeGreaterThanOrEqual(0.99)
   expect(night.starLayers).toEqual(['far', 'middle', 'near'])
   expect(night.starSource).toBe('/public-stars.svg')

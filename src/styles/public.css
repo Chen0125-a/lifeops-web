@@ -79,7 +79,7 @@
 
 .public-sky[data-public-surface-theme='night'] {
   background-color: #020306;
-  background-image: url('/public-stars.svg');
+  background-image: url('/public-stars-raster.png');
   background-position: center;
   background-size: cover;
 }

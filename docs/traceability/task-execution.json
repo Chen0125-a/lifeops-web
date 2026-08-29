@@ -4741,6 +4741,15 @@
         "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-day-rest.png",
         "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-login.png",
         "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-rest.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-day-login.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-day-rest.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-night-login.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-night-rest.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-day-login.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-day-rest.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-login.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-rest.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/metrics.json",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-1440x900.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-390x844.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-1440x900.png",
@@ -4779,6 +4788,8 @@
         "outputs/evidence/p6-t6-ci12-mysql-hook-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci13-trace-isolation-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci14-orbit-track-manifest-refresh.mjs",
+        "outputs/evidence/p6-t6-ci15-raster-stars-manifest-refresh.mjs",
+        "outputs/evidence/p6-t6-ci15-raster-stars-visual-capture.mjs",
         "outputs/evidence/p6-t6-ci8-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci9-manifest-refresh.mjs",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
@@ -4801,6 +4812,7 @@
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci15-raster-stars-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -4824,6 +4836,7 @@
         "playwright.config.ts",
         "public/public-day-sky-bottom.svg",
         "public/public-day-sky-top.svg",
+        "public/public-stars-raster.png",
         "public/public-stars.svg",
         "scripts/execution-contract/original-atoms.mjs",
         "scripts/execution-contract/source-checkpoint.mjs",
@@ -5246,6 +5259,15 @@
         "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-day-rest.png",
         "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-login.png",
         "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-rest.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-day-login.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-day-rest.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-night-login.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-night-rest.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-day-login.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-day-rest.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-login.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-rest.png",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/metrics.json",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-1440x900.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-390x844.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-1440x900.png",
@@ -5284,6 +5306,8 @@
         "outputs/evidence/p6-t6-ci12-mysql-hook-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci13-trace-isolation-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci14-orbit-track-manifest-refresh.mjs",
+        "outputs/evidence/p6-t6-ci15-raster-stars-manifest-refresh.mjs",
+        "outputs/evidence/p6-t6-ci15-raster-stars-visual-capture.mjs",
         "outputs/evidence/p6-t6-ci8-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci9-manifest-refresh.mjs",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
@@ -5306,6 +5330,7 @@
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci15-raster-stars-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5326,6 +5351,7 @@
         "playwright.config.ts",
         "public/public-day-sky-bottom.svg",
         "public/public-day-sky-top.svg",
+        "public/public-stars-raster.png",
         "public/public-stars.svg",
         "scripts/execution-contract/original-atoms.mjs",
         "scripts/execution-contract/source-checkpoint.mjs",
@@ -5799,7 +5825,20 @@
         "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-login.png": "This primary-agent-opened CI14 frame records the final compositor-safe track rendering at an approved desktop or phone theme/login state.",
         "outputs/evidence/browser/p6-t6-ci14-orbit-track/390x844-night-rest.png": "This primary-agent-opened CI14 frame records the final compositor-safe track rendering at an approved desktop or phone theme/login state.",
         "outputs/evidence/p6-t6-ci14-orbit-track-manifest-refresh.mjs": "The deterministic CI14 refresh preserves all 462 evidence IDs, rehashes current sources and artifacts and records the fresh official Linux 338/338 plus real-Fastify 12/12 replay without promoting registry status.",
-        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI14 compositor-safe orbit correction to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths."
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI14 compositor-safe orbit correction to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-day-login.png": "This primary-agent-opened CI15 frame or geometry manifest records the final raster-star rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-day-rest.png": "This primary-agent-opened CI15 frame or geometry manifest records the final raster-star rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-night-login.png": "This primary-agent-opened CI15 frame or geometry manifest records the final raster-star rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-night-rest.png": "This primary-agent-opened CI15 frame or geometry manifest records the final raster-star rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-day-login.png": "This primary-agent-opened CI15 frame or geometry manifest records the final raster-star rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-day-rest.png": "This primary-agent-opened CI15 frame or geometry manifest records the final raster-star rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-login.png": "This primary-agent-opened CI15 frame or geometry manifest records the final raster-star rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-rest.png": "This primary-agent-opened CI15 frame or geometry manifest records the final raster-star rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci15-raster-stars/metrics.json": "This primary-agent-opened CI15 frame or geometry manifest records the final raster-star rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/p6-t6-ci15-raster-stars-manifest-refresh.mjs": "The deterministic CI15 refresh preserves all 462 evidence IDs and order, rehashes current sources/artifacts, records fresh complete local gates and refuses dirty tracked historical browser evidence.",
+        "outputs/evidence/p6-t6-ci15-raster-stars-visual-capture.mjs": "This reproducible evidence-only capture records eight approved desktop/phone day/night rest/login states and exact geometry without altering product behavior.",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci15-raster-stars-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI15 raster-star correction to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.",
+        "public/public-stars-raster.png": "The transparent 1440x900 PNG is a mechanically rendered delivery form of the retained public-stars.svg source and removes synchronous full-screen SVG rasterization from the WebKit night-theme transition."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
@@ -6010,6 +6049,12 @@
           "command": "npm.cmd test -- src/components/public/PublicOrbit.test.tsx src/publicThemeCompositor.test.ts",
           "exitCode": 1,
           "failure": "The focused orbit-track contract failed exactly two assertions because the DOM lacked four static boundaries/four moving markers and CSS still painted full-size masked pseudo-rings. The implementation preserves the four original WAAPI owners and geometry while separating static complete tracks from tiny moving markers."
+        },
+        {
+          "classification": "behavioral",
+          "command": "npm.cmd test -- src/publicThemeCompositor.test.ts",
+          "exitCode": 1,
+          "failure": "The focused compositor contract passed three assertions and failed exactly one because the night sky still referenced public-stars.svg instead of the bounded transparent 1440x900 raster delivery asset."
         }
       ],
       "evidenceIds": [
@@ -6043,11 +6088,11 @@
       "externalBlockers": [
         {
           "code": "ORDINARY_CI_PENDING",
-          "fact": "Ordinary CI run 33180615592 passed unit/type/build, official MySQL 8.4 and browser installation, then failed only the WebKit theme-performance project because four full-size rotating mask-composite pseudo-rings exceeded the unchanged P95 budget. Static full-ring boundaries plus tiny promoted moving markers pass focused TDD, fresh full local gates and official Linux Playwright 338/338. The user's continuing authorization covers committing and pushing this correction; a new ordinary CI must still become genuinely green."
+          "fact": "Ordinary CI run 33190109857 passed unit/type/build, official MySQL 8.4 and browser installation, then failed only WebKit theme-performance because synchronous full-screen SVG star-field rasterization exceeded the unchanged P95 budget. A mechanically rendered transparent PNG plus the retained auditable SVG source passes focused TDD, fresh complete local gates and official Linux Playwright 338/338. The user's continuing authorization covers committing and pushing this correction; a new ordinary CI must still become genuinely green."
         },
         {
           "code": "RELEASE_PREREQUISITES_PENDING",
-          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33180615592."
+          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33190109857."
         }
       ]
     }

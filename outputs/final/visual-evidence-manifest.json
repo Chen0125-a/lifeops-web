@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "18BBA6CE7B121E75B7FFBC3D2A661DECBFE57BDBD579271FF1FA0B4D830D0235",
+  "checkpointRootSha256": "3020641D4D57A54B3691425C3E54A651741AC28AD6088AB50755B0A3E75DC521",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-28T16:19:41.612Z",
+  "generatedAt": "2026-08-29T13:23:43.474Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
@@ -1396,6 +1396,322 @@
         "ringPeriods": "30/40/50/60s"
       },
       "screenshotSha256": "DAE7859A521AD501F2D64642E3B3FE1F68419306351B6318BB7AAEDD27C7FC86"
+    },
+    {
+      "id": "p6-t6-ci15-day-rest-desktop",
+      "browser": "Playwright Chromium 1.62.1 raster-star acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci15-day-rest-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-day-rest.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "outerRing": {
+          "x": 746.5250244140625,
+          "y": 111.27499389648438,
+          "width": 677.4500732421875,
+          "height": 677.4500732421875
+        },
+        "dialog": null,
+        "publicTheme": "day",
+        "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4173/public-day-sky-bottom.svg\")",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "733F01B62FA12F7E2C465DE1377AA6E418C48828D0E881D5D44C96734909F3C2"
+    },
+    {
+      "id": "p6-t6-ci15-day-login-desktop",
+      "browser": "Playwright Chromium 1.62.1 raster-star acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci15-day-login-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-day-login.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "outerRing": {
+          "x": 356.0000915527344,
+          "y": 190.00010681152344,
+          "width": 519.9998779296875,
+          "height": 519.9998168945312
+        },
+        "dialog": {
+          "x": 908,
+          "y": 153.0078125,
+          "width": 460,
+          "height": 593.984375
+        },
+        "publicTheme": "day",
+        "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4173/public-day-sky-bottom.svg\")",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "6166193D67D2CF85452B7CB73E522B5799F136FFC69741AC97885E89CA6278BF"
+    },
+    {
+      "id": "p6-t6-ci15-night-rest-desktop",
+      "browser": "Playwright Chromium 1.62.1 raster-star acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci15-night-rest-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-night-rest.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "outerRing": {
+          "x": 746.5250244140625,
+          "y": 111.27499389648438,
+          "width": 677.4500732421875,
+          "height": 677.4500732421875
+        },
+        "dialog": null,
+        "publicTheme": "night",
+        "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-stars-raster.png\")",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "D6C89C35556B253C8EA477702F58CCE29D8DFD0C586368E0B17F565281D9F004"
+    },
+    {
+      "id": "p6-t6-ci15-night-login-desktop",
+      "browser": "Playwright Chromium 1.62.1 raster-star acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci15-night-login-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci15-raster-stars/1440x900-night-login.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "outerRing": {
+          "x": 356.0000915527344,
+          "y": 190.00010681152344,
+          "width": 519.9998779296875,
+          "height": 519.9998168945312
+        },
+        "dialog": {
+          "x": 908,
+          "y": 153.0078125,
+          "width": 460,
+          "height": 593.984375
+        },
+        "publicTheme": "night",
+        "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-stars-raster.png\")",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "2A8D0CD2B59F72D39F34B78B252E09387620D302A9B5AE6F80184B0C73549A33"
+    },
+    {
+      "id": "p6-t6-ci15-day-rest-phone",
+      "browser": "Playwright Chromium 1.62.1 raster-star acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci15-day-rest-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-day-rest.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "outerRing": {
+          "x": 43.02492904663086,
+          "y": 524.02490234375,
+          "width": 303.9501647949219,
+          "height": 303.9501953125
+        },
+        "dialog": null,
+        "publicTheme": "day",
+        "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4173/public-day-sky-bottom.svg\")",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "2301B75AE1F6814F82CFA369DF74332E503D6A1CAC5085B2C0A857D63D483AC0"
+    },
+    {
+      "id": "p6-t6-ci15-day-login-phone",
+      "browser": "Playwright Chromium 1.62.1 raster-star acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci15-day-login-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-day-login.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "outerRing": {
+          "x": 43.02492904663086,
+          "y": 134.98492431640625,
+          "width": 303.9501647949219,
+          "height": 303.9501647949219
+        },
+        "dialog": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "publicTheme": "day",
+        "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-day-sky-top.svg\"), url(\"http://127.0.0.1:4173/public-day-sky-bottom.svg\")",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "61525813A2403E0C0EA94278D2FB154D1A8F81068D7B476CCE0D0C424AC57171"
+    },
+    {
+      "id": "p6-t6-ci15-night-rest-phone",
+      "browser": "Playwright Chromium 1.62.1 raster-star acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci15-night-rest-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-rest.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "outerRing": {
+          "x": 43.02492904663086,
+          "y": 524.02490234375,
+          "width": 303.9501647949219,
+          "height": 303.9501953125
+        },
+        "dialog": null,
+        "publicTheme": "night",
+        "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-stars-raster.png\")",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "E4A4CD9A6E755125500CD4192B8DAC61B30FB19F1B574BA536455F8E2125EF27"
+    },
+    {
+      "id": "p6-t6-ci15-night-login-phone",
+      "browser": "Playwright Chromium 1.62.1 raster-star acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t6-ci15-night-login-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-login.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "outerRing": {
+          "x": 43.02492904663086,
+          "y": 134.98492431640625,
+          "width": 303.9501647949219,
+          "height": 303.9501647949219
+        },
+        "dialog": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "publicTheme": "night",
+        "skyBackgroundImage": "url(\"http://127.0.0.1:4173/public-stars-raster.png\")",
+        "outerRingSafeInset": "pass",
+        "trackRendering": "static complete boundary plus promoted 6x2 moving marker",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "5DAA4A86C395E3C43E27512A81C7A9F5474B68C82828DF049833B43C06F3FAB4"
     }
   ],
   "performanceReports": [
@@ -1408,7 +1724,7 @@
       "reducedMotion": "no-preference",
       "fixtureSeedId": "production-preview-public",
       "result": "pass",
-      "sha256": "AF6E55E889394AB51787235F8F29C8FBABE6A42AF352EACC32893DEF8EF46F90"
+      "sha256": "B0205AA5F20BB01959385C773F15C57126FB3F3201F36D9707328B01ED30CBD7"
     },
     {
       "id": "private-performance",
@@ -1419,19 +1735,19 @@
       "reducedMotion": "no-preference",
       "fixtureSeedId": "authenticated-production-preview",
       "result": "pass",
-      "sha256": "D243044DA587D567C61B5F8E08F99604F5D0266F909ACC510CDE140F2771D5CC"
+      "sha256": "B4347026D105E0D2DEED963DF12168440FC2FAF2A45DD3BFBC8F4E1B3D02720E"
     }
   ],
   "latestRevalidation": {
     "taskId": "P6-T6",
     "step": 7,
-    "revalidatedAt": "2026-08-28T16:19:41.612Z",
-    "checkpointRootSha256": "18BBA6CE7B121E75B7FFBC3D2A661DECBFE57BDBD579271FF1FA0B4D830D0235",
-    "metricsPath": "outputs/evidence/browser/p2-t5/public-browser-performance-manifest.json",
-    "metricsSha256": "5FB3BEE1F51E49D8AB312E0FE148736C381592474261731711D2FFD57D17043A",
+    "revalidatedAt": "2026-08-29T13:23:43.474Z",
+    "checkpointRootSha256": "3020641D4D57A54B3691425C3E54A651741AC28AD6088AB50755B0A3E75DC521",
+    "metricsPath": "outputs/evidence/browser/p6-t6-ci15-raster-stars/metrics.json",
+    "metricsSha256": "6823879010A46DADBEA635A6CC6E20BE8BC10A7E0CC2BFDBF9284D4A5643E7A9",
     "openedOriginalResolution": true,
     "captureCount": 8,
     "conclusion": "pass",
-    "note": "The primary executor opened all eight CI14 1440x900 and 390x844 day/night rest/login frames individually at original resolution. Complete static boundaries, subtle moving markers, orbit-left/title-recede depth, dark night login, mobile safe inset and the unlit 05 center all pass."
+    "note": "The primary executor opened all eight CI15 1440x900 and 390x844 day/night rest/login frames individually at original resolution. Visible raster stars, complete rings, orbit-left/title-recede depth, dark night login, mobile safe inset and the unlit 05 center all pass."
   }
 }
