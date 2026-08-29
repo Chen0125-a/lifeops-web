@@ -55,16 +55,24 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  isolation: isolate;
+  background-color: #020306;
+  contain: paint;
+}
+
+.public-home .public-sky::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: 0;
   background-color: #f3f8f5;
   background-image: url('/public-day-sky-top.svg'), url('/public-day-sky-bottom.svg');
   background-position: right -9vw top -22vh, left -13vw bottom -37vh;
   background-repeat: no-repeat;
   background-size: min(58vw, 880px) min(58vw, 880px), min(50vw, 760px) min(50vw, 760px);
-  contain: paint;
-}
-
-.public-home .public-sky::before {
-  content: none;
+  opacity: 1;
+  transform: translateZ(0);
+  will-change: opacity;
 }
 
 .public-home .public-sky::after {
@@ -73,15 +81,15 @@
 
 .public-home .public-sky__stars {
   position: absolute;
+  z-index: 0;
   inset: 0;
-  visibility: hidden;
+  contain: paint;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
-.public-sky[data-public-surface-theme='night'] {
-  background-color: #020306;
-  background-image: url('/public-stars-raster.png');
-  background-position: center;
-  background-size: cover;
+.public-sky[data-public-surface-theme='night']::before {
+  opacity: 0;
 }
 
 .public-home .public-sky__field {

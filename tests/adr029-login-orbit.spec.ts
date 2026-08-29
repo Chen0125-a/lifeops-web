@@ -127,6 +127,11 @@ test('390 rest gives the title and complete outer ring separate breathing zones'
   const ring = page.locator('[data-orbit-boundary="orbit-d"]')
   await expect(title).toBeVisible()
   await expect(ring).toBeAttached()
+  await expect(title).toHaveAttribute('data-title-state', 'complete', { timeout: 5_000 })
+  await expect.poll(async () => {
+    const box = await bounds(ring)
+    return box.width >= 300 && box.width <= 308
+  }, { timeout: 5_000 }).toBe(true)
 
   const [titleFontSize, copyBox, ringBox] = await Promise.all([
     title.evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize)),

@@ -44,13 +44,16 @@ async function main() {
     const lighthouse = spawn(process.execPath, [
       lighthouseCli,
       `${origin}/`,
-      `--chrome-path=${chromium.executablePath()}`,
       '--chrome-flags=--headless --no-sandbox --disable-gpu --disable-dev-shm-usage',
       '--config-path=lighthouse.config.cjs',
       '--output=json',
       `--output-path=${publicReportPath}`,
       '--quiet',
-    ], { stdio: 'inherit', windowsHide: true })
+    ], {
+      env: { ...process.env, CHROME_PATH: chromium.executablePath() },
+      stdio: 'inherit',
+      windowsHide: true,
+    })
     await waitForExit(lighthouse, 'Lighthouse')
 
     const report = JSON.parse(await readFile(publicReportPath, 'utf8'))

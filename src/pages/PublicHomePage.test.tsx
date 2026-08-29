@@ -41,18 +41,17 @@ afterEach(() => {
 
 describe('PublicHomePage', () => {
   it('defaults to the night scene and honors an explicit day override', async () => {
-    vi.useFakeTimers()
-    vi.setSystemTime(new Date(2026, 7, 8, 12, 0))
     const { container } = renderPublicHome()
 
     expect(container.querySelector('.public-home')).toHaveAttribute('data-public-theme', 'night')
-    fireEvent.click(screen.getByRole('button', { name: '切换为日间主题' }))
+    const themeSwitch = screen.getByRole('button', { name: '切换为日间主题' })
+    await waitFor(() => expect(themeSwitch).toBeEnabled())
+    fireEvent.click(themeSwitch)
     expect(container.querySelector('.public-home')).toHaveAttribute('data-public-theme', 'day')
     expect(JSON.parse(localStorage.getItem('lifeops:theme-override') ?? '{}')).toMatchObject({ theme: 'day' })
-    vi.useRealTimers()
   })
 
-  it('commits the semantic theme and all four paint surfaces atomically', () => {
+  it('commits the semantic theme and all four paint surfaces atomically', async () => {
     const { container } = renderPublicHome()
     const surfaces = [
       container.querySelector('.public-sky'),
@@ -65,7 +64,9 @@ describe('PublicHomePage', () => {
       expect(surface).toHaveAttribute('data-public-surface-theme', 'night')
     }
 
-    fireEvent.click(screen.getByRole('button', { name: '切换为日间主题' }))
+    const themeSwitch = screen.getByRole('button', { name: '切换为日间主题' })
+    await waitFor(() => expect(themeSwitch).toBeEnabled())
+    fireEvent.click(themeSwitch)
     expect(container.querySelector('.public-home')).toHaveAttribute('data-public-theme', 'day')
     for (const surface of surfaces) {
       expect(surface).toHaveAttribute('data-public-surface-theme', 'day')
@@ -180,11 +181,18 @@ describe('PublicHomePage', () => {
     expect(field?.alt).toBe('')
   })
 
-  it('keeps theme switching unavailable until the cached star field is decoded', async () => {
+  it('keeps theme switching unavailable until the decoded star field has crossed two paint frames', async () => {
     let finishDecode: (() => void) | undefined
+    const pendingFrames: FrameRequestCallback[] = []
+    let nextFrame = 0
     const decode = vi.fn(() => new Promise<void>((resolve) => {
       finishDecode = resolve
     }))
+    vi.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => {
+      pendingFrames.push(callback)
+      nextFrame += 1
+      return nextFrame
+    })
     const originalDecode = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'decode')
     Object.defineProperty(HTMLImageElement.prototype, 'decode', {
       configurable: true,
@@ -199,7 +207,21 @@ describe('PublicHomePage', () => {
       expect(themeSwitch).toBeDisabled()
       expect(decode).toHaveBeenCalledTimes(1)
 
-      finishDecode?.()
+      pendingFrames.length = 0
+      await act(async () => {
+        finishDecode?.()
+        await Promise.resolve()
+      })
+      expect(themeSwitch).toBeDisabled()
+      expect(pendingFrames).toHaveLength(1)
+
+      const firstPaintFrame = pendingFrames.shift()
+      act(() => firstPaintFrame?.(16.7))
+      expect(themeSwitch).toBeDisabled()
+      expect(pendingFrames).toHaveLength(1)
+
+      const secondPaintFrame = pendingFrames.shift()
+      act(() => secondPaintFrame?.(33.4))
       await waitFor(() => expect(themeSwitch).toBeEnabled())
     } finally {
       if (originalDecode) {

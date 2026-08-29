@@ -62,7 +62,7 @@ describe('public theme compositor contract', () => {
     expect(nightMedallion).not.toMatch(/filter\s*:/i)
   })
 
-  it('paints day or night art on one contained sky surface with a bounded raster night field', () => {
+  it('prepaints the decoded night field behind one promoted day overlay', () => {
     const root = publicCss.match(
       /\.public-home\s*\{(?<body>[^}]*)\}/s,
     )?.groups?.body ?? ''
@@ -78,27 +78,32 @@ describe('public theme compositor contract', () => {
     const stars = publicCss.match(
       /\.public-home \.public-sky__stars\s*\{(?<body>[^}]*)\}/s,
     )?.groups?.body ?? ''
-    const nightSky = publicCss.match(
-      /\.public-sky\[data-public-surface-theme='night'\]\s*\{(?<body>[^}]*)\}/s,
+    const nightOverlay = publicCss.match(
+      /\.public-sky\[data-public-surface-theme='night'\]::before\s*\{(?<body>[^}]*)\}/s,
     )?.groups?.body ?? ''
 
     expect(root).toMatch(/background-color\s*:\s*#020306/i)
     expect(nightRoot).not.toMatch(/background-color|background-image/i)
     expect(sky).toMatch(/contain\s*:\s*paint/i)
-    expect(sky).toMatch(/background-color\s*:\s*#f3f8f5/i)
-    expect(sky).toMatch(/url\('\/public-day-sky-top\.svg'\).*url\('\/public-day-sky-bottom\.svg'\)/s)
-    expect(sky).not.toMatch(/will-change|translateZ|opacity\s*:/i)
-    expect(nightSky).toMatch(/background-color\s*:\s*#020306/i)
-    expect(nightSky).toMatch(/background-image\s*:\s*url\('\/public-stars-raster\.png'\)/i)
-    expect(nightSky).not.toMatch(/public-stars\.svg/i)
-    expect(nightSky).toMatch(/background-position\s*:\s*center/i)
-    expect(nightSky).toMatch(/background-size\s*:\s*cover/i)
-    expect(skyBefore).toMatch(/content\s*:\s*none/i)
+    expect(sky).toMatch(/background-color\s*:\s*#020306/i)
+    expect(sky).not.toMatch(/background-image/i)
+    expect(skyBefore).toMatch(/content\s*:\s*''/i)
+    expect(skyBefore).toMatch(/position\s*:\s*absolute/i)
+    expect(skyBefore).toMatch(/inset\s*:\s*0/i)
+    expect(skyBefore).toMatch(/background-color\s*:\s*#f3f8f5/i)
+    expect(skyBefore).toMatch(/url\('\/public-day-sky-top\.svg'\).*url\('\/public-day-sky-bottom\.svg'\)/s)
+    expect(skyBefore).toMatch(/opacity\s*:\s*1/i)
+    expect(skyBefore).toMatch(/will-change\s*:\s*opacity/i)
+    expect(skyBefore).toMatch(/transform\s*:\s*translateZ\(0\)/i)
+    expect(nightOverlay).toMatch(/opacity\s*:\s*0/i)
     expect(stars).not.toMatch(/display\s*:\s*none/i)
     expect(stars).toMatch(/position\s*:\s*absolute/i)
     expect(stars).toMatch(/inset\s*:\s*0/i)
-    expect(stars).toMatch(/visibility\s*:\s*hidden/i)
-    expect(stars).not.toMatch(/will-change|translateZ|opacity\s*:/i)
+    expect(stars).not.toMatch(/visibility\s*:\s*hidden/i)
+    expect(stars).toMatch(/contain\s*:\s*paint/i)
+    expect(stars).toMatch(/will-change\s*:\s*transform/i)
+    expect(stars).toMatch(/transform\s*:\s*translateZ\(0\)/i)
+    expect(stars).not.toMatch(/transition/i)
     expect(nightRoot).not.toMatch(/--public-/i)
     expect(publicCss).toMatch(/\.public-header\[data-public-surface-theme='night'\]\s*\{/s)
     expect(publicCss).toMatch(/\.public-hero__copy\[data-public-surface-theme='night'\]\s*\{/s)

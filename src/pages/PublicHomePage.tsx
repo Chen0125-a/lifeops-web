@@ -333,7 +333,14 @@ export function PublicHomePage() {
 
     let active = true
     const finish = () => {
-      if (active) setThemeAssetReady(true)
+      if (!active) return
+      const firstFrame = window.requestAnimationFrame(() => {
+        const secondFrame = window.requestAnimationFrame(() => {
+          if (active) setThemeAssetReady(true)
+        })
+        prepaintFramesRef.current.push(secondFrame)
+      })
+      prepaintFramesRef.current.push(firstFrame)
     }
 
     if (typeof starField.decode === 'function') {

@@ -81,12 +81,31 @@ async function installEmptyApi(page: Page, mode: 'empty' | 'error' | 'loading') 
   })
 }
 
+async function waitForStableA11ySurface(page: Page, route: string) {
+  const workspaceRoute = page.locator('.workspace-route')
+  if (await workspaceRoute.count()) await expect(workspaceRoute).toHaveCSS('opacity', '1')
+
+  if (route === '/') {
+    await expect(page.getByRole('heading', { name: '把日子，慢慢看清。' })).toHaveAttribute(
+      'data-title-state',
+      'complete',
+    )
+    await expect(page.locator('.public-hero__lead')).toHaveCSS('opacity', '1')
+  }
+
+  if (route === '/app/settings') {
+    const settingsContent = page.locator('.settings-content > div')
+    if (await settingsContent.count()) await expect(settingsContent).toHaveCSS('opacity', '1')
+  }
+}
+
 test.describe('public accessibility acceptance', () => {
   for (const route of publicRoutes) {
     test(`${route} has no serious or critical WCAG violations`, async ({ page }) => {
       await page.route('**/api/v1/public/**', (request) => fulfillJson(request, []))
       await page.goto(route)
       await expect(page.locator('main')).toBeVisible()
+      await waitForStableA11ySurface(page, route)
       await expectNoSeriousOrCriticalViolations(page, { route, state: 'data' })
     })
   }
@@ -127,6 +146,7 @@ test.describe('private accessibility acceptance', () => {
       await page.goto(route)
       await expect(page.locator('main, article').first()).toBeVisible()
       await expect(page.getByText('Unexpected Application Error!')).toHaveCount(0)
+      await waitForStableA11ySurface(page, route)
       await expectNoSeriousOrCriticalViolations(page, { route, state: 'data' })
 
       for (const state of ['empty', 'loading', 'error'] as const) {
@@ -135,6 +155,7 @@ test.describe('private accessibility acceptance', () => {
         await page.goto(route)
         await expect(page.locator('main, article').first()).toBeVisible()
         await expect(page.getByText('Unexpected Application Error!')).toHaveCount(0)
+        await waitForStableA11ySurface(page, route)
         await expectNoSeriousOrCriticalViolations(page, { route, state })
       }
     })

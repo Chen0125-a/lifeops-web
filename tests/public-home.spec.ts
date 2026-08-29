@@ -77,13 +77,17 @@ test('night theme restores a near-black deep-sky surface with layered stars', as
   await expect(page.locator('.public-home')).toHaveCSS('background-color', 'rgb(2, 3, 6)')
   const night = await page.locator('.public-home').evaluate(async (element) => {
     const surface = getComputedStyle(element)
+    const sky = element.querySelector<HTMLElement>('.public-sky')!
     const stars = element.querySelector<HTMLImageElement>('[data-star-field]')!
     const starAsset = await fetch('/public-stars.svg').then((response) => response.text())
     const tracks = [...element.querySelectorAll<HTMLElement>('[data-orbit-ring]')]
     return {
       backgroundColor: surface.backgroundColor,
-      skyBackgroundImage: getComputedStyle(element.querySelector('.public-sky')!).backgroundImage,
+      dayOverlayBackgroundImage: getComputedStyle(sky, '::before').backgroundImage,
+      dayOverlayOpacity: Number(getComputedStyle(sky, '::before').opacity),
+      skyBackgroundImage: getComputedStyle(sky).backgroundImage,
       starFieldOpacity: Number(getComputedStyle(element.querySelector('.public-sky__stars')!).opacity),
+      starFieldVisibility: getComputedStyle(element.querySelector('.public-sky__stars')!).visibility,
       starLayers: [...starAsset.matchAll(/id="layer-(far|middle|near)"/g)].map((match) => match[1]),
       starSource: new URL(stars.currentSrc || stars.src).pathname,
       starsLoaded: stars.complete && stars.naturalWidth === 1440 && stars.naturalHeight === 900,
@@ -97,8 +101,12 @@ test('night theme restores a near-black deep-sky surface with layered stars', as
   })
 
   expect(night.backgroundColor).toBe('rgb(2, 3, 6)')
-  expect(night.skyBackgroundImage).toContain('/public-stars-raster.png')
+  expect(night.skyBackgroundImage).toBe('none')
+  expect(night.dayOverlayBackgroundImage).toContain('/public-day-sky-top.svg')
+  expect(night.dayOverlayBackgroundImage).toContain('/public-day-sky-bottom.svg')
+  expect(night.dayOverlayOpacity).toBe(0)
   expect(night.starFieldOpacity).toBeGreaterThanOrEqual(0.99)
+  expect(night.starFieldVisibility).toBe('visible')
   expect(night.starLayers).toEqual(['far', 'middle', 'near'])
   expect(night.starSource).toBe('/public-stars-raster.png')
   expect(night.starsLoaded).toBe(true)
