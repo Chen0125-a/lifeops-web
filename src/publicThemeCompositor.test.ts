@@ -6,7 +6,7 @@ const publicCss = readFileSync(resolve(process.cwd(), 'src/styles/public.css'), 
 const publicStarsRaster = readFileSync(resolve(process.cwd(), 'public/public-stars-raster.png'))
 
 describe('public theme compositor contract', () => {
-  it('keeps full-screen theme surfaces atomic and limits animated feedback to the header control', () => {
+  it('keeps full-screen theme surfaces atomic and avoids theme-triggered compositor animation', () => {
     const rootRule = publicCss.match(/\.public-home\s*\{(?<body>[^}]*)\}/s)?.groups?.body ?? ''
     const daySkyRule = publicCss.match(/\.public-home \.public-sky::before\s*\{(?<body>[^}]*)\}/s)?.groups?.body ?? ''
     const starRule = publicCss.match(/\.public-home \.public-sky__stars\s*\{(?<body>[^}]*)\}/s)?.groups?.body ?? ''
@@ -15,8 +15,7 @@ describe('public theme compositor contract', () => {
     expect(rootRule).not.toMatch(/transition\s*:\s*background-color/i)
     expect(daySkyRule).not.toMatch(/transition/i)
     expect(starRule).not.toMatch(/transition/i)
-    expect(switchMarkRule).toMatch(/transition\s*:\s*transform 420ms cubic-bezier\(\.2, \.8, \.2, 1\)/i)
-    expect(switchMarkRule).toMatch(/will-change\s*:\s*transform/i)
+    expect(switchMarkRule).not.toMatch(/transition/i)
     expect(publicCss).toMatch(/\.public-header\[data-public-surface-theme='night'\] \.theme-switch__mark\s*\{[^}]*transform\s*:\s*rotate\(-180deg\)/s)
     expect(publicCss).toMatch(/@media \(prefers-reduced-motion: reduce\) \{\s*\.public-home,\s*\.public-home \.theme-switch__mark,/s)
   })

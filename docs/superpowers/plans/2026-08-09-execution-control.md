@@ -1429,6 +1429,26 @@ Commit the narrow ledger atom, push the implementation and ledger commits to exa
 node scripts/verify-execution-contract.mjs --mode startup
 ```
 
+## 2026-08-30 P6-T6 CI19 theme-control transition correction and full local convergence
+
+Ordinary CI run `33267670149` / job `99140524702` at `13b7a54` passed frontend unit/type/build, official MySQL and browser installation, then failed only dedicated WebKit theme performance: baseline P95/max `17/18ms`, transition P95/max `41/76ms`, unchanged budgets `34/100ms`. Official Playwright-image subtree diagnostics kept sky/copy/stage/root direct changes at 16–17ms but measured the header path at 84/101ms; disabling only the theme-switch mark animation made the full click stable at 16–17ms.
+
+Focused TDD first passed 3 and failed exactly 1 because `.theme-switch__mark` still declared a 420ms transform transition. The minimum implementation removes that declaration while retaining the endpoint transform, `will-change`, atomic full-screen surfaces, four WAAPI ring owners, five upright counters, exact 30/40/50/60-second periods and all scene/login motion. The focused contract then passes 4/4; workers, retries, browsers, samples, thresholds, geometry, periods and motion rates remain unchanged.
+
+Fresh gates pass frontend 88/88 files and 425/425 tests, frontend typecheck and an 885-module build; server 362 ordinary plus 50 exact-only skips and server typecheck/build; owned official MySQL 8.4.10 exact 50/50; dedicated official Linux WebKit theme repeated 20/20 and Firefox theme; real-Fastify 12/12; Helm lint/default/production render, media, security, observability, workflow and release contracts; root/server production audits with zero vulnerabilities; current-source Web/API image builds and `image-smoke: ok`; 16-migration dump/restore; and Lighthouse 1.00/1.00/0.96/0.91. The full official matrix ran 335/336 with one environment-only exact LF assertion after Windows `git archive` introduced CRLF; restoring source LF bytes made the entire affected `public-final` file pass 5/5. This is recorded honestly instead of claiming one 336/336 command.
+
+The primary executor opened all eight `outputs/evidence/browser/p6-t6-ci19-theme-switch-final/` images individually at original resolution. Metrics record 71 frames at 16.8ms P95/max and all eight viewport/theme diagnostics at zero overflow with five labels; direct review confirms complete safe-inset rings, the plain unlit `05 / 此刻正在发生` center, orbit-left/title-recede depth, dark night login, mobile breathing room and the unchanged theme-control endpoint. CI19-owned Docker containers, three volumes and three local images were precisely removed; shared `lifeops-p6*` resources and user browsers were not touched.
+
+The deterministic checkpoint is `outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci19-theme-switch-local-full-gates-uncommitted-local-checkpoint.json`, root `CD4314F626367B3BC565971064DA804E2A306A90502318437696B8B590D40FBB`, 612 inputs, 462 same-order evidence rows and 83 visual states. The eight protected historical untracked files remain untouched. Authority remains ADR-030, status `implementation-active`, active tuple P6 / P6-T6 / Step 7 and parent truth 30/10/4. No release, UHub digest, digest-bound SBOM/provenance, exact-digest registry smoke, DNS/TLS or cluster state is claimed.
+
+### Exact next atomic action
+
+Run execution/startup/handoff and final authority/checkpoint/JSON/diff/credential-safe audits, commit/push the bounded correction, and observe the new ordinary CI. Only a genuinely green ordinary CI permits the single authorized additional `1.0.0` dispatch; do not enter P6-T7 early.
+
+```powershell
+npm.cmd run test:execution
+```
+
 ## 2026-08-28 P6-T6 CI #11 cold-MySQL failure and CI #12 harness correction
 
 The authorized push is complete: local `HEAD`, `origin/main` and verified remote `main` are `a668e001b6dec8fffeb33ce07046134fe87f7ca2`. Ordinary CI run `33173546102` passed the combined unit, typecheck and production-build step, then failed the official MySQL 8.4.10 step because the cold concurrent-migration `beforeAll` exceeded Vitest's default 10-second hook budget. All 50 exact tests were skipped, the browser/Helm/image tail did not run, and no release was dispatched.

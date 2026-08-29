@@ -484,3 +484,19 @@ git diff --cached --check
 ```powershell
 node scripts/verify-execution-contract.mjs --mode startup
 ```
+
+## 41. 2026-08-30 最新接班增量：CI19 主题控件过渡修复与完整本地收敛
+
+- 本节覆盖上文旧 checkpoint 与 next-action。当前 `HEAD`、`origin/main` 与远端 `main` 为 `13b7a54eeb261c18535e6a58d1b071e2e55e0771`；CI19 WIP 尚未提交。普通 CI `33267670149` / job `99140524702` 通过 unit/type/build、官方 MySQL 与 browser install，只在 WebKit theme-performance 失败：baseline P95/max 17/18ms、transition P95/max 41/76ms、预算仍为 34/100ms；没有 release。
+- 官方镜像 subtree 诊断把成本隔离到 header 中 420ms 的 `.theme-switch__mark` transform transition；focused contract 先 3 pass / 1 fail，最小实现只删除该装饰性 transition，保留 endpoint、四环 WAAPI owner、五个 counter、30/40/50/60s 与全部场景/登录动效。focused 最终 4/4，未修改 worker、retry、browser、sample、threshold、geometry、period 或 motion rate。
+- 新鲜完整门禁通过 frontend 425/425、双 typecheck/build、server 362 +50 skips、MySQL 50/50、WebKit theme repeat 20/20、Firefox theme、real-Fastify 12/12、Helm/media/security/observability/workflow/release、audit、current-source image smoke、16 migrations/dump/restore 和 Lighthouse 1.00/1.00/0.96/0.91。full matrix 335/336 的唯一失败是 Windows archive 制造 CRLF；恢复 source LF 后完整受影响 `public-final` 5/5，未隐藏 behavioral failure 或削弱 gate。
+- 8 张 CI19 1440×900/390×844 day/night rest/login 图已逐张原分辨率打开；metrics 为 71 frames、P95/max 16.8ms，8 个 viewport/theme diagnostics 均 overflow 0、labels 5。完整安全内缩四环、plain `05 / 此刻正在发生`、登录左移/标题后退、深色 night login、手机留白与主题按钮 endpoint 均通过。
+- checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci19-theme-switch-local-full-gates-uncommitted-local-checkpoint.json`，root `CD4314F626367B3BC565971064DA804E2A306A90502318437696B8B590D40FBB`，612 inputs、462 同序 evidence rows、83 visual states。CI19 owned Docker 资源已精确清理；8 个受保护历史 untracked 文件未触碰。当前仍为 ADR-030 / P6 / P6-T6 / Step 7 / 30-10-4；没有 release、registry digest、attestation、exact-digest smoke、DNS/TLS 或 cluster 声明。
+
+### 当前唯一下一原子动作
+
+运行 execution/startup/handoff 与 authority/checkpoint/JSON/diff/credential-safe 审计，精确 commit/push 后观察新的普通 CI。只有普通 CI 真正全绿才执行已授权且仅一次的 `1.0.0` release；不得提前进入 P6-T7。
+
+```powershell
+npm.cmd run test:execution
+```

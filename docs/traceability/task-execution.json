@@ -4768,6 +4768,15 @@
         "outputs/evidence/browser/p6-t6-ci18-prepaint-final/public-login-day-390.png",
         "outputs/evidence/browser/p6-t6-ci18-prepaint-final/public-login-night-1440.png",
         "outputs/evidence/browser/p6-t6-ci18-prepaint-final/public-login-night-390.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/metrics.json",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-day-1440.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-day-390.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-night-1440.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-night-390.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-day-1440.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-day-390.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-night-1440.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-night-390.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-1440x900.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-390x844.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-1440x900.png",
@@ -4812,6 +4821,7 @@
         "outputs/evidence/p6-t6-ci16-raster-predecode-visual-capture.mjs",
         "outputs/evidence/p6-t6-ci18-prepaint-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci18-prepaint-visual-audit.mjs",
+        "outputs/evidence/p6-t6-ci19-theme-switch-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci8-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci9-manifest-refresh.mjs",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
@@ -4839,6 +4849,7 @@
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-vitest-worker-remediation-local-front-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci18-prepaint-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci19-theme-switch-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5314,6 +5325,15 @@
         "outputs/evidence/browser/p6-t6-ci18-prepaint-final/public-login-day-390.png",
         "outputs/evidence/browser/p6-t6-ci18-prepaint-final/public-login-night-1440.png",
         "outputs/evidence/browser/p6-t6-ci18-prepaint-final/public-login-night-390.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/metrics.json",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-day-1440.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-day-390.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-night-1440.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-night-390.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-day-1440.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-day-390.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-night-1440.png",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-night-390.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-1440x900.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-390x844.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-1440x900.png",
@@ -5358,6 +5378,7 @@
         "outputs/evidence/p6-t6-ci16-raster-predecode-visual-capture.mjs",
         "outputs/evidence/p6-t6-ci18-prepaint-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci18-prepaint-visual-audit.mjs",
+        "outputs/evidence/p6-t6-ci19-theme-switch-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci8-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci9-manifest-refresh.mjs",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
@@ -5385,6 +5406,7 @@
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-vitest-worker-remediation-local-front-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci18-prepaint-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci19-theme-switch-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5924,7 +5946,18 @@
         "outputs/evidence/browser/p6-t6-ci18-prepaint-final/public-login-night-390.png": "This primary-agent-opened CI18 frame or numerical audit records the approved prepainted theme result at a desktop or phone rest/login state.",
         "outputs/evidence/p6-t6-ci18-prepaint-manifest-refresh.mjs": "The deterministic CI18 refresh preserves all 462 evidence IDs and order, rehashes current sources and artifacts, and refuses tracked historical-browser drift.",
         "outputs/evidence/p6-t6-ci18-prepaint-visual-audit.mjs": "The evidence-only audit reads all eight current theme/login states and records geometry, overflow, labels, center copy, overlay opacity and decoded raster readiness without replacing screenshots.",
-        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci18-prepaint-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI18 prepaint correction and fresh complete local gates to the ordinal-sorted current source set."
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci18-prepaint-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI18 prepaint correction and fresh complete local gates to the ordinal-sorted current source set.",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/metrics.json": "This primary-agent-opened CI19 frame or metrics artifact records the approved desktop or phone day/night rest/login result after the theme-control correction.",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-day-1440.png": "This primary-agent-opened CI19 frame or metrics artifact records the approved desktop or phone day/night rest/login result after the theme-control correction.",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-day-390.png": "This primary-agent-opened CI19 frame or metrics artifact records the approved desktop or phone day/night rest/login result after the theme-control correction.",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-night-1440.png": "This primary-agent-opened CI19 frame or metrics artifact records the approved desktop or phone day/night rest/login result after the theme-control correction.",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-home-night-390.png": "This primary-agent-opened CI19 frame or metrics artifact records the approved desktop or phone day/night rest/login result after the theme-control correction.",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-day-1440.png": "This primary-agent-opened CI19 frame or metrics artifact records the approved desktop or phone day/night rest/login result after the theme-control correction.",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-day-390.png": "This primary-agent-opened CI19 frame or metrics artifact records the approved desktop or phone day/night rest/login result after the theme-control correction.",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-night-1440.png": "This primary-agent-opened CI19 frame or metrics artifact records the approved desktop or phone day/night rest/login result after the theme-control correction.",
+        "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/public-login-night-390.png": "This primary-agent-opened CI19 frame or metrics artifact records the approved desktop or phone day/night rest/login result after the theme-control correction.",
+        "outputs/evidence/p6-t6-ci19-theme-switch-manifest-refresh.mjs": "The deterministic CI19 refresh preserves all 462 evidence IDs and order, rehashes current sources and artifacts, and refuses tracked historical-browser drift.",
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci19-theme-switch-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI19 theme-control correction and complete current-source local gates to the ordinal-sorted source set."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
@@ -6165,6 +6198,18 @@
           "command": "npm.cmd test -- src/lighthouseRunner.test.ts --run",
           "exitCode": 1,
           "failure": "The focused launcher contract failed exactly because run-lighthouse.mjs passed unsupported --chrome-path instead of the Lighthouse-supported CHROME_PATH environment variable."
+        },
+        {
+          "classification": "behavioral",
+          "command": "GitHub Actions ordinary CI run 33267670149 / job 99140524702: WebKit theme-performance",
+          "exitCode": 1,
+          "failure": "The unchanged WebKit theme budget failed at transition P95/max 41/76 ms against 34/100 ms while baseline P95/max was 17/18 ms."
+        },
+        {
+          "classification": "behavioral",
+          "command": "npm.cmd test -- src/publicThemeCompositor.test.ts --run",
+          "exitCode": 1,
+          "failure": "The focused compositor contract failed exactly because .theme-switch__mark still declared a 420 ms theme-triggered transform transition."
         }
       ],
       "evidenceIds": [
@@ -6198,11 +6243,11 @@
       "externalBlockers": [
         {
           "code": "ORDINARY_CI_PENDING",
-          "fact": "Ordinary CI run 33261353542 at 56611eaf passed frontend unit/type/build, official MySQL and browser installation, then failed only WebKit theme performance because the decoded raster image was hidden until the first theme click, causing first-use texture upload and paint. The persistent promoted raster plus two-frame day-overlay prepaint passes focused TDD, frontend 425/425, typecheck/build, the official Linux Playwright matrix 336/336, real-Fastify 12/12, Lighthouse and direct eight-state review. A new ordinary CI must still become genuinely green."
+          "fact": "Ordinary CI run 33267670149 at 13b7a54 passed frontend unit/type/build, official MySQL and browser installation, then failed only the dedicated WebKit theme-performance gate at transition P95/max 41/76 ms against unchanged 34/100 ms budgets. Isolated diagnostics identified the decorative 420 ms theme-control mark transition; removing only that transition now passes the focused contract, repeated official WebKit gate and complete current-source local verification. A new ordinary CI must still become genuinely green."
         },
         {
           "code": "RELEASE_PREREQUISITES_PENDING",
-          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33261353542."
+          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33267670149."
         }
       ]
     }

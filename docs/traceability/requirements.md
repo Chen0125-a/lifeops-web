@@ -94,3 +94,11 @@
 - Argo `Synced/Healthy`, Kubernetes context and cluster-entry smoke are optional user deployment records, not states or completion gates in this Web ledger.
 - Evidence paths must name sanitized artifacts. Credentials, raw personal content and private vault bodies never enter this file.
 - Any plan/spec change updates this ledger before implementation resumes.
+
+## 2026-08-30 CI19 current evidence override
+
+Ordinary CI `33267670149` / job `99140524702` at `13b7a54` passed unit/type/build, official MySQL and browser installation, then failed only dedicated WebKit theme performance at transition P95/max `41/76ms` against unchanged `34/100ms` budgets. Official-image diagnostics isolated the independent 420ms `.theme-switch__mark` transition; focused TDD first failed 1/4, and the minimum correction removes only that decorative transition while preserving its endpoint and every ring owner/period.
+
+Fresh gates pass focused 4/4, frontend 88/88 files and 425/425 tests, both typechecks/builds, server 362 ordinary plus 50 exact-only skips, official MySQL 50/50, WebKit theme repeated 20/20, Firefox theme, real-Fastify 12/12, Helm/media/security/observability/workflow/release contracts, audits, current-source Web/API image smoke, 16-migration dump/restore and Lighthouse 1.00/1.00/0.96/0.91. The full official matrix executed 335/336 with the sole failure being an exact LF check after Windows `git archive` populated the isolated volume with CRLF; restoring source LF bytes and rerunning the entire affected `public-final` file passed 5/5. No behavioral failure, test, browser, worker, retry, threshold or coverage was hidden.
+
+Eight CI19 1440×900/390×844 day/night rest/login images were opened individually; metrics record 71 frames at 16.8ms P95/max and eight viewport/theme diagnostics with zero overflow and five labels. The deterministic checkpoint is generated after this current ledger text is frozen and binds 612 inputs, 462 same-order evidence rows and 83 visual states. Parent truth remains 30 `verified-local` / 10 `partial` / 4 `pending`; registry-bound atoms remain open until a new ordinary CI and the authorized immutable release actually succeed.
