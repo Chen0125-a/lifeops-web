@@ -126,6 +126,16 @@ Obsidian 项目权威账本：
 npm.cmd run test:execution
 ```
 
+## 42. 2026-08-30 最新接班增量：CI19 本地实现提交与授权 push 边界
+
+- CI19 实现/当前证据已提交为 `fd2b4f0f59ffc7181cac5ecfccb0f33566266bdc`（`fix(theme): remove WebKit switch animation`）；`origin/main` 仍为 `13b7a54eeb261c18535e6a58d1b071e2e55e0771`，本地精确领先 1 笔。受保护的 8 个历史 untracked 文件保持未暂存、未移动、未删除。
+- 提交后 execution 97/97，standalone startup/handoff 均 exit 0、`ok:true`、零 issue；saved/fresh/evidence/visual 继续一致为 `CD4314F626367B3BC565971064DA804E2A306A90502318437696B8B590D40FBB` / 612 inputs / 462 rows / 83 visual states。
+- 包含本节与 execution-control 同步段的仓库提交是最终窄账本原子。其创建后只读核验远端 `main`，按用户持续授权推送实现与窄账本两笔提交并等待普通 CI。只有普通 CI 全绿才执行唯一一次已授权 `1.0.0` release；P6-T7 仍不得提前开始。
+
+```powershell
+git ls-remote origin refs/heads/main
+```
+
 ## 24. 2026-08-28 最新接班增量：普通 CI #9 单点失败与完整本地收敛
 
 - 本节是当前最新覆盖，优先于上文 CI #8/#7 的旧下一动作。此前授权的 CI #8 两笔提交已经推送且授权已消耗；当前 `HEAD` 与 `origin/main` 均为 `10a86adb271f849dcf91bf46d7b09265aa829127`。普通 CI run `33137867114` / job `98741846244` 在 unit、frontend typecheck、production build、精确 MySQL 通过后，仅 dedicated WebKit theme-performance 失败：baseline P95 19ms、transition P95 88ms、未改变预算 36ms、max 88ms 低于未改变 ceiling 100ms。后续 Helm/workflow/image tail 被跳过；没有 release。

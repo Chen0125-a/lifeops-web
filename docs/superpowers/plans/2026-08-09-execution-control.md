@@ -1267,6 +1267,16 @@ Run final execution-contract, standalone startup/handoff, saved/fresh/manifest i
 npm.cmd run test:execution
 ```
 
+## 2026-08-30 P6-T6 CI19 local implementation commit and authorized push boundary
+
+The bounded CI19 implementation/current-evidence atom is committed as `fd2b4f0f59ffc7181cac5ecfccb0f33566266bdc` (`fix(theme): remove WebKit switch animation`). Post-commit execution-contract verification passes 97/97; standalone startup and handoff both exit 0 with `ok:true`, no issues and the same ADR-030 / P6 / P6-T6 / Step 7 / 30-10-4 state. Saved/fresh/evidence/visual identity remains `CD4314F626367B3BC565971064DA804E2A306A90502318437696B8B590D40FBB`, 612 inputs, 462 same-order evidence rows and 83 visual states.
+
+Before this narrow ledger atom, `origin/main` remains `13b7a54eeb261c18535e6a58d1b071e2e55e0771`; local `main` is ahead by exactly one commit. The tracked tree and index are clean, and the eight protected historical untracked files remain untouched. The repository commit containing this paragraph and the synchronized handoff is the final narrow ledger atom. The next action is to commit that exact pair of ledger paths, verify remote `main` has no competing update, push the implementation and ledger commits under the user's continuing authorization, and observe the resulting ordinary CI. Only a genuinely green ordinary CI permits the single authorized additional `1.0.0` release.
+
+```powershell
+git ls-remote origin refs/heads/main
+```
+
 ## 2026-08-28 P6-T6 CI #9 latest-order override
 
 This tail entry is the current execution truth and supersedes older CI #8/#7 next-action text above. Local `HEAD` and `origin/main` are `10a86adb271f849dcf91bf46d7b09265aa829127`; the authorization that pushed through this revision is consumed. Ordinary CI run `33137867114`, job `98741846244`, failed only the dedicated WebKit theme-performance assertion after unit, typecheck, build and exact MySQL passed. The bounded current WIP has fresh green frontend 88/88 files and 425/425 tests, typecheck/build, complete server/MySQL/Helm/security/workflow/image/data gates, official Linux Playwright 335/335, real-Fastify 12/12 and Lighthouse 1.00/1.00/0.96/0.91. Eight canonical 1440×900/390×844 day/night rest/login images were opened individually and passed direct visual review.
