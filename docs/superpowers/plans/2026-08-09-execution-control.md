@@ -1439,6 +1439,54 @@ Commit the narrow ledger atom, push the implementation and ledger commits to exa
 node scripts/verify-execution-contract.mjs --mode startup
 ```
 
+## 2026-08-30 P6-T6 CI20 final tail override
+
+This final entry supersedes every earlier checkpoint and next-action paragraph. The CI20 implementation is committed locally as `0996cbb` (`fix(test): stabilize cross-browser acceptance sampling`); the repository `HEAD` containing this section is the finalized narrow ledger/checkpoint atom. `origin/main` and verified remote `main` remain `386de70ef9762074445b962c3c594f2e52dac2d2`. Ordinary CI run `33271354230` / job `99150269743` passed all non-browser gates and 335/336 browser cases, then failed only WebKit private-route continuity with nine healthy retained frames against the unchanged minimum ten.
+
+Deterministic TDD first timed out when a foreground-WebKit fixture delivered no rAF callback. Each sample now races rAF against a 16 ms timer fallback while retaining the 360 ms duration and ten-frame gate. A repeated 768 night-home Axe run independently failed 3/20 on the last label mid-fade; waiting for the five authored labels to reach opacity 1 produced 20/20 without changing Axe, WCAG, colors, geometry or motion. Fresh current-worktree gates pass frontend 426/426, both typechecks/builds, server 362 ordinary plus 50 exact-only skips, official MySQL 50/50, all declared Helm/media/security/observability/workflow/release/data contracts, local Web/API image smoke and official Linux Playwright 338/338 with workers=1/retries=0. CI19 final images remain product-source-current and previously passed individual original-resolution review.
+
+Authority remains ADR-030, status `implementation-active`, active tuple P6 / P6-T6 / Step 7 and parent truth 30/10/4. No release or registry/cluster claim exists.
+
+### Exact next atomic action
+
+Verify the remote `main` still equals the recorded baseline, push the implementation and ledger commits under continuing authorization, then observe the new ordinary CI to a terminal result. Only a green ordinary CI permits the single authorized `1.0.0` dispatch.
+
+```powershell
+git ls-remote --heads origin refs/heads/main
+```
+
+## 2026-08-30 P6-T6 CI20 implementation commit and narrow-ledger boundary
+
+The reviewed sampling/accessibility implementation is committed locally on `main` as `0996cbb` (`fix(test): stabilize cross-browser acceptance sampling`). Its exact staged set contained only `src/motionProbeContract.test.ts`, `tests/helpers/motionProbe.ts` and `tests/accessibility-full.spec.ts`; cached diff check passed. `origin/main` remains `386de70ef9762074445b962c3c594f2e52dac2d2`, and the eight protected historical untracked files remain unstaged and untouched.
+
+The current deterministic checkpoint remains content-bound to the committed sources plus the synchronized task/evidence state. The repository commit containing this section, the manifests and that checkpoint is the final narrow ledger atom before the already authorized push. Parent truth remains 30/10/4, P6-T6 Step 7 stays open, and no release or registry/cluster claim exists.
+
+### Exact next atomic action
+
+Refresh and verify checkpoint identity, run execution/startup/handoff and the final authority/JSON/diff/credential-safe staged audit, commit the narrow ledger atom, push both commits to exact GitHub `main`, then observe the new ordinary CI. Only a green ordinary CI permits the single authorized `1.0.0` dispatch.
+
+```powershell
+node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```
+
+## 2026-08-30 P6-T6 ordinary CI20 sampling/a11y stabilization and complete local convergence
+
+The current committed baseline, tracking ref and verified remote `main` are `386de70ef9762074445b962c3c594f2e52dac2d2`; the CI20 correction is still uncommitted. Ordinary CI run `33271354230` / job `99150269743` passed MySQL, unit, typecheck, production build and 335/336 browser cases, then failed only the WebKit private-route continuity cadence precondition with nine retained frames against the unchanged ten-frame minimum. Every recorded DOM state had the private shell, main content, route panel and non-white background.
+
+The deterministic focused RED simulated foreground WebKit dropping all rAF callbacks and timed out before 500ms. The bounded correction races each scheduled rAF with a 16ms timer fallback, cancels the loser and keeps the original 360ms probe duration and ten-frame threshold. A separate exact 768 night-home Axe reproduction failed 3/20 because the last orbit label was sampled during its authored fade; the stable-surface helper now waits for five labels and opacity 1 before the unchanged Axe scan. The repeated focused result is 20/20 for the motion route and 20/20 for the 768 accessibility case.
+
+Fresh current-worktree gates pass frontend 88/88 files and 426/426 tests, frontend typecheck and an 885-module production build; server 362 ordinary tests plus 50 exact-only skips and server typecheck/build; a fresh disposable official MySQL 8.4.10 run at 50/50; all declared Helm/media/security/observability/workflow/release/data contracts; local current-source Web/API image builds and `image-smoke: ok`; and official Linux Playwright WebKit theme 1/1, Firefox theme 1/1 and matrix 336/336 for 338/338 total with `workers=1` and `retries=0`. The CI19 final images remain product-source-current and already passed individual original-resolution review because CI20 changes only test/probe behavior. CI20-owned containers, two local images and three volumes were precisely removed; the shared Playwright resources, user browsers and eight protected historical untracked files were not touched.
+
+Authority remains ADR-030, status `implementation-active`, active tuple P6 / P6-T6 / Step 7 and parent truth 30 verified-local / 10 partial / 4 pending. No UHub digest, digest-bound SBOM/provenance, exact-digest registry smoke, release success, DNS/TLS or cluster state is claimed.
+
+### Exact next atomic action
+
+Generate and verify the CI20 deterministic checkpoint/manifests, run execution/startup/handoff plus authority/identity/JSON/diff/credential-safe audits, commit and push the bounded correction under the user's continuing authorization, and observe the new ordinary CI. Only a genuinely green ordinary CI permits the single authorized `1.0.0` dispatch; do not enter P6-T7 early.
+
+```powershell
+node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```
+
 ## 2026-08-30 P6-T6 CI19 theme-control transition correction and full local convergence
 
 Ordinary CI run `33267670149` / job `99140524702` at `13b7a54` passed frontend unit/type/build, official MySQL and browser installation, then failed only dedicated WebKit theme performance: baseline P95/max `17/18ms`, transition P95/max `41/76ms`, unchanged budgets `34/100ms`. Official Playwright-image subtree diagnostics kept sky/copy/stage/root direct changes at 16–17ms but measured the header path at 84/101ms; disabling only the theme-switch mark animation made the full click stable at 16–17ms.
@@ -1615,4 +1663,20 @@ Run standalone startup/handoff, checkpoint/authority/JSON/diff/credential-safe a
 
 ```powershell
 node scripts/verify-execution-contract.mjs --mode startup
+```
+
+## 2026-08-30 P6-T6 CI20 authoritative final tail
+
+This final entry supersedes every earlier checkpoint and next-action paragraph. `HEAD`, `origin/main` and verified remote `main` are `386de70ef9762074445b962c3c594f2e52dac2d2`; the CI20 correction is uncommitted. Ordinary CI run `33271354230` / job `99150269743` passed all non-browser gates and 335/336 browser cases, then failed only WebKit private-route continuity with nine healthy retained frames against the unchanged minimum ten.
+
+Deterministic TDD timed out under a foreground-WebKit no-rAF fixture before the scheduler fallback was added. Each sample now races rAF against a 16 ms timer while retaining the 360 ms duration and ten-frame gate. A repeated 768 night-home Axe run independently failed 3/20 on the last label mid-fade; waiting for five authored labels at opacity 1 produced 20/20 without changing Axe, WCAG, colors, geometry or motion. Fresh gates pass frontend 426/426, both typechecks/builds, server 362 ordinary plus 50 exact-only skips, official MySQL 50/50, all declared Helm/media/security/observability/workflow/release/data contracts, local Web/API image smoke and official Linux Playwright 338/338 with workers=1/retries=0. CI19 final images remain product-source-current and already passed individual original-resolution review.
+
+Authority remains ADR-030, status `implementation-active`, active tuple P6 / P6-T6 / Step 7 and parent truth 30/10/4. No release or registry/cluster claim exists.
+
+### Exact next atomic action
+
+Generate and verify the CI20 checkpoint/manifests, run execution/startup/handoff and final audits, commit/push under continuing authorization, then observe ordinary CI. Only a green ordinary CI permits the single authorized `1.0.0` dispatch.
+
+```powershell
+node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
 ```

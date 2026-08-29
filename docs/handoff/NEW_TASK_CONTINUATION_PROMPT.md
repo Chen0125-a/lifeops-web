@@ -126,6 +126,42 @@ Obsidian 项目权威账本：
 npm.cmd run test:execution
 ```
 
+## 43. 2026-08-30 最新尾部覆盖：CI20 WebKit 采样与无障碍稳定面收敛
+
+- 本节位于文件尾并覆盖所有旧 checkpoint/next-action。`HEAD`、`origin/main` 与远端 `main` 为 `386de70ef9762074445b962c3c594f2e52dac2d2`，CI20 WIP 未提交。普通 CI `33271354230` / job `99150269743` 只因 WebKit continuity 得到 9 个健康帧而非原门槛 10 帧失败；没有 release。
+- 确定性 no-rAF RED 后，每次采样改为 rAF 与 16ms fallback 竞争，原 360ms/10-frame 门不变。独立 768 night-home Axe 重复门禁从 mid-fade 的 17/20 收敛到等待五个 label opacity=1 后的 20/20，未改规则、配色、几何或动效。
+- 新鲜门禁通过 frontend 426/426、双 typecheck/build、server 362 +50 skips、official MySQL 50/50、Helm/media/security/observability/workflow/release/data、local image smoke 和 official Linux browser 338/338；CI19 图仍 product-source-current 且已逐图打开。受保护 8 个 untracked 历史文件未触碰。
+- 当前仍为 ADR-030 / P6 / P6-T6 / Step 7 / 30-10-4。唯一下一动作是 CI20 deterministic refresh 和最终审计，然后按持续授权 commit/push 并等待 ordinary CI；只有全绿才 dispatch 唯一一次 `1.0.0`。
+
+```powershell
+node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```
+
+## 45. 2026-08-30 最新权威尾部：CI20 实现提交与窄账本边界
+
+- CI20 三文件实现提交已创建为 `0996cbb`（`fix(test): stabilize cross-browser acceptance sampling`）；`origin/main` 仍为 `386de70ef9762074445b962c3c594f2e52dac2d2`。8 个受保护历史 untracked 文件未暂存、移动或删除。
+- 当前剩余 WIP 只用于同步 evidence/task/visual/checkpoint 与四份交接账本。父边界 30/10/4、P6-T6 Step 7 和 release/registry/cluster 未完成事实均不变。
+- 唯一下一动作：刷新 checkpoint，完成 execution/startup/handoff 与最终 staged 审计，提交窄账本并按持续授权推送两笔提交；新普通 CI 全绿后才运行唯一一次授权 `1.0.0` release。
+
+```powershell
+node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```
+
+## 42. 2026-08-30 最新接班增量：CI20 WebKit 采样与无障碍稳定面完整本地收敛
+
+- 本节位于文件尾并覆盖上文旧 checkpoint 与 next-action。当前 `HEAD`、`origin/main` 与已核验远端 `main` 为 `386de70ef9762074445b962c3c594f2e52dac2d2`；CI20 WIP 尚未提交。普通 CI `33271354230` / job `99150269743` 通过 MySQL、unit、typecheck、production build 与 335/336 browser cases，只在 WebKit private-route continuity 以 9 个健康帧低于未改变的 10 帧门；没有 release。
+- focused TDD 用前台 WebKit 丢失全部 rAF callback 的确定性夹具先得到 500ms timeout RED；最小修复让每个 rAF 与 16ms fallback 竞争并取消 loser，保留 360ms 窗口和 >=10 原门槛。另一个 768 night-home Axe 重复运行真实复现 3/20 final orbit label mid-fade contrast 失败；只在 Axe 前等待五个既有 label opacity=1，同一重复门禁随后 20/20，没有改颜色、WCAG、geometry 或 motion。
+- 新鲜门禁通过 frontend 88/88 files、426/426 tests、typecheck、885-module build；server 362 ordinary +50 exact-only skips、typecheck/build；官方 MySQL 8.4.10 50/50；Helm/media/security/observability/workflow/release/data；current-source local Web/API build 与 `image-smoke: ok`；official Linux Playwright WebKit theme 1/1 + Firefox theme 1/1 + matrix 336/336 = 338/338（workers=1/retries=0）。CI19 最终视觉图仍与产品源码一致，且已逐张原分辨率复核；CI20 未改产品/视觉源码。
+- CI20 owned containers、两张 local images 与三个测试卷已精确清理；共享 Playwright 资源、用户浏览器和 8 个受保护历史 untracked 文件未触碰。当前仍为 ADR-030 / P6 / P6-T6 / Step 7 / 30-10-4；没有 UHub digest、attestation、exact-digest smoke、release、DNS/TLS 或 cluster 声明。
+
+### 当前唯一下一原子动作
+
+运行 CI20 deterministic refresh、execution/startup/handoff 与 authority/identity/JSON/diff/credential-safe 审计；在持续授权下 commit/push 后观察 ordinary CI。只有新普通 CI 全绿才执行唯一一次已授权 `1.0.0` release，不得提前进入 P6-T7。
+
+```powershell
+node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```
+
 ## 42. 2026-08-30 最新接班增量：CI19 本地实现提交与授权 push 边界
 
 - CI19 实现/当前证据已提交为 `fd2b4f0f59ffc7181cac5ecfccb0f33566266bdc`（`fix(theme): remove WebKit switch animation`）；`origin/main` 仍为 `13b7a54eeb261c18535e6a58d1b071e2e55e0771`，本地精确领先 1 笔。受保护的 8 个历史 untracked 文件保持未暂存、未移动、未删除。
@@ -509,4 +545,15 @@ node scripts/verify-execution-contract.mjs --mode startup
 
 ```powershell
 npm.cmd run test:execution
+```
+
+## 44. 2026-08-30 最新权威尾部：CI20 WebKit 采样与无障碍稳定面收敛
+
+- CI20 三文件实现已提交为 `0996cbb`；包含本节的仓库 `HEAD` 是最终窄账本/checkpoint atom。`origin/main` 与远端 `main` 仍为 `386de70ef9762074445b962c3c594f2e52dac2d2`。普通 CI `33271354230` / job `99150269743` 只因 WebKit continuity 得到 9 个健康帧而非原门槛 10 帧失败；没有 release。
+- no-rAF 确定性 RED 后，每次采样改为 rAF 与 16ms fallback 竞争，原 360ms/10-frame 门不变。独立 768 night-home Axe 重复门禁从 mid-fade 的 17/20 收敛到等待五个 label opacity=1 后的 20/20，未改规则、配色、几何或动效。
+- 新鲜门禁通过 frontend 426/426、双 typecheck/build、server 362 +50 skips、official MySQL 50/50、Helm/media/security/observability/workflow/release/data、local image smoke 和 official Linux browser 338/338；CI19 图仍 product-source-current 且已逐图打开。受保护 8 个 untracked 历史文件未触碰。
+- 当前仍为 ADR-030 / P6 / P6-T6 / Step 7 / 30-10-4。唯一下一动作是只读确认远端基线未竞争更新，按持续授权 push 两笔提交并观察新 ordinary CI；只有全绿才 dispatch 唯一一次 `1.0.0`。
+
+```powershell
+git ls-remote --heads origin refs/heads/main
 ```

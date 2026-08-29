@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "CD4314F626367B3BC565971064DA804E2A306A90502318437696B8B590D40FBB",
+  "checkpointRootSha256": "CA6A7C4053836C28D180BBEB485D7A3E4DC737AF21A7AFBE2760F13007BDC6AB",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-29T19:29:24.876Z",
+  "generatedAt": "2026-08-29T22:24:23.671Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
@@ -2741,13 +2741,13 @@
   "latestRevalidation": {
     "taskId": "P6-T6",
     "step": 7,
-    "revalidatedAt": "2026-08-29T19:29:24.876Z",
-    "checkpointRootSha256": "CD4314F626367B3BC565971064DA804E2A306A90502318437696B8B590D40FBB",
+    "revalidatedAt": "2026-08-29T22:24:23.671Z",
+    "checkpointRootSha256": "CA6A7C4053836C28D180BBEB485D7A3E4DC737AF21A7AFBE2760F13007BDC6AB",
     "metricsPath": "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/metrics.json",
     "metricsSha256": "2FD6A6FE66901C471C4843A569CDC7038CB5E7B1D8BC4CC1A1BD5F71EF5079B4",
     "openedOriginalResolution": true,
     "captureCount": 8,
     "conclusion": "pass",
-    "note": "The primary executor opened all eight CI19 1440x900 and 390x844 day/night rest/login frames individually at original resolution. Metrics show 71 frames at 16.8 ms P95/max and eight viewport/theme diagnostics with zero overflow, five labels and full-viewport login bounds. Direct review confirms complete safe-inset rings, the plain 05 center, orbit-left/title-recede depth, dark night login and unchanged theme-control endpoint."
+    "note": "CI20 changes only browser test/probe scheduling. The CI19 final 1440x900 and 390x844 day/night rest/login images remain product-source-current and were already opened individually at original resolution; their hashes and 71-frame 16.8 ms metrics remain unchanged."
   }
 }
