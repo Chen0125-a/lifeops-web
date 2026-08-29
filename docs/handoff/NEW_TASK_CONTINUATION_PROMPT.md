@@ -468,3 +468,19 @@ npm.cmd run test:execution
 ```powershell
 git diff --cached --check
 ```
+
+## 39. 2026-08-30 最新接班增量：CI18 prepaint 完整本地收敛
+
+- 本节位于文件尾并覆盖上文旧 checkpoint 与 next-action。CI18 实现/当前证据已提交为 `80cb78998a24329168dbcd3162317b3d9c29c9eb`；`origin/main` 与已核验远端 `main` 仍为 `56611eafed0c6e46c825c309fa3b3eb3f399c892`，只剩窄账本/checkpoint 待提交。普通 CI run `33261353542` / job `99123743985` 通过 unit/type/build、MySQL 与 browser install，只在 WebKit theme-performance 失败：baseline P95/max 18/18ms、transition P95/max 53/81ms，预算仍为 35/100ms；没有 release。
+- 根因是已 decode 的 raster 仍保持 `visibility:hidden`，WebKit 在首次主题点击才做纹理上传/paint。最小实现让 1440×900 raster 持续可见并置于 day overlay 下，decode 后跨两帧才启用主题切换。focused 主题合同 19/19；Lighthouse launcher 合同从 unsupported `--chrome-path` 的精确 RED 收敛到 `CHROME_PATH` 的 1/1 GREEN。workers、retries、浏览器、阈值、采样、几何、周期与动效速率均未放宽。
+- 新鲜当前源码门禁通过 frontend 88/88 files、425/425 tests、typecheck、885-module build；official Linux Playwright 336/336（29.1m，workers=1/retries=0）；real-Fastify 12/12；Lighthouse 1.00/1.00/0.96/0.91；server 362 ordinary +50 exact-only skips、MySQL 50/50、16 migrations/dump/restore、Helm/media/security/observability/workflow/release、audit 与 current-source image smoke 保持 current-source 通过。
+- primary executor 已逐张原分辨率打开 8 张 CI18 desktop/phone day/night rest/login 图；独立八态数值审计确认零 overflow、5 labels、完整安全内缩外环、plain `05 / 此刻正在发生`、正确 login surface、正确 day-overlay opacity 与完整可见已解码 raster。post-implementation checkpoint 为 `942BFD934DFCE882ECF6091434D16A9C109CAE17FF8C00EE6B12C5666BD39BA0` / 612 inputs / 462 同序 rows / 75 visual states。8 个受保护历史 untracked 文件未触碰。
+- 当前仍为 ADR-030 / P6 / P6-T6 / Step 7 / 30-10-4。没有 UHub digest、attestation、exact-digest smoke 或 release success 声明；用户持续授权 commit/push，并且只在新 ordinary CI 全绿后执行唯一一次 `1.0.0` release。
+
+### 当前唯一下一原子动作
+
+运行 standalone startup/handoff、authority/checkpoint/JSON/diff/credential-safe 审计，commit/push 后观察 ordinary CI；全绿才执行唯一一次已授权 release，不得提前进入 P6-T7。
+
+```powershell
+node scripts/verify-execution-contract.mjs --mode startup
+```

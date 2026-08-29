@@ -1566,3 +1566,23 @@ Commit and push the bounded correction under continuing authorization, observe t
 ```powershell
 git diff --cached --check
 ```
+
+## 2026-08-30 P6-T6 ordinary CI17 prepaint correction and complete local convergence
+
+CI16 worker-remediation commit `56611eafed0c6e46c825c309fa3b3eb3f399c892` is present on local, tracking and verified remote `main`. Ordinary CI run `33261353542`, job `99123743985`, passed frontend unit/type/build, official MySQL 8.4 and browser installation, then failed only WebKit theme performance: baseline P95/max 18/18 ms and transition P95/max 53/81 ms against unchanged 35/100 ms budgets. The decoded raster star field was still `visibility:hidden`, so WebKit paid the texture-upload/paint cost at the first theme click. No release was dispatched.
+
+The bounded implementation/current-evidence commit is now `80cb78998a24329168dbcd3162317b3d9c29c9eb` (`fix(theme): prepaint public theme assets`); `origin/main` remains `56611eafed0c6e46c825c309fa3b3eb3f399c892`. Only the synchronized narrow ledger/checkpoint atom remains before the authorized push.
+
+Focused TDD keeps the decoded 1440×900 raster visible beneath the day overlay and requires two paint frames before the switch becomes available. The focused compositor/public contracts pass 19/19; the Lighthouse launcher contract first failed exactly on unsupported `--chrome-path` and now passes 1/1 after using `CHROME_PATH`. Fresh current-source gates pass frontend 88/88 files and 425/425 tests, typecheck and an 885-module build; official Linux Playwright 336/336 in 29.1 minutes with workers=1/retries=0; official Linux real-Fastify 12/12; official Linux Lighthouse 1.00/1.00/0.96/0.91; source-current server 362 ordinary plus 50 exact-only skips, official MySQL 50/50 with all 16 migrations and dump/restore; Helm/media/security/observability/workflow/release contracts, audits and current-source Web/API image smoke. No worker, retry, browser, threshold, sample duration, geometry, ring period or motion rate changed.
+
+The primary executor opened all eight `outputs/evidence/browser/p6-t6-ci18-prepaint-final/` 1440×900 and 390×844 day/night rest/login images individually at original resolution. A separate eight-state audit confirms zero overflow, five visible labels, complete safe-inset rings, plain `05 / 此刻正在发生`, correct login layers, correct day-overlay opacity and a complete visible decoded 1440×900 raster. The deterministic post-implementation checkpoint is `outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci18-prepaint-local-full-gates-uncommitted-local-checkpoint.json`, root `942BFD934DFCE882ECF6091434D16A9C109CAE17FF8C00EE6B12C5666BD39BA0`, with 612 ordinal-sorted inputs, 462 unchanged-order evidence rows and 75 visual states. The eight protected historical untracked files remain untouched.
+
+Parent truth remains 30 verified-local / 10 partial / 4 pending and P6-T6 Step 7 remains open. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent. The user's continuing authorization covers committing and pushing this bounded correction and exactly one additional `1.0.0` dispatch only after the resulting ordinary CI is genuinely green; it does not authorize credential disclosure, kubeconfig access or cluster actions.
+
+### Exact next atomic action
+
+Run standalone startup/handoff, checkpoint/authority/JSON/diff/credential-safe audits, commit and push the bounded CI18 correction, then observe the new ordinary CI to terminal state. Only if it is fully green may the single authorized `1.0.0` release be dispatched. Do not enter P6-T7 before immutable release closure.
+
+```powershell
+node scripts/verify-execution-contract.mjs --mode startup
+```
