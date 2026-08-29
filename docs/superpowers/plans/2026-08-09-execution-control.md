@@ -1447,6 +1447,14 @@ Deterministic TDD first timed out when a foreground-WebKit fixture delivered no 
 
 Authority remains ADR-030, status `implementation-active`, active tuple P6 / P6-T6 / Step 7 and parent truth 30/10/4. No release or registry/cluster claim exists.
 
+## 2026-08-30 P6-T6 release #2 observability-pipeline remediation
+
+Ordinary CI run `33278665288` / job `99169909250` at `01f1bbb1450a92b719d9a3ddb84fd945c63eeb85` completed successfully in 35m03s, including unit/type/build, official MySQL 8.4.10, complete Playwright/accessibility, Helm/workflow and local image-build gates. The single authorized `1.0.0` dispatch was then consumed by release run `33280128021` / job `99173780692`. That run independently passed Validate release, exact MySQL and 36m13s of complete Playwright/accessibility, then failed at `Validate deployable manifests`: direct Linux `pwsh` pipeline records did not populate `[Console]::In`, so `validate-observability.ps1` reported `Observability render is empty.` Helm lint itself passed. UHub sign-in, Web/API build/push, digest resolution, exact-digest smoke and GitOps update did not start.
+
+A focused direct-pipeline contract reproduced the same empty-render failure while the original external-process stdin contract remained green. The minimum implementation now accumulates `ValueFromPipeline` records and falls back to Console stdin only when no direct records exist. Windows PowerShell 5.1 and PowerShell 7 observability contracts pass, the exact release-style `helm template ... | ./scripts/validate-observability.ps1 -FromStdin` command reports `observability-validation: ok`, and workflow, release-production and release-preflight contracts pass. No observability pattern, metric, alert, route, Helm resource or application/browser behavior was weakened.
+
+Authority remains ADR-030, status `implementation-active`, active tuple P6 / P6-T6 / Step 7 and parent truth 30 verified-local / 10 partial / 4 pending. The failed dispatch produced no UHub digest, digest-bound SBOM/provenance, exact-digest registry smoke or release success. The next atomic action is deterministic checkpoint/evidence refresh plus execution/startup/handoff and final audits, then commit/push under the continuing main-branch authorization and observe a fresh ordinary CI. The only release authorization has been consumed; another dispatch requires new explicit authorization after that CI is genuinely green.
+
 ### Exact next atomic action
 
 Verify the remote `main` still equals the recorded baseline, push the implementation and ledger commits under continuing authorization, then observe the new ordinary CI to a terminal result. Only a green ordinary CI permits the single authorized `1.0.0` dispatch.

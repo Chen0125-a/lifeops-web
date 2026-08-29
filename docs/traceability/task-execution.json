@@ -4852,6 +4852,7 @@
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci18-prepaint-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci19-theme-switch-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci20-webkit-sampling-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-release2-observability-pipeline-remediation-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -4886,6 +4887,8 @@
         "scripts/release-production.ps1",
         "scripts/release-production.test.ps1",
         "scripts/run-lighthouse.mjs",
+        "scripts/validate-observability.ps1",
+        "scripts/validate-observability.test.ps1",
         "scripts/validate-workflows.ps1",
         "scripts/validate-workflows.test.ps1",
         "scripts/verify-execution-contract.test.mjs",
@@ -5411,6 +5414,7 @@
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci18-prepaint-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci19-theme-switch-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci20-webkit-sampling-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-release2-observability-pipeline-remediation-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5436,6 +5440,8 @@
         "scripts/execution-contract/original-atoms.mjs",
         "scripts/execution-contract/source-checkpoint.mjs",
         "scripts/run-lighthouse.mjs",
+        "scripts/validate-observability.ps1",
+        "scripts/validate-observability.test.ps1",
         "scripts/validate-workflows.test.ps1",
         "scripts/verify-execution-contract.test.mjs",
         "scripts/vitest-config-contract.test.mjs",
@@ -5963,7 +5969,10 @@
         "outputs/evidence/p6-t6-ci19-theme-switch-manifest-refresh.mjs": "The deterministic CI19 refresh preserves all 462 evidence IDs and order, rehashes current sources and artifacts, and refuses tracked historical-browser drift.",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci19-theme-switch-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI19 theme-control correction and complete current-source local gates to the ordinal-sorted source set.",
         "outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs": "The deterministic CI20 refresh preserves all 462 evidence IDs and order, rehashes current sources/artifacts and refuses tracked historical-browser drift.",
-        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci20-webkit-sampling-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI20 sampling/accessibility correction and complete current-source local gates to the sorted source set."
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci20-webkit-sampling-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI20 sampling/accessibility correction and complete current-source local gates to the sorted source set.",
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-release2-observability-pipeline-remediation-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI20 sampling/accessibility correction and complete current-source local gates to the sorted source set.",
+        "scripts/validate-observability.ps1": "The observability validator now accepts both external process stdin and direct PowerShell pipeline records, preserving every rendered-manifest assertion across Windows PowerShell and Linux pwsh.",
+        "scripts/validate-observability.test.ps1": "The focused contract reproduces the release workflow direct-pipeline failure and proves both direct and external stdin modes accept the reviewed Helm render."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
@@ -6234,6 +6243,18 @@
           "command": "official mcr.microsoft.com/playwright:v1.62.1-noble repeated 768 night-home accessibility gate",
           "exitCode": 1,
           "failure": "The exact repeated Axe run passed 17/20 and failed three times because the final 时间档案 orbit label was sampled during its authored opacity fade; no Axe rule or contrast threshold was changed."
+        },
+        {
+          "classification": "behavioral",
+          "command": "GitHub Actions release run 33280128021 / job 99173780692: Validate deployable manifests",
+          "exitCode": 1,
+          "failure": "The direct Linux pwsh Helm pipeline reached validate-observability.ps1 with empty Console stdin after every application, MySQL and browser gate had passed; registry sign-in and all image publication steps remained unstarted."
+        },
+        {
+          "classification": "behavioral",
+          "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-observability.test.ps1",
+          "exitCode": 1,
+          "failure": "The new direct PowerShell pipeline contract reproduced Observability render is empty while the existing external-process stdin contract still passed."
         }
       ],
       "evidenceIds": [
@@ -6267,11 +6288,11 @@
       "externalBlockers": [
         {
           "code": "ORDINARY_CI_PENDING",
-          "fact": "Ordinary CI run 33271354230 at 386de70 passed all non-browser gates and 335/336 browser cases, then failed only WebKit private-route continuity with nine healthy retained frames against the unchanged minimum of ten. The deterministic fallback correction and stable Axe surface now pass the complete official Linux browser sequence at 338/338 locally; a new ordinary CI must still become genuinely green."
+          "fact": "Ordinary CI run 33278665288 / job 99169909250 at 01f1bbb passed every gate in 35m03s. Authorized release run 33280128021 then independently passed full tests, MySQL and 36m13s browser acceptance but failed before registry sign-in because the Linux pwsh direct pipeline delivered no Console stdin to validate-observability.ps1. The focused cross-platform fix is green locally; a new ordinary CI must still verify the committed correction."
         },
         {
-          "code": "RELEASE_PREREQUISITES_PENDING",
-          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33271354230."
+          "code": "RELEASE_AUTHORIZATION_REQUIRED",
+          "fact": "The single authorized 1.0.0 dispatch was consumed by failed release run 33280128021. It stopped before UHub sign-in, image build or push, so immutable digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent. Another dispatch requires new explicit authorization after a fresh ordinary CI is green."
         }
       ]
     }

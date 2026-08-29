@@ -97,6 +97,16 @@ networkPolicy:
   $ErrorActionPreference = $previous
   Add-Failure ($validatorExitCode -eq 0) "Standalone observability validation must accept the reviewed render. Output: $validatorOutput"
 
+  $directPipelineOutput = ''
+  $directPipelineAccepted = $true
+  try {
+    $directPipelineOutput = $enabled | & $validator -FromStdin 2>&1 | Out-String
+  } catch {
+    $directPipelineAccepted = $false
+    $directPipelineOutput = $_ | Out-String
+  }
+  Add-Failure $directPipelineAccepted "Direct PowerShell pipeline validation must accept the reviewed render. Output: $directPipelineOutput"
+
   if ($script:failures.Count -gt 0) {
     throw ("observability-contract failed:`n- " + ($script:failures -join "`n- "))
   }

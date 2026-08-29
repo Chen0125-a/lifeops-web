@@ -557,3 +557,13 @@ npm.cmd run test:execution
 ```powershell
 git ls-remote --heads origin refs/heads/main
 ```
+
+## 45. 2026-08-30 最新权威尾部：release #2 observability 管道修复
+
+- 普通 CI `33278665288` / job `99169909250` 在 `01f1bbb1450a92b719d9a3ddb84fd945c63eeb85` 全绿，耗时 35m03s。唯一一次已授权 `1.0.0` dispatch 已由 release `33280128021` / job `99173780692` 消耗；它通过 full app、official MySQL 和 36m13s browser 后，在镜像发布前的 `Validate deployable manifests` 失败：Linux `pwsh` 直接管道不写入 Console stdin，validator 报 `Observability render is empty.`
+- UHub sign-in、Web/API build/push、digest、attestation、exact-digest smoke 和 GitOps update 都未开始。Focused TDD 先复现 direct-pipeline RED；最小修复让 validator 累积 `ValueFromPipeline` records，同时保留外部进程 stdin fallback。Windows PowerShell 5.1、PowerShell 7、exact release-style Helm pipeline、workflow/release-production/release-preflight 合同当前通过，未削弱任何 observability 检查。
+- 当前仍为 ADR-030 / P6 / P6-T6 / Step 7 / 30-10-4。下一动作是 deterministic refresh、execution/startup/handoff 与最终审计，然后按持续授权 commit/push 并观察 fresh ordinary CI。唯一 release 授权已消耗；新 CI 真绿后，任何再次 dispatch 都必须取得新的明确授权。
+
+```powershell
+node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```

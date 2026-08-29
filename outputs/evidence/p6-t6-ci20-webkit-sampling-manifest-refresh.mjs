@@ -6,7 +6,7 @@ import path from 'node:path'
 import { buildLocalCheckpoint } from '../../scripts/execution-contract/source-checkpoint.mjs'
 
 const root = process.cwd()
-const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci20-webkit-sampling-local-full-gates-uncommitted-local-checkpoint.json'
+const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-30-p6-t6-release2-observability-pipeline-remediation-uncommitted-local-checkpoint.json'
 const refreshPath = 'outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs'
 const evidenceManifestPath = 'docs/traceability/evidence-manifest.json'
 const taskExecutionPath = 'docs/traceability/task-execution.json'
@@ -56,6 +56,8 @@ const sourceReasons = new Map([
   ['src/motionProbeContract.test.ts', 'The deterministic foreground-WebKit contract requires continuity sampling to finish with at least ten healthy frames even when requestAnimationFrame callbacks are dropped.'],
   ['tests/helpers/motionProbe.ts', 'Each continuity sample now races requestAnimationFrame against a 16 ms timer fallback while preserving the original 360 ms duration and ten-frame threshold.'],
   ['tests/accessibility-full.spec.ts', 'The homepage Axe gate waits for the five authored orbit labels to reach their stable opacity endpoint before scanning without suppressing any accessibility rule.'],
+  ['scripts/validate-observability.ps1', 'The observability validator now accepts both external process stdin and direct PowerShell pipeline records, preserving every rendered-manifest assertion across Windows PowerShell and Linux pwsh.'],
+  ['scripts/validate-observability.test.ps1', 'The focused contract reproduces the release workflow direct-pipeline failure and proves both direct and external stdin modes accept the reviewed Helm render.'],
   ['outputs/final/data-rehearsal-summary.md', 'The fresh disposable official MySQL 8.4.10 rehearsal records all 16 migrations and matching source/restored logical checksums.'],
   [refreshPath, 'The deterministic CI20 refresh preserves all 462 evidence IDs and order, rehashes current sources/artifacts and refuses tracked historical-browser drift.'],
   [checkpointPath, 'The deterministic checkpoint binds the CI20 sampling/accessibility correction and complete current-source local gates to the sorted source set.'],
@@ -71,20 +73,32 @@ for (const relativePath of currentPaths) {
   if (task.extraPathReasons[relativePath]) continue
   task.extraPathReasons[relativePath] = sourceReasons.get(relativePath)
     ?? (relativePath.startsWith('outputs/')
-      ? 'This CI20 evidence artifact is regenerated from current on-disk sources and rebound by the evidence manifest.'
-      : 'This bounded CI20 path records the focused RED/GREEN, full current-source gates or required execution handoff state.')
+      ? 'This release-remediation evidence artifact is regenerated from current on-disk sources and rebound by the evidence manifest.'
+      : 'This bounded release-remediation path records the focused RED/GREEN, current-source gates or required execution handoff state.')
 }
 task.externalBlockers = [
   {
     code: 'ORDINARY_CI_PENDING',
-    fact: 'Ordinary CI run 33271354230 at 386de70 passed all non-browser gates and 335/336 browser cases, then failed only WebKit private-route continuity with nine healthy retained frames against the unchanged minimum of ten. The deterministic fallback correction and stable Axe surface now pass the complete official Linux browser sequence at 338/338 locally; a new ordinary CI must still become genuinely green.',
+    fact: 'Ordinary CI run 33278665288 / job 99169909250 at 01f1bbb passed every gate in 35m03s. Authorized release run 33280128021 then independently passed full tests, MySQL and 36m13s browser acceptance but failed before registry sign-in because the Linux pwsh direct pipeline delivered no Console stdin to validate-observability.ps1. The focused cross-platform fix is green locally; a new ordinary CI must still verify the committed correction.',
   },
   {
-    code: 'RELEASE_PREREQUISITES_PENDING',
-    fact: 'The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33271354230.',
+    code: 'RELEASE_AUTHORIZATION_REQUIRED',
+    fact: 'The single authorized 1.0.0 dispatch was consumed by failed release run 33280128021. It stopped before UHub sign-in, image build or push, so immutable digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent. Another dispatch requires new explicit authorization after a fresh ordinary CI is green.',
   },
 ]
 for (const red of [
+  {
+    classification: 'behavioral',
+    command: 'GitHub Actions release run 33280128021 / job 99173780692: Validate deployable manifests',
+    exitCode: 1,
+    failure: 'The direct Linux pwsh Helm pipeline reached validate-observability.ps1 with empty Console stdin after every application, MySQL and browser gate had passed; registry sign-in and all image publication steps remained unstarted.',
+  },
+  {
+    classification: 'behavioral',
+    command: 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-observability.test.ps1',
+    exitCode: 1,
+    failure: 'The new direct PowerShell pipeline contract reproduced Observability render is empty while the existing external-process stdin contract still passed.',
+  },
   {
     classification: 'behavioral',
     command: 'GitHub Actions ordinary CI run 33271354230 / job 99150269743: WebKit private-route continuity',
@@ -131,13 +145,16 @@ visualManifest.latestRevalidation = {
   openedOriginalResolution: true,
   captureCount: 8,
   conclusion: 'pass',
-  note: 'CI20 changes only browser test/probe scheduling. The CI19 final 1440x900 and 390x844 day/night rest/login images remain product-source-current and were already opened individually at original resolution; their hashes and 71-frame 16.8 ms metrics remain unchanged.',
+  note: 'This release remediation changes only a PowerShell Helm-render validator and its focused contract. The CI19 final 1440x900 and 390x844 day/night rest/login images remain product-source-current and were already opened individually at original resolution; their hashes and 71-frame 16.8 ms metrics remain unchanged.',
 }
 await writeJson(visualManifestPath, visualManifest)
 
 const manifest = await readJson(evidenceManifestPath)
 const evidenceIdsBefore = manifest.evidence.map((row) => row.id)
 const summaries = {
+  'EV-P6-T3-SECURITY': 'Fresh focused observability validation passes in both external-process stdin and direct PowerShell pipeline modes on Windows PowerShell 5.1 and PowerShell 7. The release failure was reproduced before implementation; no assertion, metric, alert, route or security rule was removed.',
+  'EV-P6-T3-BUILD': 'The exact release-style Helm template pipeline now passes observability-validation: ok. Helm lint/render semantics and every ServiceMonitor, metrics Service, PrometheusRule, dashboard, runbook and non-public /metrics assertion remain enforced.',
+  'EV-P6-T4-SUPPLY-CHAIN': 'Ordinary CI 33278665288 passed fully. Release 33280128021 independently passed app, MySQL and browser acceptance, then failed at the pre-registry Helm validator before UHub sign-in or image publication. Workflow/release contracts and the corrected validator pass locally; publication evidence remains pending.',
   'EV-P6-T5-ADR029-UNIT': 'Fresh focused motion-probe contracts pass 3/3 and the complete frontend suite passes 88/88 files and 426/426 tests. The deterministic no-rAF fixture proves the unchanged ten-frame continuity gate remains observable in foreground WebKit.',
   'EV-P6-T5-ADR029-E2E-CHROMIUM': 'Fresh official Linux Chromium coverage passes the complete current-source matrix, including stable accessibility surfaces, login focus and approved desktop/phone geometry.',
   'EV-P6-T5-ADR029-E2E-WEBKIT': 'Fresh official Linux WebKit coverage passes the dedicated theme gate and complete current-source matrix after the continuity probe gained a scheduler fallback; workers=1, retries=0, duration and thresholds remain unchanged.',
@@ -165,7 +182,7 @@ manifest.revalidation = {
   taskId: 'P6-T6',
   step: 7,
   revalidatedAt,
-  basis: 'Ordinary CI run 33271354230 at 386de70 passed all non-browser gates and 335/336 browser cases, then failed only WebKit private-route continuity at nine healthy retained frames versus the unchanged minimum ten. Deterministic TDD added a 16 ms timer fallback that races rAF without changing the 360 ms duration or threshold. A separate repeated 768 night-home Axe run exposed a final orbit label mid-fade at 17/20; waiting for all five labels to reach opacity 1 produced 20/20 with unchanged rules and colors. Fresh gates pass frontend 426/426, both typechecks/builds, server 362 ordinary plus 50 exact skips, official MySQL 50/50, all declared Helm/media/security/observability/workflow/release/data contracts, local current-source Web/API image smoke and official Linux browser 338/338 with workers=1/retries=0. CI19 final images remain product-source-current and previously opened. The eight protected historical untracked files remain untouched. All 462 evidence IDs retain exact order; parent truth remains 30/10/4. A new ordinary CI must be green before the single authorized 1.0.0 dispatch; no UHub digest, attestation, release, DNS/TLS or cluster state is claimed.',
+  basis: 'Ordinary CI run 33278665288 / job 99169909250 at 01f1bbb passed every unit, type, build, exact MySQL, 338-case browser/accessibility, Helm and image-build gate in 35m03s. The single authorized 1.0.0 release run 33280128021 independently passed all application, MySQL and 36m13s browser gates, then failed at Validate deployable manifests because a direct Linux pwsh pipeline does not populate Console stdin. No UHub sign-in, image build/push, digest, attestation, exact-digest smoke or GitOps update ran. A deterministic direct-pipeline contract reproduced the empty-render failure; the validator now accumulates ValueFromPipeline records while retaining external-process stdin fallback. Windows PowerShell 5.1, PowerShell 7, the exact release-style Helm pipeline, workflow, release-production and release-preflight contracts pass without weakening any observability assertion. Product and visual sources are unchanged, so the already opened CI19 final images and the release run application/browser results remain source-current. The eight protected historical untracked files remain untouched. All 462 evidence IDs retain exact order; parent truth remains 30/10/4. A new ordinary CI must be green and new explicit release authorization is required before another dispatch. No UHub digest, attestation, release success, DNS/TLS or cluster state is claimed.',
 }
 await writeJson(evidenceManifestPath, manifest)
 
