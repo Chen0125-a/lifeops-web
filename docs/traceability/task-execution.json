@@ -4826,6 +4826,7 @@
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci15-raster-stars-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-vitest-worker-remediation-local-front-gates-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -4865,6 +4866,7 @@
         "scripts/verify-execution-contract.test.mjs",
         "scripts/verify-release-manifest.ps1",
         "scripts/verify-release-manifest.test.ps1",
+        "scripts/vitest-config-contract.test.mjs",
         "server/src/deployment.test.ts",
         "server/src/mysql.integration.test.ts",
         "src/App.tsx",
@@ -5358,6 +5360,7 @@
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci15-raster-stars-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-vitest-worker-remediation-local-front-gates-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5385,6 +5388,7 @@
         "scripts/run-lighthouse.mjs",
         "scripts/validate-workflows.test.ps1",
         "scripts/verify-execution-contract.test.mjs",
+        "scripts/vitest-config-contract.test.mjs",
         "server/src/deployment.test.ts",
         "server/src/mysql.integration.test.ts",
         "src/App.tsx",
@@ -5882,7 +5886,9 @@
         "src/components/public/DaylightAperture.test.tsx": "The aperture contract now expects the same raster preload source as the public page.",
         "vitest.config.ts": "The four-worker jsdom ceiling keeps unchanged lazy-route assertion budgets deterministic on high-core memory-constrained hosts without reducing test count or coverage.",
         "docs/traceability/evidence-manifest.json": "This bounded CI16 path is covered by the focused RED/GREEN, complete local gate replay and current visual review.",
-        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json": "The post-implementation deterministic checkpoint binds the committed CI16 raster-predecode correction and narrow push-ready ledger to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths."
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json": "The post-implementation deterministic checkpoint binds the committed CI16 raster-predecode correction and narrow push-ready ledger to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-vitest-worker-remediation-local-front-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI16 Vitest worker remediation and source-current product evidence to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.",
+        "scripts/vitest-config-contract.test.mjs": "This delivery-harness contract locks the two-worker ceiling while forbidding hook-timeout changes and retaining the existing frontend testTimeout."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
@@ -6105,6 +6111,12 @@
           "command": "npm.cmd test -- src/pages/PublicHomePage.test.tsx",
           "exitCode": 1,
           "failure": "The focused public-page contract passed 13 assertions and failed exactly two because the hidden data-star-field image still decoded public-stars.svg instead of the raster PNG actually used by the night sky."
+        },
+        {
+          "classification": "behavioral",
+          "command": "node --test scripts/vitest-config-contract.test.mjs",
+          "exitCode": 1,
+          "failure": "The focused delivery-harness contract failed exactly because vitest.config.ts still declared maxWorkers 4 instead of the required two-worker bound while retaining the unchanged testTimeout and no hookTimeout."
         }
       ],
       "evidenceIds": [
@@ -6138,11 +6150,11 @@
       "externalBlockers": [
         {
           "code": "ORDINARY_CI_PENDING",
-          "fact": "Ordinary CI run 33255141653 passed unit/type/build, official MySQL 8.4 and browser installation, then failed only WebKit theme-performance because the hidden preload still decoded public-stars.svg instead of the raster PNG consumed by CSS. Baseline P95/max were 17/19 ms and transition P95/max were 52/70 ms against unchanged 34/100 ms budgets. Predecoding the exact raster asset passes focused TDD and fresh complete local gates. The user's continuing authorization covers committing and pushing this correction; a new ordinary CI must still become genuinely green."
+          "fact": "Ordinary CI run 33260290566 failed in the frontend unit step after two lazy-route assertions reached their unchanged five-second query boundary under four concurrent jsdom workers; RecipesPage and LifeCatalogPage otherwise rendered the stable private shell, and MySQL/browser/tail gates did not run. The two files pass 21/21 alone, the harness contract proves a two-worker ceiling without timeout changes, and raw npm test passes 88/88 files and 425/425 tests. The user's continuing authorization covers committing and pushing this bounded harness correction; a new ordinary CI must still become genuinely green."
         },
         {
           "code": "RELEASE_PREREQUISITES_PENDING",
-          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33255141653."
+          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33260290566."
         }
       ]
     }

@@ -456,3 +456,15 @@ node outputs/evidence/p6-t6-ci16-raster-predecode-manifest-refresh.mjs
 ```powershell
 npm.cmd run test:execution
 ```
+
+## 38. 2026-08-29 最新接班增量：CI16 普通 CI unit-worker 失败与有界修复
+
+- CI16 两笔提交 `f5217fcbaa08c2af75ad43b514253bd1909ec2b4` 与 `e8c397d1ed1fe19f72134cd3d6748ae514921b07` 已推送；本地、tracking 与已核验远端 `main` 对齐为 `e8c397d1ed1fe19f72134cd3d6748ae514921b07`。普通 CI run `33260290566` / job `99120946936` 在 3m31s 后只失败于 frontend unit：Recipes 与 Catalog 两个 lazy-route assertion 在四个并发 jsdom worker 下触及未改变的 5 秒查询边界；稳定 private shell 已渲染。MySQL、browser 与 tail 未运行，没有 release。
+- 两个受影响文件单独合跑 21/21。focused harness 先精确 0/1 RED，仅因 `maxWorkers: 4`；最小修复只降到 `2`，保留 `testTimeout: 20_000`、禁止 `hookTimeout`，不改产品源码、断言、coverage 或测试数量。现在 harness 1/1、raw frontend 88/88 files 和 425/425 tests、typecheck、885-module build 均通过。
+- 产品、server、MySQL、browser、Helm、image 和 visual 源未变化，CI16 完整本地门禁仍按 current-source 证据保留，不冒充失败普通 CI 的输出。8 个受保护历史 untracked 文件未触碰。父边界仍 30/10/4，P6-T6 Step 7 开放；没有 UHub digest、attestation、exact-digest smoke 或 release success 声明。
+- deterministic checkpoint 已收敛为 `6B484BE34601A624E1E60A4486FCAAABFF975E08E4054868C0045B16DBE8B08E` / 612 inputs / 462 rows / 67 visual states，saved/fresh/evidence/visual 四向一致。execution 97/97，startup/handoff `ok:true`，五份 authority、JSON、结构化 manifest/task/visual、diff、保护集合和 17-file credential-safe 审计均通过。包含本节的仓库提交即本轮有界修复原子。
+- 唯一下一动作：精确暂存并检查本轮路径，commit/push 后等待下一 ordinary CI。只有全绿才执行唯一一次已授权 `1.0.0` release，不得提前进入 P6-T7。
+
+```powershell
+git diff --cached --check
+```

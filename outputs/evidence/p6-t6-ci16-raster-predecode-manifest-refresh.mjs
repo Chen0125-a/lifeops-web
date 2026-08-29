@@ -6,7 +6,7 @@ import path from 'node:path'
 import { buildLocalCheckpoint } from '../../scripts/execution-contract/source-checkpoint.mjs'
 
 const root = process.cwd()
-const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-push-authorization-soft-pause-uncommitted-local-checkpoint.json'
+const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-vitest-worker-remediation-local-front-gates-uncommitted-local-checkpoint.json'
 const refreshPath = 'outputs/evidence/p6-t6-ci16-raster-predecode-manifest-refresh.mjs'
 const evidenceManifestPath = 'docs/traceability/evidence-manifest.json'
 const taskExecutionPath = 'docs/traceability/task-execution.json'
@@ -63,10 +63,11 @@ const sourceReasons = new Map([
   ['src/pages/PublicHomePage.test.tsx', 'The focused unit contract requires the raster preload source and proves theme switching stays disabled until its decode boundary resolves.'],
   ['src/components/public/DaylightAperture.test.tsx', 'The aperture contract now expects the same raster preload source as the public page.'],
   ['tests/public-home.spec.ts', 'The browser contract still fetches and audits all three SVG source layers while requiring the hidden preloader and computed night sky to use the raster asset.'],
-  ['vitest.config.ts', 'The four-worker jsdom ceiling keeps unchanged lazy-route assertion budgets deterministic on high-core memory-constrained hosts without reducing test count or coverage.'],
+  ['vitest.config.ts', 'The two-worker jsdom ceiling keeps unchanged lazy-route assertion budgets deterministic on memory-constrained local and hosted CI runners without reducing test count or coverage.'],
+  ['scripts/vitest-config-contract.test.mjs', 'This delivery-harness contract locks the two-worker ceiling while forbidding hook-timeout changes and retaining the existing frontend testTimeout.'],
   ['outputs/evidence/p6-t6-ci16-raster-predecode-visual-capture.mjs', 'This reproducible evidence-only capture records eight approved desktop/phone day/night rest/login states, exact geometry and the raster preload source without altering product behavior.'],
   [refreshPath, 'The deterministic CI16 refresh preserves all 462 evidence IDs and order, rehashes current sources/artifacts, records fresh complete local gates and refuses dirty tracked historical browser evidence.'],
-  [checkpointPath, 'The post-implementation deterministic checkpoint binds the committed CI16 raster-predecode correction and narrow push-ready ledger to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.'],
+  [checkpointPath, 'The deterministic checkpoint binds the CI16 Vitest worker remediation and source-current product evidence to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.'],
 ])
 
 const taskExecution = await readJson(taskExecutionPath)
@@ -89,13 +90,20 @@ for (const relativePath of currentPaths) {
 task.externalBlockers = [
   {
     code: 'ORDINARY_CI_PENDING',
-    fact: 'Ordinary CI run 33255141653 passed unit/type/build, official MySQL 8.4 and browser installation, then failed only WebKit theme-performance because the hidden preload still decoded public-stars.svg instead of the raster PNG consumed by CSS. Baseline P95/max were 17/19 ms and transition P95/max were 52/70 ms against unchanged 34/100 ms budgets. Predecoding the exact raster asset passes focused TDD and fresh complete local gates. The user\'s continuing authorization covers committing and pushing this correction; a new ordinary CI must still become genuinely green.',
+    fact: 'Ordinary CI run 33260290566 failed in the frontend unit step after two lazy-route assertions reached their unchanged five-second query boundary under four concurrent jsdom workers; RecipesPage and LifeCatalogPage otherwise rendered the stable private shell, and MySQL/browser/tail gates did not run. The two files pass 21/21 alone, the harness contract proves a two-worker ceiling without timeout changes, and raw npm test passes 88/88 files and 425/425 tests. The user\'s continuing authorization covers committing and pushing this bounded harness correction; a new ordinary CI must still become genuinely green.',
   },
   {
     code: 'RELEASE_PREREQUISITES_PENDING',
-    fact: 'The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33255141653.',
+    fact: 'The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33260290566.',
   },
 ]
+const vitestWorkerRed = {
+  classification: 'behavioral',
+  command: 'node --test scripts/vitest-config-contract.test.mjs',
+  exitCode: 1,
+  failure: 'The focused delivery-harness contract failed exactly because vitest.config.ts still declared maxWorkers 4 instead of the required two-worker bound while retaining the unchanged testTimeout and no hookTimeout.',
+}
+if (!task.redEvidence.some((entry) => entry.failure === vitestWorkerRed.failure)) task.redEvidence.push(vitestWorkerRed)
 const rasterPredecodeRed = {
   classification: 'behavioral',
   command: 'npm.cmd test -- src/pages/PublicHomePage.test.tsx',
@@ -215,7 +223,7 @@ for (const row of manifest.evidence) {
     row.summary = 'Fresh official Chromium, Firefox and WebKit checks prove all four original ring transforms continue under their exact 30/40/50/60-second owners while the raster star field removes theme-switch SVG painting without changing motion.'
   }
   if (row.id === 'EV-P6-T5-FULL-UNIT') {
-    row.summary = 'Fresh CI16 gates pass frontend 88/88 files and 425/425 tests, including combined affected contracts 21/21, plus frontend typecheck and an 885-module production build. The explicit four-worker Vitest ceiling keeps the unchanged lazy-route assertion budgets deterministic on memory-constrained high-core hosts. Server gates pass 362 ordinary tests plus 50 exact-only skips and dual server typecheck/build.'
+    row.summary = 'Fresh post-CI16 gates pass the worker-bound harness contract 1/1, the two affected lazy-route files 21/21, frontend 88/88 files and 425/425 tests, frontend typecheck and an 885-module production build. The explicit two-worker Vitest ceiling changes no assertion timeout, global testTimeout, coverage or test count. Server gates remain source-current at 362 ordinary tests plus 50 exact-only skips and dual server typecheck/build.'
   }
   if (row.id === 'EV-P6-T5-FULL-API') {
     row.summary = 'Fresh server unit/type/build gates pass 362 ordinary tests and 50 exact-only skips; the official Linux real-Fastify browser matrix passes 12/12 across Chromium, Firefox and WebKit.'
@@ -256,7 +264,7 @@ manifest.revalidation = {
   taskId: 'P6-T6',
   step: 7,
   revalidatedAt,
-  basis: 'Ordinary CI run 33255141653 passed unit/type/build, official MySQL 8.4 and browser installation, then failed only WebKit theme-performance: baseline P95/max 17/19 ms and transition P95/max 52/70 ms against unchanged 34/100 ms budgets. The CSS already consumed the transparent raster star field, but the hidden preload still decoded public-stars.svg; focused TDD passed 13 assertions and failed exactly two until the hidden image decoded the exact raster PNG consumed by CSS. No Playwright worker, retry, browser, timing sample, threshold, geometry, direction, 30/40/50/60-second period or approved scene motion changed. A four-worker Vitest ceiling was added after a memory-constrained 16-core host reproduced seven lazy-route timeouts; raw npm test then passed all 88 files and 425 tests without changing test timeouts, assertions or coverage. Fresh current-source gates pass frontend 425/425, typecheck/build; server 362 ordinary plus 50 exact-only skips, typecheck/build; official MySQL 50/50; Helm/media/security/observability/workflow/release contracts; current-source Web/API image smoke and data rehearsal; official Linux Playwright 338/338 plus ten repeated WebKit theme runs; real-Fastify 12/12; Lighthouse 1.00/1.00/0.96/0.91; and eight individually opened CI16 final images. The first complete browser attempt passed all 334 behavior cases but exposed two EROFS artifact writes under a deliberately read-only outputs mount; the corrected owned outputs volume then passed the entire visual-capture file and the complete 336-case matrix. The eight protected older untracked files remain untouched. All 462 evidence IDs retain exact order; parent truth remains 30/10/4. A new ordinary CI must be green before the single authorized 1.0.0 dispatch; no UHub, attestation, release, DNS/TLS or cluster state is claimed.',
+  basis: 'Ordinary CI run 33260290566 bound to e8c397d failed only inside the frontend unit portion after two lazy-route assertions reached their unchanged five-second query boundary under maxWorkers 4; RecipesPage and LifeCatalogPage still rendered the stable private shell, while MySQL, browsers and later steps did not run. Both affected files pass 21/21 alone. A focused delivery-harness contract then failed exactly on maxWorkers 4 and passes after the bounded config changed to 2 while retaining the existing 20-second global testTimeout, no hookTimeout, the same assertions, coverage and 425-test count. Raw npm test passes 88/88 files and 425/425 tests in 105.29 seconds; frontend typecheck and the 885-module production build pass. Product, server, browser, Helm, image and visual source are unchanged from the complete CI16 local gate set: server 362 ordinary plus 50 exact-only skips, official MySQL 50/50, Helm/media/security/observability/workflow/release contracts, current-source Web/API image smoke and data rehearsal, official Linux Playwright 338/338 plus ten repeated WebKit theme runs, real-Fastify 12/12, Lighthouse 1.00/1.00/0.96/0.91 and eight individually opened final images remain source-current. The eight protected older untracked files remain untouched. All 462 evidence IDs retain exact order; parent truth remains 30/10/4. A new ordinary CI must be green before the single authorized 1.0.0 dispatch; no UHub, attestation, release, DNS/TLS or cluster state is claimed.',
 }
 await writeJson(evidenceManifestPath, manifest)
 

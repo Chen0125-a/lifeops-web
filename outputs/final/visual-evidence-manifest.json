@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "B47D7D3E4F5873139F86EECD44D4494E6BD36C10452DB13BD9125B83DB4BB489",
+  "checkpointRootSha256": "6B484BE34601A624E1E60A4486FCAAABFF975E08E4054868C0045B16DBE8B08E",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-29T15:22:51.573Z",
+  "generatedAt": "2026-08-29T15:42:25.443Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
@@ -2065,8 +2065,8 @@
   "latestRevalidation": {
     "taskId": "P6-T6",
     "step": 7,
-    "revalidatedAt": "2026-08-29T15:22:51.573Z",
-    "checkpointRootSha256": "B47D7D3E4F5873139F86EECD44D4494E6BD36C10452DB13BD9125B83DB4BB489",
+    "revalidatedAt": "2026-08-29T15:42:25.443Z",
+    "checkpointRootSha256": "6B484BE34601A624E1E60A4486FCAAABFF975E08E4054868C0045B16DBE8B08E",
     "metricsPath": "outputs/evidence/browser/p6-t6-ci16-raster-predecode/metrics.json",
     "metricsSha256": "91DF9567C961B5A5BFB75D61C0A9EBEE99EB9E22BF8C57DDBF3B0EFEDA1AB362",
     "openedOriginalResolution": true,

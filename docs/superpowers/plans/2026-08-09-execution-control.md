@@ -1548,3 +1548,21 @@ Run execution 97/97, standalone startup/handoff, checkpoint identity, authority,
 ```powershell
 npm.cmd run test:execution
 ```
+
+## 2026-08-29 P6-T6 ordinary CI16 unit-worker failure and bounded remediation
+
+The CI16 implementation and ledger commits `f5217fcbaa08c2af75ad43b514253bd1909ec2b4` and `e8c397d1ed1fe19f72134cd3d6748ae514921b07` were pushed to exact GitHub `main`; local `HEAD`, `origin/main` and the verified remote ref aligned at `e8c397d1ed1fe19f72134cd3d6748ae514921b07`. Ordinary CI run `33260290566`, job `99120946936`, then failed after 3m31s only inside the frontend unit portion: `RecipesPage.test.tsx` and `LifeCatalogPage.test.tsx` reached their unchanged five-second lazy-route query boundary under four concurrent jsdom workers while the stable private shell remained rendered. MySQL, browser and tail gates did not run. No release was dispatched.
+
+Both affected files pass 21/21 when run together. The new focused delivery-harness contract first failed 0/1 exactly because `vitest.config.ts` declared `maxWorkers: 4`; the minimal remediation changes only that ceiling to `2`, retains the existing `testTimeout: 20_000`, forbids `hookTimeout`, and changes no product source, assertion, coverage rule or test count. The harness now passes 1/1, raw `npm.cmd test` passes all 88 files and 425 tests in 105.29 seconds, frontend typecheck exits 0 and the production build emits 885 modules. Product, server, MySQL, browser, Helm, image and visual sources are unchanged from the complete CI16 local replay, so those already current-source gates remain evidence rather than being attributed to the failed ordinary run.
+
+Parent truth remains 30 verified-local / 10 partial / 4 pending, and P6-T6 Step 7 remains open. The eight protected historical untracked files remain untouched. No UHub digest, digest-bound SBOM/provenance, exact-digest smoke, release success, DNS/TLS or cluster state is claimed.
+
+The refreshed checkpoint is `outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-vitest-worker-remediation-local-front-gates-uncommitted-local-checkpoint.json`, root `6B484BE34601A624E1E60A4486FCAAABFF975E08E4054868C0045B16DBE8B08E`, with 612 ordinal-sorted inputs, 462 unchanged-order evidence rows and 67 visual states. Saved/fresh/evidence/visual roots match. Execution passes 97/97; standalone startup and handoff both exit 0 with `ok:true`, ADR-030, P6 / P6-T6 / Step 7, 30/10/4 and zero blocker/issue. All five authority hashes match. JSON parsing, structured manifest/task/visual comparison, diff whitespace review, the eight-path protected-untracked identity check and a 17-file high-confidence credential scan pass. The repository commit containing this section is the bounded worker-remediation atom.
+
+### Exact next atomic action
+
+Commit and push the bounded correction under continuing authorization, observe the next ordinary CI to terminal state, and dispatch the single authorized `1.0.0` only if that ordinary CI is genuinely green. Do not enter P6-T7 before immutable release closure.
+
+```powershell
+git diff --cached --check
+```
