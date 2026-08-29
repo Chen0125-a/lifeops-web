@@ -78,7 +78,7 @@ test('night theme restores a near-black deep-sky surface with layered stars', as
   const night = await page.locator('.public-home').evaluate(async (element) => {
     const surface = getComputedStyle(element)
     const stars = element.querySelector<HTMLImageElement>('[data-star-field]')!
-    const starAsset = await fetch(stars.currentSrc || stars.src).then((response) => response.text())
+    const starAsset = await fetch('/public-stars.svg').then((response) => response.text())
     const tracks = [...element.querySelectorAll<HTMLElement>('[data-orbit-ring]')]
     return {
       backgroundColor: surface.backgroundColor,
@@ -100,7 +100,7 @@ test('night theme restores a near-black deep-sky surface with layered stars', as
   expect(night.skyBackgroundImage).toContain('/public-stars-raster.png')
   expect(night.starFieldOpacity).toBeGreaterThanOrEqual(0.99)
   expect(night.starLayers).toEqual(['far', 'middle', 'near'])
-  expect(night.starSource).toBe('/public-stars.svg')
+  expect(night.starSource).toBe('/public-stars-raster.png')
   expect(night.starsLoaded).toBe(true)
   expect(night.trackPaint).toHaveLength(4)
   expect(night.trackPaint.every(({ legacyContent }) => legacyContent === 'none')).toBe(true)

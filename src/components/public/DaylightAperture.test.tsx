@@ -18,7 +18,7 @@ describe('DaylightAperture', () => {
     expect(aperture).not.toHaveTextContent(/PRIVATE SYSTEM|状态|指标|日期|KUBERNETES|DOCKER|MYSQL|GITOPS/i)
   })
 
-  it('uses one cached star field with three deterministic layers around the aperture', () => {
+  it('uses one cached raster star field derived from three deterministic layers around the aperture', () => {
     const { container } = render(
       <MemoryRouter>
         <PublicHomePage />
@@ -28,6 +28,6 @@ describe('DaylightAperture', () => {
     const fields = container.querySelectorAll('[data-star-field]')
     expect(fields).toHaveLength(1)
     expect(fields[0]).toHaveAttribute('data-star-layers', 'far middle near')
-    expect(fields[0]).toHaveAttribute('src', '/public-stars.svg')
+    expect(fields[0]).toHaveAttribute('src', '/public-stars-raster.png')
   })
 })

@@ -4750,6 +4750,15 @@
         "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-login.png",
         "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-rest.png",
         "outputs/evidence/browser/p6-t6-ci15-raster-stars/metrics.json",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/metrics.json",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-day-1440.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-day-390.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-night-1440.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-night-390.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-day-1440.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-day-390.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-night-1440.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-night-390.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-1440x900.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-390x844.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-1440x900.png",
@@ -4790,6 +4799,8 @@
         "outputs/evidence/p6-t6-ci14-orbit-track-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci15-raster-stars-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci15-raster-stars-visual-capture.mjs",
+        "outputs/evidence/p6-t6-ci16-raster-predecode-manifest-refresh.mjs",
+        "outputs/evidence/p6-t6-ci16-raster-predecode-visual-capture.mjs",
         "outputs/evidence/p6-t6-ci8-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci9-manifest-refresh.mjs",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
@@ -4813,6 +4824,7 @@
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci15-raster-stars-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -4918,7 +4930,8 @@
         "tests/visual-capture.spec.ts",
         "tsconfig.app.json",
         "tsconfig.node.json",
-        "vite.config.ts"
+        "vite.config.ts",
+        "vitest.config.ts"
       ],
       "changedPaths": [
         ".github/workflows/ci.yml",
@@ -5268,6 +5281,15 @@
         "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-login.png",
         "outputs/evidence/browser/p6-t6-ci15-raster-stars/390x844-night-rest.png",
         "outputs/evidence/browser/p6-t6-ci15-raster-stars/metrics.json",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/metrics.json",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-day-1440.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-day-390.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-night-1440.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-night-390.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-day-1440.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-day-390.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-night-1440.png",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-night-390.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-1440x900.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-login-390x844.png",
         "outputs/evidence/browser/p6-t6-ci6-final-visual/day-rest-1440x900.png",
@@ -5308,6 +5330,8 @@
         "outputs/evidence/p6-t6-ci14-orbit-track-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci15-raster-stars-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci15-raster-stars-visual-capture.mjs",
+        "outputs/evidence/p6-t6-ci16-raster-predecode-manifest-refresh.mjs",
+        "outputs/evidence/p6-t6-ci16-raster-predecode-visual-capture.mjs",
         "outputs/evidence/p6-t6-ci8-manifest-refresh.mjs",
         "outputs/evidence/p6-t6-ci9-manifest-refresh.mjs",
         "outputs/evidence/source-checkpoints/2026-08-25-p6-t6-ci-browser-diagnosis-soft-pause-uncommitted-local-checkpoint.json",
@@ -5331,6 +5355,7 @@
         "outputs/evidence/source-checkpoints/2026-08-28-p6-t6-ci9-browser-push-authorization-soft-pause-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci14-orbit-track-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci15-raster-stars-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
         "outputs/final/private-performance.json",
@@ -5423,7 +5448,8 @@
         "tests/settings.spec.ts",
         "tsconfig.app.json",
         "tsconfig.node.json",
-        "vite.config.ts"
+        "vite.config.ts",
+        "vitest.config.ts"
       ],
       "extraPathReasons": {
         ".github/workflows/ci.yml": "The first formal release proved the shared MySQL service options were invalid Docker create flags; run 32797026444 then passed container initialization and real MySQL but was canceled at the old 45-minute ceiling while executing the unchanged 335+12 serial browser matrix. The finite timeout is raised to 90 minutes without changing tests, workers or thresholds.",
@@ -5838,7 +5864,22 @@
         "outputs/evidence/p6-t6-ci15-raster-stars-manifest-refresh.mjs": "The deterministic CI15 refresh preserves all 462 evidence IDs and order, rehashes current sources/artifacts, records fresh complete local gates and refuses dirty tracked historical browser evidence.",
         "outputs/evidence/p6-t6-ci15-raster-stars-visual-capture.mjs": "This reproducible evidence-only capture records eight approved desktop/phone day/night rest/login states and exact geometry without altering product behavior.",
         "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci15-raster-stars-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI15 raster-star correction to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.",
-        "public/public-stars-raster.png": "The transparent 1440x900 PNG is a mechanically rendered delivery form of the retained public-stars.svg source and removes synchronous full-screen SVG rasterization from the WebKit night-theme transition."
+        "public/public-stars-raster.png": "The transparent 1440x900 PNG is a mechanically rendered delivery form of the retained public-stars.svg source and removes synchronous full-screen SVG rasterization from the WebKit night-theme transition.",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/metrics.json": "This primary-agent-opened CI16 frame or geometry manifest records the final raster-predecoded rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-day-1440.png": "This primary-agent-opened CI16 frame or geometry manifest records the final raster-predecoded rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-day-390.png": "This primary-agent-opened CI16 frame or geometry manifest records the final raster-predecoded rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-night-1440.png": "This primary-agent-opened CI16 frame or geometry manifest records the final raster-predecoded rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-home-night-390.png": "This primary-agent-opened CI16 frame or geometry manifest records the final raster-predecoded rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-day-1440.png": "This primary-agent-opened CI16 frame or geometry manifest records the final raster-predecoded rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-day-390.png": "This primary-agent-opened CI16 frame or geometry manifest records the final raster-predecoded rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-night-1440.png": "This primary-agent-opened CI16 frame or geometry manifest records the final raster-predecoded rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/browser/p6-t6-ci16-raster-predecode/public-login-night-390.png": "This primary-agent-opened CI16 frame or geometry manifest records the final raster-predecoded rendering at an approved desktop or phone theme/login state.",
+        "outputs/evidence/p6-t6-ci16-raster-predecode-manifest-refresh.mjs": "The deterministic CI16 refresh preserves all 462 evidence IDs and order, rehashes current sources/artifacts, records fresh complete local gates and refuses dirty tracked historical browser evidence.",
+        "outputs/evidence/p6-t6-ci16-raster-predecode-visual-capture.mjs": "This reproducible evidence-only capture records eight approved desktop/phone day/night rest/login states, exact geometry and the raster preload source without altering product behavior.",
+        "outputs/evidence/source-checkpoints/2026-08-29-p6-t6-ci16-raster-predecode-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI16 raster-predecode correction to the current ordinal-sorted source set while excluding generated evidence metadata and sensitive paths.",
+        "src/components/public/DaylightAperture.test.tsx": "The aperture contract now expects the same raster preload source as the public page.",
+        "vitest.config.ts": "The four-worker jsdom ceiling keeps unchanged lazy-route assertion budgets deterministic on high-core memory-constrained hosts without reducing test count or coverage.",
+        "docs/traceability/evidence-manifest.json": "This bounded CI16 path is covered by the focused RED/GREEN, complete local gate replay and current visual review."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
@@ -6055,6 +6096,12 @@
           "command": "npm.cmd test -- src/publicThemeCompositor.test.ts",
           "exitCode": 1,
           "failure": "The focused compositor contract passed three assertions and failed exactly one because the night sky still referenced public-stars.svg instead of the bounded transparent 1440x900 raster delivery asset."
+        },
+        {
+          "classification": "behavioral",
+          "command": "npm.cmd test -- src/pages/PublicHomePage.test.tsx",
+          "exitCode": 1,
+          "failure": "The focused public-page contract passed 13 assertions and failed exactly two because the hidden data-star-field image still decoded public-stars.svg instead of the raster PNG actually used by the night sky."
         }
       ],
       "evidenceIds": [
@@ -6088,11 +6135,11 @@
       "externalBlockers": [
         {
           "code": "ORDINARY_CI_PENDING",
-          "fact": "Ordinary CI run 33190109857 passed unit/type/build, official MySQL 8.4 and browser installation, then failed only WebKit theme-performance because synchronous full-screen SVG star-field rasterization exceeded the unchanged P95 budget. A mechanically rendered transparent PNG plus the retained auditable SVG source passes focused TDD, fresh complete local gates and official Linux Playwright 338/338. The user's continuing authorization covers committing and pushing this correction; a new ordinary CI must still become genuinely green."
+          "fact": "Ordinary CI run 33255141653 passed unit/type/build, official MySQL 8.4 and browser installation, then failed only WebKit theme-performance because the hidden preload still decoded public-stars.svg instead of the raster PNG consumed by CSS. Baseline P95/max were 17/19 ms and transition P95/max were 52/70 ms against unchanged 34/100 ms budgets. Predecoding the exact raster asset passes focused TDD and fresh complete local gates. The user's continuing authorization covers committing and pushing this correction; a new ordinary CI must still become genuinely green."
         },
         {
           "code": "RELEASE_PREREQUISITES_PENDING",
-          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33190109857."
+          "fact": "The user authorized exactly one additional 1.0.0 dispatch only after the next ordinary CI is green. UHub digests, digest-bound SBOM/provenance, exact-digest image smoke and release success remain absent; no release was dispatched from failed CI run 33255141653."
         }
       ]
     }

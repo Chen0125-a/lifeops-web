@@ -7,6 +7,9 @@ export default defineConfig({
     include: ['src/**/*.test.{ts,tsx}'],
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
+    // Bound jsdom workers so route-level lazy imports keep their 5s assertion
+    // budget on high-core, memory-constrained runners as well as in CI.
+    maxWorkers: 4,
     testTimeout: 20_000,
     css: true,
     coverage: {

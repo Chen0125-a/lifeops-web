@@ -433,3 +433,15 @@ npm.cmd run test:execution
 ```powershell
 npm.cmd run test:execution
 ```
+
+## 36. 2026-08-29 最新接班增量：CI16 raster preload 完整本地收敛
+
+- 本节位于文件尾并覆盖上文所有旧 checkpoint 与 next-action。当前 `HEAD`、`origin/main` 和已核验远端 `main` 为 `63483511cbed0ddb198a851b595d87656cbcdfd1`；CI16 WIP 未提交。普通 CI `33255141653` / job `99107422687` 通过 unit/type/build、MySQL 和 browser install，只在 WebKit theme-performance 失败：baseline 17/19ms、transition 52/70ms、预算 34/100ms；没有 release。
+- CSS 已使用 raster 星空，但 hidden preload 仍 decode SVG。focused TDD 先 13 pass / 2 fail；现在 hidden image 预解码同一 PNG、SVG 仍为三层权威源，combined affected 21/21。Vitest `maxWorkers: 4` 使本地 16-core/15.2-GiB 资源压力下 raw full suite 通过 88/88 files、425/425 tests，未放宽 timeout/assertion/coverage。
+- 新鲜完整本地门禁通过 frontend 425/425、server 362 ordinary +50 exact skips、双 typecheck/build、官方 MySQL 50/50、Helm/media/security/observability/workflow/release、audit、current-source images、data rehearsal、official Linux Playwright 338/338 + WebKit repeat 10/10、real-Fastify 12/12、Lighthouse 1.00/1.00/0.96/0.91。corrected outputs volume 下单次 full matrix 336/336 exit 0（25.8m）。8 张 CI16 最终图已由 primary executor 逐张原分辨率复核通过。
+- 8 个受保护历史 untracked 文件保持原样。证据导出和 checkpoint 核验后，精确删除 6 个 CI15/CI16 owned 卷与 4 张 owned 本地测试镜像，五组名称过滤检查无残留。父边界仍 30/10/4，P6-T6 Step 7 开放；没有 UHub digest、attestation、exact-digest smoke 或 release success 声明。
+- 唯一下一动作：运行 CI16 deterministic refresh、execution/startup/handoff 与最终审计；在持续授权下 commit/push 并观察 ordinary CI。只有全绿才执行唯一一次已授权 `1.0.0` release，不得提前进入 P6-T7。
+
+```powershell
+node outputs/evidence/p6-t6-ci16-raster-predecode-manifest-refresh.mjs
+```

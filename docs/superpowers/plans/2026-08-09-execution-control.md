@@ -1514,3 +1514,21 @@ Run the CI15 deterministic manifest refresh and then `npm.cmd run test:execution
 ```powershell
 node outputs/evidence/p6-t6-ci15-raster-stars-manifest-refresh.mjs
 ```
+
+## 2026-08-29 P6-T6 ordinary CI #15 raster-predecode correction and complete local convergence
+
+CI15 implementation/ledger commit `63483511cbed0ddb198a851b595d87656cbcdfd1` is present on local, tracking and verified remote `main`. Ordinary CI run `33255141653`, job `99107422687`, passed unit/type/build, official MySQL 8.4 and browser installation, then failed only WebKit theme performance: baseline P95/max 17/19 ms and transition P95/max 52/70 ms against unchanged 34/100 ms budgets. CSS already used `public-stars-raster.png`, but the hidden preload still decoded `public-stars.svg`, leaving the exact raster needed at click time undecoded.
+
+Focused TDD passed 13 assertions and failed exactly two until `src/pages/PublicHomePage.tsx` predecoded the same raster PNG consumed by CSS; the original SVG remains the auditable three-layer source. The combined affected contracts pass 21/21. A separate full Vitest attempt reproduced seven lazy-route timeouts on the 16-logical-core, 15.2-GiB local host under concurrent memory pressure; the seven files pass alone and together, and adding an explicit `maxWorkers: 4` ceiling makes raw `npm.cmd test` pass 88/88 files and 425/425 tests without changing test timeouts, assertions or coverage.
+
+Fresh current-source gates pass frontend 425/425, typecheck and 885-module build; server 362 ordinary plus 50 exact-only skips, typecheck/build; fresh owned official MySQL 8.4.10 with 16 migrations and 50/50 exact tests; Helm/media/security/observability/workflow/release contracts; root/server production audits; current-source Web/API image smoke; dump/restore rehearsal; official Linux WebKit theme 1/1 plus repeat 10/10, Firefox theme 1/1, corrected full matrix 336/336 in 25.8 minutes for 338/338 current browser gates; official Linux real-Fastify 12/12; and Lighthouse 1.00/1.00/0.96/0.91. The first full matrix passed all 334 behavior cases and failed only two artifact writes because `/work/outputs` was deliberately read-only; an owned writable outputs volume then passed `visual-capture.spec.ts` 6/6 and the single complete 336/336 matrix. The primary executor opened all eight CI16 desktop/phone day/night rest/login frames at original resolution and accepted exact raster preloading, visible stars, complete rings, orbit-left/title-recede depth, dark night login, mobile safe inset, zero overflow and the unlit center.
+
+The eight protected historical untracked files remain untouched. After evidence export and checkpoint verification, the exact five CI16 volumes, retained CI15 dependency volume and four CI15/CI16 local test-image tags were removed; read-only name-filter checks found no owned residue. Parent truth remains 30 verified-local / 10 partial / 4 pending, P6-T6 Step 7 remains open, and no UHub digest, digest-bound SBOM/provenance, exact-digest smoke, release success, DNS/TLS or cluster state is claimed.
+
+### Exact next atomic action
+
+Run the CI16 deterministic manifest refresh, then execution/startup/handoff, authority/checkpoint/JSON/diff/credential-safe audits. Commit and push the bounded correction under continuing authorization, observe the new ordinary CI, and dispatch the single authorized `1.0.0` only if that ordinary CI is genuinely green. Do not enter P6-T7 before immutable release closure.
+
+```powershell
+node outputs/evidence/p6-t6-ci16-raster-predecode-manifest-refresh.mjs
+```

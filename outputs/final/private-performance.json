@@ -2,241 +2,241 @@
   "route": "/app/overview",
   "authSetupExcluded": true,
   "fixture": "controlled-production-auth-session",
-  "navigationMs": 1041,
+  "navigationMs": 1091,
   "resources": [
     {
-      "name": "/assets/index-BK_oRWbp.js",
-      "duration": 19,
-      "transferSize": 137131
+      "name": "/assets/index-CK00ZIFV.js",
+      "duration": 21,
+      "transferSize": 137132
     },
     {
       "name": "/assets/index-AwrTLcOJ.css",
-      "duration": 14,
+      "duration": 16,
       "transferSize": 15242
     },
     {
       "name": "/api/v1/auth/session",
-      "duration": 3,
+      "duration": 4,
       "transferSize": 439
     },
     {
-      "name": "/assets/PrivateAppBoundary-CoIB_UTo.js",
-      "duration": 16,
-      "transferSize": 12522
+      "name": "/assets/PrivateAppBoundary-DBEFHG9j.js",
+      "duration": 20,
+      "transferSize": 12520
     },
     {
       "name": "/assets/queryKeys-g8FDR1iF.js",
-      "duration": 17,
+      "duration": 22,
       "transferSize": 5656
     },
     {
       "name": "/assets/queryClient-DWDKYAPR.js",
-      "duration": 28,
+      "duration": 32,
       "transferSize": 3248
     },
     {
-      "name": "/assets/QueryClientProvider-8fAGUE8Z.js",
-      "duration": 25,
+      "name": "/assets/QueryClientProvider-osRP3cKZ.js",
+      "duration": 32,
       "transferSize": 674
     },
     {
-      "name": "/assets/LifeDataContext-E1p2i3fL.js",
-      "duration": 28,
-      "transferSize": 2847
+      "name": "/assets/LifeDataContext-BjnAmPNE.js",
+      "duration": 35,
+      "transferSize": 2848
     },
     {
-      "name": "/assets/react-iqaWr3Zz.js",
-      "duration": 29,
+      "name": "/assets/react-kdLqffiY.js",
+      "duration": 37,
       "transferSize": 39248
     },
     {
-      "name": "/assets/use-reduced-motion-MuSNwTOO.js",
-      "duration": 38,
+      "name": "/assets/use-reduced-motion-B_0tOR4Z.js",
+      "duration": 53,
       "transferSize": 502
     },
     {
-      "name": "/assets/httpClient-uLY_B9k5.js",
-      "duration": 44,
-      "transferSize": 1229
-    },
-    {
       "name": "/assets/goalsApi-DpBB_Prj.js",
-      "duration": 44,
+      "duration": 63,
       "transferSize": 683
     },
     {
+      "name": "/assets/httpClient-uLY_B9k5.js",
+      "duration": 63,
+      "transferSize": 1229
+    },
+    {
       "name": "/assets/habitsApi-ByQ0RAPA.js",
-      "duration": 44,
+      "duration": 63,
       "transferSize": 1011
     },
     {
       "name": "/assets/knowledgeApi-huk_5Jn-.js",
-      "duration": 44,
+      "duration": 64,
       "transferSize": 919
     },
     {
       "name": "/assets/lifeCatalogApi-DVMM2WsL.js",
-      "duration": 56,
+      "duration": 64,
       "transferSize": 1063
     },
     {
       "name": "/assets/lifeCommerceApi-oP4jEvES.js",
-      "duration": 63,
+      "duration": 84,
       "transferSize": 922
     },
     {
       "name": "/assets/lifePlanningApi-Dt2m_-a2.js",
-      "duration": 64,
+      "duration": 84,
       "transferSize": 1111
     },
     {
       "name": "/assets/lifeRecipesApi-1kw-8KcF.js",
-      "duration": 64,
+      "duration": 96,
       "transferSize": 1008
     },
     {
       "name": "/assets/recordsApi-CdDLlXsh.js",
-      "duration": 63,
+      "duration": 95,
       "transferSize": 1155
     },
     {
       "name": "/assets/reviewsApi-BfrITqEP.js",
-      "duration": 64,
+      "duration": 95,
       "transferSize": 836
     },
     {
       "name": "/assets/tasksApi-BXVtwCxO.js",
-      "duration": 70,
+      "duration": 96,
       "transferSize": 802
     },
     {
       "name": "/assets/PrivateAppBoundary-DkgeGm8T.css",
-      "duration": 37,
+      "duration": 46,
       "transferSize": 82732
     },
     {
       "name": "/assets/noto-sans-sc-118-wght-normal-BPEb0gM9.woff2",
-      "duration": 31,
+      "duration": 56,
       "transferSize": 46492
     },
     {
       "name": "/assets/noto-sans-sc-latin-wght-normal-DYAKOyvl.woff2",
-      "duration": 17,
+      "duration": 45,
       "transferSize": 25540
     },
     {
       "name": "/assets/noto-sans-sc-117-wght-normal-Dsz3vkzU.woff2",
-      "duration": 18,
+      "duration": 45,
       "transferSize": 52764
     },
     {
-      "name": "/assets/OverviewPage-CP7Ik74o.js",
-      "duration": 13,
-      "transferSize": 6525
+      "name": "/assets/OverviewPage-DDmKleRH.js",
+      "duration": 20,
+      "transferSize": 6524
     },
     {
-      "name": "/assets/useQuery-D38sqWBZ.js",
-      "duration": 11,
+      "name": "/assets/useQuery-Dus5ZQVM.js",
+      "duration": 17,
       "transferSize": 3555
     },
     {
-      "name": "/assets/useLifeDay-BehTV5lU.js",
-      "duration": 15,
+      "name": "/assets/useLifeDay-C_kaHkUX.js",
+      "duration": 23,
       "transferSize": 883
     },
     {
       "name": "/assets/noto-sans-sc-116-wght-normal-vdFVzbO2.woff2",
-      "duration": 61,
+      "duration": 65,
       "transferSize": 53284
     },
     {
       "name": "/assets/noto-sans-sc-119-wght-normal-BfzSEbFz.woff2",
-      "duration": 41,
+      "duration": 49,
       "transferSize": 77100
     },
     {
       "name": "/assets/noto-sans-sc-115-wght-normal-BN__2iBG.woff2",
-      "duration": 48,
+      "duration": 67,
       "transferSize": 56808
     },
     {
       "name": "/assets/noto-sans-sc-110-wght-normal-D2JBr045.woff2",
-      "duration": 49,
+      "duration": 67,
       "transferSize": 61772
     },
     {
       "name": "/assets/noto-sans-sc-114-wght-normal-CRH9SDZu.woff2",
-      "duration": 49,
+      "duration": 67,
       "transferSize": 58264
     },
     {
       "name": "/assets/noto-sans-sc-113-wght-normal-OgQXOX6x.woff2",
-      "duration": 37,
+      "duration": 53,
       "transferSize": 58948
     },
     {
       "name": "/assets/noto-sans-sc-111-wght-normal-ClFr5QXM.woff2",
-      "duration": 49,
+      "duration": 65,
       "transferSize": 62964
     },
     {
       "name": "/assets/noto-sans-sc-112-wght-normal-CiZxJMyY.woff2",
-      "duration": 47,
+      "duration": 65,
       "transferSize": 57948
     },
     {
       "name": "/api/v1/life/day-plans/2026-08-29",
-      "duration": 8,
+      "duration": 10,
       "transferSize": 375
     },
     {
       "name": "/api/v1/life/timeline/2026-08-29",
-      "duration": 11,
+      "duration": 15,
       "transferSize": 340
     },
     {
       "name": "/api/v1/life/day-plans/2026-08-29/projection",
-      "duration": 11,
+      "duration": 16,
       "transferSize": 519
     },
     {
       "name": "/api/v1/life/budgets?asOf=2026-08-29",
-      "duration": 11,
+      "duration": 17,
       "transferSize": 302
     },
     {
       "name": "/api/v1/life/shopping",
-      "duration": 11,
+      "duration": 20,
       "transferSize": 356
     },
     {
       "name": "/api/v1/goals",
-      "duration": 11,
+      "duration": 21,
       "transferSize": 302
     },
     {
       "name": "/api/v1/tasks",
-      "duration": 13,
+      "duration": 22,
       "transferSize": 302
     },
     {
       "name": "/api/v1/habits?from=2026-08-24&to=2026-08-30",
-      "duration": 13,
+      "duration": 23,
       "transferSize": 364
     },
     {
       "name": "/api/v1/records",
-      "duration": 13,
+      "duration": 24,
       "transferSize": 302
     },
     {
       "name": "/api/v1/reviews",
-      "duration": 13,
+      "duration": 27,
       "transferSize": 302
     },
     {
       "name": "/api/v1/state",
-      "duration": 13,
+      "duration": 29,
       "transferSize": 386
     }
   ]

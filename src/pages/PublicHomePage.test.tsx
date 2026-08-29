@@ -170,11 +170,11 @@ describe('PublicHomePage', () => {
     ])
   })
 
-  it('renders one cached SVG star field with three authored decorative layers', () => {
+  it('renders one cached raster star field derived from three authored decorative layers', () => {
     const { container } = renderPublicHome()
     const field = container.querySelector<HTMLImageElement>('img[data-star-field]')
 
-    expect(field).toHaveAttribute('src', '/public-stars.svg')
+    expect(field).toHaveAttribute('src', '/public-stars-raster.png')
     expect(field).toHaveAttribute('data-star-layers', 'far middle near')
     expect(field).toHaveAttribute('aria-hidden', 'true')
     expect(field?.alt).toBe('')
@@ -195,6 +195,7 @@ describe('PublicHomePage', () => {
       renderPublicHome()
 
       const themeSwitch = screen.getByRole('button', { name: /切换为.+主题/ })
+      expect(document.querySelector('img[data-star-field]')).toHaveAttribute('src', '/public-stars-raster.png')
       expect(themeSwitch).toBeDisabled()
       expect(decode).toHaveBeenCalledTimes(1)
 

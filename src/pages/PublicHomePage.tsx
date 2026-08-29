@@ -370,7 +370,7 @@ export function PublicHomePage() {
     >
       <div aria-hidden="true" className="public-sky" data-public-surface-theme={theme}>
         <div className="public-sky__stars">
-          <img alt="" aria-hidden="true" className="public-sky__field" data-star-field data-star-layers="far middle near" decoding="async" ref={starFieldRef} src="/public-stars.svg" />
+          <img alt="" aria-hidden="true" className="public-sky__field" data-star-field data-star-layers="far middle near" decoding="async" ref={starFieldRef} src="/public-stars-raster.png" />
         </div>
       </div>
 
