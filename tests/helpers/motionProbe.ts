@@ -102,10 +102,30 @@ export async function recordMotionFrames(page: Page, durationMs: number) {
               || activeElement.tagName
             : '',
         })
-        if (at - started < duration) requestAnimationFrame(sample)
-        else resolve()
+        if (at - started >= duration) {
+          resolve()
+          return
+        }
+
+        scheduleSample()
       }
-      requestAnimationFrame(sample)
+      const scheduleSample = () => {
+        let settled = false
+        let frame = 0
+        const fallback = window.setTimeout(() => {
+          if (settled) return
+          settled = true
+          cancelAnimationFrame(frame)
+          sample(performance.now())
+        }, 16)
+        frame = requestAnimationFrame((at) => {
+          if (settled) return
+          settled = true
+          window.clearTimeout(fallback)
+          sample(at)
+        })
+      }
+      scheduleSample()
     })
     return frames
   }, durationMs)

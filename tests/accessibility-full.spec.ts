@@ -91,6 +91,9 @@ async function waitForStableA11ySurface(page: Page, route: string) {
       'complete',
     )
     await expect(page.locator('.public-hero__lead')).toHaveCSS('opacity', '1')
+    const orbitLabels = page.locator('[data-public-orbit] .public-object__label')
+    await expect(orbitLabels).toHaveCount(5)
+    for (const label of await orbitLabels.all()) await expect(label).toHaveCSS('opacity', '1')
   }
 
   if (route === '/app/settings') {
