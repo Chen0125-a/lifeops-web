@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "367A0D3475EEEC6D6ADE49AF61E066B786183D2041678E0F2EF2475DFE7C0902",
+  "checkpointRootSha256": "1B9536FDD9ACDE8DC785AF3A89C4545CB7D96611E0EE70842F5538AFED006725",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-30T01:06:48.441Z",
+  "generatedAt": "2026-08-30T03:06:04.599Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
@@ -2740,14 +2740,12 @@
   ],
   "latestRevalidation": {
     "taskId": "P6-T6",
-    "step": 7,
-    "revalidatedAt": "2026-08-30T01:06:48.441Z",
-    "checkpointRootSha256": "367A0D3475EEEC6D6ADE49AF61E066B786183D2041678E0F2EF2475DFE7C0902",
-    "metricsPath": "outputs/evidence/browser/p6-t6-ci19-theme-switch-final/metrics.json",
-    "metricsSha256": "2FD6A6FE66901C471C4843A569CDC7038CB5E7B1D8BC4CC1A1BD5F71EF5079B4",
+    "step": 9,
+    "revalidatedAt": "2026-08-30T03:06:04.599Z",
+    "checkpointRootSha256": "1B9536FDD9ACDE8DC785AF3A89C4545CB7D96611E0EE70842F5538AFED006725",
     "openedOriginalResolution": true,
     "captureCount": 8,
     "conclusion": "pass",
-    "note": "This CI21 remediation changes only the remote acceptance harness, its package command and focused contract. The CI19 final 1440x900 and 390x844 day/night rest/login images remain product-source-current and were already opened individually at original resolution; their hashes and 71-frame 16.8 ms metrics remain unchanged."
+    "note": "The successful immutable release and digest-only values update change no product or visual source. The already opened CI19 desktop/phone day/night rest/login artifacts remain current."
   }
 }

@@ -426,20 +426,20 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/pre-release-data
 
 - [x] **Step 6: Determine SemVer from real repository tags.** Use `1.0.0` only when no valid release exists; otherwise apply the documented patch/minor/major decision and record it before dispatch.
 
-- [ ] **Step 7: Dispatch and wait for the pinned GitHub Actions release.** Require successful tests/builds, pushed Web/API artifacts, UHub-resolved `sha256:` digests, exact-digest image smoke, SBOM/provenance status and a digest-only production-values update.
+- [x] **Step 7: Dispatch and wait for the pinned GitHub Actions release.** Require successful tests/builds, pushed Web/API artifacts, UHub-resolved `sha256:` digests, exact-digest image smoke, SBOM/provenance status and a digest-only production-values update.
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release-production.ps1 -Version $selectedVersion -Workflow .github/workflows/release.yml -Wait
 ```
 
-- [ ] **Step 8: Re-run registry, render and release-manifest verification.** Inspect both immutable references from UHub, verify production values contain the same digests, run production Helm validation and validate all recorded artifact hashes.
+- [x] **Step 8: Re-run registry, render and release-manifest verification.** Inspect both immutable references from UHub, verify production values contain the same digests, run production Helm validation and validate all recorded artifact hashes.
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-release-manifest.ps1 -Manifest outputs/final/release-manifest.json
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-rendered-helm.ps1 -ValuesFile deploy/gitops/environments/production/values.yaml -Production
 ```
 
-- [ ] **Step 9: Commit or hash P6-T6** with message `chore(release): publish immutable LifeOps images`. A non-Git directory, unpushed image or unverifiable digest cannot pass this task.
+- [x] **Step 9: Commit or hash P6-T6** with message `chore(release): publish immutable LifeOps images`. A non-Git directory, unpushed image or unverifiable digest cannot pass this task.
 
 ### P6-T7: User-operated deployment package and acceptance drill
 

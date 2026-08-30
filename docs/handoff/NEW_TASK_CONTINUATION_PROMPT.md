@@ -582,3 +582,16 @@ git ls-remote --heads origin refs/heads/main
 ```powershell
 node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
 ```
+
+## 47. 2026-08-30 最新权威尾部：P6-T6 immutable release 已关闭
+
+- ordinary CI `33285063683` 在 `64cb76932def9eed94cb43aea104c97eb19f1382` 全绿。用户明确批准从该提交额外且仅执行一次 `1.0.0` release；run `33286877080` 被精确 dispatch 一次并以 `success` 完成，所有 application/MySQL/browser/Helm/UHub/build/push/digest/exact-smoke/GitOps 步骤全绿。
+- immutable Web/API digest 分别为 `sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af` 与 `sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3`。OCI header/body 哈希一致；两份 attestation 分别为 `sha256:42185c73b8a448bca8be3af080923f2cdfdef7544a2ab0d53baac9ccc8860c75`、`sha256:c5e090b2d966748c69975463e91777f32c3a930d13d5172f21ca385d144cb4fe`，均含 SPDX/SLSA predicate。
+- digest-only GitOps commit `03d812339cb42bfb3633ad613b4dd55509fd0084` 只改两个 production digest。release manifest artifact hashes、production Helm lint/render 已通过。不得再次 dispatch `1.0.0`。
+- active tuple 为 P6 / P6-T7 / Step 1；父级仍 30/10/4，因为完整 deployment package/final handoff 尚未完成。下一动作是把用户已经批准的陌生集群部署手册合同纳入 P6 work package、source registry、acceptance matrix 与 traceability，然后按 TDD 进入 P6-T7 Step 1。
+- P6-T6 close checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-30-p6-t6-immutable-release-close-uncommitted-local-checkpoint.json`，root `1B9536FDD9ACDE8DC785AF3A89C4545CB7D96611E0EE70842F5538AFED006725`，612 inputs / 471 rows / 83 visual states；execution 97/97 与 task-close/startup/handoff 均无 blocker。
+- 继续禁止读取 kubeconfig、运行 kubectl、Helm install/upgrade、Argo sync/rollback 或 cluster smoke；不声明 DNS/TLS、Argo 或生产可访问。
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-deployment-package.test.ps1
+```

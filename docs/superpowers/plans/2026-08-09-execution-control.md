@@ -3,11 +3,11 @@ project: LifeOps Web
 authority_revision: ADR-030
 status: implementation-active
 active_plan: P6
-active_task: P6-T6
-active_step: 7
+active_task: P6-T7
+active_step: 1
 requirements_verified: 30/44
 execution_guard: complete-fresh-task-drill-passed
-last_reviewed: 2026-08-28
+last_reviewed: 2026-08-30
 ---
 
 # LifeOps Web Execution Control
@@ -787,9 +787,9 @@ The non-Git checkpoint is `outputs/evidence/source-checkpoints/2026-08-23-p6-t4-
 
 ## Next atomic action
 
-P6-T5 is formally closed. P6-T6 Steps 1–6 are complete and P6-T6 Step 7 is the sole current boundary. Ordinary CI run `32981072818` on exact GitHub `main` at `12f8899429070bbf21cf981142dd596c46213fae` failed with 330 passed / 5 failed; all five failures and the related diagnostic, detached-focus, TypeScript-boundary, Web public-asset and checkpoint public-source defects now pass fresh original-strength local gates. The reviewed implementation/evidence correction is committed locally as `d6f2c73764d7a9ef1122f1c968a348510cbe169f`; `origin/main` remains `12f8899429070bbf21cf981142dd596c46213fae`. The current 462-row manifest and 606-input push-authorization checkpoint validate at `BF75B8BCAE61911192F496A8CBB76A0B0EB17E9A9222B52CCF87E840782FA99E`. The next atom is the final execution/startup/handoff plus identity/diff/credential review before the narrow ledger commit; the first verification command is `npm.cmd run test:execution`. Release execution remains separately gated on a newly authorized push, a genuinely green fresh ordinary CI and new explicit authorization for exactly one additional `1.0.0` dispatch.
+P6-T6 is formally closed. P6-T7 Step 1 is the sole current boundary. Ordinary CI `33285063683` and the explicitly authorized single release `33286877080` are successful; Web/API immutable digests, SPDX/SLSA attestations, exact-digest smoke, digest-only GitOps values and the release manifest are verified. Parent truth remains 30/10/4 only because the P6-T7/P6-T8 handoff package is still pending. The next atom is to formalize the already approved unfamiliar-cluster deployment-manual contract into the P6 work package, source registry, acceptance matrix and traceability, then write the failing deployment-package/user-smoke tests. The first verification command is `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-deployment-package.test.ps1`.
 
-Do not rerun the detector, read kubeconfig, run kubectl, install Helm, synchronize Argo or claim registry delivery before the pinned workflow and exact digest evidence succeed.
+Do not rerun the detector, read kubeconfig, run kubectl, install Helm, synchronize Argo or claim cluster/DNS/TLS results. The immutable registry release is complete and must not be dispatched again.
 
 ## 2026-08-23 rejected concentric candidate safe pause
 
@@ -1475,6 +1475,26 @@ Refresh and verify checkpoint identity, run execution/startup/handoff and the fi
 
 ```powershell
 node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```
+
+## 2026-08-30 P6-T6 immutable UHub release closure
+
+Ordinary CI run `33285063683` / job `99186702904` completed successfully at source revision `64cb76932def9eed94cb43aea104c97eb19f1382`, including frontend/server unit, typecheck and production builds, official MySQL 8.4.10, the complete browser/accessibility matrix, the production-preview remote suite `12/12`, Helm/workflow/image contracts and local image builds. The user then explicitly authorized one additional and only one `1.0.0` dispatch from that revision. Release run `33286877080` / job `99191480418` was dispatched exactly once and completed `success` in 44m30s; all application, MySQL, Playwright/accessibility, deployable-manifest, UHub sign-in, Web/API build-and-push, registry digest resolution, exact-digest smoke and GitOps update steps passed.
+
+The release produced Web digest `sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af` and API digest `sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3`. UHub OCI index headers and independently computed body hashes match those values. Web attestation manifest `sha256:42185c73b8a448bca8be3af080923f2cdfdef7544a2ab0d53baac9ccc8860c75` and API attestation manifest `sha256:c5e090b2d966748c69975463e91777f32c3a930d13d5172f21ca385d144cb4fe` each expose SPDX and SLSA provenance predicates bound to the released digest. Exact-digest image smoke passed in the release runner. Digest-only GitOps commit `03d812339cb42bfb3633ad613b4dd55509fd0084` changed only the two production digest scalars and is now the local/tracking `main` base.
+
+`outputs/final/release-manifest.json` and `outputs/final/release-summary.md` bind the source revision, run, immutable references, attestations, test checkpoint and five artifact hashes. Artifact-only manifest verification passes, Helm v4.2.4 lints the production values with zero failures and production render validation reports configured release digests. The local Docker Desktop credential helper session is unavailable even for public Docker Hub images, so no local credential file was read or modified; registry metadata was independently verified through anonymous OCI Registry v2 while the formal Buildx digest inspection and exact-digest smoke remain proven by the clean GitHub runner.
+
+P6-T6 is closed. Parent truth intentionally remains 30 `verified-local` / 10 `partial` / 4 `pending` because the validated user deployment package and final handoff are P6-T7/P6-T8 work. Active tuple advances to P6 / P6-T7 / Step 1. No kubeconfig, Kubernetes deployment, Argo sync, cluster smoke, DNS/TLS or production reachability is claimed.
+
+The deterministic close checkpoint is `outputs/evidence/source-checkpoints/2026-08-30-p6-t6-immutable-release-close-uncommitted-local-checkpoint.json`, root `1B9536FDD9ACDE8DC785AF3A89C4545CB7D96611E0EE70842F5538AFED006725`, with 612 sorted inputs, 471 evidence rows and 83 visual states. Saved/fresh/evidence/visual identity matches; execution is 97/97 and task-close/startup/handoff are all `ok:true` with zero blockers.
+
+### Exact next atomic action
+
+Formalize the already approved unfamiliar-cluster deployment-manual contract into the P6 work package, source registry, acceptance matrix and traceability, then write the P6-T7 failing deployment-package and user-smoke tests before implementation.
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-deployment-package.test.ps1
 ```
 
 ## 2026-08-30 P6-T6 ordinary CI21 remote production-preview remediation

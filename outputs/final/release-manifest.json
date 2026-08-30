@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "sourceRevision": "64cb76932def9eed94cb43aea104c97eb19f1382",
+  "testCheckpoint": "367A0D3475EEEC6D6ADE49AF61E066B786183D2041678E0F2EF2475DFE7C0902",
+  "github": {
+    "repository": "Chen0125-a/lifeops-web",
+    "runId": 33286877080,
+    "runUrl": "https://github.com/Chen0125-a/lifeops-web/actions/runs/33286877080",
+    "conclusion": "success"
+  },
+  "images": {
+    "web": {
+      "taggedReference": "uhub.service.ucloud.cn/chenucloud/lifeops-web:1.0.0",
+      "immutableReference": "uhub.service.ucloud.cn/chenucloud/lifeops-web@sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af",
+      "digest": "sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af",
+      "sbom": {
+        "verified": true,
+        "digest": "sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af",
+        "attestationDigest": "sha256:42185c73b8a448bca8be3af080923f2cdfdef7544a2ab0d53baac9ccc8860c75"
+      },
+      "provenance": {
+        "verified": true,
+        "digest": "sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af",
+        "attestationDigest": "sha256:42185c73b8a448bca8be3af080923f2cdfdef7544a2ab0d53baac9ccc8860c75"
+      }
+    },
+    "api": {
+      "taggedReference": "uhub.service.ucloud.cn/chenucloud/lifeops-api:1.0.0",
+      "immutableReference": "uhub.service.ucloud.cn/chenucloud/lifeops-api@sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3",
+      "digest": "sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3",
+      "sbom": {
+        "verified": true,
+        "digest": "sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3",
+        "attestationDigest": "sha256:c5e090b2d966748c69975463e91777f32c3a930d13d5172f21ca385d144cb4fe"
+      },
+      "provenance": {
+        "verified": true,
+        "digest": "sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3",
+        "attestationDigest": "sha256:c5e090b2d966748c69975463e91777f32c3a930d13d5172f21ca385d144cb4fe"
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "outputs/final/release-preflight-summary.md",
+      "artifactSha256": "32E310C57841746185100937645A19BF702611BD9042E7121D1D15015DD690DD"
+    },
+    {
+      "path": "outputs/final/data-rehearsal-summary.md",
+      "artifactSha256": "BC173A70F7EB2CA83F28B924A8070975C9014792FD51D4040EB353380917EB94"
+    },
+    {
+      "path": "outputs/final/release-summary.md",
+      "artifactSha256": "F4A571F27E8CA73B66B12B6C8E22AF0F75AE8CA4536DF423C3D9B0D472DC4772"
+    },
+    {
+      "path": "deploy/gitops/environments/production/values.yaml",
+      "artifactSha256": "BB10903C425776F77681DB37971828DF42EFAE0E701CADD97255903C8AE37F5B"
+    },
+    {
+      "path": "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci21-remote-production-preview-remediation-uncommitted-local-checkpoint.json",
+      "artifactSha256": "053A79AC646CD9F3194B46C2D68B999D7B7C116A679AA2697D34270BDAB714F4"
+    }
+  ]
+}
