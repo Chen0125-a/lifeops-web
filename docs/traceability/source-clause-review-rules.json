@@ -16,7 +16,7 @@
     },
     {
       "id": "structural-plan-label",
-      "match": { "textEquals": ["---", "**Files:**", "**Interfaces:**"] },
+      "match": { "textEquals": ["---", "**Files:**", "**Interfaces:**", "**Approved unfamiliar-cluster manual acceptance atoms:**"] },
       "classification": "context-only",
       "reason": "Plan structure label only; enforceable file and interface entries are mapped from the following list items."
     },

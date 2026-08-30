@@ -6,6 +6,8 @@ const themeFrameBudgetTest = /the day-night transition stays inside the interact
 export default defineConfig({
   testDir: './tests',
   testIgnore: [
+    'deployment-smoke.spec.ts',
+    'deployment-persistence.spec.ts',
     'life-workspace.spec.ts',
     'life-catalog-p3-t9.spec.ts',
     'life-recipes-p3-t10.spec.ts',

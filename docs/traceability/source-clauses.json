@@ -6896,14 +6896,30 @@
       "textSha256": "39032579CF1E0EBD0D79E6F6D00E22F99AAFEC16CD6A4E9DC6A09F4889DAD793",
       "classification": "mapped",
       "atomIds": [
+        "DELIVERY-01.ASSET_MAPPING.FUNC.01",
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01",
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01",
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01",
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01",
+        "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01",
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01",
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01",
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
+        "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01",
         "DELIVERY-01.HANDOFF_PACKAGE.FUNC.01",
         "DELIVERY-01.IMAGE_API.FUNC.01",
         "DELIVERY-01.IMAGE_WEB.FUNC.01",
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01",
+        "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01",
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01",
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01",
         "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
         "DELIVERY-01.PROVENANCE.SEC.01",
         "DELIVERY-01.RELEASE_GITHUB.OPS.01",
+        "DELIVERY-01.ROLLBACK_HANDOFF.TXN.01",
         "DELIVERY-01.SBOM.DATA.01",
+        "DELIVERY-01.SCALING_GUIDANCE.CALC.01",
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.CALC.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01",
@@ -6915,7 +6931,8 @@
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.UHUB.OPS.01",
+        "DELIVERY-01.USER_SMOKE.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20481,7 +20498,7 @@
       "classification": "mapped",
       "atomIds": [
         "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02"
+        "DELIVERY-01.ROLLBACK_HANDOFF.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20500,8 +20517,8 @@
       "textSha256": "74F456D14F58FF2379ADBA1469F10E62EBE547455C68AAFDC166FF678DB575E5",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.CALC.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20520,7 +20537,7 @@
       "textSha256": "ED5130C7A730AFDC09BDFC335EAA97B0CB7726B64123EA22364265F0DA6E0780",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20539,8 +20556,8 @@
       "textSha256": "80A07BAC8AA6690FF94B2CC7CE5E8F94F14E09A10709FA44480CE3B86F33C0C0",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01",
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20559,7 +20576,7 @@
       "textSha256": "BD5ED55122C3E2C20A08E56F15C0FDDE416C861E036F9EF707710D87B6135F61",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.01"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
       ],
       "reason": null,
       "supersededBy": null
@@ -20578,8 +20595,8 @@
       "textSha256": "0DE4FB8B330874C5948D30AC34D58861FD62A5E9E4B125E89178458CC020CAAD",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01",
+        "DELIVERY-01.EXACT_DIGEST.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20655,6 +20672,7 @@
       "textSha256": "F633448A7140BB865D35147A037D5AB6085643D46D8D465DDAB2EFEF51A7F21C",
       "classification": "mapped",
       "atomIds": [
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01",
         "DELIVERY-01.PROVENANCE.SEC.01"
       ],
       "reason": null,
@@ -20675,7 +20693,7 @@
       "textSha256": "0EC24D65D63767445406BC531108CCAE33EDE37351BDB2A7B326F144F66A8AB9",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01"
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20695,7 +20713,7 @@
       "textSha256": "C960369F4D71A72A37002C0D250E5A4240BB5B24EE1BE8814AD5C624EA81882F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.SBOM.DATA.01"
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20715,8 +20733,8 @@
       "textSha256": "D306DEA6B914FE1DE2F518B7BAD6071E31325FEC9FFB1438EFA3E0511BC0F21C",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01",
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20738,7 +20756,7 @@
       "atomIds": [
         "DELIVERY-01.PROVENANCE.SEC.01",
         "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.01"
+        "DELIVERY-01.USER_SMOKE.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20758,7 +20776,7 @@
       "textSha256": "6A5CDC399CF74A1B9C5FE0F60E2E81FC32436575A75A7160AACA95EA5A72748A",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01",
         "DELIVERY-01.UHUB.OPS.01"
       ],
       "reason": null,
@@ -20838,9 +20856,9 @@
       "textSha256": "139FD4C608AF8A4E4446C7B3A9F86B5BC40321DDA5733285B04B83E309CBA904",
       "classification": "mapped",
       "atomIds": [
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01",
         "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20860,8 +20878,8 @@
       "textSha256": "4664C2124A9A212B80928FC06138BE387C3F3082D40AD2F2BF96AE902D0C8447",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01",
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -20881,7 +20899,7 @@
       "textSha256": "C68A88BDD4A5154B0FEF21AF90C4DE663208B818102574935A20FD4E6013796F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
+        "DELIVERY-01.USER_SMOKE.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21016,7 +21034,7 @@
       "textSha256": "7821AE14C5CD8BE5296F01BEC972A16C124AA79827C293866A2FF216CEFD878D",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21036,7 +21054,7 @@
       "textSha256": "DDFEC16E29122AB45419DBEAB2CC010844741EB92BF19036C39835CE41DF72EC",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21056,7 +21074,7 @@
       "textSha256": "B90F62A071944B5098648999A07FEBDB1E2BC7DFB4F8A5E36E9BB2064249FDEE",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21076,7 +21094,7 @@
       "textSha256": "31A87D46C245ACFE72CAB5679A383EFFB2B3ED9B3276C2BFB0675FB075AA11D5",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01"
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21134,7 +21152,7 @@
       "textSha256": "45DC9D88D07C17863018266455E03D6AE3C518BDC30861B988ED3E4BCC8821CE",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_API.FUNC.01"
+        "DELIVERY-01.ASSET_MAPPING.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21154,7 +21172,7 @@
       "textSha256": "C935D06CA9F0A54513486ECD43EF5DB30E1DDAAC838493C268D44D24613319C5",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01"
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21174,7 +21192,7 @@
       "textSha256": "AA44D6F3CE23B7FE61EBE63433F98A6D2F179E3F5439B5A571A74D4855A0DA92",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_WEB.FUNC.01"
+        "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21194,7 +21212,7 @@
       "textSha256": "2AE88835E7DA0EE7229213E85441850F40FA1BAD99CAA06979E75DC3441F578A",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21214,7 +21232,7 @@
       "textSha256": "89DC549E3D44A8796EDCF7CFFAE84F3B233FDE2AC129453704F27783FBD797A2",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.HANDOFF_PACKAGE.FUNC.01"
+        "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21234,8 +21252,8 @@
       "textSha256": "DCC5487CA03247D2789F900F98A98FA2E34EBCDCFFBBBC401DA53240A718F5ED",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01",
+        "DELIVERY-01.PROVENANCE.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21275,7 +21293,7 @@
       "textSha256": "4699D319A9012741ED50F013F55282875B8A9698F13F75095705B8CC52AA937C",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01"
       ],
       "reason": null,
@@ -21314,7 +21332,7 @@
       "textSha256": "68C0D24119465A0F360CBE6AEE7DA44CCDD4F07841C56EB7DC40DD3F7088D1C2",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01"
+        "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21334,7 +21352,7 @@
       "textSha256": "331EF90472AFFE321750C70151DD94CAB367060A25C968900B4B8AD911C921B8",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_WEB.FUNC.01"
+        "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21354,8 +21372,8 @@
       "textSha256": "6D4559BC94DAA6F34284334D0665FD54C8F9DE02637DF7E0A1F77B517D894EF5",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.SBOM.DATA.01"
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01",
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21396,7 +21414,7 @@
       "textSha256": "5DF8766D9546876197872BEA94E5A4EE6E229B52507F1AE04BCD066616B3F2F3",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_WEB.FUNC.01"
+        "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21416,9 +21434,9 @@
       "textSha256": "4067E22E2BD5A65E22869B13FFFDC714E0EA2FE4843A36E7E33B2F3EED58C2E2",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.SBOM.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01",
+        "DELIVERY-01.EXACT_DIGEST.TXN.01",
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21438,7 +21456,7 @@
       "textSha256": "CA278B9258A6D05B2E253151C55840B253A2087464F2744DAB2734806A182C6F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.HANDOFF_PACKAGE.FUNC.01"
+        "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21478,7 +21496,7 @@
       "textSha256": "057A0CC34DD7D2AE131E579F2637813B3C408632F1161293EFC211F1DE34E883",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01"
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21533,7 +21551,7 @@
       "textSha256": "04F875F374C6C6322BA1103C7EBB7A1DA82329633B8EC745F2DCA0AC98AF1AA1",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.EXACT_DIGEST.TXN.01"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
       ],
       "reason": null,
       "supersededBy": null
@@ -21552,9 +21570,9 @@
       "textSha256": "EE512BE2A43598E3CCE5426D06600C2F41B2027DBAAAC3EFE832FC20892B6DB0",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01",
+        "DELIVERY-01.IMAGE_WEB.FUNC.01",
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21573,7 +21591,7 @@
       "textSha256": "5F82FF79CF2F9ADD36D671796F4566A1C6D751FBBD22733E54177644C0ACD389",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.01",
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.04"
       ],
       "reason": null,
@@ -21593,7 +21611,7 @@
       "textSha256": "6666A8E6BF8B9C71BA31CDEC137488C8786D84C17A0BF65EF690C4455BFB1E2B",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21612,7 +21630,7 @@
       "textSha256": "9E9D96343B331E9838267ABB39E8855281BEA7D3DFF11B0FDD3E3F891D82FC2D",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01"
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21631,8 +21649,8 @@
       "textSha256": "8B4B5FD8E8B24F69EF6C763A593EE5A67B67B2562BA45BB477E749A8D0162D29",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21651,9 +21669,9 @@
       "textSha256": "6C107A3D8B24679B634C2DC591F2DF8D11114F569F6DD214A6FCCE06FECC8908",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01",
         "DELIVERY-01.SBOM.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
       ],
       "reason": null,
       "supersededBy": null
@@ -21691,9 +21709,9 @@
       "textSha256": "AD1BC4D18D8D9E78187E1F8AD6F4D45BBEE5412B8056B9F01E7E167F0D2EDF58",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01",
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02"
       ],
       "reason": null,
       "supersededBy": null
@@ -21748,7 +21766,7 @@
       "textSha256": "251EC43B78E32935D5B21741AADCF0DC97D41A0175FBD3C656B9914B784A62B2",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01"
+        "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21824,7 +21842,7 @@
       "textSha256": "EE96A2FA669E5E64D65495BDD5D420D97FA5FE41489964D3EC5E7BC3E808CE87",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02"
+        "DELIVERY-01.EXACT_DIGEST.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21843,7 +21861,7 @@
       "textSha256": "B494DA1711CDD3A93BD7901E658CB5FFD29961050EE550B8D7642CEA7EC5A890",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_API.FUNC.01"
+        "DELIVERY-01.ASSET_MAPPING.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -21898,8 +21916,8 @@
       "textSha256": "2E1401ED70B518A4CC256A3939D948B54F61BC4ED793988359DC790AA9DECD47",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
+        "DELIVERY-01.ASSET_MAPPING.FUNC.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02"
       ],
       "reason": null,
       "supersededBy": null
@@ -21937,7 +21955,7 @@
       "textSha256": "91E577E179E0B7298B122DB7120A5000ADC4989C2EC99D13F57B03BF2755AAC4",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.04",
         "DELIVERY-01.UHUB.OPS.01"
       ],
@@ -21958,8 +21976,8 @@
       "textSha256": "E87339631BA28596FD66E3997750E159D0F6838C02CBB593C5D6B4A1DF3BE6C3",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02"
       ],
       "reason": null,
       "supersededBy": null
@@ -22014,7 +22032,7 @@
       "textSha256": "4897D6F46F9860EE1B1A9FA67B6F26D32F5988E7FC924AF453D82476EA505C87",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -22033,7 +22051,7 @@
       "textSha256": "1744858BEDD3C2521F08DA01F215EE44AFABFDFC2A8682FE14615E02F116BA49",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01"
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -22107,7 +22125,8 @@
       "classification": "mapped",
       "atomIds": [
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.UHUB.OPS.01",
+        "DELIVERY-01.USER_SMOKE.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -22126,7 +22145,7 @@
       "textSha256": "E14CE913AA917C1FD0F07C3CB99B8D50F95BDB854158755A19086708901856EA",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.03"
       ],
       "reason": null,
@@ -22146,9 +22165,9 @@
       "textSha256": "C83033570518D6F8FD71A1D7FF9C365ED2991CC69798C5AC756B15D4409F228F",
       "classification": "mapped",
       "atomIds": [
+        "DELIVERY-01.PROVENANCE.SEC.01",
         "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -22167,8 +22186,8 @@
       "textSha256": "6804B850AFFA869CB68E81F1974F2E76FDBDFF583D53E2C4F85261F75A850CDB",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01"
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01",
+        "DELIVERY-01.UHUB.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -22187,8 +22206,8 @@
       "textSha256": "14C66C697BA19B0BC218F567E1D38A737A6833FE0260A6A769FA170978313B26",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.CALC.01",
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01",
+        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
       ],
       "reason": null,
@@ -22924,8 +22943,8 @@
       "textSha256": "A71BF85C74312B1FD02B5936CD93CA56411CE49F597C6BACC0932557C6C2AF8D",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.01"
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01",
+        "DELIVERY-01.ROLLBACK_HANDOFF.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -24180,7 +24199,7 @@
       "textSha256": "12300AB9119BA4194200C03B553368AB5D74AF67111AF2ABB691621D959FD2A6",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -55823,7 +55842,7 @@
       "textSha256": "E3AD7A7EEB49DE97C08A9C4AB41F492E4BA40EEBE0EABDB55294AA319A83269C",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01"
+        "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -55860,7 +55879,7 @@
       "classification": "mapped",
       "atomIds": [
         "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.PROVENANCE.SEC.01"
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -55878,8 +55897,8 @@
       "textSha256": "D44D029138C3EF0D4DBADB97FA4FDBDEBDC047D6BE18F91AF9DB2C81274D3326",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01",
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -55915,9 +55934,9 @@
       "textSha256": "5C87D0D7B87CAC21BA458098837BA38AB037C00928FECCACCBC070979DBA4D13",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.EXACT_DIGEST.TXN.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.03",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
       ],
       "reason": null,
       "supersededBy": null
@@ -55936,8 +55955,8 @@
       "textSha256": "D0BC53092177796582925DCBFB5F5C08D839219970AAAB0D83E1E4DDB9AE8D9A",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -55975,9 +55994,9 @@
       "textSha256": "015225DF81D3EDA0E6B09B042505C7F56BCEFCB277D22515E37ADD1D50F75EA5",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_API.FUNC.01",
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01",
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01",
+        "DELIVERY-01.ROLLBACK_HANDOFF.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -56034,7 +56053,7 @@
       "textSha256": "5BD944FEEC52EA800275193AA90CB4EA1816A67CDA46655CF377A181EB4CDF76",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01"
+        "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -56072,7 +56091,7 @@
       "textSha256": "CF75EA1E4B2390C0EA6321789AE50C58A43D1CE1EBA429A24567F7CBBE8B29A7",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01"
+        "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -56091,7 +56110,7 @@
       "textSha256": "89E5AEDB7AD664ABDABD9075BE521CCA5A1F385EE7EB22CE022C7E802B6BB63C",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -56149,7 +56168,7 @@
       "textSha256": "4F2F7FFB56F775A799CE0BE0079072A2042CEABA6A6C6645B8C85F5692C6B65F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.CALC.01"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -56168,7 +56187,7 @@
       "textSha256": "7C737228A65391B7DCE078D5AC97D87ED2491ED7F7619C5B782567E414430E10",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_WEB.FUNC.01"
+        "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -57822,7 +57841,7 @@
       "textSha256": "50DEE107A328A0670E1F2802E86174BDEAED38FF4E18CCF40B773E44D696C455",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -57842,7 +57861,7 @@
       "textSha256": "9BF6104C659A5122533C737730E309781BEECF35AAA3D6B33E1B4D2BDC44CE1C",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -57902,7 +57921,7 @@
       "textSha256": "41FF7D47C14155289052B3BAC4D1396709D0E030EA40F18881FA84AD4E99AFD4",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -57922,7 +57941,7 @@
       "textSha256": "F963DB50D57B16965769B2F1F40B7A78EC9A0C43BE892075ED2E92D559DAFD23",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -57942,7 +57961,7 @@
       "textSha256": "AAC287111ED8A15561EA7512E894CC10C417D6AA8A3317239B255A68629799AE",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -57962,7 +57981,7 @@
       "textSha256": "1195107E1C88731558851E751BF70688C07AA4FE0DE0783874163926DB80A9B7",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58083,7 +58102,7 @@
       "textSha256": "5262DC568D9CA036F139E02B334405238478FA17268FDF4437D5D15F477B2210",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58121,8 +58140,8 @@
       "textSha256": "2A324ABDAD2DB5B4A7608BDAFA0494BF494868169ADE83562F7582105946360B",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01",
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58142,7 +58161,7 @@
       "textSha256": "26FAD6EB623963D0D9B6647E881DEF1DB586BA366F58301C266912331BB9CED4",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58182,8 +58201,8 @@
       "textSha256": "85150977FB24758F94B69865979407F0EBA2B247C17FA2FDC905CD2970AB007F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02",
         "DELIVERY-01.UHUB.OPS.01"
       ],
@@ -58205,9 +58224,9 @@
       "textSha256": "E58EF09255DBF2EB74A5265890DF78C4196C31DB141CFA309701234FF87FD57D",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.CALC.01",
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01",
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.03"
       ],
       "reason": null,
@@ -58228,7 +58247,7 @@
       "textSha256": "1D61AB9F079E99767A2EC9BC1688781A7AC8BA7C7F4C463C354C4D9B114D425E",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58272,7 +58291,7 @@
       "textSha256": "FDFA3DB54CE673FDF099400FDCCAE2655092170F35241F834F7FE57860841BAF",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58292,7 +58311,7 @@
       "textSha256": "A7357FB11240A73C572745A3E6FC033AE651A13F6BD4D483EAC2E12DC57DA0E7",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58312,7 +58331,7 @@
       "textSha256": "07261826BBBC44559C80041548DB9324D3EB7F97344FF4815AE641D0CDCF6162",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58332,8 +58351,8 @@
       "textSha256": "7C49EBCFFA88F330F593989BD1C604EB8E8D7A45A14B6E9F0051114617D5F216",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.EXACT_DIGEST.TXN.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02"
       ],
       "reason": null,
       "supersededBy": null
@@ -58529,7 +58548,7 @@
       "textSha256": "172644A7DEEE1CB66C8104074D11EEB66949BCEE7B2C5983C37A382431E8C800",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01"
+        "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58549,7 +58568,7 @@
       "textSha256": "DE2D0714AAE7219C191F1ACFCF519195AA234238470D38BF7707B94E3459CC19",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_WEB.FUNC.01"
+        "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58569,7 +58588,7 @@
       "textSha256": "AD8A3E38A9239AF82B5430AD70A269A64166D5EE08E65FAE69EC41AB83A7E9B9",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_API.FUNC.01"
+        "DELIVERY-01.ASSET_MAPPING.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58589,7 +58608,7 @@
       "textSha256": "F6C8E8848EA0EB3F008A794941DC883F00D324B88065C8564887B84B67908182",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.HANDOFF_PACKAGE.FUNC.01"
+        "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58647,7 +58666,7 @@
       "textSha256": "AA2F595A3E02A088E6A7B4632CC8FDB6C749126C1AA4F5490A1A6CB7D72970FA",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
       ],
       "reason": null,
       "supersededBy": null
@@ -58667,8 +58686,8 @@
       "textSha256": "F07A4FC33B85CF4115773FB48F4D0B08442FAE8FAD2301A598A857478ED0577A",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.SBOM.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02"
+        "DELIVERY-01.IMAGE_API.FUNC.01",
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58708,8 +58727,8 @@
       "textSha256": "B93F21BCE1415DAD0A631F86283D26BCA6C64EE71A7246DB8FB1049A7D812F84",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.04"
+        "DELIVERY-01.SBOM.DATA.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58729,7 +58748,7 @@
       "textSha256": "B31497A7FEE053B19AB340AE38D4792A4E2973A55410011742896D5AA2DC04F3",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01"
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58749,7 +58768,7 @@
       "textSha256": "6B0DC66C748C185D6E3B0EE1D9C02BEAE001C52C09D5823D54D3CBF65D14B2BB",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02"
       ],
       "reason": null,
       "supersededBy": null
@@ -58769,8 +58788,8 @@
       "textSha256": "FDBCF3E07669C33A66FB6AA3766F10ACC655EC834115A539C746CAB5B3A96594",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01"
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01",
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58790,8 +58809,8 @@
       "textSha256": "61ECC58B75A939C84C2A0C367479D0B009F21A62361D1B63DDE9F24D9F07A7EA",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.EXACT_DIGEST.TXN.01",
-        "DELIVERY-01.PROVENANCE.SEC.01"
+        "DELIVERY-01.HANDOFF_PACKAGE.FUNC.01",
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58811,7 +58830,7 @@
       "textSha256": "45F085C4244DC7A77A1A3FA226290930D58F6ED8DB77D7DE2FE5A7FBA945A2A3",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58851,7 +58870,7 @@
       "textSha256": "869DCECBB2F9C00D63AFA3A18044008F3BC7521150DE5705AE13782E8D981256",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_API.FUNC.01"
+        "DELIVERY-01.ASSET_MAPPING.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -58891,7 +58910,7 @@
       "textSha256": "994CD4FF8DA6E9BFD2726E2B799AED7A5A595CB37A713710D22139318C435522",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.01"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02"
       ],
       "reason": null,
       "supersededBy": null
@@ -60055,7 +60074,7 @@
       "textSha256": "22667F446C211C299F48A56A14C1BA004EF275E3EB67888402496856BD6A767B",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60075,7 +60094,7 @@
       "textSha256": "59FA58D85877EFDA972903EBBBE05184333216416121B02D98B2410FA982DA3F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60095,7 +60114,7 @@
       "textSha256": "6F95109C47F81334F93CEF5417BDF478730482DAEEE23C217B29DE8434B12592",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60115,7 +60134,7 @@
       "textSha256": "FE49D006B88143B2AD4DECEAAB918A8A25CD434AA770CBCCA6AFB859B9D4B763",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60135,7 +60154,7 @@
       "textSha256": "555EB33A619A5CB24AD6745BB97FF270D97DF9DD069A9C3F7B9D12C3D65F970A",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60155,7 +60174,7 @@
       "textSha256": "0D179BBB43E47895E080B6F64AF7A61CD488133CF31C1CF2C0C656EE5E38AD2A",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60175,7 +60194,7 @@
       "textSha256": "AAF10CA1E39C76ACA1D86ACA8E21DF1498AA290311363BC4636AFF804ABA2DD2",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60196,7 +60215,7 @@
       "classification": "mapped",
       "atomIds": [
         "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60216,7 +60235,7 @@
       "textSha256": "3497D14200E6B6C08BE20C588F86925448F48AEFF78907E61497AA74E4E8221C",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.01",
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01",
         "DELIVERY-01.UHUB.OPS.01"
       ],
       "reason": null,
@@ -60237,7 +60256,7 @@
       "textSha256": "E26AD86F5D96B6C5143C58AA48FB7326B10392B20FD69604499EE5AB4FE0F90C",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60257,7 +60276,7 @@
       "textSha256": "733CAA3AA8075666E0EA53E5486471E61A26C4F2DD0833BD1128DA4021ECD8CB",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60277,7 +60296,7 @@
       "textSha256": "904358C9DEDA198D236AC5AAA898CDA5A1BDB263EC73581AD365B62C263C3D17",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60297,7 +60316,7 @@
       "textSha256": "B16E544554CCF091516921784643B5B621ACD345339F1E934F9B0C5A24E44AFA",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60357,8 +60376,8 @@
       "textSha256": "710E0DA0C1054F039A45E77723B6F6B617D92932DD95437D9576603CF7DEF205",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01",
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60378,8 +60397,8 @@
       "textSha256": "3C5829BDDA08012F3BB2641609262A99FB57776DDDD40C50F2013AA4AEBEE350",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.SBOM.DATA.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01",
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60399,7 +60418,7 @@
       "textSha256": "6B67E424480C72535B5C07BB53E42D92B202C38984E2AE393B3E10A18A93681F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60459,7 +60478,7 @@
       "textSha256": "D7EEC36DF62DAEA191E9A5DA6B9A0243BBA84707BC3742CA544F449309FBC223",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60479,7 +60498,7 @@
       "textSha256": "D11EAEEF5244536E019FB49D5BF725FFC57BD33BA72475DFFE48D4D77D7803DE",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60519,7 +60538,7 @@
       "textSha256": "9E6D0210CCE106A30963507ABB36846CC392301422E42B8A193CAA2857B4AB86",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60539,8 +60558,8 @@
       "textSha256": "D9BA72908CDBC97C89FABFA92C4D5CAEC33415D476CB45A89C9C0E1D25495117",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.SBOM.DATA.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01",
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60560,7 +60579,7 @@
       "textSha256": "B146E8D6AF32696DFEA82EE6E7B2DFF82D78A7C49F260FD404D321968EAFA325",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60638,7 +60657,7 @@
       "textSha256": "E457CA1F8A9C4836D0C6EDEDCE04B32CDE8FC7DB8C4D95F84273C9974A5C13BA",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60658,8 +60677,8 @@
       "textSha256": "A01F9F1AACE46CE61D5E66930927099BF0DCE445EFF6D6C6DB11D6A954D89AD1",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01",
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60719,8 +60738,8 @@
       "textSha256": "69C0589F07E8AED20F65EB60FE98E5DEEB46B036968AD2C992DDB3D45DB07674",
       "classification": "mapped",
       "atomIds": [
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01",
         "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.03"
       ],
       "reason": null,
@@ -60741,9 +60760,9 @@
       "textSha256": "85D78C860C71B2E52A12E12C56F8A82DBCB54705394D5864DF83CB0DBB250A3F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01",
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01",
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60763,7 +60782,7 @@
       "textSha256": "A3617381A64926E813B61FA63A0F3E9149193A6BABC648D161DEBBC0B81905B2",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60783,8 +60802,8 @@
       "textSha256": "C7812603CAF00F2D729EEABCF2C2A19C7C9429C872D1EAF972414E8EC16E5F2C",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01",
+        "DELIVERY-01.PROVENANCE.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60804,9 +60823,9 @@
       "textSha256": "45C3EAB6B5D90E18000E251EA82C523740E7F819DF69E9D6DB4966FC609C7D0B",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.03",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01",
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60867,7 +60886,7 @@
       "textSha256": "51F499241F76B6FE870A55215629A9CBAD671FBCB577A5A7BDD05B7335ED4C64",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60887,7 +60906,7 @@
       "textSha256": "FE717ABBA3503ADEFFDB8FE3AC004987D69C7B28B591BBC938846B4FE7B74446",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -60907,8 +60926,8 @@
       "textSha256": "111E24369C9EFAFDCC0BB6E7A9186ED3B5EF951C690D0301892C4002418FA496",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.EXACT_DIGEST.TXN.01",
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01",
+        "DELIVERY-01.EXACT_DIGEST.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61004,7 +61023,7 @@
       "textSha256": "5F468329182424624EEF3AF1EEF558F8D465E04BCECDCCCDBDDBA8EDE4D66B60",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01"
+        "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61024,7 +61043,7 @@
       "textSha256": "9E97158E0F86B707BD2CBFBB74B83F484EE6AABFCB7414FC8AA777C832C577F3",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_WEB.FUNC.01"
+        "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61044,7 +61063,7 @@
       "textSha256": "65A00AE36AE90A11A8C3E3C3E3CF44A8B6CA70DFF53C01D3BB01707C8ED4E978",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_API.FUNC.01"
+        "DELIVERY-01.ASSET_MAPPING.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61064,7 +61083,7 @@
       "textSha256": "A09177A2EDC2D2EEDF419AC89CF67120FB543A8F1C3C5D5FAD3B70043C4D3AC2",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.HANDOFF_PACKAGE.FUNC.01"
+        "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61104,8 +61123,8 @@
       "textSha256": "C3C62429224C7A3FDDF00358E12E51BC5BEC90CAB73999DC679CCDE4D8447F37",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_API.FUNC.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
+        "DELIVERY-01.ROLLBACK_HANDOFF.TXN.01",
+        "DELIVERY-01.USER_SMOKE.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61183,7 +61202,7 @@
       "textSha256": "4252ECBBF4CE8BF610FEA015DB66323239D4FF8D4D90D999A2ECFD8ACFEDB598",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.SBOM.DATA.01",
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01",
         "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.03"
       ],
       "reason": null,
@@ -61204,8 +61223,8 @@
       "textSha256": "10211EE4D3E607ED1475EB6D931AD1EF4BB062CE60C7316F14B850B4275C2ABA",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01",
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61225,10 +61244,10 @@
       "textSha256": "AA7FEFD43EC282F5C5263BB5E1AD8E5B926D9F29E78579BBEB09DC3116E71549",
       "classification": "mapped",
       "atomIds": [
+        "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01",
         "DELIVERY-01.PROVENANCE.SEC.01",
         "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.01"
+        "DELIVERY-01.USER_SMOKE.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61255,6 +61274,24 @@
       "supersededBy": null
     },
     {
+      "id": "SC-P6-0310",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "paragraph",
+      "ordinal": 3,
+      "textSummary": "**Approved unfamiliar-cluster manual acceptance atoms:**",
+      "textSha256": "C02DBF3EE29951247E16F8C7439AC0114FC5EC5D4798E8D740BE8B12366AA1D6",
+      "classification": "context-only",
+      "atomIds": [],
+      "reason": "Plan structure label only; enforceable file and interface entries are mapped from the following list items.",
+      "supersededBy": null
+    },
+    {
       "id": "SC-P6-0235",
       "sourceKey": "P6",
       "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
@@ -61265,12 +61302,11 @@
       ],
       "kind": "list-item",
       "ordinal": 15,
-      "textSummary": "[ ] **Step 1: Write failing package and user-smoke tests** for missing files/digests/checksums, deployable placeholders, Secret values, unsafe filesystem replica/storage combinations, public `/metrics`, overbroad RBAC, wrong expected revision/digest, failed health/auth/persisten…",
-      "textSha256": "0760E5125BCA2AFB877CA001AFDAAA2C07D6D57DC961195922BB5AF1525C1FFE",
+      "textSummary": "Architecture and terminology: explain that LifeOps builds only `lifeops-web` and `lifeops-api`, that the migration Job reuses the API image, and that the Web image's static Nginx, the Gateway API specification and Envoy Gateway or NGINX Gateway Fabric controllers are separate re…",
+      "textSha256": "7054E149284B40E78639982F644213212B0496EFF42F289D4521B772A7406422",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.PROVENANCE.SEC.01"
+        "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61286,13 +61322,11 @@
       ],
       "kind": "list-item",
       "ordinal": 16,
-      "textSummary": "[ ] **Step 2: Implement the offline deployment-package validator.** Check Helm lint/template, values schema, immutable images, migration order, health probes, resource/security contexts, Secret refs, RBAC/network policies, monitoring resources, runbook anchors and release-manife…",
-      "textSha256": "E913EF6E8E845C7CDCBBF85E6E1A12204463FC775F64971D8B69A8C80CB8398D",
+      "textSummary": "Capability-first preflight: give user-run read-only checks for Kubernetes version and CPU architecture, nodes, Gateway API or Ingress, LoadBalancer or MetalLB or external load balancer, DNS/TLS, dynamic StorageClass provisioning, RWO/RWX, Secret or ExternalSecret, monitoring and…",
+      "textSha256": "B091FAFB3400C057DE2FB4B0FBE3F4226CC90E7A2EC6EB06565D05D1427D8B22",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.04"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61308,12 +61342,11 @@
       ],
       "kind": "list-item",
       "ordinal": 17,
-      "textSummary": "[ ] **Step 3: Implement the user-run application smoke.** Reuse remote Playwright journeys for public/auth/private, CRUD, media, publishing and the exact-once life transaction sentinel. Cleanup uses documented application APIs and a unique test prefix; it does not delete Pods, P…",
-      "textSha256": "3C9D3896CD8E281657C8C8C88E26E8F549E6F49DF170704744E61B7C55900759",
+      "textSummary": "Cluster-operation boundary: separate platform prerequisites from LifeOps delivery, never require the executor to read kubeconfig or run `kubectl`, Helm install/upgrade, Argo sync/rollback or cluster smoke, and label those deployment actions as commands the user runs in their own…",
+      "textSha256": "882F53B1E35F315AE12629A9083E32A84ECE81D557D57C3AFD11932B8F14747F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.EXACT_DIGEST.TXN.01",
-        "DELIVERY-01.PROVENANCE.SEC.01"
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61329,13 +61362,11 @@
       ],
       "kind": "list-item",
       "ordinal": 18,
-      "textSummary": "[ ] **Step 4: Write the deployment checklist.** Cover UHub pull Secret creation by the user, database Secret, namespace, storage/media choice, Gateway/Ingress, DNS/TLS, Helm render/install or Argo Application adoption, migration completion, readiness, expected digest checks and …",
-      "textSha256": "33CE65B52A267530C3ABC20E0253D6CF424E944421ACD0589CE75B2232E5B89C",
+      "textSummary": "Secret handoff: cover imagePullSecret plus application/database Secret or ExternalSecret choices without embedding plaintext, asking the user to paste credentials into chat, or committing generated Secret values.",
+      "textSha256": "AB5FB041F8ADBBECE92E75A4C83804C5CB7E9FD3A3CC7593524BD72E11DA31E4",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61351,13 +61382,11 @@
       ],
       "kind": "list-item",
       "ordinal": 19,
-      "textSummary": "[ ] **Step 5: Write safe backup/restore and rollback procedures.** Require a user-owned verified database backup before upgrades, digest-only GitOps revision changes, forward-compatible migrations and a maintenance decision for disruptive rollback. Do not automate access to the …",
-      "textSha256": "1CF695CA4FDA25BCAC16F04618CBEF15B21DB19E63F0D6A2F3A9E6CD5A39486B",
+      "textSummary": "Database branches: document embedded official MySQL `8.4.10` single-replica StatefulSet plus RWO, external managed RDS, binary MySQL on an independent VM rather than a worker node, and user-managed HA/Operator MySQL; each branch covers Secret/TLS, network, backup/restore, upgrad…",
+      "textSha256": "08F412F3E22F5A37BE78937E99C4BAD6073011AE403F8B428744A3CB6EFB0B9F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61373,12 +61402,11 @@
       ],
       "kind": "list-item",
       "ordinal": 20,
-      "textSummary": "[ ] **Step 6: Document platform verification.** Provide Prometheus target/query, Grafana dashboard, PrometheusRule, Elasticsearch/Kibana request-ID and Platform Center deep-link checks the user can perform after installing those components. Disabled integrations remain truthful …",
-      "textSha256": "B8C2C13134D9385591F910FF159730EAA1117700925311B1B898106EBFB27955",
+      "textSummary": "Media-storage branches: require RWX for multi-replica API filesystem media, prefer S3-compatible object storage when an unfamiliar cluster lacks RWX, allow single-replica API plus RWO only for bounded small/risk-accepted use and never bypass the chart rejection of multi-replica …",
+      "textSha256": "90C804CE640ADE4831F1905734F884012A5B73C501389C3E9C7C3CBA55721FA4",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.01"
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61394,13 +61422,11 @@
       ],
       "kind": "list-item",
       "ordinal": 21,
-      "textSummary": "[ ] **Step 7: Perform an offline acceptance drill.** Starting only from the release manifest and docs, follow every non-cluster step, render both Helm/Argo paths, resolve all links/commands, confirm every user input is named and verify no step depends on an undocumented local pa…",
-      "textSha256": "C6A273D375AA0C8AB87A2359EC1FDC385BCBB8A76B717D1E824B3E9C5D1DE65D",
+      "textSummary": "Entry-controller branches: recommend Gateway API plus Envoy Gateway, map NGINX Gateway Fabric adaptation to controller, parentRef, namespace, policy and values changes without rebuilding images, and provide a chart-backed Ingress fallback; explain the distinct roles of LoadBalan…",
+      "textSha256": "A01447C7E9B5D25135E99378BB310AFE8B789871A3F3C9A1A90F7A17297E3377",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.EXACT_DIGEST.TXN.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61416,11 +61442,11 @@
       ],
       "kind": "list-item",
       "ordinal": 22,
-      "textSummary": "[ ] **Step 8: Run the final package validator and record the sanitized summary.** Any skipped required package check keeps DELIVERY-01 open.",
-      "textSha256": "E3676A414C2BCABFB116E0D7932B81CFBC4A491D3596C4DA29D5DB0A069E7F8D",
+      "textSummary": "Immutable release inputs: identify the exact Web/API immutable digests from the release manifest and production values, reject tags or local image IDs as substitutes, and keep user-specific namespace, hostname, storage and platform endpoints explicit.",
+      "textSha256": "8823DE0B382E8C9A8FB2C3272866CCB26433299C7A00B5C51BE9C37D7407098F",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01"
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61436,13 +61462,364 @@
       ],
       "kind": "list-item",
       "ordinal": 23,
+      "textSummary": "Offline delivery preflight: verify documentation links, examples, values schema, Helm lint and both default/production renders before any user deployment command, with no undocumented local path or credential dependency.",
+      "textSha256": "36BCD5BB4CCC18A5AAAF7BB90C6F706D90AF3380F315688AB602FD2EE8CC2583",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0311",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 24,
+      "textSummary": "Deployment paths and order: provide Argo CD as the recommended user-operated path and Helm as the alternative, then explain migration Job, Web/API and optional MySQL ordering plus HTTPRoute/Ingress, DNS and TLS checks.",
+      "textSha256": "AFCB58857786EC285297502203B01EE547F543E32FCBF0EEAC8A51717CE09129",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0312",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 25,
+      "textSummary": "User application smoke: cover health, login, authenticated read/write, restart persistence, publishing/media where enabled, exact revision/digest and an exactly-once Life sentinel; cleanup is limited to uniquely prefixed application records created by the smoke and never deletes…",
+      "textSha256": "D4B59821F4E9AA10A5749CF098BD779D4228EED75D96FA6F795B2C339F88A8BA",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.USER_SMOKE.TXN.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0313",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 26,
+      "textSummary": "Operations handoff: cover monitoring, logs, alerting, truthful optional-integration states, database/media backup and verified restore without fabricating unavailable platform facts.",
+      "textSha256": "B4A586FE7F2FD03C1C27931FE5A20BC80456E8B773658DF5715F5D664085FCCF",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0314",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 27,
+      "textSummary": "Upgrade and rollback: use immutable digest-only changes, verified user-owned backups, forward-compatible migrations and an explicit maintenance decision for disruptive rollback; prohibit destructive down migration and automated access to the user's cluster or database.",
+      "textSha256": "479435624856E777E4B2EC83B2A1674DF5335AE925DBE0BA6820835F8D86CF99",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.ROLLBACK_HANDOFF.TXN.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0315",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 28,
+      "textSummary": "Scaling guidance: explain Web/API horizontal and vertical scaling, API HPA min `2`/max `6`, requests/limits, PDB, anti-affinity/topology spread, Gateway capacity, database connections/performance and media throughput; use `API maximum database connections = API maximum replicas …",
+      "textSha256": "5BCC0B2F7CB34F7F093F7A7AE6570D6D899C635EFCC06B7881848722F02C4841",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.SCALING_GUIDANCE.CALC.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0316",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 29,
+      "textSummary": "Command safety: every command uses placeholders, names the machine and directory, states expected output, failure meaning and safe fallback, and never places credentials, private endpoints or kubeconfig content in chat, Git or evidence.",
+      "textSha256": "8B7EE31AD66328E4530DFB1922D4B8121A494425492855BA725CA02F3F93398A",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0317",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 30,
+      "textSummary": "Repository asset mapping: map every documented branch to actual chart values, templates and resources including Deployment, Service, HTTPRoute/Ingress, StatefulSet, Job, PVC, NetworkPolicy, PDB, HPA and ExternalSecret, and validate the mapping with link checks, lint/render/schem…",
+      "textSha256": "EEE6BC3EC875F9720D0B7A3CFC67AC1E4353382C0B7B0C05E48041D460627131",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.ASSET_MAPPING.FUNC.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0318",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 31,
+      "textSummary": "Ordered manual structure: the final manual contains, in order, terminology/images/architecture; capability matrix and decision tree; platform prerequisites; pull/application/database secrets; database/media/entry branches; immutable digests; Helm preflight; Argo or Helm deployme…",
+      "textSha256": "C689DCC476671B4779DC4992F05925A947F74D453A6EF8B5C7CB34C40D881CAA",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0319",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 32,
+      "textSummary": "[ ] **Step 1: Formalize and write failing package and user-smoke tests.** First synchronize the approved unfamiliar-cluster atoms into the source registry, acceptance matrix and traceability. Then test missing files/digests/checksums, deployable placeholders, Secret values, unsa…",
+      "textSha256": "F68331E17BCA75CD6CED8A514854887A7DF1799970B7A99BFD67E74C479500BC",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01",
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0320",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 33,
+      "textSummary": "[ ] **Step 2: Implement the offline deployment-package validator.** Check Helm lint/template, values schema, immutable images, migration order, health probes, resource/security contexts, Secret refs, RBAC/network policies, monitoring resources, runbook anchors and release-manife…",
+      "textSha256": "E913EF6E8E845C7CDCBBF85E6E1A12204463FC775F64971D8B69A8C80CB8398D",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01",
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.04"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0321",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 34,
+      "textSummary": "[ ] **Step 3: Implement the user-run application smoke.** Reuse remote Playwright journeys for public/auth/private, CRUD, media, publishing and the exact-once life transaction sentinel. Cleanup uses documented application APIs and a unique test prefix; it does not delete Pods, P…",
+      "textSha256": "3C9D3896CD8E281657C8C8C88E26E8F549E6F49DF170704744E61B7C55900759",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.PROVENANCE.SEC.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0322",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 35,
+      "textSummary": "[ ] **Step 4: Write the deployment checklist.** Cover UHub pull Secret creation by the user, database Secret, namespace, storage/media choice, Gateway/Ingress, DNS/TLS, Helm render/install or Argo Application adoption, migration completion, readiness, expected digest checks and …",
+      "textSha256": "33CE65B52A267530C3ABC20E0253D6CF424E944421ACD0589CE75B2232E5B89C",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01",
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01",
+        "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0323",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 36,
+      "textSummary": "[ ] **Step 5: Write safe backup/restore and rollback procedures.** Require a user-owned verified database backup before upgrades, digest-only GitOps revision changes, forward-compatible migrations and a maintenance decision for disruptive rollback. Do not automate access to the …",
+      "textSha256": "1CF695CA4FDA25BCAC16F04618CBEF15B21DB19E63F0D6A2F3A9E6CD5A39486B",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.EXACT_DIGEST.TXN.01",
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0324",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 37,
+      "textSummary": "[ ] **Step 6: Document platform verification.** Provide Prometheus target/query, Grafana dashboard, PrometheusRule, Elasticsearch/Kibana request-ID and Platform Center deep-link checks the user can perform after installing those components. Disabled integrations remain truthful …",
+      "textSha256": "B8C2C13134D9385591F910FF159730EAA1117700925311B1B898106EBFB27955",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.04",
+        "DELIVERY-01.UHUB.OPS.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0325",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 38,
+      "textSummary": "[ ] **Step 7: Perform an offline acceptance drill.** Starting only from the release manifest and docs, follow every non-cluster step, render both Helm/Argo paths, resolve all links/commands, confirm every user input is named and verify no step depends on an undocumented local pa…",
+      "textSha256": "C6A273D375AA0C8AB87A2359EC1FDC385BCBB8A76B717D1E824B3E9C5D1DE65D",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01",
+        "DELIVERY-01.ROLLBACK_HANDOFF.TXN.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0326",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 39,
+      "textSummary": "[ ] **Step 8: Run the final package validator and record the sanitized summary.** Any skipped required package check keeps DELIVERY-01 open.",
+      "textSha256": "E3676A414C2BCABFB116E0D7932B81CFBC4A491D3596C4DA29D5DB0A069E7F8D",
+      "classification": "mapped",
+      "atomIds": [
+        "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01"
+      ],
+      "reason": null,
+      "supersededBy": null
+    },
+    {
+      "id": "SC-P6-0327",
+      "sourceKey": "P6",
+      "sourcePath": "docs/superpowers/plans/2026-08-09-06-lifeops-production-delivery-plan.md",
+      "headingPath": [
+        "LifeOps Production Image and Deployment Handoff Implementation Plan",
+        "Global Constraints",
+        "P6-T7: User-operated deployment package and acceptance drill"
+      ],
+      "kind": "list-item",
+      "ordinal": 40,
       "textSummary": "[ ] **Step 9: Commit or hash P6-T7** with message `docs(deploy): deliver user-operated Kubernetes handoff`. Do not include kubeconfig, credentials, private endpoints or user data.",
       "textSha256": "943C931EDB5B4CE6BBD9A9795FB5C3ABD351B24899708876DB93B5513F7730E0",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.SBOM.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01",
+        "DELIVERY-01.MEDIA_BRANCHES.DATA.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02"
       ],
       "reason": null,
       "supersededBy": null
@@ -61498,7 +61875,7 @@
       "textSha256": "CAADEAB53C95B226F7F5C7D2CD8D6F3B45FE3A60BBA703D2CE7A820A638F10B7",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_API.FUNC.01"
+        "DELIVERY-01.ASSET_MAPPING.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61518,7 +61895,7 @@
       "textSha256": "98ED1872687D39342560F0E42D2F3720A9CE5AD3BA8E07127002756E395A49D2",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.HANDOFF_PACKAGE.FUNC.01"
+        "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61578,7 +61955,7 @@
       "textSha256": "9D605F072C28896919705CD839691A4656B4E703BFB64656847001F0F27A5C07",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.HANDOFF_PACKAGE.FUNC.01"
+        "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61598,7 +61975,7 @@
       "textSha256": "3CB779964556C7295902593C94224B7182D9B8FADFA1508BCEF9E3CCF37E24B3",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
       ],
       "reason": null,
       "supersededBy": null
@@ -61658,8 +62035,8 @@
       "textSha256": "4F270E052C4B9B63BA8C9178E0CEE1E51F14F283BA7854C53CA16F7AE586E36E",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.03",
+        "DELIVERY-01.USER_SMOKE.TXN.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61679,7 +62056,7 @@
       "textSha256": "E81C11FB5767A68478BEDDD98C7C11AD3329BEACE338A05D944EE9151C53F9BD",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01"
+        "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61699,7 +62076,7 @@
       "textSha256": "42BD9393454690B861427D6F5729DED6CC5C42B666240077363845F621470366",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_WEB.FUNC.01"
+        "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61719,7 +62096,7 @@
       "textSha256": "5EB828E07B8D5C4AE3C5B68A49CB83056C94B7943125A8A928A6192D4C300269",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01"
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61739,7 +62116,7 @@
       "textSha256": "D66EE15B5184FDF6BF7C29D0FBEAA1DC71901DE80B1A8ADE74F9EAFD035D8545",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.HANDOFF_PACKAGE.FUNC.01"
+        "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61777,7 +62154,7 @@
       "textSha256": "5383846DFA4F6D492976D622E5F2A93F8834821E96B266F8925C2DC907939AC0",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_API.FUNC.01"
+        "DELIVERY-01.ASSET_MAPPING.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61797,7 +62174,7 @@
       "textSha256": "D30F3146D9955BE32536E46B795D428FB979FDFD44F4DE64652A100C429932A4",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61817,9 +62194,9 @@
       "textSha256": "DBCA26ED0D52383BF6D49B478B43F88265615F531D52B9C69364222BEED7C445",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_WEB.FUNC.01",
         "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
+        "DELIVERY-01.ROLLBACK_HANDOFF.TXN.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61879,7 +62256,7 @@
       "textSha256": "2A1E865A135D781CD72E540E901130194EDEB98A02A9F1C21C15EDD9D1F3E093",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01"
+        "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61920,6 +62297,7 @@
       "classification": "mapped",
       "atomIds": [
         "DELIVERY-01.SBOM.DATA.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.04",
         "DELIVERY-01.UHUB.OPS.01"
       ],
       "reason": null,
@@ -61940,8 +62318,8 @@
       "textSha256": "EA9A4DE00FCFF9423A60EA216799742376CFC1D21E5874F6A636B8707302D0E5",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PRODUCTION_VALUES.DATA.01",
-        "DELIVERY-01.PROVENANCE.SEC.01"
+        "DELIVERY-01.SECRET_HANDOFF.SEC.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -61961,10 +62339,10 @@
       "textSha256": "EC71A48D1242F22AAF3C3A2DF650BC70BC98DB1ECF901A442FB61CEF740D18DD",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.HANDOFF_PACKAGE.FUNC.01",
-        "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.DATA.01",
-        "DELIVERY-01.UHUB.OPS.01"
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01",
+        "DELIVERY-01.DATABASE_BRANCHES.DATA.01",
+        "DELIVERY-01.ENTRY_BRANCHES.OPS.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02"
       ],
       "reason": null,
       "supersededBy": null
@@ -61984,7 +62362,7 @@
       "textSha256": "431FCFBC9F6DF1365237D5EB34CE8FAF052AB4AE0E3431D7EE3C41D6176A6355",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.IMAGE_WEB.FUNC.01"
+        "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -62004,7 +62382,7 @@
       "textSha256": "7470A3CCC464083575E1FFC7AE53BAE2F3E0593E7BE9E0F978B858A744D390EA",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.03"
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02"
       ],
       "reason": null,
       "supersededBy": null
@@ -62040,9 +62418,9 @@
       "textSha256": "1A89E5E8CD265D0E462F2BAF2737AABC8E2C98EE52CAB8560A132325D92D18B2",
       "classification": "mapped",
       "atomIds": [
+        "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01",
         "DELIVERY-01.PROVENANCE.SEC.01",
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.TXN.02"
+        "DELIVERY-01.SCALING_GUIDANCE.CALC.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -62100,7 +62478,7 @@
       "textSha256": "01B5F339A249C9F5BDCA038331BDB212E738839366D574C9B7F745954BBA8224",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.PROVENANCE.SEC.01",
+        "DELIVERY-01.COMMAND_SAFETY.SEC.01",
         "DELIVERY-01.SBOM.DATA.01"
       ],
       "reason": null,
@@ -62120,9 +62498,9 @@
       "textSha256": "F895272513735D7B59809579D79D9E93E0ED4F5D6265C48FD066058620FC3457",
       "classification": "mapped",
       "atomIds": [
-        "DELIVERY-01.RELEASE_GITHUB.OPS.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.01",
-        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.02"
+        "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.FUNC.01",
+        "DELIVERY-01.TX_IMAGE_REGISTRY_HANDOFF.STATE.01"
       ],
       "reason": null,
       "supersededBy": null
@@ -62134,9 +62512,9 @@
     "ruleCounts": {
       "structural-heading": 243,
       "document-provenance-metadata": 7,
-      "normative-default": 2498,
+      "normative-default": 2515,
       "structural-table-header": 7,
-      "structural-plan-label": 121
+      "structural-plan-label": 122
     }
   }
 }

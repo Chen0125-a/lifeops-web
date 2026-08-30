@@ -23621,24 +23621,17 @@
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
         "SC-IMAGE_DELIVERY_BOUNDARY-0029",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0047",
         "SC-IMAGE_DELIVERY_BOUNDARY-0054",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0069",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0090",
-        "SC-P6-0002",
-        "SC-P6-0013",
         "SC-P6-0017",
+        "SC-P6-0117",
         "SC-P6-0127",
         "SC-P6-0130",
-        "SC-P6-0134",
         "SC-P6-0138",
         "SC-P6-0149",
-        "SC-P6-0222",
         "SC-P6-0226",
-        "SC-P6-0233",
         "SC-P6-0248",
-        "SC-P6-0251",
-        "SC-P6-0255"
+        "SC-P6-0261",
+        "SC-P6-0277"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -23670,29 +23663,20 @@
       "contract": "image, registry and handoff transaction uses production Fastify/MySQL or allowlisted adapter data, preserves stable identifiers and ships no preview fixture as production truth.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0015",
         "SC-IMAGE_DELIVERY_BOUNDARY-0021",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0024",
         "SC-IMAGE_DELIVERY_BOUNDARY-0027",
         "SC-IMAGE_DELIVERY_BOUNDARY-0036",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0039",
         "SC-IMAGE_DELIVERY_BOUNDARY-0045",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0066",
         "SC-IMAGE_DELIVERY_BOUNDARY-0090",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0091",
-        "SC-P6-0005",
         "SC-P6-0011",
-        "SC-P6-0117",
+        "SC-P6-0118",
         "SC-P6-0143",
-        "SC-P6-0146",
-        "SC-P6-0203",
-        "SC-P6-0236",
-        "SC-P6-0239",
+        "SC-P6-0262",
         "SC-P6-0266",
-        "SC-P6-0269",
         "SC-P6-0275",
-        "SC-P6-0302",
-        "SC-P6-0305"
+        "SC-P6-0304",
+        "SC-P6-0305",
+        "SC-P6-0323"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -23724,9 +23708,7 @@
       "contract": "image, registry and handoff transaction derives displayed counts, summaries and impacts from traceable current inputs with deterministic rounding and no fabricated totals.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0092",
-        "SC-P6-0019",
-        "SC-P6-0118"
+        "SC-IMAGE_DELIVERY_BOUNDARY-0006"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -23758,12 +23740,8 @@
       "contract": "image, registry and handoff transaction commits the complete write atomically and emits an auditable result.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0009",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0018",
-        "SC-MASTER_PLAN-0164",
-        "SC-P6-0152",
-        "SC-P6-0233",
-        "SC-P6-0254"
+        "SC-IMAGE_DELIVERY_BOUNDARY-0006",
+        "SC-P6-0019"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -23795,12 +23773,11 @@
       "contract": "image, registry and handoff transaction handles duplicate retry idempotently without duplicating effects.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0005",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0064",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0073",
-        "SC-P6-0239",
-        "SC-P6-0243",
-        "SC-P6-0273"
+        "SC-P6-0124",
+        "SC-P6-0145",
+        "SC-P6-0152",
+        "SC-P6-0271",
+        "SC-P6-0327"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -23832,15 +23809,9 @@
       "contract": "image, registry and handoff transaction rolls back every partial effect on failure and preserves the prior valid state.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0006",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0010",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0059",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0077",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0064",
         "SC-IMAGE_DELIVERY_BOUNDARY-0092",
-        "SC-P6-0140",
-        "SC-P6-0145",
-        "SC-P6-0262",
-        "SC-P6-0271"
+        "SC-P6-0321"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -23872,13 +23843,12 @@
       "contract": "image, registry and handoff transaction records an explicit undo, revoke or reversal as an audited compensating action linked to the original write.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0025",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0052",
-        "SC-P6-0010",
-        "SC-P6-0194",
-        "SC-P6-0227",
-        "SC-P6-0239",
-        "SC-P6-0254"
+        "SC-IMAGE_DELIVERY_BOUNDARY-0009",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0058",
+        "SC-P6-0007",
+        "SC-P6-0140",
+        "SC-P6-0251",
+        "SC-P6-0267"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -23910,11 +23880,10 @@
       "contract": "image, registry and handoff transaction exposes a non-final pending state before server confirmation.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0006",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0060",
-        "SC-P6-0195",
-        "SC-P6-0240",
-        "SC-P6-0277"
+        "SC-P6-0007",
+        "SC-P6-0268",
+        "SC-P6-0277",
+        "SC-P6-0325"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -23951,11 +23920,9 @@
         "SC-IMAGE_DELIVERY_BOUNDARY-0080",
         "SC-IMAGE_DELIVERY_BOUNDARY-0088",
         "SC-P6-0117",
-        "SC-P6-0141",
         "SC-P6-0234",
-        "SC-P6-0241",
-        "SC-P6-0274",
-        "SC-P6-0277"
+        "SC-P6-0269",
+        "SC-P6-0274"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -23990,11 +23957,10 @@
         "SC-IMAGE_DELIVERY_BOUNDARY-0078",
         "SC-IMAGE_DELIVERY_BOUNDARY-0081",
         "SC-IMAGE_DELIVERY_BOUNDARY-0089",
-        "SC-P6-0007",
         "SC-P6-0118",
         "SC-P6-0231",
-        "SC-P6-0301",
-        "SC-P6-0304"
+        "SC-P6-0254",
+        "SC-P6-0301"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -24030,9 +23996,9 @@
         "SC-IMAGE_DELIVERY_BOUNDARY-0060",
         "SC-IMAGE_DELIVERY_BOUNDARY-0075",
         "SC-IMAGE_DELIVERY_BOUNDARY-0079",
-        "SC-P6-0143",
         "SC-P6-0151",
-        "SC-P6-0236"
+        "SC-P6-0320",
+        "SC-P6-0324"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -25754,63 +25720,24 @@
       "contract": "A reproducible GitHub Actions release binds the reviewed source revision to immutable Web and API image outputs.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0007",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0010",
         "SC-IMAGE_DELIVERY_BOUNDARY-0018",
         "SC-IMAGE_DELIVERY_BOUNDARY-0021",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0023",
         "SC-IMAGE_DELIVERY_BOUNDARY-0027",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0032",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0034",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0041",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0043",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0052",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0061",
         "SC-IMAGE_DELIVERY_BOUNDARY-0063",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0083",
         "SC-IMAGE_DELIVERY_BOUNDARY-0090",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0092",
-        "SC-MASTER_PLAN-0095",
         "SC-P6-0008",
-        "SC-P6-0099",
         "SC-P6-0101",
-        "SC-P6-0103",
-        "SC-P6-0105",
         "SC-P6-0107",
         "SC-P6-0110",
-        "SC-P6-0112",
-        "SC-P6-0114",
         "SC-P6-0116",
-        "SC-P6-0118",
-        "SC-P6-0121",
-        "SC-P6-0123",
-        "SC-P6-0187",
-        "SC-P6-0189",
-        "SC-P6-0190",
-        "SC-P6-0192",
         "SC-P6-0194",
-        "SC-P6-0196",
-        "SC-P6-0198",
         "SC-P6-0200",
-        "SC-P6-0204",
         "SC-P6-0206",
-        "SC-P6-0208",
-        "SC-P6-0211",
-        "SC-P6-0213",
         "SC-P6-0215",
-        "SC-P6-0217",
         "SC-P6-0233",
-        "SC-P6-0240",
-        "SC-P6-0261",
-        "SC-P6-0273",
         "SC-P6-0275",
-        "SC-P6-0277",
         "SC-P6-0299",
-        "SC-P6-0301",
-        "SC-P6-0303",
-        "SC-P6-0305",
-        "SC-P6-0307",
-        "SC-P6-0309"
+        "SC-P6-0305"
       ],
       "surfaces": [
         "PLATFORM_RELEASES",
@@ -25839,21 +25766,13 @@
       "contract": "Builds and publishes the production lifeops-web image without preview fixtures, mutable-only evidence or embedded credentials.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0040",
         "SC-IMAGE_DELIVERY_BOUNDARY-0044",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0048",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0051",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0059",
         "SC-P6-0128",
         "SC-P6-0131",
-        "SC-P6-0135",
         "SC-P6-0142",
-        "SC-P6-0223",
         "SC-P6-0249",
-        "SC-P6-0256",
-        "SC-P6-0262",
-        "SC-P6-0263",
-        "SC-P6-0270",
-        "SC-P6-0278"
+        "SC-P6-0263"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -25881,21 +25800,13 @@
       "contract": "Builds and publishes the production lifeops-api image with the Fastify runtime, migrations and no embedded credentials.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0038",
         "SC-IMAGE_DELIVERY_BOUNDARY-0070",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0074",
-        "SC-P6-0010",
         "SC-P6-0129",
         "SC-P6-0132",
-        "SC-P6-0136",
-        "SC-P6-0150",
+        "SC-P6-0141",
         "SC-P6-0220",
-        "SC-P6-0224",
-        "SC-P6-0227",
         "SC-P6-0228",
-        "SC-P6-0246",
         "SC-P6-0253",
-        "SC-P6-0260",
         "SC-P6-0264"
       ],
       "surfaces": [
@@ -25924,13 +25835,11 @@
       "contract": "Runs Web, API, MySQL, persistence, transaction and media smoke against the exact immutable Web/API digests.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0058",
-        "SC-P6-0007",
-        "SC-P6-0124",
-        "SC-P6-0147",
-        "SC-P6-0237",
-        "SC-P6-0241",
-        "SC-P6-0309"
+        "SC-IMAGE_DELIVERY_BOUNDARY-0010",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0052",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0073",
+        "SC-P6-0309",
+        "SC-P6-0323"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -25959,19 +25868,12 @@
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
         "SC-IMAGE_DELIVERY_BOUNDARY-0013",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0016",
         "SC-IMAGE_DELIVERY_BOUNDARY-0028",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0049",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0052",
         "SC-IMAGE_DELIVERY_BOUNDARY-0064",
         "SC-P6-0009",
         "SC-P6-0012",
         "SC-P6-0018",
-        "SC-P6-0141",
-        "SC-P6-0204",
-        "SC-P6-0213",
-        "SC-P6-0231",
-        "SC-P6-0243",
+        "SC-P6-0143",
         "SC-P6-0252",
         "SC-P6-0267",
         "SC-P6-0276"
@@ -26002,44 +25904,16 @@
       "contract": "Records verifiable build provenance bound to the reviewed source revision and each immutable image digest.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0008",
         "SC-IMAGE_DELIVERY_BOUNDARY-0014",
         "SC-IMAGE_DELIVERY_BOUNDARY-0018",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0019",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0023",
         "SC-IMAGE_DELIVERY_BOUNDARY-0043",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0045",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0049",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0055",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0059",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0063",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0064",
         "SC-IMAGE_DELIVERY_BOUNDARY-0065",
         "SC-IMAGE_DELIVERY_BOUNDARY-0072",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0079",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0084",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0091",
-        "SC-P6-0004",
-        "SC-P6-0008",
-        "SC-P6-0117",
-        "SC-P6-0118",
-        "SC-P6-0144",
-        "SC-P6-0146",
-        "SC-P6-0147",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0090",
         "SC-P6-0211",
-        "SC-P6-0232",
         "SC-P6-0233",
-        "SC-P6-0235",
-        "SC-P6-0236",
-        "SC-P6-0237",
-        "SC-P6-0238",
-        "SC-P6-0242",
-        "SC-P6-0257",
-        "SC-P6-0268",
-        "SC-P6-0269",
         "SC-P6-0273",
-        "SC-P6-0276",
-        "SC-P6-0302"
+        "SC-P6-0321"
       ],
       "surfaces": [
         "TX_IMAGE_REGISTRY_HANDOFF"
@@ -26068,62 +25942,28 @@
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
         "SC-IMAGE_DELIVERY_BOUNDARY-0004",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0008",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0017",
         "SC-IMAGE_DELIVERY_BOUNDARY-0019",
         "SC-IMAGE_DELIVERY_BOUNDARY-0022",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0024",
         "SC-IMAGE_DELIVERY_BOUNDARY-0028",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0033",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0066",
         "SC-IMAGE_DELIVERY_BOUNDARY-0079",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0080",
         "SC-IMAGE_DELIVERY_BOUNDARY-0088",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0091",
         "SC-P6-0003",
-        "SC-P6-0005",
-        "SC-P6-0007",
-        "SC-P6-0016",
         "SC-P6-0018",
-        "SC-P6-0100",
         "SC-P6-0102",
-        "SC-P6-0104",
-        "SC-P6-0106",
         "SC-P6-0108",
         "SC-P6-0111",
-        "SC-P6-0115",
         "SC-P6-0117",
-        "SC-P6-0119",
-        "SC-P6-0122",
-        "SC-P6-0124",
-        "SC-P6-0148",
-        "SC-P6-0188",
-        "SC-P6-0191",
-        "SC-P6-0193",
         "SC-P6-0195",
-        "SC-P6-0197",
-        "SC-P6-0199",
         "SC-P6-0201",
-        "SC-P6-0203",
-        "SC-P6-0205",
         "SC-P6-0207",
-        "SC-P6-0209",
         "SC-P6-0210",
-        "SC-P6-0212",
-        "SC-P6-0214",
         "SC-P6-0216",
-        "SC-P6-0232",
         "SC-P6-0234",
-        "SC-P6-0238",
-        "SC-P6-0241",
-        "SC-P6-0243",
         "SC-P6-0267",
-        "SC-P6-0269",
-        "SC-P6-0298",
         "SC-P6-0300",
-        "SC-P6-0302",
-        "SC-P6-0304",
         "SC-P6-0306",
-        "SC-P6-0308"
+        "SC-P6-0324"
       ],
       "surfaces": [
         "PLATFORM_RELEASES",
@@ -26151,25 +25991,11 @@
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
         "SC-IMAGE_DELIVERY_BOUNDARY-0005",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0017",
         "SC-IMAGE_DELIVERY_BOUNDARY-0023",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0035",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0059",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0062",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0089",
-        "SC-MASTER_PLAN-0164",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0092",
         "SC-P6-0004",
-        "SC-P6-0010",
-        "SC-P6-0015",
-        "SC-P6-0114",
-        "SC-P6-0235",
-        "SC-P6-0238",
         "SC-P6-0262",
-        "SC-P6-0265",
-        "SC-P6-0268",
-        "SC-P6-0298",
-        "SC-P6-0301",
-        "SC-P6-0304"
+        "SC-P6-0301"
       ],
       "surfaces": [
         "PLATFORM_RELEASES",
@@ -26197,20 +26023,13 @@
       "contract": "Validates Helm render, GitOps values, Argo example, post-deploy smoke, backup/restore, media storage, platform integration and rollback instructions without deploying to the user cluster.",
       "sourceClauseIds": [
         "SC-FINAL_REDESIGN-0286",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0042",
-        "SC-IMAGE_DELIVERY_BOUNDARY-0053",
         "SC-IMAGE_DELIVERY_BOUNDARY-0057",
         "SC-IMAGE_DELIVERY_BOUNDARY-0068",
         "SC-IMAGE_DELIVERY_BOUNDARY-0071",
         "SC-P6-0133",
-        "SC-P6-0137",
+        "SC-P6-0147",
         "SC-P6-0221",
-        "SC-P6-0225",
-        "SC-P6-0229",
-        "SC-P6-0247",
-        "SC-P6-0250",
-        "SC-P6-0258",
-        "SC-P6-0269"
+        "SC-P6-0229"
       ],
       "surfaces": [
         "PLATFORM_RELEASES",
@@ -26229,6 +26048,639 @@
         "local",
         "image",
         "registry"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "deployment architecture and terminology",
+      "contract": "Explains the two project-built images, API-image migration reuse, static Nginx, Gateway API and controller boundaries, embedded MySQL risk boundary and evidence-gated absence of Redis.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0047",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0069",
+        "SC-P6-0002",
+        "SC-P6-0013",
+        "SC-P6-0134",
+        "SC-P6-0222",
+        "SC-P6-0233",
+        "SC-P6-0235",
+        "SC-P6-0255"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "capability-first cluster preflight",
+      "contract": "Provides user-run read-only capability checks with expected results, failure meanings and selection branches for an unfamiliar Kubernetes cluster.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0023",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0032",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0041",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0083",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0092",
+        "SC-MASTER_PLAN-0095",
+        "SC-P6-0103",
+        "SC-P6-0112",
+        "SC-P6-0118",
+        "SC-P6-0121",
+        "SC-P6-0187",
+        "SC-P6-0190",
+        "SC-P6-0196",
+        "SC-P6-0208",
+        "SC-P6-0211",
+        "SC-P6-0217",
+        "SC-P6-0236",
+        "SC-P6-0277",
+        "SC-P6-0301",
+        "SC-P6-0307",
+        "SC-P6-0325"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.CLUSTER_BOUNDARY.SEC.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "user-owned cluster operation boundary",
+      "contract": "Separates platform prerequisites from LifeOps delivery and keeps kubeconfig access, cluster mutations and cluster smoke exclusively in the user-authorized terminal.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0008",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0019",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0055",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0059",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0084",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0091",
+        "SC-P6-0117",
+        "SC-P6-0146",
+        "SC-P6-0237",
+        "SC-P6-0319",
+        "SC-P6-0322",
+        "SC-P6-0326"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "security",
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.SECRET_HANDOFF.SEC.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "secret and ExternalSecret handoff",
+      "contract": "Documents image pull and application/database Secret or ExternalSecret choices without plaintext credentials in chat, Git, generated evidence or examples.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0023",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0045",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0049",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0063",
+        "SC-P6-0004",
+        "SC-P6-0008",
+        "SC-P6-0118",
+        "SC-P6-0147",
+        "SC-P6-0194",
+        "SC-P6-0238",
+        "SC-P6-0257",
+        "SC-P6-0268"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "security",
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.DATABASE_BRANCHES.DATA.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "database deployment branches",
+      "contract": "Documents embedded MySQL 8.4.10, managed RDS, independent-VM MySQL and user-managed HA or Operator MySQL with security, operations, limits, failure and migration boundaries.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0015",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0024",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0039",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0066",
+        "SC-P6-0005",
+        "SC-P6-0146",
+        "SC-P6-0195",
+        "SC-P6-0203",
+        "SC-P6-0239",
+        "SC-P6-0269",
+        "SC-P6-0302",
+        "SC-P6-0320"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.MEDIA_BRANCHES.DATA.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "media storage branches",
+      "contract": "Enforces RWX for multi-replica filesystem media, prefers S3-compatible storage without RWX and bounds single-replica API plus RWO without bypassing chart safety checks.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0016",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0049",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0052",
+        "SC-P6-0141",
+        "SC-P6-0204",
+        "SC-P6-0213",
+        "SC-P6-0231",
+        "SC-P6-0240",
+        "SC-P6-0323",
+        "SC-P6-0327"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.ENTRY_BRANCHES.OPS.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "entry controller branches",
+      "contract": "Maps Envoy Gateway, NGINX Gateway Fabric and chart-backed Ingress paths and distinguishes controller, LoadBalancer, MetalLB, external load balancer, DNS and TLS responsibilities.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0024",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0033",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0066",
+        "SC-P6-0005",
+        "SC-P6-0104",
+        "SC-P6-0119",
+        "SC-P6-0122",
+        "SC-P6-0188",
+        "SC-P6-0191",
+        "SC-P6-0197",
+        "SC-P6-0203",
+        "SC-P6-0209",
+        "SC-P6-0212",
+        "SC-P6-0241",
+        "SC-P6-0269",
+        "SC-P6-0302",
+        "SC-P6-0308"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.IMMUTABLE_INPUTS.DATA.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "immutable release inputs",
+      "contract": "Binds the handoff to the exact released Web/API digests and production values while rejecting tags and local image IDs as substitutes.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0017",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0035",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0059",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0062",
+        "SC-MASTER_PLAN-0164",
+        "SC-P6-0010",
+        "SC-P6-0242",
+        "SC-P6-0265",
+        "SC-P6-0298",
+        "SC-P6-0304",
+        "SC-P6-0319",
+        "SC-P6-0322"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "delivery-package",
+        "registry"
+      ],
+      "finalBoundary": [
+        "local",
+        "image",
+        "registry"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "offline delivery preflight",
+      "contract": "Validates links, examples, values schema, Helm lint and default plus production renders without cluster access or undocumented local dependencies.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0040",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0048",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0051",
+        "SC-P6-0135",
+        "SC-P6-0223",
+        "SC-P6-0243",
+        "SC-P6-0256",
+        "SC-P6-0270",
+        "SC-P6-0278"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "unit",
+        "delivery-package"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.DEPLOYMENT_PATHS.OPS.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "user-operated deployment paths and workload order",
+      "contract": "Documents Argo CD and Helm user-operated paths plus migration, Web/API, optional MySQL, routing, DNS and TLS ordering.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0007",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0010",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0034",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0043",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0052",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0061",
+        "SC-P6-0099",
+        "SC-P6-0105",
+        "SC-P6-0114",
+        "SC-P6-0123",
+        "SC-P6-0189",
+        "SC-P6-0192",
+        "SC-P6-0198",
+        "SC-P6-0204",
+        "SC-P6-0213",
+        "SC-P6-0273",
+        "SC-P6-0303",
+        "SC-P6-0309",
+        "SC-P6-0311",
+        "SC-P6-0327"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.USER_SMOKE.TXN.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "user application smoke contract",
+      "contract": "Validates health, authentication, writes, persistence, publishing or media when enabled, exact revision/digests and exactly-once Life behavior while cleaning only smoke-created application records.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0018",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0025",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0088",
+        "SC-P6-0227",
+        "SC-P6-0233",
+        "SC-P6-0254",
+        "SC-P6-0312"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "unit",
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.OPERATIONS_HANDOFF.OPS.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "operations and restore handoff",
+      "contract": "Documents truthful observability states, logs, alerts, database and media backup, and verified restore without fabricated platform facts.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0008",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0014",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0017",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0080",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0089",
+        "SC-P6-0007",
+        "SC-P6-0010",
+        "SC-P6-0016",
+        "SC-P6-0100",
+        "SC-P6-0106",
+        "SC-P6-0115",
+        "SC-P6-0124",
+        "SC-P6-0148",
+        "SC-P6-0193",
+        "SC-P6-0199",
+        "SC-P6-0205",
+        "SC-P6-0214",
+        "SC-P6-0232",
+        "SC-P6-0298",
+        "SC-P6-0304",
+        "SC-P6-0313",
+        "SC-P6-0322"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.ROLLBACK_HANDOFF.TXN.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "safe upgrade and rollback",
+      "contract": "Uses immutable digest-only changes, verified backups, forward-compatible migrations and explicit maintenance decisions while prohibiting destructive down migrations.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0005",
+        "SC-MASTER_PLAN-0164",
+        "SC-P6-0010",
+        "SC-P6-0227",
+        "SC-P6-0262",
+        "SC-P6-0314",
+        "SC-P6-0325"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.SCALING_GUIDANCE.CALC.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "metric-driven scaling guidance",
+      "contract": "Relates Web/API horizontal and vertical scaling, HPA 2 through 6, workload placement, Gateway, database connections and media throughput using explicit formulas and evidence rather than invented QPS or hardware.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-P6-0273",
+        "SC-P6-0315"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.COMMAND_SAFETY.SEC.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "safe command contract",
+      "contract": "Requires placeholders, execution location, expected output, failure meaning and safe fallback for every command without credential, private endpoint or kubeconfig disclosure.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0060",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0064",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0079",
+        "SC-P6-0114",
+        "SC-P6-0144",
+        "SC-P6-0232",
+        "SC-P6-0269",
+        "SC-P6-0276",
+        "SC-P6-0302",
+        "SC-P6-0316",
+        "SC-P6-0320"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "security",
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.ASSET_MAPPING.FUNC.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "repository asset mapping",
+      "contract": "Maps every deployment branch to real values, templates and Kubernetes resources and verifies those links through lint, render, schema, examples and smoke contracts.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0038",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0074",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0077",
+        "SC-P6-0136",
+        "SC-P6-0150",
+        "SC-P6-0224",
+        "SC-P6-0246",
+        "SC-P6-0260",
+        "SC-P6-0317"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "unit",
+        "delivery-package"
+      ],
+      "finalBoundary": [
+        "local"
+      ],
+      "notApplicable": null
+    },
+    {
+      "id": "DELIVERY-01.MANUAL_STRUCTURE.FUNC.01",
+      "parentRequirementId": "DELIVERY-01",
+      "title": "ordered deployment manual structure",
+      "contract": "Preserves the approved fourteen-section order from terminology and capability selection through deployment, smoke, operations, rollback, troubleshooting, scaling and component migration.",
+      "sourceClauseIds": [
+        "SC-FINAL_REDESIGN-0286",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0042",
+        "SC-IMAGE_DELIVERY_BOUNDARY-0053",
+        "SC-P6-0015",
+        "SC-P6-0137",
+        "SC-P6-0225",
+        "SC-P6-0247",
+        "SC-P6-0250",
+        "SC-P6-0258",
+        "SC-P6-0318"
+      ],
+      "surfaces": [
+        "PLATFORM_RELEASES",
+        "TX_IMAGE_REGISTRY_HANDOFF"
+      ],
+      "plannedTasks": [
+        "P6-T7",
+        "P6-T8"
+      ],
+      "requiredEvidence": [
+        "unit",
+        "delivery-package",
+        "manual-review"
+      ],
+      "finalBoundary": [
+        "local"
       ],
       "notApplicable": null
     },

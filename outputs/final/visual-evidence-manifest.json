@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "1B9536FDD9ACDE8DC785AF3A89C4545CB7D96611E0EE70842F5538AFED006725",
+  "checkpointRootSha256": "FED1F3CE5254E60B8655CA078EC75581A2F8C4516F6C3F3E48C205FC791D5D8C",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-30T03:06:04.599Z",
+  "generatedAt": "2026-08-30T04:16:39.345Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
@@ -2739,13 +2739,13 @@
     }
   ],
   "latestRevalidation": {
-    "taskId": "P6-T6",
+    "taskId": "P6-T7",
     "step": 9,
-    "revalidatedAt": "2026-08-30T03:06:04.599Z",
-    "checkpointRootSha256": "1B9536FDD9ACDE8DC785AF3A89C4545CB7D96611E0EE70842F5538AFED006725",
+    "revalidatedAt": "2026-08-30T04:16:39.345Z",
+    "checkpointRootSha256": "FED1F3CE5254E60B8655CA078EC75581A2F8C4516F6C3F3E48C205FC791D5D8C",
     "openedOriginalResolution": true,
     "captureCount": 8,
     "conclusion": "pass",
-    "note": "The successful immutable release and digest-only values update change no product or visual source. The already opened CI19 desktop/phone day/night rest/login artifacts remain current."
+    "note": "P6-T7 changes only deployment scripts, tests and documentation. No product or visual source changed, so the already opened CI19 desktop/phone day/night rest/login artifacts remain current."
   }
 }

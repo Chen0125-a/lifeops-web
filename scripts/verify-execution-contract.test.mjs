@@ -474,7 +474,10 @@ test('collects only sorted checkpoint inputs from approved source classes', asyn
     '.vscode/settings.json': 'excluded',
     'Dockerfile': 'included',
     'index.html': 'included',
-    'README.md': 'excluded',
+    'README.md': 'included',
+    'DESIGN.md': 'included',
+    'PRODUCT.md': 'included',
+    'DEPLOYMENT.md': 'included',
     'deploy/chart.yaml': 'included',
     'dist/app.js': 'excluded',
     'docker-entrypoint.sh': 'included',
@@ -483,6 +486,8 @@ test('collects only sorted checkpoint inputs from approved source classes', asyn
     'docs/traceability/acceptance-matrix.json': 'included',
     'docs/traceability/evidence-manifest.json': 'excluded dynamic evidence metadata',
     'docs/traceability/source-clauses.json': 'included',
+    'docs/runbooks/user-deployment-checklist.md': 'included',
+    'docs/handoff/NEW_TASK_CONTINUATION_PROMPT.md': 'excluded to avoid checkpoint self-reference',
     'nginx.conf': 'included',
     'node_modules/pkg/index.js': 'excluded',
     'outputs/evidence/old.json': 'excluded',
@@ -524,9 +529,14 @@ test('collects only sorted checkpoint inputs from approved source classes', asyn
   assert.deepEqual(await collectCheckpointInputs(root), [
     '.dockerignore',
     '.github/workflows/release.yml',
+    'DEPLOYMENT.md',
+    'DESIGN.md',
     'Dockerfile',
+    'PRODUCT.md',
+    'README.md',
     'deploy/chart.yaml',
     'docker-entrypoint.sh',
+    'docs/runbooks/user-deployment-checklist.md',
     'docs/traceability/acceptance-matrix.json',
     'docs/traceability/requirements.md',
     'docs/traceability/source-clauses.json',
@@ -1048,7 +1058,7 @@ test('real acceptance matrix keeps exact catalogs and the complete original plus
   const sourceRegistry = await readJson(path.resolve('docs/traceability/source-clauses.json'))
   assert.deepEqual(matrix.parentRequirementIds, PARENT_REQUIREMENT_IDS)
   assert.deepEqual(matrix.surfaces, REQUIRED_SURFACES)
-  assert.equal(matrix.atoms.filter((atom) => ORIGINAL_PARENT_REQUIREMENT_IDS.includes(atom.parentRequirementId)).length, 783)
+  assert.equal(matrix.atoms.filter((atom) => ORIGINAL_PARENT_REQUIREMENT_IDS.includes(atom.parentRequirementId)).length, 800)
   assert.equal(matrix.atoms.filter((atom) => atom.parentRequirementId.startsWith('LIFE-')).length, 644)
   assert.equal(sourceRegistry.clauses.some((clause) => (
     clause.classification === 'mapped' && clause.atomIds.includes(`ATOM-${clause.id}`)
@@ -1259,7 +1269,7 @@ test('original visible surfaces split breakpoint, state, navigation, accessibili
   assert.deepEqual(gaps, [])
 })
 
-test('DELIVERY-01 keeps nine separate immutable-release and handoff atoms', async () => {
+test('DELIVERY-01 keeps immutable-release and unfamiliar-cluster handoff atoms separate', async () => {
   const matrix = await readJson(path.resolve('docs/traceability/acceptance-matrix.json'))
   const deliveryTitles = new Set(matrix.atoms
     .filter((atom) => atom.parentRequirementId === 'DELIVERY-01')
@@ -1274,9 +1284,60 @@ test('DELIVERY-01 keeps nine separate immutable-release and handoff atoms', asyn
     'UHub digest inspection',
     'production digest values',
     'validated user deployment package',
+    'deployment architecture and terminology',
+    'capability-first cluster preflight',
+    'user-owned cluster operation boundary',
+    'secret and ExternalSecret handoff',
+    'database deployment branches',
+    'media storage branches',
+    'entry controller branches',
+    'immutable release inputs',
+    'offline delivery preflight',
+    'user-operated deployment paths and workload order',
+    'user application smoke contract',
+    'operations and restore handoff',
+    'safe upgrade and rollback',
+    'metric-driven scaling guidance',
+    'safe command contract',
+    'repository asset mapping',
+    'ordered deployment manual structure',
   ]
 
   assert.deepEqual(requiredTitles.filter((title) => !deliveryTitles.has(title)), [])
+})
+
+test('approved unfamiliar-cluster clauses map reciprocally to their dedicated handoff atoms', async () => {
+  const matrix = await readJson(path.resolve('docs/traceability/acceptance-matrix.json'))
+  const sourceRegistry = await readJson(path.resolve('docs/traceability/source-clauses.json'))
+  const built = buildOriginalAcceptance(matrix, sourceRegistry)
+  const expected = new Map([
+    ['Architecture and terminology:', 'DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01'],
+    ['Capability-first preflight:', 'DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01'],
+    ['Cluster-operation boundary:', 'DELIVERY-01.CLUSTER_BOUNDARY.SEC.01'],
+    ['Secret handoff:', 'DELIVERY-01.SECRET_HANDOFF.SEC.01'],
+    ['Database branches:', 'DELIVERY-01.DATABASE_BRANCHES.DATA.01'],
+    ['Media-storage branches:', 'DELIVERY-01.MEDIA_BRANCHES.DATA.01'],
+    ['Entry-controller branches:', 'DELIVERY-01.ENTRY_BRANCHES.OPS.01'],
+    ['Immutable release inputs:', 'DELIVERY-01.IMMUTABLE_INPUTS.DATA.01'],
+    ['Offline delivery preflight:', 'DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01'],
+    ['Deployment paths and order:', 'DELIVERY-01.DEPLOYMENT_PATHS.OPS.01'],
+    ['User application smoke:', 'DELIVERY-01.USER_SMOKE.TXN.01'],
+    ['Operations handoff:', 'DELIVERY-01.OPERATIONS_HANDOFF.OPS.01'],
+    ['Upgrade and rollback:', 'DELIVERY-01.ROLLBACK_HANDOFF.TXN.01'],
+    ['Scaling guidance:', 'DELIVERY-01.SCALING_GUIDANCE.CALC.01'],
+    ['Command safety:', 'DELIVERY-01.COMMAND_SAFETY.SEC.01'],
+    ['Repository asset mapping:', 'DELIVERY-01.ASSET_MAPPING.FUNC.01'],
+    ['Ordered manual structure:', 'DELIVERY-01.MANUAL_STRUCTURE.FUNC.01'],
+  ])
+
+  for (const [prefix, atomId] of expected) {
+    const clause = built.sourceRegistry.clauses.find((row) => row.textSummary.startsWith(prefix))
+    const atom = built.matrix.atoms.find((row) => row.id === atomId)
+    assert.ok(clause, `missing source clause beginning ${prefix}`)
+    assert.ok(atom, `missing atom ${atomId}`)
+    assert.ok(clause.atomIds.includes(atomId), `${clause.id} must map to ${atomId}`)
+    assert.ok(atom.sourceClauseIds.includes(clause.id), `${atomId} must reciprocally include ${clause.id}`)
+  }
 })
 
 test('original write surfaces separate confirmed success from errors and explicit reversal from rollback', async () => {
@@ -1888,14 +1949,14 @@ test('real evidence manifest is current and preserves its atom-derived rollups',
   ]))
 
   assert.deepEqual(issues, [])
-  assert.equal(manifest.evidence.length, 471)
-  assert.equal([...atomStatuses.values()].filter((status) => status === 'verified-local').length, 936)
-  assert.equal([...atomStatuses.values()].filter((status) => status === 'partial').length, 372)
-  assert.equal([...atomStatuses.values()].filter((status) => status === 'pending').length, 100)
-  assert.equal([...atomStatuses.values()].filter((status) => status === 'verified-registry').length, 19)
+  assert.equal(manifest.evidence.length, 476)
+  assert.equal([...atomStatuses.values()].filter((status) => status === 'verified-local').length, 951)
+  assert.equal([...atomStatuses.values()].filter((status) => status === 'partial').length, 374)
+  assert.equal([...atomStatuses.values()].filter((status) => status === 'pending').length, 99)
+  assert.equal([...atomStatuses.values()].filter((status) => status === 'verified-registry').length, 20)
   assert.equal([...parentStatuses.values()].filter((status) => status === 'verified-local').length, 30)
-  assert.equal([...parentStatuses.values()].filter((status) => status === 'partial').length, 10)
-  assert.equal([...parentStatuses.values()].filter((status) => status === 'pending').length, 4)
+  assert.equal([...parentStatuses.values()].filter((status) => status === 'partial').length, 11)
+  assert.equal([...parentStatuses.values()].filter((status) => status === 'pending').length, 3)
   for (const parentId of [
     'GLOBAL-01', 'GOAL-01', 'SCHEDULE-01', 'HABIT-01', 'REVIEW-01',
     'KNOW-01', 'PLATFORM-01', 'OBS-01', 'LIFE-02', 'LIFE-03', 'LIFE-04',
@@ -1905,10 +1966,10 @@ test('real evidence manifest is current and preserves its atom-derived rollups',
   ]) {
     assert.equal(parentStatuses.get(parentId), 'verified-local')
   }
-  for (const parentId of ['SEC-01', 'APP-01', 'RECORD-01', 'PUBLISH-01', 'DATA-01', 'LIFE-01', 'LIFE-19', 'LIFE-20', 'LIFE-23', 'LIFE-24']) {
+  for (const parentId of ['SEC-01', 'APP-01', 'RECORD-01', 'PUBLISH-01', 'DATA-01', 'DELIVERY-01', 'LIFE-01', 'LIFE-19', 'LIFE-20', 'LIFE-23', 'LIFE-24']) {
     assert.equal(parentStatuses.get(parentId), 'partial')
   }
-  for (const parentId of ['PUB-01', 'PUB-02', 'AUTH-01', 'DELIVERY-01']) {
+  for (const parentId of ['PUB-01', 'PUB-02', 'AUTH-01']) {
     assert.equal(parentStatuses.get(parentId), 'pending')
   }
 })
@@ -2850,7 +2911,7 @@ test('real workspace startup and handoff both match the current execution-contro
     assert.equal(report.activeTask, expectedExecution.activeTask)
     assert.equal(report.activeStep, expectedExecution.activeStep)
     assert.equal(report.requirementsVerified, expectedExecution.requirementsVerified)
-    assert.deepEqual(report.rollups, { pending: 4, partial: 10, 'verified-local': 30 })
+    assert.deepEqual(report.rollups, { pending: 3, partial: 11, 'verified-local': 30 })
     assert.deepEqual(report.blockers, [])
     assert.equal(report.nextAction, expectedExecution.nextActions[0])
     assert.equal(report.firstCommand, expectedExecution.firstCommand)

@@ -62,21 +62,19 @@ Obsidian 项目权威账本：
 
 - authority revision：ADR-030
 - status：`implementation-active`
-- active tuple：P6 / P6-T6 / Step 7
-- 最后可信完成边界：30/44，即 30 `verified-local` + 10 `partial` + 4 `pending`
-- 当前 WIP 已由新鲜完整本地门禁和合法哈希收敛重新派生为 30 `verified-local` + 10 `partial` + 4 `pending`
-- registry-bound P6-T6 原子仍未满足；本地收敛不提升 30/10/4，也不声称发布完成
-- matrix：44 parents / 52 surfaces / 1,427 atoms
-- evidence manifest：462 条既有 evidence rows
+- active tuple：P6 / P6-T8 / Step 1
+- 最后可信完成边界：30/44，即 30 `verified-local` + 11 `partial` + 3 `pending`
+- P6-T6 immutable release 和 P6-T7 user-operated deployment package 已真实关闭；P6-T8 final audit/handoff 仍未关闭，当前 validator 派生边界为 30/11/3
+- matrix：44 parents / 52 surfaces / 1,444 atoms
+- evidence manifest：476 条 evidence rows
 
 最新本地完整门禁 checkpoint：
 
-`outputs/evidence/source-checkpoints/2026-08-27-p6-t6-ci7-motion-owner-push-authorization-soft-pause-uncommitted-local-checkpoint.json`
+`outputs/evidence/source-checkpoints/2026-08-30-p6-t7-user-operated-deployment-package-uncommitted-local-checkpoint.json`
 
-- root：`193D84A3CEDFA5C1B4DE2C0D68034EB721D4BA328991460D74C23AA2D723DDD7`
-- 607 sorted inputs，其中三份 `public/*.svg` 均被纳入生产源 checkpoint
-- 保存值与 fresh rebuild 一致；manifest checkpoint 相同
-- 462 条 source/artifact hash 只在完整 frontend/server/MySQL/Helm/security/image/browser/visual 门禁真实通过后收敛
+- root：`FED1F3CE5254E60B8655CA078EC75581A2F8C4516F6C3F3E48C205FC791D5D8C`
+- 625 sorted inputs；saved/fresh/evidence/visual 必须一致
+- P6-T7 只改部署脚本、测试和文档，不重写已通过视觉证据
 
 ## 3. Git、CI 与远端事实
 
@@ -595,3 +593,21 @@ node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-deployment-package.test.ps1
 ```
+
+## 48. 2026-08-30 最新权威尾部：P6-T7 user-operated deployment package 已关闭
+
+- 本节覆盖上文所有旧 next-action。P6-T7 已完成 17 个陌生集群验收原子的 source-registry/matrix 正式化，并交付 offline/read-only package validator、application-only user smoke、deployment-only Playwright config/specs、14 节 capability-first 手册、备份/恢复/回滚手册、脱敏摘要与用户验证模板。
+- 三组行为 RED 均保留：17 原子缺失、validator/smoke 缺失，以及完整手工复核发现的不受支持 `--docker-password-file` 命令。最后一项已改为从仓库外私有 `.dockerconfigjson` 导入的官方支持方式，并由测试锁定。
+- 当前 GREEN：deployment-package contract、post-deploy smoke contract、rendered security/media contracts、release manifest；frontend 88 files/427 tests、typecheck/build；server 362 ordinary +50 exact-only skips、typecheck/build；Helm strict lint 和 production render。没有读取 kubeconfig，没有执行 kubectl、Helm install/upgrade、Argo sync/rollback 或 cluster smoke。
+- P6-T7 证据为 5 条（unit / delivery-package / security / manual-review / registry），manifest 总计 476 条。`HANDOFF_PACKAGE` 与 `MANUAL_STRUCTURE` 在 P6-T8 完成最终文档/索引整合前故意保持 partial；当前 validator 派生父边界为 30/11/3。
+- checkpoint：`outputs/evidence/source-checkpoints/2026-08-30-p6-t7-user-operated-deployment-package-uncommitted-local-checkpoint.json`，root `FED1F3CE5254E60B8655CA078EC75581A2F8C4516F6C3F3E48C205FC791D5D8C`，625 inputs。一次性 `1.0.0` release 已消耗且成功，绝不得再次 dispatch。
+
+### 当前唯一下一原子动作
+
+保持 P6 / P6-T8 / Step 1，先运行 P6-T7 task-close/startup/handoff 和 final identity audit，然后反向审计 44 个 parent 及 1,444 个 atom。不得把用户集群、DNS/TLS 或 Argo 未观察状态写成通过。
+
+```powershell
+node scripts/verify-execution-contract.mjs --mode task-close --task P6-T7
+```
+
+Current mirror next action: P6-T8 Step 1.

@@ -3,7 +3,7 @@ project: LifeOps Web
 authority_revision: ADR-030
 status: implementation-active
 active_plan: P6
-active_task: P6-T7
+active_task: P6-T8
 active_step: 1
 requirements_verified: 30/44
 execution_guard: complete-fresh-task-drill-passed
@@ -787,7 +787,7 @@ The non-Git checkpoint is `outputs/evidence/source-checkpoints/2026-08-23-p6-t4-
 
 ## Next atomic action
 
-P6-T6 is formally closed. P6-T7 Step 1 is the sole current boundary. Ordinary CI `33285063683` and the explicitly authorized single release `33286877080` are successful; Web/API immutable digests, SPDX/SLSA attestations, exact-digest smoke, digest-only GitOps values and the release manifest are verified. Parent truth remains 30/10/4 only because the P6-T7/P6-T8 handoff package is still pending. The next atom is to formalize the already approved unfamiliar-cluster deployment-manual contract into the P6 work package, source registry, acceptance matrix and traceability, then write the failing deployment-package/user-smoke tests. The first verification command is `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-deployment-package.test.ps1`.
+P6-T7 is formally closed. P6-T8 Step 1 is the sole current boundary. The user-operated package, capability-first manual, safe rollback guide, offline validator and application-only smoke are implemented and verified without cluster access. The current validator-derived parent truth is 30/11/3 because the final integrated handoff/index remains P6-T8 work. The next atom is to reverse-audit all 44 parents and 1,444 atoms before completing the final documentation and verification index. The first verification command is `node scripts/verify-execution-contract.mjs --mode task-close --task P6-T7`.
 
 Do not rerun the detector, read kubeconfig, run kubectl, install Helm, synchronize Argo or claim cluster/DNS/TLS results. The immutable registry release is complete and must not be dispatched again.
 
@@ -1475,6 +1475,22 @@ Refresh and verify checkpoint identity, run execution/startup/handoff and the fi
 
 ```powershell
 node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```
+
+## 2026-08-30 P6-T7 user-operated deployment package closure
+
+This final entry supersedes every earlier checkpoint and next-action paragraph. P6-T7 formalizes all 17 approved unfamiliar-cluster clauses into the source registry and 1,444-atom matrix, then delivers an offline/read-only package validator, a bounded application-only smoke, isolated deployment Playwright journeys, the fourteen-section capability-first manual, safe backup/restore/rollback guidance, a sanitized summary and a user verification template.
+
+The focused package, smoke, rendered-security and media contracts pass. Full frontend is 88 files / 427 tests with typecheck and production build green; server is 362 ordinary tests plus 50 exact-only skips with typecheck/build green; release-manifest artifact verification, Helm strict lint and production render pass. Complete manual review found the unsupported `--docker-password-file` example, recorded its behavioral RED and replaced it with supported private `.dockerconfigjson` import without exposing credentials. No product or visual source changed.
+
+Five new evidence rows cover unit, delivery-package, security, manual-review and registry boundaries. `HANDOFF_PACKAGE` and `MANUAL_STRUCTURE` remain intentionally partial until P6-T8 integrates the final documentation and verification index, so the current validator-derived parent truth is 30 verified-local / 11 partial / 3 pending. The checkpoint is `outputs/evidence/source-checkpoints/2026-08-30-p6-t7-user-operated-deployment-package-uncommitted-local-checkpoint.json`, root `FED1F3CE5254E60B8655CA078EC75581A2F8C4516F6C3F3E48C205FC791D5D8C`, with 625 sorted inputs and 476 evidence rows. No kubeconfig, kubectl, Helm install/upgrade, Argo sync/rollback, cluster smoke, DNS/TLS or production reachability is claimed. The successful one-time release authorization is consumed and no further release dispatch is permitted.
+
+### Exact next atomic action
+
+Remain at P6 / P6-T8 / Step 1. Verify P6-T7 task-close/startup/handoff and saved/fresh/evidence/visual identity, then reverse-audit all 44 parents and 1,444 atoms before implementing the final documentation/index task in checkbox order.
+
+```powershell
+node scripts/verify-execution-contract.mjs --mode task-close --task P6-T7
 ```
 
 ## 2026-08-30 P6-T6 immutable UHub release closure

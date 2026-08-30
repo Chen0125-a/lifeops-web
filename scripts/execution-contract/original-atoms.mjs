@@ -358,6 +358,23 @@ const DEDICATED_ATOMS = Object.freeze([
   ['DELIVERY-01.UHUB.OPS.01', 'DELIVERY-01', 'UHub digest inspection', 'Verifies both repositories and immutable digests through UHub inspection after push; a local tar or mutable tag cannot satisfy the gate.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T6'], ['registry', 'manual-review'], ['local', 'image', 'registry']],
   ['DELIVERY-01.PRODUCTION_VALUES.DATA.01', 'DELIVERY-01', 'production digest values', 'Pins the exact published Web/API digests in production GitOps values with no placeholder or mutable-tag fallback.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T6', 'P6-T7'], ['registry', 'delivery-package'], ['local', 'image', 'registry']],
   ['DELIVERY-01.HANDOFF_PACKAGE.FUNC.01', 'DELIVERY-01', 'validated user deployment package', 'Validates Helm render, GitOps values, Argo example, post-deploy smoke, backup/restore, media storage, platform integration and rollback instructions without deploying to the user cluster.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'manual-review', 'registry'], ['local', 'image', 'registry']],
+  ['DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01', 'DELIVERY-01', 'deployment architecture and terminology', 'Explains the two project-built images, API-image migration reuse, static Nginx, Gateway API and controller boundaries, embedded MySQL risk boundary and evidence-gated absence of Redis.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01', 'DELIVERY-01', 'capability-first cluster preflight', 'Provides user-run read-only capability checks with expected results, failure meanings and selection branches for an unfamiliar Kubernetes cluster.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.CLUSTER_BOUNDARY.SEC.01', 'DELIVERY-01', 'user-owned cluster operation boundary', 'Separates platform prerequisites from LifeOps delivery and keeps kubeconfig access, cluster mutations and cluster smoke exclusively in the user-authorized terminal.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['security', 'delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.SECRET_HANDOFF.SEC.01', 'DELIVERY-01', 'secret and ExternalSecret handoff', 'Documents image pull and application/database Secret or ExternalSecret choices without plaintext credentials in chat, Git, generated evidence or examples.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['security', 'delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.DATABASE_BRANCHES.DATA.01', 'DELIVERY-01', 'database deployment branches', 'Documents embedded MySQL 8.4.10, managed RDS, independent-VM MySQL and user-managed HA or Operator MySQL with security, operations, limits, failure and migration boundaries.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.MEDIA_BRANCHES.DATA.01', 'DELIVERY-01', 'media storage branches', 'Enforces RWX for multi-replica filesystem media, prefers S3-compatible storage without RWX and bounds single-replica API plus RWO without bypassing chart safety checks.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.ENTRY_BRANCHES.OPS.01', 'DELIVERY-01', 'entry controller branches', 'Maps Envoy Gateway, NGINX Gateway Fabric and chart-backed Ingress paths and distinguishes controller, LoadBalancer, MetalLB, external load balancer, DNS and TLS responsibilities.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.IMMUTABLE_INPUTS.DATA.01', 'DELIVERY-01', 'immutable release inputs', 'Binds the handoff to the exact released Web/API digests and production values while rejecting tags and local image IDs as substitutes.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'registry'], ['local', 'image', 'registry']],
+  ['DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01', 'DELIVERY-01', 'offline delivery preflight', 'Validates links, examples, values schema, Helm lint and default plus production renders without cluster access or undocumented local dependencies.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['unit', 'delivery-package'], ['local']],
+  ['DELIVERY-01.DEPLOYMENT_PATHS.OPS.01', 'DELIVERY-01', 'user-operated deployment paths and workload order', 'Documents Argo CD and Helm user-operated paths plus migration, Web/API, optional MySQL, routing, DNS and TLS ordering.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.USER_SMOKE.TXN.01', 'DELIVERY-01', 'user application smoke contract', 'Validates health, authentication, writes, persistence, publishing or media when enabled, exact revision/digests and exactly-once Life behavior while cleaning only smoke-created application records.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['unit', 'delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.OPERATIONS_HANDOFF.OPS.01', 'DELIVERY-01', 'operations and restore handoff', 'Documents truthful observability states, logs, alerts, database and media backup, and verified restore without fabricated platform facts.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.ROLLBACK_HANDOFF.TXN.01', 'DELIVERY-01', 'safe upgrade and rollback', 'Uses immutable digest-only changes, verified backups, forward-compatible migrations and explicit maintenance decisions while prohibiting destructive down migrations.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.SCALING_GUIDANCE.CALC.01', 'DELIVERY-01', 'metric-driven scaling guidance', 'Relates Web/API horizontal and vertical scaling, HPA 2 through 6, workload placement, Gateway, database connections and media throughput using explicit formulas and evidence rather than invented QPS or hardware.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.COMMAND_SAFETY.SEC.01', 'DELIVERY-01', 'safe command contract', 'Requires placeholders, execution location, expected output, failure meaning and safe fallback for every command without credential, private endpoint or kubeconfig disclosure.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['security', 'delivery-package', 'manual-review'], ['local']],
+  ['DELIVERY-01.ASSET_MAPPING.FUNC.01', 'DELIVERY-01', 'repository asset mapping', 'Maps every deployment branch to real values, templates and Kubernetes resources and verifies those links through lint, render, schema, examples and smoke contracts.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['unit', 'delivery-package'], ['local']],
+  ['DELIVERY-01.MANUAL_STRUCTURE.FUNC.01', 'DELIVERY-01', 'ordered deployment manual structure', 'Preserves the approved fourteen-section order from terminology and capability selection through deployment, smoke, operations, rollback, troubleshooting, scaling and component migration.', ['PLATFORM_RELEASES', 'TX_IMAGE_REGISTRY_HANDOFF'], ['P6-T7', 'P6-T8'], ['unit', 'delivery-package', 'manual-review'], ['local']],
 ])
 
 function materializeDedicatedAtoms() {
@@ -482,6 +499,26 @@ const PUBLIC_MOTION_OWNER_CLAUSE_PREFIXES = Object.freeze([
   'Ordinary CI remediation under this still-open step must preserve the ADR-030 engine boundary',
 ])
 
+const P6_HANDOFF_CLAUSE_RULES = Object.freeze([
+  ['Architecture and terminology:', ['DELIVERY-01.HANDOFF_ARCHITECTURE.FUNC.01']],
+  ['Capability-first preflight:', ['DELIVERY-01.CAPABILITY_PREFLIGHT.OPS.01']],
+  ['Cluster-operation boundary:', ['DELIVERY-01.CLUSTER_BOUNDARY.SEC.01']],
+  ['Secret handoff:', ['DELIVERY-01.SECRET_HANDOFF.SEC.01']],
+  ['Database branches:', ['DELIVERY-01.DATABASE_BRANCHES.DATA.01']],
+  ['Media-storage branches:', ['DELIVERY-01.MEDIA_BRANCHES.DATA.01']],
+  ['Entry-controller branches:', ['DELIVERY-01.ENTRY_BRANCHES.OPS.01']],
+  ['Immutable release inputs:', ['DELIVERY-01.IMMUTABLE_INPUTS.DATA.01']],
+  ['Offline delivery preflight:', ['DELIVERY-01.DELIVERY_PREFLIGHT.FUNC.01']],
+  ['Deployment paths and order:', ['DELIVERY-01.DEPLOYMENT_PATHS.OPS.01']],
+  ['User application smoke:', ['DELIVERY-01.USER_SMOKE.TXN.01']],
+  ['Operations handoff:', ['DELIVERY-01.OPERATIONS_HANDOFF.OPS.01']],
+  ['Upgrade and rollback:', ['DELIVERY-01.ROLLBACK_HANDOFF.TXN.01']],
+  ['Scaling guidance:', ['DELIVERY-01.SCALING_GUIDANCE.CALC.01']],
+  ['Command safety:', ['DELIVERY-01.COMMAND_SAFETY.SEC.01']],
+  ['Repository asset mapping:', ['DELIVERY-01.ASSET_MAPPING.FUNC.01']],
+  ['Ordered manual structure:', ['DELIVERY-01.MANUAL_STRUCTURE.FUNC.01']],
+])
+
 function explicitPublicMotionOwnerAtom(clause, atoms) {
   if (!PUBLIC_MOTION_OWNER_CLAUSE_PREFIXES.some((prefix) => clause.textSummary.startsWith(prefix))) {
     return null
@@ -503,9 +540,21 @@ function explicitRecordContractAtoms(clause, atoms) {
   return atomIds
 }
 
+function explicitP6HandoffAtoms(clause, atoms) {
+  const rule = P6_HANDOFF_CLAUSE_RULES.find(([prefix]) => clause.textSummary.startsWith(prefix))
+  if (!rule) return null
+  const atomIds = rule[1]
+  const knownAtomIds = new Set(atoms.map((atom) => atom.id))
+  const missing = atomIds.filter((atomId) => !knownAtomIds.has(atomId))
+  if (missing.length) throw new Error(`P6 handoff clause references unknown atoms: ${missing.join(', ')}`)
+  return atomIds
+}
+
 function selectAtomsForClause(clause, atoms) {
   const publicMotionOwner = explicitPublicMotionOwnerAtom(clause, atoms)
   if (publicMotionOwner) return publicMotionOwner
+  const p6Handoff = explicitP6HandoffAtoms(clause, atoms)
+  if (p6Handoff) return p6Handoff
   const explicit = explicitRecordContractAtoms(clause, atoms)
   if (explicit) return explicit
   const parents = inferParents(clause)

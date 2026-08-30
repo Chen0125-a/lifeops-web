@@ -5,10 +5,10 @@ import path from 'node:path'
 import { normalizeRelativePath } from './load-json.mjs'
 
 const INCLUDE_RULES = Object.freeze([
-  'root and server package manifests, Web entrypoint and TypeScript/Vite/Vitest/Playwright configs',
+  'root and server package manifests, Web entrypoint, release documents and TypeScript/Vite/Vitest/Playwright configs',
   'src, public, server/src, server/migrations, tests, tests-remote and scripts trees',
   'Docker runtime files, deploy assets and GitHub Actions workflows',
-  'docs/traceability/requirements.md and static docs/traceability contract JSON',
+  'docs/runbooks, docs/traceability/requirements.md and static docs/traceability contract JSON',
 ])
 
 const EXCLUDE_RULES = Object.freeze([
@@ -39,6 +39,7 @@ const SENSITIVE_PATH = /(?:^|[-_.\/])(?:credential(?:s)?|cookie(?:s)?|kubeconfig
 const TEST_DATABASE_SECRET = /(?:^|\/)(?:tests?|test-data)(?:\/|$).*?(?:credential|password|private[-_]?key|generated[-_]?key|certificate|\.pem(?:$|\/))/i
 const DOT_ENV_FILE = /(?:^|\/)\.env(?:\.|$)/i
 const CONFIG_FILE = /^(?:tsconfig(?:\.[A-Za-z0-9_-]+)?\.json|(?:vite|vitest|playwright)(?:\.[A-Za-z0-9_-]+)?\.config\.(?:c?js|mjs|ts))$/
+const ROOT_RELEASE_DOCUMENTS = new Set(['README.md', 'DESIGN.md', 'PRODUCT.md', 'DEPLOYMENT.md'])
 
 function comparePaths(left, right) {
   return left < right ? -1 : left > right ? 1 : 0
@@ -73,6 +74,8 @@ function isIncluded(relativePath) {
     return true
   }
 
+  if (directory === '.' && ROOT_RELEASE_DOCUMENTS.has(fileName)) return true
+
   if (
     relativePath === '.dockerignore'
     || relativePath === 'Dockerfile'
@@ -94,6 +97,7 @@ function isIncluded(relativePath) {
     || relativePath.startsWith('scripts/')
     || relativePath.startsWith('deploy/')
     || relativePath.startsWith('.github/workflows/')
+    || relativePath.startsWith('docs/runbooks/')
   ) {
     return true
   }
