@@ -497,6 +497,7 @@ test('collects only sorted checkpoint inputs from approved source classes', asyn
     'playwright-report/index.html': 'excluded',
     'playwright.config.ts': 'included',
     'playwright.remote.config.ts': 'included',
+    'playwright.remote.image.config.ts': 'included',
     'public/asset.svg': 'included',
     'scripts/tool.mjs': 'included',
     'server/Dockerfile': 'included',
@@ -546,6 +547,7 @@ test('collects only sorted checkpoint inputs from approved source classes', asyn
     'package.json',
     'playwright.config.ts',
     'playwright.remote.config.ts',
+    'playwright.remote.image.config.ts',
     'public/asset.svg',
     'scripts/tool.mjs',
     'server/Dockerfile',
@@ -1949,28 +1951,24 @@ test('real evidence manifest is current and preserves its atom-derived rollups',
   ]))
 
   assert.deepEqual(issues, [])
-  assert.equal(manifest.evidence.length, 476)
-  assert.equal([...atomStatuses.values()].filter((status) => status === 'verified-local').length, 951)
-  assert.equal([...atomStatuses.values()].filter((status) => status === 'partial').length, 374)
-  assert.equal([...atomStatuses.values()].filter((status) => status === 'pending').length, 99)
-  assert.equal([...atomStatuses.values()].filter((status) => status === 'verified-registry').length, 20)
-  assert.equal([...parentStatuses.values()].filter((status) => status === 'verified-local').length, 30)
-  assert.equal([...parentStatuses.values()].filter((status) => status === 'partial').length, 11)
-  assert.equal([...parentStatuses.values()].filter((status) => status === 'pending').length, 3)
+  assert.equal(manifest.evidence.length, 487)
+  assert.equal([...atomStatuses.values()].filter((status) => status === 'verified-local').length, 957)
+  assert.equal([...atomStatuses.values()].filter((status) => status === 'verified-image').length, 466)
+  assert.equal([...atomStatuses.values()].filter((status) => status === 'verified-registry').length, 21)
+  assert.equal([...parentStatuses.values()].filter((status) => status === 'verified-local').length, 34)
+  assert.equal([...parentStatuses.values()].filter((status) => status === 'verified-image').length, 10)
   for (const parentId of [
     'GLOBAL-01', 'GOAL-01', 'SCHEDULE-01', 'HABIT-01', 'REVIEW-01',
     'KNOW-01', 'PLATFORM-01', 'OBS-01', 'LIFE-02', 'LIFE-03', 'LIFE-04',
     'LIFE-05', 'LIFE-06', 'LIFE-07', 'LIFE-08', 'LIFE-09', 'LIFE-10',
     'LIFE-11', 'LIFE-12', 'LIFE-13', 'LIFE-14', 'LIFE-15', 'LIFE-16',
     'LIFE-17', 'LIFE-18', 'LIFE-21', 'LIFE-22', 'MOTION-01', 'SPACE-01', 'STATE-01',
+    'PUB-01', 'AUTH-01', 'DATA-01', 'DELIVERY-01',
   ]) {
     assert.equal(parentStatuses.get(parentId), 'verified-local')
   }
-  for (const parentId of ['SEC-01', 'APP-01', 'RECORD-01', 'PUBLISH-01', 'DATA-01', 'DELIVERY-01', 'LIFE-01', 'LIFE-19', 'LIFE-20', 'LIFE-23', 'LIFE-24']) {
-    assert.equal(parentStatuses.get(parentId), 'partial')
-  }
-  for (const parentId of ['PUB-01', 'PUB-02', 'AUTH-01']) {
-    assert.equal(parentStatuses.get(parentId), 'pending')
+  for (const parentId of ['PUB-02', 'SEC-01', 'APP-01', 'RECORD-01', 'PUBLISH-01', 'LIFE-01', 'LIFE-19', 'LIFE-20', 'LIFE-23', 'LIFE-24']) {
+    assert.equal(parentStatuses.get(parentId), 'verified-image')
   }
 })
 
@@ -2842,6 +2840,99 @@ test('project-close applies each atom local, image or registry final boundary ex
   assert.deepEqual(validateProjectClose(makeProjectCloseContext({ parentStatuses, projectAtoms })), [])
 })
 
+test('project-close CLI consumes repository-backed final release metadata', async () => {
+  const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), 'lifeops-project-close-'))
+  const manifestPath = path.join(temporaryRoot, 'project-close-manifest.json')
+  const {
+    parentStatuses: _parentStatuses,
+    projectAtoms: _projectAtoms,
+    userOwnedClusterEvidence: _userOwnedClusterEvidence,
+    ...releaseMetadata
+  } = makeProjectCloseContext()
+  const runProjectClose = async () => {
+    let stdout = ''
+    try {
+      ({ stdout } = await execFileAsync(process.execPath, [
+        path.resolve('scripts/verify-execution-contract.mjs'),
+        '--mode',
+        'project-close',
+        '--project-close-manifest',
+        manifestPath,
+      ], {
+        cwd: process.cwd(),
+        windowsHide: true,
+        maxBuffer: 20 * 1024 * 1024,
+      }))
+    } catch (error) {
+      assert.equal(error.code, 1)
+      stdout = error.stdout
+    }
+    return JSON.parse(stdout)
+  }
+  await writeFile(manifestPath, `${JSON.stringify({ schemaVersion: 1, ...releaseMetadata }, null, 2)}\n`, 'utf8')
+
+  try {
+    const report = await runProjectClose()
+    const codes = new Set(report.issues.map((issue) => issue.code))
+    for (const code of [
+      'FORMAL_GIT_REVISION_MISSING',
+      'FINAL_GATE_MISSING_OR_FAILED',
+      'WEB_IMAGE_DIGEST_MISSING',
+      'API_IMAGE_DIGEST_MISSING',
+      'PRODUCTION_VALUES_REVISION_MISMATCH',
+      'EXACT_DIGEST_SMOKE_MISSING',
+      'SBOM_MISSING',
+      'PROVENANCE_MISSING',
+      'REGISTRY_INSPECT_FAILED',
+      'DELIVERY_DOCUMENT_MISSING',
+      'KNOWN_SINGLE_POINTS_NOT_RECORDED',
+      'DISCONNECTED_PLATFORM_STATE_NOT_RECORDED',
+    ]) {
+      assert.equal(codes.has(code), false, `${code} shows the CLI ignored valid project-close metadata`)
+    }
+
+    await writeFile(manifestPath, `${JSON.stringify({
+      schemaVersion: 1,
+      ...releaseMetadata,
+      productionValues: {
+        ...releaseMetadata.productionValues,
+        webDigest: `sha256:${'f'.repeat(64)}`,
+      },
+    }, null, 2)}\n`, 'utf8')
+    const mismatchReport = await runProjectClose()
+    assert(mismatchReport.issues.some((issue) => issue.code === 'PRODUCTION_VALUES_DIGEST_MISMATCH'))
+  } finally {
+    await rm(temporaryRoot, { recursive: true, force: true })
+  }
+})
+
+test('project-close CLI rejects an unsupported manifest schema', async () => {
+  const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), 'lifeops-project-close-schema-'))
+  const manifestPath = path.join(temporaryRoot, 'project-close-manifest.json')
+  await writeFile(manifestPath, '{"schemaVersion":2}\n', 'utf8')
+
+  try {
+    await assert.rejects(execFileAsync(process.execPath, [
+      path.resolve('scripts/verify-execution-contract.mjs'),
+      '--mode',
+      'project-close',
+      '--project-close-manifest',
+      manifestPath,
+    ], {
+      cwd: process.cwd(),
+      windowsHide: true,
+      maxBuffer: 20 * 1024 * 1024,
+    }), (error) => {
+      const report = JSON.parse(error.stdout)
+      assert.equal(report.issues[0]?.code, 'PROJECT_CLOSE_MANIFEST_INVALID')
+      assert.match(report.issues[0]?.message ?? '', /schema version 1/i)
+      return true
+    })
+  } finally {
+    await rm(temporaryRoot, { recursive: true, force: true })
+  }
+})
+
 test('all four close-mode validators accept a complete internally consistent context', () => {
   assert.deepEqual(validateTaskClose(makeTaskCloseContext(), 'P1-T1'), [])
   assert.deepEqual(validatePhaseClose(makePhaseCloseContext(), 'P1'), [])
@@ -2911,7 +3002,7 @@ test('real workspace startup and handoff both match the current execution-contro
     assert.equal(report.activeTask, expectedExecution.activeTask)
     assert.equal(report.activeStep, expectedExecution.activeStep)
     assert.equal(report.requirementsVerified, expectedExecution.requirementsVerified)
-    assert.deepEqual(report.rollups, { pending: 3, partial: 11, 'verified-local': 30 })
+    assert.deepEqual(report.rollups, { 'verified-local': 34, 'verified-image': 10 })
     assert.deepEqual(report.blockers, [])
     assert.equal(report.nextAction, expectedExecution.nextActions[0])
     assert.equal(report.firstCommand, expectedExecution.firstCommand)

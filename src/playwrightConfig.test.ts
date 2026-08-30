@@ -1,19 +1,31 @@
-import { readFileSync, readdirSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import config from '../playwright.config'
+import imageConfig from '../playwright.image.config'
 import viteConfig from '../vite.config'
 
 const workspaceRoot = resolve(import.meta.dirname, '..')
 const globalSetupSource = readFileSync(resolve(workspaceRoot, 'tests/globalSetup.ts'), 'utf8')
 const remoteGlobalSetupSource = readFileSync(resolve(workspaceRoot, 'tests-remote/globalSetup.ts'), 'utf8')
+const remoteProductionAuthSource = readFileSync(resolve(workspaceRoot, 'tests-remote/production-auth.spec.ts'), 'utf8')
 const motionContinuitySpecSource = readFileSync(resolve(workspaceRoot, 'tests/motion-continuity.spec.ts'), 'utf8')
 const obsidianSettingsSpecSource = readFileSync(resolve(workspaceRoot, 'tests/obsidian-settings.spec.ts'), 'utf8')
 const publicFinalSpecSource = readFileSync(resolve(workspaceRoot, 'tests/public-final.spec.ts'), 'utf8')
+const publicDetailsSpecSource = readFileSync(resolve(workspaceRoot, 'tests/public-details.spec.ts'), 'utf8')
 const screenshotToPathSource = readFileSync(resolve(workspaceRoot, 'tests/helpers/screenshotToPath.ts'), 'utf8')
 const packageScripts = JSON.parse(readFileSync(resolve(workspaceRoot, 'package.json'), 'utf8')).scripts as Record<string, string>
 const applicationTsConfig = JSON.parse(readFileSync(resolve(workspaceRoot, 'tsconfig.app.json'), 'utf8')) as { exclude?: string[] }
 const webDockerfileSource = readFileSync(resolve(workspaceRoot, 'Dockerfile'), 'utf8')
+const imageConfigPath = resolve(workspaceRoot, 'playwright.image.config.ts')
+const remoteImageConfigPath = resolve(workspaceRoot, 'playwright.remote.image.config.ts')
+const imageBrowserSmokePath = resolve(workspaceRoot, 'scripts/smoke-image-browsers.ps1')
+const loopbackImageProxyPath = resolve(workspaceRoot, 'scripts/loopback-image-proxy.mjs')
+const imageConfigSource = existsSync(imageConfigPath) ? readFileSync(imageConfigPath, 'utf8') : ''
+const remoteImageConfigSource = existsSync(remoteImageConfigPath) ? readFileSync(remoteImageConfigPath, 'utf8') : ''
+const imageBrowserSmokeSource = existsSync(imageBrowserSmokePath) ? readFileSync(imageBrowserSmokePath, 'utf8') : ''
+const loopbackImageProxySource = existsSync(loopbackImageProxyPath) ? readFileSync(loopbackImageProxyPath, 'utf8') : ''
+const releaseWorkflowSource = readFileSync(resolve(workspaceRoot, '.github/workflows/release.yml'), 'utf8')
 
 describe('Playwright acceptance environment', () => {
   it('uses the product timezone consistently on every runner OS', () => {
@@ -115,6 +127,56 @@ describe('Playwright acceptance environment', () => {
     ].join(' '))
     expect(packageScripts['test:e2e:webkit-theme']).toBe('playwright test --project=webkit-theme-performance')
     expect(packageScripts['test:e2e:firefox-theme']).toBe('playwright test --project=firefox-theme-performance')
+  })
+
+  it('reruns applicable browser paths against the exact released Web and API digests', () => {
+    expect(imageConfigSource).toContain("import baseConfig from './playwright.config'")
+    expect(imageConfigSource).toContain('globalSetup: undefined')
+    expect(imageConfigSource).toContain('LIFEOPS_IMAGE_BROWSER_BASE_URL')
+    expect(imageConfigSource).toContain('exactImageProjectTestMatch')
+    expect(imageConfigSource).toContain('exactImageInapplicableHarnessTests')
+    expect(imageConfigSource).toContain('all five page-native details pass the four approved breakpoints')
+    expect(imageConfigSource).toContain('capture the final public screenshot, filmstrip, trace and performance manifest')
+    expect(imageConfig.projects?.find((project) => project.name === 'chromium')?.testMatch).toBeInstanceOf(RegExp)
+    expect(String(imageConfig.projects?.find((project) => project.name === 'chromium')?.testMatch)).not.toContain('complete-product')
+    expect(remoteImageConfigSource).toContain("import baseConfig from './playwright.remote.config'")
+    expect(remoteImageConfigSource).toContain('globalSetup: undefined')
+    expect(remoteImageConfigSource).toContain('LIFEOPS_IMAGE_BROWSER_REMOTE_BASE_URL')
+    expect(packageScripts['test:e2e:image']).toContain('--config playwright.image.config.ts')
+    expect(packageScripts['test:e2e:remote:image']).toBe('playwright test --config playwright.remote.image.config.ts')
+    expect(imageBrowserSmokeSource).toContain("[switch]$RequireDigest")
+    expect(imageBrowserSmokeSource).toContain("[ValidateSet('All', 'Remote')][string]$BrowserScope = 'All'")
+    expect(imageBrowserSmokeSource).toContain('Remote scope cannot write final exact-image browser evidence.')
+    expect(imageBrowserSmokeSource).toContain("location /api/")
+    expect(imageBrowserSmokeSource).toContain("[string]$PlaywrightImage = 'mcr.microsoft.com/playwright:v1.62.1-noble'")
+    expect(imageBrowserSmokeSource).toContain("git archive")
+    expect(imageBrowserSmokeSource).toContain("'volume', 'create'")
+    expect(imageBrowserSmokeSource).toContain("sed -i 's/\\r$//' /work/src/styles/index.css /work/src/styles/private.css")
+    expect(imageBrowserSmokeSource).toContain('npm ci --prefix server --no-audit --no-fund')
+    expect(imageBrowserSmokeSource).toContain('playwright.image.config.ts --project=webkit-theme-performance')
+    expect(imageBrowserSmokeSource).toContain('playwright.remote.image.config.ts')
+    expect(imageBrowserSmokeSource).toContain('/tmp/production-auth.spec.ts:ro')
+    expect(imageBrowserSmokeSource).toContain('/tmp/loopback-image-proxy.mjs:ro')
+    expect(imageBrowserSmokeSource).toContain('LIFEOPS_IMAGE_BROWSER_UPSTREAM')
+    expect(imageBrowserSmokeSource).toContain('http://127.0.0.1:8081')
+    expect(imageBrowserSmokeSource).toContain("browserOrigin = 'http://127.0.0.1:8081'")
+    expect(imageBrowserSmokeSource).toContain("secureContextPrecondition = 'window.isSecureContext=true and crypto.randomUUID=function'")
+    expect(imageBrowserSmokeSource).not.toContain('Invoke-NpmScript')
+    expect(loopbackImageProxySource).toContain("createServer((request, response) =>")
+    expect(loopbackImageProxySource).toContain("hostname: upstream.hostname")
+    expect(loopbackImageProxySource).toContain("host: upstream.host")
+    expect(loopbackImageProxySource).toContain("listen(8081, '127.0.0.1'")
+    expect(remoteProductionAuthSource).toContain("page.waitForResponse((response) => response.request().method() === 'POST' && new URL(response.url()).pathname === '/api/v1/tasks')")
+    expect(remoteProductionAuthSource).toContain("expect(createResult).toMatchObject({ status: 201, body: { title } })")
+    expect(remoteProductionAuthSource).toContain("expect(await page.evaluate(() => ({ isSecureContext, randomUUID: typeof crypto.randomUUID }))).toEqual({ isSecureContext: true, randomUUID: 'function' })")
+    expect(publicDetailsSpecSource).toContain("expect.poll(() => page.evaluate(() => sessionStorage.getItem('lifeops:public-return:v1'))).toBeNull()")
+
+    const resolveIndex = releaseWorkflowSource.indexOf('Resolve registry digests')
+    const imageBrowserIndex = releaseWorkflowSource.indexOf('smoke-image-browsers.ps1')
+    const updateIndex = releaseWorkflowSource.indexOf('Update GitOps digests')
+    expect(resolveIndex).toBeGreaterThan(-1)
+    expect(imageBrowserIndex).toBeGreaterThan(resolveIndex)
+    expect(updateIndex).toBeGreaterThan(imageBrowserIndex)
   })
 
   it('routes every canonical trace through the bounded write helper', () => {

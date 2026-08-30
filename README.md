@@ -13,7 +13,9 @@ V1 已包含：
 - GitHub Actions 构建并推送 UHub，回写镜像 digest，供 Argo CD 升级。
 - 登录失败计数保存在共享 MySQL 中，多 API 副本不会各自重新计数；代理头默认不受信任，只有配置明确 CIDR 后才启用。
 
-详细生产部署见 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)。架构与视觉约束见 [DESIGN.md](DESIGN.md)，产品边界见 [PRODUCT.md](PRODUCT.md)。
+正式部署入口见 [DEPLOYMENT.md](DEPLOYMENT.md)，十四节陌生集群手册见 [用户自助部署检查清单](docs/runbooks/user-deployment-checklist.md)。架构与视觉约束见 [DESIGN.md](DESIGN.md)，产品边界见 [PRODUCT.md](PRODUCT.md)。
+
+已验证的 `1.0.0` 发布来自 source revision `64cb76932def9eed94cb43aea104c97eb19f1382`：ordinary CI `33285063683` 和 release `33286877080` 均成功。生产交付固定为 Web `sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af` 与 API `sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3`；migration 复用 API 镜像，不存在第三个项目镜像。
 
 ## 本地预览
 
@@ -36,6 +38,8 @@ npm run test:e2e:remote
 生产构建默认关闭演示模式，只通过同源 `/api/v1` 使用服务端认证和 MySQL 数据。
 
 ## 质量门禁
+
+最终 clean-install 本地门禁覆盖 427 个前端单元/合同测试、362 个普通服务端测试、50 个官方 MySQL exact-integration 测试、336 个 Linux Playwright 主矩阵用例、2 个独立主题性能用例和 12 个真实 Fastify production-preview 跨浏览器用例。Chromium、Firefox、WebKit、1440/1024/768/390、200% zoom、键盘、reduced-motion、serious/critical WCAG 扫描、Lighthouse 与人工最终图像复核均有新鲜证据。
 
 ```bash
 npm test
@@ -73,4 +77,4 @@ docker build -f server/Dockerfile -t uhub.service.ucloud.cn/chenucloud/lifeops-a
 - 所有数据读写都绑定当前用户；写操作要求有效会话与 CSRF 令牌。
 - 公开快照只返回用户明确编辑的标题与摘录，不返回私人正文和来源关系；撤回后公共接口立即返回不可访问。
 - Helm 默认引用已有 Kubernetes Secret；也支持 ExternalSecret。仅在受控首装场景下可显式启用 `secrets.create`，真实密码不得提交到 Git。
-- Chart 内置的单副本 MySQL 适合当前自建集群学习与 V1 使用；要获得数据库级高可用，后续应切换云 MySQL 或独立高可用 MySQL 方案。
+- Chart 内置的单副本 MySQL 只适合本地、演示、小规模或明确接受单点风险的环境；真正生产应使用已有的托管 RDS、独立数据库 VM 或成熟 HA/Operator MySQL，并按手册完成备份恢复与迁出验证。

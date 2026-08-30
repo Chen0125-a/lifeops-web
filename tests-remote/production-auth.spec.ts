@@ -58,12 +58,18 @@ test('real API login enters the daylight workspace and persists work', async ({ 
   await page.getByRole('link', { name: '日程', exact: true }).click()
   await expect(page).toHaveURL(/\/app\/schedule$/)
   await expect.poll(() => page.evaluate(() => (window as typeof window & { __lifeopsTransitions?: number }).__lifeopsTransitions ?? 0)).toBe(0)
+  expect(await page.evaluate(() => ({ isSecureContext, randomUUID: typeof crypto.randomUUID }))).toEqual({ isSecureContext: true, randomUUID: 'function' })
 
   const title = `验证真实服务端会话与数据持久化 ${Date.now()}`
   await page.getByRole('button', { name: '新建任务' }).click()
   const editor = page.getByRole('dialog', { name: '把行动放进时间里' })
   await editor.getByLabel('标题').fill(title)
+  const createResponsePromise = page.waitForResponse((response) => response.request().method() === 'POST' && new URL(response.url()).pathname === '/api/v1/tasks')
   await editor.getByRole('button', { name: '保存任务' }).click()
+  const createResponse = await createResponsePromise
+  const createResult = { status: createResponse.status(), body: await createResponse.json() as { title?: string } }
+  expect(createResult).toMatchObject({ status: 201, body: { title } })
+  await expect(editor).toBeHidden()
   await expect(page.getByText(title)).toBeVisible()
   await page.reload()
   await expect(page.getByText(title)).toBeVisible()

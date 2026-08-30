@@ -1,0 +1,17 @@
+﻿{
+    "schemaVersion":  1,
+    "sourceRevision":  "64cb76932def9eed94cb43aea104c97eb19f1382",
+    "webImage":  "uhub.service.ucloud.cn/chenucloud/lifeops-web@sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af",
+    "apiImage":  "uhub.service.ucloud.cn/chenucloud/lifeops-api@sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3",
+    "browserEnvironment":  "mcr.microsoft.com/playwright:v1.62.1-noble",
+    "browserOrigin":  "http://127.0.0.1:8081",
+    "loopbackTrustBoundary":  "browser-container loopback forwards only to the same-run exact-image proxy",
+    "secureContextPrecondition":  "window.isSecureContext=true and crypto.randomUUID=function",
+    "mainBrowserCommand":  "official Linux theme gates plus applicable public, visual and accessibility projects across the six-project matrix",
+    "remoteBrowserCommand":  "official Linux Chromium/Firefox/WebKit real-API matrix 12",
+    "workers":  1,
+    "retries":  0,
+    "startedAt":  "2026-08-30T08:51:54.3947335+00:00",
+    "completedAt":  "2026-08-30T09:06:20.1336757+00:00",
+    "exitCode":  0
+}

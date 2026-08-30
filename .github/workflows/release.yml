@@ -80,11 +80,6 @@ jobs:
           MYSQL_USER: lifeops
           MYSQL_PASSWORD: lifeops-integration-password
         run: npm run test:mysql
-      - name: Complete Playwright and accessibility acceptance
-        run: |
-          npx playwright install --with-deps chromium firefox webkit
-          npm run test:e2e
-          npm run test:e2e:remote
       - uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1
         with:
           version: v3.19.0
@@ -149,6 +144,13 @@ jobs:
           API_DIGEST: ${{ steps.digests.outputs.api }}
         run: |
           ./scripts/smoke-images.ps1 -WebImage "$env:WEB_REPOSITORY@$env:WEB_DIGEST" -ApiImage "$env:API_REPOSITORY@$env:API_DIGEST" -RequireDigest
+      - name: Complete exact-digest Playwright and accessibility acceptance
+        shell: pwsh
+        env:
+          WEB_DIGEST: ${{ steps.digests.outputs.web }}
+          API_DIGEST: ${{ steps.digests.outputs.api }}
+        run: |
+          ./scripts/smoke-image-browsers.ps1 -WebImage "$env:WEB_REPOSITORY@$env:WEB_DIGEST" -ApiImage "$env:API_REPOSITORY@$env:API_DIGEST" -SourceRevision "$env:GITHUB_SHA" -RequireDigest
       - name: Update GitOps digests
         env:
           WEB_DIGEST: ${{ steps.digests.outputs.web }}

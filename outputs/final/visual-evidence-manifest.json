@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "FED1F3CE5254E60B8655CA078EC75581A2F8C4516F6C3F3E48C205FC791D5D8C",
+  "checkpointRootSha256": "7D40DA202D99B82D7DFC6AC2E1A2F697699A4A2EDD2F46E6C7FBB410553B1C2A",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-30T04:16:39.345Z",
+  "generatedAt": "2026-08-30T09:44:50.270Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
@@ -2712,6 +2712,327 @@
         "ringPeriods": "30/40/50/60s"
       },
       "screenshotSha256": "127857BD75AAFD343ACA256F89CF793BA1A9BDE7FC7281D098ACEB79E2A7939C"
+    },
+    {
+      "id": "p6-t8-final-day-rest-desktop",
+      "browser": "Playwright Chromium 1.62.1 final acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t8-final-day-rest-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t8-final/public-home-day-1440.png",
+      "filmstripPath": null,
+      "tracePath": "outputs/evidence/browser/p6-t8-final/public-home-detail-return-trace.zip",
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "publicTheme": "day",
+        "loginBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        },
+        "outerRingSafeInset": "pass-by-direct-original-resolution-review",
+        "titleRecession": "not-applicable",
+        "themeControlEndpoint": "pass-without-theme-triggered-transition",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "E4CD3924DEBAEC2BBD3AEE0BE442A70317BE99CF35EC2478CA898724B59418C4",
+      "traceSha256": "5FDAEEF88BB320AB0A2ECCC64D711B3F36CECFFEA484935AF8D2A2363768CD8F"
+    },
+    {
+      "id": "p6-t8-final-day-login-desktop",
+      "browser": "Playwright Chromium 1.62.1 final acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t8-final-day-login-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t8-final/public-login-day-1440.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "publicTheme": "day",
+        "loginBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        },
+        "outerRingSafeInset": "pass-by-direct-original-resolution-review",
+        "titleRecession": "pass-by-direct-original-resolution-review",
+        "themeControlEndpoint": "pass-without-theme-triggered-transition",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "FBB6C6BF4B6389A34506748B26731359AD048B61CD5849CD9932C87F70D3CE48"
+    },
+    {
+      "id": "p6-t8-final-night-rest-desktop",
+      "browser": "Playwright Chromium 1.62.1 final acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t8-final-night-rest-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t8-final/public-home-night-1440.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "publicTheme": "night",
+        "loginBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        },
+        "outerRingSafeInset": "pass-by-direct-original-resolution-review",
+        "titleRecession": "not-applicable",
+        "themeControlEndpoint": "pass-without-theme-triggered-transition",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "22C995D0559D82B51F90898D5E0444AC05CC828134F7784195C1B49F06956ACE"
+    },
+    {
+      "id": "p6-t8-final-night-login-desktop",
+      "browser": "Playwright Chromium 1.62.1 final acceptance capture",
+      "viewport": "1440x900",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t8-final-night-login-desktop",
+      "screenshotPath": "outputs/evidence/browser/p6-t8-final/public-login-night-1440.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "publicTheme": "night",
+        "loginBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        },
+        "outerRingSafeInset": "pass-by-direct-original-resolution-review",
+        "titleRecession": "pass-by-direct-original-resolution-review",
+        "themeControlEndpoint": "pass-without-theme-triggered-transition",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "DE2FA1B6570DF35AEB1EE0B34D5B03601D798E031855F04AE43011FF3833B0AF"
+    },
+    {
+      "id": "p6-t8-final-day-rest-phone",
+      "browser": "Playwright Chromium 1.62.1 final acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t8-final-day-rest-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t8-final/public-home-day-390.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "publicTheme": "day",
+        "loginBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "outerRingSafeInset": "pass-by-direct-original-resolution-review",
+        "titleRecession": "not-applicable",
+        "themeControlEndpoint": "pass-without-theme-triggered-transition",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "62EF7A8F7D69C0E6C2CDA2E25244D3029F4A034C6356117C648FD415773975BA"
+    },
+    {
+      "id": "p6-t8-final-day-login-phone",
+      "browser": "Playwright Chromium 1.62.1 final acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t8-final-day-login-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t8-final/public-login-day-390.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "publicTheme": "day",
+        "loginBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "outerRingSafeInset": "pass-by-direct-original-resolution-review",
+        "titleRecession": "pass-by-direct-original-resolution-review",
+        "themeControlEndpoint": "pass-without-theme-triggered-transition",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "D7FFC7756BFC3ECA44860711A816B7EE7306FBF3A9193CAFA49F57106216DF11"
+    },
+    {
+      "id": "p6-t8-final-night-rest-phone",
+      "browser": "Playwright Chromium 1.62.1 final acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t8-final-night-rest-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t8-final/public-home-night-390.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": false,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "publicTheme": "night",
+        "loginBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "outerRingSafeInset": "pass-by-direct-original-resolution-review",
+        "titleRecession": "not-applicable",
+        "themeControlEndpoint": "pass-without-theme-triggered-transition",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "ACCD24AEBF245784267C690C1906A80D7F443DD67BB9AF11876B587E801ECD7F"
+    },
+    {
+      "id": "p6-t8-final-night-login-phone",
+      "browser": "Playwright Chromium 1.62.1 final acceptance capture",
+      "viewport": "390x844",
+      "dpr": 1,
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "fixtureSeedId": "p6-t8-final-night-login-phone",
+      "screenshotPath": "outputs/evidence/browser/p6-t8-final/public-login-night-390.png",
+      "filmstripPath": null,
+      "tracePath": null,
+      "reviewer": "primary-agent",
+      "openedOriginalResolution": true,
+      "result": "pass",
+      "diagnostics": {
+        "login": true,
+        "overflow": 0,
+        "labels": 5,
+        "center": {
+          "count": "05",
+          "label": "此刻正在发生"
+        },
+        "publicTheme": "night",
+        "loginBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "outerRingSafeInset": "pass-by-direct-original-resolution-review",
+        "titleRecession": "pass-by-direct-original-resolution-review",
+        "themeControlEndpoint": "pass-without-theme-triggered-transition",
+        "ringPeriods": "30/40/50/60s"
+      },
+      "screenshotSha256": "127857BD75AAFD343ACA256F89CF793BA1A9BDE7FC7281D098ACEB79E2A7939C"
     }
   ],
   "performanceReports": [
@@ -2724,7 +3045,7 @@
       "reducedMotion": "no-preference",
       "fixtureSeedId": "production-preview-public",
       "result": "pass",
-      "sha256": "2C010A0C3163420EC5A59E60F2422EB61664BD4B5127C78C9DF5939813FC4754"
+      "sha256": "03B83902BEBEA93A263933E471CE30A8B6290C43E40685C796E61D2298DD05BC"
     },
     {
       "id": "private-performance",
@@ -2735,17 +3056,17 @@
       "reducedMotion": "no-preference",
       "fixtureSeedId": "authenticated-production-preview",
       "result": "pass",
-      "sha256": "8190FF1D249F8AA6AC9D4BF127F61F4B6B00E93C3CD6CC20E23C3C6526349130"
+      "sha256": "8B07AF62E85965FE26F03CA536EEA8D5744A33BB08896322C1BEDD7133CEE241"
     }
   ],
   "latestRevalidation": {
-    "taskId": "P6-T7",
-    "step": 9,
-    "revalidatedAt": "2026-08-30T04:16:39.345Z",
-    "checkpointRootSha256": "FED1F3CE5254E60B8655CA078EC75581A2F8C4516F6C3F3E48C205FC791D5D8C",
+    "taskId": "P6-T8",
+    "step": 8,
+    "revalidatedAt": "2026-08-30T09:44:50.270Z",
+    "checkpointRootSha256": "7D40DA202D99B82D7DFC6AC2E1A2F697699A4A2EDD2F46E6C7FBB410553B1C2A",
     "openedOriginalResolution": true,
     "captureCount": 8,
     "conclusion": "pass",
-    "note": "P6-T7 changes only deployment scripts, tests and documentation. No product or visual source changed, so the already opened CI19 desktop/phone day/night rest/login artifacts remain current."
+    "note": "The primary agent opened the required fresh 1440x900 and 390x844 day/night rest/login states individually. Product and visual source is identical to the immutable release revision; P6-T8 changes documentation, evidence, the project-close validator and the release acceptance harness, not product rendering."
   }
 }

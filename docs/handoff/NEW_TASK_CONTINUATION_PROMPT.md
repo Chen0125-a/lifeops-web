@@ -611,3 +611,43 @@ node scripts/verify-execution-contract.mjs --mode task-close --task P6-T7
 ```
 
 Current mirror next action: P6-T8 Step 1.
+
+## 49. 2026-08-30 最新权威尾部：P6-T8 final evidence synchronization
+
+- 本节覆盖上文所有旧 next-action。active tuple 为 P6 / P6-T8 / Step 7，status 仍为 `implementation-active`，直到本地 code/design review、verification-before-completion、最终提交/推送、新普通 CI 与 close-modes 全绿。
+- P6-T8 Steps 1–6 已完成：44-parent / 1,444-atom reverse audit、placeholder/fake classification、clean-install full gate、产品与运维文档、44-row final verification index、repository-backed project-close manifest 和 deterministic evidence refresh。
+- project-close CLI 的 TDD RED 精确为 `FORMAL_GIT_REVISION_MISSING`；实现现在读取默认仓库清单或显式只读路径，但 parent/atom status 仍只从当前 traceability 派生。focused GREEN 1/1。
+- 新鲜门禁：frontend 88 files/427 tests；server 362 ordinary；official MySQL 8.4.10 exact 50/50、16 migrations；双 typecheck/build；official Linux Playwright WebKit 1/1、Firefox 1/1、matrix 336/336（workers=1/retries=0）；real-Fastify 12/12；Lighthouse 1.00/1.00/0.96/0.91；Helm 4.2.4 strict lint；deployment/security/media/release/image/registry 全绿。8 张 fresh 1440×900/390×844 day/night rest/login 图已逐张原分辨率打开。
+- manifest 为 487 rows，validator 派生 34 `verified-local` + 10 `verified-image` parents，合计 44/44。DELIVERY-01 的 registry-final atoms 完成；mixed-boundary parent 按 least-child 规则为 `verified-local`。
+- checkpoint：`outputs/evidence/source-checkpoints/2026-08-30-p6-t8-final-close-uncommitted-local-checkpoint.json`，root `32121D7F4631932DAFAFC063F4A6F54228F13D11DC1077FB5E485C65CF5BEEF4`，628 inputs；保存与即时 fresh rebuild 一致。visual manifest 91 states / `D3228BB55663C4D44B041AB6A09D996580D43CEC08824627E5FBCD75E287B1ED`；final index `F52AEFA8C74EBF9ED92A547A4B3B8BF0B6A8613BDBA7B4206E02D2C98EADD418`；project-close manifest `0D4C7F8307A5147C2E08396FE3F6EEA2DAB87BD506621D34B9F2E440AC1351BE`；deployment-package summary version `1.0.0` `6CC7DDBF6C3C7597E447A516FEE54E6634B2D90EC828499407A3C0DC33BF40FE`。
+- release 真值不变：source `64cb76932def9eed94cb43aea104c97eb19f1382`，ordinary CI `33285063683`，已消耗 release `33286877080`，GitOps `03d812339cb42bfb3633ad613b4dd55509fd0084`，Web `sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af`，API `sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3`。不得再次 dispatch release。
+- 继续禁止读取 kubeconfig、运行 kubectl、Helm install/upgrade、Argo sync/rollback 或 cluster smoke；内置 MySQL 单实例不是 HA，多副本 filesystem media 需要 RWX，否则使用 S3；外部 platform integrations 默认 disabled；不声明 DNS/TLS、Argo 或生产可访问。
+
+### 当前唯一下一原子动作
+
+P6-T8 Step 7：执行 `superpowers:requesting-code-review` 的本地主代理 code/design review；第一条验证命令：
+
+```powershell
+git diff --check
+```
+
+Current mirror next action: P6-T8 Step 7.
+
+## 50. 2026-08-30 最新权威尾部：P6-T8 exact-digest browser review closure
+
+- 本节覆盖上文所有旧 next-action。P6-T8 Step 7 已完成；active tuple 前进到 P6 / P6-T8 / Step 8，status 仍为 `implementation-active`，直到新鲜完整门禁、最终 checkpoint、task/phase/project close、提交推送和普通 CI 全绿。
+- 本地主代理 code/design review 接受并修复两项实质发现：release 只对精确 UHub digest 做启动/API smoke、未覆盖 image-delivery boundary 要求的适用浏览器路径；首版 remote harness 使用任意 Docker hostname HTTP origin，无法提供生产 HTTPS 等价的 `crypto.randomUUID` secure context。
+- 当前 release workflow 在解析精确 digest 后、GitOps digest-only 更新前执行官方 Playwright `v1.62.1-noble` 浏览器验收。浏览器容器内只绑定 `127.0.0.1:8081`，转发到同轮 exact Web/API proxy；明确断言 `isSecureContext`、UUID、任务 POST `201` 和 reload persistence。workers=1、retries=0，阈值/采样/视觉几何/动效速率不变。
+- 新鲜 exact gate 为 WebKit theme `1/1`、Firefox theme `1/1`、applicable public/visual/accessibility `133/133`、real MySQL/API Chromium/Firefox/WebKit `12/12`。证据 `outputs/evidence/image/p6-t8-exact-digest-browser-acceptance.json` SHA-256 为 `4697559DD336F77782B537084AD4ED34CF3646460D460FD5C111422CD54B054C`；owned containers/networks/volumes 清理后均为 0。
+- 产品 UI、几何、文案、领域行为和阈值均未修改。immutable release 仍为 source `64cb76932def9eed94cb43aea104c97eb19f1382`、ordinary CI `33285063683`、已消耗 release `33286877080`、GitOps `03d812339cb42bfb3633ad613b4dd55509fd0084`、Web `sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af`、API `sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3`；不得再次 dispatch release。
+- 无 kubeconfig、kubectl、Helm install/upgrade、Argo sync/rollback、cluster smoke、DNS/TLS 或生产可达声明。
+
+### 当前唯一下一原子动作
+
+P6-T8 Step 8：按 `superpowers:verification-before-completion` 运行新鲜完整门禁，第一条命令为：
+
+```powershell
+npm.cmd test
+```
+
+Current mirror next action: P6-T8 Step 8.

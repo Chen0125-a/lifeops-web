@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "finalRevision": {
+    "kind": "git",
+    "revision": "64cb76932def9eed94cb43aea104c97eb19f1382"
+  },
+  "finalGates": [
+    { "type": "web", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "result": "88 files / 428 tests" },
+    { "type": "api", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "result": "362 ordinary tests; 50 exact-only cases covered by the separate MySQL gate" },
+    { "type": "mysql", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "result": "official MySQL 8.4.10, 50/50, 16 migrations" },
+    { "type": "e2e", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "result": "source-current official Linux Playwright 336/336 plus production-preview 12/12; exact released digests theme 1/1 + 1/1, applicable matrix 133/133 and real MySQL/API matrix 12/12" },
+    { "type": "visual", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "result": "48 final captures; eight required day/night rest/login states opened at original resolution" },
+    { "type": "accessibility", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "result": "Playwright keyboard/reflow/reduced-motion coverage and Lighthouse accessibility 1.00" },
+    { "type": "security", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "result": "session/CSRF/owner isolation, rendered workload/RBAC/NetworkPolicy and exact-image checks" },
+    { "type": "build", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "result": "frontend and server typechecks/builds plus released Web/API images" },
+    { "type": "helm", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "result": "Helm 4.2.4 strict lint and schema/render/package contracts" }
+  ],
+  "images": {
+    "web": {
+      "component": "lifeops-web",
+      "digest": "sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af",
+      "reference": "uhub.service.ucloud.cn/chenucloud/lifeops-web@sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af"
+    },
+    "api": {
+      "component": "lifeops-api",
+      "digest": "sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3",
+      "reference": "uhub.service.ucloud.cn/chenucloud/lifeops-api@sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3"
+    }
+  },
+  "productionValues": {
+    "revision": "64cb76932def9eed94cb43aea104c97eb19f1382",
+    "gitopsRevision": "03d812339cb42bfb3633ad613b4dd55509fd0084",
+    "webDigest": "sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af",
+    "apiDigest": "sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3",
+    "path": "deploy/gitops/environments/production/values.yaml",
+    "placeholders": []
+  },
+  "exactDigestSmoke": [
+    { "component": "web", "digest": "sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "runId": 33286877080 },
+    { "component": "api", "digest": "sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3", "checkpoint": "64cb76932def9eed94cb43aea104c97eb19f1382", "exitCode": 0, "skipped": false, "runId": 33286877080 }
+  ],
+  "supplyChain": {
+    "web": {
+      "sbom": { "digest": "sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af", "verified": true, "attestationDigest": "sha256:42185c73b8a448bca8be3af080923f2cdfdef7544a2ab0d53baac9ccc8860c75" },
+      "provenance": { "digest": "sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af", "verified": true, "attestationDigest": "sha256:42185c73b8a448bca8be3af080923f2cdfdef7544a2ab0d53baac9ccc8860c75" }
+    },
+    "api": {
+      "sbom": { "digest": "sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3", "verified": true, "attestationDigest": "sha256:c5e090b2d966748c69975463e91777f32c3a930d13d5172f21ca385d144cb4fe" },
+      "provenance": { "digest": "sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3", "verified": true, "attestationDigest": "sha256:c5e090b2d966748c69975463e91777f32c3a930d13d5172f21ca385d144cb4fe" }
+    }
+  },
+  "registryInspect": [
+    { "component": "web", "digest": "sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af", "exitCode": 0, "runId": 33286877080 },
+    { "component": "api", "digest": "sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3", "exitCode": 0, "runId": 33286877080 }
+  ],
+  "deliveryPackage": {
+    "helm": true,
+    "gitops": true,
+    "argoExample": true,
+    "postDeploySmokeDocument": true,
+    "backupRestoreDocument": true,
+    "mediaStorageDocument": true,
+    "platformIntegrationDocument": true,
+    "rollbackDocument": true
+  },
+  "runtimeTruth": {
+    "knownSinglePointsRecorded": true,
+    "disconnectedPlatformsRecorded": true,
+    "clusterEvidenceRequiredForWebClose": false,
+    "clusterStateObserved": false,
+    "productionReachabilityObserved": false
+  },
+  "evidence": {
+    "releaseManifest": "outputs/final/release-manifest.json",
+    "finalIndex": "outputs/final/final-verification-index.md",
+    "visualManifest": "outputs/final/visual-evidence-manifest.json",
+    "deploymentPackageSummary": "outputs/final/deployment-package-summary.md"
+  }
+}

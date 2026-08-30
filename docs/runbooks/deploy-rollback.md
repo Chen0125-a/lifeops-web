@@ -2,6 +2,8 @@
 
 本文只描述用户在已授权环境中的操作。LifeOps Web 项目交付者不读取 kubeconfig、不连接数据库、不执行 Helm install/upgrade、Argo sync/rollback 或 cluster smoke。迁移是前向的；禁止自动 destructive down migration。
 
+当前已验证 `1.0.0` 应用 source revision 为 `64cb76932def9eed94cb43aea104c97eb19f1382`，Web/API digest 分别为 `sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af` 与 `sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3`。回滚候选必须写成完整 `repository@sha256:...`，不能使用 tag、`latest` 或本地 image ID。
+
 命令元数据图例：`Run from:` 表示执行位置，`Expected:` 表示预期结果，`Failure means:` 表示失败含义，`Safe fallback:` 表示安全回退。
 
 ## 升级前门禁
@@ -13,6 +15,8 @@
 5. 明确恢复负责人、RTO/RPO、流量暂停条件与回滚决策人。
 
 ## 数据库分支的备份与恢复
+
+完整命令、隔离恢复和从内置实例迁出步骤见 [备份恢复手册](backup-restore.md)。
 
 - 内置单实例 MySQL：用户通过临时、受限客户端或平台作业执行一致性逻辑备份；备份保存到集群外。PVC 快照只能作为辅助，不能替代恢复验证。
 - 托管 RDS：使用服务端快照/PITR，并记录可恢复时间点和参数组。
@@ -32,6 +36,8 @@
 ```
 
 ## 媒体备份与恢复
+
+后端选择、values 映射和 filesystem/S3 迁移步骤见 [媒体存储手册](media-storage.md)。
 
 - RWX filesystem：做文件级快照/备份并保存 checksum 清单；数据库媒体元数据与对象数据必须来自一致维护窗口。
 - S3-compatible：启用 versioning/对象锁（若平台支持），记录 bucket、prefix、版本和 lifecycle；恢复时先校验对象 checksum。

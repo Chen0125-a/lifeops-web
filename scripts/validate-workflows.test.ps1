@@ -11,6 +11,7 @@ $ci = Get-Content -LiteralPath (Join-Path $workspace '.github/workflows/ci.yml')
 $release = Get-Content -LiteralPath (Join-Path $workspace '.github/workflows/release.yml') -Raw
 $webDockerfile = Get-Content -LiteralPath (Join-Path $workspace 'Dockerfile') -Raw
 $apiDockerfile = Get-Content -LiteralPath (Join-Path $workspace 'server/Dockerfile') -Raw
+$imageBrowserSmoke = Get-Content -LiteralPath (Join-Path $workspace 'scripts/smoke-image-browsers.ps1') -Raw
 $allWorkflows = "$ci`n$release"
 
 $uses = [regex]::Matches($allWorkflows, '(?m)^\s*-\s*uses:\s*([^\s#]+)(?:\s+#\s*(.+))?\s*$')
@@ -32,7 +33,9 @@ foreach ($document in @($ci, $release)) {
   $trustIndex = $document.IndexOf('Configure MySQL trigger migration trust', [StringComparison]::Ordinal)
   $mysqlIndex = $document.IndexOf('Real MySQL 8.4 store integration', [StringComparison]::Ordinal)
   Add-Failure ($trustIndex -ge 0 -and $mysqlIndex -gt $trustIndex) 'Workflow must configure MySQL trigger migration trust after service startup and before integration migrations.'
-  Add-Failure ($document -match 'playwright install --with-deps chromium firefox webkit') 'Workflow must install every browser exercised by the complete Playwright matrix.'
+  $hasBrowserRuntime = $document -match 'playwright install --with-deps chromium firefox webkit' `
+    -or ($document -match 'smoke-image-browsers\.ps1' -and $imageBrowserSmoke -match "mcr\.microsoft\.com/playwright:v1\.62\.1-noble")
+  Add-Failure $hasBrowserRuntime 'Workflow must provide every browser exercised by the complete Playwright matrix.'
   Add-Failure ($document -match 'SET GLOBAL log_bin_trust_function_creators\s*=\s*1') 'Workflow must enable only the required MySQL global before migrations.'
 }
 
@@ -81,9 +84,12 @@ foreach ($line in ($release -split '\r?\n')) {
   }
 }
 $smokeIndex = $release.IndexOf('smoke-images.ps1', [StringComparison]::Ordinal)
+$browserSmokeIndex = $release.IndexOf('smoke-image-browsers.ps1', [StringComparison]::Ordinal)
 $updateIndex = $release.IndexOf('update-gitops-values.mjs', [StringComparison]::Ordinal)
 Add-Failure ($smokeIndex -ge 0) 'Release must execute the exact-digest image smoke script.'
 Add-Failure ($updateIndex -ge 0 -and $smokeIndex -ge 0 -and $smokeIndex -lt $updateIndex) 'Both exact-digest smokes must pass before GitOps values are updated.'
+Add-Failure ($browserSmokeIndex -gt $smokeIndex) 'Release must run exact-digest browser acceptance after exact-digest image smoke.'
+Add-Failure ($updateIndex -ge 0 -and $browserSmokeIndex -ge 0 -and $browserSmokeIndex -lt $updateIndex) 'Exact-digest browser acceptance must pass before GitOps values are updated.'
 
 $tempRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath())
 $temp = New-Item -ItemType Directory -Path (Join-Path $tempRoot ("lifeops-gitops-contract-" + [guid]::NewGuid().ToString('N')))

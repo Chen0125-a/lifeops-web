@@ -1,0 +1,490 @@
+{
+  "artifacts": [
+    {
+      "bytes": 133463,
+      "name": "filmstrip-public-normal-000ms.png",
+      "sha256": "16208F23CFA1CC333904C2E7EAAF20DFCF8C9FF03BBBAEA877B5777AB4D5C4FD"
+    },
+    {
+      "bytes": 139072,
+      "name": "filmstrip-public-normal-170ms.png",
+      "sha256": "843CA70F336EDE08AF7D43220170B1002192BD81940EAE520D9AE100A07D2592"
+    },
+    {
+      "bytes": 138175,
+      "name": "filmstrip-public-normal-340ms.png",
+      "sha256": "F69902095F27A731FA32489C192B91730A9AEDED9E77B20B807C51DBC7D3F9A6"
+    },
+    {
+      "bytes": 138109,
+      "name": "filmstrip-public-normal-510ms.png",
+      "sha256": "29771D28AD7E8AA116E653BC9451B3BC0D3E6BFE87BA1E7F50D40903F6FF8867"
+    },
+    {
+      "bytes": 138177,
+      "name": "filmstrip-public-normal-680ms.png",
+      "sha256": "1C7F504989471425467D0D2FCC57BDC9F9FAC566E8535FCE4940DC4A96532324"
+    },
+    {
+      "bytes": 131271,
+      "name": "filmstrip-public-reduced-000ms.png",
+      "sha256": "54DA5A34840293519E7B506F5789FF47C3D84752BBBA62A65925A2E7D550FA6E"
+    },
+    {
+      "bytes": 131271,
+      "name": "filmstrip-public-reduced-170ms.png",
+      "sha256": "54DA5A34840293519E7B506F5789FF47C3D84752BBBA62A65925A2E7D550FA6E"
+    },
+    {
+      "bytes": 131271,
+      "name": "filmstrip-public-reduced-340ms.png",
+      "sha256": "54DA5A34840293519E7B506F5789FF47C3D84752BBBA62A65925A2E7D550FA6E"
+    },
+    {
+      "bytes": 131271,
+      "name": "filmstrip-public-reduced-510ms.png",
+      "sha256": "54DA5A34840293519E7B506F5789FF47C3D84752BBBA62A65925A2E7D550FA6E"
+    },
+    {
+      "bytes": 131271,
+      "name": "filmstrip-public-reduced-680ms.png",
+      "sha256": "54DA5A34840293519E7B506F5789FF47C3D84752BBBA62A65925A2E7D550FA6E"
+    },
+    {
+      "bytes": 547238,
+      "name": "public-detail-archive-1024.png",
+      "sha256": "0E56D3BE9B35B7EF32EC2827777E2EED75A4734C3FEADCDA058096FB5AA5C5DF"
+    },
+    {
+      "bytes": 719099,
+      "name": "public-detail-archive-1440.png",
+      "sha256": "4A47FDDB7A748648928CBE56596482EFB1E291F588ACB2DEC11BE44A748B1709"
+    },
+    {
+      "bytes": 298553,
+      "name": "public-detail-archive-390.png",
+      "sha256": "33225D258E2CB666CFEF8F9C35F4360F9E193C762D8469245797379448FD0FE0"
+    },
+    {
+      "bytes": 450830,
+      "name": "public-detail-archive-768.png",
+      "sha256": "A69E5B0241293D773175CA773E2A6AF04F59EE831DD6E02BDD55123F53172E50"
+    },
+    {
+      "bytes": 497517,
+      "name": "public-detail-doing-1024.png",
+      "sha256": "DD5801B2BC814BB077D96BB35EFEFF114432E0898429703C2ADC3FD5F572B2AA"
+    },
+    {
+      "bytes": 666103,
+      "name": "public-detail-doing-1440.png",
+      "sha256": "EFE5FC780DF3D65CA1DE0C60ED10EFAD74933A716A0FEBCE8F14A7946F226A5B"
+    },
+    {
+      "bytes": 292168,
+      "name": "public-detail-doing-390.png",
+      "sha256": "233AB2F78DFD5649D90F5CFA1D32AF6AF5C7D3C205EA6815F8E76018C64C81D0"
+    },
+    {
+      "bytes": 429405,
+      "name": "public-detail-doing-768.png",
+      "sha256": "F9C104D2E0C2A8375C01F806E715E221ACBE1C141BCFBB9837A37167D9BB8A2D"
+    },
+    {
+      "bytes": 570402,
+      "name": "public-detail-learning-1024.png",
+      "sha256": "173BFB24870B8D386973B141CE7BF210C66A17A4520A19B4A266E9D87A61E7A7"
+    },
+    {
+      "bytes": 736662,
+      "name": "public-detail-learning-1440.png",
+      "sha256": "ED153C43114A2F4E0DAA1331F59202A53258E776C2E657660EB92DF20802989B"
+    },
+    {
+      "bytes": 319880,
+      "name": "public-detail-learning-390.png",
+      "sha256": "7AA1AB1584BE040719B03F58D7C452379399FD33991F63306574A4273CC72AA5"
+    },
+    {
+      "bytes": 501848,
+      "name": "public-detail-learning-768.png",
+      "sha256": "BF6264E4F91E3BA5DA8AE237074C536CA3438E15A3DCDBDC4DAEDA1DD17826BE"
+    },
+    {
+      "bytes": 551133,
+      "name": "public-detail-moments-1024.png",
+      "sha256": "14919A545329A9CF75397EF9DA36EC07BD8576465EF9D0D116ABACB361BB4E7E"
+    },
+    {
+      "bytes": 736808,
+      "name": "public-detail-moments-1440.png",
+      "sha256": "70C598F036ACEF477D6CEB096021A99DF8E4148CD5D9C6B9A8CF6CE65F493C51"
+    },
+    {
+      "bytes": 325113,
+      "name": "public-detail-moments-390.png",
+      "sha256": "BF768618143443FD69B116CB3D034BF76CF2162E43287D7FC93446C9F7F73B52"
+    },
+    {
+      "bytes": 468252,
+      "name": "public-detail-moments-768.png",
+      "sha256": "419FF316386FEECBAEF27FA6405DAEBA6A9041A2B141C50D1FFB99211B24BBEF"
+    },
+    {
+      "bytes": 508898,
+      "name": "public-detail-now-1024.png",
+      "sha256": "3E50E7B2DFB6600B92175A9FD3579524DFA96C87B48A6AB7D2EB5FCDD1C5340A"
+    },
+    {
+      "bytes": 681648,
+      "name": "public-detail-now-1440.png",
+      "sha256": "C4EE83CA4B25FA80B7CCA7591CAAB3618E7FFFFFE49EA2C52E6990FA388076BD"
+    },
+    {
+      "bytes": 284769,
+      "name": "public-detail-now-390.png",
+      "sha256": "D00BA977A07C9172E602A70CC624447D256F7F895FA1FD0DDCFA2C34416E88D0"
+    },
+    {
+      "bytes": 407803,
+      "name": "public-detail-now-768.png",
+      "sha256": "9B666307578FCB142FCABC7B4A17F92BB262E74B9C222EF171959D0F568E5999"
+    },
+    {
+      "bytes": 174152,
+      "name": "public-home-day-1024.png",
+      "sha256": "7A6D13D2C3F1B3C8B682F6B072C9132A37B4929E9364B491E633234EC6386143"
+    },
+    {
+      "bytes": 321598,
+      "name": "public-home-day-1440.png",
+      "sha256": "E4CD3924DEBAEC2BBD3AEE0BE442A70317BE99CF35EC2478CA898724B59418C4"
+    },
+    {
+      "bytes": 124718,
+      "name": "public-home-day-320-dpr2.png",
+      "sha256": "37090A54CEAA27E4078151D4082A0E7C45FED5761009068C7028225BB55090D8"
+    },
+    {
+      "bytes": 56257,
+      "name": "public-home-day-390.png",
+      "sha256": "62EF7A8F7D69C0E6C2CDA2E25244D3029F4A034C6356117C648FD415773975BA"
+    },
+    {
+      "bytes": 105804,
+      "name": "public-home-day-768.png",
+      "sha256": "FFB5598DAE35CC5C2E0203F3C79AC817AF968D44891414A5079919FC4BF2789B"
+    },
+    {
+      "bytes": 645987,
+      "name": "public-home-detail-return-trace.zip",
+      "sha256": "5FDAEEF88BB320AB0A2ECCC64D711B3F36CECFFEA484935AF8D2A2363768CD8F"
+    },
+    {
+      "bytes": 91920,
+      "name": "public-home-night-1024.png",
+      "sha256": "211E717567836B9F636955FE637B582D6B6C0021518357C5C2669086C3C555F2"
+    },
+    {
+      "bytes": 138221,
+      "name": "public-home-night-1440.png",
+      "sha256": "22C995D0559D82B51F90898D5E0444AC05CC828134F7784195C1B49F06956ACE"
+    },
+    {
+      "bytes": 57464,
+      "name": "public-home-night-390.png",
+      "sha256": "ACCD24AEBF245784267C690C1906A80D7F443DD67BB9AF11876B587E801ECD7F"
+    },
+    {
+      "bytes": 86194,
+      "name": "public-home-night-768.png",
+      "sha256": "155F6DCDC01D6E54B6176C43C58097125C0A496BF8D66C36B605DCA19BDC7383"
+    },
+    {
+      "bytes": 226277,
+      "name": "public-login-day-1024.png",
+      "sha256": "8F95409A5406CF6F049236707CF394792EDD825143551C4A27B8729C2D93EC87"
+    },
+    {
+      "bytes": 350910,
+      "name": "public-login-day-1440.png",
+      "sha256": "FBB6C6BF4B6389A34506748B26731359AD048B61CD5849CD9932C87F70D3CE48"
+    },
+    {
+      "bytes": 310202,
+      "name": "public-login-day-320-dpr2.png",
+      "sha256": "E382EC5E758D346D4A0000A7860312F34E5C53BF5E03717277884F1502EC7438"
+    },
+    {
+      "bytes": 135798,
+      "name": "public-login-day-390.png",
+      "sha256": "D7FFC7756BFC3ECA44860711A816B7EE7306FBF3A9193CAFA49F57106216DF11"
+    },
+    {
+      "bytes": 256755,
+      "name": "public-login-day-768.png",
+      "sha256": "B5E406D76B764568E17A2ECBDED1077409CDE15761C054E4FDE835834CA567BE"
+    },
+    {
+      "bytes": 209108,
+      "name": "public-login-night-1024.png",
+      "sha256": "1AFB4363AC070DF38C41DCB6BBD8CB733612EC3899304DFDFA2737925EF2D75B"
+    },
+    {
+      "bytes": 274695,
+      "name": "public-login-night-1440.png",
+      "sha256": "DE2FA1B6570DF35AEB1EE0B34D5B03601D798E031855F04AE43011FF3833B0AF"
+    },
+    {
+      "bytes": 98919,
+      "name": "public-login-night-390.png",
+      "sha256": "127857BD75AAFD343ACA256F89CF793BA1A9BDE7FC7281D098ACEB79E2A7939C"
+    },
+    {
+      "bytes": 150183,
+      "name": "public-login-night-768.png",
+      "sha256": "74E5A29CEED0B66418FD56259A2D2038BDD4C2615B8088FFD15456CB71757E66"
+    }
+  ],
+  "browser": "chromium",
+  "browserVersion": "151.0.7922.34",
+  "cssLayers": [
+    {
+      "bytes": 1525,
+      "name": "tokens.css"
+    },
+    {
+      "bytes": 27966,
+      "name": "base.css"
+    },
+    {
+      "bytes": 44668,
+      "name": "public.css"
+    },
+    {
+      "bytes": 13247,
+      "name": "motion.css"
+    },
+    {
+      "bytes": 8857,
+      "name": "private-shell.css"
+    },
+    {
+      "bytes": 12138,
+      "name": "overview.css"
+    },
+    {
+      "bytes": 19128,
+      "name": "goals.css"
+    },
+    {
+      "bytes": 18864,
+      "name": "schedule.css"
+    },
+    {
+      "bytes": 15669,
+      "name": "habits.css"
+    },
+    {
+      "bytes": 15488,
+      "name": "records.css"
+    },
+    {
+      "bytes": 14155,
+      "name": "reviews.css"
+    },
+    {
+      "bytes": 15610,
+      "name": "knowledge.css"
+    },
+    {
+      "bytes": 15891,
+      "name": "publishing.css"
+    },
+    {
+      "bytes": 11929,
+      "name": "platform.css"
+    },
+    {
+      "bytes": 13119,
+      "name": "settings.css"
+    },
+    {
+      "bytes": 24401,
+      "name": "life-shell.css"
+    },
+    {
+      "bytes": 32894,
+      "name": "life-catalog.css"
+    },
+    {
+      "bytes": 25471,
+      "name": "life-recipes.css"
+    },
+    {
+      "bytes": 18877,
+      "name": "life-plans.css"
+    },
+    {
+      "bytes": 29609,
+      "name": "life-commerce.css"
+    }
+  ],
+  "generatedAt": "2026-08-30T05:28:15.323Z",
+  "performance": {
+    "frames": 71,
+    "maxMs": 16.80000000000001,
+    "p95Ms": 16.799999999999955
+  },
+  "viewportDiagnostics": [
+    {
+      "name": "1440",
+      "width": 1440,
+      "height": 900,
+      "theme": "day",
+      "overflow": 0,
+      "labels": 5,
+      "loginBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "right": 1440,
+        "bottom": 900,
+        "left": 0
+      }
+    },
+    {
+      "name": "1440",
+      "width": 1440,
+      "height": 900,
+      "theme": "night",
+      "overflow": 0,
+      "labels": 5,
+      "loginBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "right": 1440,
+        "bottom": 900,
+        "left": 0
+      }
+    },
+    {
+      "name": "1024",
+      "width": 1024,
+      "height": 768,
+      "theme": "day",
+      "overflow": 0,
+      "labels": 5,
+      "loginBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 768,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768,
+        "left": 0
+      }
+    },
+    {
+      "name": "1024",
+      "width": 1024,
+      "height": 768,
+      "theme": "night",
+      "overflow": 0,
+      "labels": 5,
+      "loginBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 768,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768,
+        "left": 0
+      }
+    },
+    {
+      "name": "768",
+      "width": 768,
+      "height": 1024,
+      "theme": "day",
+      "overflow": 0,
+      "labels": 5,
+      "loginBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 1024,
+        "top": 0,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      }
+    },
+    {
+      "name": "768",
+      "width": 768,
+      "height": 1024,
+      "theme": "night",
+      "overflow": 0,
+      "labels": 5,
+      "loginBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 1024,
+        "top": 0,
+        "right": 768,
+        "bottom": 1024,
+        "left": 0
+      }
+    },
+    {
+      "name": "390",
+      "width": 390,
+      "height": 844,
+      "theme": "day",
+      "overflow": 0,
+      "labels": 5,
+      "loginBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "name": "390",
+      "width": 390,
+      "height": 844,
+      "theme": "night",
+      "overflow": 0,
+      "labels": 5,
+      "loginBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    }
+  ],
+  "zoomEquivalent": {
+    "devicePixelRatio": 2,
+    "height": 720,
+    "width": 320
+  }
+}

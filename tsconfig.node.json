@@ -13,5 +13,5 @@
     "strict": true,
     "types": ["node"]
   },
-  "include": ["vite.config.ts", "vitest.config.ts", "playwright.config.ts", "src/playwrightConfig.test.ts"]
+  "include": ["vite.config.ts", "vitest.config.ts", "playwright.config.ts", "playwright.image.config.ts", "playwright.remote.config.ts", "playwright.remote.image.config.ts", "src/playwrightConfig.test.ts"]
 }

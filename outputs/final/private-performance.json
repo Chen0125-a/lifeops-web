@@ -2,26 +2,26 @@
   "route": "/app/overview",
   "authSetupExcluded": true,
   "fixture": "controlled-production-auth-session",
-  "navigationMs": 1155,
+  "navigationMs": 1056,
   "resources": [
     {
       "name": "/assets/index-Gsd0ZxfO.js",
-      "duration": 20,
+      "duration": 16,
       "transferSize": 137143
     },
     {
       "name": "/assets/index-CteW0Ec_.css",
-      "duration": 13,
+      "duration": 7,
       "transferSize": 15242
     },
     {
       "name": "/api/v1/auth/session",
-      "duration": 3,
+      "duration": 4,
       "transferSize": 439
     },
     {
       "name": "/assets/PrivateAppBoundary-Kn1kUALC.js",
-      "duration": 14,
+      "duration": 9,
       "transferSize": 12519
     },
     {
@@ -36,92 +36,92 @@
     },
     {
       "name": "/assets/QueryClientProvider-WRoMosqy.js",
-      "duration": 15,
+      "duration": 12,
       "transferSize": 674
     },
     {
       "name": "/assets/LifeDataContext-CmvovIhx.js",
-      "duration": 18,
+      "duration": 16,
       "transferSize": 2847
     },
     {
       "name": "/assets/react-MVBaGQ4S.js",
-      "duration": 23,
+      "duration": 20,
       "transferSize": 39248
     },
     {
       "name": "/assets/use-reduced-motion-CnVSTWt-.js",
-      "duration": 20,
+      "duration": 15,
       "transferSize": 502
     },
     {
       "name": "/assets/httpClient-uLY_B9k5.js",
-      "duration": 22,
+      "duration": 19,
       "transferSize": 1229
     },
     {
-      "name": "/assets/goalsApi-DpBB_Prj.js",
-      "duration": 23,
-      "transferSize": 683
-    },
-    {
       "name": "/assets/habitsApi-ByQ0RAPA.js",
-      "duration": 24,
+      "duration": 20,
       "transferSize": 1011
     },
     {
+      "name": "/assets/goalsApi-DpBB_Prj.js",
+      "duration": 21,
+      "transferSize": 683
+    },
+    {
       "name": "/assets/knowledgeApi-huk_5Jn-.js",
-      "duration": 28,
+      "duration": 22,
       "transferSize": 919
     },
     {
       "name": "/assets/lifeCatalogApi-DVMM2WsL.js",
-      "duration": 30,
+      "duration": 27,
       "transferSize": 1063
     },
     {
       "name": "/assets/lifeCommerceApi-oP4jEvES.js",
-      "duration": 30,
+      "duration": 28,
       "transferSize": 922
     },
     {
       "name": "/assets/lifePlanningApi-Dt2m_-a2.js",
-      "duration": 31,
+      "duration": 28,
       "transferSize": 1111
     },
     {
       "name": "/assets/lifeRecipesApi-1kw-8KcF.js",
-      "duration": 31,
+      "duration": 29,
       "transferSize": 1008
     },
     {
       "name": "/assets/recordsApi-CdDLlXsh.js",
-      "duration": 31,
+      "duration": 28,
       "transferSize": 1155
     },
     {
       "name": "/assets/reviewsApi-BfrITqEP.js",
-      "duration": 34,
+      "duration": 32,
       "transferSize": 836
     },
     {
       "name": "/assets/tasksApi-BXVtwCxO.js",
-      "duration": 34,
+      "duration": 33,
       "transferSize": 802
     },
     {
       "name": "/assets/PrivateAppBoundary-DkgeGm8T.css",
-      "duration": 35,
+      "duration": 34,
       "transferSize": 82732
     },
     {
       "name": "/assets/noto-sans-sc-118-wght-normal-BPEb0gM9.woff2",
-      "duration": 9,
+      "duration": 8,
       "transferSize": 46492
     },
     {
       "name": "/assets/noto-sans-sc-latin-wght-normal-DYAKOyvl.woff2",
-      "duration": 6,
+      "duration": 5,
       "transferSize": 25540
     },
     {
@@ -131,72 +131,72 @@
     },
     {
       "name": "/assets/OverviewPage-CZCVV8oo.js",
-      "duration": 8,
+      "duration": 7,
       "transferSize": 6520
     },
     {
       "name": "/assets/useQuery-DlHQiklH.js",
-      "duration": 7,
+      "duration": 8,
       "transferSize": 3553
     },
     {
       "name": "/assets/useLifeDay-CNanu_VM.js",
-      "duration": 7,
+      "duration": 8,
       "transferSize": 881
     },
     {
       "name": "/assets/noto-sans-sc-116-wght-normal-vdFVzbO2.woff2",
-      "duration": 63,
+      "duration": 54,
       "transferSize": 53284
     },
     {
       "name": "/assets/noto-sans-sc-119-wght-normal-BfzSEbFz.woff2",
-      "duration": 49,
+      "duration": 42,
       "transferSize": 77100
     },
     {
       "name": "/assets/noto-sans-sc-115-wght-normal-BN__2iBG.woff2",
-      "duration": 50,
+      "duration": 43,
       "transferSize": 56808
     },
     {
       "name": "/assets/noto-sans-sc-110-wght-normal-D2JBr045.woff2",
-      "duration": 52,
+      "duration": 43,
       "transferSize": 61772
     },
     {
       "name": "/assets/noto-sans-sc-114-wght-normal-CRH9SDZu.woff2",
-      "duration": 52,
+      "duration": 42,
       "transferSize": 58264
     },
     {
       "name": "/assets/noto-sans-sc-113-wght-normal-OgQXOX6x.woff2",
-      "duration": 29,
+      "duration": 24,
       "transferSize": 58948
     },
     {
       "name": "/assets/noto-sans-sc-111-wght-normal-ClFr5QXM.woff2",
-      "duration": 28,
+      "duration": 26,
       "transferSize": 62964
     },
     {
       "name": "/assets/noto-sans-sc-112-wght-normal-CiZxJMyY.woff2",
-      "duration": 19,
+      "duration": 18,
       "transferSize": 57948
     },
     {
       "name": "/api/v1/life/day-plans/2026-08-30",
-      "duration": 12,
+      "duration": 11,
       "transferSize": 375
     },
     {
       "name": "/api/v1/life/timeline/2026-08-30",
-      "duration": 14,
+      "duration": 15,
       "transferSize": 340
     },
     {
       "name": "/api/v1/life/day-plans/2026-08-30/projection",
-      "duration": 14,
+      "duration": 15,
       "transferSize": 519
     },
     {
@@ -206,37 +206,37 @@
     },
     {
       "name": "/api/v1/life/shopping",
-      "duration": 13,
+      "duration": 15,
       "transferSize": 356
     },
     {
       "name": "/api/v1/goals",
-      "duration": 13,
+      "duration": 15,
       "transferSize": 302
     },
     {
       "name": "/api/v1/tasks",
-      "duration": 13,
+      "duration": 15,
       "transferSize": 302
     },
     {
       "name": "/api/v1/habits?from=2026-08-24&to=2026-08-30",
-      "duration": 13,
+      "duration": 15,
       "transferSize": 364
     },
     {
       "name": "/api/v1/records",
-      "duration": 14,
+      "duration": 15,
       "transferSize": 302
     },
     {
       "name": "/api/v1/reviews",
-      "duration": 14,
+      "duration": 15,
       "transferSize": 302
     },
     {
       "name": "/api/v1/state",
-      "duration": 12,
+      "duration": 14,
       "transferSize": 386
     }
   ]

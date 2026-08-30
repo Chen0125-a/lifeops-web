@@ -4,8 +4,8 @@ authority_revision: ADR-030
 status: implementation-active
 active_plan: P6
 active_task: P6-T8
-active_step: 1
-requirements_verified: 30/44
+active_step: 8
+requirements_verified: 44/44
 execution_guard: complete-fresh-task-drill-passed
 last_reviewed: 2026-08-30
 ---
@@ -785,9 +785,17 @@ Fresh gates pass root/server lockfile installs and zero-vulnerability production
 
 The non-Git checkpoint is `outputs/evidence/source-checkpoints/2026-08-23-p6-t4-supply-chain-complete-uncommitted-local-checkpoint.json`, root `9063456C2721CAEC50C5E4CCB665DD7EDC41041698F1A2244655BF6BB581804E`, with 576 sorted inputs. The 455-row manifest derives 897 verified-local +472 partial +51 pending atoms and 28 verified-local +12 partial +4 pending parents. Formal GitHub execution, UHub repositories/digests, digest-bound SBOM/provenance and exact-release image smoke remain unverified. No Kubernetes, Helm install/upgrade, Argo sync, kubeconfig, cluster smoke or retired-Skill action occurred.
 
+## 2026-08-30 P6-T8 final evidence synchronization
+
+P6-T8 Steps 1–6 are complete. The final reverse audit covers all 44 parents / 52 surfaces / 1,444 atoms. The evidence manifest now has 487 rows and derives 34 `verified-local` + 10 `verified-image` parents with no partial, pending or invalidated parent. The 11 P6-T8 aggregate rows close only genuinely missing unit/API/MySQL/E2E/a11y/visual/manual/security/image/registry types; every old row is rebound to current source/artifact hashes only after the complete fresh gate. DELIVERY-01 contains verified-registry atoms but remains `verified-local` at parent level under the least-child rule.
+
+The deterministic checkpoint is `outputs/evidence/source-checkpoints/2026-08-30-p6-t8-final-close-uncommitted-local-checkpoint.json`, root `32121D7F4631932DAFAFC063F4A6F54228F13D11DC1077FB5E485C65CF5BEEF4`, with 628 sorted inputs. The refresher's saved and immediate fresh rebuilds are identical. The visual manifest contains 91 states and hashes to `D3228BB55663C4D44B041AB6A09D996580D43CEC08824627E5FBCD75E287B1ED`; its eight new P6-T8 states are the individually opened 1440×900/390×844 day/night rest/login captures. The final index hashes to `F52AEFA8C74EBF9ED92A547A4B3B8BF0B6A8613BDBA7B4206E02D2C98EADD418`; the project-close manifest hashes to `0D4C7F8307A5147C2E08396FE3F6EEA2DAB87BD506621D34B9F2E440AC1351BE`; deployment-package summary version `1.0.0` hashes to `6CC7DDBF6C3C7597E447A516FEE54E6634B2D90EC828499407A3C0DC33BF40FE`.
+
+Immutable release truth remains source `64cb76932def9eed94cb43aea104c97eb19f1382`, ordinary CI `33285063683`, the consumed one-time release `33286877080`, GitOps `03d812339cb42bfb3633ad613b4dd55509fd0084`, Web `sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af` and API `sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3`. Exact-digest smoke, OCI registry inspection and digest-bound SPDX/SLSA are verified. No additional release is permitted. No kubeconfig, kubectl, Helm install/upgrade, Argo sync/rollback, cluster smoke, live integration, DNS/TLS or production-reachability result is claimed.
+
 ## Next atomic action
 
-P6-T7 is formally closed. P6-T8 Step 1 is the sole current boundary. The user-operated package, capability-first manual, safe rollback guide, offline validator and application-only smoke are implemented and verified without cluster access. The current validator-derived parent truth is 30/11/3 because the final integrated handoff/index remains P6-T8 work. The next atom is to reverse-audit all 44 parents and 1,444 atoms before completing the final documentation and verification index. The first verification command is `node scripts/verify-execution-contract.mjs --mode task-close --task P6-T7`.
+P6-T7 is formally closed and P6-T8 Steps 1–8 are complete. P6-T8 Step 8 remains the sole current boundary while the task/phase/project close modes, final commit/push and ordinary CI are verified. The final reverse audit, clean-install gate, code/design review, exact-digest browser gate, 44-row verification index, repository-backed project-close manifest, capability-first deployment manual, recovery/media/observability/rollback runbooks and deterministic evidence refresh cover all 1,444 atoms. The validator-derived parent truth is 44/44: 34 `verified-local` and 10 `verified-image`; DELIVERY-01's registry-final atoms are complete while its mixed-boundary parent correctly remains `verified-local` by the least-child rule. The first verification command is `node scripts/verify-execution-contract.mjs --mode task-close --task P6-T8`.
 
 Do not rerun the detector, read kubeconfig, run kubectl, install Helm, synchronize Argo or claim cluster/DNS/TLS results. The immutable registry release is complete and must not be dispatched again.
 
@@ -1475,6 +1483,22 @@ Refresh and verify checkpoint identity, run execution/startup/handoff and the fi
 
 ```powershell
 node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```
+
+## 2026-08-30 P6-T8 exact-digest browser review closure
+
+This entry supersedes every earlier P6-T8 next-action paragraph. The local primary-agent code/design review is complete and P6-T8 advances to Step 8. Two substantive findings were accepted and fixed: the release workflow had verified the exact UHub images only with startup/API smoke rather than the applicable browser paths required by the image-delivery boundary, and the first remote harness used an arbitrary Docker-hostname HTTP origin where `crypto.randomUUID` was unavailable instead of reproducing the production secure-context contract.
+
+The release workflow now runs browser acceptance after resolving the immutable Web/API digests and before its digest-only GitOps update. The dedicated harness uses the official Playwright `v1.62.1-noble` image, workers `1`, retries `0`, unchanged performance/motion/accessibility thresholds, and a browser-container loopback proxy that forwards only to the same-run exact Web/API proxy. It explicitly proves `isSecureContext`, `crypto.randomUUID`, a `201` task write and reload persistence. Fresh exact-image results are WebKit theme `1/1`, Firefox theme `1/1`, applicable public/visual/accessibility matrix `133/133`, and real MySQL/API Chromium/Firefox/WebKit `12/12`; `outputs/evidence/image/p6-t8-exact-digest-browser-acceptance.json` has SHA-256 `4697559DD336F77782B537084AD4ED34CF3646460D460FD5C111422CD54B054C`. Owned exact-image containers, networks and volumes are zero after cleanup.
+
+The review required no product UI, geometry, copy, business-domain or threshold change. The immutable release remains source `64cb76932def9eed94cb43aea104c97eb19f1382`, ordinary CI `33285063683`, consumed release `33286877080`, GitOps `03d812339cb42bfb3633ad613b4dd55509fd0084`, Web `sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af` and API `sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3`; no further release is authorized or required for this docs/harness close. No kubeconfig, cluster, Argo, DNS/TLS or production-reachability claim was introduced.
+
+### Exact next atomic action
+
+P6-T8 Step 8 is the sole active boundary. Run the fresh verification-before-completion matrix beginning with the frontend suite alone, then synchronize the final evidence/checkpoint and execute task/phase/project close modes before the authorized commit/push and ordinary-CI observation.
+
+```powershell
+npm.cmd test
 ```
 
 ## 2026-08-30 P6-T7 user-operated deployment package closure

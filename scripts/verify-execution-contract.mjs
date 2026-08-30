@@ -133,24 +133,34 @@ async function buildPhaseCloseModeContext(built, phaseId, workspaceRoot) {
   })
 }
 
-function buildProjectCloseModeContext(built) {
+async function buildProjectCloseModeContext(built, manifestPath) {
+  let releaseMetadata
+  try {
+    releaseMetadata = JSON.parse(await readFile(manifestPath, 'utf8'))
+  } catch (error) {
+    throw Object.assign(new Error(`Project-close manifest must contain valid JSON: ${error instanceof Error ? error.message : String(error)}`), {
+      code: 'PROJECT_CLOSE_MANIFEST_INVALID',
+    })
+  }
+  if (!releaseMetadata || typeof releaseMetadata !== 'object' || Array.isArray(releaseMetadata)) {
+    throw Object.assign(new Error('Project-close manifest must be a JSON object'), {
+      code: 'PROJECT_CLOSE_MANIFEST_INVALID',
+    })
+  }
+  if (releaseMetadata.schemaVersion !== 1) {
+    throw Object.assign(new Error('Project-close manifest must use schema version 1'), {
+      code: 'PROJECT_CLOSE_MANIFEST_INVALID',
+    })
+  }
   const atomStatuses = currentAtomStatuses(built)
   return {
+    ...releaseMetadata,
     parentStatuses: built.parentStatuses,
     projectAtoms: built.artifacts.matrix.atoms.map((atom) => ({
       id: atom.id,
       status: atomStatuses.get(atom.id),
       finalBoundary: atom.finalBoundary,
     })),
-    finalRevision: null,
-    finalGates: [],
-    images: {},
-    productionValues: {},
-    exactDigestSmoke: [],
-    supplyChain: {},
-    registryInspect: [],
-    deliveryPackage: {},
-    runtimeTruth: {},
   }
 }
 
@@ -195,7 +205,9 @@ try {
   } else if (mode === 'handoff') {
     issues.push(...validateHandoff(await buildHandoffModeContext(built, expectedWorkspaceRoot)))
   } else if (mode === 'project-close') {
-    issues.push(...validateProjectClose(buildProjectCloseModeContext(built)))
+    const projectCloseManifestPath = argumentValue(args, '--project-close-manifest')
+      ?? path.join(expectedWorkspaceRoot, 'outputs', 'final', 'project-close-manifest.json')
+    issues.push(...validateProjectClose(await buildProjectCloseModeContext(built, projectCloseManifestPath)))
   }
   report = buildStartupReport({
     mode,

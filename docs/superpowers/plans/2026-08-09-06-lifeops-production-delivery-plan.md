@@ -524,9 +524,9 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-deploym
 - Final index maps requirement -> source/tests -> local command evidence -> visual evidence -> image/registry/package evidence -> known limitation.
 - Operations docs cover release, migration, backup/restore, media, observability, incident triage and GitOps rollback with exact safe commands and prerequisites for the user.
 
-- [ ] **Step 1: Reverse-audit every requirement from the approved specs and ADR-016 through ADR-022.** Inspect implementation and fresh evidence for the original 20 IDs plus LIFE-01 through LIFE-24. Reopen any row whose evidence is missing, stale, skipped, mock-only, lacks its reproducibility manifest, fails a whole-page visual veto or falls below its required local/image/registry boundary.
+- [x] **Step 1: Reverse-audit every requirement from the approved specs and ADR-016 through ADR-022.** Inspect implementation and fresh evidence for the original 20 IDs plus LIFE-01 through LIFE-24. Reopen any row whose evidence is missing, stale, skipped, mock-only, lacks its reproducibility manifest, fails a whole-page visual veto or falls below its required local/image/registry boundary.
 
-- [ ] **Step 2: Search for unfinished/fake implementation artifacts.**
+- [x] **Step 2: Search for unfinished/fake implementation artifacts.**
 
 ```powershell
 rg -n "TODO|TBD|FIXME|REPLACE_ME|coming soon|not implemented|mock data|sample data|placeholder" src server deploy .github scripts docs
@@ -534,7 +534,7 @@ rg -n "TODO|TBD|FIXME|REPLACE_ME|coming soon|not implemented|mock data|sample da
 
 Classify every match. Remove implementation placeholders and fake production data; retain only truthful documentation, explicit user-input placeholders in examples or isolated local-preview fixtures.
 
-- [ ] **Step 3: Run one fresh final gate from a clean dependency install** and record exact exit codes/versions.
+- [x] **Step 3: Run one fresh final gate from a clean dependency install** and record exact exit codes/versions.
 
 ```powershell
 npm.cmd ci
@@ -555,15 +555,15 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-release-m
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-deployment-package.ps1 -ReleaseManifest outputs/final/release-manifest.json -ValuesFile deploy/gitops/environments/production/values.yaml
 ```
 
-- [ ] **Step 4: Complete product and operations documentation.** State the real release revision/UHub digests, supported modules, browser/motion/accessibility behavior, API/data model, Obsidian limits, platform integration configuration, user deployment/recovery procedures and application/runtime limitations. Never place credentials in examples.
+- [x] **Step 4: Complete product and operations documentation.** State the real release revision/UHub digests, supported modules, browser/motion/accessibility behavior, API/data model, Obsidian limits, platform integration configuration, user deployment/recovery procedures and application/runtime limitations. Never place credentials in examples.
 
-- [ ] **Step 5: Build the final verification index.** Link each requirement to named test/report/screenshot/filmstrip/trace, the visual-evidence manifest entry, golden-slice comparison and state freshness/boundary. Do not paste raw logs when a sanitized summary plus artifact path is sufficient.
+- [x] **Step 5: Build the final verification index.** Link each requirement to named test/report/screenshot/filmstrip/trace, the visual-evidence manifest entry, golden-slice comparison and state freshness/boundary. Do not paste raw logs when a sanitized summary plus artifact path is sufficient.
 
-- [ ] **Step 6: Update the selected session and project CURRENT.** Record final Git/SHA revision, UHub digests, image smoke and registry status, test totals, visual-evidence-manifest hash, deployment-package version/hash, known limitations and the user's next deployment action. Do not record unobserved Argo, Kubernetes, hostname or integration states as passed. If any Web completion condition remains open, CURRENT must say `implementation-active`.
+- [x] **Step 6: Update the selected session and project CURRENT.** Record final Git/SHA revision, UHub digests, image smoke and registry status, test totals, visual-evidence-manifest hash, deployment-package version/hash, known limitations and the user's next deployment action. Do not record unobserved Argo, Kubernetes, hostname or integration states as passed. If any Web completion condition remains open, CURRENT must say `implementation-active`.
 
-- [ ] **Step 7: Request final code/design verification** using `superpowers:requesting-code-review`, fix all accepted findings, then rerun every affected gate.
+- [x] **Step 7: Request final code/design verification** using `superpowers:requesting-code-review`, fix all accepted findings, then rerun every affected gate.
 
-- [ ] **Step 8: Use `superpowers:verification-before-completion` before the final claim.** Compare evidence timestamps, image digests, release manifest and package hashes to the current release. Only then commit the handoff with message `docs(release): complete LifeOps Web image handoff` and report Web delivery completion.
+- [x] **Step 8: Use `superpowers:verification-before-completion` before the final claim.** Compare evidence timestamps, image digests, release manifest and package hashes to the current release. Only then commit the handoff with message `docs(release): complete LifeOps Web image handoff` and report Web delivery completion.
 
 ## Plan 6 Self-Review
 

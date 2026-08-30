@@ -86,6 +86,6 @@ test('platform API rejects raw query surfaces, stays read-only and never seriali
 test('anonymous browser entry cannot render the private platform route', async ({ page }) => {
   await page.addInitScript(() => sessionStorage.clear())
   await page.goto('/app/platform')
-  await expect(page).toHaveURL('http://127.0.0.1:4193/')
+  await expect.poll(() => new URL(page.url()).pathname).toBe('/')
   await expect(page.getByRole('heading', { name: '平台运行中心' })).toHaveCount(0)
 })

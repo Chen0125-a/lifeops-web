@@ -1,5 +1,9 @@
 # LifeOps V1 生产部署手册
 
+> 本文件保留为早期快速参考。正式发布身份、责任边界和入口见仓库根部 [`DEPLOYMENT.md`](../DEPLOYMENT.md)；陌生集群必须按 [`docs/runbooks/user-deployment-checklist.md`](runbooks/user-deployment-checklist.md) 的十四节 capability-first 手册执行。若两处命令存在差异，以根入口、十四节手册和当前 chart/values 为准。
+
+已发布的 `1.0.0` source revision 是 `64cb76932def9eed94cb43aea104c97eb19f1382`；生产 Web/API digest 分别为 `sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af` 与 `sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3`。不要用 tag、`latest` 或本地 image ID 替代。
+
 ## 1. 拓扑与边界
 
 浏览器通过 Envoy Gateway 访问同一 FQDN：`/api` 路由到 LifeOps API，其余路径路由到 LifeOps Web。Web/API 默认双副本；API 使用 MySQL 保存业务数据、会话和跨副本登录失败计数。Chart 默认部署单副本 MySQL StatefulSet 与 PVC，也支持外部或云 MySQL。
@@ -55,13 +59,11 @@ Argo CD 将管理 ExternalSecret，真实值仍留在外部密钥系统。
 
 将 `secrets.create=true` 及三项密码放入一个不入库的临时 values 文件。Helm release 自身会保存这些值，因此不建议长期生产使用。
 
-私有 UHub 仓库还需要镜像拉取 Secret：
+私有 UHub 仓库还需要镜像拉取 Secret。先在仓库外生成权限受限的 Docker config JSON；不要把密码放进命令参数或 shell history：
 
-```bash
-kubectl -n lifeops create secret docker-registry uhub-registry \
-  --docker-server=uhub.service.ucloud.cn \
-  --docker-username='YOUR_UHUB_USERNAME' \
-  --docker-password='YOUR_UHUB_PASSWORD'
+```powershell
+kubectl -n <NAMESPACE> create secret generic <IMAGE_PULL_SECRET> --from-file=.dockerconfigjson=<PRIVATE_DOCKER_CONFIG_JSON> --type=kubernetes.io/dockerconfigjson
+kubectl -n <NAMESPACE> get secret <IMAGE_PULL_SECRET> -o name
 ```
 
 ## 4. 生产 values

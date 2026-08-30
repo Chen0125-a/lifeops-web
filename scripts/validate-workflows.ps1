@@ -7,6 +7,7 @@ $ci = [IO.File]::ReadAllText((Join-Path $WorkspaceRoot '.github/workflows/ci.yml
 $release = [IO.File]::ReadAllText((Join-Path $WorkspaceRoot '.github/workflows/release.yml'))
 $webDockerfile = [IO.File]::ReadAllText((Join-Path $WorkspaceRoot 'Dockerfile'))
 $apiDockerfile = [IO.File]::ReadAllText((Join-Path $WorkspaceRoot 'server/Dockerfile'))
+$imageBrowserSmoke = [IO.File]::ReadAllText((Join-Path $WorkspaceRoot 'scripts/smoke-image-browsers.ps1'))
 $failures = [Collections.Generic.List[string]]::new()
 function Require([bool]$Condition, [string]$Message) { if (!$Condition) { $script:failures.Add($Message) } }
 
@@ -54,12 +55,17 @@ foreach ($dockerfile in @($webDockerfile, $apiDockerfile)) {
   Require ($dockerfile -notmatch '(?m)^RUN\s+.*(?:apk|apt-get|yum)\s+.*(?:curl|wget|bash|sh)') 'Runtime image must not install a shell/probe package solely for health checks.'
 }
 
-foreach ($required in @('--platform linux/amd64', '--provenance=mode=max', '--sbom=true', '--password-stdin', 'imagetools inspect', 'smoke-images.ps1', '-RequireDigest', 'update-gitops-values.mjs')) {
+foreach ($required in @('--platform linux/amd64', '--provenance=mode=max', '--sbom=true', '--password-stdin', 'imagetools inspect', 'smoke-images.ps1', 'smoke-image-browsers.ps1', '-RequireDigest', 'update-gitops-values.mjs')) {
   Require ($release -match [regex]::Escape($required)) "Release contract is missing: $required"
 }
 $smokeIndex = $release.IndexOf('smoke-images.ps1', [StringComparison]::Ordinal)
+$browserSmokeIndex = $release.IndexOf('smoke-image-browsers.ps1', [StringComparison]::Ordinal)
 $updateIndex = $release.IndexOf('update-gitops-values.mjs', [StringComparison]::Ordinal)
 Require ($smokeIndex -ge 0 -and $updateIndex -gt $smokeIndex) 'Exact-digest smoke must precede the GitOps update.'
+Require ($browserSmokeIndex -gt $smokeIndex -and $updateIndex -gt $browserSmokeIndex) 'Exact-digest browser acceptance must run after image smoke and before the GitOps update.'
+Require ($release -match '-SourceRevision\s+"\$env:GITHUB_SHA"') 'Exact-digest browser acceptance must bind the release source revision.'
+Require ($imageBrowserSmoke -match "mcr\.microsoft\.com/playwright:v1\.62\.1-noble") 'Exact-digest browser acceptance must use the pinned official Linux Playwright image.'
+Require ($imageBrowserSmoke -match 'playwright\.image\.config\.ts' -and $imageBrowserSmoke -match 'playwright\.remote\.image\.config\.ts') 'Exact-digest browser acceptance must run both UI and real-API browser configurations.'
 
 $inRunBlock = $false
 $runIndent = 0

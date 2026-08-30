@@ -38,7 +38,7 @@ const EXCLUDED_DIRECTORY_SEGMENTS = new Set([
 const SENSITIVE_PATH = /(?:^|[-_.\/])(?:credential(?:s)?|cookie(?:s)?|kubeconfig|private[-_]?key|service[-_]?token|session[-_]?cookie|token(?:s)?|id[-_]?(?:rsa|ed25519))(?:[-_.\/]|$)/i
 const TEST_DATABASE_SECRET = /(?:^|\/)(?:tests?|test-data)(?:\/|$).*?(?:credential|password|private[-_]?key|generated[-_]?key|certificate|\.pem(?:$|\/))/i
 const DOT_ENV_FILE = /(?:^|\/)\.env(?:\.|$)/i
-const CONFIG_FILE = /^(?:tsconfig(?:\.[A-Za-z0-9_-]+)?\.json|(?:vite|vitest|playwright)(?:\.[A-Za-z0-9_-]+)?\.config\.(?:c?js|mjs|ts))$/
+const CONFIG_FILE = /^(?:tsconfig(?:\.[A-Za-z0-9_-]+)?\.json|(?:vite|vitest|playwright)(?:\.[A-Za-z0-9_-]+)*\.config\.(?:c?js|mjs|ts))$/
 const ROOT_RELEASE_DOCUMENTS = new Set(['README.md', 'DESIGN.md', 'PRODUCT.md', 'DEPLOYMENT.md'])
 
 function comparePaths(left, right) {

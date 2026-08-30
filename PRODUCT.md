@@ -22,8 +22,18 @@ LifeOps 是一个私人生活操作系统：把计划、真实经历、周期回
 - Helm 可首装到现有 Kubernetes；内置 MySQL 是学习/单集群起步方案，生产可切换外部托管 MySQL，不宣称数据库高可用。
 - GitHub Actions 构建并推送 UHub 双镜像，以 digest 更新 GitOps values；未来 Jenkins/Argo CD 复用同一发布合同。
 
+## 已验证交付与运行限制
+
+- `1.0.0` 的应用 source revision 为 `64cb76932def9eed94cb43aea104c97eb19f1382`；Web/API 两个 UHub immutable digest、SBOM、provenance、registry inspect 和 exact-digest smoke 已验证，详见 `outputs/final/release-manifest.json`。
+- API 默认 HPA 为 2–6 副本；会话、幂等、库存流水与登录失败计数由 MySQL 共享持久化。当前没有 Redis，也不在没有一致性/故障/回退设计时引入。
+- 多副本 filesystem 媒体要求 RWX；没有 RWX 的集群优先使用 S3-compatible。单 API 副本 + RWO 只是风险接受的有界方案。
+- Prometheus、Grafana、Alertmanager、Kubernetes、Elasticsearch、GitHub 和 Argo CD 集成默认 disabled；没有真实连接时只显示 disabled/degraded，不生成虚假平台数据。
+- Obsidian 写回依赖用户授权的 File System Access；不支持时仅提供 ZIP 预览，冲突必须显式选择，写入前先备份。
+- 项目交付没有验证用户集群、Argo、DNS/TLS 或生产 hostname 可访问；这些是用户部署后的证据，不是 Web 镜像交付事实。
+
 ## 非目标
 
 - 不重新实现日志、指标、链路追踪等已有成熟开源平台。
 - 不在 V1 引入微服务拆分、WebGL 重场景、社交网络或多人协作。
 - 不把浏览器本地预览、内置 MySQL 或单副本开发配置描述为生产高可用。
+- 不把 Gateway API、Envoy Gateway/NGINX Gateway Fabric controller 与 Web 镜像内的静态 Nginx 混为一谈。

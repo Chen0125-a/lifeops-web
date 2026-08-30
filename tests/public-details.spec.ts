@@ -107,7 +107,7 @@ test('browser Back, fixed return and Escape restore exact public context', async
   await expect(page).toHaveURL(/\/$/)
   await expect(page.getByRole('link', { name: '探索最近在学' })).toBeFocused()
   await expect(page.locator('.public-home')).toHaveAttribute('data-public-theme', 'night')
-  expect(await page.evaluate(() => sessionStorage.getItem('lifeops:public-return:v1'))).toBeNull()
+  await expect.poll(() => page.evaluate(() => sessionStorage.getItem('lifeops:public-return:v1'))).toBeNull()
   expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(150)
 
   await expect(page.locator('[data-public-orbit]')).toHaveAttribute('data-motion-enhanced', 'true')
