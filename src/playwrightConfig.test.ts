@@ -6,6 +6,7 @@ import viteConfig from '../vite.config'
 
 const workspaceRoot = resolve(import.meta.dirname, '..')
 const globalSetupSource = readFileSync(resolve(workspaceRoot, 'tests/globalSetup.ts'), 'utf8')
+const remoteGlobalSetupSource = readFileSync(resolve(workspaceRoot, 'tests-remote/globalSetup.ts'), 'utf8')
 const motionContinuitySpecSource = readFileSync(resolve(workspaceRoot, 'tests/motion-continuity.spec.ts'), 'utf8')
 const obsidianSettingsSpecSource = readFileSync(resolve(workspaceRoot, 'tests/obsidian-settings.spec.ts'), 'utf8')
 const publicFinalSpecSource = readFileSync(resolve(workspaceRoot, 'tests/public-final.spec.ts'), 'utf8')
@@ -43,6 +44,13 @@ describe('Playwright acceptance environment', () => {
     expect(globalSetupSource).toContain('emptyOutDir: true')
     expect(globalSetupSource).not.toContain('createServer')
     expect(config).toMatchObject({ workers: 1, retries: 0 })
+  })
+
+  it('serves real Fastify journeys from the prebuilt production bundle', () => {
+    expect(packageScripts['test:e2e:remote']).toBe('npm run build && npm run build:server && playwright test --config playwright.remote.config.ts')
+    expect(remoteGlobalSetupSource).toContain("import { preview } from 'vite'")
+    expect(remoteGlobalSetupSource).not.toContain('createServer')
+    expect(remoteGlobalSetupSource).toContain("preview: { host: '127.0.0.1', port: 4174, strictPort: true }")
   })
 
   it('keeps the API proxy contract identical for development and static acceptance', () => {

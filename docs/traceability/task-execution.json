@@ -4852,6 +4852,7 @@
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci18-prepaint-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci19-theme-switch-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci20-webkit-sampling-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci21-remote-production-preview-remediation-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-release2-observability-pipeline-remediation-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
@@ -4925,6 +4926,7 @@
         "src/publicThemeCompositor.test.ts",
         "src/styles/private-shell.css",
         "src/styles/public.css",
+        "tests-remote/globalSetup.ts",
         "tests-remote/knowledge.spec.ts",
         "tests/accessibility-full.spec.ts",
         "tests/adr029-login-orbit.spec.ts",
@@ -5414,6 +5416,7 @@
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci18-prepaint-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci19-theme-switch-local-full-gates-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci20-webkit-sampling-local-full-gates-uncommitted-local-checkpoint.json",
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci21-remote-production-preview-remediation-uncommitted-local-checkpoint.json",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-release2-observability-pipeline-remediation-uncommitted-local-checkpoint.json",
         "outputs/final/data-rehearsal-summary.md",
         "outputs/final/lighthouse-public.json",
@@ -5475,6 +5478,7 @@
         "src/publicThemeCompositor.test.ts",
         "src/styles/private-shell.css",
         "src/styles/public.css",
+        "tests-remote/globalSetup.ts",
         "tests-remote/knowledge.spec.ts",
         "tests/accessibility-full.spec.ts",
         "tests/adr029-login-orbit.spec.ts",
@@ -5972,7 +5976,9 @@
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci20-webkit-sampling-local-full-gates-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI20 sampling/accessibility correction and complete current-source local gates to the sorted source set.",
         "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-release2-observability-pipeline-remediation-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI20 sampling/accessibility correction and complete current-source local gates to the sorted source set.",
         "scripts/validate-observability.ps1": "The observability validator now accepts both external process stdin and direct PowerShell pipeline records, preserving every rendered-manifest assertion across Windows PowerShell and Linux pwsh.",
-        "scripts/validate-observability.test.ps1": "The focused contract reproduces the release workflow direct-pipeline failure and proves both direct and external stdin modes accept the reviewed Helm render."
+        "scripts/validate-observability.test.ps1": "The focused contract reproduces the release workflow direct-pipeline failure and proves both direct and external stdin modes accept the reviewed Helm render.",
+        "outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci21-remote-production-preview-remediation-uncommitted-local-checkpoint.json": "The deterministic checkpoint binds the CI21 remote production-preview correction, current local gates and honest external blockers to the sorted source set.",
+        "tests-remote/globalSetup.ts": "Remote real-Fastify journeys now serve the prebuilt dist bundle with Vite preview while retaining the same loopback API, teardown, workers, retries and browser coverage."
       },
       "requiredAtomIds": [
         "DELIVERY-01.EXACT_DIGEST.TXN.01",
@@ -6255,6 +6261,24 @@
           "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-observability.test.ps1",
           "exitCode": 1,
           "failure": "The new direct PowerShell pipeline contract reproduced Observability render is empty while the existing external-process stdin contract still passed."
+        },
+        {
+          "classification": "behavioral",
+          "command": "GitHub Actions ordinary CI run 33282198354 / job 99179121484: npm run test:e2e:remote",
+          "exitCode": 1,
+          "failure": "Eleven remote real-Fastify cases passed, but the final WebKit login/write case timed out after navigation to /app/overview while waiting 15 seconds for the schedule link; all preceding unit, build, MySQL and complete browser-matrix gates were green."
+        },
+        {
+          "classification": "behavioral",
+          "command": "npm.cmd test -- src/playwrightConfig.test.ts",
+          "exitCode": 1,
+          "failure": "The new production-bundle remote-harness contract passed 14 assertions and failed exactly one because test:e2e:remote omitted the Web build and globalSetup used Vite createServer instead of preview."
+        },
+        {
+          "classification": "environment",
+          "command": "npx.cmd playwright test --config playwright.remote.config.ts --project=desktop-firefox --grep \"real Fastify session creates, edits, relates and reloads private knowledge\"",
+          "exitCode": 1,
+          "failure": "The local Windows Playwright Firefox process never created a page: Juggler reported tab subprocess SpawnTarget Error:0, three GPU-process failures and D3D11_NO_DEVICE before browserContext.newPage; no LifeOps URL or assertion executed. CI21 had already passed all four Firefox remote journeys on Linux, and the next ordinary CI must verify Firefox again on the corrected production-preview source."
         }
       ],
       "evidenceIds": [
@@ -6288,7 +6312,7 @@
       "externalBlockers": [
         {
           "code": "ORDINARY_CI_PENDING",
-          "fact": "Ordinary CI run 33278665288 / job 99169909250 at 01f1bbb passed every gate in 35m03s. Authorized release run 33280128021 then independently passed full tests, MySQL and 36m13s browser acceptance but failed before registry sign-in because the Linux pwsh direct pipeline delivered no Console stdin to validate-observability.ps1. The focused cross-platform fix is green locally; a new ordinary CI must still verify the committed correction."
+          "fact": "Ordinary CI run 33282198354 / job 99179121484 at 39e5b5d passed frontend unit/type/build, official MySQL 8.4.10 and the complete 338-case browser matrix, then failed only the remote real-Fastify WebKit login/write journey after 11/12 remote cases. The old remote harness served an on-demand Vite development graph; the focused production-preview correction is green for Chromium and WebKit locally, while a new ordinary Linux CI must verify the committed correction including Firefox."
         },
         {
           "code": "RELEASE_AUTHORIZATION_REQUIRED",

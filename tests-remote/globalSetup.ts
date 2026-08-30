@@ -1,5 +1,5 @@
 import type { FullConfig } from '@playwright/test'
-import { createServer } from 'vite'
+import { preview } from 'vite'
 import { buildApp } from '../server/src/app.js'
 import { hashPassword } from '../server/src/security/password.js'
 import { MemoryLifeStore } from '../server/src/store/memoryLifeStore.js'
@@ -23,11 +23,10 @@ export default async function globalSetup(_config: FullConfig) {
   await api.listen({ host: '127.0.0.1', port: 8080 })
 
   process.env.VITE_LIFEOPS_API_MODE = 'remote'
-  const vite = await createServer({
+  const vite = await preview({
     configFile: 'vite.config.ts',
-    server: { host: '127.0.0.1', port: 4174, strictPort: true },
+    preview: { host: '127.0.0.1', port: 4174, strictPort: true },
   })
-  await vite.listen()
 
   return async () => {
     await vite.close()

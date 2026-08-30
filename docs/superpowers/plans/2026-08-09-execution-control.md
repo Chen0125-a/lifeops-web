@@ -1477,6 +1477,24 @@ Refresh and verify checkpoint identity, run execution/startup/handoff and the fi
 node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
 ```
 
+## 2026-08-30 P6-T6 ordinary CI21 remote production-preview remediation
+
+Release-pipeline remediation commit `39e5b5dff880e75bb4046e07d217cb451ccf74a5` is present on local, tracking and verified remote `main`. Ordinary CI run `33282198354`, job `99179121484`, passed frontend unit/type/build, official MySQL 8.4.10 and all 338 main Playwright/accessibility cases. It then passed 11/12 remote real-Fastify journeys and failed only the final WebKit login/write case: `/app/overview` navigation completed, but the schedule link did not become actionable within the unchanged 15-second action timeout while the remote harness used Vite `createServer` and compiled lazy private chunks on demand. No release was dispatched.
+
+Focused TDD added a production-bundle harness contract that initially passed 14/15 and failed exactly because `test:e2e:remote` omitted the Web build and `tests-remote/globalSetup.ts` used the development server. The minimum correction builds Web plus server and serves `dist` with Vite `preview` on the same strict `127.0.0.1:4174` endpoint. It changes no product source, worker, retry, browser project, action timeout or assertion. Fresh local gates pass focused harness 15/15, exact WebKit remote 1/1, WebKit repeat 10/10, Chromium plus WebKit remote 8/8, frontend 88/88 files and 427/427 tests, typecheck, 885-module production build, observability contracts and exact release-style pipeline, workflow/release/image-smoke, rendered Helm and media topology.
+
+The complete local remote attempt was 8/12 only because Windows Playwright Firefox failed during browser-context setup before any page opened. Browser protocol logs record tab-subprocess `SpawnTarget Error:0`, three GPU-process failures and `D3D11_NO_DEVICE`; a separate headless probe also failed before page creation. This environment result is preserved rather than labeled flaky or green. CI21 had passed all four Firefox remote journeys on the prior harness, and the next Linux ordinary CI is required to prove current production-preview Firefox plus full 12/12.
+
+Authority remains ADR-030, status `implementation-active`, active tuple P6 / P6-T6 / Step 7 and parent truth 30 verified-local / 10 partial / 4 pending. Product and visual sources are unchanged; the CI19 final images remain current and already passed individual original-resolution review. The failed authorized release still produced no UHub sign-in, image push, digest, digest-bound SBOM/provenance, exact-digest smoke or GitOps update. A new release dispatch remains prohibited until a fresh ordinary CI is genuinely green and the user then grants a new explicit one-run authorization.
+
+### Exact next atomic action
+
+Run the deterministic CI21 manifest/checkpoint refresh, execution/startup/handoff and final authority/identity/JSON/diff/credential-safe audits. Commit and push the bounded correction under continuing main-branch authorization, then observe the new ordinary CI to its terminal result. Do not enter P6-T7 or dispatch release early.
+
+```powershell
+node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```
+
 ## 2026-08-30 P6-T6 ordinary CI20 sampling/a11y stabilization and complete local convergence
 
 The current committed baseline, tracking ref and verified remote `main` are `386de70ef9762074445b962c3c594f2e52dac2d2`; the CI20 correction is still uncommitted. Ordinary CI run `33271354230` / job `99150269743` passed MySQL, unit, typecheck, production build and 335/336 browser cases, then failed only the WebKit private-route continuity cadence precondition with nine retained frames against the unchanged ten-frame minimum. Every recorded DOM state had the private shell, main content, route panel and non-white background.

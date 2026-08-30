@@ -137,6 +137,21 @@ npm.cmd run test:execution
 node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
 ```
 
+## 46. 2026-08-30 最新权威尾部：CI21 remote production preview 修复
+
+- `HEAD`、`origin/main` 与已核验远端 `main` 为 `39e5b5dff880e75bb4046e07d217cb451ccf74a5`。普通 CI `33282198354` / job `99179121484` 通过 frontend unit/type/build、official MySQL 与完整 338-case browser matrix；remote real-Fastify 通过 11/12，只在最后 WebKit 登录/写入旅程等待“日程”链接 15 秒超时。没有 dispatch release。
+- 根因是 remote harness 使用 Vite development `createServer`，让 WebKit 在最后一项按需编译 lazy private chunks。Focused harness 先 14/15 RED；最小修复令 `test:e2e:remote` 先 build Web/server，并由 Vite `preview` 在原严格 loopback 端口服务 `dist`。产品源码、worker、retry、browser、timeout 与断言不变。
+- 当前本地通过 focused 15/15、WebKit exact 1/1、WebKit repeat 10/10、Chromium+WebKit remote 8/8、frontend 427/427、typecheck、885-module build，以及 observability exact pipeline、workflow/release/image-smoke、Helm render/media contracts。Windows Firefox 在打开任何页面前因 `SpawnTarget Error:0`、GPU process 三次失败和 `D3D11_NO_DEVICE` 无法创建 context；这是明确环境 blocker，不能标绿，必须由下一次 Linux ordinary CI 验证当前源码 Firefox 与 full remote 12/12。
+- 当前仍为 ADR-030 / P6 / P6-T6 / Step 7 / 30-10-4。product/visual source 未变；CI19 图仍 current 且已逐图打开。release #2 没有产生 UHub digest、attestation、exact-digest smoke 或 release success；再次 dispatch 必须等 fresh ordinary CI 真绿后取得新的明确单次授权。
+
+### 当前唯一下一原子动作
+
+运行 CI21 deterministic refresh、execution/startup/handoff 与最终审计，commit/push 后观察新 ordinary CI 到真实终态；不得提前 release 或进入 P6-T7。
+
+```powershell
+node outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs
+```
+
 ## 45. 2026-08-30 最新权威尾部：CI20 实现提交与窄账本边界
 
 - CI20 三文件实现提交已创建为 `0996cbb`（`fix(test): stabilize cross-browser acceptance sampling`）；`origin/main` 仍为 `386de70ef9762074445b962c3c594f2e52dac2d2`。8 个受保护历史 untracked 文件未暂存、移动或删除。

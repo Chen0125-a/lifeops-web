@@ -6,7 +6,7 @@ import path from 'node:path'
 import { buildLocalCheckpoint } from '../../scripts/execution-contract/source-checkpoint.mjs'
 
 const root = process.cwd()
-const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-30-p6-t6-release2-observability-pipeline-remediation-uncommitted-local-checkpoint.json'
+const checkpointPath = 'outputs/evidence/source-checkpoints/2026-08-30-p6-t6-ci21-remote-production-preview-remediation-uncommitted-local-checkpoint.json'
 const refreshPath = 'outputs/evidence/p6-t6-ci20-webkit-sampling-manifest-refresh.mjs'
 const evidenceManifestPath = 'docs/traceability/evidence-manifest.json'
 const taskExecutionPath = 'docs/traceability/task-execution.json'
@@ -40,7 +40,7 @@ const dirtyHistoricalEvidence = statusRows.filter(({ code, path: relativePath })
   code !== '??' && relativePath.startsWith('outputs/evidence/browser/')
 ))
 if (dirtyHistoricalEvidence.length > 0) {
-  throw new Error(`Tracked historical browser evidence changed during CI20: ${JSON.stringify(dirtyHistoricalEvidence)}`)
+  throw new Error(`Tracked historical browser evidence changed during CI21: ${JSON.stringify(dirtyHistoricalEvidence)}`)
 }
 
 const currentPaths = sortPaths([
@@ -58,9 +58,12 @@ const sourceReasons = new Map([
   ['tests/accessibility-full.spec.ts', 'The homepage Axe gate waits for the five authored orbit labels to reach their stable opacity endpoint before scanning without suppressing any accessibility rule.'],
   ['scripts/validate-observability.ps1', 'The observability validator now accepts both external process stdin and direct PowerShell pipeline records, preserving every rendered-manifest assertion across Windows PowerShell and Linux pwsh.'],
   ['scripts/validate-observability.test.ps1', 'The focused contract reproduces the release workflow direct-pipeline failure and proves both direct and external stdin modes accept the reviewed Helm render.'],
+  ['package.json', 'The real-Fastify remote acceptance command now builds both the production Web bundle and server before Playwright starts, so every browser exercises shipped assets rather than on-demand development transforms.'],
+  ['src/playwrightConfig.test.ts', 'The focused harness contract requires the production build prerequisite, Vite preview, fixed loopback port and removal of the development server from remote acceptance.'],
+  ['tests-remote/globalSetup.ts', 'Remote real-Fastify journeys now serve the prebuilt dist bundle with Vite preview while retaining the same loopback API, teardown, workers, retries and browser coverage.'],
   ['outputs/final/data-rehearsal-summary.md', 'The fresh disposable official MySQL 8.4.10 rehearsal records all 16 migrations and matching source/restored logical checksums.'],
-  [refreshPath, 'The deterministic CI20 refresh preserves all 462 evidence IDs and order, rehashes current sources/artifacts and refuses tracked historical-browser drift.'],
-  [checkpointPath, 'The deterministic checkpoint binds the CI20 sampling/accessibility correction and complete current-source local gates to the sorted source set.'],
+  [refreshPath, 'The deterministic CI21 refresh preserves all 462 evidence IDs and order, rehashes current sources/artifacts and refuses tracked historical-browser drift.'],
+  [checkpointPath, 'The deterministic checkpoint binds the CI21 remote production-preview correction, current local gates and honest external blockers to the sorted source set.'],
 ])
 
 const taskExecution = await readJson(taskExecutionPath)
@@ -79,7 +82,7 @@ for (const relativePath of currentPaths) {
 task.externalBlockers = [
   {
     code: 'ORDINARY_CI_PENDING',
-    fact: 'Ordinary CI run 33278665288 / job 99169909250 at 01f1bbb passed every gate in 35m03s. Authorized release run 33280128021 then independently passed full tests, MySQL and 36m13s browser acceptance but failed before registry sign-in because the Linux pwsh direct pipeline delivered no Console stdin to validate-observability.ps1. The focused cross-platform fix is green locally; a new ordinary CI must still verify the committed correction.',
+    fact: 'Ordinary CI run 33282198354 / job 99179121484 at 39e5b5d passed frontend unit/type/build, official MySQL 8.4.10 and the complete 338-case browser matrix, then failed only the remote real-Fastify WebKit login/write journey after 11/12 remote cases. The old remote harness served an on-demand Vite development graph; the focused production-preview correction is green for Chromium and WebKit locally, while a new ordinary Linux CI must verify the committed correction including Firefox.',
   },
   {
     code: 'RELEASE_AUTHORIZATION_REQUIRED',
@@ -87,6 +90,24 @@ task.externalBlockers = [
   },
 ]
 for (const red of [
+  {
+    classification: 'behavioral',
+    command: 'GitHub Actions ordinary CI run 33282198354 / job 99179121484: npm run test:e2e:remote',
+    exitCode: 1,
+    failure: 'Eleven remote real-Fastify cases passed, but the final WebKit login/write case timed out after navigation to /app/overview while waiting 15 seconds for the schedule link; all preceding unit, build, MySQL and complete browser-matrix gates were green.',
+  },
+  {
+    classification: 'behavioral',
+    command: 'npm.cmd test -- src/playwrightConfig.test.ts',
+    exitCode: 1,
+    failure: 'The new production-bundle remote-harness contract passed 14 assertions and failed exactly one because test:e2e:remote omitted the Web build and globalSetup used Vite createServer instead of preview.',
+  },
+  {
+    classification: 'environment',
+    command: 'npx.cmd playwright test --config playwright.remote.config.ts --project=desktop-firefox --grep "real Fastify session creates, edits, relates and reloads private knowledge"',
+    exitCode: 1,
+    failure: 'The local Windows Playwright Firefox process never created a page: Juggler reported tab subprocess SpawnTarget Error:0, three GPU-process failures and D3D11_NO_DEVICE before browserContext.newPage; no LifeOps URL or assertion executed. CI21 had already passed all four Firefox remote journeys on Linux, and the next ordinary CI must verify Firefox again on the corrected production-preview source.',
+  },
   {
     classification: 'behavioral',
     command: 'GitHub Actions release run 33280128021 / job 99173780692: Validate deployable manifests',
@@ -145,7 +166,7 @@ visualManifest.latestRevalidation = {
   openedOriginalResolution: true,
   captureCount: 8,
   conclusion: 'pass',
-  note: 'This release remediation changes only a PowerShell Helm-render validator and its focused contract. The CI19 final 1440x900 and 390x844 day/night rest/login images remain product-source-current and were already opened individually at original resolution; their hashes and 71-frame 16.8 ms metrics remain unchanged.',
+  note: 'This CI21 remediation changes only the remote acceptance harness, its package command and focused contract. The CI19 final 1440x900 and 390x844 day/night rest/login images remain product-source-current and were already opened individually at original resolution; their hashes and 71-frame 16.8 ms metrics remain unchanged.',
 }
 await writeJson(visualManifestPath, visualManifest)
 
@@ -154,18 +175,19 @@ const evidenceIdsBefore = manifest.evidence.map((row) => row.id)
 const summaries = {
   'EV-P6-T3-SECURITY': 'Fresh focused observability validation passes in both external-process stdin and direct PowerShell pipeline modes on Windows PowerShell 5.1 and PowerShell 7. The release failure was reproduced before implementation; no assertion, metric, alert, route or security rule was removed.',
   'EV-P6-T3-BUILD': 'The exact release-style Helm template pipeline now passes observability-validation: ok. Helm lint/render semantics and every ServiceMonitor, metrics Service, PrometheusRule, dashboard, runbook and non-public /metrics assertion remain enforced.',
-  'EV-P6-T4-SUPPLY-CHAIN': 'Ordinary CI 33278665288 passed fully. Release 33280128021 independently passed app, MySQL and browser acceptance, then failed at the pre-registry Helm validator before UHub sign-in or image publication. Workflow/release contracts and the corrected validator pass locally; publication evidence remains pending.',
-  'EV-P6-T5-ADR029-UNIT': 'Fresh focused motion-probe contracts pass 3/3 and the complete frontend suite passes 88/88 files and 426/426 tests. The deterministic no-rAF fixture proves the unchanged ten-frame continuity gate remains observable in foreground WebKit.',
+  'EV-P6-T4-SUPPLY-CHAIN': 'Ordinary CI 33278665288 passed fully. Release 33280128021 passed app, MySQL and browser acceptance, then failed before UHub sign-in; its observability pipeline correction is committed. CI21 passed all pre-remote gates and exposed only the remote WebKit development-server latency. Production-preview harness and release contracts pass locally; publication evidence remains pending.',
+  'EV-P6-T5-ADR029-UNIT': 'Fresh focused motion-probe and remote-harness contracts remain green, and the complete frontend suite passes 88/88 files and 427/427 tests. The deterministic no-rAF fixture still proves the unchanged ten-frame continuity gate remains observable in foreground WebKit.',
   'EV-P6-T5-ADR029-E2E-CHROMIUM': 'Fresh official Linux Chromium coverage passes the complete current-source matrix, including stable accessibility surfaces, login focus and approved desktop/phone geometry.',
   'EV-P6-T5-ADR029-E2E-WEBKIT': 'Fresh official Linux WebKit coverage passes the dedicated theme gate and complete current-source matrix after the continuity probe gained a scheduler fallback; workers=1, retries=0, duration and thresholds remain unchanged.',
   'EV-P6-T5-ADR029-E2E-FIREFOX': 'Fresh official Linux Firefox coverage passes the dedicated theme gate and complete current-source matrix with unchanged worker, retry, geometry and timing contracts.',
-  'EV-P6-T5-ADR029-VISUAL-MOTION': 'Fresh Chromium, Firefox and WebKit checks preserve all four original ring owners and exact 30/40/50/60-second periods; CI20 changes only measurement scheduling and no product motion source.',
-  'EV-P6-T5-FULL-UNIT': 'Fresh current-source gates pass frontend 88/88 files and 426/426 tests, frontend typecheck and an 885-module production build. Server gates pass 362 ordinary tests plus 50 exact-only skips and server typecheck/build.',
+  'EV-P6-T5-ADR029-VISUAL-MOTION': 'Fresh Chromium, Firefox and WebKit checks preserve all four original ring owners and exact 30/40/50/60-second periods; the CI21 production-preview remediation changes no product motion source.',
+  'EV-P6-T5-FULL-UNIT': 'Fresh current-source gates pass frontend 88/88 files and 427/427 tests, frontend typecheck and an 885-module production build. CI21 independently passed its unchanged server, official MySQL and complete browser prerequisites before the remote suite.',
   'EV-P6-T5-FULL-MYSQL': 'A fresh disposable official MySQL 8.4.10 run applied all 16 migrations and passed 50/50 exact tests; the separate rehearsal verified matching source/restored logical checksums and exact cleanup without accessing user or cluster data.',
   'EV-P6-T5-FULL-E2E': 'The fresh official Linux sequence passes WebKit theme 1/1, Firefox theme 1/1 and the complete six-project matrix 336/336 for 338/338 total with workers=1 and retries=0. No browser, threshold, duration or assertion was removed.',
+  'EV-P6-T5-FULL-E2E-REMOTE': 'CI21 passed 11/12 remote real-Fastify cases and exposed only the final WebKit lazy production-route delay under Vite development transforms. The corrected harness uses a prebuilt production bundle: focused contract 15/15, exact WebKit journey 1/1, WebKit repeat 10/10, and complete local Chromium plus WebKit remote coverage 8/8 pass. Local Firefox could not create a page because the Windows browser process failed before context setup; the next Linux ordinary CI remains required for the current-source Firefox and full 12/12 claim.',
   'EV-P6-T5-FULL-A11Y-KEYBOARD': 'The fresh complete browser matrix includes unchanged Axe rules, keyboard journeys and responsive coverage. An exact repeated 768 night-home reproduction moved from 17/20 to 20/20 only after waiting for all five authored orbit labels to reach opacity 1 before the scan.',
   'EV-P6-T5-FULL-E2E-REDUCED-MOTION': 'Fresh normal and reduced-motion browser coverage passes within the 336/336 matrix. The 64 ms entry carry, focus/state preservation and original continuity threshold remain unchanged.',
-  'EV-P6-T5-FULL-MANUAL-REVIEW': 'The CI19 final desktop/phone day/night rest/login images remain current because CI20 changes no product or visual source. Their original-resolution review still confirms complete rings, plain 05 center, approved login depth, dark night surface, mobile breathing room and zero overflow.',
+  'EV-P6-T5-FULL-MANUAL-REVIEW': 'The CI19 final desktop/phone day/night rest/login images remain current because the CI21 remediation changes no product or visual source. Their original-resolution review still confirms complete rings, plain 05 center, approved login depth, dark night surface, mobile breathing room and zero overflow.',
 }
 for (const row of manifest.evidence) {
   if (summaries[row.id]) row.summary = summaries[row.id]
@@ -175,14 +197,14 @@ for (const row of manifest.evidence) {
   row.revalidatedAt = revalidatedAt
 }
 if (manifest.evidence.length !== 462 || manifest.evidence.some((row, index) => row.id !== evidenceIdsBefore[index])) {
-  throw new Error('Evidence row count or ID order changed during CI20 refresh')
+  throw new Error('Evidence row count or ID order changed during CI21 refresh')
 }
 manifest.checkpoint = checkpoint.rootSha256
 manifest.revalidation = {
   taskId: 'P6-T6',
   step: 7,
   revalidatedAt,
-  basis: 'Ordinary CI run 33278665288 / job 99169909250 at 01f1bbb passed every unit, type, build, exact MySQL, 338-case browser/accessibility, Helm and image-build gate in 35m03s. The single authorized 1.0.0 release run 33280128021 independently passed all application, MySQL and 36m13s browser gates, then failed at Validate deployable manifests because a direct Linux pwsh pipeline does not populate Console stdin. No UHub sign-in, image build/push, digest, attestation, exact-digest smoke or GitOps update ran. A deterministic direct-pipeline contract reproduced the empty-render failure; the validator now accumulates ValueFromPipeline records while retaining external-process stdin fallback. Windows PowerShell 5.1, PowerShell 7, the exact release-style Helm pipeline, workflow, release-production and release-preflight contracts pass without weakening any observability assertion. Product and visual sources are unchanged, so the already opened CI19 final images and the release run application/browser results remain source-current. The eight protected historical untracked files remain untouched. All 462 evidence IDs retain exact order; parent truth remains 30/10/4. A new ordinary CI must be green and new explicit release authorization is required before another dispatch. No UHub digest, attestation, release success, DNS/TLS or cluster state is claimed.',
+  basis: 'Ordinary CI run 33282198354 / job 99179121484 at 39e5b5d passed frontend unit/type/build, official MySQL 8.4.10 and the complete 338-case browser/accessibility matrix, then completed 11/12 remote real-Fastify cases. Its sole failure was the final WebKit login/write case waiting for the schedule link after /app/overview navigation while the old remote harness compiled lazy private chunks on demand through Vite createServer. Focused TDD failed exactly one of 15 harness assertions until test:e2e:remote built the Web production bundle and globalSetup served dist with Vite preview. Current local gates pass the focused harness 15/15, exact WebKit journey 1/1, WebKit repeat 10/10, Chromium plus WebKit remote 8/8, frontend 88/88 files and 427/427 tests, typecheck, 885-module production build, observability direct/external pipeline, exact release-style Helm, workflow, release, image-smoke and Helm render/media contracts. The local Windows Firefox executable failed before opening any page with SpawnTarget Error:0, GPU-process failures and D3D11_NO_DEVICE; this is retained as an environment blocker, not hidden or called green, and the next Linux ordinary CI must verify current-source Firefox and full 12/12 remote coverage. Product and visual sources are unchanged, so the already opened CI19 final images remain current. The eight protected historical untracked files remain untouched. All 462 evidence IDs retain exact order; parent truth remains 30/10/4. The failed authorized release produced no UHub sign-in, image build/push, digest, attestation, exact-digest smoke or GitOps update. A new ordinary CI must be green and new explicit release authorization is required before another dispatch. No UHub digest, release success, DNS/TLS or cluster state is claimed.',
 }
 await writeJson(evidenceManifestPath, manifest)
 
