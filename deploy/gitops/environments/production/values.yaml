@@ -4,13 +4,13 @@ web:
   image:
     repository: uhub.service.ucloud.cn/chenucloud/lifeops-web
     tag: "1.0.0"
-    digest: ""
+    digest: "sha256:31d13ed140d0f3343bbef40355e736ce8d63298ffa3c3efb97f27659fb9fa4af"
 
 api:
   image:
     repository: uhub.service.ucloud.cn/chenucloud/lifeops-api
     tag: "1.0.0"
-    digest: ""
+    digest: "sha256:c70d0b33612e36c171c4085639e8cf7d558abdbd37b780fb0bd651a4e7c9c5e3"
   config:
     allowedOrigins: "https://lifeops.chenspace.com"
 
