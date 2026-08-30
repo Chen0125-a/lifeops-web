@@ -49,6 +49,24 @@ describe('Playwright acceptance environment', () => {
     expect(productionBuildIndex).toBeGreaterThan(publicCopyIndex)
   })
 
+  it('copies every root TypeScript config required by the production image build', () => {
+    const productionBuildIndex = webDockerfileSource.indexOf('RUN npm run build')
+    const requiredRootConfigs = [
+      'vite.config.ts',
+      'vitest.config.ts',
+      'playwright.config.ts',
+      'playwright.image.config.ts',
+      'playwright.remote.config.ts',
+      'playwright.remote.image.config.ts',
+    ]
+
+    for (const configPath of requiredRootConfigs) {
+      const configCopyIndex = webDockerfileSource.indexOf(configPath)
+      expect(configCopyIndex, `${configPath} must be copied into the builder`).toBeGreaterThan(-1)
+      expect(configCopyIndex, `${configPath} must be copied before npm run build`).toBeLessThan(productionBuildIndex)
+    }
+  })
+
   it('serves the ordinary acceptance suite from one isolated static bundle', () => {
     expect(globalSetupSource).toContain("import { build, preview } from 'vite'")
     expect(globalSetupSource).toContain("const playwrightOutputDirectory = '.playwright-dist'")

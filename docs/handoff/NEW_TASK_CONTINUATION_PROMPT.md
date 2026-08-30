@@ -651,3 +651,21 @@ npm.cmd test
 ```
 
 Current mirror next action: P6-T8 Step 8.
+
+## 51. 2026-08-30 最新权威尾部：P6-T8 ordinary-CI builder-context repair
+
+- 本节覆盖上文所有旧 next-action。ordinary CI `33305202070` / job `99240391527` 在 `7ad2dddbe64014d9b53181a8c364f887243f1d6f` 通过 frontend/server/official MySQL、完整 Playwright/accessibility、Helm 和 workflow/image contracts，仅在最后 `Build images without pushing` 失败。
+- 根因是 root Docker builder 的 pre-build COPY 只包含 `playwright.config.ts`，没有复制 `tsconfig.node.json` 已声明的 `playwright.image.config.ts`、`playwright.remote.config.ts`、`playwright.remote.image.config.ts`。focused contract 先以 1/17 RED 精确命中缺失 image config；最小 COPY 修复后 focused 17/17、frontend 88 files/429 tests、typecheck、885-module production build、workflow/image-smoke contracts、isolated no-push Web/API Docker builds 全部 exit 0。
+- 产品 UI、应用行为、浏览器 workers/retries/阈值、release digests 和 GitOps values 未改。immutable release 仍是 source `64cb76932def9eed94cb43aea104c97eb19f1382`、release `33286877080`、GitOps `03d812339cb42bfb3633ad613b4dd55509fd0084` 及既有 Web/API digests；不得再次 dispatch release。
+- refreshed checkpoint 为 `outputs/evidence/source-checkpoints/2026-08-30-p6-t8-final-close-uncommitted-local-checkpoint.json`，root `39EC27F09DB952CDAED77A0463D293AEE5BA89EAAA28FA1FC0CA17B82BE37984`，632 inputs / 487 evidence rows / 91 visual states，P6-T8 state `completed`。
+- 没有读取 kubeconfig，没有执行 kubectl、Helm install/upgrade、Argo sync/rollback 或 cluster smoke；不声明 DNS/TLS、Argo 或生产可达。
+
+### 当前唯一下一原子动作
+
+保持 P6 / P6-T8 / Step 8，运行 task/phase/project close 与 final identity/diff/sensitive-path audit，然后提交推送 builder-context 修复并观察新 ordinary CI 到终局。
+
+```powershell
+node scripts/verify-execution-contract.mjs --mode task-close --task P6-T8
+```
+
+Current mirror next action: P6-T8 Step 8.

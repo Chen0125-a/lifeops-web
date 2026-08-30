@@ -1,6 +1,6 @@
 {
   "kind": "uncommitted-local-checkpoint",
-  "rootSha256": "7D40DA202D99B82D7DFC6AC2E1A2F697699A4A2EDD2F46E6C7FBB410553B1C2A",
+  "rootSha256": "39EC27F09DB952CDAED77A0463D293AEE5BA89EAAA28FA1FC0CA17B82BE37984",
   "files": [
     {
       "path": ".dockerignore",
@@ -24,7 +24,7 @@
     },
     {
       "path": "Dockerfile",
-      "sha256": "DAE35EF061E12F773DF8FCF8AA9468AC52B398FFB971C53F4CE45E2FA3CD1BF0"
+      "sha256": "18BAD9E07AF006764B0736B071CA952E2F03C66D447111569DCBFD202CCF9CA8"
     },
     {
       "path": "PRODUCT.md",
@@ -180,7 +180,7 @@
     },
     {
       "path": "docs/traceability/requirements.md",
-      "sha256": "1C31862A814549496E28C32594C15AAAF87C01AA588FFE03DB02EF26DE718F39"
+      "sha256": "1D54187EE80BEED266968C116841F7EE4CDCE494F85873CDCF3ED4637AA75EC0"
     },
     {
       "path": "docs/traceability/source-clause-review-rules.json",
@@ -192,7 +192,7 @@
     },
     {
       "path": "docs/traceability/task-execution.json",
-      "sha256": "C8D564BB1C9E715833CCFB75550FEF8AD8C499FEDA7D166DB8E9EF452F11D25C"
+      "sha256": "8204AFF79191FC3A88748AB18C6894EEBB58672F549049DD3A8436AE5E47201E"
     },
     {
       "path": "index.html",
@@ -2160,7 +2160,7 @@
     },
     {
       "path": "src/playwrightConfig.test.ts",
-      "sha256": "876FA7504D6940A5CEC66E4B996A3C65289F222DD8C4E78D8351BD6B4E51FC20"
+      "sha256": "921792F3E9375FA0324C858CA3A60487041EB07E9BB373D756E277C60883F5E8"
     },
     {
       "path": "src/privateEntryModules.ts",

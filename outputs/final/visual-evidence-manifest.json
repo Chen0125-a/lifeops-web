@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "taskId": "P6-T5",
   "authorityRevision": "ADR-030",
-  "checkpointRootSha256": "7D40DA202D99B82D7DFC6AC2E1A2F697699A4A2EDD2F46E6C7FBB410553B1C2A",
+  "checkpointRootSha256": "39EC27F09DB952CDAED77A0463D293AEE5BA89EAAA28FA1FC0CA17B82BE37984",
   "dependencyLockSha256": "6D8A5424127462D34371049EC22C48DE702D00D8C7B655CA806B4B17CD24361D",
-  "generatedAt": "2026-08-30T09:44:50.270Z",
+  "generatedAt": "2026-08-30T10:43:31.284Z",
   "environment": {
     "os": "mcr.microsoft.com/playwright:v1.62.1-noble Linux container for browser gates and captures; Microsoft Windows 11 host for original-resolution review",
     "node": "v24.18.1 (official Playwright container)",
@@ -3062,8 +3062,8 @@
   "latestRevalidation": {
     "taskId": "P6-T8",
     "step": 8,
-    "revalidatedAt": "2026-08-30T09:44:50.270Z",
-    "checkpointRootSha256": "7D40DA202D99B82D7DFC6AC2E1A2F697699A4A2EDD2F46E6C7FBB410553B1C2A",
+    "revalidatedAt": "2026-08-30T10:43:31.284Z",
+    "checkpointRootSha256": "39EC27F09DB952CDAED77A0463D293AEE5BA89EAAA28FA1FC0CA17B82BE37984",
     "openedOriginalResolution": true,
     "captureCount": 8,
     "conclusion": "pass",

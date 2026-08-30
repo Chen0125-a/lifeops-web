@@ -5,7 +5,7 @@ WORKDIR /workspace
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
 
-COPY index.html tsconfig*.json vite.config.ts vitest.config.ts playwright.config.ts ./
+COPY index.html tsconfig*.json vite.config.ts vitest.config.ts playwright.config.ts playwright.image.config.ts playwright.remote.config.ts playwright.remote.image.config.ts ./
 COPY src ./src
 COPY public ./public
 RUN npm run build

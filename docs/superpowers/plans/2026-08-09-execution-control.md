@@ -1501,6 +1501,22 @@ P6-T8 Step 8 is the sole active boundary. Run the fresh verification-before-comp
 npm.cmd test
 ```
 
+## 2026-08-30 P6-T8 ordinary-CI builder-context repair
+
+Ordinary CI `33305202070` / job `99240391527` ran against `7ad2dddbe64014d9b53181a8c364f887243f1d6f` and passed the 428-test frontend gate, 362 ordinary server tests, 50/50 official MySQL 8.4.10 tests, both type/build gates, the complete Playwright/accessibility matrix, Helm validation and workflow/image contracts. It failed only in `Build images without pushing`: the root Docker builder copied `playwright.config.ts` but omitted the three image/remote configs listed by `tsconfig.node.json`, so container-local TypeScript resolution reported the missing modules and derived implicit-any callback annotations. This does not invalidate the preceding product/browser/MySQL gates, but it correctly blocks project completion until repaired and rerun.
+
+The focused production-builder contract first failed 1/17 with `playwright.image.config.ts must be copied into the builder`. The minimum implementation adds `playwright.image.config.ts`, `playwright.remote.config.ts` and `playwright.remote.image.config.ts` to the existing pre-build COPY boundary. Focused GREEN is 17/17; full frontend is 88 files / 429 tests; typecheck and the 885-module production build pass; workflow and image-smoke contracts pass; isolated no-push Web and API Docker builds both exit 0. No product UI, application behavior, browser worker/retry/threshold, release digest or GitOps value changed.
+
+The refreshed deterministic checkpoint is `outputs/evidence/source-checkpoints/2026-08-30-p6-t8-final-close-uncommitted-local-checkpoint.json`, root `39EC27F09DB952CDAED77A0463D293AEE5BA89EAAA28FA1FC0CA17B82BE37984`, with 632 sorted inputs, 487 evidence rows, completed P6-T8 state and 91 visual states. The immutable release remains the already successful source `64cb76932def9eed94cb43aea104c97eb19f1382`, release `33286877080`, Web/API digests and GitOps commit recorded above; no new release is authorized or needed. No kubeconfig, kubectl, Helm install/upgrade, Argo sync/rollback, cluster smoke, DNS/TLS or production-reachability claim was introduced.
+
+### Exact next atomic action
+
+Keep P6 / P6-T8 / Step 8 active, rerun task/phase/project close plus identity, diff and sensitive-path audits, then commit and push this builder-context repair under the user's continuing `main` authorization and observe its new ordinary CI to a terminal result.
+
+```powershell
+node scripts/verify-execution-contract.mjs --mode task-close --task P6-T8
+```
+
 ## 2026-08-30 P6-T7 user-operated deployment package closure
 
 This final entry supersedes every earlier checkpoint and next-action paragraph. P6-T7 formalizes all 17 approved unfamiliar-cluster clauses into the source registry and 1,444-atom matrix, then delivers an offline/read-only package validator, a bounded application-only smoke, isolated deployment Playwright journeys, the fourteen-section capability-first manual, safe backup/restore/rollback guidance, a sanitized summary and a user verification template.

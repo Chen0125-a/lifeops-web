@@ -140,6 +140,11 @@ task.redEvidence = [{
   command: 'node --test --test-name-pattern "project-close CLI consumes" scripts/verify-execution-contract.test.mjs',
   exitCode: 1,
   failure: 'The loadable project-close CLI ignored valid repository-backed release metadata and failed exactly with FORMAL_GIT_REVISION_MISSING before the manifest loader was implemented.',
+}, {
+  classification: 'behavioral',
+  command: 'npm.cmd test -- src/playwrightConfig.test.ts',
+  exitCode: 1,
+  failure: 'The focused Docker build-context contract failed only because playwright.image.config.ts was absent from the production builder COPY boundary.',
 }]
 task.evidenceIds = evidenceIds
 task.externalBlockers = []
@@ -160,6 +165,7 @@ const sources = {
   unit: await sourcePaths([
     'docs/traceability/requirements.md', 'docs/traceability/task-execution.json',
     'scripts/verify-execution-contract.mjs', 'scripts/verify-execution-contract.test.mjs',
+    'Dockerfile', 'src/playwrightConfig.test.ts',
     'src/pages/PublicHomePage.test.tsx', 'src/components/private/QuickCreate.test.tsx',
   ]),
   api: await sourcePaths([
@@ -234,8 +240,8 @@ const manualReview = (breakpoint) => ({
 const evidenceRows = [
   {
     id: evidenceIds[0], atomIds: atomIdsByType.unit, type: 'unit',
-    command: 'npm.cmd test; npm.cmd run test:execution; focused project-close CLI RED/GREEN',
-    summary: 'The complete 88-file/428-test Web suite and project-close contract prove the remaining public, auth and DATA unit boundaries, including repository-backed final release metadata.',
+    command: 'npm.cmd test; npm.cmd run test:execution; focused project-close CLI and Docker builder context RED/GREEN',
+    summary: 'The complete 88-file/429-test Web suite, project-close contract and isolated Docker builder regression prove the remaining public, auth, DATA and production-image unit boundaries, including repository-backed final release metadata.',
     artifactPath: finalIndexPath, sourcePaths: sources.unit, ...common,
   },
   {
